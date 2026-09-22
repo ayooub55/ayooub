@@ -1,0 +1,94 @@
+#separator:semicolon
+#html:true
+#tags column:3
+<b>Unité</b>;<b>Grandeur mesurée</b> exprimée par une quantité de référence.<br>Ex. : le <b>mètre</b> (longueur), le <b>litre</b> (volume), la <b>mole</b> (quantité de matière).<br>⚠️ En sciences, une valeur <b>sans unité</b> = réponse fausse.;fr-base
+<b>Conversion</b>;<b>Changer d'unité</b> sans changer la grandeur.<br>kilo (k) = ×1000 · centi (c) = ÷100 · milli (m) = ÷1000 · micro (μ) = ÷1 000 000<br><b>1 L = 1000 mL = 1 dm³</b> · <b>1 mL = 1 cm³ = 1000 μL</b>;fr-base
+<b>Notation scientifique</b>;"Écrire un nombre sous la forme <b>a × 10ⁿ</b> avec 1 ≤ a &lt; 10.<br>0,00034 = <b>3,4 × 10⁻⁴</b> · 45 000 = <b>4,5 × 10⁴</b><br>→ Indispensable pour les concentrations, les pH, la radioactivité.";fr-base
+<b>Chiffres significatifs</b>;Chiffres <b>fiables</b> d'une mesure (tous les chiffres certains + 1 estimé).<br>0,00340 → <b>3 chiffres significatifs</b> (3, 4, 0 final)<br>→ Le résultat ne peut pas être plus précis que la mesure la moins précise.;fr-base
+<b>Puissance</b>;<b>aⁿ</b> = a multiplié par lui-même n fois.<br>Règles : aⁿ × aᵐ = <b>aⁿ⁺ᵐ</b> · aⁿ ÷ aᵐ = <b>aⁿ⁻ᵐ</b> · a⁻ⁿ = <b>1/aⁿ</b> · a⁰ = <b>1</b>;fr-base
+<b>Racine carrée</b>;√a = nombre qui, élevé au carré, donne a.<br>√9 = 3 · √(a×b) = √a × √b · √(10⁻⁶) = <b>10⁻³</b>;fr-base
+<b>Fraction</b>;<b>a/b</b> = a divisé par b.<br>1/4 = 0,25 = <b>25 %</b><br>Même dénominateur pour additionner : a/c + b/c = (a+b)/c;fr-base
+<b>Pourcentage</b>;<b>Partie pour 100</b>.<br>20 % de 150 = 0,20 × 150 = <b>30</b><br>Passer de % à fraction : 20 % = 20/100 = 0,2;fr-base
+<b>Proportionnalité</b>;Deux grandeurs sont proportionnelles si leur <b>rapport est constant</b> (coefficient de proportionnalité k).<br>y = k·x → la représentation graphique est une <b>droite passant par l'origine</b>.;fr-base
+<b>Règle de trois</b>;Méthode de calcul par proportionnalité.<br>Si 5 mL contiennent 10 mg → 100 mL contiennent x<br>x = (10 × 100) / 5 = <b>200 mg</b><br>→ Sert pour toutes les <b>dilutions</b>.;fr-base
+<b>Équation</b>;<b>Égalité avec une inconnue</b>. On cherche la valeur qui rend l'égalité vraie.<br>2x + 6 = 14 → 2x = 8 → <b>x = 4</b><br>Règle : ce qu'on fait d'un côté, on le fait de l'autre.;fr-base
+<b>Système d'équations</b>;Plusieurs équations avec plusieurs inconnues, à résoudre <b>simultanément</b>.<br>Méthodes : <b>substitution</b>, <b>combinaison</b> (addition).;fr-base
+<b>Logarithme décimal</b> (log₁₀);<b>log₁₀(x) = n</b> signifie <b>10ⁿ = x</b>.<br>log(100) = 2 · log(1000) = 3 · log(0,01) = −2 · log(1) = <b>0</b><br>Règles : log(a×b) = <b>log a + log b</b> · log(a/b) = <b>log a − log b</b> · log(aⁿ) = <b>n·log a</b>;fr-maths
+<b>Logarithme népérien</b> (ln);Logarithme de base <b>e ≈ 2,718</b>.<br>ln(e) = 1 · ln(1) = 0<br>→ Sert en <b>cinétique</b>, en <b>radioactivité</b> (décroissance exponentielle) et en <b>pharmacocinétique</b>.;fr-maths
+Pourquoi le <b>log</b> est-il essentiel en médecine dentaire ?;Parce que <b>pH = −log₁₀[H⁺]</b>.<br>• [H⁺] = 10⁻⁷ → pH = <b>7</b> (neutre)<br>• [H⁺] = 10⁻⁵ → pH = <b>5</b> (acide)<br>⚠️ Chaque unité de pH = <b>×10</b> en concentration. pH 5 est <b>100 fois</b> plus acide que pH 7.;fr-maths
+<b>Exponentielle</b>;Fonction <b>eˣ</b> ou <b>aˣ</b>. Croissance (ou décroissance) très rapide.<br>Propriété clé : <b>e^(ln x) = x</b> et <b>ln(eˣ) = x</b><br>→ <b>Décroissance radioactive</b> : N(t) = N₀ · e^(−λt);fr-maths
+<b>Dérivée</b>;Mesure la <b>vitesse de variation</b> d'une fonction.<br>f(x) = xⁿ → f'(x) = <b>n·xⁿ⁻¹</b><br>Graphiquement = la <b>pente</b> de la tangente.<br>→ Sert pour les <b>vitesses de réaction</b> et les <b>clearances</b>.;fr-maths
+<b>Pente</b> (coefficient directeur);Inclinaison d'une droite : <b>a = Δy / Δx</b> = (y₂−y₁)/(x₂−x₁).<br>Dans y = ax + b : <b>a</b> = pente, <b>b</b> = ordonnée à l'origine.<br>→ En <b>cinétique</b>, la pente donne la <b>vitesse</b>.;fr-maths
+<b>Moyenne</b>;<b>Somme des valeurs ÷ nombre de valeurs</b>.<br>x̄ = Σxᵢ / n<br>⚠️ Sensible aux <b>valeurs extrêmes</b>.;fr-stats
+<b>Médiane</b>;Valeur qui <b>coupe la série en deux moitiés égales</b> (50 % au-dessus, 50 % au-dessous).<br>⚠️ <b>Robuste</b> aux valeurs extrêmes — préférable à la moyenne en cas de distribution asymétrique.;fr-stats
+<b>Écart-type</b> (σ);Mesure la <b>dispersion</b> des valeurs autour de la moyenne.<br>σ petit = valeurs groupées · σ grand = valeurs étalées.<br>→ Dans une distribution normale : <b>68 %</b> des valeurs sont à ±1σ, <b>95 %</b> à ±2σ.;fr-stats
+<b>Prévalence</b>;<b>Nombre total de cas</b> d'une maladie dans une population à un moment donné.<br>Prévalence = (cas existants / population) × 100<br>→ Répond à : « <b>combien de personnes sont malades ?</b> »;fr-sante
+<b>Incidence</b>;<b>Nombre de NOUVEAUX cas</b> sur une période donnée.<br>Incidence = (nouveaux cas / population à risque) × 100<br>→ Répond à : « <b>quelle est la vitesse d'apparition ?</b> »<br>⚠️ Ne pas confondre avec la prévalence.;fr-sante
+<b>Facteur de risque</b>;Caractéristique qui <b>augmente la probabilité</b> de développer une maladie.<br>Ex. pour la carie : <b>fréquence des sucres</b>, <b>hygiène insuffisante</b>, <b>absence de fluor</b>, <b>hyposialie</b>.<br>⚠️ Ce n'est pas une <b>cause</b> directe, c'est une <b>association</b>.;fr-sante
+<b>Épidémiologie</b>;Étude de la <b>répartition</b> et des <b>déterminants</b> des maladies dans les populations.<br>→ C'est la base de la <b>santé publique</b> (PSP1).;fr-sante
+<b>Solution</b>;Mélange <b>homogène</b> d'un <b>soluté</b> (dissous) dans un <b>solvant</b> (dissolvant).<br>Ex. : sel (soluté) dans l'eau (solvant) → <b>solution aqueuse</b>.;fr-chimie
+<b>Solvant</b>;<b>Liquide qui dissout</b>. En biologie et en chimie, c'est presque toujours l'<b>eau</b> → on parle de <b>solution aqueuse</b>.;fr-chimie
+<b>Soluté</b>;<b>Substance dissoute</b> dans le solvant.;fr-chimie
+<b>Concentration</b>;Quantité de soluté par unité de volume de solution.<br>• <b>C = n / V</b> (mol/L) — concentration <b>molaire</b> (molarité)<br>• <b>Cm = m / V</b> (g/L) — concentration <b>massique</b>;fr-chimie
+<b>Dilution</b>;Ajouter du solvant pour <b>diminuer la concentration</b>.<br>Formule clé : <b>C₁ × V₁ = C₂ × V₂</b><br>⚠️ La <b>quantité de matière ne change pas</b>, seul le volume augmente.;fr-chimie
+<b>Mole</b>;<b>Unité de quantité de matière</b>.<br>1 mole = <b>6,022 × 10²³</b> particules (<b>nombre d'Avogadro</b>, Nₐ).<br>→ Comme « une douzaine » = 12, « une mole » = 6,022 × 10²³.;fr-chimie
+<b>Masse molaire</b> (M);Masse d'<b>une mole</b> d'une substance, en <b>g/mol</b>.<br>H₂O : M = (2×1) + 16 = <b>18 g/mol</b><br>NaCl : M = 23 + 35,5 = <b>58,5 g/mol</b><br>→ <b>n = m / M</b> (nombre de moles = masse ÷ masse molaire);fr-chimie
+<b>Acide</b>;Espèce capable de <b>céder un proton H⁺</b> (définition de Brønsted).<br>En solution : <b>fait baisser le pH</b>.<br>Ex. : HCl, acide acétique CH₃COOH, <b>acide lactique</b> (produit par les bactéries de la plaque).;fr-chimie
+<b>Base</b>;Espèce capable de <b>capter un proton H⁺</b>.<br>En solution : <b>fait monter le pH</b>.<br>Ex. : NaOH, ammoniac NH₃, bicarbonate HCO₃⁻ (<b>tampon de la salive</b>).;fr-chimie
+<b>pH</b>;"<b>pH = −log₁₀[H⁺]</b> — mesure l'<b>acidité</b>.<br>• pH &lt; 7 → <b>acide</b> · pH = 7 → <b>neutre</b> · pH &gt; 7 → <b>basique/alcalin</b><br>⚠️ <b>pH critique de l'émail = 5,5</b> (en dessous → déminéralisation → carie).";fr-chimie
+<b>Neutralisation</b>;<b>Acide + Base → Sel + Eau</b>.<br>HCl + NaOH → NaCl + H₂O<br>→ Le pH tend vers 7.;fr-chimie
+<b>Solution tampon</b>;Solution qui <b>résiste aux variations de pH</b> lors de l'ajout d'un acide ou d'une base.<br>Composée d'un <b>acide faible + sa base conjuguée</b>.<br>Ex. : <b>bicarbonate</b> dans la salive, <b>phosphate</b> dans le sang.<br>→ Équation de <b>Henderson-Hasselbalch</b> : pH = pKa + log([base]/[acide]);fr-chimie
+<b>Titrage</b> (dosage);Déterminer une <b>concentration inconnue</b> en ajoutant progressivement une solution de concentration connue.<br>Au <b>point d'équivalence</b> : n(acide) = n(base).<br>→ <b>C₁V₁ = C₂V₂</b>;fr-chimie
+<b>Réaction chimique</b>;Transformation d'<b>espèces chimiques</b> (réactifs) en d'autres (produits).<br><b>Réactifs → Produits</b><br>⚠️ Il faut <b>équilibrer</b> : même nombre d'atomes de chaque élément des deux côtés.<br>2H₂ + O₂ → 2H₂O;fr-chimie
+<b>Équilibrer une équation</b>;Ajuster les <b>coefficients</b> (jamais les indices !) pour respecter la <b>conservation des atomes</b>.<br>__ H₂ + __ O₂ → __ H₂O devient <b>2</b> H₂ + <b>1</b> O₂ → <b>2</b> H₂O;fr-chimie
+<b>Ion</b>;Atome ou molécule qui a <b>gagné ou perdu des électrons</b>.<br>• <b>Cation</b> = charge <b>positive</b> (Ca²⁺, Na⁺, K⁺)<br>• <b>Anion</b> = charge <b>négative</b> (Cl⁻, HCO₃⁻, PO₄³⁻);fr-chimie
+<b>Oxydation</b>;<b>Perte d'électrons</b>. (Moyen mnémotechnique : <b>OIL RIG</b> — Oxidation Is Loss, Reduction Is Gain)<br>→ L'espèce oxydée <b>cède</b> des électrons à l'espèce réduite.;fr-chimie
+<b>Réduction</b>;<b>Gain d'électrons</b>.<br>Dans une réaction <b>redox</b>, il y a toujours <b>un oxydé et un réduit</b> en même temps.;fr-chimie
+<b>Pression</b>;<b>P = F / S</b> — force par unité de surface.<br>Unité : <b>Pascal (Pa)</b> = N/m² · aussi : <b>bar</b>, <b>atm</b>, <b>mmHg</b><br>→ 1 atm = 101 325 Pa ≈ 760 mmHg;fr-physique
+<b>Force</b>;<b>F = m × a</b> (2ᵉ loi de Newton) — masse × accélération.<br>Unité : <b>Newton (N)</b> = kg·m/s²;fr-physique
+<b>Débit</b>;<b>Q = V / t</b> — volume par unité de temps.<br>Unités : <b>L/min</b>, <b>mL/s</b>, <b>m³/s</b><br>⚠️ Aussi : <b>Q = v × S</b> (vitesse × section);fr-physique
+<b>Vitesse</b>;<b>v = d / t</b> — distance par unité de temps.<br>Unités : m/s, km/h, <b>cm/s</b>;fr-physique
+<b>Énergie</b>;<b>Capacité à produire un travail</b>.<br>Unité : <b>Joule (J)</b>. Aussi : <b>calorie (cal)</b> — 1 cal = 4,18 J<br>Formes : cinétique, potentielle, thermique, chimique.;fr-physique
+<b>Puissance</b>;<b>P = E / t</b> — énergie par unité de temps.<br>Unité : <b>Watt (W)</b> = J/s<br>⚠️ Ne pas confondre avec la <b>pression</b> !;fr-physique
+<b>Température</b>;Mesure l'<b>agitation des molécules</b>.<br>Unités : <b>°C</b> (Celsius) et <b>K</b> (Kelvin).<br><b>T(K) = T(°C) + 273,15</b><br>⚠️ 0 K = zéro absolu (−273,15 °C);fr-physique
+<b>Courant électrique</b>;<b>Déplacement de charges</b>. Unité : <b>Ampère (A)</b>.<br><b>I = Q / t</b> (charge par unité de temps)<br>⚠️ Par convention, le courant va du <b>+</b> vers le <b>−</b> (les électrons vont dans l'autre sens).;fr-physique
+<b>Tension</b> (voltage);<b>Différence de potentiel</b> entre 2 points. Unité : <b>Volt (V)</b>.<br>→ C'est la « pression » qui pousse les électrons.;fr-physique
+<b>Résistance</b>;Capacité d'un matériau à <b>s'opposer au passage du courant</b>. Unité : <b>Ohm (Ω)</b>.<br><b>Loi d'Ohm : U = R × I</b>;fr-physique
+<b>Cellule</b>;<b>Unité structurale et fonctionnelle</b> du vivant.<br>• <b>Procaryote</b> : pas de noyau (bactéries)<br>• <b>Eucaryote</b> : noyau délimité par une membrane (cellules humaines);fr-bio
+<b>Membrane plasmique</b>;<b>Enveloppe</b> de la cellule : <b>bicouche de phospholipides</b> + protéines + cholestérol.<br>• <b>Semi-perméable</b> (laisse passer certaines substances)<br>• Rôles : <b>protection</b>, <b>échanges</b>, <b>reconnaissance</b>, <b>communication</b>;fr-bio
+<b>Organite</b>;<b>Structure spécialisée</b> à l'intérieur de la cellule, ayant une fonction propre.<br>Ex. : mitochondrie, noyau, ribosome, appareil de Golgi, lysosome, REG.;fr-bio
+<b>Métabolisme</b>;Ensemble des <b>réactions chimiques</b> d'un organisme.<br>• <b>Anabolisme</b> = synthèse (consomme de l'énergie)<br>• <b>Catabolisme</b> = dégradation (libère de l'énergie);fr-bio
+<b>ATP</b>;<b>Adénosine TriPhosphate</b> — la « <b>monnaie énergétique</b> » de la cellule.<br>Produit par : <b>glycolyse</b> (2 ATP) → <b>cycle de Krebs</b> → <b>chaîne respiratoire</b> (~36 ATP).<br>Total : ~<b>38 ATP</b> par glucose.;fr-bio
+<b>Enzyme</b>;<b>Protéine catalyseur</b> : accélère une réaction chimique <b>sans être consommée</b>.<br>• Très <b>spécifique</b> (modèle clé-serrure)<br>• Sensible à la <b>température</b> et au <b>pH</b><br>→ Paramètres : <b>Km</b> (affinité) et <b>Vmax</b> (vitesse maximale);fr-bio
+<b>Protéine</b>;<b>Macromolécule</b> faite d'une chaîne d'<b>acides aminés</b> liés par des <b>liaisons peptidiques</b>.<br>4 niveaux de structure : <b>primaire</b> (séquence) → <b>secondaire</b> (α-hélice, feuillet β) → <b>tertiaire</b> (repliement 3D) → <b>quaternaire</b> (plusieurs chaînes).;fr-bio
+<b>ADN</b>;<b>Acide DésoxyriboNucléique</b> — support de l'<b>information génétique</b>.<br>Double hélice, 4 bases : <b>A-T</b> et <b>G-C</b> (appariements complémentaires).<br>Localisation : <b>noyau</b> (et mitochondries).;fr-bio
+<b>ARN</b>;<b>Acide RiboNucléique</b> — copie simple brin de l'ADN.<br>Bases : <b>A-U</b> (uracile remplace la thymine) et G-C.<br>3 types : <b>ARNm</b> (messager), <b>ARNt</b> (transfert), <b>ARNr</b> (ribosomal).;fr-bio
+<b>Transcription</b>;<b>ADN → ARN</b>. Copie d'un gène en ARN messager, dans le <b>noyau</b>.<br>Enzyme clé : <b>ARN polymérase</b>.;fr-bio
+<b>Traduction</b>;<b>ARN → protéine</b>. Lecture du code génétique par le <b>ribosome</b>, dans le <b>cytoplasme</b>.<br>• <b>Codon</b> = 3 bases = 1 acide aminé<br>• Code génétique : <b>universel</b>, <b>redondant</b>, <b>non ambigu</b>;fr-bio
+<b>Réplication</b>;<b>Copie de l'ADN</b> avant la division cellulaire.<br>• <b>Semi-conservative</b> (chaque nouvelle molécule garde 1 brin d'origine)<br>• Enzyme clé : <b>ADN polymérase</b>;fr-bio
+<b>Mitose</b>;<b>Division cellulaire</b> d'une cellule somatique → <b>2 cellules identiques</b> (2n → 2n).<br>4 phases : <b>Prophase · Métaphase · Anaphase · Télophase</b> (+ interphase avant).;fr-bio
+<b>Méiose</b>;Division qui produit les <b>gamètes</b> → <b>4 cellules à n chromosomes</b> (2n → n), <b>génétiquement différentes</b>.<br>→ Base de la <b>variabilité génétique</b>.;fr-bio
+<b>Homéostasie</b>;<b>Maintien de l'équilibre interne</b> de l'organisme malgré les variations externes.<br>Ex. : température (37 °C), pH sanguin (7,4), glycémie (~1 g/L).<br>Mécanisme : <b>rétrocontrôle (feedback)</b> négatif.;fr-bio
+<b>Physiologie</b>;Étude du <b>fonctionnement</b> des êtres vivants (organes, cellules, molécules).<br>⚠️ À distinguer de l'<b>anatomie</b> (= étude de la <b>structure</b>).;fr-bio
+<b>Anatomie</b>;Étude de la <b>structure</b> et de la <b>forme</b> des organes.<br>• <b>Macroscopique</b> (à l'œil nu)<br>• <b>Microscopique</b> = <b>histologie</b> (au microscope);fr-bio
+<b>Histologie</b>;Étude <b>microscopique des tissus</b>.<br>4 tissus fondamentaux : <b>épithélial</b>, <b>conjonctif</b>, <b>musculaire</b>, <b>nerveux</b>.;fr-bio
+<b>Embryologie</b>;Étude du <b>développement</b> de l'embryon, de la fécondation à la naissance.;fr-bio
+<b>Tissu épithélial</b>;Tissu de <b>revêtement</b> et de <b>sécrétion</b>. Cellules <b>juxtaposées</b>, pas de vaisseaux (avascularisé), reposant sur une <b>membrane basale</b>.<br>Ex. : épiderme, muqueuse buccale, <b>émail</b> (épithélium améloblastique).;fr-bio
+<b>Tissu conjonctif</b>;Tissu de <b>soutien et de liaison</b>. Cellules <b>dispersées</b> dans une <b>matrice extracellulaire</b> abondante (fibres + substance fondamentale).<br>Ex. : os, cartilage, sang, <b>pulpe dentaire</b>, <b>ligament parodontal</b>.;fr-bio
+<b>Pathologie</b>;Étude des <b>maladies</b> : causes (<b>étiologie</b>), mécanismes (<b>pathogenèse</b>), lésions, évolution.;fr-med
+<b>Étiologie</b>;<b>Cause</b> d'une maladie.<br>Ex. étiologie de la carie : biofilm bactérien + sucres + temps + hôte sensible.;fr-med
+<b>Pathogenèse</b>;<b>Mécanisme</b> par lequel la maladie se développe (la « chaîne » des événements).;fr-med
+<b>Symptôme</b>;<b>Ressenti par le patient</b>, subjectif.<br>Ex. : douleur, soif, fatigue.<br>⚠️ À distinguer du <b>signe</b>.;fr-med
+<b>Signe</b>;<b>Constaté par le clinicien</b>, objectif.<br>Ex. : fièvre mesurée, gonflement, saignement au sondage.;fr-med
+<b>Syndrome</b>;Ensemble de <b>signes et symptômes</b> qui surviennent ensemble et caractérisent une situation clinique.;fr-med
+<b>Diagnostic</b>;<b>Identification de la maladie</b>.<br>Étapes : <b>interrogatoire</b> (anamnèse) → <b>examen clinique</b> → <b>examens complémentaires</b> (radio, bio) → <b>diagnostic différentiel</b>.;fr-med
+<b>Anamnèse</b>;<b>Interrogatoire</b> du patient : motifs de consultation, antécédents, traitements, allergies, habitudes.;fr-med
+<b>Pronostic</b>;<b>Prévision de l'évolution</b> de la maladie.<br>• <b>Bon</b> : guérison attendue<br>• <b>Réservé</b> : incertain<br>• <b>Défavorable</b> : évolution défavorable attendue;fr-med
+<b>Aigu</b> vs <b>chronique</b>;<b>Aigu</b> : apparition <b>rapide</b>, durée <b>courte</b>, souvent intense.<br>Ex. : abcès dentaire aigu.<br><b>Chronique</b> : évolution <b>lente</b> et <b>prolongée</b>, souvent peu symptomatique.<br>Ex. : <b>la carie</b>, la parodontite.;fr-med
+<b>Inflammation</b>;Réaction de défense de l'organisme à une agression.<br><b>5 signes cardinaux</b> (Celse) : <b>rougeur</b> (rubor), <b>chaleur</b> (calor), <b>gonflement</b> (tumor), <b>douleur</b> (dolor), <b>perte de fonction</b> (functio laesa).;fr-med
+<b>Infection</b>;<b>Envahissement</b> de l'organisme par des <b>micro-organismes pathogènes</b> qui s'y multiplient.<br>⚠️ ≠ inflammation (qui peut être non infectieuse).;fr-med
+<b>Asepsie</b> vs <b>Antisepsie</b>;<b>Asepsie</b> : <b>prévenir</b> l'apport de microbes (stérilisation, gants, champ opératoire).<br><b>Antisepsie</b> : <b>détruire</b> les microbes déjà présents sur un tissu vivant (bétadine, chlorhexidine).;fr-med
+<b>Stérilisation</b>;Destruction de <b>tous</b> les micro-organismes, y compris les <b>spores</b>.<br>Méthode de référence en cabinet dentaire : <b>autoclave</b> (vapeur sous pression, 134 °C, 18 min).;fr-med
+<b>Désinfection</b>;Élimination de la <b>plupart</b> des micro-organismes pathogènes sur une <b>surface inerte</b> (mais pas nécessairement les spores).;fr-med
+<b>Anesthésie locale</b>;<b>Suppression réversible de la sensibilité</b> dans une zone limitée.<br>Produits : <b>lidocaïne</b>, <b>articaïne</b>, <b>mépivacaïne</b> + vasoconstricteur (<b>adrénaline</b>).<br>Techniques : <b>para-apicale</b> (infiltration), <b>tronculaire</b> (nerf dentaire inférieur).;fr-med
+<b>Tronculaire</b>;Qui concerne un <b>tronc nerveux</b>.<br>En odontologie : anesthésie <b>tronculaire du nerf dentaire inférieur</b> (au <b>canal mandibulaire</b>, repère = <b>épine de Spix</b>) → anesthésie de toute une <b>demi-mandibule</b>.;fr-med

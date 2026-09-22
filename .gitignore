@@ -1,0 +1,9 @@
+# venv (outils locaux, à ne pas versionner)
+.venv/
+
+# Texte extrait des PDF (généré par fmdc/extract.sh)
+# Gardé hors git car volumineux et régénérable
+fmdc/texte/
+
+# OS
+.DS_Store
