@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FMDC S1 — L-blassa dyal l-qraya</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2128;
+  --line:#30363d; --txt:#e6edf3; --dim:#8b949e;
+  --acc:#2f81f7; --ok:#3fb950; --warn:#d29922; --bad:#f85149;
+  --p1:#a371f7;
+}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+a{color:var(--acc);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+
+/* HEADER */
+header{background:linear-gradient(135deg,#1f3a5f,#0d1117);border-bottom:1px solid var(--line);padding:28px 0 22px}
+header h1{font-size:26px;margin-bottom:6px}
+header .sub{color:var(--dim);font-size:14px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+nav button{background:var(--bg3);border:1px solid var(--line);color:var(--txt);
+  padding:8px 14px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:500}
+nav button:hover{border-color:var(--acc)}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+
+main{padding:24px 0 80px}
+.pane{display:none}.pane.on{display:block}
+
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
+.card h2{font-size:18px;margin-bottom:10px}
+.card h3{font-size:15px;margin:14px 0 6px;color:var(--acc)}
+.muted{color:var(--dim);font-size:14px}
+
+/* BOXES */
+.box{background:var(--bg3);border-left:3px solid var(--acc);border-radius:6px;padding:12px 14px;margin:10px 0;font-size:14px}
+.box.ok{border-color:var(--ok)} .box.warn{border-color:var(--warn)}
+.box.bad{border-color:var(--bad)} .box.p1{border-color:var(--p1)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.stat .n{font-size:24px;font-weight:700;color:var(--acc)}
+.stat .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}
+
+/* DECK LIST */
+.deck{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:.15s}
+.deck:hover{border-color:var(--acc);background:var(--bg3)}
+.deck .ico{font-size:22px;width:34px;text-align:center}
+.deck .info{flex:1;min-width:0}
+.deck .nom{font-weight:600;font-size:15px}
+.deck .meta{font-size:12px;color:var(--dim)}
+.deck .nb{font-weight:700;color:var(--acc);font-size:15px;white-space:nowrap}
+.deck .bar{height:4px;background:var(--bg);border-radius:2px;margin-top:5px;overflow:hidden}
+.deck .bar i{display:block;height:100%;background:var(--ok)}
+.tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;
+  background:rgba(163,113,247,.2);color:var(--p1);border:1px solid rgba(163,113,247,.4);margin-left:6px}
+.tag.c{background:rgba(47,129,247,.15);color:var(--acc);border-color:rgba(47,129,247,.4)}
+
+/* STUDY */
+#etude{max-width:760px;margin:0 auto}
+.qbox{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:26px;
+  margin:14px 0;min-height:120px;font-size:18px}
+.abox{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:22px;
+  margin:14px 0;font-size:15px;display:none;max-height:60vh;overflow-y:auto}
+.abox.on{display:block}
+.abox b{color:#fff}
+.prog{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin:12px 0}
+.prog i{display:block;height:100%;background:var(--acc);transition:.3s}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btns button{flex:1;min-width:120px;padding:14px;border-radius:10px;border:1px solid var(--line);
+  background:var(--bg2);color:var(--txt);font-size:15px;font-weight:600;cursor:pointer}
+.btns button:hover{transform:translateY(-1px)}
+.btns .b-show{background:var(--acc);border-color:var(--acc);color:#fff}
+.btns .b-ok{background:#14532d;border-color:var(--ok);color:#7ee787}
+.btns .b-no{background:#4c1d24;border-color:var(--bad);color:#ff9b94}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--bg3);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--dim)}
+
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:var(--bg3);font-weight:600}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+code{background:var(--bg3);padding:1px 5px;border-radius:4px;font-size:13px}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+.step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.step .num{background:var(--acc);color:#fff;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.big{font-size:16px}
+@media(max-width:600px){header h1{font-size:20px}.qbox{font-size:16px;padding:18px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>🎓 FMDC Casablanca — S1 2026/27</h1>
+    <div class="sub">L-blassa dyalek bach t-qra · 441 cartes · 0 DH · khdama bla Anki</div>
+    <nav>
+      <button class="on" data-p="acc">🏠 L-youm</button>
+      <button data-p="etud">▶️ Étudier</button>
+      <button data-p="decks">📚 Les decks</button>
+      <button data-p="cours">📖 Cours &amp; résumés</button>
+      <button data-p="plan">🗓️ L-plan</button>
+      <button data-p="aide">🆘 Aide</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ ACCEUIL ============ -->
+<section class="pane on" id="p-acc">
+  <div class="box ok big">
+    ⭐ <b>Anki ma khdam-ch? Ma 3andk may dir.</b> Had l-page fiha <b>441 carte</b> b
+    <b>la répétition espacée</b> — nafs l-méthode dyal Anki, ghir f navigateur.
+    <b>0 installation. 0 DH.</b>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-tot">–</div><div class="l">Cartes</div></div>
+    <div class="stat"><div class="n" id="s-due">–</div><div class="l">À réviser</div></div>
+    <div class="stat"><div class="n" id="s-vu">–</div><div class="l">Vues</div></div>
+    <div class="stat"><div class="n" id="s-j">–</div><div class="l">Série</div></div>
+    <div class="stat"><div class="n" id="s-mr">–</div><div class="l">Maîtrisées</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 L-objectif dyal L-YOUM</h2>
+    <div class="step"><div class="num">1</div><div>Clic 3la <b>▶️ Étudier</b> l-fo9</div></div>
+    <div class="step"><div class="num">2</div><div>Khtar deck <b>🫁 Physiologie</b> (35 cartes, 0 prérequis)</div></div>
+    <div class="step"><div class="num">3</div><div>Dir <b>20 minutes</b></div></div>
+    <div class="step"><div class="num">4</div><div>✅ <b>Safi. Ma t-zid walou.</b></div></div>
+    <div class="box warn">
+      ⚠️ <b>L-mouhim machi ch7al qriti.</b> L-mouhim: <b>rje3 ghedda</b>.
+      20 min koul nhar &gt; 7h f nhar wa7ed.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔥 3lach had l-plan mokhtalef</h2>
+    <p class="big">Lqina f Drive dyalek blli <b>l-cours l-officiel dyal FMDC kaybda mn sifr</b> —
+    chimie, biologie cellulaire, biologie moléculaire, ultrasons, rayons X.</p>
+    <div class="box ok">
+      ⭐ <b>Donc ma 3andekch mochkil dyal « niveau ».</b> 3andek 3 mochkilat okhrin:
+      <ul>
+        <li><b>La vitesse</b> dyal l-prof f l-amphi</li>
+        <li><b>Le vocabulaire français</b> → <span class="tag c">vocab-fr</span> 91 cartes</li>
+        <li><b>Les annales</b> — l-examen kay-t3awed b <b>80 %</b></li>
+      </ul>
+      <b>Hadou koulhoum kay-7allou b la répétition espacée. Machi b ressource externe.</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⏰ Routine dyal nhar (2h)</h2>
+    <table>
+      <tr><th>We9t</th><th>Chno</th></tr>
+      <tr><td><b>20 min</b></td><td>⭐ Étudier (sba7 bakri)</td></tr>
+      <tr><td><b>40 min</b></td><td>Qra l-cours l-officiel — ghir l-qism li ja f l-cartes</td></tr>
+      <tr><td><b>30 min</b></td><td>Kteb b yeddek (l-ktaba b l-yedd t-rsed 3× ktr)</td></tr>
+      <tr><td><b>30 min</b></td><td>Annales b chrono</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⛔ L-5 7wayj li ghadi y-9etlou l-plan</h2>
+    <ol>
+      <li><b>T-khwi la révision nhar wa7ed</b> → ghadi t-lqa 200 carte → t-ghrq</li>
+      <li><b>T-kteb kolchi f l-amphi</b> → ma t-fhem walou</li>
+      <li><b>T-ste7i t-hder m3a l-prof</b> → haka 3arf lqina 4 cours officiels</li>
+      <li><b>T-qra l-cours qbel les cartes</b> → t-ghrq f 300 page</li>
+      <li><b>7h f nhar wa7ed + 6 ayyam khawya</b> → l-dimagh kay-7fed b t-3awid</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ÉTUDIER ============ -->
+<section class="pane" id="p-etud">
+  <div id="choix"></div>
+  <div id="etude" style="display:none">
+    <div class="topbar">
+      <span class="chip" id="e-deck"></span>
+      <span class="chip" id="e-reste"></span>
+      <button onclick="quit()" style="background:none;border:1px solid var(--line);color:var(--dim);
+        padding:4px 12px;border-radius:6px;cursor:pointer;font-size:12px">✕ Khoroj</button>
+    </div>
+    <div class="prog"><i id="e-bar" style="width:0%"></i></div>
+    <div class="qbox" id="e-q"></div>
+    <div class="abox" id="e-a"></div>
+    <div class="btns" id="e-btns"></div>
+    <div class="muted" style="margin-top:14px;text-align:center">
+      Espace = afficher · 1 = Correct · 2 = Encore
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECKS ============ -->
+<section class="pane" id="p-decks">
+  <div class="box">
+    ⭐ <b>Tartib dyal l-import</b> = tartib dyal l-qraya.
+    <b>Ma t-qra-ch koulchi f nhar wa7ed</b> — deck wa7ed koul simana.
+  </div>
+  <div id="ldecks"></div>
+</section>
+
+<!-- ============ COURS ============ -->
+<section class="pane" id="p-cours">
+  <div class="card">
+    <h2>🔥 Les cours officiels li lqina f Drive</h2>
+    <table>
+      <tr><th>Module</th><th>Cours</th><th>Prof</th><th>État</th></tr>
+      <tr><td>M111</td><td>Biologie moléculaire &amp; génie génétique</td><td>Pr T. ROCHD</td><td>✅ Complet (6 chap.)</td></tr>
+      <tr><td>M111</td><td>Méthodes d'étude de la cellule</td><td>Pr F. RHRICH-HADDOUT</td><td>✅ Complet</td></tr>
+      <tr><td>M112</td><td>Chimie générale + organique</td><td>—</td><td>⚠️ ~30 pages</td></tr>
+      <tr><td>M114</td><td>Rayons X + imagerie</td><td>Pr BOUZOUBAA</td><td>✅ Complet</td></tr>
+      <tr><td>M114</td><td>Bases physiques des ultrasons</td><td>Pr Kh. EL BOUSSIRI</td><td>✅ Complet</td></tr>
+      <tr><td>M114</td><td>Rayonnements ionisants · acido-basique</td><td>Pr Kh. EL GUERMAI</td><td>⛔ Drive 500</td></tr>
+      <tr><td>M114</td><td>Radioprotection</td><td>Pr A. GUENSI</td><td>⛔ Drive 500</td></tr>
+      <tr><td>M114</td><td>Sciences des matériaux</td><td>Boussiri + Guermai</td><td>⛔ Drive 500</td></tr>
+      <tr><td>M113</td><td>Anatomie / Physiologie</td><td>—</td><td>⏳ Examens seulement</td></tr>
+      <tr><td>M115</td><td>Initiation médecine dentaire</td><td>—</td><td>⏳ Pas exploré</td></tr>
+      <tr><td>M116</td><td>MTU</td><td>—</td><td>⏳ Pas exploré</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📂 Les résumés f l-repo</h2>
+    <ul>
+      <li><b><code>fmdc/resumes/methodes-p43-lkher.md</code></b> — ⭐ cher7 dyal la fin du cours Méthodes (MEB, cytochimie, fractionnement, électrophorèse, chromatographie, culture, autoradiographie)</li>
+      <li><b><code>fmdc/BDA-MN-HNA.md</code></b> — l-dalil l-3amali</li>
+      <li><b><code>fmdc/analyse-examens.md</code></b> — chno kayn f kol examen b d9a</li>
+      <li><b><code>fmdc/INDEX-DRIVE.md</code></b> — la carte complète dyal Drive</li>
+      <li><b><code>fmdc/programme-17-simana.md</code></b> — l-plan b tawarikh + tracker</li>
+    </ul>
+    <div class="box">
+      💡 <b>Bach t-qra-hom :</b> sir l repo 3la GitHub → <code>fmdc/resumes/</code> → clic 3la l-fichier.
+      Wla téléchargi l-ZIP kaml (bouton <code>Code</code> → <code>Download ZIP</code>).
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ 2 ghalatat f l-cours l-officiel</h2>
+    <ol>
+      <li><code>AAA (Lys) → GAG (Gly)</code> — ⚠️ <b>GAG = acide GLUTAMIQUE (Glu)</b>, machi glycine</li>
+      <li><code>VEGF = Vascular EPITHELIAL</code> — ⚠️ s7i7a <b>ENDOTHELIAL</b></li>
+    </ol>
+    <div class="box warn">⭐ <b>Règle :</b> ila l-QCM ja mn l-cours → jwb kima l-cours. Ila kan 7sab 7a9i9i → st3mel l-3ilm s7i7.</div>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section class="pane" id="p-plan">
+  <div class="card">
+    <h2>🗓️ Les 4 phases</h2>
+    <table>
+      <tr><th>Phase</th><th>Simanat</th><th>Objectif</th></tr>
+      <tr><td>🔴 <b>1 — Attaque</b></td><td>S1→S6<br><span class="muted">21 Sep → 1 Nov</span></td><td>Séd les 216 cartes « examen + cours »</td></tr>
+      <tr><td>🟠 <b>2 — Prérequis</b></td><td>S7→S11<br><span class="muted">2 Nov → 6 Déc</span></td><td>Chimie organique + atomistique</td></tr>
+      <tr><td>🟡 <b>3 — Sédage</b></td><td>S12→S14<br><span class="muted">7 → 27 Déc</span></td><td>Annales kaml + muraja3a</td></tr>
+      <tr><td>🟢 <b>4 — Finale</b></td><td>S15→S17<br><span class="muted">28 Déc → 17 Jan</span></td><td>⚠️ Refaire les 5 examens 2026 b chrono</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📊 L-7sab dyal l-wa9t</h2>
+    <ul>
+      <li><b>17 simana × 15h = 255 sa3a</b></li>
+      <li><b>Prérequis ≈ 146h</b> — ⚠️ <b>ma b9aw-ch « prérequis »</b> : daba <b>~100h = qra l-cours l-officiel</b> + <b>~45h = maths + matériaux</b></li>
+      <li>🔴 <b>L-mochkil l-wa7id l-ba9i = les MATHS (15h)</b> + les Matériaux (40h)</li>
+    </ul>
+    <div class="box ok">
+      ⭐ <b>L-farq l-kbir :</b> had 146h ma b9aw-ch « 7aja khassk t-qra qbel l-cours ».
+      <b>L-cours kaybda mn sifr</b> → khassek ghir <b>l-WA9T</b> bach t-qrah.
+      <b>L-mochkil daba = wa9t, machi niveau.</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📈 Tracker — sajjel score-k</h2>
+    <table>
+      <tr><th>Seuil</th><th>Chno t-dir</th></tr>
+      <tr><td>✅ <b>≥ 85 %</b></td><td>Mli7. Kmmel.</td></tr>
+      <tr><td>⚠️ <b>70-85 %</b></td><td>3awed la révision qbel ma t-zid</td></tr>
+      <tr><td>🔴 <b>&lt; 70 %</b></td><td><b>WA9F.</b> Rah chi 7aja ma t-fhemt-ch. Rja3 l l-cours.</td></tr>
+    </table>
+    <div class="box warn">⚠️ <b>L-awwal merrra ghadi t-jib &lt; 50 %. HADA NORMAL.</b> L-mouhim t-tla3 mn simana l simana.</div>
+  </div>
+</section>
+
+<!-- ============ AIDE ============ -->
+<section class="pane" id="p-aide">
+  <div class="card">
+    <h2>🆘 Anki ma khdam-ch — chno t-dir?</h2>
+    <div class="box ok big">
+      ⭐ <b>Ma 3andk may dir bih.</b> Had l-page kat-dir nafs l-7aja b <b>la répétition espacée</b>.
+      <b>Khdama f navigateur, bla installation.</b>
+    </div>
+    <p class="big">Les 441 cartes rahom hna. <b>Dir ghir « ▶️ Étudier ».</b></p>
+    <hr>
+    <p class="muted">Ila bghiti t-3awed t-jerrb Anki mn b3d :</p>
+    <table>
+      <tr><th>Problème</th><th>7al</th></tr>
+      <tr><td><code>&lt;b&gt;</code> f l-carte</td><td>« Autoriser le HTML » = ✅ coché</td></tr>
+      <tr><td>Kolchi f 3amoud wa7ed</td><td>Séparateur = <code>Point-virgule</code></td></tr>
+      <tr><td><code>Ã©</code> blasst <code>é</code></td><td>Encoding = <code>UTF-8</code></td></tr>
+      <tr><td>0 carte</td><td>Type = <code>Note de base</code></td></tr>
+      <tr><td>Ma lqa-ch les fichiers</td><td>Khtar <code>Tous les fichiers (*.*)</code></td></tr>
+      <tr><td>« Patch file »</td><td>❌ <b>MA T-KHTARU-CH</b> — hadak dyal les programmeurs</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💾 Wach la progression dyali kat-tsajjel?</h2>
+    <div class="box ok">
+      ✅ <b>OUI.</b> Kolchi kay-t-sajjel f <b>ton navigateur</b> (localStorage) —
+      cartes vues, intervalles, série, scores.<br>
+      ⚠️ <b>Ghir f had navigateur w had l-appareil.</b> Ila bdelti → la progression ma kat-mshi-ch.
+    </div>
+    <div class="btns">
+      <button onclick="exp()" style="background:var(--bg3)">⬇️ Exporter (sauvegarde)</button>
+      <button onclick="document.getElementById('imp').click()" style="background:var(--bg3)">⬆️ Importer</button>
+      <button onclick="raz()" style="background:#4c1d24;border-color:var(--bad);color:#ff9b94">🗑️ Réinitialiser</button>
+    </div>
+    <input type="file" id="imp" accept=".json" style="display:none" onchange="imp(this)">
+  </div>
+
+  <div class="card">
+    <h2>❓ Les touches</h2>
+    <table>
+      <tr><th>Touche</th><th>Action</th></tr>
+      <tr><td><b>Espace</b></td><td>Afficher la réponse</td></tr>
+      <tr><td><b>1</b></td><td>✅ Correct</td></tr>
+      <tr><td><b>2</b></td><td>🔁 Encore</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📞 Bghiti chi 7aja?</h2>
+    <ul>
+      <li>« <b>Bghi t-zidli cartes 3la [module]</b> » → n-bni lik deck jdid</li>
+      <li>« <b>Lqit PDF jdid</b> » → 3tini l-lien, n-qrah w n-khrej cartes</li>
+      <li>« <b>Ma fhemt-ch [chi 7aja]</b> » → n-chre7-ha lik b darija</li>
+      <li>« <b>L-plan ma mcha-ch m3aya</b> » → n-3awed n-seddu</li>
+    </ul>
+    <div class="box warn">⭐ <b>L-7aja l-wa7ida li ma t-dir-ha-ch : t-ste7i t-swwel.</b></div>
+  </div>
+</section>
+
+</main>
+
+<script src="data.js"></script>
+<script>
+/* ============ ÉTAT ============ */
+const K="fmdc-s1-v1";
+let S=JSON.parse(localStorage.getItem(K)||'{"c":{},"j":0,"last":null}');
+function save(){localStorage.setItem(K,JSON.stringify(S))}
+const today=()=>new Date().toISOString().slice(0,10);
+function days(a,b){return Math.round((new Date(b)-new Date(a))/864e5)}
+
+/* progression d'une carte */
+function g(id,i){return S.c[id+":"+i]||null}
+function set(id,i,v){S.c[id+":"+i]=v}
+
+/* ============ NAV ============ */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  document.getElementById('p-'+b.dataset.p).classList.add('on');
+  window.scrollTo(0,0);
+});
+
+/* ============ STATS ============ */
+function stats(){
+  let tot=0,due=0,vu=0,mr=0;
+  DECKS.forEach(d=>d.cards.forEach((c,i)=>{
+    tot++;
+    const p=g(d.id,i);
+    if(!p)return;
+    vu++;
+    if(p.n>0&&days(today(),p.d)<=0)due++;
+    if(p.iv>=21)mr++;
+  }));
+  // série
+  if(S.last){const dd=days(S.last,today());if(dd>1)S.j=0;}
+  document.getElementById('s-tot').textContent=tot;
+  document.getElementById('s-due').textContent=due;
+  document.getElementById('s-vu').textContent=vu;
+  document.getElementById('s-j').textContent=(S.j||0)+(S.last===today()?' 🔥':'');
+  document.getElementById('s-mr').textContent=mr;
+}
+
+/* ============ LISTE DECKS ============ */
+function duesCount(){
+  let n=0;DECKS.forEach(d=>d.cards.forEach((c,i)=>{
+    const p=g(d.id,i);if(p&&p.n>0&&days(today(),p.d)<=0)n++;}));
+  return n;
+}
+function rendDecks(){
+  const choix=document.getElementById('choix');
+  const liste=document.getElementById('ldecks');
+  let h1='',h2='';
+  DECKS.forEach(d=>{
+    const n=d.cards.length;
+    let fait=0;d.cards.forEach((c,i)=>{const p=g(d.id,i);if(p&&p.n>0)fait++;});
+    const pct=Math.round(fait/n*100);
+    const prio=d.ordre<=9;
+    h1+=`<div class="deck" onclick="go('${d.id}')">
+      <div class="ico">${d.nom.split(' ')[0]}</div>
+      <div class="info"><div class="nom">${d.nom}</div>
+      <div class="meta">${d.desc}</div></div>
+      <div class="nb">${n}</div></div>`;
+    h2+=`<div class="deck" onclick="go('${d.id}')">
+      <div class="ico">${d.nom.split(' ')[0]}</div>
+      <div class="info"><div class="nom">${d.nom}
+        ${prio?'<span class="tag">PRIORITÉ 1</span>':'<span class="tag c">standard</span>'}</div>
+      <div class="meta">${d.src} · ${d.module} · ${d.desc}</div>
+      <div class="bar"><i style="width:${pct}%"></i></div></div>
+      <div class="nb">${fait}/${n}</div></div>`;
+  });
+  const dues=duesCount();
+  choix.innerHTML=`
+    ${dues?`<div class="deck" style="border-color:var(--warn);background:rgba(210,153,34,.08)" onclick="goAll()">
+      <div class="ico">⚡</div><div class="info"><div class="nom">Réviser tout ce qui est dû</div>
+      <div class="meta">${dues} cartes · mélange de tous les decks</div></div>
+      <div class="nb" style="color:var(--warn)">${dues}</div></div>`:''}
+    <div class="card"><h2>▶️ Khtar deck bach t-bda</h2>
+    <div class="muted" style="margin-bottom:12px">⭐ Bda b <b>Physiologie</b> — 0 prérequis, 35 cartes</div>${h1}</div>`;
+  liste.innerHTML=h2;
+}
+
+/* ============ ÉTUDE ============ */
+let queue=[],cur=null,ci=0,tot=0,_deck=null;
+function dOf(id){return DECKS.find(x=>x.id===id)}
+function go(id){
+  const d=dOf(id);if(!d)return;
+  queue=[];
+  d.cards.forEach((c,i)=>{
+    const p=g(id,i);
+    if(!p)queue.push({id:id,i:i,n:0});
+    else if(p.n>0&&days(today(),p.d)<=0)queue.push({id:id,i:i,n:1});
+  });
+  // 10 nouvelles max par deck et par jour
+  let nv=0;queue=queue.filter(q=>{if(q.n===0){nv++;return nv<=10}return true});
+  if(!queue.length){
+    alert('✅ Ma bqa 7ta carte à réviser f had deck l-youm!\n\n'+
+          '⭐ Rje3 ghedda — hadak howa l-but dyal la répétition espacée.\n\n'+
+          '(Wla khtar deck akhor.)');
+    return;
+  }
+  queue.sort(()=>Math.random()-0.5);
+  lancer(d.nom+' · '+d.module);
+}
+/* session multi-decks : toutes les cartes dues */
+function goAll(){
+  queue=[];
+  DECKS.forEach(d=>d.cards.forEach((c,i)=>{
+    const p=g(d.id,i);
+    if(p&&p.n>0&&days(today(),p.d)<=0)queue.push({id:d.id,i:i,n:1});
+  }));
+  if(!queue.length){
+    alert('✅ Ma bqa 7ta carte à réviser l-youm!\n\n'+
+          '⭐ Hadak howa l-but dyal la répétition espacée.\n'+
+          'Rje3 ghedda — wla bda deck jdid mn « 📚 Les decks ».');
+    return;
+  }
+  queue.sort(()=>Math.random()-0.5);
+  lancer('🔥 Révision mixte · tous les decks');
+}
+function lancer(titre){
+  tot=queue.length;ci=0;
+  document.getElementById('choix').style.display='none';
+  document.getElementById('etude').style.display='block';
+  document.getElementById('e-deck').textContent=titre;
+  next();
+}
+function next(){
+  if(ci>=queue.length){
+    if(S.last!==today()){S.j=(S.j||0)+1;S.last=today();save();}
+    document.getElementById('e-q').innerHTML=
+      '<div style="text-align:center;padding:30px 0">'+
+      '<div style="font-size:44px">🎉</div>'+
+      '<h2 style="margin:14px 0">SALITI!</h2>'+
+      '<p class="muted">'+tot+' cartes · Série: '+(S.j||0)+' nhar 🔥</p>'+
+      '<p class="muted" style="margin-top:16px">⭐ <b>Rje3 ghedda.</b> Hadak howa l-but.</p></div>';
+    document.getElementById('e-a').classList.remove('on');
+    document.getElementById('e-btns').innerHTML=
+      '<button class="b-show" onclick="quit()">✅ Safi, khoroj</button>';
+    document.getElementById('e-bar').style.width='100%';
+    document.getElementById('e-reste').textContent='Terminé';
+    stats();
+    return;
+  }
+  cur=queue[ci];
+  const d=dOf(cur.id);
+  document.getElementById('e-q').innerHTML=d.cards[cur.i].q;
+  const a=document.getElementById('e-a');
+  a.innerHTML=d.cards[cur.i].a;a.classList.remove('on');a.scrollTop=0;
+  document.getElementById('e-btns').innerHTML=
+    '<button class="b-show" onclick="show()">👁 Afficher la réponse</button>';
+  document.getElementById('e-reste').textContent=(ci+1)+' / '+tot;
+  document.getElementById('e-bar').style.width=(ci/tot*100)+'%';
+}
+function show(){
+  document.getElementById('e-a').classList.add('on');
+  document.getElementById('e-btns').innerHTML=
+    '<button class="b-no" onclick="rep(0)">🔁 Encore</button>'+
+    '<button class="b-ok" onclick="rep(1)">✅ Correct</button>';
+}
+function rep(ok){
+  const id=cur.id,i=cur.i;
+  let p=g(id,i)||{n:0,iv:0,d:today()};
+  if(ok){
+    p.n=(p.n||0)+1;
+    p.iv=p.iv===0?1:Math.min(Math.round(p.iv*2.5),60);
+    p.d=new Date(Date.now()+p.iv*864e5).toISOString().slice(0,10);
+  }else{
+    p.n=0;p.iv=0;p.d=today();
+  }
+  set(id,i,p);save();
+  if(!ok)queue.push(cur);   // à revoir dans la même séance
+  ci++;next();
+}
+function quit(){
+  document.getElementById('etude').style.display='none';
+  document.getElementById('choix').style.display='block';
+  rendDecks();stats();
+}
+
+/* ============ CLAVIER ============ */
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('etude').style.display!=='block')return;
+  if(e.code==='Space'){e.preventDefault();
+    if(!document.getElementById('e-a').classList.contains('on'))show();}
+  if(e.key==='1'&&document.getElementById('e-a').classList.contains('on'))rep(1);
+  if(e.key==='2'&&document.getElementById('e-a').classList.contains('on'))rep(0);
+});
+
+/* ============ SAUVEGARDE ============ */
+function exp(){
+  const b=new Blob([JSON.stringify(S)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download='fmdc-progression-'+today()+'.json';a.click();
+}
+function imp(el){
+  const f=el.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{S=JSON.parse(r.result);save();stats();rendDecks();alert('✅ Progression importée!')}catch(e){alert('❌ Fichier ghalat')}};
+  r.readAsText(f);
+}
+function raz(){
+  if(confirm('⚠️ Wach nti s7i7? Ghadi t-m7i la progression kamla!')){
+    S={c:{},j:0,last:null};save();stats();rendDecks();
+  }
+}
+
+/* ============ INIT ============ */
+rendDecks();stats();
+</script>
+</body>
+</html>
