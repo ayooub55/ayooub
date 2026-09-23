@@ -1,106 +1,117 @@
-# 🎓 Site de révision — FMDC Casablanca S1 2026/27
+# 🎓 FMDC Casablanca — S1 2026/27
 
-**441 cartes · 12 decks · 0 DH · 0 installation · khdam bla Anki**
+**L-blast dyal l-qraya** — 441 cartes · 12 decks · répétition espacée · **un prof IA ka-y-chre7 b d-darija** · 0 DH
 
 ---
 
-## 🚀 Kifach t-7allou
+## 🚀 Kifach t-7ellha
 
-### Tariqa 1 — Direct (a s-sahl)
-1. Téléchargi **had l-dossier `site/`** kamel (index.html + data.js)
+### A) Double-clic (a s-sahl)
+1. Téléchargi l-dossier `site/` **kamel**
 2. **Double-clic** 3la `index.html`
-3. ✅ Safi — kay-t-7all f navigateur
 
-⚠️ Khass **`index.html`** w **`data.js`** y-kounou f **nafs l-dossier**.
+⚠️ Khass **`index.html`** + **`data.js`** + **`contenu.js`** y-kounou f **nafs l-dossier**.
 
-### Tariqa 2 — En ligne (GitHub Pages)
-1. Repo → **Settings** → **Pages**
-2. Source = `main` (wla `arena/...`) → dossier `/site`
-3. **Save** → rah t-khroj lik lien f 2 minutes
-4. 7ettu f **l'écran d'accueil dyal téléphone-k**
+### B) En ligne (GitHub Pages)
+Repo → **Settings → Pages** → Source = ta branche → dossier **`/site`** → **Save**.
 
 ---
 
-## 📱 Chno fih
+## 📱 Les 8 onglets
 
 | Onglet | Chno fih |
 |---|---|
-| 🏠 **L-youm** | Objectif dyal nhar, routine 2h, l-5 ghalatat |
-| ▶️ **Étudier** | Les cartes b **répétition espacée** |
-| 📚 **Les decks** | 12 decks, progression, ordre dyal l-qraya |
-| 📖 **Cours** | Les cours officiels + les résumés f l-repo |
-| 🗓️ **L-plan** | Les 4 phases, tracker, 7sab dyal l-wa9t |
-| 🆘 **Aide** | Anki troubleshooting, sauvegarde, touches |
+| 🏠 **L-youm** | ⭐ L-iktichaf l-kbir, objectif dyal nhar, routine 2h, l-5 ghalatat |
+| ▶️ **Étudier** | Les cartes b **répétition espacée** + bouton **💡 Ma fhemt-ch** |
+| 🤖 **L-prof IA** | ⭐ Chat : swel 3la ay 7aja, jawab b **d-darija** |
+| 📚 **Decks** | 12 decks + progression + PRIORITÉ 1 / standard |
+| 📖 **Cours** | ⭐ L-archive kamla (8 documents) · bouton **« Chre7-li had l-qism »** |
+| 🗓️ **Plan** | Les 4 phases · 17 simana · bloc dyal simana · tracker |
+| 📊 **Progression** | 3 anneaux · calendrier 12 simanat · par deck · export/import |
+| 🆘 **Aide** | Anki troubleshooting · touches · sauvegarde |
 
 ---
 
-## 🎮 Étudier — kifach
+## 🤖 L-prof IA — kifach khdam
 
-1. **Espace** (wla bouton) → 👁 Afficher la réponse
-2. **1** = ✅ Correct → la carte t-rje3 mn b3d 1j → 2j → 5j → 12j → 30j → 60j
-3. **2** = 🔁 Encore → la carte t-rje3 **f nafs la séance**
+### Mode 1 — 🔍 **Recherche locale** (défaut, 0 clé, **offline**)
+Moteur **TF-IDF** écrit sur mesure : ka-y-qelleb f **553 morceaux** —
+les 441 cartes + l-analyse dyal les examens + l-archive Drive + l-plan + **25 cher7 m-ktubin b d-darija**.
 
-⭐ **10 cartes jdad max / deck / nhar** — machi bug, hadi stratégie.
+Il renvoie **le morceau ṣ-ṣ7i7** + les cartes li 9rab + les sources cliquables.
+
+### Mode 2 — 🧠 **Vraie IA b d-darija** (optionnel, **GRATUIT**)
+Colli une **clé API Gemini** gratuite → jawab **m-ktub b d-darija**, court, b l-amthila,
+b des **moyens mnémotechniques** w les **pièges d'examen**.
+
+👉 `https://aistudio.google.com/apikey` → « Create API key » → colli-ha f l-onglet 🤖.
+
+⚠️ La clé ka-t-bqa f navigateur-k (`localStorage`). Ma ka-t-mchi l 7ta chi blassa okhra.
+
+### Mode 3 — ⚡ **IA locale du navigateur**
+Chrome 138+ : `window.LanguageModel` (Gemini Nano) — local, gratuit, offline.
+
+### 💡 Depuis les cartes
+Bouton **« 💡 Ma fhemt-ch — chre7-li had la carte b darija »** sous chaque réponse.
+
+### 💡 Depuis les cours
+📖 Cours → clic 3la un document → **« 💡 Chre7-li had l-qism b d-darija »**.
+
+---
+
+## 🎮 Étudier
+
+- **Espace** → afficher · **1** → ✅ Correct · **2** → 🔁 Encore · **Échap** → sedd l-fenêtre
+- Répétition espacée : **1j → 2j → 5j → 12j → 30j → 60j**
+- ⭐ **10 cartes jdad max / deck / nhar** — stratégie, machi bug
+- **⚡ Réviser tout ce qui est dû** = session mixte cross-deck
 
 ---
 
 ## 💾 La progression
 
-- Kat-t-sajjel f **ton navigateur** (localStorage)
-- ⚠️ **F had l-appareil w had navigateur** — ma kat-mchi-ch automatic
-- 🆘 **Aide** → ⬇️ **Exporter** → gardi l-fichier `.json` → ⬆️ **Importer** ila bdelti appareil
+`localStorage` (clé `fmdc-s1-v1`) : cartes vues, intervalles, **série**, **calendrier**, heures.
+📊 Progression → **⬇️ Exporter** / **⬆️ Importer** (fichier `.json`).
 
 ---
 
-## 📊 Les 12 decks
+## 📂 L-structure
 
-| # | Deck | Module | Cartes | Source |
-|---|---|---|---|---|
-| 1 | 🫁 Physiologie | M113 | 35 | Examen 2026 |
-| 2 | ⚗️ Chimie | M112 | 48 | Examen 2026 |
-| 3 | 🧬 Génétique | M111 | 37 | Examen 2026 |
-| 4 | 🔬 Biologie moléculaire | M111 | 16 | 🔥 Cours Pr ROCHD |
-| 5 | 🔍 Méthodes d'étude | M111 | 25 | 🔥 Cours Pr RHRICH-HADDOUT |
-| 6 | 🧫 Biologie cellulaire | M111 | 11 | Examen 2026 |
-| 7 | ☢️ Biophysique | M114 | 5 | 🔥 Cours BOUZOUBAA + EL BOUSSIRI |
-| 8 | 🧪 Biochimie structurale | M112 | 25 | Examen 2026 |
-| 9 | 🦴 Anatomie | M113 | 14 | Examen 2026 |
-| | **⭐ Sous-total priorité 1** | | **216** | |
-| 10 | 📖 Vocabulaire français | — | 91 | Santé publique |
-| 11 | 🦷 Organe dentaire | M115 | 99 | Programmation |
-| 12 | 🕳️ La carie | M115 | 35 | Programmation |
-| | **TOTAL** | | **441** | |
-
----
-
-## 🔄 Bach t-zid cartes jdad
-
-`data.js` = `window.DECKS = [...]` — format :
-
-```js
-{
-  "id": "mon-deck",
-  "nom": "🦷 Mon deck",
-  "src": "Examen 2026",
-  "ordre": 13,
-  "module": "M115",
-  "desc": "description courte",
-  "cards": [
-    {"q": "question (HTML ok)", "a": "réponse (HTML ok)", "t": "tags"}
-  ]
-}
+```
+site/
+├── index.html      ← l-page (tout est dedans : CSS + JS)
+├── data.js         ← window.DECKS  = 12 decks / 441 cartes
+├── contenu.js      ← window.CONTENU = 553 morceaux (base de l'IA)
+└── README.md
 ```
 
-N9der n-zid lik decks jdad — goul-liya ghir **chno bghiti**.
+`contenu.js` généré par `_build_contenu.py` (racine du repo) depuis :
+`fmdc/BDA-MN-HNA.md` · `programme-17-simana.md` · `analyse-examens.md` · `INDEX-DRIVE.md` ·
+`resumes/methodes-p43-lkher.md` · `anki/*.md` · les 12 CSV · 25 cher7 darija.
+
+---
+
+## 🔄 Bach t-zid cartes
+
+`data.js` → `window.DECKS` :
+
+```js
+{ "id":"mon-deck", "nom":"🦷 Mon deck", "src":"Examen 2026", "ordre":13,
+  "module":"M115", "desc":"…",
+  "cards":[ {"q":"question (HTML)","a":"réponse (HTML)","t":"tags"} ] }
+```
+
+Puis relance `python3 _build_contenu.py` bach l-IA t-3ref-hom.
 
 ---
 
 ## ⚠️ Notes
 
-- Khdam **offline** (mn b3d l-awwal chargement)
-- **0 tracking, 0 serveur** — les données 3andek ghir nti
-- Les CSV originaux f **`../fmdc/anki/`** (t-9der t-importi-hom f Anki ila khedmat)
+- Khdam **offline** (sauf le mode Gemini)
+- **0 tracking · 0 serveur · 0 compte** — les données 3andek ghir nti
+- Responsive : ordi + téléphone
+- Les CSV Anki originaux : `../fmdc/anki/`
 
 ---
 
-*Bni f Septembre 2026 · FMDC Casablanca · 15h/semaine · 0 DH*
+*Septembre 2026 · FMDC Casablanca · 15h/semaine · 0 DH*

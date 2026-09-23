@@ -2,221 +2,529 @@
 <html lang="fr" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FMDC S1 — L-blassa dyal l-qraya</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>FMDC S1 — L-blast dyal l-qraya</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+/* ============ BASE ============ */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2128;
-  --line:#30363d; --txt:#e6edf3; --dim:#8b949e;
-  --acc:#2f81f7; --ok:#3fb950; --warn:#d29922; --bad:#f85149;
-  --p1:#a371f7;
+  --bg:#070b14; --bg2:#0e1524; --bg3:#141d31; --bg4:#1b2740;
+  --line:#22304d; --line2:#2e3f63;
+  --txt:#eaf0fb; --dim:#93a4c4; --dim2:#6b7fa3;
+  --c1:#22d3ee; --c2:#7c6cf7; --c3:#f472b6;
+  --ok:#34d399; --warn:#fbbf24; --bad:#f87171; --or:#fb923c;
+  --r:16px; --sh:0 10px 40px rgba(0,0,0,.45);
 }
-body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-a{color:var(--acc);text-decoration:none}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+  line-height:1.65;overflow-x:hidden;min-height:100vh}
+a{color:var(--c1);text-decoration:none}
+::selection{background:rgba(124,108,247,.4)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:var(--c2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 
-/* HEADER */
-header{background:linear-gradient(135deg,#1f3a5f,#0d1117);border-bottom:1px solid var(--line);padding:28px 0 22px}
-header h1{font-size:26px;margin-bottom:6px}
-header .sub{color:var(--dim);font-size:14px}
-nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
-nav button{background:var(--bg3);border:1px solid var(--line);color:var(--txt);
-  padding:8px 14px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:500}
-nav button:hover{border-color:var(--acc)}
-nav button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+/* ============ HERO ============ */
+.hero{position:relative;padding:90px 0 60px;overflow:hidden;
+  background:radial-gradient(1200px 600px at 15% -10%,rgba(124,108,247,.28),transparent 60%),
+             radial-gradient(900px 500px at 88% 5%,rgba(34,211,238,.20),transparent 60%),
+             var(--bg)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+.o1{width:420px;height:420px;background:var(--c2);top:-140px;left:-90px;animation:fl1 20s ease-in-out infinite}
+.o2{width:340px;height:340px;background:var(--c1);top:-80px;right:-60px;animation:fl2 26s ease-in-out infinite}
+.o3{width:300px;height:300px;background:var(--c3);bottom:-160px;left:45%;animation:fl1 32s ease-in-out infinite reverse}
+@keyframes fl1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,50px) scale(1.15)}}
+@keyframes fl2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-70px,40px) scale(1.2)}}
+.grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(124,108,247,.09) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(124,108,247,.09) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 75%)}
+.hero-in{position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.1);
+  border:1px solid rgba(34,211,238,.35);color:var(--c1);font-size:12.5px;font-weight:600;
+  padding:6px 14px;border-radius:99px;margin-bottom:20px;letter-spacing:.3px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+h1{font-size:clamp(32px,6.2vw,60px);line-height:1.1;font-weight:800;letter-spacing:-1.2px;margin-bottom:18px}
+.grad{background:linear-gradient(100deg,var(--c1),var(--c2) 45%,var(--c3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% auto;animation:shift 7s linear infinite}
+@keyframes shift{to{background-position:200% center}}
+.lead{font-size:clamp(16px,2.4vw,19px);color:var(--dim);max-width:660px;margin-bottom:28px}
+.lead b{color:var(--txt)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:38px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:12px;
+  font-weight:700;font-size:15px;cursor:pointer;border:1px solid transparent;
+  transition:.25s cubic-bezier(.4,0,.2,1);font-family:inherit}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.btn-p{background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f}
+.btn-g{background:rgba(255,255,255,.05);border-color:var(--line2);color:var(--txt);backdrop-filter:blur(10px)}
+.btn-p:hover{box-shadow:0 14px 40px rgba(124,108,247,.5)}
 
-main{padding:24px 0 80px}
-.pane{display:none}.pane.on{display:block}
+/* HERO STATS */
+.hstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px;max-width:760px}
+.hs{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:14px;
+  padding:16px 14px;backdrop-filter:blur(14px);transition:.3s;position:relative;overflow:hidden}
+.hs:hover{border-color:var(--c2);transform:translateY(-4px)}
+.hs::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));opacity:0;transition:.3s}
+.hs:hover::after{opacity:1}
+.hs .n{font-size:30px;font-weight:800;line-height:1.1;
+  background:linear-gradient(100deg,var(--c1),var(--c2));-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.hs .l{font-size:11.5px;color:var(--dim2);text-transform:uppercase;letter-spacing:.9px;margin-top:3px}
 
-/* CARDS */
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
-.card h2{font-size:18px;margin-bottom:10px}
-.card h3{font-size:15px;margin:14px 0 6px;color:var(--acc)}
-.muted{color:var(--dim);font-size:14px}
+/* ============ NAV ============ */
+nav{position:sticky;top:0;z-index:60;background:rgba(7,11,20,.82);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);padding:11px 0}
+.navin{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
+.navin::-webkit-scrollbar{display:none}
+nav button{background:none;border:1px solid transparent;color:var(--dim);
+  padding:9px 16px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;
+  white-space:nowrap;transition:.22s;font-family:inherit;position:relative}
+nav button:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+nav button.on{color:#05101f;background:linear-gradient(100deg,var(--c1),var(--c2));
+  box-shadow:0 6px 20px rgba(124,108,247,.35)}
 
-/* BOXES */
-.box{background:var(--bg3);border-left:3px solid var(--acc);border-radius:6px;padding:12px 14px;margin:10px 0;font-size:14px}
-.box.ok{border-color:var(--ok)} .box.warn{border-color:var(--warn)}
-.box.bad{border-color:var(--bad)} .box.p1{border-color:var(--p1)}
+main{padding:38px 0 90px;position:relative;z-index:1}
+.pane{display:none;animation:fadeUp .5s cubic-bezier(.4,0,.2,1)}
+.pane.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:14px 0}
-.stat{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
-.stat .n{font-size:24px;font-weight:700;color:var(--acc)}
-.stat .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}
+/* ============ CARD ============ */
+.card{background:linear-gradient(160deg,var(--bg2),var(--bg));border:1px solid var(--line);
+  border-radius:var(--r);padding:24px;margin-bottom:18px;transition:.3s;position:relative}
+.card:hover{border-color:var(--line2);box-shadow:var(--sh)}
+.card h2{font-size:21px;margin-bottom:14px;letter-spacing:-.4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card h3{font-size:16px;margin:18px 0 8px;color:var(--c1)}
+.sous{font-size:13px;color:var(--dim2);font-weight:500;letter-spacing:.4px;margin-bottom:16px;
+  text-transform:uppercase}
+.muted{color:var(--dim);font-size:14.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){.two,.three{grid-template-columns:1fr}}
 
-/* DECK LIST */
-.deck{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--line);
-  border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:.15s}
-.deck:hover{border-color:var(--acc);background:var(--bg3)}
-.deck .ico{font-size:22px;width:34px;text-align:center}
+/* ============ BOX ============ */
+.box{background:var(--bg3);border-left:3px solid var(--c2);border-radius:8px;
+  padding:14px 16px;margin:12px 0;font-size:14.5px}
+.box.ok{border-color:var(--ok);background:rgba(52,211,153,.07)}
+.box.warn{border-color:var(--warn);background:rgba(251,191,36,.07)}
+.box.bad{border-color:var(--bad);background:rgba(248,113,113,.07)}
+.box.c1{border-color:var(--c1);background:rgba(34,211,238,.07)}
+.box b{color:#fff}
+
+/* ============ TABLE ============ */
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--bg3);font-weight:700;font-size:13px;color:var(--c1);letter-spacing:.2px}
+tr:hover td{background:rgba(255,255,255,.018)}
+ul,ol{margin:10px 0 10px 22px}li{margin:5px 0}
+code{background:var(--bg4);padding:2px 6px;border-radius:5px;font-size:13px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--c1)}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+
+/* ============ DECK ============ */
+.deck{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--line);
+  border-radius:13px;padding:14px 16px;margin-bottom:9px;cursor:pointer;transition:.22s;position:relative;overflow:hidden}
+.deck:hover{border-color:var(--c2);transform:translateX(6px);background:var(--bg3)}
+.deck .ico{font-size:24px;width:38px;text-align:center;flex-shrink:0}
 .deck .info{flex:1;min-width:0}
-.deck .nom{font-weight:600;font-size:15px}
-.deck .meta{font-size:12px;color:var(--dim)}
-.deck .nb{font-weight:700;color:var(--acc);font-size:15px;white-space:nowrap}
-.deck .bar{height:4px;background:var(--bg);border-radius:2px;margin-top:5px;overflow:hidden}
-.deck .bar i{display:block;height:100%;background:var(--ok)}
-.tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;
-  background:rgba(163,113,247,.2);color:var(--p1);border:1px solid rgba(163,113,247,.4);margin-left:6px}
-.tag.c{background:rgba(47,129,247,.15);color:var(--acc);border-color:rgba(47,129,247,.4)}
+.deck .nom{font-weight:700;font-size:15.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.deck .meta{font-size:12.5px;color:var(--dim2);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.deck .nb{font-weight:800;color:var(--c1);font-size:16px;white-space:nowrap;flex-shrink:0}
+.deck .bar{height:4px;background:var(--bg);border-radius:2px;margin-top:7px;overflow:hidden}
+.deck .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--c1),var(--ok));
+  transition:width .8s cubic-bezier(.4,0,.2,1)}
+.tag{display:inline-block;font-size:10px;padding:1.5px 7px;border-radius:5px;font-weight:700;
+  background:rgba(163,113,247,.18);color:#c4a5ff;border:1px solid rgba(163,113,247,.4);letter-spacing:.4px}
+.tag.c{background:rgba(34,211,238,.13);color:var(--c1);border-color:rgba(34,211,238,.4)}
+.tag.w{background:rgba(251,191,36,.13);color:var(--warn);border-color:rgba(251,191,36,.4)}
 
-/* STUDY */
-#etude{max-width:760px;margin:0 auto}
-.qbox{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:26px;
-  margin:14px 0;min-height:120px;font-size:18px}
-.abox{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:22px;
-  margin:14px 0;font-size:15px;display:none;max-height:60vh;overflow-y:auto}
+/* ============ STUDY ============ */
+#etude{max-width:800px;margin:0 auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.chip{background:var(--bg3);border:1px solid var(--line);border-radius:99px;padding:5px 14px;
+  font-size:12.5px;color:var(--dim);font-weight:600}
+.prog{height:7px;background:var(--bg3);border-radius:99px;overflow:hidden;margin:14px 0 4px}
+.prog i{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1);
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));background-size:200% auto;animation:shift 4s linear infinite}
+.qbox{background:linear-gradient(160deg,var(--bg2),var(--bg));border:1px solid var(--line2);
+  border-radius:var(--r);padding:30px;margin:14px 0;min-height:130px;font-size:19px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  box-shadow:var(--sh);animation:pop .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:none}}
+.abox{background:var(--bg3);border:1px solid var(--line2);border-radius:var(--r);padding:24px;
+  margin:14px 0;font-size:15.5px;display:none;max-height:62vh;overflow-y:auto;
+  border-left:3px solid var(--ok);animation:fadeUp .35s}
 .abox.on{display:block}
 .abox b{color:#fff}
-.prog{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin:12px 0}
-.prog i{display:block;height:100%;background:var(--acc);transition:.3s}
-.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.btns button{flex:1;min-width:120px;padding:14px;border-radius:10px;border:1px solid var(--line);
-  background:var(--bg2);color:var(--txt);font-size:15px;font-weight:600;cursor:pointer}
-.btns button:hover{transform:translateY(-1px)}
-.btns .b-show{background:var(--acc);border-color:var(--acc);color:#fff}
-.btns .b-ok{background:#14532d;border-color:var(--ok);color:#7ee787}
-.btns .b-no{background:#4c1d24;border-color:var(--bad);color:#ff9b94}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.chip{background:var(--bg3);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--dim)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btns button{flex:1;min-width:130px;padding:15px;border-radius:12px;border:1px solid var(--line2);
+  background:var(--bg2);color:var(--txt);font-size:15px;font-weight:700;cursor:pointer;
+  transition:.22s;font-family:inherit}
+.btns button:hover{transform:translateY(-2px)}
+.btns .b-show{background:linear-gradient(100deg,var(--c1),var(--c2));border-color:transparent;color:#05101f}
+.btns .b-ok{background:rgba(52,211,153,.12);border-color:var(--ok);color:var(--ok)}
+.btns .b-no{background:rgba(248,113,113,.12);border-color:var(--bad);color:var(--bad)}
+.sugg-b{background:rgba(124,108,247,.12);border:1px solid rgba(124,108,247,.45);color:#c4a5ff;
+  padding:10px 18px;border-radius:99px;font-size:13.5px;font-weight:700;cursor:pointer;
+  transition:.22s;font-family:inherit}
+.sugg-b:hover{background:rgba(124,108,247,.25);border-color:var(--c2);transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(124,108,247,.3)}
+.kb{text-align:center;margin-top:16px;font-size:12.5px;color:var(--dim2)}
+kbd{background:var(--bg4);border:1px solid var(--line2);border-bottom-width:2px;border-radius:5px;
+  padding:2px 7px;font-size:11.5px;font-family:ui-monospace,monospace;color:var(--dim)}
 
-table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
-th{background:var(--bg3);font-weight:600}
-ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
-code{background:var(--bg3);padding:1px 5px;border-radius:4px;font-size:13px}
-hr{border:0;border-top:1px solid var(--line);margin:18px 0}
-.step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.step .num{background:var(--acc);color:#fff;width:26px;height:26px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
-.big{font-size:16px}
-@media(max-width:600px){header h1{font-size:20px}.qbox{font-size:16px;padding:18px}}
+/* ============ AI ============ */
+.aiwrap{display:grid;grid-template-columns:1fr;gap:14px}
+.chat{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);
+  height:min(56vh,460px);overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:13px;
+  scroll-behavior:smooth}
+.msg{max-width:86%;padding:12px 16px;border-radius:14px;font-size:14.5px;line-height:1.6;
+  animation:fadeUp .3s;white-space:pre-wrap;word-wrap:break-word}
+.msg.u{align-self:flex-end;background:linear-gradient(100deg,var(--c1),var(--c2));
+  color:#05101f;font-weight:600;border-bottom-right-radius:4px}
+.msg.b{align-self:flex-start;background:var(--bg3);border:1px solid var(--line);
+  border-bottom-left-radius:4px;color:var(--txt)}
+.msg.b b{color:var(--c1)}
+.msg.sys{align-self:center;background:rgba(124,108,247,.1);border:1px solid rgba(124,108,247,.3);
+  color:var(--dim);font-size:12.5px;text-align:center;max-width:96%;border-radius:10px}
+.typing{display:flex;gap:4px;padding:4px 2px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--c2);animation:bnc 1.3s infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes bnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-7px);opacity:1}}
+.srcs{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.src{font-size:11px;background:var(--bg4);border:1px solid var(--line2);border-radius:6px;
+  padding:3px 9px;color:var(--dim);cursor:pointer;transition:.2s}
+.src:hover{border-color:var(--c1);color:var(--c1)}
+.aibar{display:flex;gap:9px;margin-top:12px}
+.aibar input{flex:1;background:var(--bg2);border:1px solid var(--line2);border-radius:12px;
+  padding:14px 18px;color:var(--txt);font-size:15px;font-family:inherit;outline:none;transition:.2s}
+.aibar input:focus{border-color:var(--c2);box-shadow:0 0 0 3px rgba(124,108,247,.15)}
+.aibar button{padding:14px 24px;border-radius:12px;border:none;cursor:pointer;font-weight:700;
+  font-size:15px;background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f;
+  font-family:inherit;transition:.22s}
+.aibar button:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,108,247,.45)}
+.sugg{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.sugg button{background:var(--bg3);border:1px solid var(--line2);color:var(--dim);
+  padding:7px 14px;border-radius:99px;font-size:12.5px;cursor:pointer;transition:.2s;font-family:inherit}
+.sugg button:hover{border-color:var(--c1);color:var(--c1);transform:translateY(-2px)}
+.api{background:rgba(52,211,153,.06);border:1px dashed rgba(52,211,153,.4);border-radius:12px;
+  padding:14px 16px;margin-top:12px;font-size:13.5px}
+.api input{flex:1;background:var(--bg);border:1px solid var(--line2);border-radius:9px;
+  padding:10px 14px;color:var(--txt);font-size:13px;font-family:ui-monospace,monospace;outline:none;min-width:180px}
+
+/* ============ DOCS ============ */
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:13px}
+.doc{background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:17px;
+  cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.doc:hover{border-color:var(--c2);transform:translateY(-5px);box-shadow:var(--sh)}
+.doc .di{font-size:26px;margin-bottom:9px}
+.doc .dt{font-weight:700;font-size:15px;margin-bottom:5px}
+.doc .dm{font-size:12.5px;color:var(--dim2)}
+.doc .dn{position:absolute;top:14px;right:14px;font-size:11px;color:var(--dim2);
+  background:var(--bg4);padding:2px 8px;border-radius:6px}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(3,6,12,.82);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;padding:24px 14px;overflow-y:auto}
+.modal.on{display:flex;animation:fadeUp .25s}
+.mbox{background:linear-gradient(160deg,var(--bg2),var(--bg));border:1px solid var(--line2);
+  border-radius:18px;max-width:820px;width:100%;padding:26px;margin:auto;box-shadow:var(--sh)}
+.mhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.mhead h3{font-size:19px;margin:0;color:var(--txt)}
+.x{background:var(--bg4);border:1px solid var(--line2);color:var(--dim);width:32px;height:32px;
+  border-radius:9px;cursor:pointer;font-size:17px;flex-shrink:0;transition:.2s}
+.x:hover{border-color:var(--bad);color:var(--bad)}
+.mbody{font-size:15px;line-height:1.75;max-height:64vh;overflow-y:auto;padding-right:6px}
+.mbody h1,.mbody h2,.mbody h3,.mbody h4{color:var(--c1);margin:20px 0 9px;font-size:16.5px}
+.mbody h1{font-size:20px}.mbody h2{font-size:18px}
+.mbody b,.mbody strong{color:#fff}
+.mbody ul,.mbody ol{margin:9px 0 9px 22px}
+.mbody li{margin:5px 0}
+.mbody table{font-size:13.5px}
+.mbody th{background:var(--bg4)}
+.mbody blockquote{border-left:3px solid var(--warn);background:rgba(251,191,36,.06);
+  padding:10px 14px;margin:11px 0;border-radius:0 8px 8px 0;color:var(--dim)}
+.mbody code{background:var(--bg4)}
+.mbody hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+.mfoot{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+
+/* ============ TIMELINE ============ */
+.tl{position:relative;padding-left:34px;margin-top:8px}
+.tl::before{content:'';position:absolute;left:11px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--bad),var(--or),var(--warn),var(--ok))}
+.tli{position:relative;padding:14px 0 20px}
+.tli::before{content:'';position:absolute;left:-28px;top:20px;width:14px;height:14px;
+  border-radius:50%;border:3px solid var(--bg);z-index:2}
+.tli.r::before{background:var(--bad);box-shadow:0 0 0 4px rgba(248,113,113,.18)}
+.tli.o::before{background:var(--or);box-shadow:0 0 0 4px rgba(251,146,60,.18)}
+.tli.y::before{background:var(--warn);box-shadow:0 0 0 4px rgba(251,191,36,.18)}
+.tli.g::before{background:var(--ok);box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+.tli h4{font-size:16.5px;margin-bottom:4px}
+.tli .dt{font-size:12.5px;color:var(--dim2);font-weight:600;margin-bottom:6px}
+
+/* ============ RINGS ============ */
+.rings{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.ring{text-align:center}
+.ring svg{transform:rotate(-90deg)}
+.ring .track{stroke:var(--bg4)}
+.ring .fill{stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)}
+.ring .lab{font-size:12px;color:var(--dim2);margin-top:6px;font-weight:600}
+.ring .val{font-size:26px;font-weight:800}
+
+/* ============ CALENDAR ============ */
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(15px,1fr));gap:4px;margin-top:12px}
+.cd{aspect-ratio:1;border-radius:4px;background:var(--bg3);border:1px solid var(--line);transition:.2s}
+.cd.l1{background:rgba(52,211,153,.3);border-color:rgba(52,211,153,.5)}
+.cd.l2{background:rgba(52,211,153,.55);border-color:rgba(52,211,153,.7)}
+.cd.l3{background:rgba(52,211,153,.8);border-color:var(--ok)}
+.cd.l4{background:var(--ok);border-color:var(--ok);box-shadow:0 0 8px rgba(52,211,153,.6)}
+.cd.today{border-color:var(--c1);border-width:2px}
+.cd:hover{transform:scale(1.3);z-index:2}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+/* ============ STEPS ============ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:14px 0}
+.step{background:var(--bg3);border:1px solid var(--line);border-radius:13px;padding:18px;
+  position:relative;transition:.25s}
+.step:hover{border-color:var(--c2);transform:translateY(-4px)}
+.step .num{position:absolute;top:-11px;left:16px;width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f;font-weight:800;
+  font-size:13px;display:flex;align-items:center;justify-content:center}
+.step h4{font-size:14.5px;margin:6px 0 5px}
+.step p{font-size:13.5px;color:var(--dim)}
+
+/* ============ MISC ============ */
+.mini{display:inline-block;background:var(--bg4);border:1px solid var(--line2);border-radius:8px;
+  padding:9px 13px;font-size:13px;color:var(--dim);margin:3px 4px 3px 0}
+.mini b{color:var(--c1)}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--dim2);font-size:13px}
+@media(max-width:640px){
+  .hero{padding:60px 0 44px}
+  .card{padding:18px}
+  .qbox{padding:20px;font-size:17px}
+  .btns button{min-width:calc(50% - 5px)}
+  .msg{max-width:94%}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <h1>🎓 FMDC Casablanca — S1 2026/27</h1>
-    <div class="sub">L-blassa dyalek bach t-qra · 441 cartes · 0 DH · khdama bla Anki</div>
-    <nav>
-      <button class="on" data-p="acc">🏠 L-youm</button>
-      <button data-p="etud">▶️ Étudier</button>
-      <button data-p="decks">📚 Les decks</button>
-      <button data-p="cours">📖 Cours &amp; résumés</button>
-      <button data-p="plan">🗓️ L-plan</button>
-      <button data-p="aide">🆘 Aide</button>
-    </nav>
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="wrap hero-in">
+    <span class="badge"><span class="dot"></span> FMDC Casablanca · S1 · 2026/27</span>
+    <h1>L-blast dyal<br><span class="grad">l-qraya dyalek</span></h1>
+    <p class="lead">
+      <b>441 cartes</b> · <b>12 decks</b> · <b>répétition espacée</b> · <b>un prof IA</b> li ka-y-chre7 lik
+      b <b>d-darija</b>.<br>
+      <b>0 DH. 0 installation. Khdam bla Anki.</b>
+    </p>
+    <div class="cta">
+      <button class="btn btn-p" onclick="go('acc');setTimeout(()=>navTo('etud'),60)">▶️ Bda daba (20 min)</button>
+      <button class="btn btn-g" onclick="navTo('ai')">🤖 Swwel l-prof IA</button>
+    </div>
+    <div class="hstats">
+      <div class="hs"><div class="n" id="h-tot">–</div><div class="l">Cartes</div></div>
+      <div class="hs"><div class="n" id="h-due">–</div><div class="l">À réviser</div></div>
+      <div class="hs"><div class="n" id="h-mr">–</div><div class="l">Maîtrisées</div></div>
+      <div class="hs"><div class="n" id="h-j">–</div><div class="l">Série (jours)</div></div>
+      <div class="hs"><div class="n" id="h-h">–</div><div class="l">Heures</div></div>
+    </div>
   </div>
 </header>
 
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="wrap navin">
+    <button class="on" data-p="acc">🏠 L-youm</button>
+    <button data-p="etud">▶️ Étudier</button>
+    <button data-p="ai">🤖 L-prof IA</button>
+    <button data-p="decks">📚 Decks</button>
+    <button data-p="cours">📖 Cours</button>
+    <button data-p="plan">🗓️ Plan</button>
+    <button data-p="prog">📊 Progression</button>
+    <button data-p="aide">🆘 Aide</button>
+  </div>
+</nav>
+
 <main class="wrap">
 
-<!-- ============ ACCEUIL ============ -->
+<!-- ================= ACCUEIL ================= -->
 <section class="pane on" id="p-acc">
-  <div class="box ok big">
-    ⭐ <b>Anki ma khdam-ch? Ma 3andk may dir.</b> Had l-page fiha <b>441 carte</b> b
-    <b>la répétition espacée</b> — nafs l-méthode dyal Anki, ghir f navigateur.
-    <b>0 installation. 0 DH.</b>
+  <div class="card rv">
+    <span class="sous">⭐ Lire ceci en premier</span>
+    <h2>🔥 Chnou lqi-na f Drive dyalek (w 3lach had l-plan mokhtalef)</h2>
+    <p class="muted" style="font-size:16px">
+      L-cours <b>l-officiel</b> dyal FMDC <b>kay-bda mn ṣifr</b> — chimie, biologie cellulaire,
+      biologie moléculaire, ultrasons, rayons X. <b>Koulhoum.</b>
+    </p>
+    <div class="box ok" style="margin-top:14px">
+      ⭐ <b>Donc ma 3andek-ch mochkil dyal « niveau ».</b> 3andek <b>3 mochkilat okhrin</b> :
+      <ul style="margin-top:8px">
+        <li><b>La vitesse</b> dyal l-prof f l-amphi — nta ma 3andek-ch l-vocabulaire</li>
+        <li><b>Le vocabulaire français</b> → <span class="tag c">vocab-fr</span> 91 cartes —
+            <b>hada howa l-mochkil n°1</b></li>
+        <li><b>Les annales</b> — l-examen ka-y-3awed b <b>80 %</b></li>
+      </ul>
+      <div style="margin-top:8px"><b>Hadou koulhoum ka-y-7allou b la répétition espacée.</b></div>
+    </div>
   </div>
 
-  <div class="stats">
-    <div class="stat"><div class="n" id="s-tot">–</div><div class="l">Cartes</div></div>
-    <div class="stat"><div class="n" id="s-due">–</div><div class="l">À réviser</div></div>
-    <div class="stat"><div class="n" id="s-vu">–</div><div class="l">Vues</div></div>
-    <div class="stat"><div class="n" id="s-j">–</div><div class="l">Série</div></div>
-    <div class="stat"><div class="n" id="s-mr">–</div><div class="l">Maîtrisées</div></div>
-  </div>
-
-  <div class="card">
-    <h2>🎯 L-objectif dyal L-YOUM</h2>
-    <div class="step"><div class="num">1</div><div>Clic 3la <b>▶️ Étudier</b> l-fo9</div></div>
-    <div class="step"><div class="num">2</div><div>Khtar deck <b>🫁 Physiologie</b> (35 cartes, 0 prérequis)</div></div>
-    <div class="step"><div class="num">3</div><div>Dir <b>20 minutes</b></div></div>
-    <div class="step"><div class="num">4</div><div>✅ <b>Safi. Ma t-zid walou.</b></div></div>
+  <div class="card rv">
+    <h2>🎯 Objectif dyal l-youm</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>▶️ Étudier</h4>
+        <p>Clic l-fo9, khtar <b>Physiologie</b></p></div>
+      <div class="step"><div class="num">2</div><h4>20 minutes</h4>
+        <p>Ghir 20 min. <b>Machi ktar.</b></p></div>
+      <div class="step"><div class="num">3</div><h4>40 min cours</h4>
+        <p>Ghir l-qism li ja f les cartes</p></div>
+      <div class="step"><div class="num">4</div><h4>✅ Safi</h4>
+        <p><b>Rje3 ghedda.</b> Hadak l-but.</p></div>
+    </div>
     <div class="box warn">
-      ⚠️ <b>L-mouhim machi ch7al qriti.</b> L-mouhim: <b>rje3 ghedda</b>.
+      ⚠️ <b>L-mouhim machi ch7al qriti.</b> L-mouhim : <b>rje3 ghedda</b>.
       20 min koul nhar &gt; 7h f nhar wa7ed.
     </div>
   </div>
 
-  <div class="card">
-    <h2>🔥 3lach had l-plan mokhtalef</h2>
-    <p class="big">Lqina f Drive dyalek blli <b>l-cours l-officiel dyal FMDC kaybda mn sifr</b> —
-    chimie, biologie cellulaire, biologie moléculaire, ultrasons, rayons X.</p>
-    <div class="box ok">
-      ⭐ <b>Donc ma 3andekch mochkil dyal « niveau ».</b> 3andek 3 mochkilat okhrin:
-      <ul>
-        <li><b>La vitesse</b> dyal l-prof f l-amphi</li>
-        <li><b>Le vocabulaire français</b> → <span class="tag c">vocab-fr</span> 91 cartes</li>
-        <li><b>Les annales</b> — l-examen kay-t3awed b <b>80 %</b></li>
-      </ul>
-      <b>Hadou koulhoum kay-7allou b la répétition espacée. Machi b ressource externe.</b>
+  <div class="two rv">
+    <div class="card" style="margin:0">
+      <h2>⏰ Routine (2h/nhar)</h2>
+      <table>
+        <tr><th>We9t</th><th>Chno</th></tr>
+        <tr><td><b>20 min</b></td><td>⭐ Cartes (ṣba7 bakri)</td></tr>
+        <tr><td><b>40 min</b></td><td>Cours officiel</td></tr>
+        <tr><td><b>30 min</b></td><td>Kteb b yeddek</td></tr>
+        <tr><td><b>30 min</b></td><td>Annales b chrono</td></tr>
+      </table>
+      <div class="box c1">⭐ <b>15h/semaine</b> = 3h30 cartes · 6h prérequis · 3h anatomie · 2h30 annales</div>
+    </div>
+    <div class="card" style="margin:0">
+      <h2>⛔ L-5 li y-9etlou l-plan</h2>
+      <ol>
+        <li>T-khwi la révision f nhar wa7ed</li>
+        <li>T-kteb kolchi f l-amphi</li>
+        <li>T-ste7i t-swweL m3a l-prof</li>
+        <li>T-qra l-cours <b>qbel</b> les cartes</li>
+        <li>7h nhar wa7ed + 6 ayyam khawya</li>
+      </ol>
+      <div class="box bad">🔴 <b>N°1 dyal l-mochkil : ma t-qte3-ch la série.</b></div>
     </div>
   </div>
 
-  <div class="card">
-    <h2>⏰ Routine dyal nhar (2h)</h2>
-    <table>
-      <tr><th>We9t</th><th>Chno</th></tr>
-      <tr><td><b>20 min</b></td><td>⭐ Étudier (sba7 bakri)</td></tr>
-      <tr><td><b>40 min</b></td><td>Qra l-cours l-officiel — ghir l-qism li ja f l-cartes</td></tr>
-      <tr><td><b>30 min</b></td><td>Kteb b yeddek (l-ktaba b l-yedd t-rsed 3× ktr)</td></tr>
-      <tr><td><b>30 min</b></td><td>Annales b chrono</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>⛔ L-5 7wayj li ghadi y-9etlou l-plan</h2>
-    <ol>
-      <li><b>T-khwi la révision nhar wa7ed</b> → ghadi t-lqa 200 carte → t-ghrq</li>
-      <li><b>T-kteb kolchi f l-amphi</b> → ma t-fhem walou</li>
-      <li><b>T-ste7i t-hder m3a l-prof</b> → haka 3arf lqina 4 cours officiels</li>
-      <li><b>T-qra l-cours qbel les cartes</b> → t-ghrq f 300 page</li>
-      <li><b>7h f nhar wa7ed + 6 ayyam khawya</b> → l-dimagh kay-7fed b t-3awid</li>
-    </ol>
+  <div class="card rv">
+    <h2>🚀 Bda mn hna</h2>
+    <div class="sugg" style="margin-top:0">
+      <button onclick="navTo('etud')">▶️ Étudier 20 min</button>
+      <button onclick="navTo('ai');aiAsk('Cher7-li la membrane cellulaire b darija')">🤖 Cher7-li la membrane</button>
+      <button onclick="navTo('ai');aiAsk('Chno howa l-plan dyali?')">🤖 Chno howa l-plan dyali?</button>
+      <button onclick="navTo('ai');aiAsk('3lach l-vocabulaire howa l-mochkil n°1?')">🤖 3lach l-vocabulaire?</button>
+      <button onclick="navTo('decks')">📚 Chouf les decks</button>
+      <button onclick="navTo('cours')">📖 Les cours officiels</button>
+    </div>
   </div>
 </section>
 
-<!-- ============ ÉTUDIER ============ -->
+<!-- ================= ÉTUDIER ================= -->
 <section class="pane" id="p-etud">
   <div id="choix"></div>
   <div id="etude" style="display:none">
     <div class="topbar">
       <span class="chip" id="e-deck"></span>
       <span class="chip" id="e-reste"></span>
-      <button onclick="quit()" style="background:none;border:1px solid var(--line);color:var(--dim);
-        padding:4px 12px;border-radius:6px;cursor:pointer;font-size:12px">✕ Khoroj</button>
+      <button class="x" onclick="quit()" title="Khoroj">✕</button>
     </div>
     <div class="prog"><i id="e-bar" style="width:0%"></i></div>
     <div class="qbox" id="e-q"></div>
     <div class="abox" id="e-a"></div>
     <div class="btns" id="e-btns"></div>
-    <div class="muted" style="margin-top:14px;text-align:center">
-      Espace = afficher · 1 = Correct · 2 = Encore
+    <div class="kb"><kbd>Espace</kbd> afficher · <kbd>1</kbd> ✅ Correct · <kbd>2</kbd> 🔁 Encore</div>
+  </div>
+</section>
+
+<!-- ================= IA ================= -->
+<section class="pane" id="p-ai">
+  <div class="card rv">
+    <h2>🤖 L-prof dyalek — ka-y-chre7 lik b d-darija</h2>
+    <p class="muted">
+      Swel 3la <b>ay 7aja</b> : un cours, un mot ṣ3ib, un qism dyal l-plan, une carte.
+      L-prof ka-y-qelleb f <b>koulchi</b> — les 441 cartes + les résumés + l-analyse dyal les examens
+      + <b>25 cher7 m-ktubin b d-darija</b>.
+    </p>
+
+    <div class="chat" id="chat"></div>
+
+    <div class="sugg" id="sugg"></div>
+
+    <div class="aibar">
+      <input id="q" placeholder="Mthlan: cher7-li l-ADN b darija…" onkeydown="if(event.key==='Enter')send()">
+      <button onclick="send()">Sifet ↵</button>
+    </div>
+
+    <div class="api">
+      <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <b style="color:var(--ok)">🔑 Clé API Gemini (GRATUITE) — optionnel</b><br>
+          <span class="muted" style="font-size:12.5px">
+            Bla clé : l-prof ka-y-jbed lik l-qism ṣ-ṣ7i7 mn l-archive dyalek (recherche locale, 0 DH, offline).<br>
+            <b>B clé : jawab ṣ7i7 m-ktub b d-darija</b> mn Gemini (gratuit,
+            <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>).
+          </span>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:11px;flex-wrap:wrap">
+        <input id="cle" type="password" placeholder="AIza… (coller la clé ici)">
+        <button class="btn btn-g" style="padding:11px 18px;font-size:13.5px" onclick="saveCle()">💾 Enregistrer</button>
+        <button class="btn btn-g" style="padding:11px 18px;font-size:13.5px" onclick="testCle()">🔌 Tester</button>
+        <span id="cleSt" class="muted" style="font-size:12.5px;align-self:center"></span>
+      </div>
+      <div class="muted" style="font-size:12px;margin-top:8px">
+        ⚠️ La clé ka-t-bqa f navigateur-k (localStorage). Ma ka-t-mchi l 7ta chi blassa okhra
+        ghir l'API dyal Google.
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DECKS ============ -->
+<!-- ================= DECKS ================= -->
 <section class="pane" id="p-decks">
-  <div class="box">
-    ⭐ <b>Tartib dyal l-import</b> = tartib dyal l-qraya.
+  <div class="box rv">
+    ⭐ <b>Tartib</b> dyal l-liste = tartib dyal l-qraya.
     <b>Ma t-qra-ch koulchi f nhar wa7ed</b> — deck wa7ed koul simana.
   </div>
   <div id="ldecks"></div>
 </section>
 
-<!-- ============ COURS ============ -->
+<!-- ================= COURS ================= -->
 <section class="pane" id="p-cours">
-  <div class="card">
-    <h2>🔥 Les cours officiels li lqina f Drive</h2>
+  <div class="card rv">
+    <h2>📂 L-archive kamla — clic bach t-qra</h2>
+    <p class="muted">Kol document m-9essem. Clic 3la ay document → t-qrah hna →
+      w t-9der t-gul l l-prof IA <b>« chre7-li had l-qism »</b>.</p>
+    <div class="docs" id="docs"></div>
+  </div>
+
+  <div class="card rv">
+    <h2>🔥 Les cours l-officiels li lqina f Drive</h2>
     <table>
-      <tr><th>Module</th><th>Cours</th><th>Prof</th><th>État</th></tr>
-      <tr><td>M111</td><td>Biologie moléculaire &amp; génie génétique</td><td>Pr T. ROCHD</td><td>✅ Complet (6 chap.)</td></tr>
+      <tr><th>Mod</th><th>Cours</th><th>Prof</th><th>État</th></tr>
+      <tr><td>M111</td><td>Biologie moléculaire &amp; génie génétique</td><td>Pr T. ROCHD</td><td>✅ Complet</td></tr>
       <tr><td>M111</td><td>Méthodes d'étude de la cellule</td><td>Pr F. RHRICH-HADDOUT</td><td>✅ Complet</td></tr>
-      <tr><td>M112</td><td>Chimie générale + organique</td><td>—</td><td>⚠️ ~30 pages</td></tr>
+      <tr><td>M112</td><td>Chimie générale + organique</td><td>Pr EL GUEDDARI</td><td>⚠️ ~30 pages</td></tr>
       <tr><td>M114</td><td>Rayons X + imagerie</td><td>Pr BOUZOUBAA</td><td>✅ Complet</td></tr>
       <tr><td>M114</td><td>Bases physiques des ultrasons</td><td>Pr Kh. EL BOUSSIRI</td><td>✅ Complet</td></tr>
       <tr><td>M114</td><td>Rayonnements ionisants · acido-basique</td><td>Pr Kh. EL GUERMAI</td><td>⛔ Drive 500</td></tr>
@@ -228,188 +536,369 @@ hr{border:0;border-top:1px solid var(--line);margin:18px 0}
     </table>
   </div>
 
-  <div class="card">
-    <h2>📂 Les résumés f l-repo</h2>
-    <ul>
-      <li><b><code>fmdc/resumes/methodes-p43-lkher.md</code></b> — ⭐ cher7 dyal la fin du cours Méthodes (MEB, cytochimie, fractionnement, électrophorèse, chromatographie, culture, autoradiographie)</li>
-      <li><b><code>fmdc/BDA-MN-HNA.md</code></b> — l-dalil l-3amali</li>
-      <li><b><code>fmdc/analyse-examens.md</code></b> — chno kayn f kol examen b d9a</li>
-      <li><b><code>fmdc/INDEX-DRIVE.md</code></b> — la carte complète dyal Drive</li>
-      <li><b><code>fmdc/programme-17-simana.md</code></b> — l-plan b tawarikh + tracker</li>
-    </ul>
-    <div class="box">
-      💡 <b>Bach t-qra-hom :</b> sir l repo 3la GitHub → <code>fmdc/resumes/</code> → clic 3la l-fichier.
-      Wla téléchargi l-ZIP kaml (bouton <code>Code</code> → <code>Download ZIP</code>).
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>⚠️ 2 ghalatat f l-cours l-officiel</h2>
+  <div class="card rv">
+    <h2>⚠️ 2 ghalatat lqinahom f l-cours l-officiel</h2>
     <ol>
       <li><code>AAA (Lys) → GAG (Gly)</code> — ⚠️ <b>GAG = acide GLUTAMIQUE (Glu)</b>, machi glycine</li>
-      <li><code>VEGF = Vascular EPITHELIAL</code> — ⚠️ s7i7a <b>ENDOTHELIAL</b></li>
+      <li><code>VEGF = Vascular EPITHELIAL</code> — ⚠️ ṣ-ṣ7i7a <b>ENDOTHELIAL</b></li>
     </ol>
-    <div class="box warn">⭐ <b>Règle :</b> ila l-QCM ja mn l-cours → jwb kima l-cours. Ila kan 7sab 7a9i9i → st3mel l-3ilm s7i7.</div>
+    <div class="box warn">⭐ <b>Règle :</b> ila l-QCM ja mn l-cours → jwb kima l-cours.
+      Ila kan 7sab 7a9i9i → st3mel l-3ilm ṣ-ṣ7i7.</div>
   </div>
 </section>
 
-<!-- ============ PLAN ============ -->
+<!-- ================= PLAN ================= -->
 <section class="pane" id="p-plan">
-  <div class="card">
-    <h2>🗓️ Les 4 phases</h2>
-    <table>
-      <tr><th>Phase</th><th>Simanat</th><th>Objectif</th></tr>
-      <tr><td>🔴 <b>1 — Attaque</b></td><td>S1→S6<br><span class="muted">21 Sep → 1 Nov</span></td><td>Séd les 216 cartes « examen + cours »</td></tr>
-      <tr><td>🟠 <b>2 — Prérequis</b></td><td>S7→S11<br><span class="muted">2 Nov → 6 Déc</span></td><td>Chimie organique + atomistique</td></tr>
-      <tr><td>🟡 <b>3 — Sédage</b></td><td>S12→S14<br><span class="muted">7 → 27 Déc</span></td><td>Annales kaml + muraja3a</td></tr>
-      <tr><td>🟢 <b>4 — Finale</b></td><td>S15→S17<br><span class="muted">28 Déc → 17 Jan</span></td><td>⚠️ Refaire les 5 examens 2026 b chrono</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>📊 L-7sab dyal l-wa9t</h2>
-    <ul>
-      <li><b>17 simana × 15h = 255 sa3a</b></li>
-      <li><b>Prérequis ≈ 146h</b> — ⚠️ <b>ma b9aw-ch « prérequis »</b> : daba <b>~100h = qra l-cours l-officiel</b> + <b>~45h = maths + matériaux</b></li>
-      <li>🔴 <b>L-mochkil l-wa7id l-ba9i = les MATHS (15h)</b> + les Matériaux (40h)</li>
-    </ul>
-    <div class="box ok">
-      ⭐ <b>L-farq l-kbir :</b> had 146h ma b9aw-ch « 7aja khassk t-qra qbel l-cours ».
-      <b>L-cours kaybda mn sifr</b> → khassek ghir <b>l-WA9T</b> bach t-qrah.
-      <b>L-mochkil daba = wa9t, machi niveau.</b>
+  <div class="card rv">
+    <h2>🗓️ Les 4 phases — 21 Sep 2026 → 17 Jan 2027</h2>
+    <div class="tl">
+      <div class="tli r"><h4>🔴 Phase 1 — Attaque</h4>
+        <div class="dt">S1 → S6 · 21 Sep → 1 Nov</div>
+        <p class="muted">Séd les <b>216 cartes</b> « examen + cours ». Deck wa7ed koul simana.</p></div>
+      <div class="tli o"><h4>🟠 Phase 2 — Prérequis</h4>
+        <div class="dt">S7 → S11 · 2 Nov → 6 Déc</div>
+        <p class="muted">Chimie organique + atomistique + <b>les matériaux (40h)</b>.</p></div>
+      <div class="tli y"><h4>🟡 Phase 3 — Sédage</h4>
+        <div class="dt">S12 → S14 · 7 → 27 Déc</div>
+        <p class="muted">Annales kamlin + muraja3a. Tracker ≥ 85 %.</p></div>
+      <div class="tli g"><h4>🟢 Phase 4 — Finale</h4>
+        <div class="dt">S15 → S17 · 28 Déc → 17 Jan</div>
+        <p class="muted">⚠️ <b>Refaire les 5 examens 2026 b chrono.</b> Hada l-a7amm.</p></div>
     </div>
   </div>
 
-  <div class="card">
-    <h2>📈 Tracker — sajjel score-k</h2>
+  <div class="two rv">
+    <div class="card" style="margin:0">
+      <h2>📊 L-7sab dyal l-we9t</h2>
+      <ul>
+        <li><b>17 simana × 15h = 255 sa3a</b></li>
+        <li>Prérequis ≈ <b>146h</b> → daba <b>~100h = qra l-cours</b> + <b>~45h = maths + matériaux</b></li>
+        <li>🔴 L-mochkil l-wa7id l-ba9i : <b>les MATHS (15h)</b> + <b>les Matériaux (40h)</b></li>
+      </ul>
+      <div class="box ok">⭐ <b>L-farq l-kbir :</b> had 146h ma bqaw-ch « 7aja khassk t-qra qbel l-cours ».
+        L-cours ka-y-bda mn ṣifr → khassk ghir <b>l-WE9T</b>.</div>
+    </div>
+    <div class="card" style="margin:0">
+      <h2>📈 Tracker</h2>
+      <table>
+        <tr><th>Score</th><th>Chno t-dir</th></tr>
+        <tr><td>✅ <b>≥ 85 %</b></td><td>Mli7. Kmmel.</td></tr>
+        <tr><td>⚠️ <b>70-85 %</b></td><td>3awed la révision</td></tr>
+        <tr><td>🔴 <b>&lt; 70 %</b></td><td><b>WQQEF.</b> Rja3 l l-cours.</td></tr>
+      </table>
+      <div class="box warn">⚠️ <b>L-awwal merrra ghadi t-jib &lt; 50 %. HADA NORMAL.</b>
+        L-mouhim t-tla3 mn simana l simana.</div>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <h2>📅 L-bloc dyal simana (15h)</h2>
     <table>
-      <tr><th>Seuil</th><th>Chno t-dir</th></tr>
-      <tr><td>✅ <b>≥ 85 %</b></td><td>Mli7. Kmmel.</td></tr>
-      <tr><td>⚠️ <b>70-85 %</b></td><td>3awed la révision qbel ma t-zid</td></tr>
-      <tr><td>🔴 <b>&lt; 70 %</b></td><td><b>WA9F.</b> Rah chi 7aja ma t-fhemt-ch. Rja3 l l-cours.</td></tr>
+      <tr><th>Bloc</th><th>Sa3at</th><th>Chno</th></tr>
+      <tr><td>🧠 Cartes</td><td><b>3h30</b> (30 min × 7)</td><td>⛔ L-qa3ida li ma t-qte3-ha-ch</td></tr>
+      <tr><td>📚 Prérequis</td><td><b>6h</b> (2 × 3h)</td><td>Chimie + matériaux</td></tr>
+      <tr><td>✍️ Anatomie</td><td><b>3h</b></td><td>Fiche + schéma</td></tr>
+      <tr><td>🔁 Annales</td><td><b>2h30</b></td><td>Examen ḥa9i9i b chrono</td></tr>
     </table>
-    <div class="box warn">⚠️ <b>L-awwal merrra ghadi t-jib &lt; 50 %. HADA NORMAL.</b> L-mouhim t-tla3 mn simana l simana.</div>
   </div>
 </section>
 
-<!-- ============ AIDE ============ -->
+<!-- ================= PROGRESSION ================= -->
+<section class="pane" id="p-prog">
+  <div class="card rv">
+    <h2>📊 Win wselti</h2>
+    <div class="rings" id="rings"></div>
+  </div>
+  <div class="card rv">
+    <h2>🔥 Calendrier dyal l-qraya (12 dernières semaines)</h2>
+    <div class="cal" id="cal"></div>
+    <div class="muted" style="margin-top:10px;font-size:12.5px">
+      ⬛ ma qriti-ch · 🟩 qriti · <span style="color:var(--ok)">🟩🟩</span> bzaf
+    </div>
+  </div>
+  <div class="card rv">
+    <h2>📚 Par deck</h2>
+    <div id="pdecks"></div>
+  </div>
+  <div class="card rv">
+    <h2>💾 Sauvegarde</h2>
+    <div class="btns">
+      <button class="btn btn-g" onclick="exp()">⬇️ Exporter</button>
+      <button class="btn btn-g" onclick="document.getElementById('imp').click()">⬆️ Importer</button>
+      <button class="btn btn-g" style="border-color:var(--bad);color:var(--bad)" onclick="raz()">🗑️ Réinitialiser</button>
+    </div>
+    <input type="file" id="imp" accept=".json" style="display:none" onchange="imp(this)">
+  </div>
+</section>
+
+<!-- ================= AIDE ================= -->
 <section class="pane" id="p-aide">
-  <div class="card">
-    <h2>🆘 Anki ma khdam-ch — chno t-dir?</h2>
-    <div class="box ok big">
-      ⭐ <b>Ma 3andk may dir bih.</b> Had l-page kat-dir nafs l-7aja b <b>la répétition espacée</b>.
+  <div class="card rv">
+    <h2>🆘 Anki ma khdem-ch — chno t-dir?</h2>
+    <div class="box ok" style="font-size:16px">
+      ⭐ <b>Ma 3andek may dir bih.</b> Had l-page kat-dir nafs l-7aja b <b>la répétition espacée</b>.
       <b>Khdama f navigateur, bla installation.</b>
     </div>
-    <p class="big">Les 441 cartes rahom hna. <b>Dir ghir « ▶️ Étudier ».</b></p>
-    <hr>
     <p class="muted">Ila bghiti t-3awed t-jerrb Anki mn b3d :</p>
     <table>
-      <tr><th>Problème</th><th>7al</th></tr>
-      <tr><td><code>&lt;b&gt;</code> f l-carte</td><td>« Autoriser le HTML » = ✅ coché</td></tr>
+      <tr><th>Problème</th><th>L-7al</th></tr>
+      <tr><td><code>&lt;b&gt;</code> ka-y-ban f la carte</td><td>✅ « Autoriser le HTML » coché</td></tr>
       <tr><td>Kolchi f 3amoud wa7ed</td><td>Séparateur = <code>Point-virgule</code></td></tr>
       <tr><td><code>Ã©</code> blasst <code>é</code></td><td>Encoding = <code>UTF-8</code></td></tr>
       <tr><td>0 carte</td><td>Type = <code>Note de base</code></td></tr>
       <tr><td>Ma lqa-ch les fichiers</td><td>Khtar <code>Tous les fichiers (*.*)</code></td></tr>
-      <tr><td>« Patch file »</td><td>❌ <b>MA T-KHTARU-CH</b> — hadak dyal les programmeurs</td></tr>
+      <tr><td>« <b>Patch file</b> »</td><td>⛔ <b>MA T-KHTARU-CH</b> — hadak dyal les programmeurs</td></tr>
     </table>
   </div>
 
-  <div class="card">
-    <h2>💾 Wach la progression dyali kat-tsajjel?</h2>
+  <div class="card rv">
+    <h2>💾 Wach la progression ka-t-sajjel?</h2>
     <div class="box ok">
-      ✅ <b>OUI.</b> Kolchi kay-t-sajjel f <b>ton navigateur</b> (localStorage) —
-      cartes vues, intervalles, série, scores.<br>
-      ⚠️ <b>Ghir f had navigateur w had l-appareil.</b> Ila bdelti → la progression ma kat-mshi-ch.
+      ✅ <b>OUI.</b> Kolchi ka-y-tsajjel f <b>navigateur-k</b> (localStorage) — cartes vues,
+      intervalles, série, calendrier.<br>
+      ⚠️ <b>Ghir f had l-appareil w had navigateur.</b> Ila bdelti → ⬇️ Exporter / ⬆️ Importer.
     </div>
-    <div class="btns">
-      <button onclick="exp()" style="background:var(--bg3)">⬇️ Exporter (sauvegarde)</button>
-      <button onclick="document.getElementById('imp').click()" style="background:var(--bg3)">⬆️ Importer</button>
-      <button onclick="raz()" style="background:#4c1d24;border-color:var(--bad);color:#ff9b94">🗑️ Réinitialiser</button>
-    </div>
-    <input type="file" id="imp" accept=".json" style="display:none" onchange="imp(this)">
   </div>
 
-  <div class="card">
-    <h2>❓ Les touches</h2>
-    <table>
-      <tr><th>Touche</th><th>Action</th></tr>
-      <tr><td><b>Espace</b></td><td>Afficher la réponse</td></tr>
-      <tr><td><b>1</b></td><td>✅ Correct</td></tr>
-      <tr><td><b>2</b></td><td>🔁 Encore</td></tr>
-    </table>
+  <div class="card rv">
+    <h2>⌨️ Les touches</h2>
+    <div>
+      <span class="mini"><kbd>Espace</kbd> <b>Afficher</b> la réponse</span>
+      <span class="mini"><kbd>1</kbd> <b>✅ Correct</b></span>
+      <span class="mini"><kbd>2</kbd> <b>🔁 Encore</b></span>
+      <span class="mini"><kbd>Entrée</kbd> <b>Sifet</b> l-AI</span>
+    </div>
+    <p class="muted" style="margin-top:10px">
+      ⭐ <b>10 cartes jdad max / deck / nhar</b> — machi bug, hadi stratégie bach ma t-ghrq-ch.
+    </p>
   </div>
 
-  <div class="card">
+  <div class="card rv">
     <h2>📞 Bghiti chi 7aja?</h2>
-    <ul>
-      <li>« <b>Bghi t-zidli cartes 3la [module]</b> » → n-bni lik deck jdid</li>
-      <li>« <b>Lqit PDF jdid</b> » → 3tini l-lien, n-qrah w n-khrej cartes</li>
-      <li>« <b>Ma fhemt-ch [chi 7aja]</b> » → n-chre7-ha lik b darija</li>
-      <li>« <b>L-plan ma mcha-ch m3aya</b> » → n-3awed n-seddu</li>
-    </ul>
+    <div class="sugg" style="margin-top:0">
+      <button onclick="navTo('ai');aiAsk('Bghi t-zidli cartes 3la chi module')">➕ Zid-li des cartes</button>
+      <button onclick="navTo('ai');aiAsk('Lqit PDF jdid, kifach n-dir?')">📄 3andi PDF jdid</button>
+      <button onclick="navTo('ai');aiAsk('Ma fhemt-ch chi 7aja')">❓ Ma fhemt-ch</button>
+      <button onclick="navTo('ai');aiAsk('L-plan ma mcha-ch m3aya')">🔄 L-plan ma mcha-ch</button>
+    </div>
     <div class="box warn">⭐ <b>L-7aja l-wa7ida li ma t-dir-ha-ch : t-ste7i t-swwel.</b></div>
   </div>
 </section>
 
 </main>
 
+<footer class="wrap">
+  FMDC Casablanca · S1 2026/27 · 441 cartes · 12 decks · 0 DH<br>
+  <span style="color:var(--dim2)">Bni b Septembre 2026 · 15h/semaine</span>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal" onclick="if(event.target===this)closeM()">
+  <div class="mbox">
+    <div class="mhead">
+      <div><h3 id="m-t"></h3><div class="muted" style="font-size:12.5px" id="m-s"></div></div>
+      <button class="x" onclick="closeM()">✕</button>
+    </div>
+    <div class="mbody" id="m-b"></div>
+    <div class="mfoot">
+      <button class="btn btn-p" style="padding:11px 18px;font-size:14px" onclick="chre7()">💡 Chre7-li had l-qism b d-darija</button>
+      <button class="btn btn-g" style="padding:11px 18px;font-size:14px" onclick="closeM()">Sedd</button>
+    </div>
+  </div>
+</div>
+
 <script src="data.js"></script>
+<script src="contenu.js"></script>
 <script>
-/* ============ ÉTAT ============ */
+/* ================= ÉTAT ================= */
 const K="fmdc-s1-v1";
-let S=JSON.parse(localStorage.getItem(K)||'{"c":{},"j":0,"last":null}');
+let S=JSON.parse(localStorage.getItem(K)||'{"c":{},"j":0,"last":null,"h":{},"t":0}');
 function save(){localStorage.setItem(K,JSON.stringify(S))}
 const today=()=>new Date().toISOString().slice(0,10);
-function days(a,b){return Math.round((new Date(b)-new Date(a))/864e5)}
+const days=(a,b)=>Math.round((new Date(b)-new Date(a))/864e5);
+const g=(id,i)=>S.c[id+":"+i]||null;
+const set=(id,i,v)=>{S.c[id+":"+i]=v};
 
-/* progression d'une carte */
-function g(id,i){return S.c[id+":"+i]||null}
-function set(id,i,v){S.c[id+":"+i]=v}
-
-/* ============ NAV ============ */
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
+/* ================= NAV ================= */
+function navTo(p){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===p));
   document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));
-  b.classList.add('on');
-  document.getElementById('p-'+b.dataset.p).classList.add('on');
-  window.scrollTo(0,0);
-});
+  document.getElementById('p-'+p).classList.add('on');
+  // reprendre une séance en cours
+  if(p==='etud'&&queue.length&&ci<queue.length){
+    document.getElementById('choix').style.display='none';
+    document.getElementById('etude').style.display='block';
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  reveal();
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>navTo(b.dataset.p));
 
-/* ============ STATS ============ */
+/* ================= REVEAL ================= */
+function reveal(){
+  document.querySelectorAll('#p-'+curPane()+' .rv').forEach((e,i)=>{
+    setTimeout(()=>e.classList.add('in'),Math.min(i*70,400));
+  });
+}
+function curPane(){
+  const b=document.querySelector('nav button.on');return b?b.dataset.p:'acc';
+}
+
+/* ================= COMPTEURS ================= */
+function animN(el,v){
+  const t0=(window.performance||Date).now(),d=900;
+  const from=parseInt(String(el.textContent).replace(/[^\d-]/g,''))||0;
+  if(!isFinite(v))v=0;
+  (function step(t){
+    const tt=(typeof t==='number'&&isFinite(t))?t:(window.performance||Date).now();
+    const k=Math.min(Math.max((tt-t0)/d,0),1),e=1-Math.pow(1-k,3);
+    el.textContent=Math.round(from+(v-from)*e);
+    if(k<1)requestAnimationFrame(step);
+  })(t0);
+}
 function stats(){
   let tot=0,due=0,vu=0,mr=0;
   DECKS.forEach(d=>d.cards.forEach((c,i)=>{
-    tot++;
-    const p=g(d.id,i);
-    if(!p)return;
-    vu++;
+    tot++;const p=g(d.id,i);if(!p)return;vu++;
     if(p.n>0&&days(today(),p.d)<=0)due++;
     if(p.iv>=21)mr++;
   }));
-  // série
   if(S.last){const dd=days(S.last,today());if(dd>1)S.j=0;}
-  document.getElementById('s-tot').textContent=tot;
-  document.getElementById('s-due').textContent=due;
-  document.getElementById('s-vu').textContent=vu;
-  document.getElementById('s-j').textContent=(S.j||0)+(S.last===today()?' 🔥':'');
-  document.getElementById('s-mr').textContent=mr;
+  ['h-tot','h-due','h-mr','h-j','h-h'].forEach(i=>document.getElementById(i));
+  animN(document.getElementById('h-tot'),tot);
+  animN(document.getElementById('h-due'),due);
+  animN(document.getElementById('h-mr'),mr);
+  document.getElementById('h-j').textContent=(S.j||0)+(S.last===today()?' 🔥':'');
+  document.getElementById('h-h').textContent=Math.round(Object.values(S.h||{}).reduce((a,b)=>a+b,0)/60*10)/10||0;
 }
 
-/* ============ LISTE DECKS ============ */
+/* ================= DOCUMENTS ================= */
+const DOCMETA={
+  "Dalil 3amali":{i:"🚀",d:"L-dalil l-3amali — qra-h l-awwal"},
+  "Plan 17 simana":{i:"🗓️",d:"Chno t-dir f kol simana, b tawarikh"},
+  "Analyse examens":{i:"🔬",d:"L-anatomie dyal kol examen b d9a"},
+  "Archive Drive":{i:"🗂️",d:"L-archive kamla + les liens"},
+  "README FMDC":{i:"📋",d:"Point d'entrée du dossier FMDC"},
+  "Methodes etude cellule p43+":{i:"🔍",d:"Cher7 pages 43+ — MEB, cytochimie, fractionnement…"},
+  "Guide import":{i:"📥",d:"Import Anki — guide complet + diagnostic"},
+  "Guide Anki 5min":{i:"⚡",d:"Anki en 5 minutes, clic par clic"},
+};
+function docsList(){
+  const m={};
+  CONTENU.forEach(c=>{
+    if(c.ty==="carte"||c.ty==="cher7")return;
+    const k=c.ty==="plan"?"Plan 17 simana":
+            c.ty==="analyse"?"Analyse examens":
+            c.ty==="archive"?"Archive Drive":
+            c.ty==="cours"?"Methodes etude cellule p43+":
+            c.t.startsWith("Guide Anki")?"Guide Anki 5min":
+            c.t.startsWith("Guide import")?"Guide import":
+            c.t.startsWith("README")?"README FMDC":"Dalil 3amali";
+    (m[k]=m[k]||[]).push(c);
+  });
+  return m;
+}
+let DOCS=docsList();
+function rendDocs(){
+  const box=document.getElementById('docs');let h='';
+  Object.keys(DOCS).forEach(k=>{
+    const meta=DOCMETA[k]||{i:"📄",d:""};
+    h+=`<div class="doc" onclick="openDoc('${k.replace(/'/g,"\\'")}')">
+      <div class="dn">${DOCS[k].length}</div>
+      <div class="di">${meta.i}</div>
+      <div class="dt">${k}</div>
+      <div class="dm">${meta.d}</div></div>`;
+  });
+  box.innerHTML=h;
+}
+let curDoc=null,curChunks=[],curIdx=0;
+function openDoc(k){
+  curDoc=k;curChunks=DOCS[k];curIdx=0;
+  showChunk();
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function showChunk(){
+  const c=curChunks[curIdx];
+  document.getElementById('m-t').textContent=c.t;
+  document.getElementById('m-s').textContent=
+    (c.m&&c.m!=="—"?c.m+" · ":"")+"partie "+(curIdx+1)+" / "+curChunks.length+
+    (curChunks.length>1?' · <a href="javascript:navChunk(1)" style="margin-left:8px">suivant →</a>':'')+
+    (curIdx>0?' · <a href="javascript:navChunk(-1)" style="margin-left:8px">← précédent</a>':'');
+  document.getElementById('m-b').innerHTML=md(c.txt);
+  document.getElementById('m-b').scrollTop=0;
+}
+function navChunk(d){
+  curIdx=(curIdx+d+curChunks.length)%curChunks.length;showChunk();
+}
+function closeM(){
+  document.getElementById('modal').classList.remove('on');
+  document.body.style.overflow='';
+}
+function chre7(){
+  const c=curChunks[curIdx];
+  closeM();navTo('ai');
+  setTimeout(()=>aiDoc(c.t,c.txt.slice(0,3000)),260);
+}
+
+/* ================= MINI MARKDOWN ================= */
+function md(t){
+  t=t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const lines=t.split('\n');let out='',inT=false,inL=false;
+  for(let i=0;i<lines.length;i++){
+    let L=lines[i];
+    // tableau
+    if(/^\s*\|.*\|\s*$/.test(L)){
+      const nx=lines[i+1]||'';
+      if(/^\s*\|[\s:\-|]+\|\s*$/.test(nx)){
+        const hd=L.split('|').slice(1,-1).map(s=>s.trim());
+        out+='<table><tr>'+hd.map(h=>'<th>'+inl(h)+'</th>').join('')+'</tr>';
+        i+=2;
+        for(;i<lines.length&&/^\s*\|.*\|\s*$/.test(lines[i]);i++){
+          const r=lines[i].split('|').slice(1,-1).map(s=>s.trim());
+          out+='<tr>'+r.map(c=>'<td>'+inl(c)+'</td>').join('')+'</tr>';
+        }
+        i--;out+='</table>';continue;
+      }
+    }
+    if(/^\s*\|[\s:\-|]+\|\s*$/.test(L))continue;
+    if(/^#{1,6}\s/.test(L)){
+      if(inL){out+='</ul>';inL=false}
+      const n=L.match(/^#+/)[0].length;
+      out+='<h'+Math.min(n+1,4)+'>'+inl(L.replace(/^#+\s*/,''))+'</h'+Math.min(n+1,4)+'>';continue;
+    }
+    if(/^\s*([-*+]|\d+\.)\s+/.test(L)){
+      if(!inL){out+='<ul>';inL=true}
+      out+='<li>'+inl(L.replace(/^\s*([-*+]|\d+\.)\s+/,''))+'</li>';continue;
+    }
+    if(/^\s*>/.test(L)){out+='<blockquote>'+inl(L.replace(/^\s*>\s?/,''))+'</blockquote>';continue}
+    if(/^\s*(---|===)\s*$/.test(L)){out+='<hr>';continue}
+    if(/^\s*$/.test(L)){if(inL){out+='</ul>';inL=false}continue}
+    if(inL){out+='</ul>';inL=false}
+    out+='<p>'+inl(L)+'</p>';
+  }
+  if(inL)out+='</ul>';
+  return out;
+}
+function inl(s){
+  return s.replace(/`([^`]+)`/g,'<code>$1</code>')
+          .replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>')
+          .replace(/(^|[^*])\*([^*]+)\*/g,'$1<i>$2</i>');
+}
+
+/* ================= DECKS ================= */
 function duesCount(){
   let n=0;DECKS.forEach(d=>d.cards.forEach((c,i)=>{
     const p=g(d.id,i);if(p&&p.n>0&&days(today(),p.d)<=0)n++;}));
   return n;
 }
 function rendDecks(){
-  const choix=document.getElementById('choix');
-  const liste=document.getElementById('ldecks');
+  const choix=document.getElementById('choix'),liste=document.getElementById('ldecks');
   let h1='',h2='';
   DECKS.forEach(d=>{
-    const n=d.cards.length;
-    let fait=0;d.cards.forEach((c,i)=>{const p=g(d.id,i);if(p&&p.n>0)fait++;});
-    const pct=Math.round(fait/n*100);
-    const prio=d.ordre<=9;
+    const n=d.cards.length;let fait=0;
+    d.cards.forEach((c,i)=>{const p=g(d.id,i);if(p&&p.n>0)fait++;});
+    const pct=Math.round(fait/n*100),prio=d.ordre<=9;
     h1+=`<div class="deck" onclick="go('${d.id}')">
       <div class="ico">${d.nom.split(' ')[0]}</div>
       <div class="info"><div class="nom">${d.nom}</div>
@@ -421,22 +910,22 @@ function rendDecks(){
         ${prio?'<span class="tag">PRIORITÉ 1</span>':'<span class="tag c">standard</span>'}</div>
       <div class="meta">${d.src} · ${d.module} · ${d.desc}</div>
       <div class="bar"><i style="width:${pct}%"></i></div></div>
-      <div class="nb">${fait}/${n}</div></div>`;
+      <div class="nb">${fait}/${n}<div style="font-size:10.5px;color:var(--dim2);font-weight:600">${pct}%</div></div></div>`;
   });
   const dues=duesCount();
   choix.innerHTML=`
-    ${dues?`<div class="deck" style="border-color:var(--warn);background:rgba(210,153,34,.08)" onclick="goAll()">
+    ${dues?`<div class="deck" style="border-color:var(--warn);background:rgba(251,191,36,.07)" onclick="goAll()">
       <div class="ico">⚡</div><div class="info"><div class="nom">Réviser tout ce qui est dû</div>
       <div class="meta">${dues} cartes · mélange de tous les decks</div></div>
       <div class="nb" style="color:var(--warn)">${dues}</div></div>`:''}
     <div class="card"><h2>▶️ Khtar deck bach t-bda</h2>
-    <div class="muted" style="margin-bottom:12px">⭐ Bda b <b>Physiologie</b> — 0 prérequis, 35 cartes</div>${h1}</div>`;
+    <p class="muted" style="margin-bottom:12px">⭐ Bda b <b>Physiologie</b> — 0 prérequis, 35 cartes</p>${h1}</div>`;
   liste.innerHTML=h2;
 }
 
-/* ============ ÉTUDE ============ */
-let queue=[],cur=null,ci=0,tot=0,_deck=null;
-function dOf(id){return DECKS.find(x=>x.id===id)}
+/* ================= ÉTUDE ================= */
+let queue=[],cur=null,ci=0,tot=0;
+const dOf=id=>DECKS.find(x=>x.id===id);
 function go(id){
   const d=dOf(id);if(!d)return;
   queue=[];
@@ -445,18 +934,14 @@ function go(id){
     if(!p)queue.push({id:id,i:i,n:0});
     else if(p.n>0&&days(today(),p.d)<=0)queue.push({id:id,i:i,n:1});
   });
-  // 10 nouvelles max par deck et par jour
   let nv=0;queue=queue.filter(q=>{if(q.n===0){nv++;return nv<=10}return true});
   if(!queue.length){
-    alert('✅ Ma bqa 7ta carte à réviser f had deck l-youm!\n\n'+
-          '⭐ Rje3 ghedda — hadak howa l-but dyal la répétition espacée.\n\n'+
-          '(Wla khtar deck akhor.)');
+    alert('✅ Ma bqa 7ta carte à réviser f had deck l-youm!\n\n⭐ Rje3 ghedda — hadak howa l-but dyal la répétition espacée.\n\n(Wla khtar deck akhor.)');
     return;
   }
   queue.sort(()=>Math.random()-0.5);
   lancer(d.nom+' · '+d.module);
 }
-/* session multi-decks : toutes les cartes dues */
 function goAll(){
   queue=[];
   DECKS.forEach(d=>d.cards.forEach((c,i)=>{
@@ -464,45 +949,41 @@ function goAll(){
     if(p&&p.n>0&&days(today(),p.d)<=0)queue.push({id:d.id,i:i,n:1});
   }));
   if(!queue.length){
-    alert('✅ Ma bqa 7ta carte à réviser l-youm!\n\n'+
-          '⭐ Hadak howa l-but dyal la répétition espacée.\n'+
-          'Rje3 ghedda — wla bda deck jdid mn « 📚 Les decks ».');
+    alert('✅ Ma bqa 7ta carte à réviser l-youm!\n\n⭐ Hadak howa l-but dyal la répétition espacée.\nRje3 ghedda — wla bda deck jdid mn « 📚 Decks ».');
     return;
   }
   queue.sort(()=>Math.random()-0.5);
   lancer('🔥 Révision mixte · tous les decks');
 }
-function lancer(titre){
+function lancer(t){
   tot=queue.length;ci=0;
   document.getElementById('choix').style.display='none';
   document.getElementById('etude').style.display='block';
-  document.getElementById('e-deck').textContent=titre;
+  document.getElementById('e-deck').textContent=t;
   next();
 }
 function next(){
+  const eq=document.getElementById('e-q'),ea=document.getElementById('e-a'),eb=document.getElementById('e-btns');
   if(ci>=queue.length){
     if(S.last!==today()){S.j=(S.j||0)+1;S.last=today();save();}
-    document.getElementById('e-q').innerHTML=
-      '<div style="text-align:center;padding:30px 0">'+
-      '<div style="font-size:44px">🎉</div>'+
-      '<h2 style="margin:14px 0">SALITI!</h2>'+
-      '<p class="muted">'+tot+' cartes · Série: '+(S.j||0)+' nhar 🔥</p>'+
-      '<p class="muted" style="margin-top:16px">⭐ <b>Rje3 ghedda.</b> Hadak howa l-but.</p></div>';
-    document.getElementById('e-a').classList.remove('on');
-    document.getElementById('e-btns').innerHTML=
-      '<button class="b-show" onclick="quit()">✅ Safi, khoroj</button>';
+    eq.innerHTML='<div style="text-align:center;padding:20px 0">'+
+      '<div style="font-size:52px;margin-bottom:10px">🎉</div>'+
+      '<h2 style="font-size:26px;margin-bottom:8px;justify-content:center">SALITI !</h2>'+
+      '<p class="muted">'+tot+' cartes · Série : <b style="color:var(--ok)">'+(S.j||0)+' nhar</b> 🔥</p>'+
+      '<p class="muted" style="margin-top:18px">⭐ <b>Rje3 ghedda.</b> Hadak howa l-but.</p></div>';
+    ea.classList.remove('on');
+    eb.innerHTML='<button class="b-show" onclick="quit()">✅ Safi, khoroj</button>';
     document.getElementById('e-bar').style.width='100%';
     document.getElementById('e-reste').textContent='Terminé';
-    stats();
-    return;
+    stats();return;
   }
-  cur=queue[ci];
-  const d=dOf(cur.id);
-  document.getElementById('e-q').innerHTML=d.cards[cur.i].q;
-  const a=document.getElementById('e-a');
-  a.innerHTML=d.cards[cur.i].a;a.classList.remove('on');a.scrollTop=0;
-  document.getElementById('e-btns').innerHTML=
-    '<button class="b-show" onclick="show()">👁 Afficher la réponse</button>';
+  cur=queue[ci];const d=dOf(cur.id);
+  eq.innerHTML=d.cards[cur.i].q;eq.style.animation='none';void eq.offsetWidth;eq.style.animation='';
+  ea.innerHTML=d.cards[cur.i].a+
+    '<div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--line);text-align:center">'+
+    '<button class="sugg-b" onclick="chre7Carte()">💡 Ma fhemt-ch — chre7-li had la carte b darija</button></div>';
+  ea.classList.remove('on');ea.scrollTop=0;
+  eb.innerHTML='<button class="b-show" onclick="show()">👁 Afficher la réponse</button>';
   document.getElementById('e-reste').textContent=(ci+1)+' / '+tot;
   document.getElementById('e-bar').style.width=(ci/tot*100)+'%';
 }
@@ -512,56 +993,367 @@ function show(){
     '<button class="b-no" onclick="rep(0)">🔁 Encore</button>'+
     '<button class="b-ok" onclick="rep(1)">✅ Correct</button>';
 }
+/** Envoie la carte courante au prof IA */
+function chre7Carte(){
+  if(!cur)return;
+  const d=dOf(cur.id),c=d.cards[cur.i];
+  const plain=c.q.replace(/<[^>]+>/g,' ')+"\n\n"+c.a.replace(/<br\s*\/?>/g,'\n').replace(/<[^>]+>/g,'');
+  navTo('ai');
+  setTimeout(()=>aiDoc("Carte "+d.nom+" — "+(c.t||"la carte"),plain),300);
+}
 function rep(ok){
   const id=cur.id,i=cur.i;
   let p=g(id,i)||{n:0,iv:0,d:today()};
-  if(ok){
-    p.n=(p.n||0)+1;
-    p.iv=p.iv===0?1:Math.min(Math.round(p.iv*2.5),60);
-    p.d=new Date(Date.now()+p.iv*864e5).toISOString().slice(0,10);
-  }else{
-    p.n=0;p.iv=0;p.d=today();
-  }
-  set(id,i,p);save();
-  if(!ok)queue.push(cur);   // à revoir dans la même séance
+  if(ok){p.n=(p.n||0)+1;p.iv=p.iv===0?1:Math.min(Math.round(p.iv*2.5),60);
+    p.d=new Date(Date.now()+p.iv*864e5).toISOString().slice(0,10);}
+  else{p.n=0;p.iv=0;p.d=today();}
+  set(id,i,p);
+  S.h=S.h||{};S.h[today()]=(S.h[today()]||0)+1;S.t=(S.t||0)+1;
+  save();
+  if(!ok)queue.push(cur);
   ci++;next();
 }
 function quit(){
   document.getElementById('etude').style.display='none';
   document.getElementById('choix').style.display='block';
-  rendDecks();stats();
+  rendDecks();stats();rendProg();
 }
 
-/* ============ CLAVIER ============ */
+/* ================= CLAVIER ================= */
 document.addEventListener('keydown',e=>{
-  if(document.getElementById('etude').style.display!=='block')return;
-  if(e.code==='Space'){e.preventDefault();
-    if(!document.getElementById('e-a').classList.contains('on'))show();}
-  if(e.key==='1'&&document.getElementById('e-a').classList.contains('on'))rep(1);
-  if(e.key==='2'&&document.getElementById('e-a').classList.contains('on'))rep(0);
+  const et=document.getElementById('etude');
+  if(et&&et.style.display==='block'){
+    const on=document.getElementById('e-a').classList.contains('on');
+    if(e.code==='Space'){e.preventDefault();if(!on)show();}
+    if(e.key==='1'&&on)rep(1);
+    if(e.key==='2'&&on)rep(0);
+  }
+  if(e.key==='Escape')closeM();
 });
 
-/* ============ SAUVEGARDE ============ */
+/* ================= PROGRESSION ================= */
+function rendProg(){
+  let tot=0,vu=0,mr=0,enc=0;
+  DECKS.forEach(d=>d.cards.forEach((c,i)=>{
+    tot++;const p=g(d.id,i);if(!p)return;vu++;
+    if(p.iv>=21)mr++;else enc++;
+  }));
+  const pv=Math.round(vu/tot*100),pm=Math.round(mr/tot*100);
+  const ser=S.j||0;
+  document.getElementById('rings').innerHTML=
+    ring(pv,'Vues','#22d3ee')+ring(pm,'Maîtrisées','#34d399')+
+    ring(Math.min(ser,30)/30*100,'Série','#fbbf24',ser+' j');
+  requestAnimationFrame(()=>requestAnimationFrame(animRings));
+  // calendrier
+  const h=S.h||{};let ch='';
+  const end=new Date();const start=new Date(end);start.setDate(start.getDate()-83);
+  for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+    const k=d.toISOString().slice(0,10),n=h[k]||0;
+    const l=n===0?'':n<10?'l1':n<25?'l2':n<50?'l3':'l4';
+    ch+=`<div class="cd ${l} ${k===today()?'today':''}" title="${k} : ${n} cartes"></div>`;
+  }
+  document.getElementById('cal').innerHTML=ch;
+  // par deck
+  let pd='';
+  DECKS.forEach(d=>{
+    const n=d.cards.length;let f=0,m=0;
+    d.cards.forEach((c,i)=>{const p=g(d.id,i);if(p&&p.n>0)f++;if(p&&p.iv>=21)m++;});
+    pd+=`<div class="deck" style="cursor:default">
+      <div class="ico">${d.nom.split(' ')[0]}</div>
+      <div class="info"><div class="nom" style="font-size:14px">${d.nom}</div>
+      <div class="bar"><i style="width:${Math.round(f/n*100)}%"></i></div>
+      <div class="meta">${Math.round(f/n*100)}% vues · ${m} maîtrisées</div></div>
+      <div class="nb" style="font-size:14px">${f}/${n}</div></div>`;
+  });
+  document.getElementById('pdecks').innerHTML=pd;
+}
+function ring(pct,lab,col,txt){
+  const r=44,c=2*Math.PI*r,off=c*(1-Math.min(pct,100)/100);
+  return `<div class="ring">
+    <div style="position:relative;width:112px;height:112px">
+      <svg width="112" height="112" viewBox="0 0 112 112">
+        <circle class="track" cx="56" cy="56" r="${r}" fill="none" stroke-width="9"/>
+        <circle class="fill" cx="56" cy="56" r="${r}" fill="none" stroke-width="9"
+          stroke="${col}" stroke-dasharray="${c}" stroke-dashoffset="${c}"
+          data-off="${off}"/>
+      </svg>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+        <div class="val" style="color:${col}">${txt||Math.round(pct)+'%'}</div>
+      </div>
+    </div>
+    <div class="lab">${lab}</div></div>`;
+}
+function animRings(){
+  document.querySelectorAll('.ring .fill').forEach(c=>{
+    c.style.strokeDashoffset=c.getAttribute('data-off');
+  });
+}
+
+/* ================= SAUVEGARDE ================= */
 function exp(){
   const b=new Blob([JSON.stringify(S)],{type:'application/json'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(b);
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);
   a.download='fmdc-progression-'+today()+'.json';a.click();
 }
 function imp(el){
   const f=el.files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=()=>{try{S=JSON.parse(r.result);save();stats();rendDecks();alert('✅ Progression importée!')}catch(e){alert('❌ Fichier ghalat')}};
+  r.onload=()=>{try{S=JSON.parse(r.result);save();stats();rendDecks();rendProg();alert('✅ Progression importée!')}catch(e){alert('❌ Fichier ghalat')}};
   r.readAsText(f);
 }
 function raz(){
-  if(confirm('⚠️ Wach nti s7i7? Ghadi t-m7i la progression kamla!')){
-    S={c:{},j:0,last:null};save();stats();rendDecks();
+  if(confirm('⚠️ Wach nti ṣ7i7? Ghadi t-m7i la progression kamla!')){
+    S={c:{},j:0,last:null,h:{},t:0};save();stats();rendDecks();rendProg();
   }
 }
 
-/* ============ INIT ============ */
-rendDecks();stats();
+/* ============================================================
+   🤖 LE PROF IA
+   ============================================================ */
+const STOP=new Set(("le la les de des du un une et ou en dans sur par pour avec sans que qui quoi comment "
+ +"pourquoi est sont etre ai as a ont ce cet cette ces mon ma mes ton ta tes je tu il elle nous vous ils "
+ +"elles me te se lui leur y en ne pas plus moins tres bien quel quelle quels quelles quand ou dont "
+ +"wach kifach chno chnou chhal 3lach mn f b l d n h w o chkoun fin kima ghir had hada hadi hadou "
+ +"dyal dyali hiya howa homa nta nti 7aja 7wayj bach t n y ka ghadi rah rani").split(/\s+/));
+function tok(s){
+  return (s||'').toLowerCase()
+    .replace(/[àâä]/g,'a').replace(/[éèêë]/g,'e').replace(/[îï]/g,'i')
+    .replace(/[ôö]/g,'o').replace(/[ûùü]/g,'u').replace(/ç/g,'c')
+    .replace(/[^a-z0-9à-ÿ\s]/g,' ').split(/\s+/)
+    .filter(w=>w.length>2&&!STOP.has(w));
+}
+const IDX=CONTENU.map(c=>({c:c,tk:tok(c.t+' '+c.txt),tt:new Set(tok(c.t))}));
+const N=IDX.length;
+const DF={};IDX.forEach(it=>{const s=new Set(it.tk);s.forEach(w=>DF[w]=(DF[w]||0)+1)});
+function idf(w){return Math.log(1+N/(1+(DF[w]||0)))}
+
+/** Recherche TF-IDF + bonus titre/type : retourne les meilleurs chunks */
+function trouver(q,k=5){
+  const qt=tok(q);if(!qt.length)return [];
+  const qs={};qt.forEach(w=>qs[w]=(qs[w]||0)+1);
+  const Q=Object.keys(qs),nq=Q.length;
+  const sc=[];
+  IDX.forEach(it=>{
+    let s=0;const tf={};it.tk.forEach(w=>tf[w]=(tf[w]||0)+1);
+    // TF-IDF sur le contenu
+    Q.forEach(w=>{if(tf[w])s+=qs[w]*tf[w]*idf(w)});
+    // couverture du TITRE (très discriminant)
+    const cov=Q.filter(w=>it.tt.has(w)).length/nq;
+    s*=(1+3.0*cov*cov);
+    Q.forEach(w=>{if(it.tt.has(w))s+=2.0*idf(w)});
+    // bonus type
+    if(it.c.ty==='cher7')s*=1.75;
+    else if(it.c.ty==='cours')s*=1.2;
+    else if(it.c.ty==='carte')s*=1.0;
+    else s*=1.1;
+    // bonus module cité (M111…M116)
+    const m=q.match(/m11[1-6]/i);if(m&&it.c.m===m[0].toUpperCase())s*=1.5;
+    if(s>0)sc.push({s:s,c:it.c});
+  });
+  sc.sort((a,b)=>b.s-a.s);
+  return sc.slice(0,k);
+}
+/** Réponse locale (sans clé API) — texte BRUT, sera échappé */
+function localAnswer(q){
+  const r=trouver(q,7);
+  if(!r.length)return {txt:null,srcs:[]};
+  const expl=r.find(x=>x.c.ty==='cher7'||x.c.ty==='cours');
+  const cartes=r.filter(x=>x.c.ty==='carte').slice(0,3);
+  const main=expl?expl.c:r[0].c;
+  let txt=main.txt;
+  const autres=r.filter(x=>x.c!==main&&cartes.indexOf(x)<0).slice(0,3);
+  if(cartes.length){
+    txt+='\n\n🎴 CARTES LI 9RAB :\n';
+    cartes.forEach((x,i)=>{
+      const p=x.c.txt.split('\n\n');
+      txt+='\n('+(i+1)+') '+p[0]+'\n→ '+(p.slice(1).join('\n')||'').slice(0,420)+'\n';
+    });
+  }
+  if(autres.length){
+    txt+='\n📎 7WAYJ KHRIN : '+autres.map(o=>'• '+o.c.t.replace(/^💡 /,'⭐ ')).join('  ');
+  }
+  return {txt:txt,srcs:r.map(x=>x.c)};
+}
+
+/* ---- Gemini ---- */
+const SYS=("Tu es « L-prof », le professeur particulier d'Ayoub, étudiant en 1ère année de médecine "
++"dentaire à la FMDC de Casablanca (Maroc), S1 2026/27. Il vient d'un bac Économie puis SPC en candidat "
++"libre avec 10/20 (n9el) : ses bases scientifiques sont quasi nulles, mais il est motivé et travaille 15h/semaine.\n\n"
++"RÈGLES ABSOLUES :\n"
++"1. Réponds en DARIJA MAROCAIN (arabe dialectal écrit en lettres latines, avec des chiffres comme 3/7/9 "
++"pour les sons arabes), sauf les termes scientifiques qui restent en français entre parenthèses.\n"
++"2. Sois COURT et CONCRET : max 250 mots. Pas de blabla, pas d'intro inutile.\n"
++"3. Utilise des ANALOGIES de la vie quotidienne marocaine.\n"
++"4. Donne toujours un MOYEN MNÉMOTECHNIQUE (astuce de mémoire) quand tu expliques un concept.\n"
++"5. Signale les PIÈGES d'examen (⚠️) quand il y en a.\n"
++"6. Si la question porte sur un QCM, donne la réponse DIRECTEMENT au début.\n"
++"7. Utilise UNIQUEMENT le CONTEXTE fourni. Si le contexte ne suffit pas, dis-le clairement en darija.\n"
++"8. Termine toujours par une phrase d'encouragement très courte (1 ligne max).");
+
+async function callGemini(q,ctx){
+  const cle=localStorage.getItem('fmdc-cle')||'';
+  if(!cle)throw new Error('nocle');
+  const body={
+    systemInstruction:{parts:[{text:SYS}]},
+    contents:[{role:'user',parts:[{text:"CONTEXTE (extrait des cours, résumés et cartes d'Ayoub) :\n\n"+ctx+
+      "\n\n---\nQUESTION D'AYOUB : "+q}]}],
+    generationConfig:{temperature:0.5,maxOutputTokens:900}
+  };
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+encodeURIComponent(cle),
+    {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok){const e=await r.text();throw new Error('HTTP '+r.status+' '+e.slice(0,180))}
+  const j=await r.json();
+  const t=j.candidates&&j.candidates[0]&&j.candidates[0].content&&
+          j.candidates[0].content.parts.map(p=>p.text||'').join('\n');
+  if(!t)throw new Error('Jawab khawi');
+  return t;
+}
+
+/* ---- Chrome built-in AI (Gemini Nano, local, gratuit) ---- */
+async function callLocal(q,ctx){
+  if(!window.LanguageModel)throw new Error('nolocal');
+  const st=await window.LanguageModel.availability();
+  if(st==='unavailable')throw new Error('nolocal');
+  const s=await window.LanguageModel.create({
+    initialPrompts:[{role:'system',content:SYS}],temperature:0.5,topK:3});
+  try{return await s.prompt("CONTEXTE :\n"+ctx+"\n\nQUESTION : "+q);}
+  finally{s.destroy&&s.destroy()}
+}
+
+/* ---- Chat ---- */
+const chat=document.getElementById('chat');
+function bubble(txt,cls,srcs){
+  const d=document.createElement('div');d.className='msg '+cls;
+  d.innerHTML=txt;
+  if(srcs&&srcs.length){
+    const s=document.createElement('div');s.className='srcs';
+    srcs.slice(0,5).forEach(c=>{
+      const b=document.createElement('span');b.className='src';
+      b.textContent=(c.t||'').slice(0,44);
+      b.onclick=()=>openChunk(c);
+      s.appendChild(b);
+    });
+    d.appendChild(s);
+  }
+  chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;
+}
+function openChunk(c){
+  // retrouve le doc, sinon affiche seul
+  let found=null;
+  Object.keys(DOCS).forEach(k=>{if(DOCS[k].indexOf(c)>=0)found=k});
+  if(found){curDoc=found;curChunks=DOCS[found];curIdx=curChunks.indexOf(c);showChunk();}
+  else{curDoc=c.t;curChunks=[c];curIdx=0;showChunk();}
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function typing(){
+  const d=document.createElement('div');d.className='msg b';
+  d.innerHTML='<div class="typing"><i></i><i></i><i></i></div>';
+  chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;
+}
+/** Question directe depuis un bouton */
+async function aiAsk(q){
+  document.getElementById('q').value='';
+  bubble(esc(q),'u');
+  await run(q,null);
+}
+/** Injecte un qism dyal cours (bouton « Chre7-li had l-qism ») */
+async function aiDoc(titre,txt){
+  bubble('💡 <b>Chre7-li had l-qism :</b> '+esc(titre),'u');
+  await run("Chre7-li had l-qism b darija, b l-amthila dyal l-7ayat l-youmiya, "+
+    "w 3tini des moyens mnémotechniques w les pièges dyal l-examen.",txt);
+}
+/** Envoi depuis l'input */
+async function send(){
+  const inp=document.getElementById('q');
+  const q=(inp.value||'').trim();
+  if(!q)return;
+  inp.value='';
+  bubble(esc(q),'u');
+  await run(q,null);
+}
+
+async function run(q,inject){
+  const t=typing();
+  const r=trouver(inject||q,6);
+  const ctx=inject?inject.slice(0,9000)
+    :r.map(x=>'### '+x.c.t+'\n'+x.c.txt).join('\n\n').slice(0,9000);
+  let txt=null,srcs=r.map(x=>x.c),mode='local';
+  try{
+    if(localStorage.getItem('fmdc-cle')){txt=await callGemini(q,ctx);mode='gemini';}
+    else{throw new Error('nocle')}
+  }catch(e){
+    try{txt=await callLocal(q,ctx);mode='nano';}
+    catch(e2){
+      const la=localAnswer(inject||q);
+      if(!la.txt){
+        txt="⚠️ <b>Ma lqit-ch jawab f l-archive.</b><br><br>"+
+            "Jerrb :<br>• kelma w7da (<code>membrane</code>, <code>SN1</code>, <code>ultrasons</code>)<br>"+
+            "• wla <code>cher7-li l-ADN</code><br>• wla <code>chno howa l-plan dyali</code><br><br>"+
+            "💡 Bach t-jib jawab m-ktub b darija mn une vraie IA, 7ett une <b>clé API Gemini gratuite</b> l-te7t.";
+      }else{
+        txt="📖 <b>Hada li lqit f l-archive dyalek :</b><br><br>"+mdLite(la.txt)+
+            "<br><br><span style='color:var(--dim2)'>─────────────</span><br>"+
+            "💡 <b>Bghiti jawab m-ktub b darija mn une vraie IA ?</b><br>"+
+            "7ett une clé <b>API Gemini gratuite</b> l-te7t (aistudio.google.com/apikey) — 0 DH, "+
+            "w l-prof y-kteb lik jawab kamil b darija.";
+      }
+    }
+  }
+  t.remove();
+  bubble(mode==='local'?txt:mdLite(txt),'b',srcs);
+}
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+/** markdown ultra-léger pour les réponses de l'IA */
+function mdLite(t){
+  let s=esc(t).replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>')
+              .replace(/`([^`]+)`/g,'<code>$1</code>');
+  s=s.replace(/^#### (.+)$/gm,'<h4>$1</h4>').replace(/^### (.+)$/gm,'<h4>$1</h4>')
+     .replace(/^## (.+)$/gm,'<h3>$1</h3>').replace(/^# (.+)$/gm,'<h3>$1</h3>');
+  s=s.replace(/(^|\n)([•\-*] )(.+)/g,(m,p1,p2,p3)=>p1+'<li>'+p3+'</li>')
+     .replace(/(^|\n)(\d+[.)] )(.+)/g,(m,p1,p2,p3)=>p1+'<li>'+p3+'</li>');
+  s=s.replace(/(<li>.*<\/li>)(?![\s\S]*?<li>)/gs,m=>'<ul>'+m+'</ul>');
+  s=s.replace(/\n{2,}/g,'<br><br>').replace(/\n/g,'<br>');
+  return s.replace(/<\/li><br>/g,'</li>').replace(/<br><li>/g,'<li>');
+}
+
+/* ---- clé API ---- */
+function saveCle(){
+  const v=document.getElementById('cle').value.trim();
+  if(v){localStorage.setItem('fmdc-cle',v);st('✅ Clé enregistrée','var(--ok)');}
+  else{localStorage.removeItem('fmdc-cle');st('🗑️ Clé supprimée','var(--dim)');}
+}
+function st(m,c){const e=document.getElementById('cleSt');e.textContent=m;e.style.color=c}
+async function testCle(){
+  if(!localStorage.getItem('fmdc-cle'))return st('⚠️ 7ett l-clé l-awwal','var(--warn)');
+  st('⏳ …','var(--dim)');
+  try{const t=await callGemini('Gul-li « sba7 l-khir » b darija f 5 kelmat.','');
+    st('✅ Khdama!','var(--ok)');console.log(t);}
+  catch(e){st('❌ '+e.message.slice(0,60),'var(--bad)')}
+}
+if(localStorage.getItem('fmdc-cle'))document.getElementById('cle').value='••••••••';
+else st('🔑 Bla clé = recherche locale (offline, 0 DH)','var(--dim)');
+
+/* ---- suggestions ---- */
+const SUGG=["Cher7-li l-ADN b darija","Cher7-li la membrane cellulaire",
+  "Chno howa l-plan dyali?","3lach l-vocabulaire howa l-mochkil n°1?",
+  "Cher7-li les ultrasons","Cher7-li SN1 w SN2","Chno kayn f l-examen dyal chimie?",
+  "Cher7-li la mitose","Kifach n-qra l-anatomie?","Cher7-li les rayons X",
+  "Chno howa l-barème dyal M114?","Cher7-li l-électrophorèse"];
+document.getElementById('sugg').innerHTML=SUGG.map(s=>`<button onclick="aiAsk('${s.replace(/'/g,"\\'")}')">${s}</button>`).join('');
+
+/* ---- message de bienvenue ---- */
+bubble("👋 <b>Sba7 l-khir Ayoub.</b> Ana <b>L-prof</b>.\n\n"+
+  "Aji n-chre7 lik ay 7aja f vos cours — b <b>d-darija</b>, b l-amthila w des moyens mnémotechniques.\n\n"+
+  "Mthlan : <code>cher7-li l-ADN</code> · <code>SN1 w SN2</code> · <code>les ultrasons</code> · "+
+  "<code>chno howa l-plan dyali</code>\n\n"+
+  "💡 T-9der t-swweL 3la chi 7aja mn « 📖 Cours » b l-bouton **Chre7-li had l-qism**.",'sys');
+
+/* ================= INIT ================= */
+rendDecks();rendDocs();stats();rendProg();reveal();animRings();
+document.querySelectorAll('nav button').forEach(b=>{
+  b.addEventListener('click',()=>setTimeout(rendProg,60));
+});
 </script>
 </body>
 </html>
