@@ -34,17 +34,47 @@ Repo → **Settings → Pages** → Source = ta branche → dossier **`/site`** 
 
 ## 🤖 L-prof IA — kifach khdam
 
+### 🇫🇷 La langue
+L-prof ka-y-chre7 lik **b l-français simple** (niveau lycée, zéro jargon) — hada l-défaut.
+
+3 boutons l-fo9 :
+
+| Bouton | Jawab |
+|---|---|
+| 🇫🇷 **Français** | Explication en français simple + **📌 Mots à retenir** en darija |
+| 🇲🇦 **Darija** | Kolchi b d-darija |
+| 🇫🇷+🇲🇦 | Français simple **+** résumé court b darija à la fin |
+
+Le choix ka-y-t-7fed f navigateur-k.
+
+### 🖱️ ⭐ **Ma fhemt-ch chi 3ibara ?**
+**3LM l-kelma b la souris** f jawab l-prof → bouton jaune **« 💡 Chre7 b darija »** ka-y-ban → clic 3lih.
+
+L-prof ka-y-chre7 lik **l-3ibara b we7d-ha b darija** :
+1. la traduction simple
+2. une analogie dyal l-7ayat l-youmiya
+3. un moyen mnémotechnique
+4. les ⚠️ pièges d'examen
+
+⭐ Ka-y-khdem 7tta f **📖 Cours** w f **les réponses dyal les cartes**.
+
+**Wla** kteb l-3ibara f l-champ **« 📌 3ibara ma fhemti-ha »** l-te7t dyal l-chat.
+
+### 📌 **Mots à retenir** (automatique)
+Kol jawab français ka-y-khdem m3ah des **chips jaunes** — les mots scientifiques s3ab.
+**Clic 3la chi chip → l-prof y-chre7-ha lik b darija.**
+
 ### Mode 1 — 🔍 **Recherche locale** (défaut, 0 clé, **offline**)
 Moteur **TF-IDF** écrit sur mesure : ka-y-qelleb f **553 morceaux** —
 les 441 cartes + l-analyse dyal les examens + l-archive Drive + l-plan + **25 cher7 m-ktubin b d-darija**.
 
 Il renvoie **le morceau ṣ-ṣ7i7** + les cartes li 9rab + les sources cliquables.
 
-### Mode 2 — 🧠 **Vraie IA b d-darija** (optionnel, **GRATUIT**)
-Colli une **clé API Gemini** gratuite → jawab **m-ktub b d-darija**, court, b l-amthila,
+### Mode 2 — 🧠 **Vraie IA** (optionnel, **GRATUIT**)
+Colli une **clé API Gemini** gratuite → jawab **rédigé rien que pour toi**, court, b l-amthila,
 b des **moyens mnémotechniques** w les **pièges d'examen**.
 
-👉 `https://aistudio.google.com/apikey` → « Create API key » → colli-ha f l-onglet 🤖.
+👉 `https://aistudio.google.com/apikey` → « Create API key » → colli-ha f l-onglet 🤖 → **🔌 Tester**.
 
 ⚠️ La clé ka-t-bqa f navigateur-k (`localStorage`). Ma ka-t-mchi l 7ta chi blassa okhra.
 
@@ -52,10 +82,10 @@ b des **moyens mnémotechniques** w les **pièges d'examen**.
 Chrome 138+ : `window.LanguageModel` (Gemini Nano) — local, gratuit, offline.
 
 ### 💡 Depuis les cartes
-Bouton **« 💡 Ma fhemt-ch — chre7-li had la carte b darija »** sous chaque réponse.
+Bouton **« 💡 Ma fhemt-ch — explique-moi cette carte »** sous chaque réponse.
 
 ### 💡 Depuis les cours
-📖 Cours → clic 3la un document → **« 💡 Chre7-li had l-qism b d-darija »**.
+📖 Cours → clic 3la un document → **« 💡 Explique-moi ce passage »** wla **« 🇲🇦 B darija »**.
 
 ---
 

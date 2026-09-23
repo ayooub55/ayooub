@@ -210,6 +210,42 @@ kbd{background:var(--bg4);border:1px solid var(--line2);border-bottom-width:2px;
   font-size:15px;background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f;
   font-family:inherit;transition:.22s}
 .aibar button:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,108,247,.45)}
+/* langue */
+.langs{display:inline-flex;background:var(--bg3);border:1px solid var(--line2);border-radius:11px;
+  padding:3px;gap:2px;vertical-align:middle}
+.langs button{background:none;border:none;color:var(--dim);padding:7px 14px;border-radius:8px;
+  cursor:pointer;font-size:13px;font-weight:700;transition:.2s;font-family:inherit;white-space:nowrap}
+.langs button:hover{color:var(--txt)}
+.langs button.on{background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f}
+/* popup de sélection */
+.selpop{position:absolute;z-index:150;display:none;
+  background:linear-gradient(100deg,var(--c1),var(--c2));color:#05101f;border:none;
+  padding:9px 15px;border-radius:99px;font-size:13px;font-weight:800;cursor:pointer;
+  box-shadow:0 10px 30px rgba(124,108,247,.55);font-family:inherit;white-space:nowrap;
+  animation:fadeUp .18s}
+.selpop:hover{transform:translateY(-2px)}
+/* glossaire */
+.gloss{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:9px;border-top:1px dashed var(--line2)}
+.gloss .gl{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.4);color:var(--warn);
+  padding:3px 10px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.gloss .gl:hover{background:rgba(251,191,36,.25);transform:translateY(-2px)}
+.gloss:before{content:'📌 Mots s3ab — clic bach n-chre7-hom b darija :';display:block;width:100%;
+  font-size:11px;color:var(--dim2);font-weight:600;margin-bottom:2px}
+/* mini bulle « explication de mot » */
+.msg.m{align-self:flex-start;background:linear-gradient(160deg,rgba(124,108,247,.16),var(--bg3));
+  border:1px solid rgba(124,108,247,.45);border-bottom-left-radius:4px;font-size:14px}
+.msg.m .mh{font-size:12px;color:var(--c2);font-weight:800;letter-spacing:.3px;margin-bottom:6px}
+.msg.m .mt{color:var(--warn);font-weight:800}
+/* bloc « 3ibara » */
+.expr{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.expr input{flex:1;min-width:180px;background:var(--bg2);border:1px dashed var(--line2);
+  border-radius:11px;padding:12px 16px;color:var(--txt);font-size:14px;font-family:inherit;outline:none}
+.expr input:focus{border-style:solid;border-color:var(--warn)}
+.expr button{background:rgba(251,191,36,.13);border:1px solid rgba(251,191,36,.45);color:var(--warn);
+  padding:12px 18px;border-radius:11px;font-weight:800;font-size:13.5px;cursor:pointer;
+  font-family:inherit;transition:.22s;white-space:nowrap}
+.expr button:hover{background:rgba(251,191,36,.25);transform:translateY(-2px)}
+.hintsel{font-size:12.5px;color:var(--dim2);margin-top:8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .sugg{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
 .sugg button{background:var(--bg3);border:1px solid var(--line2);color:var(--dim);
   padding:7px 14px;border-radius:99px;font-size:12.5px;cursor:pointer;transition:.2s;font-family:inherit}
@@ -459,19 +495,34 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:v
 <!-- ================= IA ================= -->
 <section class="pane" id="p-ai">
   <div class="card rv">
-    <h2>🤖 L-prof dyalek — ka-y-chre7 lik b d-darija</h2>
+    <h2>🤖 L-prof dyalek
+      <span class="langs" id="langs">
+        <button data-l="fr" class="on">🇫🇷 Français</button>
+        <button data-l="dz">🇲🇦 Darija</button>
+        <button data-l="2">🇫🇷+🇲🇦</button>
+      </span>
+    </h2>
     <p class="muted">
-      Swel 3la <b>ay 7aja</b> : un cours, un mot ṣ3ib, un qism dyal l-plan, une carte.
-      L-prof ka-y-qelleb f <b>koulchi</b> — les 441 cartes + les résumés + l-analyse dyal les examens
-      + <b>25 cher7 m-ktubin b d-darija</b>.
+      L-prof ka-y-chre7 lik <b>b l-français simple</b> (niveau lycée).
+      ⭐ <b>Ila ma fhemti-ch chi 3ibara : 3lm-ha b la souris</b> (wla kteb-ha l-te7t)
+      → ka-y-chre7-ha lik <b>b darija b we7d-ha</b>.
     </p>
 
     <div class="chat" id="chat"></div>
 
+    <div class="expr">
+      <input id="expr" placeholder="📌 3ibara ma fhemti-ha (ex: « potentiel de repos »)…"
+             onkeydown="if(event.key==='Enter')expliquer(this.value)">
+      <button onclick="expliquer(document.getElementById('expr').value)">💡 Chre7-ha b darija</button>
+    </div>
+    <div class="hintsel">
+      🖱️ <b>T-9der t-3lm ay kelma f jawab l-prof</b> → bouton « 💡 Chre7 » ka-y-ban → clic 3lih.
+    </div>
+
     <div class="sugg" id="sugg"></div>
 
     <div class="aibar">
-      <input id="q" placeholder="Mthlan: cher7-li l-ADN b darija…" onkeydown="if(event.key==='Enter')send()">
+      <input id="q" placeholder="Mthlan: explique-moi l-ADN…" onkeydown="if(event.key==='Enter')send()">
       <button onclick="send()">Sifet ↵</button>
     </div>
 
@@ -701,7 +752,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:v
     </div>
     <div class="mbody" id="m-b"></div>
     <div class="mfoot">
-      <button class="btn btn-p" style="padding:11px 18px;font-size:14px" onclick="chre7()">💡 Chre7-li had l-qism b d-darija</button>
+      <button class="btn btn-p" style="padding:11px 18px;font-size:14px" onclick="chre7()">💡 Explique-moi ce passage</button>
+      <button class="btn btn-g" style="padding:11px 18px;font-size:14px" onclick="chre7(1)">🇲🇦 B darija</button>
       <button class="btn btn-g" style="padding:11px 18px;font-size:14px" onclick="closeM()">Sedd</button>
     </div>
   </div>
@@ -835,10 +887,13 @@ function closeM(){
   document.getElementById('modal').classList.remove('on');
   document.body.style.overflow='';
 }
-function chre7(){
+function chre7(forceDz){
   const c=curChunks[curIdx];
   closeM();navTo('ai');
-  setTimeout(()=>aiDoc(c.t,c.txt.slice(0,3000)),260);
+  setTimeout(()=>{
+    const old=LANG;if(forceDz)setLang('dz');
+    aiDoc(c.t,c.txt.slice(0,3000)).then(()=>{if(forceDz)setLang(old)});
+  },260);
 }
 
 /* ================= MINI MARKDOWN ================= */
@@ -981,7 +1036,7 @@ function next(){
   eq.innerHTML=d.cards[cur.i].q;eq.style.animation='none';void eq.offsetWidth;eq.style.animation='';
   ea.innerHTML=d.cards[cur.i].a+
     '<div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--line);text-align:center">'+
-    '<button class="sugg-b" onclick="chre7Carte()">💡 Ma fhemt-ch — chre7-li had la carte b darija</button></div>';
+    '<button class="sugg-b" onclick="chre7Carte()">💡 Ma fhemt-ch — '+lblCarte()+'</button></div>';
   ea.classList.remove('on');ea.scrollTop=0;
   eb.innerHTML='<button class="b-show" onclick="show()">👁 Afficher la réponse</button>';
   document.getElementById('e-reste').textContent=(ci+1)+' / '+tot;
@@ -1175,26 +1230,63 @@ function localAnswer(q){
   return {txt:txt,srcs:r.map(x=>x.c)};
 }
 
-/* ---- Gemini ---- */
-const SYS=("Tu es « L-prof », le professeur particulier d'Ayoub, étudiant en 1ère année de médecine "
-+"dentaire à la FMDC de Casablanca (Maroc), S1 2026/27. Il vient d'un bac Économie puis SPC en candidat "
-+"libre avec 10/20 (n9el) : ses bases scientifiques sont quasi nulles, mais il est motivé et travaille 15h/semaine.\n\n"
-+"RÈGLES ABSOLUES :\n"
-+"1. Réponds en DARIJA MAROCAIN (arabe dialectal écrit en lettres latines, avec des chiffres comme 3/7/9 "
-+"pour les sons arabes), sauf les termes scientifiques qui restent en français entre parenthèses.\n"
-+"2. Sois COURT et CONCRET : max 250 mots. Pas de blabla, pas d'intro inutile.\n"
-+"3. Utilise des ANALOGIES de la vie quotidienne marocaine.\n"
-+"4. Donne toujours un MOYEN MNÉMOTECHNIQUE (astuce de mémoire) quand tu expliques un concept.\n"
-+"5. Signale les PIÈGES d'examen (⚠️) quand il y en a.\n"
-+"6. Si la question porte sur un QCM, donne la réponse DIRECTEMENT au début.\n"
-+"7. Utilise UNIQUEMENT le CONTEXTE fourni. Si le contexte ne suffit pas, dis-le clairement en darija.\n"
-+"8. Termine toujours par une phrase d'encouragement très courte (1 ligne max).");
+/* ---- LANGUE ---- */
+let LANG=localStorage.getItem('fmdc-lang')||'fr';
+function lblCarte(){
+  return LANG==='dz'?'chre7-li had la carte b darija':
+         LANG==='2'?'explique-moi cette carte (français + darija)':
+                    'explique-moi cette carte en français simple';
+}
+function setLang(l){
+  LANG=l;localStorage.setItem('fmdc-lang',l);
+  document.querySelectorAll('#langs button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  const ph={fr:'Mthlan: explique-moi l-ADN…',dz:'Mthlan: cher7-li l-ADN b darija…',
+            '2':'Mthlan: explique-moi la mitose…'};
+  document.getElementById('q').placeholder=ph[l]||ph.fr;
+}
+document.querySelectorAll('#langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+setLang(LANG);
+
+/* ---- PROMPTS SYSTÈME ---- */
+const BASE=("Tu es « L-prof », le professeur particulier d'Ayoub, étudiant en 1ère année de médecine "
++"dentaire à la FMDC de Casablanca (Maroc), S1 2026/27. Il vient d'un bac Économie, puis d'un bac SPC "
++"obtenu en candidat libre avec 10/20 (n9el) : ses bases scientifiques sont quasi nulles, mais il est "
++"très motivé et travaille 15h/semaine. Sa langue maternelle est le darija marocain.\n\n");
+const COMMUN=("RÈGLES DE FOND :\n"
++"- Sois COURT et CONCRET : 200 à 300 mots maximum. Pas de blabla, pas d'introduction inutile.\n"
++"- Phrases COURTES. Une idée par phrase.\n"
++"- Utilise des ANALOGIES de la vie quotidienne (marocaine de préférence).\n"
++"- Donne toujours un MOYEN MNÉMOTECHNIQUE (astuce de mémoire) quand tu expliques un concept.\n"
++"- Signale les PIÈGES d'examen avec ⚠️ quand il y en a.\n"
++"- Si la question porte sur un QCM, donne la RÉPONSE DIRECTEMENT au début.\n"
++"- Utilise UNIQUEMENT le CONTEXTE fourni. S'il ne suffit pas, dis-le clairement.\n"
++"- Termine par UNE SEULE phrase d'encouragement.");
+const GLOSS=("\n\nFORMAT OBLIGATOIRE À LA FIN — après une ligne vide, ajoute exactement :\n"
++"📌 Mots à retenir\n"
++"puis une liste de 3 à 6 lignes, CHACUNE au format strict :\n"
++"- **terme scientifique** : traduction ou explication très courte en darija marocain "
++"(écrit en lettres latines, avec 3/7/9 pour les sons arabes)\n"
++"Exemple : - **membrane plasmique** : l-ghchida dyal la cellule\n"
++"Ne mets rien d'autre après cette liste.");
+const SYS_FR=BASE+
+  "LANGUE : réponds en FRANÇAIS SIMPLE et CLAIR, niveau lycée. Aucun jargon inexpliqué.\n\n"
+  +COMMUN+GLOSS;
+const SYS_DZ=BASE+
+  "LANGUE : réponds en DARIJA MAROCAIN (arabe dialectal écrit en lettres latines, avec les chiffres "
+ +"3/7/9 pour les sons arabes). Les termes scientifiques restent en français entre parenthèses.\n\n"
+  +COMMUN;
+const SYS_2=BASE+
+  "LANGUE : réponds en FRANÇAIS SIMPLE et CLAIR, niveau lycée.\n"
+ +"Puis, après une ligne vide et le titre « 🇲🇦 B darija : », donne un RÉSUMÉ très court "
+ +"(5 lignes max) de ta réponse en DARIJA MAROCAIN (lettres latines, 3/7/9 pour les sons arabes).\n\n"
+  +COMMUN+GLOSS;
+function SYS(){return LANG==='dz'?SYS_DZ:(LANG==='2'?SYS_2:SYS_FR)}
 
 async function callGemini(q,ctx){
   const cle=localStorage.getItem('fmdc-cle')||'';
   if(!cle)throw new Error('nocle');
   const body={
-    systemInstruction:{parts:[{text:SYS}]},
+    systemInstruction:{parts:[{text:SYS()}]},
     contents:[{role:'user',parts:[{text:"CONTEXTE (extrait des cours, résumés et cartes d'Ayoub) :\n\n"+ctx+
       "\n\n---\nQUESTION D'AYOUB : "+q}]}],
     generationConfig:{temperature:0.5,maxOutputTokens:900}
@@ -1215,7 +1307,7 @@ async function callLocal(q,ctx){
   const st=await window.LanguageModel.availability();
   if(st==='unavailable')throw new Error('nolocal');
   const s=await window.LanguageModel.create({
-    initialPrompts:[{role:'system',content:SYS}],temperature:0.5,topK:3});
+    initialPrompts:[{role:'system',content:SYS()}],temperature:0.5,topK:3});
   try{return await s.prompt("CONTEXTE :\n"+ctx+"\n\nQUESTION : "+q);}
   finally{s.destroy&&s.destroy()}
 }
@@ -1259,9 +1351,8 @@ async function aiAsk(q){
 }
 /** Injecte un qism dyal cours (bouton « Chre7-li had l-qism ») */
 async function aiDoc(titre,txt){
-  bubble('💡 <b>Chre7-li had l-qism :</b> '+esc(titre),'u');
-  await run("Chre7-li had l-qism b darija, b l-amthila dyal l-7ayat l-youmiya, "+
-    "w 3tini des moyens mnémotechniques w les pièges dyal l-examen.",txt);
+  bubble('💡 <b>'+(LANG==='dz'?'Chre7-li had l-qism':'Explique-moi ce passage')+' :</b> '+esc(titre),'u');
+  await run(instr(),txt);
 }
 /** Envoi depuis l'input */
 async function send(){
@@ -1273,6 +1364,15 @@ async function send(){
   await run(q,null);
 }
 
+/** consigne de forme selon la langue choisie */
+function instr(){
+  if(LANG==='dz')return "Chre7-li had l-qism b DARIJA, b l-amthila dyal l-7ayat l-youmiya, "
+    +"w 3tini des moyens mnémotechniques w les pièges dyal l-examen.";
+  if(LANG==='2')return "Explique ce passage en FRANÇAIS SIMPLE, puis fais un résumé court en darija. "
+    +"Donne des exemples de la vie quotidienne, des moyens mnémotechniques et les pièges d'examen.";
+  return "Explique ce passage en FRANÇAIS SIMPLE et CLAIR (niveau lycée), avec des exemples de la vie "
+    +"quotidienne, des moyens mnémotechniques, et signale les pièges d'examen avec ⚠️.";
+}
 async function run(q,inject){
   const t=typing();
   const r=trouver(inject||q,6);
@@ -1290,23 +1390,152 @@ async function run(q,inject){
         txt="⚠️ <b>Ma lqit-ch jawab f l-archive.</b><br><br>"+
             "Jerrb :<br>• kelma w7da (<code>membrane</code>, <code>SN1</code>, <code>ultrasons</code>)<br>"+
             "• wla <code>cher7-li l-ADN</code><br>• wla <code>chno howa l-plan dyali</code><br><br>"+
-            "💡 Bach t-jib jawab m-ktub b darija mn une vraie IA, 7ett une <b>clé API Gemini gratuite</b> l-te7t.";
+            "💡 "+(LANG==='dz'?"Bach t-jib jawab m-ktub b darija":"Pour une explication rédigée rien que pour toi")
+            +" mn une vraie IA, 7ett une <b>clé API Gemini gratuite</b> l-te7t.";
       }else{
         txt="📖 <b>Hada li lqit f l-archive dyalek :</b><br><br>"+mdLite(la.txt)+
             "<br><br><span style='color:var(--dim2)'>─────────────</span><br>"+
             "💡 <b>Bghiti jawab m-ktub b darija mn une vraie IA ?</b><br>"+
             "7ett une clé <b>API Gemini gratuite</b> l-te7t (aistudio.google.com/apikey) — 0 DH, "+
-            "w l-prof y-kteb lik jawab kamil b darija.";
+            (LANG==='dz'?"w l-prof y-kteb lik jawab kamil b darija."
+                        :"w l-prof y-kteb lik une explication complète et simple.");
       }
     }
   }
   t.remove();
-  bubble(mode==='local'?txt:mdLite(txt),'b',srcs);
+  txt=norm(txt);
+  if(mode!=='local')lastAnswer=txt;
+  const b=bubble(mode==='local'?txt:mdLite(txt),'b',srcs);
+  if(mode!=='local')addGloss(b,txt);
+}
+/** Ajoute les chips « mots s3ab » sous une réponse */
+function addGloss(el,txt){
+  const items=parseGloss(txt);
+  if(!items||!items.length)return;
+  const d=document.createElement('div');d.className='gloss';
+  items.forEach(it=>{
+    const s=document.createElement('span');s.className='gl';
+    s.textContent=it.t;s.title=it.d;
+    s.onclick=()=>expliquer(it.t,lastAnswer);
+    d.appendChild(s);
+  });
+  el.appendChild(d);
 }
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+/** normalise les retours à la ligne échappés que certaines API renvoient */
+function norm(t){return (t||'').replace(/\\r/g,'').replace(/\\n/g,'\n').replace(/\\t/g,' ')}
+
+/* ---------- 📌 EXPLIQUER UNE EXPRESSION (darija) ---------- */
+/** Parse la section « 📌 Mots à retenir » renvoyée par Gemini */
+function parseGloss(t0){
+  const txt=norm(t0);
+  const i=txt.search(/📌\s*Mots? à retenir/i);
+  if(i<0)return null;
+  const items=[];
+  txt.slice(i).split(/\n/).forEach(l=>{
+    const m=l.match(/^\s*[-•*]?\s*\*\*([^*]{2,45})\*\*\s*[:=—–]\s*(.{2,90})$/)
+         || l.match(/^\s*[-•*]\s*([^:=—–]{2,45})\s*[:=—–]\s*(.{2,90})$/);
+    if(m)items.push({t:m[1].trim(),d:m[2].trim()});
+  });
+  return items.length?items.slice(0,8):null;
+}
+/** Mini-explication d'une expression, en darija */
+async function expliquer(expr,ctx){
+  expr=(expr||'').trim().replace(/\s+/g,' ');
+  if(!expr)return;
+  if(expr.length>140)expr=expr.slice(0,140);
+  const e=document.getElementById('expr');if(e)e.value='';
+  hideSel();
+  bubble('<div class="mh">🔍 3ibara :</div><span class="mt">'+esc(expr)+'</span>','m');
+  const t=typing();
+  const r=trouver(expr,3);
+  const contexte=(ctx?ctx+'\n\n':'')+r.map(x=>'### '+x.c.t+'\n'+x.c.txt).join('\n\n').slice(0,4000);
+  let txt=null;
+  try{
+    if(localStorage.getItem('fmdc-cle')){
+      txt=await callRaw("Explique-moi l'expression scientifique « "+expr+" ».\n\n"
+        +"Réponds en DARIJA MAROCAIN (lettres latines, 3/7/9 pour les sons arabes), en 5 lignes maximum :\n"
+        +"1. D'abord la traduction/traduction simple en darija.\n"
+        +"2. Puis une analogie de la vie quotidienne marocaine.\n"
+        +"3. Puis un moyen mnémotechnique si possible.\n"
+        +"4. Enfin, si c'est un piège d'examen classique, signale-le avec ⚠️.\n"
+        +"Termine par une phrase d'encouragement très courte.",contexte);
+    }else throw new Error('nocle');
+  }catch(e){
+    try{ txt=await callLocal("Explique « "+expr+" » en darija marocain, 5 lignes max, avec une analogie.",contexte); }
+    catch(e2){
+      const r2=trouver(expr,3);
+      txt = r2.length
+        ? "📖 <b>Hada li lqit f l-archive 3la « "+esc(expr)+" » :</b><br><br>"+mdLite(r2[0].c.txt.slice(0,900))
+        : "⚠️ Ma lqit-ch « "+esc(expr)+" » f l-archive dyalek.<br><br>"
+          +"💡 Bach n-chre7-ha lik b darija mzyan, 7ett une <b>clé API Gemini gratuite</b> l-te7t "
+          +"(aistudio.google.com/apikey).";
+      t.remove();bubble(txt,'m');return;
+    }
+  }
+  t.remove();
+  bubble('<div class="mh">💡 B darija :</div>'+mdLite(txt),'m');
+}
+/** Appel Gemini avec un prompt libre */
+async function callRaw(prompt,ctx){
+  const cle=localStorage.getItem('fmdc-cle')||'';
+  if(!cle)throw new Error('nocle');
+  const body={
+    systemInstruction:{parts:[{text:BASE+"Tu réponds toujours en darija marocain (lettres latines, "
+      +"3/7/9 pour les sons arabes), sauf les termes scientifiques qui restent en français."}]},
+    contents:[{role:'user',parts:[{text:(ctx?"CONTEXTE :\n"+ctx+"\n\n---\n":"")+prompt}]}],
+    generationConfig:{temperature:0.5,maxOutputTokens:500}
+  };
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+encodeURIComponent(cle),
+    {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const j=await r.json();
+  const t=j.candidates&&j.candidates[0]&&j.candidates[0].content&&
+          j.candidates[0].content.parts.map(p=>p.text||'').join('\n');
+  if(!t)throw new Error('Jawab khawi');
+  return t;
+}
+
+/* ---------- 🖱️ SÉLECTION DE TEXTE → bouton « Chre7 » ---------- */
+const selpop=document.createElement('button');
+selpop.className='selpop';selpop.textContent='💡 Chre7 b darija';
+selpop.onclick=()=>{const s=(window.getSelection()||'').toString().trim();if(s)expliquer(s,lastAnswer)};
+document.body.appendChild(selpop);
+let lastAnswer='';
+function showSel(x,y){
+  selpop.style.left=(x)+'px';selpop.style.top=(y)+'px';
+  selpop.style.display='block';
+}
+function hideSel(){selpop.style.display='none'}
+let MX=0,MY=0;
+document.addEventListener('mousemove',e=>{MX=e.clientX;MY=e.clientY},{passive:true});
+document.addEventListener('mouseup',e=>{
+  if(e.clientX||e.clientY){MX=e.clientX;MY=e.clientY}
+  setTimeout(()=>{
+    const s=window.getSelection&&window.getSelection();
+    const t=s?s.toString().trim():'';
+    if(!t||t.length<2||t.length>160||e.target===selpop){hideSel();return}
+    // uniquement dans une bulle IA / un document / une carte
+    let n=s.anchorNode,okZone=false;
+    while(n&&n!==document.body){
+      if(n.nodeType===1&&n.classList&&(n.classList.contains('msg')||n.classList.contains('mbody')||n.classList.contains('abox'))){okZone=true;break}
+      n=n.parentNode;
+    }
+    if(!okZone){hideSel();return}
+    let x=MX,y=MY-46;
+    try{
+      const r=s.getRangeAt(0).getBoundingClientRect();
+      if(r&&(r.left||r.top)){x=r.left;y=r.top+window.scrollY-46}
+    }catch(err){}
+    showSel(Math.max(8,Math.min(x,(window.innerWidth||1200)-210)),Math.max(8,y));
+  },5);
+});
+document.addEventListener('scroll',hideSel,true);
+document.addEventListener('mousedown',e=>{if(e.target!==selpop)hideSel()});
+
 /** markdown ultra-léger pour les réponses de l'IA */
 function mdLite(t){
-  let s=esc(t).replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>')
+  let s=esc(norm(t)).replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>')
               .replace(/`([^`]+)`/g,'<code>$1</code>');
   s=s.replace(/^#### (.+)$/gm,'<h4>$1</h4>').replace(/^### (.+)$/gm,'<h4>$1</h4>')
      .replace(/^## (.+)$/gm,'<h3>$1</h3>').replace(/^# (.+)$/gm,'<h3>$1</h3>');
@@ -1335,19 +1564,22 @@ if(localStorage.getItem('fmdc-cle'))document.getElementById('cle').value='••
 else st('🔑 Bla clé = recherche locale (offline, 0 DH)','var(--dim)');
 
 /* ---- suggestions ---- */
-const SUGG=["Cher7-li l-ADN b darija","Cher7-li la membrane cellulaire",
-  "Chno howa l-plan dyali?","3lach l-vocabulaire howa l-mochkil n°1?",
-  "Cher7-li les ultrasons","Cher7-li SN1 w SN2","Chno kayn f l-examen dyal chimie?",
-  "Cher7-li la mitose","Kifach n-qra l-anatomie?","Cher7-li les rayons X",
-  "Chno howa l-barème dyal M114?","Cher7-li l-électrophorèse"];
+const SUGG=["Explique-moi l'ADN","Explique-moi la membrane cellulaire",
+  "Quel est mon plan de travail?","Pourquoi le vocabulaire est mon problème n°1?",
+  "Explique-moi les ultrasons","Explique-moi SN1 et SN2","Qu'est-ce qui tombe en chimie?",
+  "Explique-moi la mitose","Comment réviser l'anatomie?","Explique-moi les rayons X",
+  "C'est quoi le barème du M114?","Explique-moi l'électrophorèse"];
 document.getElementById('sugg').innerHTML=SUGG.map(s=>`<button onclick="aiAsk('${s.replace(/'/g,"\\'")}')">${s}</button>`).join('');
 
 /* ---- message de bienvenue ---- */
-bubble("👋 <b>Sba7 l-khir Ayoub.</b> Ana <b>L-prof</b>.\n\n"+
-  "Aji n-chre7 lik ay 7aja f vos cours — b <b>d-darija</b>, b l-amthila w des moyens mnémotechniques.\n\n"+
-  "Mthlan : <code>cher7-li l-ADN</code> · <code>SN1 w SN2</code> · <code>les ultrasons</code> · "+
-  "<code>chno howa l-plan dyali</code>\n\n"+
-  "💡 T-9der t-swweL 3la chi 7aja mn « 📖 Cours » b l-bouton **Chre7-li had l-qism**.",'sys');
+bubble("👋 <b>Sba7 l-khir Ayoub.</b> Ana <b>L-prof</b>.\n\n"
+  +"🧠 <b>Ka-n-chre7 lik b l-français simple</b> (niveau lycée) — blan l-jargon.\n\n"
+  +"🖱️ <b>Ila ma fhemti-ch chi 3ibara : 3LM-HA</b> b la souris f jawabi → bouton "
+  +"<b>« 💡 Chre7 b darija »</b> ka-y-ban → clic 3lih.\n"
+  +"⌨️ Wla kteb l-3ibara f l-blan « 📌 3ibara ma fhemti-ha » l-te7t.\n\n"
+  +"🇲🇦 Bghiti kolchi b darija? Beddel l-langue l-fo9.\n\n"
+  +"Mthalan : <code>explique-moi l-ADN</code> · <code>SN1 et SN2</code> · "
+  +"<code>les ultrasons</code> · <code>quel est mon plan</code>",'sys');
 
 /* ================= INIT ================= */
 rendDecks();rendDocs();stats();rendProg();reveal();animRings();
