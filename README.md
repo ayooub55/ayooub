@@ -114,3 +114,25 @@ Tout est calculé automatiquement à partir de `data/s1.js` + `data/cours-*.js` 
   remplacent pas les cours officiels ni les annonces de la faculté.
 - Vérifiez que le partage du Drive reste ouvert aux étudiants de la promo.
 - Le portail de la promo **2024-2025** reste accessible dans `2024-2025/`.
+
+
+---
+
+## 🆕 Ajouts & téléchargement (dernière étape)
+
+### Télécharger le site chez soi
+Un bouton **« ⬇️ Télécharger le site (ZIP) »** est présent dans l'accueil (hero + accès rapide) et dans le pied de page.
+Il télécharge `telecharger/site-fmdc-s1.zip`, une copie complète et autonome du site : décompresse le dossier, puis ouvre `index.html` dans ton navigateur (ça marche aussi sans Internet, sauf les liens Google Drive). Voir `LISEZ-MOI.txt` à l'intérieur du ZIP.
+
+> Le ZIP est régénéré par `python3 tools/make-zip.py` (ou toute commande `zip`) après chaque modification du site. Il contient `index.html`, `assets/`, `data/` et l'ancien portail `2024-2025/`, mais **pas** `telecharger/`.
+
+### Ajouter ses propres cours / exercices
+Route `#/ajouter` : formulaire (type *cours* ou *exercice*, module, prof, lien Drive, texte libre en mini-markdown `#` titres / `-` puces, photos).
+Chaque ajout devient une fiche comme les autres (`#/a/<id>`) : sommaire, contenu, photos avec galerie + zoom, boutons *Modifier / Ouvrir le lien / Supprimer*.
+Tout est stocké dans le navigateur : `localStorage` (`fmdc.s1.ajouts`) + IndexedDB (`ajout:<id>` pour les images).
+
+### Exercices / TD / QCM
+Route `#/exercices` : détecte automatiquement dans le dataset Drive tous les fichiers d'exercices, TD, QCM et annales (`EXO_RE`), les regroupe par rubrique, et liste en plus **« Mes exercices ajoutés »**.
+
+### Exporter ses données
+Bouton **« 💾 Exporter mes données »** (pied de page) → `fmdc-s1-mes-donnees-<date>.json` : révision cochée, favoris, statuts des fiches, notes, surlignages, ajouts et photos (en base64). À garder à côté du site décompressé.

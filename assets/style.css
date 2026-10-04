@@ -808,3 +808,10 @@ html[data-theme="dark"] mark.hl { color: #ffe9a8; }
   .fiche-sec { break-inside: avoid; }
   a { color: #000; }
 }
+
+.a-input {
+  width: 100%; padding: 11px 13px; font: inherit; font-size: 14px; color: var(--text);
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-s); outline: 0;
+}
+.a-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
+.dl-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }

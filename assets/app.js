@@ -262,7 +262,8 @@
       modules: D.modules.length,
       dossiers: D.modules.reduce((a, m) => a + countFolders(m), 0),
       vides: D.modules.reduce((a, m) => a + countEmpty(m), 0),
-      annales: (moduleIndex['exams-2025'] ? moduleFiles(moduleIndex['exams-2025']).length : 0) + (moduleIndex['examens-anciens'] ? moduleFiles(moduleIndex['examens-anciens']).length : 0)
+      annales: (moduleIndex['exams-2025'] ? moduleFiles(moduleIndex['exams-2025']).length : 0) + (moduleIndex['examens-anciens'] ? moduleFiles(moduleIndex['examens-anciens']).length : 0),
+      exos: driveExos().length, mesAjouts: ajouts.length, mesExos: mesExos().length, mesCours: mesCours().length
     };
   };
 
@@ -279,8 +280,10 @@
         <p class="lead">Cours du Drive transformés en <b>fiches de révision</b> : explications simples, tableaux, schémas, points à retenir et pièges des QCM. Avec recherche, suivi de révision, statistiques et <b>tes propres notes & photos</b>.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#/fiches">📘 Lire les fiches de cours</a>
-          <a class="btn btn-ghost" href="#/modules">📚 Parcourir les modules</a>
+          <a class="btn btn-ghost" href="#/exercices">🎯 Exercices & TD</a>
+          <a class="btn btn-ghost" href="#/ajouter">➕ Ajouter un cours / exercice</a>
           <a class="btn btn-ghost" href="#/stats">📊 Mes statistiques</a>
+          <a class="btn btn-ghost" href="#" data-download-site>⬇️ Télécharger le site</a>
           <a class="btn btn-ghost" href="${D.meta.driveUrl}" target="_blank" rel="noopener">📁 Drive S1 ↗</a>
         </div>
 
@@ -315,6 +318,12 @@
         <div class="fiche-cards">${FICHES.slice(0, 6).map(ficheCard).join('')}</div>
       </section>
 
+      ${ajouts.length ? `<section class="section">
+        <div class="section-head"><div><h2>Mes ajouts (${ajouts.length})</h2><p>Les cours et exercices que tu as ajoutés toi-même.</p></div>
+          <a class="go" href="#/ajouter" style="--c:var(--accent)">Ajouter →</a></div>
+        <div class="fiche-cards">${ajouts.slice().reverse().slice(0, 3).map(ajoutCard).join('')}</div>
+      </section>` : ''}
+
       <section class="section">
         <div class="section-head"><div><h2>Accès rapide</h2><p>Les raccourcis les plus utiles avant les examens.</p></div></div>
         <div class="quick">
@@ -322,6 +331,10 @@
           <a href="#/m/examens-anciens"><span class="q-ico">🗂️</span><b>Annales S1</b><span>Sujets des promotions 2023 & 2024</span></a>
           <a href="#/f/imd-carie"><span class="q-ico">🦠</span><b>La carie dentaire</b><span>Fiche complète : biofilm, sucres, diagnostic</span></a>
           <a href="#/f/physio-digestif"><span class="q-ico">🍽️</span><b>Physiologie digestive</b><span>Tous les chiffres et enzymes à retenir</span></a>
+          <a href="#/exercices"><span class="q-ico">🎯</span><b>Exercices & TD</b><span>QCM, TD, annales + mes propres exercices</span></a>
+          <a href="#/ajouter"><span class="q-ico">➕</span><b>Ajouter</b><span>Nouveau cours, TD ou photos de mes notes</span></a>
+          <a href="#" data-download-site><span class="q-ico">⬇️</span><b>Télécharger le site</b><span>ZIP à garder hors ligne sur ton PC / téléphone</span></a>
+          <a href="#/stats"><span class="q-ico">📊</span><b>Statistiques</b><span>Où j’en suis dans ma révision</span></a>
         </div>
       </section>
 
@@ -824,6 +837,8 @@
           <div class="kpi"><b>${s.done}</b><span>documents révisés</span><div class="k-sub">${s.pct} % du Drive</div></div>
           <div class="kpi"><b>${s.images}</b><span>photos de mes notes</span><div class="k-sub">${s.notes} fiche(s) annotée(s)</div></div>
           <div class="kpi"><b>${s.surlignages}</b><span>passages surlignés</span><div class="k-sub">${s.annales} sujets d’examens</div></div>
+          <div class="kpi"><b>${s.exos}</b><span>exercices / TD / QCM du Drive</span><div class="k-sub">à retrouver dans 🎯 Exercices</div></div>
+          <div class="kpi"><b>${s.mesAjouts}</b><span>mes ajouts personnels</span><div class="k-sub">${s.mesCours} cours · ${s.mesExos} exercices</div></div>
         </div>
 
         <div class="section-head" style="margin-top:34px"><div><h2 style="font-size:18px">Couverture & progression par rubrique</h2>
@@ -940,6 +955,237 @@
           </div>
         </div>
       </section>`;
+  };
+
+  /* ====================== MES AJOUTS (cours & exercices perso) ====================== */
+  const KEY_AJOUTS = 'fmdc.s1.ajouts';
+  const ajouts = read(KEY_AJOUTS, []);
+  const saveAjouts = () => write(KEY_AJOUTS, ajouts);
+  const ajoutIndex = id => ajouts.find(a => a.id === id);
+  const mesCours = () => ajouts.filter(a => a.type === 'cours');
+  const mesExos = () => ajouts.filter(a => a.type === 'exercice');
+
+  const EXO_RE = /(qcm|exam|annal|preuve|contr[oô]le|td\b|exercic|mine|r[eé]vision|sujet|corrig|scellement des)/i;
+  const driveExos = () => index.filter(f => f.module && EXO_RE.test(f.nom));
+
+  const moduleOptions = sel => D.modules.map(m =>
+    `<option value="${m.id}" ${sel === m.id ? 'selected' : ''}>${m.emoji} ${esc(m.court || m.nom)}</option>`).join('');
+
+  const renderTexte = t => String(t || '').split(/\n+/).map(l => {
+    l = l.trim();
+    if (!l) return '';
+    if (/^#\s/.test(l)) return `<h3 style="font-size:15.5px;margin:16px 0 6px">${esc(l.replace(/^#\s*/, ''))}</h3>`;
+    if (/^[-•*]\s/.test(l)) return `<li>${esc(l.replace(/^[-•*]\s*/, ''))}</li>`;
+    return `<p style="font-size:14.5px;color:var(--text-soft);margin:8px 0">${esc(l)}</p>`;
+  }).join('').replace(/(<li>.*?<\/li>)+/gs, m => `<ul style="margin:8px 0;padding-left:22px;font-size:14.5px;color:var(--text-soft)">${m}</ul>`);
+
+  const ajoutCard = a => {
+    const m = moduleIndex[a.module];
+    const nbImg = state.imgCount['ajout:' + a.id] || 0;
+    return `<a class="fc" href="#/a/${a.id}" style="--c:${m ? m.couleur : 'var(--accent)'}">
+      <div class="fc-top"><div class="fc-emoji">${a.type === 'exercice' ? '🎯' : '✍️'}</div>
+        <div><h3>${esc(a.titre)}</h3><div class="fc-sub">${esc(a.prof || 'Ajout personnel')} · ${m ? esc(m.court || m.nom) : ''} · ${new Date(a.date).toLocaleDateString('fr-FR')}</div></div></div>
+      <p>${esc((a.texte || '').slice(0, 130))}${(a.texte || '').length > 130 ? '…' : ''}</p>
+      <div class="fc-foot"><span class="chip">${a.type === 'exercice' ? '🎯 Exercice' : '📘 Cours'}</span>
+        <span>${nbImg ? '🖼 ' + nbImg : ''}${a.lien ? ' 🔗' : ''}</span></div>
+    </a>`;
+  };
+
+  const renderExercices = () => {
+    const parModule = D.modules.map(m => ({
+      m, exos: moduleFiles(m).filter(f => EXO_RE.test(f.nom))
+    })).filter(x => x.exos.length);
+    const totalDrive = parModule.reduce((a, x) => a + x.exos.length, 0);
+    const mine = mesExos();
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>Exercices & TD</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head">
+          <div><h2>Exercices, TD, QCM & annales</h2>
+            <p>${totalDrive} exercices/sujets trouvés sur le Drive · ${mine.length} ajouté(s) par toi.</p></div>
+          <a class="btn btn-primary" href="#/ajouter">➕ Ajouter un exercice</a>
+        </div>
+        <div class="notice" style="margin-bottom:18px"><span>🎯</span>
+          <div>Les profs envoient des exercices et des TD pendant le semestre : ajoute-les ici (<b>texte, lien ou photo</b>) et ils resteront dans ton navigateur, à côté des sujets du Drive.</div></div>
+
+        ${mine.length ? `<section class="folder">
+          <div class="folder-head"><span class="f-ico">✍️</span><h3>Mes exercices ajoutés</h3><span class="f-count">${mine.length}</span></div>
+          <div class="fiche-cards" style="margin-top:14px">${mine.map(ajoutCard).join('')}</div>
+        </section>` : ''}
+
+        ${parModule.map(({ m, exos }) => `
+          <section class="folder">
+            <div class="folder-head"><span class="f-ico">${m.emoji}</span><h3>${esc(m.nom)}</h3>
+              <span class="f-count">${exos.length} exercice(s) / sujet(s)</span>
+              <a class="f-open" href="#/m/${m.id}">Voir le module →</a></div>
+            ${fileList(exos, m.court || m.nom)}
+          </section>`).join('')}
+      </section>`;
+  };
+
+  const renderAjouter = (editId) => {
+    const edit = editId ? ajoutIndex(editId) : null;
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>Ajouter</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head"><div><h2>${edit ? 'Modifier mon ajout' : 'Ajouter un cours ou un exercice'}</h2>
+          <p>Nouveau cours, TD, exercice envoyé par le prof, ou tes propres notes de cours — tout reste dans ton navigateur.</p></div></div>
+
+        <div class="notes-card" style="max-width:900px">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+            <label class="btn btn-ghost" style="cursor:pointer"><input type="radio" name="atype" value="cours" ${(!edit || edit.type === 'cours') ? 'checked' : ''}> 📘 Cours</label>
+            <label class="btn btn-ghost" style="cursor:pointer"><input type="radio" name="atype" value="exercice" ${(edit && edit.type === 'exercice') ? 'checked' : ''}> 🎯 Exercice / TD</label>
+          </div>
+          <div style="display:grid;gap:10px">
+            <input id="a-titre" class="a-input" placeholder="Titre (ex. : Cours 4 — Les tissus épithéliaux)" value="${edit ? esc(edit.titre) : ''}">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <select id="a-module" class="a-input" style="flex:1 1 200px">${moduleOptions(edit ? edit.module : null)}</select>
+              <input id="a-prof" class="a-input" style="flex:1 1 200px" placeholder="Professeur (ex. : Pr. X)" value="${edit ? esc(edit.prof || '') : ''}">
+            </div>
+            <input id="a-lien" class="a-input" placeholder="Lien (Drive, PDF, vidéo…) — optionnel" value="${edit ? esc(edit.lien || '') : ''}">
+            <textarea id="a-texte" style="min-height:190px" placeholder="Écris ici le contenu : les titres sur une ligne commençant par # , les puces par - ...">${edit ? esc(edit.texte || '') : ''}</textarea>
+          </div>
+          <div class="nc-hint" style="margin-top:8px">📷 Tu peux aussi ajouter des photos (tableau, énoncé du TD, notes manuscrites) — elles s’ajouteront après l’enregistrement.</div>
+          <div class="nc-row">
+            <button class="btn btn-primary" id="a-save">💾 ${edit ? 'Enregistrer les modifications' : 'Enregistrer'}</button>
+            ${edit ? `<a class="btn btn-ghost" href="#/a/${edit.id}">Annuler</a>` : ''}
+            <span class="nc-saved" id="a-msg"></span>
+          </div>
+        </div>
+
+        ${ajouts.length ? `<section class="folder" style="margin-top:26px">
+          <div class="folder-head"><span class="f-ico">🗃️</span><h3>Mes ajouts (${ajouts.length})</h3>
+            <a class="f-open" href="#/mesnotes">Voir aussi mes notes →</a></div>
+          <div class="fiche-cards" style="margin-top:14px">${ajouts.slice().reverse().map(ajoutCard).join('')}</div>
+        </section>` : ''}
+      </section>`;
+
+    document.getElementById('a-save').addEventListener('click', () => {
+      const titre = document.getElementById('a-titre').value.trim();
+      if (!titre) { alert('Donne un titre à ton ajout 🙂'); return; }
+      const obj = {
+        id: edit ? edit.id : 'aj' + Date.now().toString(36),
+        type: document.querySelector('input[name=atype]:checked').value,
+        titre, module: document.getElementById('a-module').value,
+        prof: document.getElementById('a-prof').value.trim(),
+        lien: document.getElementById('a-lien').value.trim(),
+        texte: document.getElementById('a-texte').value,
+        date: edit ? edit.date : new Date().toISOString()
+      };
+      if (edit) Object.assign(edit, obj); else ajouts.push(obj);
+      saveAjouts();
+      document.getElementById('a-msg').textContent = '✓ enregistré';
+      location.hash = '#/a/' + obj.id;
+    });
+  };
+
+  const wirePhotos = fid => {
+    const drop = document.getElementById('drop'), input = document.getElementById('file-input');
+    if (!drop || !input) return;
+    drop.addEventListener('click', () => input.click());
+    ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+    drop.addEventListener('drop', e => addFiles(fid, e.dataTransfer.files));
+    input.addEventListener('change', () => addFiles(fid, input.files));
+  };
+
+  const renderAjout = async id => {
+    const token = ++renderSeq;
+    const a = ajoutIndex(id);
+    if (!a) { renderAjouter(); return; }
+    const m = moduleIndex[a.module], fid = 'ajout:' + a.id;
+    if (!state.lu[fid]) { state.lu[fid] = new Date().toISOString(); save(false); }
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <a href="#/ajouter">Mes ajouts</a> <span>›</span> <span>${esc(a.titre)}</span></div>
+      <header class="fiche-head" style="--c:${m ? m.couleur : 'var(--accent)'}">
+        <div class="fh-ico">${a.type === 'exercice' ? '🎯' : '✍️'}</div>
+        <div style="min-width:0"><h1>${esc(a.titre)}</h1>
+          <div class="fh-sub">${esc(a.prof || 'Ajout personnel')}${m ? ' · ' + esc(m.nom) : ''}</div>
+          <div class="fh-meta"><span class="chip">${a.type === 'exercice' ? '🎯 Exercice / TD' : '📘 Cours'}</span>
+            <span class="chip">🗓 ${new Date(a.date).toLocaleDateString('fr-FR')}</span></div></div>
+      </header>
+      <div class="fiche-actions">
+        <a class="btn btn-ghost" href="#/ajouter/${a.id}">✏️ Modifier</a>
+        ${a.lien ? `<a class="btn btn-ghost" href="${esc(a.lien)}" target="_blank" rel="noopener">🔗 Ouvrir le lien ↗</a>` : ''}
+        <button class="btn btn-ghost" id="a-del">🗑️ Supprimer</button>
+      </div>
+      <div class="fiche-grid">
+        <aside class="toc"><h4>Sommaire</h4>
+          <a href="#contenu">Contenu</a><a href="#photos">📷 Photos</a>
+          <div class="toc-sep"></div><h4>Actions</h4>
+          <a href="#/ajouter">➕ Ajouter un autre</a><a href="#/exercices">🎯 Exercices</a></aside>
+        <div class="fiche-body">
+          <section class="fiche-sec" id="contenu"><h2><span class="num">1</span>Contenu</h2>
+            ${renderTexte(a.texte) || '<p style="color:var(--muted)">Aucun texte pour l’instant — clique sur « Modifier » pour en ajouter.</p>'}</section>
+          <div class="notes-card" id="photos">
+            <h3>📷 Photos</h3>
+            <div class="nc-hint">Tableau, énoncé du TD, notes manuscrites…</div>
+            <div class="drop" id="drop">📷 Glisse tes photos ici ou <b>clique pour choisir</b></div>
+            <input type="file" id="file-input" accept="image/*" multiple hidden>
+            <div class="gallery" id="gallery" data-fiche="${esc(fid)}"></div>
+          </div>
+          <div class="lightbox" id="lightbox"><button class="lb-close" id="lb-close">✕</button><img id="lb-img" alt=""></div>
+        </div>
+      </div>`;
+
+    document.getElementById('a-del').addEventListener('click', async () => {
+      if (!confirm('Supprimer définitivement cet ajout (et ses photos) ?')) return;
+      const i = ajouts.findIndex(x => x.id === a.id);
+      if (i >= 0) ajouts.splice(i, 1);
+      saveAjouts();
+      try { const imgs = await DB.byFiche(fid); for (const im of imgs) await DB.del(im.id); } catch (e) {}
+      await refreshImgCounts();
+      location.hash = '#/ajouter';
+    });
+
+    await renderGallery(fid);
+    if (token !== renderSeq) return;
+    wirePhotos(fid);
+  };
+
+  /* ====================== TÉLÉCHARGEMENT & EXPORT ====================== */
+  const SITE_ZIP = 'telecharger/site-fmdc-s1.zip';
+
+  const downloadBlob = (nom, blob) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = nom;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => { if (URL.revokeObjectURL) URL.revokeObjectURL(url); }, 4000);
+  };
+
+  const blobToDataURL = blob => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result); r.onerror = () => rej(r.error);
+    r.readAsDataURL(blob);
+  });
+
+  const exporterMesDonnees = async () => {
+    const msg = document.getElementById('export-msg');
+    if (msg) msg.textContent = '⏳ préparation…';
+    let imgs = [];
+    try { imgs = await DB.all(); } catch (e) {}
+    const data = {
+      application: 'FMDC S1 — Espace de révision', version: 1, exporte_le: new Date().toISOString(),
+      revision: { documents_revises: [...state.revised], favoris: [...state.favs] },
+      fiches: { statuts: state.statut, notes: state.notes, surlignages: state.sur, ouvertes: state.lu },
+      mesAjouts: ajouts,
+      images: imgs.map(i => ({ id: i.id, ficheId: i.ficheId, nom: i.nom, type: i.type, taille: i.taille, date: i.date }))
+    };
+    for (let k = 0; k < imgs.length; k++) {
+      try { data.images[k].data = await blobToDataURL(imgs[k].blob); } catch (e) {}
+    }
+    downloadBlob(`fmdc-s1-mes-donnees-${new Date().toISOString().slice(0, 10)}.json`,
+      new Blob([JSON.stringify(data, null, 1)], { type: 'application/json' }));
+    if (msg) msg.textContent = `✓ export fait (${imgs.length} photo(s))`;
+  };
+
+  const telechargerSite = () => {
+    const a = document.createElement('a');
+    a.href = SITE_ZIP; a.download = 'site-fmdc-s1.zip';
+    document.body.appendChild(a); a.click(); a.remove();
+    const msg = document.getElementById('export-msg');
+    if (msg) msg.textContent = '✓ téléchargement lancé — décompresse puis ouvre index.html';
   };
 
   /* ------------------------------ PROGRESSION ------------------------------ */
@@ -1069,7 +1315,8 @@
   const routes = {
     '': renderHome, 'modules': renderModules, 'fiches': renderFiches,
     'annales': renderAnnales, 'favoris': renderFavoris, 'stats': renderStats,
-    'mesnotes': renderMesNotes, 'a-propos': renderAbout
+    'mesnotes': renderMesNotes, 'exercices': renderExercices, 'ajouter': renderAjouter,
+    'a-propos': renderAbout
   };
 
   const rerender = () => route(false);
@@ -1082,6 +1329,8 @@
 
     if (parts[0] === 'm' && parts[1] && moduleIndex[parts[1]]) renderModule(parts[1]);
     else if (parts[0] === 'f' && parts[1] && ficheIndex[parts[1]]) await renderFiche(parts[1]);
+    else if (parts[0] === 'a' && parts[1] && ajoutIndex(parts[1])) await renderAjout(parts[1]);
+    else if (parts[0] === 'ajouter' && parts[1] && ajoutIndex(parts[1])) renderAjouter(parts[1]);
     else if (routes[parts[0] || '']) routes[parts[0] || '']();
     else renderHome();
 
@@ -1094,6 +1343,8 @@
         (k === 'annales' && parts[0] === 'annales') ||
         (k === 'stats' && parts[0] === 'stats') ||
         (k === 'mesnotes' && parts[0] === 'mesnotes') ||
+        (k === 'exercices' && parts[0] === 'exercices') ||
+        (k === 'ajouter' && ['ajouter', 'a'].includes(parts[0])) ||
         (k === 'favoris' && parts[0] === 'favoris');
       a.classList.toggle('active', on);
     });
@@ -1121,6 +1372,14 @@
   document.getElementById('drive-foot').href = drive;
   document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('fav-count').textContent = state.favs.size;
+
+  // délégation : les boutons sont recréés à chaque rendu de page
+  document.addEventListener('click', e => {
+    const d = e.target.closest('[data-download-site]');
+    if (d) { e.preventDefault(); telechargerSite(); return; }
+    const x = e.target.closest('[data-export-data]');
+    if (x) { e.preventDefault(); exporterMesDonnees(); }
+  });
 
   route(false);
   fillFootStats();

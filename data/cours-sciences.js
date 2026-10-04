@@ -999,6 +999,221 @@ Synapse = zone de contact FONCTIONNELLE entre 2 cellules nerveuses</pre>
     'La myéline n’est PAS produite par les mêmes cellules au SNC et en périphérie.',
     'La membrane est plus perméable au K⁺ qu’au Na⁺ au repos.'
   ]
+},
+
+/* ============================ MEMBRANE PLASMIQUE (1) ============================ */
+{
+  id: 'bio-membrane-1',
+  doc: '1QNX_DvCQ_9gqGmoPpFzOqLSYlutXFEij',
+  module: 'biologie', emoji: '🧱', duree: 30,
+  titre: 'La membrane plasmique : structure, composition & propriétés',
+  prof: 'Pr. F. Rhrich-Haddout',
+  sousTitre: 'Lipides, protéines, glucides, mosaïque fluide et autoassemblage',
+  resume: 'Tout sur l’enveloppe de la cellule : épaisseur, aspect au MET, composition biochimique (lipides 40 %, protéines 50 %, glucides 10 %), propriétés de la bicouche et modèle de la mosaïque fluide.',
+  objectifs: [
+    'Connaître la structure de la membrane plasmique',
+    'Décrire sa composition biochimique',
+    'Décrire les propriétés de la bicouche lipidique',
+    'Décrire le modèle de la mosaïque fluide'
+  ],
+  sections: [
+    { id: 'def', titre: 'Définition', html: `
+      <ul>
+        <li>Enveloppe <b>mince et continue</b>, <b>non visible au microscope optique (MO)</b>.</li>
+        <li><b>Semi-perméable</b> : laisse passer le solvant (eau) et une fraction des solutés.</li>
+        <li>Sépare le <b>cytoplasme</b> du <b>milieu extérieur</b>.</li>
+        <li>Autres noms : membrane cytoplasmique = <b>plasmalemme</b>.</li>
+        <li>Épaisseur : <b>7 à 8 nm</b>.</li>
+      </ul>
+      <div class="keys">Un <b>soluté</b> = substance contenue à l’état dissous dans une solution.</div>` },
+
+    { id: 'met', titre: 'Aspect au MET : structure trilaminaire', html: `
+      <table>
+        <tr><th>Grossissement</th><th>Ce qu’on observe</th></tr>
+        <tr><td>40 000 – 50 000 ×</td><td>Une structure simple, dense et noire</td></tr>
+        <tr><td>&gt; 150 000 ×</td><td><b>Structure trilaminaire</b> : 2 feuillets denses (<b>2 nm</b>) entourant un feuillet clair (<b>3,5 nm</b>) → <b>modèle de Davson et Danielli (1954)</b></td></tr>
+      </table>
+      <pre class="sch">   MILIEU EXTRACELLULAIRE
+   ─────────────────────────  ← feuillet dense externe (souvent plus épais, > 2 nm)
+   ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅  ← GLYCOCALYX (revêtement fibreux / Cell-coat)
+   ─────────────────────────  ← feuillet dense
+   ░░░░░░░░░░░░░░░░░░░░░░░░░  ← feuillet clair (3,5 nm)
+   ─────────────────────────  ← feuillet dense
+   MILIEU INTRACELLULAIRE (hyaloplasme)
+
+   Le GLYCOCALYX = chaînes glucidiques attachées aux protéines ou aux lipides
+   → il crée une ASYMÉTRIE de la membrane plasmique</pre>
+      <p><b>Technique du cryodécapage :</b> les répliques montrent que la membrane est formée de <b>deux couches clivables</b> renfermant des <b>particules globulaires intramembranaires de 50 à 80 Å</b> = les <b>protéines</b>.</p>
+      <p class="mt">Rappel : 1 Ångström (Å) = 0,1 nm = 10⁻¹⁰ m.</p>` },
+
+    { id: 'composition', titre: 'La composition biochimique', html: `
+      <table>
+        <tr><th>Constituant</th><th>Part de la masse</th><th>Rôle</th></tr>
+        <tr><td><b>Lipides</b> (phospholipides + cholestérol)</td><td><b>40 %</b></td><td>Forment le <b>squelette</b> de la membrane</td></tr>
+        <tr><td><b>Protéines</b> (récepteurs, transporteurs, enzymes)</td><td><b>50 %</b></td><td>Attachées plus ou moins aux phospholipides</td></tr>
+        <tr><td><b>Glucides</b></td><td><b>10 %</b></td><td>Liés aux protéines (<b>glycoprotéines</b>) ou aux lipides (<b>glycolipides</b>)</td></tr>
+      </table>` },
+
+    { id: 'lipides', titre: 'Les lipides', html: `
+      <h3 style="font-size:15px;margin:14px 0 6px">🅐 Les phospholipides</h3>
+      <p>Un phospholipide = <b>glycérol</b> + <b>2 queues d’acides gras</b> (hydrophobes) + <b>groupement phosphate</b>. Le phosphate est lié à une des 4 petites molécules hydrophiles (R) : <b>choline, éthanolamine, sérine, inositol</b>.</p>
+      <pre class="sch">        TÊTE HYDROPHILE (polaire)          Molécules R : choline, éthanolamine,
+   ══════════════ phosphate ══════════      sérine, inositol
+              │
+           glycérol
+              │  ╲
+   ══════════════════════   queues HYDROPHOBES : acide gras saturé (linéaire)
+              │            + acide gras insaturé (crée un COUDE)</pre>
+      <table>
+        <tr><th>Phospholipides membranaires</th><th>Familles selon l’alcool</th></tr>
+        <tr><td>Phosphatidylcholine · Phosphatidyléthanolamine · Phosphatidylsérine · Phosphatidylinositol</td><td><b>Glycérophospholipides</b> = glycérol + 2 AG (les plus abondants) · <b>Sphingophospholipides</b> = sphingosine + 1 AG</td></tr>
+      </table>
+      <div class="keys">Les phospholipides sont <b>amphiphiles</b> (= amphipathiques = amphipolaires) : tête polaire hydrophile + queue apolaire hydrophobe.</div>
+
+      <h3 style="font-size:15px;margin:18px 0 6px">🅑 Le cholestérol</h3>
+      <ul>
+        <li>Composé d’un <b>groupe hydroxyle OH</b> (hydrophile), de <b>4 cycles carbonés</b> et d’une <b>chaîne hydrocarbonée</b> (hydrophobe).</li>
+        <li>Se trouve <b>aux côtés des phospholipides dans le cœur de la membrane</b>.</li>
+        <li>Rend la membrane <b>moins déformable (plus rigide)</b> et <b>diminue sa perméabilité</b> aux petites molécules hydrosolubles.</li>
+      </ul>` },
+
+    { id: 'autoassemblage', titre: 'Autoassemblage des phospholipides', html: `
+      <p>À cause de leurs propriétés physico-chimiques, les phospholipides s’assemblent <b>automatiquement</b> en différentes structures <b>selon l’environnement</b> :</p>
+      <pre class="sch">① MONOCOUCHE (interface eau–air)
+   têtes hydrophiles → vers l'eau   |   queues hydrophobes → vers l'air
+
+② MICELLE (petite sphère)
+   têtes → vers l'EXTÉRIEUR (au contact de l'eau)
+   queues → vers l'INTÉRIEUR   (emprisonne air ou lipide)
+
+③ BICOUCHE → vésicule sphérique = LIPOSOME (en milieu aqueux)
+   queues apolaires vers l'intérieur, têtes polaires vers l'extérieur
+   liaisons NON covalentes entre les 2 couches</pre>
+      <p class="mt">C’est cette tendance à former des <b>bicouches</b> dans l’eau qui explique la structure de base de toutes les membranes cellulaires.</p>` },
+
+    { id: 'mosaique', titre: 'Le modèle de la mosaïque fluide', html: `
+      <div class="quote">La membrane est une <b>bicouche lipidique fluide</b> dans laquelle les protéines sont <b>enchâssées</b> comme les pièces d’une mosaïque — d’où le nom « mosaïque fluide ».<span>Modèle de Singer & Nicolson</span></div>
+      <table>
+        <tr><th>Élément</th><th>Place dans le modèle</th></tr>
+        <tr><td>Phospholipides</td><td>Bicouche = le « solvant » fluide de la membrane</td></tr>
+        <tr><td>Cholestérol</td><td>Inséré entre les phospholipides → rigidité + moins de perméabilité</td></tr>
+        <tr><td>Protéines</td><td>Intrinsèques (transmembranaires) ou extrinsèques (périphériques)</td></tr>
+        <tr><td>Glucides</td><td>Glycocalyx, uniquement du côté extracellulaire → <b>asymétrie</b></td></tr>
+      </table>
+      <div class="keys">Mot-clé à retenir : <b>fluide</b> (les lipides et protéines se déplacent latéralement) + <b>asymétrique</b> (les 2 feuillets n’ont pas la même composition).</div>` }
+  ],
+  retenir: [
+    'Membrane plasmique = plasmalemme : 7 à 8 nm, semi-perméable, invisible au MO.',
+    'Au MET : structure trilaminaire (dense 2 nm / clair 3,5 nm / dense 2 nm) → Davson & Danielli 1954.',
+    'Composition : lipides 40 % · protéines 50 % · glucides 10 %.',
+    'Phospholipide = glycérol + 2 acides gras + phosphate (+ choline/éthanolamine/sérine/inositol).',
+    'Le cholestérol rigidifie la membrane et diminue sa perméabilité.',
+    'Glycocalyx → asymétrie de la membrane.'
+  ],
+  pieges: [
+    'La membrane n’est PAS visible au microscope optique — seulement au MET.',
+    'Le glycocalyx est TOUJOURS du côté extracellulaire (c’est ce qui crée l’asymétrie).',
+    'Acide gras saturé = linéaire ; insaturé = coude (donc membrane plus fluide).'
+  ]
+},
+
+/* ============================ MEMBRANE PLASMIQUE (2) ============================ */
+{
+  id: 'bio-membrane-2',
+  doc: '1NWvkqQppKU2cpYUXe80LZ9iFMzCHpGPo',
+  module: 'biologie', emoji: '🚪', duree: 30,
+  titre: 'La membrane plasmique : les échanges membranaires',
+  prof: 'Pr. F. Rhrich-Haddout',
+  sousTitre: 'Transport passif, actif (primaire & secondaire), endocytose et exocytose',
+  resume: 'Deuxième partie du cours : comment les molécules traversent la membrane — par perméabilité (diffusion simple, facilitée, transport actif) ou par échange vésiculaire (endocytose, exocytose).',
+  objectifs: [
+    'Distinguer échange par perméabilité et échange vésiculaire',
+    'Différencier transport passif et transport actif',
+    'Décrire les protéines de transport (canaux et transporteurs)',
+    'Décrire endocytose et exocytose'
+  ],
+  sections: [
+    { id: 'types', titre: 'Deux grands types d’échanges (selon la taille)', html: `
+      <table>
+        <tr><th></th><th>Échange par perméabilité</th><th>Échange vésiculaire</th></tr>
+        <tr><td>Taille concernée</td><td><b>Petites molécules</b></td><td><b>Grosses molécules</b></td></tr>
+        <tr><td>Membrane</td><td><b>Pas de déformation</b> de la MP</td><td><b>Déformation visible</b> de la MP</td></tr>
+        <tr><td>Exemples</td><td>Ions, glucose, eau, gaz</td><td>Protéines, bactéries, gros complexes</td></tr>
+      </table>` },
+
+    { id: 'passif', titre: 'Le transport passif (sans ATP)', html: `
+      <div class="keys">Transport passif : suit le <b>gradient de concentration</b> (de la zone la plus concentrée vers la moins concentrée) et <b>sans consommation d’ATP</b>.</div>
+
+      <h3 style="font-size:15px;margin:14px 0 6px">🅐 Diffusion simple — sans transporteur</h3>
+      <ul>
+        <li>Molécules de <b>petite taille</b> et <b>liposolubles</b>.</li>
+        <li>Gaz (<b>O₂, CO₂, NO</b>), eau, ions et petites molécules non chargées : urée, acides aminés, acides gras, glycérol.</li>
+      </ul>
+      <pre class="sch">OSMOSE = diffusion de l'EAU (le solvant)
+   Solution hypertonique  |  Solution hypotonique
+   Beaucoup de soluté     |  Peu de soluté
+        ↓ l'eau se déplace vers la solution la plus concentrée en soluté</pre>
+
+      <h3 style="font-size:15px;margin:14px 0 6px">🅑 Diffusion passive facilitée — avec transporteur</h3>
+      <p>Pour les molécules <b>volumineuses et non liposolubles</b> : il faut une <b>protéine transmembranaire spécifique</b> de la molécule transportée. Elle suit toujours le gradient.</p>
+      <table>
+        <tr><th>Type de protéine</th><th>Ce qu’elle transporte</th></tr>
+        <tr><td><b>Canal</b></td><td>Ions et eau : <b>aquaporines</b> (AQP, canal hydrophile) et <b>canaux ioniques</b></td></tr>
+        <tr><td><b>Transporteur</b> = perméase</td><td>Ex. <b>glucose</b>, acides aminés</td></tr>
+      </table>
+      <pre class="sch">LES 4 ÉTAPES D'UNE PERMÉASE (ex. glucose)
+① Fixation du ligand (glucose) sur son site SPÉCIFIQUE
+② Changement de conformation de la perméase
+③ Pénétration du ligand dans la cellule
+④ Retour de la perméase à sa conformation initiale</pre>` },
+
+    { id: 'actif', titre: 'Le transport actif (avec ATP)', html: `
+      <p>Transport <b>contre le gradient</b> de concentration → nécessite de l’énergie.</p>
+      <table>
+        <tr><th></th><th>Transport actif PRIMAIRE</th><th>Transport actif SECONDAIRE</th></tr>
+        <tr><td>Énergie</td><td><b>Hydrolyse directe de l’ATP</b></td><td><b>Pas</b> d’hydrolyse directe : utilise l’énergie du <b>gradient ionique</b> créé par le transporteur primaire</td></tr>
+        <tr><td>Acteurs</td><td>Pompes à ions / ATPases (Na⁺/K⁺, H⁺/K⁺, pompe calcique)</td><td>Cotransporteurs : <b>symport</b> et <b>antiport</b></td></tr>
+        <tr><td>Qui ?</td><td>Surtout les <b>ions</b> (Na⁺, K⁺, Ca²⁺, Cl⁻)</td><td>Ions + glucose + acides aminés</td></tr>
+      </table>
+      <pre class="sch">POMPE Na⁺/K⁺ (= ATPase Na⁺/K⁺)
+  • protéine transmembranaire formée de 2 sous-unités :
+        une avec site spécifique Na⁺ / une avec site spécifique K⁺
+  • les 2 ions sont transportés CONTRE leur gradient, mais en sens OPPOSÉS
+  • rôle : maintenir le gradient sodique de la cellule</pre>
+      <div class="keys">À retenir : <b>primaire</b> = consomme l’ATP · <b>secondaire</b> = utilise un gradient ionique (co-transport).</div>` },
+
+    { id: 'vesiculaire', titre: 'L’échange vésiculaire (grosses molécules)', html: `
+      <pre class="sch">ENDOCYTOSE  (la cellule fait ENTRER)
+├── Pinocytose ......................... non spécifique, liquides
+├── Endocytose à clathrine dépendante ... spécifique (récepteurs)
+└── Phagocytose ........................ grosses particules / bactéries
+
+EXOCYTOSE   (la cellule fait SORTIR)
+├── Exocytose constitutive ............. continue
+└── Exocytose régulée .................. déclenchée par un signal</pre>
+      <p class="mt">Ces mécanismes s’accompagnent d’une <b>déformation visible</b> de la membrane plasmique (invagination → vésicule, ou vésicule → fusion).</p>` },
+
+    { id: 'suite', titre: 'Et ensuite ? (plan du cours)', html: `
+      <table>
+        <tr><th>Partie</th><th>Contenu</th></tr>
+        <tr><td><b>5-1</b></td><td>Échanges membranaires <b>(ce résumé)</b></td></tr>
+        <tr><td>5-2</td><td>Signalisation cellulaire</td></tr>
+        <tr><td>5-3</td><td>Interactions cellulaires</td></tr>
+      </table>` }
+  ],
+  retenir: [
+    'Perméabilité = petites molécules, pas de déformation · vésiculaire = grosses molécules, déformation.',
+    'Passif = sans ATP, suit le gradient (diffusion simple / facilitée).',
+    'Diffusion simple : O₂, CO₂, NO, eau (osmose), urée, glycérol.',
+    'Facilitée : canal (aquaporines, canaux ioniques) ou transporteur/perméase (glucose).',
+    'Actif primaire = ATP (pompe Na⁺/K⁺) · secondaire = symport/antiport.',
+    'Endocytose : pinocytose, clathrine-dépendante, phagocytose · exocytose : constitutive, régulée.'
+  ],
+  pieges: [
+    'La diffusion facilitée NE consomme PAS d’ATP (c’est un transport passif).',
+    'Le transport actif secondaire n’utilise pas directement l’ATP.',
+    'Osmose = diffusion de l’EAU, du milieu le moins concentré vers le plus concentré.'
+  ]
 }
 
 ]);
