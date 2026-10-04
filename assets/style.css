@@ -551,7 +551,10 @@ kbd {
 
 @media (max-width: 560px) {
   .brand-txt i { display: none; }
-  .search { display: none; }
+  /* la recherche passe sur une seconde ligne, pleine largeur */
+  .top { flex-wrap: wrap; }
+  .search { order: 3; flex: 1 1 100%; min-width: 0; }
+  .search input { width: auto; }
   .stats { grid-template-columns: 1fr 1fr; }
   .file { flex-wrap: wrap; }
   .file .f-actions { margin-left: auto; }
