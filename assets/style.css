@@ -815,3 +815,16 @@ html[data-theme="dark"] mark.hl { color: #ffe9a8; }
 }
 .a-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
 .dl-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+/* ---------- bandeau flash + mode fichier unique ---------- */
+.flash {
+  position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 140%);
+  z-index: 200; max-width: min(92vw, 620px); padding: 12px 18px;
+  background: var(--text); color: var(--bg); border-radius: 999px;
+  font-size: 14px; font-weight: 600; text-align: center; line-height: 1.45;
+  box-shadow: 0 14px 40px rgba(0,0,0,.35); transition: transform .28s ease, opacity .28s ease;
+  opacity: 0; pointer-events: none;
+}
+.flash.on { transform: translate(-50%, 0); opacity: 1; }
+.single-file [data-download-site], .single-file [data-download-single], .single-file [data-portal-link],
+.single-file a[href^="2024-2025"] { display: none !important; }

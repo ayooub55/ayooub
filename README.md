@@ -120,7 +120,12 @@ Tout est calculé automatiquement à partir de `data/s1.js` + `data/cours-*.js` 
 
 ## 🆕 Ajouts & téléchargement (dernière étape)
 
-### Télécharger le site chez soi
+### Télécharger le site chez soi — 2 formules
+
+**A. Un seul fichier (le plus simple)** — lien « ⬇️ Télécharger en 1 seul fichier (index.html) ».
+`tools/make-single.py` fabrique `telecharger/index.html` : HTML + CSS + JS + données **tout dedans** (~265 Ko, zéro dépendance). Tu gardes ce fichier où tu veux, tu le transmets par mail/WhatsApp, tu l'ouvres d'un double-clic. Les boutons « ZIP » / « portail 2024-2025 » sont masqués automatiquement dans cette version (`window.SINGLE_FILE`).
+
+**B. Le site complet** — lien « 🗂️ Télécharger le site complet (ZIP) ».
 Un bouton **« ⬇️ Télécharger le site (ZIP) »** est présent dans l'accueil (hero + accès rapide) et dans le pied de page.
 Il télécharge `telecharger/site-fmdc-s1.zip`, une copie complète et autonome du site : décompresse le dossier, puis ouvre `index.html` dans ton navigateur (ça marche aussi sans Internet, sauf les liens Google Drive). Voir `LISEZ-MOI.txt` à l'intérieur du ZIP.
 

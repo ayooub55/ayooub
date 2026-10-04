@@ -283,7 +283,8 @@
           <a class="btn btn-ghost" href="#/exercices">🎯 Exercices & TD</a>
           <a class="btn btn-ghost" href="#/ajouter">➕ Ajouter un cours / exercice</a>
           <a class="btn btn-ghost" href="#/stats">📊 Mes statistiques</a>
-          <a class="btn btn-ghost" href="#" data-download-site>⬇️ Télécharger le site</a>
+          <a class="btn btn-ghost" href="telecharger/index.html" data-download-single>⬇️ Télécharger (1 fichier index.html)</a>
+          <a class="btn btn-ghost" href="#" data-download-site>🗂️ Site complet (ZIP)</a>
           <a class="btn btn-ghost" href="${D.meta.driveUrl}" target="_blank" rel="noopener">📁 Drive S1 ↗</a>
         </div>
 
@@ -333,7 +334,8 @@
           <a href="#/f/physio-digestif"><span class="q-ico">🍽️</span><b>Physiologie digestive</b><span>Tous les chiffres et enzymes à retenir</span></a>
           <a href="#/exercices"><span class="q-ico">🎯</span><b>Exercices & TD</b><span>QCM, TD, annales + mes propres exercices</span></a>
           <a href="#/ajouter"><span class="q-ico">➕</span><b>Ajouter</b><span>Nouveau cours, TD ou photos de mes notes</span></a>
-          <a href="#" data-download-site><span class="q-ico">⬇️</span><b>Télécharger le site</b><span>ZIP à garder hors ligne sur ton PC / téléphone</span></a>
+          <a href="telecharger/index.html" data-download-single><span class="q-ico">⬇️</span><b>Télécharger en 1 fichier</b><span>Un seul index.html : tout dedans, ça s’ouvre sans Internet</span></a>
+          <a href="#" data-download-site><span class="q-ico">🗂️</span><b>Site complet (ZIP)</b><span>Toutes les pages + l’ancien portail, à décompresser</span></a>
           <a href="#/stats"><span class="q-ico">📊</span><b>Statistiques</b><span>Où j’en suis dans ma révision</span></a>
         </div>
       </section>
@@ -600,7 +602,11 @@
         ficheId: fid, nom: file.name || 'photo', type: file.type,
         taille: file.size, date: new Date().toISOString(), blob: file
       };
-      try { await DB.put(img); } catch (e) { alert('Impossible d’enregistrer l’image (stockage plein ?)'); break; }
+      try { await DB.put(img); }
+      catch (e) {
+        alert('Impossible d’enregistrer la photo.\n\nCauses possibles :\n• stockage du navigateur plein ;\n• page ouverte directement depuis un fichier local (file://) : certains navigateurs y bloquent le stockage.\n\nEssaie avec Chrome ou Firefox, ou utilise la version ZIP du site.');
+        break;
+      }
     }
     await refreshImgCounts();
     await renderGallery(fid);
@@ -1146,6 +1152,19 @@
   /* ====================== TÉLÉCHARGEMENT & EXPORT ====================== */
   const SITE_ZIP = 'telecharger/site-fmdc-s1.zip';
 
+  const flash = (texte, ms = 3200) => {
+    let el = document.getElementById('flash');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'flash'; el.className = 'flash';
+      document.body.appendChild(el);
+    }
+    el.textContent = texte;
+    el.classList.add('on');
+    clearTimeout(el._t);
+    el._t = setTimeout(() => el.classList.remove('on'), ms);
+  };
+
   const downloadBlob = (nom, blob) => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -1180,12 +1199,24 @@
     if (msg) msg.textContent = `✓ export fait (${imgs.length} photo(s))`;
   };
 
+  const FICHIER_UNIQUE = 'telecharger/index.html';
+
+  const telechargerFichierUnique = () => {
+    if (window.SINGLE_FILE) { flash('Tu es déjà dans la version 1 seul fichier 👍'); return; }
+    const a = document.createElement('a');
+    a.href = FICHIER_UNIQUE; a.download = 'index.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    flash('✓ téléchargement lancé — garde le fichier index.html et ouvre-le quand tu veux');
+  };
+
   const telechargerSite = () => {
+    if (window.SINGLE_FILE) { flash('Tu es déjà dans la version 1 seul fichier 👍'); return; }
     const a = document.createElement('a');
     a.href = SITE_ZIP; a.download = 'site-fmdc-s1.zip';
     document.body.appendChild(a); a.click(); a.remove();
     const msg = document.getElementById('export-msg');
     if (msg) msg.textContent = '✓ téléchargement lancé — décompresse puis ouvre index.html';
+    flash('✓ téléchargement du ZIP lancé (décompresse puis ouvre index.html)');
   };
 
   /* ------------------------------ PROGRESSION ------------------------------ */
@@ -1375,6 +1406,8 @@
 
   // délégation : les boutons sont recréés à chaque rendu de page
   document.addEventListener('click', e => {
+    const one = e.target.closest('[data-download-single]');
+    if (one) { e.preventDefault(); telechargerFichierUnique(); return; }
     const d = e.target.closest('[data-download-site]');
     if (d) { e.preventDefault(); telechargerSite(); return; }
     const x = e.target.closest('[data-export-data]');
