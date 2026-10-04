@@ -1,471 +1,573 @@
-/* ================================================================
-   FMDC 1A — Espace de révision · application (vanilla JS, sans build)
-   ================================================================ */
-(function () {
+/* ------------------------------------------------------------------
+   S1 — Espace de révision · FMDC Casablanca
+   Application du portail : routage, recherche, progression de révision.
+   Données : data/s1.js  (window.S1)
+   ------------------------------------------------------------------ */
+
+(() => {
   'use strict';
 
-  const D = window.DRIVE;
-  const VIEW = document.getElementById('view');
-  const $  = (s, r) => (r || document).querySelector(s);
-  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const D = window.S1;
+  const LS = { rev: 'fmdc.s1.revised', fav: 'fmdc.s1.favs', theme: 'fmdc.s1.theme' };
 
-  /* ---------------------------- état local ---------------------------- */
-  const LS_SEEN = 'fmdc.seen.v1';
-  const LS_FAV  = 'fmdc.fav.v1';
-  const LS_THM  = 'fmdc.theme.v1';
+  const fileUrl   = id => `https://drive.google.com/file/d/${id}/view`;
+  const folderUrl = id => `https://drive.google.com/drive/folders/${id}`;
 
-  const load = (k) => { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } };
-  let seen = load(LS_SEEN);
-  let favs = load(LS_FAV);
-  const saveSeen = () => localStorage.setItem(LS_SEEN, JSON.stringify(seen));
-  const saveFavs = () => localStorage.setItem(LS_FAV, JSON.stringify(favs));
+  /* ------------------------------- état ------------------------------- */
+  const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+  const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 
-  /* ---------------------------- utilitaires --------------------------- */
-  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const fileUrl   = (id) => `https://drive.google.com/file/d/${id}/view`;
-  const folderUrl = (id) => `https://drive.google.com/drive/folders/${id}`;
-
-  const ICONS = [
-    [/\.pdf$/i, '📄', 'PDF'], [/\.mp4$|\.mov$|\.avi$/i, '🎬', 'Vidéo'],
-    [/\.jpe?g$|\.png$|\.webp$/i, '🖼️', 'Image'], [/\.pptx?$/i, '📊', 'Diapos'],
-    [/\.docx?$|\.txt$/i, '📝', 'Texte'], [/\.xlsx?$/i, '📈', 'Tableur'],
-    [/\.zip$|\.rar$/i, '🗜️', 'Archive']
-  ];
-  function kindOf(name) {
-    for (const [re, icon, label] of ICONS) if (re.test(name)) return { icon, label };
-    return { icon: '📃', label: 'Google Docs' };  // documents créés dans Drive (sans extension)
-  }
-
-  /* parcourt récursivement l'arbre d'un module */
-  function walk(node, path, out) {
-    const here = node.nom ? path.concat(node.nom) : path;
-    (node.fichiers || []).forEach(([name, id]) => out.push({ name, id, path: here.slice() }));
-    (node.sections || []).forEach(child => walk(child, here, out));
-    return out;
-  }
-  const filesOf = (moduleOrNode) => walk(moduleOrNode, [], []);
-
-  const moduleFiles = (mod) => filesOf({ sections: mod.profs });
-  const modStats = (mod) => {
-    const files = moduleFiles(mod);
-    const done = files.filter(f => seen[f.id]).length;
-    return { total: files.length, done, pct: files.length ? Math.round(done * 100 / files.length) : 0 };
+  const state = {
+    revised: new Set(read(LS.rev, [])),
+    favs: new Set(read(LS.fav, [])),
+    pending: null            // fichier à mettre en évidence après navigation
   };
-  const totalFiles = () => D.modules.reduce((n, m) => n + moduleFiles(m).length, 0);
-  const totalSeen  = () => D.modules.reduce((n, m) => n + moduleFiles(m).filter(f => seen[f.id]).length, 0);
 
-  /* ------------------------------ vues ------------------------------- */
-  function fileRow(f, showPath) {
-    const k = kindOf(f.name);
-    const isSeen = !!seen[f.id], isFav = !!favs[f.id];
-    return `<li class="${isSeen ? 'seen' : ''}" data-fid="${f.id}">
-      <span class="type" title="${esc(k.label)}">${k.icon}</span>
-      <span style="min-width:0">
-        <a class="name" href="${fileUrl(f.id)}" target="_blank" rel="noopener">${esc(f.name)}</a>
-        ${showPath && f.path.length ? `<div class="path">${esc(f.path.join(' › '))}</div>` : ''}
-      </span>
-      <span class="actions">
-        <button class="mini-btn ${isFav ? 'on' : ''}" data-act="fav" title="Ajouter aux favoris">★</button>
-        <button class="mini-btn ${isSeen ? 'done' : ''}" data-act="seen" title="Marquer comme révisé">✓</button>
-        <button class="mini-btn" data-act="copy" title="Copier le lien">🔗</button>
-      </span>
-    </li>`;
-  }
+  /* --------------------------- index complet --------------------------- */
+  const index = [];          // tous les fichiers : { id, nom, type, path[], module }
+  const moduleIndex = {};    // id module -> module
 
-  function nodeHtml(node, depth) {
-    const kids = node.sections || [];
+  const extOf = nom => (nom.split('.').pop() || '').toLowerCase();
+  const typeOf = (nom, force) => {
+    if (force) return force;
+    const e = extOf(nom);
+    if (e === 'pdf') return 'pdf';
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'].includes(e)) return 'image';
+    if (['ppt', 'pptx', 'key'].includes(e)) return 'slides';
+    if (['doc', 'docx', 'odt'].includes(e)) return 'doc';
+    if (['xls', 'xlsx', 'csv'].includes(e)) return 'sheet';
+    if (['txt', 'md'].includes(e)) return 'text';
+    return 'file';
+  };
+  const ICONS = { pdf: '📄', image: '🖼️', slides: '📊', doc: '📝', sheet: '📈', text: '🗒️', file: '📎' };
+  const TYPE_LABEL = { pdf: 'PDF', image: 'Image', slides: 'Diapositives', doc: 'Document', sheet: 'Tableur', text: 'Texte', file: 'Fichier' };
+
+  const walk = (node, path, mod) => {
+    const here = path.concat(node.nom);
+    (node.fichiers || []).forEach(f => {
+      index.push({
+        id: f.id,
+        nom: f.nom.trim(),
+        type: typeOf(f.nom, f.type),
+        path: here.slice(1),          // sans le nom du module
+        module: mod
+      });
+    });
+    (node.enfants || []).forEach(c => walk(c, here, mod));
+  };
+
+  D.modules.forEach(m => {
+    moduleIndex[m.id] = m;
+    walk({ nom: m.nom, enfants: m.enfants }, [], m);
+  });
+  D.racine.forEach(f => index.push({ id: f.id, nom: f.nom, type: typeOf(f.nom), path: [], module: null }));
+
+  /* ------------------------------ utilitaires ------------------------------ */
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const norm = s => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  const countFiles = node =>
+    (node.fichiers ? node.fichiers.length : 0) +
+    (node.enfants ? node.enfants.reduce((n, c) => n + countFiles(c), 0) : 0);
+
+  const countFolders = node => (node.enfants ? node.enfants.reduce((n, c) => n + 1 + countFolders(c), 0) : 0);
+  const countEmpty = node =>
+    (node.vide ? 1 : 0) + (node.enfants ? node.enfants.reduce((n, c) => n + countEmpty(c), 0) : 0);
+
+  const moduleFiles = m => index.filter(f => f.module === m);
+  const progressOf = files => {
+    const total = files.length;
+    const done = files.filter(f => state.revised.has(f.id)).length;
+    return { total, done, pct: total ? Math.round(done / total * 100) : 0 };
+  };
+
+  const profsOf = m => {
+    const canon = n => n
+      .replace(/^(Prof|Pr\.?|Prod)\s*/i, '')
+      .replace(/^(Khalil|Khlil)\s+/i, '')
+      .replace(/^El\s+/i, '')
+      .trim();
+    const out = [];
+    const scan = n => {
+      (n.enfants || []).forEach(c => {
+        if (/^(Pr|Prof|Prod)\b/i.test(c.nom)) out.push('Pr. ' + canon(c.nom));
+        scan(c);
+      });
+    };
+    scan(m);
+    return [...new Set(out)];
+  };
+
+  /* ------------------------------ rendu fichiers ------------------------------ */
+  const fileRow = (f, pathTxt) => {
+    const done = state.revised.has(f.id);
+    const fav = state.favs.has(f.id);
+    return `
+      <li class="file ${done ? 'done' : ''}" data-fid="${esc(f.id)}">
+        <span class="f-ic2">${ICONS[f.type] || '📎'}</span>
+        <div class="f-main">
+          <div class="f-name">${esc(f.nom)}</div>
+          <div class="f-path">${esc(TYPE_LABEL[f.type] || 'Fichier')}${pathTxt ? ' · ' + esc(pathTxt) : ''}</div>
+        </div>
+        <div class="f-actions">
+          <button class="mini star ${fav ? 'on' : ''}" data-fav="${esc(f.id)}" title="Ajouter aux favoris" aria-label="Favori">★</button>
+          <button class="mini ${done ? 'on' : ''}" data-rev="${esc(f.id)}" title="Marquer comme révisé" aria-label="Révisé">✓</button>
+          <a class="mini open" href="${fileUrl(f.id)}" target="_blank" rel="noopener" title="Ouvrir sur Drive">↗</a>
+        </div>
+      </li>`;
+  };
+
+  const fileList = (files, pathTxt) => files && files.length
+    ? `<ul class="files">${files.map(f => fileRow({ ...f, nom: f.nom.trim(), type: typeOf(f.nom, f.type) }, pathTxt)).join('')}</ul>`
+    : '';
+
+  /* ------------------------------ rendu dossiers ------------------------------ */
+  const subCard = node => {
+    const n = countFiles(node);
+    const groups = (node.enfants || []).map(c => {
+      const cf = c.fichiers || [];
+      return `
+        <div style="margin-top:12px">
+          <div class="folder-head" style="border:0;padding:2px 0">
+            <span class="f-ico">📂</span>
+            <h4 style="font-size:13.5px">${esc(c.nom)}</h4>
+            <span class="f-count">${cf.length ? cf.length + ' doc' + (cf.length > 1 ? 's' : '') : 'à venir'}</span>
+            <a class="f-open" href="${folderUrl(c.folder)}" target="_blank" rel="noopener">Drive ↗</a>
+          </div>
+          ${cf.length ? fileList(cf) : ''}
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="sub ${node.vide ? 'solid' : ''}">
+        <div class="sub-head">
+          <span>${node.vide ? '🕓' : '📁'}</span>
+          <h4>${esc(node.nom)}</h4>
+          <span>${node.vide ? 'à venir' : n + ' doc' + (n > 1 ? 's' : '')}</span>
+        </div>
+        ${fileList(node.fichiers)}
+        ${groups}
+        ${node.vide ? `<div class="chip empty" style="margin-top:10px">Bientôt disponible sur le Drive</div>` : ''}
+      </div>`;
+  };
+
+  const folderBlock = node => {
     const files = node.fichiers || [];
-    const count = filesOf(node).length;
-
-    if (kids.length && !files.length && node.nom) {           // groupe / professeur
-      const open = depth <= 1;
-      const inner = kids.map(k => nodeHtml(k, depth + 1)).join('');
-      const st = (() => {
-        const all = filesOf(node);
-        const done = all.filter(f => seen[f.id]).length;
-        return all.length ? `${done}/${all.length}` : '';
-      })();
-      return `<section class="prof-block ${open ? '' : 'closed'}" id="p-${esc(slug(node.nom))}">
-        <div class="prof-head" data-toggle>
-          <h3>${esc(node.nom)}</h3>
-          <span class="tagline">${count} fichier${count > 1 ? 's' : ''}</span>
-          <span class="right">
-            ${st ? `<span class="count">${st} révisés</span>` : ''}
-            ${node.folder ? `<a class="drive-link" href="${folderUrl(node.folder)}" target="_blank" rel="noopener">Drive ↗</a>` : ''}
-            <span class="chev">▾</span>
-          </span>
-        </div>
-        <div class="prof-body">${inner}</div>
-      </section>`;
+    const kids = node.enfants || [];
+    const bits = [];
+    if (node.vide) bits.push('dossier vide pour l’instant');
+    else {
+      bits.push(files.length ? files.length + ' document' + (files.length > 1 ? 's' : '') : 'aucun document direct');
+      if (kids.length) bits.push(kids.length + ' sous-dossier' + (kids.length > 1 ? 's' : ''));
     }
-
-    // section terminale (liste de fichiers, éventuellement + sous-groupes)
-    const list = files.length
-      ? `<ul class="files">${files.map(([name, id]) => fileRow({ name: name, id: id })).join('')}</ul>` : '';
-    const nested = kids.map(k => nodeHtml(k, depth + 1)).join('');
-    const note = node.note ? `<div class="note">${esc(node.note)}</div>` : '';
-    const showHead = depth > 1 || true;
-    return `<div class="sect" id="s-${esc(slug((node.nom || '') + '-' + depth))}">
-      ${showHead ? `<div class="sect-head" data-toggle>
-        <h4>${esc(node.nom || 'Documents')}</h4>
-        <span class="count">${count} fichier${count > 1 ? 's' : ''}</span>
-        <span class="right">${files.length && node.folder ? `<a class="drive-link" href="${folderUrl(node.folder)}" target="_blank" rel="noopener">Drive ↗</a>` : ''}</span>
-      </div>` : ''}
-      ${note}${list}${nested}
-    </div>`;
-  }
-
-  const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
-  function breadcrumb(parts) {
-    return `<div class="breadcrumb">${parts.map((p, i) =>
-      i === parts.length - 1 ? `<b>${esc(p.t)}</b>` : `<a href="${p.h}">${esc(p.t)}</a>`).join(' › ')}</div>`;
-  }
-
-  function renderHome() {
-    const tf = totalFiles(), ts = totalSeen();
-    const pct = tf ? Math.round(ts * 100 / tf) : 0;
-    VIEW.innerHTML = `
-      <section class="hero">
-        <h1>Espace de révision — 1<sup>re</sup> année Médecine dentaire</h1>
-        <p>${esc(D.meta.faculte)} · Promotion 2024-2025. Tous les cours, TD, TP, résumés, tutorats et annales du
-        Drive de la promo, rangés module par module et professeur par professeur — avec les conseils d'examen
-        donnés par chaque enseignant.</p>
-        <div class="chips">
-          <a class="chip" href="#/modules">📚 ${D.modules.length} modules</a>
-          <a class="chip" href="#/notes">💡 Notes d'examen par prof</a>
-          <a class="chip" href="#/formation">🎓 Formation S1 → S12</a>
-          <a class="chip" href="${D.meta.drive}" target="_blank" rel="noopener">📁 Drive d'origine</a>
+    return `
+      <section class="folder">
+        <div class="folder-head">
+          <span class="f-ico">${node.vide ? '🕓' : '📂'}</span>
+          <h3>${esc(node.nom)}</h3>
+          <span class="f-count">${bits.join(' · ')}</span>
+          <a class="f-open" href="${folderUrl(node.folder)}" target="_blank" rel="noopener">Ouvrir sur Drive ↗</a>
         </div>
-        <div class="dua">${esc(D.message.dua)}</div>
-      </section>
-
-      <div class="stats">
-        <div class="stat"><b>${tf}</b><span>documents référencés</span></div>
-        <div class="stat"><b>${D.modules.length}</b><span>modules du S1</span></div>
-        <div class="stat"><b>${ts}</b><span>documents révisés</span></div>
-        <div class="stat"><b>${pct} %</b><span>de progression globale</span></div>
-      </div>
-
-      <div class="sec-head">
-        <h2>Modules du semestre 1</h2>
-        <span class="hint">Cliquez sur un module pour ouvrir ses cours par professeur</span>
-      </div>
-      <div class="grid">${D.modules.map(card).join('')}</div>
-
-      <div class="sec-head"><h2>À ne pas manquer avant l'examen</h2>
-        <span class="spacer"></span><a class="chip" href="#/notes">Tout voir</a></div>
-      <div class="tips">
-        ${D.notes.slice(0, 3).map(n => `
-          <div class="tip" style="--accent:${'#2f9e8f'}">
-            <h3>${n.emoji} ${esc(n.matiere)}</h3>
-            <div class="fmt">Format : ${esc(n.format)}</div>
-            ${n.profs.slice(0, 2).map(p => `<div class="item"><div class="who">${esc(p.prof)}</div>
-              <p>${esc(p.texte)}</p></div>`).join('')}
-          </div>`).join('')}
-      </div>
-
-      <div class="sec-head"><h2>Bienvenue dans la promo</h2></div>
-      <div class="card" style="--accent:#8b7d3f">
-        <p class="desc">${esc(D.message.merci)}</p>
-        <div class="meta"><span>📄 Notes Promo 2024-25.txt</span><span>🖼️ PROMO.jpg</span></div>
-      </div>`;
-  }
-
-  const card = (m) => {
-    const s = modStats(m);
-    return `<a class="card" style="--accent:${m.couleur}" href="#/m/${m.id}">
-      <div class="top"><span class="emo">${m.emoji}</span>
-        <div><h3>${esc(m.nom)}</h3><div class="sub">${esc(m.format)}</div></div></div>
-      <div class="meta"><span>👤 ${m.profs.length} rubriques</span><span>📄 ${s.total} fichiers</span><span>✅ ${s.done} révisés</span></div>
-      <div class="bar"><i style="width:${s.pct}%"></i></div>
-    </a>`;
+        ${fileList(files, '')}
+        ${kids.length ? `<div class="sub-folders">${kids.map(subCard).join('')}</div>` : ''}
+        ${node.vide ? `<div class="empty-note">🕓 Ce dossier existe déjà sur le Drive mais son contenu n’a pas encore été déposé. Reviens plus tard — le portail se met à jour avec le Drive.</div>` : ''}
+      </section>`;
   };
 
-  function renderModules() {
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>Tous les modules du S1</h2>
-        <span class="hint">${totalFiles()} documents · ${D.modules.length} modules</span></div>
-      <div class="grid">${D.modules.map(card).join('')}</div>`;
-  }
+  /* ------------------------------ vues ------------------------------ */
+  const view = document.getElementById('view');
 
-  function renderModule(id) {
-    const m = D.modules.find(x => x.id === id);
-    if (!m) { render404(); return; }
-    const s = modStats(m);
-    const toc = m.profs.map(p =>
-      `<button class="chip" data-jump="p-${esc(slug(p.nom))}">${esc(p.nom)}</button>`).join('');
-    VIEW.innerHTML = `
-      ${breadcrumb([{ t: 'Modules', h: '#/modules' }, { t: m.nom }])}
-      <section class="hero" style="--accent:${m.couleur}">
-        <h1>${m.emoji} ${esc(m.nom)}</h1>
-        <p>Format d'évaluation : ${esc(m.format)} — ${s.total} documents, dont ${s.done} déjà révisés (${s.pct} %).</p>
-        <div class="chips">
-          <a class="chip" href="${folderUrl(m.folder)}" target="_blank" rel="noopener">📁 Dossier du module sur le Drive</a>
-          <a class="chip" href="#/notes">💡 Conseils d'examen de ce module</a>
-        </div>
-        <div class="bar" style="margin-top:16px"><i style="width:${s.pct}%;background:${m.couleur}"></i></div>
-      </section>
-      <div class="sec-head" style="margin-top:6px"><h2>Accès rapide</h2>
-        <span class="spacer"></span>
-        <button class="icon-btn" id="collapse-all">Tout replier</button>
-        <button class="icon-btn" id="expand-all">Tout déplier</button>
-      </div>
-      <div class="chips" style="margin-bottom:16px">${toc}</div>
-      ${m.profs.map(p => nodeHtml(p, 1)).join('')}`;
-
-    $('#collapse-all').onclick = () => $$('.prof-block, .sect', VIEW).forEach(el => el.classList.add('closed'));
-    $('#expand-all').onclick   = () => $$('.prof-block, .sect', VIEW).forEach(el => el.classList.remove('closed'));
-    if (VIEW.scrollIntoView) VIEW.scrollIntoView({ block: 'start' });
-  }
-
-  function renderNotes() {
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>💡 Notes d'examen — Promo 2024-25</h2>
-        <span class="hint">Conseils donnés par les professeurs : chapitres insistés, parties retirées, format d'épreuve</span></div>
-      <div class="note" style="margin-bottom:18px">Source : document « Notes Promo 2024-25.txt » du Drive, rédigé et partagé par la promotion.</div>
-      <div class="tips">
-        ${D.notes.map(n => `
-          <div class="tip" style="--accent:#2f9e8f">
-            <h3>${n.emoji} ${esc(n.matiere)}</h3>
-            <div class="fmt">Format : ${esc(n.format)}</div>
-            ${n.profs.map(p => `<div class="item">
-              <div class="who">${esc(p.prof)}</div>
-              <p>${esc(p.texte)}</p>
-              <div class="tags">${(p.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
-            </div>`).join('')}
-          </div>`).join('')}
-      </div>
-      <div class="sec-head"><h2>Message de la promo</h2></div>
-      <div class="card" style="--accent:#8b7d3f">
-        <p class="desc">${esc(D.message.merci)}</p>
-        <div class="dua">${esc(D.message.dua)}</div>
-      </div>`;
-  }
-
-  function renderFavoris() {
-    const rows = [];
-    D.modules.forEach(m => moduleFiles(m).forEach(f => { if (favs[f.id]) rows.push({ ...f, mod: m }); }));
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>⭐ Mes favoris</h2><span class="hint">${rows.length} document(s) — stockés dans ce navigateur</span></div>
-      ${rows.length ? `<ul class="results">${rows.map(f => fileRow({ ...f, path: [f.mod.court].concat(f.path) }, true)).join('')}</ul>`
-        : `<div class="empty">Aucun favori pour l'instant. Utilisez l'étoile ★ à côté d'un document pour l'ajouter ici.</div>`}
-      <div class="sec-head"><h2>✅ Déjà révisés</h2></div>
-      <div class="empty">${totalSeen()} document(s) sur ${totalFiles()} marqués comme révisés. La progression se met à jour automatiquement dans le menu.</div>`;
-  }
-
-  function renderFormation() {
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>🎓 Modules de formation S1 → S12</h2>
-        <span class="hint">D'après « Modules De Formation.pdf » (FMDC Casablanca)</span></div>
-      <div class="card" style="--accent:#3b82f6; margin-bottom:18px">
-        <table class="table">
-          <thead><tr><th>Semestre</th><th>Modules disciplinaires (et modules transversaux)</th></tr></thead>
-          <tbody>
-            ${D.formation.map(f => `<tr><td class="sem">${esc(f.semestre)}</td>
-              <td><ul style="margin:0;padding-left:18px">${f.modules.map(x => `<li>${esc(x)}</li>`).join('')}</ul></td></tr>`).join('')}
-          </tbody>
-        </table>
-      </div>
-      <div class="card" style="--accent:#64748b">
-        <h3 style="margin:0 0 6px">Modules capitalisés — 1<sup>re</sup> année 2024-2025</h3>
-        <p class="desc">La liste nominative des étudiants concernés et des modules à repasser est disponible dans le
-        document « Modules capitalisés_1A_2024-2025.pdf ».</p>
-        <a class="chip" href="${fileUrl('1Ao0ZvzfbqdkTIUKDnGB3wIVI2ldo-q_v')}" target="_blank" rel="noopener">Ouvrir le document ↗</a>
-      </div>`;
-  }
-
-  function renderLiens() {
-    const L = D.liens;
-    const pl = (urls, title) => urls.length ? `
-      <div class="item" style="border-top:1px solid var(--line); padding-top:10px; margin-top:6px">
-        <div class="who">${esc(title)}</div>
-        <div class="playlist" style="margin-top:8px">
-          ${urls.map((u, i) => `<a class="chip" href="${u}" target="_blank" rel="noopener">▶ Vidéo ${i + 1}</a>`).join('')}
-        </div>
-      </div>` : '';
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>🔗 Liens & ressources utiles</h2>
-        <span class="hint">Chaînes YouTube, playlists et documents conseillés par la promo</span></div>
-      <div class="card" style="--accent:#64748b">
-        ${L.chaines.map(c => `<div class="link-row">
-          <span class="ic">${c.url.includes('youtube') || c.url.includes('youtu.be') ? '▶️' : '📁'}</span>
-          <div><a href="${c.url}" target="_blank" rel="noopener">${esc(c.nom)}</a>
-          <div class="desc">${esc(c.desc)}</div></div>
-        </div>`).join('')}
-        ${pl(L.physioSabry, 'Playlist Physiologie — recommandée par la promo (Pr. Sabry)')}
-        ${pl(L.biochimieKhlil, 'Playlist Biochimie — tutorats (Pr. Khlil)')}
-        <div class="item" style="border-top:1px solid var(--line); padding-top:10px; margin-top:6px">
-          <div class="who">Biologie cellulaire — membrane plasmique</div>
-          <div class="playlist" style="margin-top:8px">
-            <a class="chip" href="${L.membraneCellulaire}" target="_blank" rel="noopener">📁 Dossier Drive</a>
+  const moduleCard = m => {
+    const files = moduleFiles(m);
+    const p = progressOf(files);
+    const profs = profsOf(m);
+    const empt = countEmpty(m);
+    return `
+      <a class="card" href="#/m/${m.id}" style="--c:${m.couleur}">
+        <div class="card-top">
+          <div class="card-emoji">${m.emoji}</div>
+          <div>
+            <h3>${esc(m.nom)}</h3>
+            <div class="meta">${files.length} document${files.length > 1 ? 's' : ''} · ${countFolders(m)} dossier${countFolders(m) > 1 ? 's' : ''}${empt ? ` · ${empt} à venir` : ''}</div>
           </div>
         </div>
-      </div>
-
-      <div class="sec-head"><h2>📄 Fichiers à la racine du Drive</h2></div>
-      <ul class="results">${D.racine.map(([n, id]) => fileRow({ name: n, id, path: ['Racine du Drive'] })).join('')}</ul>`;
-  }
-
-  /* --------------------------- recherche ----------------------------- */
-  let INDEX = null;
-  function buildIndex() {
-    if (INDEX) return INDEX;
-    INDEX = [];
-    D.modules.forEach(m => {
-      walk({ sections: m.profs.map(p => ({ ...p })) }, [], [])
-        .forEach(f => INDEX.push({ name: f.name, id: f.id, mod: m, path: [m.court].concat(f.path) }));
-    });
-    D.racine.forEach(([n, id]) => INDEX.push({ name: n, id, mod: null, path: ['Racine du Drive'] }));
-    return INDEX;
-  }
-  const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-  function renderSearch(q) {
-    const nq = norm(q).trim();
-    if (nq.length < 2) { route(); return; }
-    const terms = nq.split(/\s+/);
-    const hits = buildIndex().filter(f => {
-      const hay = norm(f.name + ' ' + f.path.join(' '));
-      return terms.every(t => hay.includes(t));
-    }).slice(0, 120);
-    const byMod = {};
-    hits.forEach(h => { const k = h.mod ? h.mod.nom : 'Racine du Drive'; (byMod[k] = byMod[k] || []).push(h); });
-
-    VIEW.innerHTML = `
-      <div class="sec-head"><h2>🔍 Résultats pour « ${esc(q)} »</h2>
-        <span class="hint">${hits.length} document(s)</span></div>
-      ${hits.length ? Object.keys(byMod).map(k => `
-        <div class="sec-head"><h2 style="font-size:15px">${esc(k)}</h2></div>
-        <ul class="results">${byMod[k].map(f => fileRow(f, true)).join('')}</ul>`).join('')
-      : `<div class="empty">Aucun document trouvé. Essayez « rein », « QCM », « résumé », « anatomie »…</div>`}`;
-  }
-
-  function render404() { VIEW.innerHTML = `<div class="empty">Page introuvable. <a href="#/">Retour à l'accueil</a></div>`; }
-
-  /* ----------------------------- routeur ----------------------------- */
-  function route() {
-    const h = location.hash.replace(/^#\/?/, '');
-    const parts = h.split('/').filter(Boolean);
-    closeNav();
-
-    let active = '';
-    if (!parts.length) { renderHome(); active = 'home'; }
-    else if (parts[0] === 'modules') { renderModules(); active = 'modules'; }
-    else if (parts[0] === 'm' && parts[1]) { renderModule(parts[1]); active = 'modules'; }
-    else if (parts[0] === 'notes') { renderNotes(); active = 'notes'; }
-    else if (parts[0] === 'favoris') { renderFavoris(); active = 'favoris'; }
-    else if (parts[0] === 'formation') { renderFormation(); active = 'formation'; }
-    else if (parts[0] === 'liens') { renderLiens(); active = 'liens'; }
-    else render404();
-
-    $$('.nav a').forEach(a => a.classList.toggle('active', a.dataset.nav === active));
-    $$('.side-mods a').forEach(a => a.classList.toggle('active', h === a.dataset.h));
-    if (window.scrollTo) { try { window.scrollTo({ top: 0 }); } catch (e) { /* ignoré */ } }
-  }
-
-  /* --------------------------- interactions -------------------------- */
-  document.addEventListener('click', (e) => {
-    const toggle = e.target.closest('[data-toggle]');
-    if (toggle) {
-      const block = toggle.closest('.prof-block, .sect');
-      if (block) { block.classList.toggle('closed'); return; }
-    }
-    const jump = e.target.closest('[data-jump]');
-    if (jump) {
-      const el = document.getElementById(jump.dataset.jump);
-      if (el) { el.classList.remove('closed'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-      return;
-    }
-    const btn = e.target.closest('[data-act]');
-    if (btn) {
-      const li = btn.closest('li[data-fid]');
-      const id = li && li.dataset.fid;
-      if (!id) return;
-      e.preventDefault();
-      const act = btn.dataset.act;
-      if (act === 'seen') {
-        if (seen[id]) delete seen[id]; else seen[id] = 1;
-        saveSeen(); li.classList.toggle('seen', !!seen[id]); btn.classList.toggle('done', !!seen[id]);
-        refreshSidebar(); toast(seen[id] ? 'Marqué comme révisé ✓' : 'Marque de révision retirée');
-      } else if (act === 'fav') {
-        if (favs[id]) delete favs[id]; else favs[id] = 1;
-        saveFavs(); btn.classList.toggle('on', !!favs[id]);
-        refreshSidebar(); toast(favs[id] ? 'Ajouté aux favoris ★' : 'Retiré des favoris');
-        if (location.hash.startsWith('#/favoris')) renderFavoris();
-      } else if (act === 'copy') {
-        navigator.clipboard?.writeText(fileUrl(id)).then(
-          () => toast('Lien du document copié 🔗'),
-          () => toast('Copie impossible — ouvrez le document puis copiez l’URL'));
-      }
-    }
-  });
-
-  const search = $('#search');
-  let searchTimer = null;
-  search.addEventListener('input', () => {
-    clearTimeout(searchTimer);
-    const q = search.value;
-    searchTimer = setTimeout(() => (q.trim().length >= 2 ? renderSearch(q) : route()), 120);
-  });
-  search.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { search.value = ''; search.blur(); route(); }
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== search) { e.preventDefault(); search.focus(); }
-  });
-
-  /* thème */
-  const applyTheme = (t) => { document.documentElement.dataset.theme = t; localStorage.setItem(LS_THM, t); };
-  applyTheme(localStorage.getItem(LS_THM) || 'dark');
-  $('#theme-btn').onclick = () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
-
-  /* navigation mobile */
-  const closeNav = () => document.body.classList.remove('nav-open');
-  $('#menu-btn').onclick = () => document.body.classList.toggle('nav-open');
-  $('#scrim').onclick = closeNav;
-
-  /* progression */
-  $('#reset-progress').onclick = (e) => {
-    e.preventDefault();
-    if (!confirm('Réinitialiser la progression et les repères de révision ?')) return;
-    seen = {}; saveSeen(); refreshSidebar(); route(); toast('Progression réinitialisée');
+        <p class="desc">${esc(m.desc || '')}</p>
+        ${profs.length ? `<div class="chips">${profs.slice(0, 5).map(p2 => `<span class="chip">${esc(p2)}</span>`).join('')}${profs.length > 5 ? `<span class="chip">+${profs.length - 5}</span>` : ''}</div>` : ''}
+        <div class="bar"><i style="width:${p.pct}%"></i></div>
+        <div class="card-foot">
+          <span class="meta">${p.total ? `${p.done}/${p.total} révisé${p.done > 1 ? 's' : ''}` : 'en attente de contenu'}</span>
+          <span class="go">Explorer →</span>
+        </div>
+      </a>`;
   };
 
-  function refreshSidebar() {
-    $('#badge-modules').textContent = D.modules.length;
-    $('#badge-favs').textContent = Object.keys(favs).length;
-    $('#side-mods').innerHTML = D.modules.map(m => {
-      const s = modStats(m);
-      return `<a href="#/m/${m.id}" data-h="m/${m.id}">
-        <span class="dot" style="background:${m.couleur}"></span>
-        <span>${esc(m.court)}</span>
-        <span class="mini">${s.done}/${s.total}</span></a>`;
-    }).join('');
-    const tf = totalFiles(), ts = totalSeen();
-    $('#side-progress').textContent = `Progression : ${tf ? Math.round(ts * 100 / tf) : 0} % (${ts}/${tf})`;
-  }
+  const totalStats = () => {
+    const files = index.filter(f => f.module);
+    const done = files.filter(f => state.revised.has(f.id)).length;
+    const profs = [...new Set(D.modules.flatMap(profsOf))];
+    return {
+      modules: D.modules.length,
+      docs: files.length,
+      profs: profs.length,
+      annales: (moduleIndex['exams-2025'] ? moduleFiles(moduleIndex['exams-2025']).length : 0) +
+               (moduleIndex['examens-anciens'] ? moduleFiles(moduleIndex['examens-anciens']).length : 0),
+      done, total: files.length,
+      pct: files.length ? Math.round(done / files.length * 100) : 0
+    };
+  };
 
-  function toast(msg) {
-    let t = $('#toast');
-    if (!t) {
-      t = document.createElement('div');
-      t.id = 'toast';
-      t.style.cssText = 'position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:100;' +
-        'background:var(--panel);border:1px solid var(--line);color:var(--txt);padding:10px 16px;' +
-        'border-radius:12px;font-size:13.5px;box-shadow:var(--shadow);opacity:0;transition:opacity .2s';
-      document.body.appendChild(t);
+  const renderHome = () => {
+    const s = totalStats();
+    const upcoming = D.modules.reduce((n, m) => n + countEmpty(m), 0);
+    view.innerHTML = `
+      <section class="hero">
+        <span class="hero-badge"><span class="dot"></span> Semestre 1 · contenu synchronisé avec le Drive de la promo</span>
+        <h1>Tout le <span class="grad">S1</span> de la 1ʳᵉ année dentaire,<br>au même endroit.</h1>
+        <p class="lead">Cours, résumés, QCM, TP, annales et examens des années précédentes — rangés par module puis par professeur, avec le suivi de ta révision. Chaque lien ouvre directement le document sur Google Drive.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#/modules">📚 Explorer les modules</a>
+          <a class="btn btn-ghost" href="${D.meta.driveUrl}" target="_blank" rel="noopener">📁 Ouvrir le Drive S1 ↗</a>
+          <a class="btn btn-ghost" href="#/annales">📝 Examens & annales</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>${s.modules}</b><span>rubriques du semestre</span></div>
+          <div class="stat"><b>${s.docs}</b><span>documents référencés</span></div>
+          <div class="stat"><b>${s.profs}</b><span>professeurs & intervenants</span></div>
+          <div class="stat"><b>${s.annales}</b><span>sujets d’examens</span></div>
+        </div>
+
+        <div class="progress-card">
+          <div class="pc-txt">Ma révision : <b>${s.done} / ${s.total}</b> documents · <b>${s.pct} %</b></div>
+          <div class="bar"><i style="width:${s.pct}%"></i></div>
+          <button class="link-btn" id="reset-progress">réinitialiser</button>
+        </div>
+
+        ${upcoming ? `<div class="notice" style="margin-top:14px">
+          <span>🕓</span>
+          <div><b>${upcoming} dossiers sont encore vides sur le Drive.</b> Ils apparaissent en pointillés « à venir » — le portail reflète exactement l’état actuel du Drive, rien n’est inventé.</div>
+        </div>` : ''}
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><h2>Accès rapide</h2><p>Les raccourcis les plus utiles avant les examens.</p></div>
+        </div>
+        <div class="quick">
+          <a href="#/m/exams-2025"><span class="q-ico">📝</span><b>Examens 2025-2026</b><span>Anatomie, biochimie, biologie, chimie, physiologie</span></a>
+          <a href="#/m/examens-anciens"><span class="q-ico">🗂️</span><b>Annales S1</b><span>Sujets complets des promotions 2023 & 2024</span></a>
+          <a href="#/m/autres-facs"><span class="q-ico">🏛️</span><b>QCM autres facultés</b><span>FMDR, UIASS, UIR et UPM</span></a>
+          <a href="#/m/imd"><span class="q-ico">🦷</span><b>Initiation (IMD)</b><span>Cours des Pr. Badre & Bensouda + TP</span></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><h2>Les rubriques du semestre</h2><p>${D.modules.length} rubriques · ${s.docs} documents · clique pour ouvrir l’arborescence complète.</p></div>
+          <a class="go" href="#/modules" style="--c:var(--accent)">Tout afficher →</a>
+        </div>
+        <div class="cards">${D.modules.map(moduleCard).join('')}</div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>À la racine du Drive</h2><p>Documents utiles hors modules.</p></div></div>
+        ${fileList(D.racine, 'Drive S1 · racine')}
+      </section>`;
+  };
+
+  const renderModules = () => {
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>Modules</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head"><div><h2>Toutes les rubriques du S1</h2><p>${D.modules.length} rubriques — cours, résumés, QCM, TP et annales.</p></div></div>
+        <div class="cards">${D.modules.map(moduleCard).join('')}</div>
+      </section>`;
+  };
+
+  const renderModule = id => {
+    const m = moduleIndex[id];
+    if (!m) { renderModules(); return; }
+    const files = moduleFiles(m);
+    const p = progressOf(files);
+    const allDone = p.total && p.done === p.total;
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <a href="#/modules">Modules</a> <span>›</span> <span>${esc(m.court || m.nom)}</span></div>
+
+      <header class="module-head" style="--c:${m.couleur}">
+        <div class="mh-ico">${m.emoji}</div>
+        <div>
+          <h1>${esc(m.nom)}</h1>
+          <div class="mh-sub">${esc(m.desc || '')}</div>
+          <div class="mh-sub">${files.length} document${files.length > 1 ? 's' : ''} · ${p.pct} % révisé</div>
+        </div>
+        <div class="mh-actions">
+          <button class="btn btn-ghost" id="toggle-all">${allDone ? '↺ Tout décocher' : '✓ Tout marquer révisé'}</button>
+          <a class="btn btn-primary" href="${folderUrl(m.folder)}" target="_blank" rel="noopener">📁 Dossier Drive ↗</a>
+        </div>
+      </header>
+
+      <div class="bar" style="margin:0 0 8px"><i style="width:${p.pct}%"></i></div>
+
+      ${m.enfants.map(folderBlock).join('')}`;
+
+    const btn = document.getElementById('toggle-all');
+    if (btn) btn.addEventListener('click', () => {
+      files.forEach(f => allDone ? state.revised.delete(f.id) : state.revised.add(f.id));
+      save(); renderModule(id);
+    });
+  };
+
+  const renderAnnales = () => {
+    const mods = [moduleIndex['exams-2025'], moduleIndex['examens-anciens'], moduleIndex['autres-facs']].filter(Boolean);
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>Examens & annales</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head"><div><h2>Examens & annales</h2><p>Tous les sujets du S1 disponibles sur le Drive, des promos précédentes aux sessions récentes.</p></div></div>
+        ${mods.map(m => `
+          <section class="folder">
+            <div class="folder-head">
+              <span class="f-ico">${m.emoji}</span>
+              <h3>${esc(m.nom)}</h3>
+              <span class="f-count">${moduleFiles(m).length} document${moduleFiles(m).length > 1 ? 's' : ''}</span>
+              <a class="f-open" href="#/m/${m.id}">Voir le module →</a>
+            </div>
+            ${m.enfants.map(n => fileList(n.fichiers, m.court)).join('')}
+          </section>`).join('')}
+      </section>`;
+  };
+
+  const renderFavoris = () => {
+    const favs = index.filter(f => state.favs.has(f.id));
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>Favoris</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head"><div><h2>Mes favoris</h2><p>${favs.length ? favs.length + ' document' + (favs.length > 1 ? 's' : '') + ' épinglé' + (favs.length > 1 ? 's' : '') : 'Astuce : clique sur ★ à côté d’un document pour le retrouver ici.'}</p></div></div>
+        ${favs.length
+          ? fileList(favs.map(f => ({ nom: f.nom, id: f.id, type: f.type })), '')
+          : `<div class="empty-note">Aucun favori pour l’instant. Ouvre un module puis touche l’étoile ★ d’un document.</div>`}
+      </section>`;
+  };
+
+  const renderAbout = () => {
+    const s = totalStats();
+    view.innerHTML = `
+      <div class="crumbs"><a href="#/">Accueil</a> <span>›</span> <span>À propos</span></div>
+      <section class="section" style="margin-top:14px">
+        <div class="section-head"><div><h2>À propos du portail</h2><p>Comment ce site est construit, et d’où viennent les documents.</p></div></div>
+        <div class="cards">
+          <div class="card" style="--c:#4f46e5">
+            <div class="card-top"><div class="card-emoji">📁</div><div><h3>Source unique : le Drive S1</h3>
+            <div class="meta">${s.docs} documents référencés</div></div></div>
+            <p class="desc">Le portail ne copie aucun fichier : il ne fait qu’afficher l’arborescence du Drive officiel de la promo et pointer vers chaque document. Tout ajout sur le Drive peut être reflété ici.</p>
+            <a class="btn btn-ghost" href="${D.meta.driveUrl}" target="_blank" rel="noopener">Ouvrir le Drive S1 ↗</a>
+          </div>
+          <div class="card" style="--c:#22b07d">
+            <div class="card-top"><div class="card-emoji">✅</div><div><h3>Ta progression reste chez toi</h3>
+            <div class="meta">localStorage · aucun compte</div></div></div>
+            <p class="desc">Les cases « révisé », les favoris et le thème sont stockés dans ton navigateur uniquement. Aucun serveur, aucune donnée envoyée, aucune inscription.</p>
+          </div>
+          <div class="card" style="--c:#12a5d8">
+            <div class="card-top"><div class="card-emoji">🕓</div><div><h3>Dossiers « à venir »</h3>
+            <div class="meta">${D.modules.reduce((n, m) => n + countEmpty(m), 0)} dossiers encore vides</div></div></div>
+            <p class="desc">Certains dossiers existent sur le Drive mais sont encore vides. Ils sont affichés en pointillés pour que tu saches qu’ils arriveront — sans inventer de contenu.</p>
+          </div>
+          <div class="card" style="--c:#f0921f">
+            <div class="card-top"><div class="card-emoji">🗂️</div><div><h3>Autres espaces</h3>
+            <div class="meta">promo 2024-2025</div></div></div>
+            <p class="desc">Le portail de la promotion précédente (notes d’examen par professeur, formation S1 → S12, liens utiles) reste disponible.</p>
+            <a class="btn btn-ghost" href="2024-2025/index.html">Ouvrir le portail 2024-2025 ↗</a>
+          </div>
+        </div>
+      </section>`;
+  };
+
+  /* ------------------------------ progression ------------------------------ */
+  const save = () => {
+    write(LS.rev, [...state.revised]);
+    write(LS.fav, [...state.favs]);
+    const c = document.getElementById('fav-count');
+    if (c) c.textContent = state.favs.size;
+    fillFootStats();
+  };
+
+  const fillFootStats = () => {
+    const s = totalStats();
+    const el = document.getElementById('foot-stats');
+    if (el) el.textContent = `${s.docs} documents · ${s.modules} rubriques · ${s.pct} % de ta révision`;
+  };
+
+  /* ------------------------------ interactions ------------------------------ */
+  view.addEventListener('click', e => {
+    const rev = e.target.closest('[data-rev]');
+    if (rev) {
+      const id = rev.dataset.rev;
+      state.revised.has(id) ? state.revised.delete(id) : state.revised.add(id);
+      save();
+      rerender();
+      return;
     }
-    t.textContent = msg;
-    t.style.opacity = '1';
-    clearTimeout(t._h);
-    t._h = setTimeout(() => { t.style.opacity = '0'; }, 1900);
-  }
+    const fav = e.target.closest('[data-fav]');
+    if (fav) {
+      const id = fav.dataset.fav;
+      state.favs.has(id) ? state.favs.delete(id) : state.favs.add(id);
+      save();
+      rerender();
+      return;
+    }
+    if (e.target.closest('#reset-progress')) {
+      if (confirm('Réinitialiser toute la progression de révision ?')) { state.revised.clear(); save(); rerender(); }
+    }
+  });
 
-  /* ------------------------------ init ------------------------------- */
-  $('#drive-btn').href = D.meta.drive;
-  refreshSidebar();
-  window.addEventListener('hashchange', route);
-  route();
+  /* ------------------------------ recherche ------------------------------ */
+  const input = document.getElementById('search');
+  const results = document.getElementById('results');
+
+  const searchFiles = q => {
+    const n = norm(q);
+    if (!n) return [];
+    return index
+      .map(f => {
+        const hay = norm(f.nom + ' ' + f.path.join(' ') + ' ' + (f.module ? f.module.nom : ''));
+        const at = hay.indexOf(n);
+        return at < 0 ? null : { f, score: (norm(f.nom).includes(n) ? 0 : 100) + at };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.score - b.score)
+      .slice(0, 12)
+      .map(r => r.f);
+  };
+
+  const showResults = q => {
+    const found = searchFiles(q);
+    if (!q.trim()) { results.hidden = true; results.innerHTML = ''; return; }
+    results.hidden = false;
+    results.innerHTML = found.length
+      ? `<div class="r-head">${found.length} résultat${found.length > 1 ? 's' : ''}</div>` + found.map((f, i) => `
+          <div class="result" data-idx="${i}" data-fid="${esc(f.id)}" data-mod="${f.module ? f.module.id : ''}">
+            <span>${ICONS[f.type] || '📎'}</span>
+            <div>
+              <div class="r-name">${esc(f.nom)}</div>
+              <div class="r-path">${esc(f.module ? f.module.court : 'Drive S1')}${f.path.length ? ' › ' + esc(f.path.join(' › ')) : ''}</div>
+            </div>
+            <span class="r-go">↗</span>
+          </div>`).join('')
+      : `<div class="r-empty">Aucun document ne correspond à « ${esc(q)} ».</div>`;
+  };
+
+  input.addEventListener('input', () => showResults(input.value));
+  input.addEventListener('focus', () => input.value.trim() && showResults(input.value));
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { input.blur(); results.hidden = true; }
+    if (e.key === 'Enter') {
+      const first = results.querySelector('.result');
+      if (first) openResult(first);
+    }
+  });
+
+  const openResult = el => {
+    const fid = el.dataset.fid;
+    const f = index.find(x => x.id === fid);
+    if (!f) return;
+    window.open(fileUrl(fid), '_blank', 'noopener');
+    results.hidden = true;
+    if (f.module) {
+      input.value = '';
+      state.pending = fid;
+      location.hash = '#/m/' + f.module.id;
+    }
+  };
+
+  results.addEventListener('click', e => {
+    const r = e.target.closest('.result');
+    if (r) openResult(r);
+  });
+
+  /* bouton « voir dans le module » quand on clique sur le chemin */
+  results.addEventListener('contextmenu', e => e.preventDefault());
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#search-box')) results.hidden = true;
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); showResults(input.value); }
+  });
+
+  /* ------------------------------ thème & menu ------------------------------ */
+  const themeBtn = document.getElementById('theme-btn');
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    write(LS.theme, next);
+  });
+
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('top-nav').classList.toggle('open');
+  });
+
+  document.querySelectorAll('#top-nav a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('top-nav').classList.remove('open');
+  }));
+
+  /* ------------------------------ routage ------------------------------ */
+  const routes = {
+    '': renderHome,
+    'modules': renderModules,
+    'annales': renderAnnales,
+    'favoris': renderFavoris,
+    'a-propos': renderAbout
+  };
+
+  const rerender = () => route(false);
+
+  const route = (scroll = true) => {
+    const h = location.hash.replace(/^#\/?/, '');
+    const parts = h.split('/').filter(Boolean);
+
+    if (parts[0] === 'm' && parts[1] && moduleIndex[parts[1]]) {
+      renderModule(parts[1]);
+    } else if (routes[parts[0] || '']) {
+      routes[parts[0] || '']();
+    } else {
+      renderHome();
+    }
+
+    document.querySelectorAll('#top-nav a').forEach(a => {
+      const key = a.dataset.nav;
+      a.classList.toggle('active',
+        (key === 'home' && (!parts[0] || parts[0] === '')) ||
+        (key === 'modules' && (parts[0] === 'modules' || parts[0] === 'm')) ||
+        (key === 'annales' && parts[0] === 'annales') ||
+        (key === 'favoris' && parts[0] === 'favoris'));
+    });
+
+    if (scroll && !state.pending) window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (state.pending) {
+      const el = view.querySelector(`[data-fid="${CSS.escape(state.pending)}"]`);
+      state.pending = null;
+      if (el) {
+        el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        el.style.transition = 'background .4s';
+        el.style.background = 'color-mix(in srgb, var(--accent) 16%, transparent)';
+        setTimeout(() => { el.style.background = ''; }, 1600);
+      }
+    }
+    save();
+  };
+
+  window.addEventListener('hashchange', () => route(true));
+
+  /* ------------------------------ init ------------------------------ */
+  const drive = D.meta.driveUrl;
+  document.getElementById('drive-btn').href = drive;
+  document.getElementById('drive-foot').href = drive;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const fc = document.getElementById('fav-count');
+  if (fc) fc.textContent = state.favs.size;
+
+  route(false);
+  fillFootStats();
 })();

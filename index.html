@@ -1,69 +1,82 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FMDC 1A — Espace de révision | Promotion 2024-2025</title>
-<meta name="description" content="Portail de révision de la 1ère année de Médecine Dentaire (FMDC Casablanca) : cours, TD, TP, résumés, annales et conseils d'examen par professeur, organisés depuis le Drive de la promo 2024-2025.">
+<title>S1 — Espace de révision | 1ère année Médecine Dentaire · FMDC Casablanca</title>
+<meta name="description" content="Tout le Semestre 1 de la 1ère année de Médecine Dentaire (FMDC Casablanca) : cours, résumés, QCM, TP et examens des années précédentes, organisés depuis le Drive officiel de la promo.">
+<meta name="theme-color" content="#0b1020">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
+<script>
+  /* Thème appliqué avant le rendu pour éviter tout flash */
+  try {
+    var t = localStorage.getItem('fmdc.s1.theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
-<div class="app">
-  <!-- ---------- Barre latérale ---------- -->
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#/">
-      <div class="logo">🦷</div>
-      <div>
-        <b>FMDC 1A</b>
-        <span>Espace de révision · Promo 24-25</span>
-      </div>
-    </a>
+<header class="top">
+  <a class="brand" href="#/">
+    <span class="brand-logo">🦷</span>
+    <span class="brand-txt">
+      <b>FMDC · S1</b>
+      <i>Espace de révision — 1ère année</i>
+    </span>
+  </a>
 
-    <nav class="nav">
-      <a href="#/" data-nav="home"><span class="ic">🏠</span> Accueil</a>
-      <a href="#/modules" data-nav="modules"><span class="ic">📚</span> Modules <span class="badge" id="badge-modules">—</span></a>
-      <a href="#/notes" data-nav="notes"><span class="ic">💡</span> Notes d'examen</a>
-      <a href="#/favoris" data-nav="favoris"><span class="ic">⭐</span> Mes favoris <span class="badge" id="badge-favs">0</span></a>
-      <a href="#/formation" data-nav="formation"><span class="ic">🎓</span> Formation S1 → S12</a>
-      <a href="#/liens" data-nav="liens"><span class="ic">🔗</span> Liens utiles</a>
-    </nav>
+  <nav class="top-nav" id="top-nav">
+    <a href="#/" data-nav="home">Accueil</a>
+    <a href="#/modules" data-nav="modules">Modules</a>
+    <a href="#/annales" data-nav="annales">Annales</a>
+    <a href="#/favoris" data-nav="favoris">Favoris <span class="pill" id="fav-count">0</span></a>
+  </nav>
 
-    <div class="side-title">Modules du S1</div>
-    <nav class="side-mods" id="side-mods"></nav>
-
-    <div class="side-foot">
-      <div id="side-progress">Progression : 0 %</div>
-      <a href="#" id="reset-progress">Réinitialiser ma progression</a>
+  <div class="top-actions">
+    <div class="search" id="search-box">
+      <span class="s-ic">🔍</span>
+      <input id="search" type="search" placeholder="Rechercher un cours, un QCM, un prof…" autocomplete="off" spellcheck="false">
+      <kbd>/</kbd>
+      <div class="results" id="results" hidden></div>
     </div>
-  </aside>
-
-  <!-- ---------- Contenu ---------- -->
-  <div class="main">
-    <header class="topbar">
-      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-      <div class="search">
-        <span class="ic">🔍</span>
-        <input id="search" type="search" placeholder="Rechercher un cours, un TD, un résumé, un professeur…" autocomplete="off">
-        <kbd>/</kbd>
-      </div>
-      <div class="top-actions">
-        <button class="icon-btn" id="theme-btn" title="Thème clair / sombre">🌗</button>
-        <a class="icon-btn" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive de la promo">📁 <span class="hide-sm">Drive</span></a>
-      </div>
-    </header>
-
-    <main class="content" id="view"></main>
+    <button class="icon-btn" id="theme-btn" title="Thème clair / sombre" aria-label="Changer de thème">🌗</button>
+    <a class="icon-btn drive" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive S1">📁<span class="hide-sm">Drive</span></a>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
   </div>
-</div>
-<div class="scrim" id="scrim"></div>
+</header>
 
-<!-- Données + application -->
-<script src="data/00-base.js"></script>
-<script src="data/10-modules-a.js"></script>
-<script src="data/20-modules-b.js"></script>
-<script src="data/30-extra.js"></script>
+<main id="view" class="view"></main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">🦷 FMDC 1A — Semestre 1</div>
+      <p>Portail de révision <b>non officiel</b>, construit par et pour les étudiants de 1ère année de la Faculté de Médecine Dentaire de Casablanca. Aucun fichier n’est copié : chaque lien ouvre le document sur Google Drive.</p>
+    </div>
+    <div>
+      <h4>Accès rapide</h4>
+      <a href="#/modules">Tous les modules</a>
+      <a href="#/annales">Examens & annales</a>
+      <a href="#/favoris">Mes favoris</a>
+      <a id="drive-foot" href="#" target="_blank" rel="noopener">Drive S1 ↗</a>
+    </div>
+    <div>
+      <h4>Autres espaces</h4>
+      <a href="2024-2025/index.html">Portail promo 2024-2025 ↗</a>
+      <a href="#/a-propos">À propos & données</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© <span id="year"></span> — Promo FMDC. Contenu © leurs auteurs respectifs.</span>
+    <span id="foot-stats"></span>
+  </div>
+</footer>
+
+<script src="data/s1.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
