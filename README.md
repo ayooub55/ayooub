@@ -21,8 +21,8 @@ le bon dossier sur le Drive de la promo.
 ## 🗂 Structure du dépôt
 
 ```
-index.html            page unique (tout le contenu)
-assets/style.css      thème et mise en page
+index.html            page unique (HTML + CSS intégré — un seul fichier)
+serve.py              petit serveur local optionnel pour l'aperçu
 .nojekyll             désactive Jekyll sur GitHub Pages
 .github/workflows/    déploiement GitHub Pages + CodeQL
 ```
