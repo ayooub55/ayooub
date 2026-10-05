@@ -1,69 +1,246 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FMDC 1A — Espace de révision | Promotion 2024-2025</title>
-<meta name="description" content="Portail de révision de la 1ère année de Médecine Dentaire (FMDC Casablanca) : cours, TD, TP, résumés, annales et conseils d'examen par professeur, organisés depuis le Drive de la promo 2024-2025.">
+<title>S1 — Tous les cours de Médecine Dentaire</title>
+<meta name="description" content="Tous les cours du Semestre 1 de première année de Médecine Dentaire : Anatomie & Physiologie, Biologie, Biophysique, Chimie & Biochimie, IMD et MTU — cours par professeur, résumés, QCM et annales, reliés directement au Drive de la promo.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="app">
-  <!-- ---------- Barre latérale ---------- -->
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#/">
-      <div class="logo">🦷</div>
-      <div>
-        <b>FMDC 1A</b>
-        <span>Espace de révision · Promo 24-25</span>
-      </div>
+<!-- ================= Barre de navigation ================= -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#">
+      <span class="logo">🦷</span>
+      <span class="brand-txt"><b>S1 · Médecine Dentaire</b><small>Espace de révision</small></span>
     </a>
-
-    <nav class="nav">
-      <a href="#/" data-nav="home"><span class="ic">🏠</span> Accueil</a>
-      <a href="#/modules" data-nav="modules"><span class="ic">📚</span> Modules <span class="badge" id="badge-modules">—</span></a>
-      <a href="#/notes" data-nav="notes"><span class="ic">💡</span> Notes d'examen</a>
-      <a href="#/favoris" data-nav="favoris"><span class="ic">⭐</span> Mes favoris <span class="badge" id="badge-favs">0</span></a>
-      <a href="#/formation" data-nav="formation"><span class="ic">🎓</span> Formation S1 → S12</a>
-      <a href="#/liens" data-nav="liens"><span class="ic">🔗</span> Liens utiles</a>
+    <nav class="menu">
+      <a href="#cours">Matières</a>
+      <a href="#examens">Examens</a>
+      <a class="btn btn-drive" href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">📁 Drive</a>
     </nav>
-
-    <div class="side-title">Modules du S1</div>
-    <nav class="side-mods" id="side-mods"></nav>
-
-    <div class="side-foot">
-      <div id="side-progress">Progression : 0 %</div>
-      <a href="#" id="reset-progress">Réinitialiser ma progression</a>
-    </div>
-  </aside>
-
-  <!-- ---------- Contenu ---------- -->
-  <div class="main">
-    <header class="topbar">
-      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-      <div class="search">
-        <span class="ic">🔍</span>
-        <input id="search" type="search" placeholder="Rechercher un cours, un TD, un résumé, un professeur…" autocomplete="off">
-        <kbd>/</kbd>
-      </div>
-      <div class="top-actions">
-        <button class="icon-btn" id="theme-btn" title="Thème clair / sombre">🌗</button>
-        <a class="icon-btn" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive de la promo">📁 <span class="hide-sm">Drive</span></a>
-      </div>
-    </header>
-
-    <main class="content" id="view"></main>
   </div>
-</div>
-<div class="scrim" id="scrim"></div>
+</header>
 
-<!-- Données + application -->
-<script src="data/00-base.js"></script>
-<script src="data/10-modules-a.js"></script>
-<script src="data/20-modules-b.js"></script>
-<script src="data/30-extra.js"></script>
-<script src="assets/app.js"></script>
+<!-- ================= Hero ================= -->
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Première année · Semestre 1</p>
+    <h1>Tous les cours du S1,<br><em>au même endroit.</em></h1>
+    <p class="lead">Les cours par professeur, les résumés, les QCM et les annales des 6 matières — chaque lien ouvre directement le bon dossier sur le Drive de la promo.</p>
+    <div class="cta">
+      <a class="btn primary" href="#cours">Voir les matières ↓</a>
+      <a class="btn ghost" href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">Ouvrir le Drive ↗</a>
+    </div>
+    <ul class="stats">
+      <li><b>6</b> matières</li>
+      <li><b>17</b> professeurs</li>
+      <li><b>2023 → 2025</b> annales</li>
+    </ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ================= Matières ================= -->
+  <section class="sec" id="cours">
+    <div class="sec-head">
+      <h2>Les matières</h2>
+      <p>Le programme expliqué matière par matière — cliquez sur un dossier de cours pour l'ouvrir sur le Drive.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- 1 · Anatomie & Physiologie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🫀</span>
+          <div>
+            <h3>Anatomie &amp; Physiologie</h3>
+            <p>L'ostéologie, la myologie et les grands appareils — thorax, abdomen, appareil urinaire — expliqués par les Pr. Debbagh, Idelhaj et Erreguibi, puis la physiologie générale avec le Pr. Sabry.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1lBhhrcdYtupQz6zudhyUIdg_sJ_YqEcp" target="_blank" rel="noopener">📁 Cours · Pr. Debbagh</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1xcbBYqm0vRnI6VXZhp7qZP0BhDRwuKFt" target="_blank" rel="noopener">📁 Cours · Pr. Idelhaj</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1ybPgUn5qE4U52kO7mLCZ2-CGaKL8txgh" target="_blank" rel="noopener">📁 Cours · Pr. Erreguibi</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/17whVSdYuIJeZ3MgxvMsymFfN5jOWyXCy" target="_blank" rel="noopener">📁 Physio · Pr. Sabry</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1JUsHf1IHnHls67WnpdW-t6CZ7Ot2tcPU" target="_blank" rel="noopener">📝 Résumés</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1U1VheI79kfvSmeZZNCrftAD86K-2lT-i" target="_blank" rel="noopener">📝 Annales / QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1oF0dIaoORejhszkXCZyK8RvqB0y2HBzk" target="_blank" rel="noopener">Ouvrir « Anatomie et physiologie générale » <span>↗</span></a>
+      </article>
+
+      <!-- 2 · Biologie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🧬</span>
+          <div>
+            <h3>Biologie moléculaire, cellulaire &amp; génétique</h3>
+            <p>La cellule et ses organites, le cycle cellulaire, la synthèse des protéines, l'ADN et la génétique — les cours du Pr. Rhrich (cellulaire) et du Pr. Rochd (moléculaire).</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1aLNyQyeaA44Fw5prTnz4SrXbX3X0oOGy" target="_blank" rel="noopener">📁 Biologie cellulaire · Pr. Rhrich</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/17-WqfZopOnWKdjrUtI5GG5Nlgu2UBTRy" target="_blank" rel="noopener">📁 Moléculaire &amp; génétique · Pr. Rochd</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1hz1WPr1IyCvafTdq6wbS-u1q98-Vpo6b" target="_blank" rel="noopener">📝 QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1bzklWqSZ0h83zH9lnjBz8QOHTKWTa5p8" target="_blank" rel="noopener">Ouvrir « Biologie moléculaire cellulaire ET génétique » <span>↗</span></a>
+      </article>
+
+      <!-- 3 · Biophysique & Sciences des matériaux -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">⚛️</span>
+          <div>
+            <h3>Biophysique &amp; Sciences des matériaux</h3>
+            <p>Radiologie, ultrasons, pH et radioprotection avec les Pr. Bouzoubaa, El Boussiri, Guensi et El Guermai — puis cristallographie, mécanique et diagrammes de phases.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1Z0xJr6BIgtQmNMDe9gWJHjszL8Qadv3s" target="_blank" rel="noopener">📁 Cours · Biophysique</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1KySOdFqbkeDCNSEPfaormvH9Bhb1hXEn" target="_blank" rel="noopener">📁 Sciences des matériaux</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1j97yQ4hz5oKN54VkikHqpa7ClkxXkjHO" target="_blank" rel="noopener">📝 Résumés</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/13djeO96rZ-9ZuzLyVJjqiOYTGj_TDBSm" target="_blank" rel="noopener">📝 Annales</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1qphThy4Ijo6gRqO3mE1_S55-_FH4W20a" target="_blank" rel="noopener">Ouvrir « Biophysique et sciences des matériaux » <span>↗</span></a>
+      </article>
+
+      <!-- 4 · Chimie & Biochimie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🧪</span>
+          <div>
+            <h3>Chimie &amp; Biochimie structurale</h3>
+            <p>Chimie générale et chimie organique, puis la biochimie structurale : les cours du Pr. Gueddari, du Pr. Khlil et du Pr. Naamane, avec le pack QCM / révisions / examens.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/12XQp3WpId5CvluA0ZyuyKnGoD6Vvwxi5" target="_blank" rel="noopener">📁 Chimie générale · Pr. Gueddari</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1Hbb3mZXuC4ZIelR6xoatI9YX7ReRzEm0" target="_blank" rel="noopener">📁 Chimie organique</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1r-hgLiJmBjV1k2zDlLtZD8ng1H5AMUT0" target="_blank" rel="noopener">📁 Biochimie structurale</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1NLYb5UyGKS7Eop3RjVLFWuI5F7_OF5Cz" target="_blank" rel="noopener">📝 QCM / Révisions / Exam</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1jegFRSCdklpmMY4Z9vD9hLUDO7UxyBWF" target="_blank" rel="noopener">Ouvrir « Chimie et Biochimie Structurale » <span>↗</span></a>
+      </article>
+
+      <!-- 5 · IMD -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🦷</span>
+          <div>
+            <h3>Initiation à la Médecine Dentaire</h3>
+            <p>Les premiers pas en dentaire : carie, parodontopathies, malocclusion, prévention… les cours des Pr. Badre, Bensouda et Bouzoubaa, accompagnés des TP.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1AgtVFSHGW1OimZ_vIiNUu5OtNAccYcSi" target="_blank" rel="noopener">📁 Pr. Badre</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1AjEnUpZc5rNWDdp6kQeyqICWbJPlRKxy" target="_blank" rel="noopener">📁 Pr. Bensouda</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/19PfaebsOMt5esj0K3y0h4UaGGo5okRIx" target="_blank" rel="noopener">📁 Pr. Bouzoubaa</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/15dD7oAnPLVg7UdWXf33Fdx2ndtbIgMPD" target="_blank" rel="noopener">🧪 TP</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1pKhLvSCOjNvmZsVKG0MBe6L8aElda4hf" target="_blank" rel="noopener">📝 QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/12lZb0pal4yKUm8sj9TTGCnrjxopKpIek" target="_blank" rel="noopener">Ouvrir « Initiation à la Médecine Dentaire » <span>↗</span></a>
+      </article>
+
+      <!-- 6 · MTU -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📐</span>
+          <div>
+            <h3>Méthodologie du travail universitaire</h3>
+            <p>Méthodes de travail, organisation et méthodologie universitaire avec les Pr. Mouhibi et Sabri — plus les annales du module.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1FWxwnzwOHjgfCu-1egzWCY3n7wKCLlZD" target="_blank" rel="noopener">📁 Pr. Mouhibi</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1_soa9aOFGFbP8SuNsQGh8fGhyahqgWu1" target="_blank" rel="noopener">📁 Pr. Sabri</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1PclSrX1XqLD7pE94DJka17Ksi6nDRVKH" target="_blank" rel="noopener">📝 Annales</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/16cQrP6c-g6gc5gLgxyCd8xuBG8lC6sDf" target="_blank" rel="noopener">Ouvrir « Methodologie de Travail Universitaire » <span>↗</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Examens & ressources ================= -->
+  <section class="sec" id="examens">
+    <div class="sec-head">
+      <h2>Examens &amp; ressources</h2>
+      <p>Les annales des années précédentes et ce qui complète le S1.</p>
+    </div>
+
+    <div class="grid grid-sm">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📝</span>
+          <div>
+            <h3>Examens 2025</h3>
+            <p>Les sujets de la session 2025, tous modules.</p>
+          </div>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1aOrrJ43G1bc7whPXh3tbWcFRWJz3_Pcr" target="_blank" rel="noopener">Ouvrir les examens 2025 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🗂</span>
+          <div>
+            <h3>Annales 2023 &amp; 2024</h3>
+            <p>Les examens des années précédentes, rangés par année.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1AdXc7IoP92kFQW5TUBgYMUZ_OaomAXRw" target="_blank" rel="noopener">📁 2023</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1EpryFWJILSV0eAA41-LUo0zPA2zSNrgX" target="_blank" rel="noopener">📁 2024</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1teAFJ6je5K-0Z7ibagoVVz1ZA9rgoXEG" target="_blank" rel="noopener">Ouvrir le dossier complet <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🎓</span>
+          <div>
+            <h3>Autres facs</h3>
+            <p>Les ressources partagées avec les autres facultés.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1y2FVP6cF8_gcQ1g2ToI0kYxPKLuTkmh8" target="_blank" rel="noopener">📁 FMDR</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1YzG32ZcscvWb1WvO6rliJNEPaSPVUtol" target="_blank" rel="noopener">📁 UIASS</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1NwiDggOr59vDSqEmC7LVRLfDJZIGVBjM" target="_blank" rel="noopener">📁 UIR</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1p50QU3Y9BTjPIXUXH19A8HsplaNp2OCo" target="_blank" rel="noopener">📁 UPM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1I1Xlwa39AYyHOP1mkYU-6RT_W0Vlsc_G" target="_blank" rel="noopener">Ouvrir « AUTRES FACS » <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📄</span>
+          <div>
+            <h3>Modules de formation</h3>
+            <p>Le parcours complet de la formation, du S1 au S12 (PDF officiel).</p>
+          </div>
+        </div>
+        <a class="card-open" href="https://drive.google.com/file/d/1lbMVuAioZ6O2pDHeSLIsMzdxLAm3aToc/view" target="_blank" rel="noopener">Ouvrir le PDF <span>↗</span></a>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= Pied de page ================= -->
+<footer>
+  <div class="wrap foot-inner">
+    <p>🦷 S1 · Espace de révision — les documents restent hébergés sur Google Drive, ce site ne fait que les organiser.</p>
+    <p><a href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">Ouvrir le Drive de la promo ↗</a></p>
+  </div>
+</footer>
+
 </body>
 </html>

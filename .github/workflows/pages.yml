@@ -25,7 +25,7 @@ jobs:
       - name: Préparer l'artefact (site statique)
         run: |
           mkdir -p _site
-          cp -r index.html assets data .nojekyll _site/
+          cp -r index.html assets .nojekyll _site/
 
       - uses: actions/configure-pages@v5
 
