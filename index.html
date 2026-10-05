@@ -1,69 +1,614 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FMDC 1A — Espace de révision | Promotion 2024-2025</title>
-<meta name="description" content="Portail de révision de la 1ère année de Médecine Dentaire (FMDC Casablanca) : cours, TD, TP, résumés, annales et conseils d'examen par professeur, organisés depuis le Drive de la promo 2024-2025.">
+<title>S1 — Tous les cours de Médecine Dentaire</title>
+<meta name="description" content="Tous les cours du Semestre 1 de première année de Médecine Dentaire : Anatomie & Physiologie, Biologie, Biophysique, Chimie & Biochimie, IMD et MTU — cours par professeur, résumés, QCM et annales, reliés directement au Drive de la promo.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ================================================================
+   S1 — Espace de révision · Landing page (HTML/CSS, sans JS)
+   ================================================================ */
+
+:root{
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --card-2: #f7f9fc;
+  --line: #e3e9f2;
+  --txt: #152234;
+  --dim: #57677e;
+  --mute: #8798ad;
+  --accent: #0e9384;
+  --accent-2: #3b82f6;
+  --accent-soft: rgba(14,147,132,.10);
+  --accent-border: rgba(14,147,132,.45);
+  --shadow: 0 14px 34px rgba(20,35,60,.10);
+  --radius: 16px;
+  --sans: "Segoe UI", Inter, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0d1117;
+    --card: #151d28;
+    --card-2: #1a2331;
+    --line: #263140;
+    --txt: #e8eef6;
+    --dim: #9aa8ba;
+    --mute: #6f7f93;
+    --accent: #2f9e8f;
+    --accent-2: #60a5fa;
+    --accent-soft: rgba(47,158,143,.14);
+    --accent-border: rgba(47,158,143,.55);
+    --shadow: 0 14px 34px rgba(0,0,0,.40);
+  }
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body{
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--txt);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+.wrap{ max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------------- Barre de navigation ---------------- */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand .logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex: none;
+  background: linear-gradient(140deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+}
+
+.brand-txt b{ display: block; font-size: 14.5px; letter-spacing: .2px; line-height: 1.25; }
+.brand-txt small{ display: block; font-size: 11.5px; color: var(--mute); }
+
+.menu{ display: flex; align-items: center; gap: 6px; }
+.menu > a{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dim);
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background .15s, color .15s;
+}
+.menu > a:hover{ background: var(--card-2); color: var(--txt); }
+
+.menu .btn-drive{
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+.menu .btn-drive:hover{ background: var(--accent-soft); filter: brightness(1.05); }
+
+/* ---------------- Hero ---------------- */
+.hero{
+  position: relative;
+  padding: 72px 0 46px;
+  text-align: center;
+  background:
+    radial-gradient(680px 300px at 18% -10%, var(--accent-soft), transparent 65%),
+    radial-gradient(680px 320px at 85% 0%, rgba(59,130,246,.10), transparent 65%);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.kicker{
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1{
+  margin: 0;
+  font-size: clamp(34px, 5.6vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+
+.hero h1 em{
+  font-style: normal;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead{
+  max-width: 640px;
+  margin: 18px auto 0;
+  font-size: 17px;
+  color: var(--dim);
+}
+
+.cta{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s, filter .15s, background .15s;
+}
+
+.btn.primary{
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(14,147,132,.35);
+}
+.btn.primary:hover{ filter: brightness(1.08); transform: translateY(-2px); }
+
+.btn.ghost{
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--txt);
+}
+.btn.ghost:hover{ border-color: var(--accent-border); transform: translateY(-2px); }
+
+.stats{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--dim);
+}
+.stats li + li{ position: relative; }
+.stats li + li::before{
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--mute);
+  transform: translateY(-50%);
+}
+.stats b{ color: var(--txt); font-weight: 700; }
+
+/* ---------------- Sections ---------------- */
+.sec{ padding: 52px 0 8px; }
+
+.sec-head{ margin-bottom: 22px; }
+.sec-head h2{
+  margin: 0;
+  font-size: clamp(24px, 3vw, 30px);
+  letter-spacing: -.01em;
+}
+.sec-head p{ margin: 6px 0 0; color: var(--dim); font-size: 15px; }
+
+/* ---------------- Grille de cartes ---------------- */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.grid-sm{
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent-border);
+}
+
+.card-top{ display: flex; gap: 14px; align-items: flex-start; }
+
+.card-emoji{
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+}
+
+.card h3{
+  margin: 0 0 4px;
+  font-size: 16.5px;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+}
+
+.card-top p{
+  margin: 0;
+  font-size: 13.8px;
+  color: var(--dim);
+  line-height: 1.55;
+}
+
+/* ---------------- Chips (liens dossiers) ---------------- */
+.chips{ display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card-2);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dim);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background .15s, border-color .15s, color .15s, transform .15s;
+}
+
+.chip:hover{
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  color: var(--txt);
+  transform: translateY(-1px);
+}
+
+/* ---------------- Lien « Ouvrir » de chaque carte ---------------- */
+.card-open{
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.card-open span{ transition: transform .15s; }
+.card:hover .card-open span{ transform: translate(2px, -2px); }
+.card-open:hover{ text-decoration: underline; }
+
+/* ---------------- Pied de page ---------------- */
+footer{
+  margin-top: 56px;
+  border-top: 1px solid var(--line);
+  padding: 24px 0 30px;
+  font-size: 13.5px;
+  color: var(--mute);
+}
+
+.foot-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.foot-inner p{ margin: 0; }
+.foot-inner a{ color: var(--accent); font-weight: 600; text-decoration: none; }
+.foot-inner a:hover{ text-decoration: underline; }
+
+/* ---------------- Mobile ---------------- */
+@media (max-width: 640px){
+  .brand-txt small{ display: none; }
+  .menu > a:not(.btn-drive){ display: none; }
+  .hero{ padding: 52px 0 38px; }
+  .lead{ font-size: 15.5px; }
+  .stats{ gap: 6px 22px; }
+  .stats li + li::before{ left: -12px; }
+  .card{ padding: 17px; }
+  .sec{ padding-top: 40px; }
+}
+</style>
 </head>
 <body>
 
-<div class="app">
-  <!-- ---------- Barre latérale ---------- -->
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#/">
-      <div class="logo">🦷</div>
-      <div>
-        <b>FMDC 1A</b>
-        <span>Espace de révision · Promo 24-25</span>
-      </div>
+<!-- ================= Barre de navigation ================= -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#">
+      <span class="logo">🦷</span>
+      <span class="brand-txt"><b>S1 · Médecine Dentaire</b><small>Espace de révision</small></span>
     </a>
-
-    <nav class="nav">
-      <a href="#/" data-nav="home"><span class="ic">🏠</span> Accueil</a>
-      <a href="#/modules" data-nav="modules"><span class="ic">📚</span> Modules <span class="badge" id="badge-modules">—</span></a>
-      <a href="#/notes" data-nav="notes"><span class="ic">💡</span> Notes d'examen</a>
-      <a href="#/favoris" data-nav="favoris"><span class="ic">⭐</span> Mes favoris <span class="badge" id="badge-favs">0</span></a>
-      <a href="#/formation" data-nav="formation"><span class="ic">🎓</span> Formation S1 → S12</a>
-      <a href="#/liens" data-nav="liens"><span class="ic">🔗</span> Liens utiles</a>
+    <nav class="menu">
+      <a href="#cours">Matières</a>
+      <a href="#examens">Examens</a>
+      <a class="btn btn-drive" href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">📁 Drive</a>
     </nav>
-
-    <div class="side-title">Modules du S1</div>
-    <nav class="side-mods" id="side-mods"></nav>
-
-    <div class="side-foot">
-      <div id="side-progress">Progression : 0 %</div>
-      <a href="#" id="reset-progress">Réinitialiser ma progression</a>
-    </div>
-  </aside>
-
-  <!-- ---------- Contenu ---------- -->
-  <div class="main">
-    <header class="topbar">
-      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-      <div class="search">
-        <span class="ic">🔍</span>
-        <input id="search" type="search" placeholder="Rechercher un cours, un TD, un résumé, un professeur…" autocomplete="off">
-        <kbd>/</kbd>
-      </div>
-      <div class="top-actions">
-        <button class="icon-btn" id="theme-btn" title="Thème clair / sombre">🌗</button>
-        <a class="icon-btn" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive de la promo">📁 <span class="hide-sm">Drive</span></a>
-      </div>
-    </header>
-
-    <main class="content" id="view"></main>
   </div>
-</div>
-<div class="scrim" id="scrim"></div>
+</header>
 
-<!-- Données + application -->
-<script src="data/00-base.js"></script>
-<script src="data/10-modules-a.js"></script>
-<script src="data/20-modules-b.js"></script>
-<script src="data/30-extra.js"></script>
-<script src="assets/app.js"></script>
+<!-- ================= Hero ================= -->
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Première année · Semestre 1</p>
+    <h1>Tous les cours du S1,<br><em>au même endroit.</em></h1>
+    <p class="lead">Les cours par professeur, les résumés, les QCM et les annales des 6 matières — chaque lien ouvre directement le bon dossier sur le Drive de la promo.</p>
+    <div class="cta">
+      <a class="btn primary" href="#cours">Voir les matières ↓</a>
+      <a class="btn ghost" href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">Ouvrir le Drive ↗</a>
+    </div>
+    <ul class="stats">
+      <li><b>6</b> matières</li>
+      <li><b>17</b> professeurs</li>
+      <li><b>2023 → 2025</b> annales</li>
+    </ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ================= Matières ================= -->
+  <section class="sec" id="cours">
+    <div class="sec-head">
+      <h2>Les matières</h2>
+      <p>Le programme expliqué matière par matière — cliquez sur un dossier de cours pour l'ouvrir sur le Drive.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- 1 · Anatomie & Physiologie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🫀</span>
+          <div>
+            <h3>Anatomie &amp; Physiologie</h3>
+            <p>L'ostéologie, la myologie et les grands appareils — thorax, abdomen, appareil urinaire — expliqués par les Pr. Debbagh, Idelhaj et Erreguibi, puis la physiologie générale avec le Pr. Sabry.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1lBhhrcdYtupQz6zudhyUIdg_sJ_YqEcp" target="_blank" rel="noopener">📁 Cours · Pr. Debbagh</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1xcbBYqm0vRnI6VXZhp7qZP0BhDRwuKFt" target="_blank" rel="noopener">📁 Cours · Pr. Idelhaj</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1ybPgUn5qE4U52kO7mLCZ2-CGaKL8txgh" target="_blank" rel="noopener">📁 Cours · Pr. Erreguibi</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/17whVSdYuIJeZ3MgxvMsymFfN5jOWyXCy" target="_blank" rel="noopener">📁 Physio · Pr. Sabry</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1JUsHf1IHnHls67WnpdW-t6CZ7Ot2tcPU" target="_blank" rel="noopener">📝 Résumés</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1U1VheI79kfvSmeZZNCrftAD86K-2lT-i" target="_blank" rel="noopener">📝 Annales / QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1oF0dIaoORejhszkXCZyK8RvqB0y2HBzk" target="_blank" rel="noopener">Ouvrir « Anatomie et physiologie générale » <span>↗</span></a>
+      </article>
+
+      <!-- 2 · Biologie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🧬</span>
+          <div>
+            <h3>Biologie moléculaire, cellulaire &amp; génétique</h3>
+            <p>La cellule et ses organites, le cycle cellulaire, la synthèse des protéines, l'ADN et la génétique — les cours du Pr. Rhrich (cellulaire) et du Pr. Rochd (moléculaire).</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1aLNyQyeaA44Fw5prTnz4SrXbX3X0oOGy" target="_blank" rel="noopener">📁 Biologie cellulaire · Pr. Rhrich</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/17-WqfZopOnWKdjrUtI5GG5Nlgu2UBTRy" target="_blank" rel="noopener">📁 Moléculaire &amp; génétique · Pr. Rochd</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1hz1WPr1IyCvafTdq6wbS-u1q98-Vpo6b" target="_blank" rel="noopener">📝 QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1bzklWqSZ0h83zH9lnjBz8QOHTKWTa5p8" target="_blank" rel="noopener">Ouvrir « Biologie moléculaire cellulaire ET génétique » <span>↗</span></a>
+      </article>
+
+      <!-- 3 · Biophysique & Sciences des matériaux -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">⚛️</span>
+          <div>
+            <h3>Biophysique &amp; Sciences des matériaux</h3>
+            <p>Radiologie, ultrasons, pH et radioprotection avec les Pr. Bouzoubaa, El Boussiri, Guensi et El Guermai — puis cristallographie, mécanique et diagrammes de phases.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1Z0xJr6BIgtQmNMDe9gWJHjszL8Qadv3s" target="_blank" rel="noopener">📁 Cours · Biophysique</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1KySOdFqbkeDCNSEPfaormvH9Bhb1hXEn" target="_blank" rel="noopener">📁 Sciences des matériaux</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1j97yQ4hz5oKN54VkikHqpa7ClkxXkjHO" target="_blank" rel="noopener">📝 Résumés</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/13djeO96rZ-9ZuzLyVJjqiOYTGj_TDBSm" target="_blank" rel="noopener">📝 Annales</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1qphThy4Ijo6gRqO3mE1_S55-_FH4W20a" target="_blank" rel="noopener">Ouvrir « Biophysique et sciences des matériaux » <span>↗</span></a>
+      </article>
+
+      <!-- 4 · Chimie & Biochimie -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🧪</span>
+          <div>
+            <h3>Chimie &amp; Biochimie structurale</h3>
+            <p>Chimie générale et chimie organique, puis la biochimie structurale : les cours du Pr. Gueddari, du Pr. Khlil et du Pr. Naamane, avec le pack QCM / révisions / examens.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/12XQp3WpId5CvluA0ZyuyKnGoD6Vvwxi5" target="_blank" rel="noopener">📁 Chimie générale · Pr. Gueddari</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1Hbb3mZXuC4ZIelR6xoatI9YX7ReRzEm0" target="_blank" rel="noopener">📁 Chimie organique</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1r-hgLiJmBjV1k2zDlLtZD8ng1H5AMUT0" target="_blank" rel="noopener">📁 Biochimie structurale</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1NLYb5UyGKS7Eop3RjVLFWuI5F7_OF5Cz" target="_blank" rel="noopener">📝 QCM / Révisions / Exam</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1jegFRSCdklpmMY4Z9vD9hLUDO7UxyBWF" target="_blank" rel="noopener">Ouvrir « Chimie et Biochimie Structurale » <span>↗</span></a>
+      </article>
+
+      <!-- 5 · IMD -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🦷</span>
+          <div>
+            <h3>Initiation à la Médecine Dentaire</h3>
+            <p>Les premiers pas en dentaire : carie, parodontopathies, malocclusion, prévention… les cours des Pr. Badre, Bensouda et Bouzoubaa, accompagnés des TP.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1AgtVFSHGW1OimZ_vIiNUu5OtNAccYcSi" target="_blank" rel="noopener">📁 Pr. Badre</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1AjEnUpZc5rNWDdp6kQeyqICWbJPlRKxy" target="_blank" rel="noopener">📁 Pr. Bensouda</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/19PfaebsOMt5esj0K3y0h4UaGGo5okRIx" target="_blank" rel="noopener">📁 Pr. Bouzoubaa</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/15dD7oAnPLVg7UdWXf33Fdx2ndtbIgMPD" target="_blank" rel="noopener">🧪 TP</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1pKhLvSCOjNvmZsVKG0MBe6L8aElda4hf" target="_blank" rel="noopener">📝 QCM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/12lZb0pal4yKUm8sj9TTGCnrjxopKpIek" target="_blank" rel="noopener">Ouvrir « Initiation à la Médecine Dentaire » <span>↗</span></a>
+      </article>
+
+      <!-- 6 · MTU -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📐</span>
+          <div>
+            <h3>Méthodologie du travail universitaire</h3>
+            <p>Méthodes de travail, organisation et méthodologie universitaire avec les Pr. Mouhibi et Sabri — plus les annales du module.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1FWxwnzwOHjgfCu-1egzWCY3n7wKCLlZD" target="_blank" rel="noopener">📁 Pr. Mouhibi</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1_soa9aOFGFbP8SuNsQGh8fGhyahqgWu1" target="_blank" rel="noopener">📁 Pr. Sabri</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1PclSrX1XqLD7pE94DJka17Ksi6nDRVKH" target="_blank" rel="noopener">📝 Annales</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/16cQrP6c-g6gc5gLgxyCd8xuBG8lC6sDf" target="_blank" rel="noopener">Ouvrir « Methodologie de Travail Universitaire » <span>↗</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Examens & ressources ================= -->
+  <section class="sec" id="examens">
+    <div class="sec-head">
+      <h2>Examens &amp; ressources</h2>
+      <p>Les annales des années précédentes et ce qui complète le S1.</p>
+    </div>
+
+    <div class="grid grid-sm">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📝</span>
+          <div>
+            <h3>Examens 2025</h3>
+            <p>Les sujets de la session 2025, tous modules.</p>
+          </div>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1aOrrJ43G1bc7whPXh3tbWcFRWJz3_Pcr" target="_blank" rel="noopener">Ouvrir les examens 2025 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🗂</span>
+          <div>
+            <h3>Annales 2023 &amp; 2024</h3>
+            <p>Les examens des années précédentes, rangés par année.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1AdXc7IoP92kFQW5TUBgYMUZ_OaomAXRw" target="_blank" rel="noopener">📁 2023</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1EpryFWJILSV0eAA41-LUo0zPA2zSNrgX" target="_blank" rel="noopener">📁 2024</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1teAFJ6je5K-0Z7ibagoVVz1ZA9rgoXEG" target="_blank" rel="noopener">Ouvrir le dossier complet <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">🎓</span>
+          <div>
+            <h3>Autres facs</h3>
+            <p>Les ressources partagées avec les autres facultés.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <a class="chip" href="https://drive.google.com/drive/folders/1y2FVP6cF8_gcQ1g2ToI0kYxPKLuTkmh8" target="_blank" rel="noopener">📁 FMDR</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1YzG32ZcscvWb1WvO6rliJNEPaSPVUtol" target="_blank" rel="noopener">📁 UIASS</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1NwiDggOr59vDSqEmC7LVRLfDJZIGVBjM" target="_blank" rel="noopener">📁 UIR</a>
+          <a class="chip" href="https://drive.google.com/drive/folders/1p50QU3Y9BTjPIXUXH19A8HsplaNp2OCo" target="_blank" rel="noopener">📁 UPM</a>
+        </div>
+        <a class="card-open" href="https://drive.google.com/drive/folders/1I1Xlwa39AYyHOP1mkYU-6RT_W0Vlsc_G" target="_blank" rel="noopener">Ouvrir « AUTRES FACS » <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-emoji">📄</span>
+          <div>
+            <h3>Modules de formation</h3>
+            <p>Le parcours complet de la formation, du S1 au S12 (PDF officiel).</p>
+          </div>
+        </div>
+        <a class="card-open" href="https://drive.google.com/file/d/1lbMVuAioZ6O2pDHeSLIsMzdxLAm3aToc/view" target="_blank" rel="noopener">Ouvrir le PDF <span>↗</span></a>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= Pied de page ================= -->
+<footer>
+  <div class="wrap foot-inner">
+    <p>🦷 S1 · Espace de révision — les documents restent hébergés sur Google Drive, ce site ne fait que les organiser.</p>
+    <p><a href="https://drive.google.com/drive/folders/1jljGDmCqvwKDAiS-Fa3a1L_I5eqgJkxK" target="_blank" rel="noopener">Ouvrir le Drive de la promo ↗</a></p>
+  </div>
+</footer>
+
 </body>
 </html>
