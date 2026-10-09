@@ -14,6 +14,7 @@ cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par modu
 | | |
 |---|---|
 | 📚 **8 modules / 281 documents** | Anatomie & Physiologie, Biologie, Biophysique & Sciences des matériaux, Chimie & Biochimie, IMD, Langue, MTU, Links |
+| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) |
 | 👩‍🏫 **Vue par professeur** | Chaque module se déplie en rubriques (Pr. X → Cours / TD / Résumés / Vidéos…) |
 | 🔍 **Recherche globale** | Accents ignorés, insensible à la casse — cherche dans les noms de fichiers **et** le chemin (module › professeur). Raccourci : `/` |
 | 💡 **Notes d'examen** | Les conseils donnés par chaque professeur (chapitres insistés, parties retirées, format d'épreuve) transformés en fiches filtrables |
@@ -32,6 +33,7 @@ aucun serveur, aucun compte, aucune donnée envoyée.
 index.html                 page unique
 assets/style.css           thème et mise en page
 assets/app.js              application (routage, recherche, progression)
+cours/                     pages « cours expliqués » (HTML autonomes, hors application)
 data/00-base.js            métadonnées du portail
 data/10-modules-a.js       modules 1 → 3
 data/20-modules-b.js       modules 4 → 8
@@ -74,6 +76,26 @@ Tout est piloté par les fichiers `data/*.js` — aucune connaissance du reste d
 
 Les identifiants de dossiers et de fichiers sont visibles dans l'URL Drive :
 `drive.google.com/drive/folders/`**`<ID>`** ou `drive.google.com/file/d/`**`<ID>`**`/view`.
+
+## 📖 Cours expliqués
+
+Le dossier `cours/` contient des pages de révision autonomes : chaque page reprend le **plan officiel**
+d'un support de cours et l'explique section par section (ce qu'il faut comprendre, ce qu'il faut retenir,
+les pièges de QCM), avec un lien direct vers le PDF d'origine.
+
+Ces pages sont du HTML/CSS/JS **autonome** — un seul fichier, aucune dépendance, aucun build — et ne passent
+pas par l'application du portail ; elles y sont simplement liées depuis la barre latérale (« Cours expliqués »).
+
+| Page | Cours | Source |
+|---|---|---|
+| [`cours/biochimie-structurale.html`](cours/biochimie-structurale.html) | Biochimie structurale — Pr. Naima Khlil · Chap. 1 : acides aminés, ionisation et pHi, liaison peptidique, structures des protéines, hémoglobine (effet Bohr, 2,3-DPG) · Chap. 2 : enzymes, Michaelis-Menten et Lineweaver-Burk, inhibitions, allostérie, vitamines et coenzymes — + tableau des chiffres à retenir et auto-évaluation de 10 QCM corrigés | Support de cours 2024-25, 71 p. |
+
+**Ajouter une page** : copier `cours/biochimie-structurale.html`, remplacer le contenu, puis ajouter une entrée
+dans le bloc « Cours expliqués » de la barre latérale d'`index.html` et dans le tableau ci-dessus.
+
+> Les passages cités entre guillemets sont repris du support de l'enseignante ; le reste est une explication
+> rédigée pour la révision. Les diaporamas de plus de 25 Mo n'ont pas pu être lus automatiquement : se référer
+> au support écrit pour le contenu intégral.
 
 ## 🤝 Contribution
 
