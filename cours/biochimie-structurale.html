@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biochimie structurale expliquée en détail — Pr. N. Khlil | FMDC 1A</title>
+<meta name="description" content="Cours de Biochimie structurale (Pr. Naima Khlil, FMDC Casablanca, 1re année médecine dentaire) expliqué section par section : acides aminés, ionisation et pHi, liaison peptidique, structures des protéines, hémoglobine et effet Bohr, cinétique de Michaelis-Menten, inhibitions, allostérie, vitamines et coenzymes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧫</text></svg>">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#141b24; --card:#161f2b; --line:#263244;
+  --txt:#e6edf3; --mut:#93a4b8; --acc:#5aa9e6; --acc2:#e08b2f; --ok:#3fb950;
+  --warn:#d29922; --quote:#1c2733; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e1e7ef;
+  --txt:#1b2430; --mut:#5a6b7d; --acc:#1f6fb2; --acc2:#b96a12; --ok:#1a7f37;
+  --warn:#9a6700; --quote:#f0f5fb; --shadow:0 6px 24px rgba(20,40,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:16px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.28;margin:0 0 .5rem}
+h2{font-size:1.55rem;margin:3rem 0 .8rem;padding-bottom:.45rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.2rem;margin:2rem 0 .5rem;color:var(--acc);scroll-margin-top:80px}
+h4{font-size:1.02rem;margin:1.3rem 0 .4rem;scroll-margin-top:80px}
+p{margin:.55rem 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;
+  background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:262px 1fr;gap:34px}
+
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.top-in .crumb{font-size:.85rem;color:var(--mut)}
+.top-in .crumb b{color:var(--txt)}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--txt);border-radius:9px;padding:7px 12px;font-size:.86rem;cursor:pointer;text-align:left}
+.btn:hover{border-color:var(--acc);text-decoration:none}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.bar{height:3px;background:var(--acc);width:0;position:fixed;top:0;left:0;z-index:40}
+
+nav.toc{position:sticky;top:66px;align-self:start;max-height:calc(100vh - 86px);overflow:auto;
+  padding:14px 0 30px;font-size:.85rem}
+nav.toc .t{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin:13px 0 5px;font-weight:700}
+nav.toc a{display:block;padding:3px 10px;border-left:2px solid transparent;color:var(--mut);border-radius:0 6px 6px 0}
+nav.toc a.sub{padding-left:20px;font-size:.8rem}
+nav.toc a:hover{color:var(--txt);background:var(--bg2);text-decoration:none}
+nav.toc a.on{color:var(--acc);border-left-color:var(--acc);background:var(--bg2);font-weight:600}
+
+.hero{background:linear-gradient(140deg,color-mix(in srgb,var(--acc) 18%,var(--bg2)),var(--bg2));
+  border:1px solid var(--line);border-radius:16px;padding:28px;margin:22px 0 8px;box-shadow:var(--shadow)}
+.hero .kick{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);font-weight:700}
+.hero h1{font-size:2.15rem;margin:.35rem 0 .3rem}
+.hero .sub{color:var(--mut);max-width:74ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 13px;min-width:104px}
+.stat b{display:block;font-size:1.15rem}
+.stat span{font-size:.75rem;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:13px 0}
+.card b:first-child{display:block;margin-bottom:3px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.note{border-left:4px solid var(--acc);background:var(--bg2);border-radius:0 10px 10px 0;padding:11px 15px;margin:14px 0}
+.note.warn{border-left-color:var(--warn)}
+.note.ok{border-left-color:var(--ok)}
+.note .lbl{font-size:.71rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--mut)}
+blockquote{margin:12px 0;padding:12px 16px;background:var(--quote);border-left:3px solid var(--acc2);
+  border-radius:0 10px 10px 0;font-style:italic}
+blockquote cite{display:block;margin-top:6px;font-style:normal;font-size:.77rem;color:var(--mut)}
+ul,ol{padding-left:1.25rem;margin:.45rem 0}
+li{margin:.25rem 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.89rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:700}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--bg2) 60%,transparent)}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);
+  color:var(--mut);margin:0 4px 4px 0;background:var(--bg2)}
+.page{font-size:.75rem;color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}
+.pill{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--acc);color:#fff;vertical-align:middle}
+details{border:1px solid var(--line);border-radius:10px;padding:0 14px;margin:9px 0;background:var(--bg2)}
+details summary{cursor:pointer;padding:11px 0;font-weight:600;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";color:var(--acc)}
+details[open] summary::before{content:"▾ "}
+details .body{padding:0 0 12px}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg2);
+  border:1px solid var(--line);border-radius:9px;padding:11px 14px;margin:10px 0;font-size:.9rem;overflow-x:auto}
+.formula .c{color:var(--mut)}
+/* quiz */
+.quiz{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:14px 0;background:var(--card)}
+.quiz .q{font-weight:600;margin-bottom:9px}
+.quiz .opts{display:grid;gap:7px}
+.quiz button.opt{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:8px;
+  padding:8px 11px;text-align:left;cursor:pointer;font:inherit;font-size:.9rem}
+.quiz button.opt:hover:not(:disabled){border-color:var(--acc)}
+.quiz button.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--bg2))}
+.quiz button.opt.wrong{border-color:#e5534b;background:color-mix(in srgb,#e5534b 13%,var(--bg2))}
+.quiz .why{font-size:.86rem;color:var(--mut);margin-top:8px;display:none}
+.quiz .why.show{display:block}
+#quiz-score{font-weight:700}
+footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;color:var(--mut);font-size:.85rem}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}nav.toc{display:none}.hero h1{font-size:1.6rem}}
+@media print{
+  header.top,nav.toc,.cta,.bar{display:none}
+  .wrap{grid-template-columns:1fr}body{background:#fff;color:#000}
+  details{break-inside:avoid}details[open]{border:none}
+  .quiz button.opt{border:1px solid #999}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="btn" href="../index.html">← Portail FMDC 1A</a>
+    <span class="crumb"><b>Chimie &amp; Biochimie</b> › Biochimie structurale › Pr. Khlil</span>
+    <span class="spacer"></span>
+    <button class="btn" id="theme" title="Thème clair / sombre">🌗</button>
+    <a class="btn primary" href="https://drive.google.com/drive/folders/1-oZ2aepQC3M2RGisfK87u46zsj7FwkEL" target="_blank" rel="noopener">📁 Dossier Drive</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" id="toc">
+    <div class="t">Avant de commencer</div>
+    <a href="#apercu">Vue d'ensemble</a>
+    <a href="#intro">Introduction générale</a>
+    <a href="#objectifs">Objectifs du module</a>
+    <div class="t">Chapitre 1 — AA &amp; protéines</div>
+    <a href="#c1-aa">I. Les acides aminés</a>
+    <a class="sub" href="#c1-import">Importance biomédicale</a>
+    <a class="sub" href="#c1-class">Structure &amp; classification</a>
+    <a class="sub" href="#c1-ess">AA essentiels</a>
+    <a class="sub" href="#c1-der">Dérivés &amp; AA libres</a>
+    <a class="sub" href="#c1-phys">Propriétés physiques</a>
+    <a class="sub" href="#c1-ion">Ionisation, pKa, pHi</a>
+    <a href="#c1-lien">II. Liaison peptidique</a>
+    <a href="#c1-pep">III. Peptides</a>
+    <a href="#c1-prot">IV. Protéines</a>
+    <a class="sub" href="#c1-sec">Structure secondaire</a>
+    <a class="sub" href="#c1-ter">Tertiaire &amp; quaternaire</a>
+    <a class="sub" href="#c1-fib">Fibreuses vs globulaires</a>
+    <a class="sub" href="#c1-den">Dénaturation</a>
+    <a href="#c1-hb">V. Hémoglobine</a>
+    <a class="sub" href="#c1-hbg">Globine</a>
+    <a class="sub" href="#c1-heme">Hème</a>
+    <a class="sub" href="#c1-gaz">O₂, CO₂, CO</a>
+    <a class="sub" href="#c1-bohr">Effet Bohr</a>
+    <a class="sub" href="#c1-dpg">2,3-DPG · T/R</a>
+    <a class="sub" href="#c1-mut">Hb mutantes</a>
+    <div class="t">Chapitre 2 — Enzymes</div>
+    <a href="#c2-def">I. Définitions</a>
+    <a href="#c2-nom">II. Nomenclature</a>
+    <a href="#c2-e">III.1 Effet de [E]</a>
+    <a href="#c2-mm">III.2 Michaelis-Menten</a>
+    <a class="sub" href="#c2-lb">Lineweaver-Burk</a>
+    <a href="#c2-inh">III.3 Inhibitions</a>
+    <a href="#c2-ph">IV.1 Effet du pH</a>
+    <a href="#c2-t">IV.2 Température</a>
+    <a href="#c2-ea">IV.3 Énergie d'activation</a>
+    <a href="#c2-allo">V. Enzymes allostériques</a>
+    <a href="#c2-coen">VI. Vitamines &amp; coenzymes</a>
+    <div class="t">Révision</div>
+    <a href="#chiffres">Les chiffres à retenir</a>
+    <a href="#quiz">Auto-évaluation (QCM)</a>
+    <a href="#reviser">Plan de révision</a>
+    <a href="#docs">Les 3 documents</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="apercu">
+      <div class="kick">Module Chimie &amp; Biochimie générales · S1</div>
+      <h1>Biochimie structurale, expliquée en détail</h1>
+      <p class="sub">
+        <b>Pr. Naima Khlil</b> — 1<sup>re</sup> année de Médecine Dentaire, Faculté de Médecine Dentaire de
+        Casablanca (Université Hassan&nbsp;II), année universitaire 2024-2025.
+        Cette page reprend <b>le plan exact du support de cours, section par section</b>, et explique chaque notion :
+        d'où elle vient, pourquoi elle est vraie, ce qu'il faut retenir, et le piège de QCM qui va avec.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>2</b><span>chapitres</span></div>
+        <div class="stat"><b>71</b><span>pages de support</span></div>
+        <div class="stat"><b>20</b><span>acides aminés</span></div>
+        <div class="stat"><b>9</b><span>R ionisables</span></div>
+        <div class="stat"><b>QCM</b><span>format d'épreuve</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://drive.google.com/file/d/1hRKTt2hq6NyjxYmwF-N4dfM2LKYyUc5J/view" target="_blank" rel="noopener">📕 Support de cours complet</a>
+        <a class="btn" href="#c1-aa">Chapitre 1</a>
+        <a class="btn" href="#c2-def">Chapitre 2</a>
+        <a class="btn" href="#quiz">🎯 Teste-toi</a>
+      </div>
+    </section>
+
+    <div class="note">
+      <div class="lbl">Comment cette page a été construite</div>
+      <p style="margin-bottom:0">
+        Le plan, les numéros de page et les citations suivent le <em>Support de cours — Biochimie structurale
+        (Pr. Khlil, 2024-25)</em>. Les blocs en italique entre guillemets sont des <b>passages repris mot à mot
+        du support</b> ; tout le reste est une explication rédigée pour la révision, avec les chiffres et exemples
+        donnés en cours. Les deux PDF «&nbsp;CHAP&nbsp;I&nbsp;» et «&nbsp;CHAP&nbsp;II&nbsp;» du dossier sont les
+        <b>diaporamas d'amphi</b> : mêmes chapitres, mêmes pages.
+      </p>
+    </div>
+
+    <!-- ================= INTRO ================= -->
+    <h2 id="intro">Introduction générale <span class="page">(p. 1-3)</span></h2>
+
+    <p>
+      Le module commence par du vocabulaire, et c'est volontaire : en QCM, la première difficulté est souvent de
+      savoir <b>quel champ de la biochimie</b> décrit ce dont on parle. La distinction structure / transformation
+      traverse tout le semestre.
+    </p>
+
+    <table>
+      <thead><tr><th>Champ</th><th>Ce qu'il étudie</th><th>Repère</th></tr></thead>
+      <tbody>
+        <tr><td><b>Biochimie</b></td><td>Les êtres vivants au niveau des molécules et des atomes qui les constituent, et leurs modifications au cours des maladies.</td><td>le cadre général</td></tr>
+        <tr><td><b>Biochimie structurale</b> <span class="pill">notre module</span></td><td>Les <b>structures</b> des molécules, depuis les «&nbsp;briques élémentaires&nbsp;» jusqu'aux macromolécules complexes : glucides (sucres), lipides (graisses), <b>protéines</b>, acides nucléiques (ADN, ARN).</td><td><b>la forme</b></td></tr>
+        <tr><td><b>Biochimie métabolique</b></td><td>Les <b>transformations</b> de ces molécules : catabolisme (dégradation) et anabolisme (biosynthèse). Catabolisme + anabolisme = <b>métabolisme</b>.</td><td><b>la transformation</b></td></tr>
+        <tr><td><b>Biologie moléculaire</b></td><td>Les relations entre structure et activité des macromolécules, notamment la transmission de l'information contenue dans l'ADN vers les protéines effectrices.</td><td>l'information</td></tr>
+        <tr><td><b>Biochimie clinique</b></td><td>Le dosage dans les liquides biologiques de constituants utiles au diagnostic et au traitement. Née au début du XX<sup>e</sup> siècle avec le dosage de l'urée ; aujourd'hui plusieurs dizaines de composés dosables dans le sang ou l'urine.</td><td>le dosage</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note ok">
+      <div class="lbl">L'idée à retenir</div>
+      <p style="margin-bottom:0">
+        <b>Structurale = forme · Métabolique = transformation.</b> Le but final de la biochimie est
+        d'<b>intégrer</b> les données moléculaires à des niveaux supérieurs : molécule → cellule → organe → organisme.
+        Le cours précise aussi que les biochimistes empruntent leurs outils à d'autres disciplines :
+        nomenclature de chimie organique, cinétique chimique, thermodynamique, physique, informatique.
+      </p>
+    </div>
+
+    <h3>De quoi sommes-nous faits ? <span class="page">(p. 2)</span></h3>
+    <p>
+      Deux idées de départ. D'abord : les processus du vivant <b>obéissent aux mêmes lois chimiques et physiques</b>
+      que le reste de l'univers — il n'y a pas de «&nbsp;chimie spéciale&nbsp;» du vivant. Ensuite : la matière
+      vivante n'utilise qu'un très petit nombre d'éléments — <b>27 au total, dont 11 représentent 99&nbsp;% de la
+      masse corporelle</b>.
+    </p>
+    <div class="card">
+      <b>Les 4 éléments majeurs ≈ 96&nbsp;% de la matière vivante</b>
+      <table style="margin-top:8px">
+        <thead><tr><th>Oxygène O</th><th>Carbone C</th><th>Hydrogène H</th><th>Azote N</th></tr></thead>
+        <tbody><tr><td><b>65&nbsp;%</b></td><td><b>18,5&nbsp;%</b></td><td><b>9,5&nbsp;%</b></td><td><b>3,5&nbsp;%</b></td></tr></tbody>
+      </table>
+      <p style="margin-top:10px;font-size:.9rem;color:var(--mut)">
+        Puis : Ca 1,5&nbsp;% · P 1&nbsp;% · K 0,4&nbsp;% · S 0,3&nbsp;% · Na 0,2&nbsp;% · Cl 0,2&nbsp;% · Mg 0,1&nbsp;%.
+      </p>
+      <p style="font-size:.9rem;margin-bottom:0">
+        Le reste existe <b>à l'état de trace</b> : ce sont les <b>oligo-éléments</b>, extrêmement peu représentés
+        mais <b>indispensables à la vie</b> —
+        <span class="tag">Fer</span><span class="tag">Cuivre</span><span class="tag">Zinc</span><span class="tag">Iode</span><span class="tag">Cobalt</span>
+      </p>
+    </div>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Note le lien avec la suite : le <b>fer</b> (oligo-élément) est l'atome central de l'hème de l'hémoglobine ;
+      le <b>cobalt</b> est au cœur de la vitamine B12 ; le <b>zinc</b> et le <b>magnésium</b> sont des cofacteurs
+      enzymatiques (le fluorure bloque le Mg²⁺, voir <a href="#c2-inh">inhibitions</a>).
+    </p>
+
+    <!-- ================= OBJECTIFS ================= -->
+    <h2 id="objectifs">Objectifs du module <span class="page">(p. 3)</span></h2>
+    <p>Sept objectifs généraux sont annoncés. Les voici reformulés, avec ce que chacun implique concrètement :</p>
+    <div class="grid2">
+      <div class="card"><b>🧩 Repérer les structures</b><span style="font-size:.9rem;color:var(--mut)">Mettre en évidence les caractéristiques structurales des composés pour faciliter la nomenclature, la classification et les principes des technologies de préparation et d'analyse.</span></div>
+      <div class="card"><b>🎓 Préparer la suite</b><span style="font-size:.9rem;color:var(--mut)">Acquérir les connaissances et habiletés nécessaires à la biochimie structurale et se préparer à la biochimie <em>métabolique</em> et <em>clinique</em>.</span></div>
+      <div class="card"><b>🏥 Raccrocher à la santé</b><span style="font-size:.9rem;color:var(--mut)">«&nbsp;Digérer&nbsp;» la structurale pure et dure grâce à des exemples choisis dans le domaine de la santé, pour saisir l'importance relative de chaque molécule dans les processus physiologiques et physiopathologiques.</span></div>
+      <div class="card"><b>🧬 Structure = fonction</b><span style="font-size:.9rem;color:var(--mut)">Montrer l'importance de l'intégrité de la conformation spatiale des protéines pour leur activité — et la <em>complexité</em> et la <em>fragilité</em> de ces structures.</span></div>
+      <div class="card"><b>🔭 Vision d'ensemble</b><span style="font-size:.9rem;color:var(--mut)">Avoir une vision globale de synthèse sur l'agencement des biomolécules dans des édifices plus élaborés (cellules, tissus).</span></div>
+      <div class="card"><b>⚠️ Anticiper</b><span style="font-size:.9rem;color:var(--mut)">Connaître et anticiper les conséquences probables d'un changement structural.</span></div>
+      <div class="card"><b>🗣 Parler la langue</b><span style="font-size:.9rem;color:var(--mut)">Discuter la biochimie à travers le langage universel et conventionnel.</span></div>
+    </div>
+
+    <!-- ============================================================ -->
+    <h2>Chapitre 1 — Acides aminés &amp; protéines <span class="page">(p. 4-28)</span></h2>
+    <p>
+      Le fil conducteur du chapitre tient en une chaîne logique :
+      <b>20 briques</b> (les acides aminés) → <b>une liaison</b> (peptidique) → <b>des chaînes</b> (peptides, protéines)
+      → <b>des formes 3D</b> (structures secondaire, tertiaire, quaternaire) → <b>une fonction</b> — avec
+      l'<b>hémoglobine</b> comme grand exemple qui réunit tout.
+    </p>
+    <div class="note">
+      <div class="lbl">Objectifs du chapitre (p. 4)</div>
+      <p style="margin-bottom:0">
+        Connaître la formule générale des acides aminés et des protéines · connaître leurs propriétés physiques et
+        chimiques (<b>solubilité</b>, <b>absorption de la lumière UV</b>, <b>propriétés optiques</b>, <b>ionisation</b>)
+        · comprendre la liaison peptidique · connaître les niveaux de structure des protéines et la dénaturation ·
+        étudier l'hémoglobine comme modèle de relation structure-fonction.
+      </p>
+    </div>
+
+    <h3 id="c1-aa">I. Les acides aminés</h3>
+
+    <h4 id="c1-import">1) Importance biomédicale <span class="page">(p. 5)</span></h4>
+    <p>
+      Les acides aminés ne servent pas seulement à fabriquer des protéines. Le cours insiste sur deux autres rôles,
+      qui justifient qu'on les étudie en médecine :
+    </p>
+    <ul>
+      <li><b>Transmission de l'influx nerveux</b> — certains acides aminés sont eux-mêmes des neurotransmetteurs : la <b>glycine</b> et l'<b>acide glutamique</b>.</li>
+      <li><b>Précurseurs de molécules actives</b> — le métabolisme des acides aminés donne naissance à plusieurs composés d'importance biomédicale. La <b>décarboxylation</b> de certains d'entre eux produit les amines correspondantes : <b>histamine</b> et <b>GABA</b> (acide gamma-aminobutyrique).</li>
+    </ul>
+
+    <h4 id="c1-class">2) Structure et classification <span class="page">(p. 5-7)</span></h4>
+    <blockquote>
+      «&nbsp;Les vingt acides aminés trouvés dans les protéines possèdent tous un groupement carboxyle et un
+      groupement aminé portés par le <b>même atome de carbone</b> (le carbone&nbsp;α). Ils diffèrent les uns des
+      autres par leur <b>chaîne latérale ou groupement&nbsp;R</b>, dont la structure, la taille et la charge
+      électrique varient et influencent la <b>solubilité</b> des acides aminés dans l'eau.&nbsp;»
+      <cite>Support de cours, p. 5</cite>
+    </blockquote>
+    <div class="note">
+      <div class="lbl">Le raisonnement à avoir</div>
+      <p style="margin-bottom:0">
+        Le squelette —COOH + —NH₂ sur le Cα est <b>identique pour les 20</b> : inutile de l'apprendre vingt fois.
+        <b>Toute la différence est dans R.</b> Et c'est R qui commande tout le reste du chapitre :
+        solubilité, charge au pH physiologique, type de liaisons possibles, repliement de la protéine,
+        et donc fonction. Apprends la <b>classification par R</b> : le reste en découle.
+      </p>
+    </div>
+    <p>
+      La classification du cours est fondée sur la structure chimique de la chaîne latérale et ses propriétés
+      physico-chimiques <b>au pH physiologique, proche de 7,0</b> :
+    </p>
+    <table>
+      <thead><tr><th>Famille de R</th><th>Acides aminés</th><th>Charge à pH 7</th></tr></thead>
+      <tbody>
+        <tr><td><b>Aliphatique, apolaire</b></td><td>Glycine, Alanine, Valine, Leucine, Isoleucine, Proline</td><td>neutre</td></tr>
+        <tr><td><b>Aromatique</b></td><td>Phénylalanine, Tryptophane <em>(apolaires)</em> · Tyrosine <em>(polaire)</em></td><td>neutre</td></tr>
+        <tr><td><b>Polaire non chargé</b> — fonction alcool (—OH / hydroxyle)</td><td>Sérine, Thréonine, Tyrosine</td><td>neutre</td></tr>
+        <tr><td><b>Polaire non chargé</b> — acides soufrés</td><td>Méthionine, Cystéine</td><td>neutre</td></tr>
+        <tr><td><b>Polaire non chargé</b> — fonction amide</td><td>Asparagine, Glutamine</td><td>neutre</td></tr>
+        <tr><td><b>Chargé négativement</b> (fonction carboxylique)</td><td>Aspartate, Glutamate</td><td><b>−</b></td></tr>
+        <tr><td><b>Chargé positivement</b></td><td>Lysine <em>(amine)</em> · Arginine <em>(guanidine)</em> · Histidine <em>(imidazole)</em></td><td><b>+</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Pièges d'examen</div>
+      <ul style="margin-bottom:0">
+        <li><b>Tyrosine</b> est aromatique <em>et</em> polaire : son —OH la rend polaire, donc le cours la cite deux fois volontairement.</li>
+        <li><b>Cystéine et méthionine</b> sont polaires <em>non chargées</em> : le soufre ne donne pas de charge à pH 7. Mais la cystéine peut <b>libérer un H⁺</b> (fonction thiol) — voir <a href="#c1-ion">ionisation</a>.</li>
+        <li><b>Proline</b> est rangée avec les apolaires, mais sa particularité est son <b>cycle</b> qui rigidifie la chaîne (elle perturbe les hélices α).</li>
+        <li>Chaque basique a sa fonction : <b>Lys = amine · Arg = guanidine · His = imidazole</b>. C'est l'imidazole de l'histidine qui capte les H⁺ dans l'<a href="#c1-bohr">effet Bohr</a>.</li>
+      </ul>
+    </div>
+
+    <h4 id="c1-ess">Acides aminés essentiels <span class="page">(p. 6)</span></h4>
+    <blockquote>
+      «&nbsp;Parmi ces 20 acides aminés, on distingue <b>8 essentiels ou indispensables</b> : ils doivent être
+      apportés par l'alimentation, ne peuvent être synthétisés par l'organisme. […] Plus <b>2 acides aminés
+      semi-indispensables</b>, l'arginine et l'histidine, qui sont synthétisés dans les tissus mais à un taux
+      insuffisant pour le soutien de la croissance chez l'enfant.&nbsp;»
+      <cite>Support de cours, p. 6</cite>
+    </blockquote>
+    <div class="grid2">
+      <div class="card">
+        <b>8 essentiels</b>
+        <p style="margin:.4rem 0 0">
+          <span class="tag">Lysine</span><span class="tag">Tryptophane</span><span class="tag">Méthionine</span>
+          <span class="tag">Phénylalanine</span><span class="tag">Thréonine</span><span class="tag">Valine</span>
+          <span class="tag">Leucine</span><span class="tag">Isoleucine</span>
+        </p>
+        <p style="font-size:.82rem;color:var(--mut);margin-bottom:0">Mnémonique classique : <b>«&nbsp;PVT TIM HALL&nbsp;»</b> — Phe, Val, Thr, Trp, Ile, Met, His*, Arg*, Leu, Lys (* = semi-indispensables).</p>
+      </div>
+      <div class="card">
+        <b>+ 2 semi-indispensables</b>
+        <p style="margin:.4rem 0 0"><span class="tag">Arginine</span><span class="tag">Histidine</span></p>
+        <p style="font-size:.85rem;margin-bottom:0">Synthétisés dans les tissus, mais en quantité insuffisante pour la croissance de l'enfant.</p>
+        <p style="font-size:.82rem;color:var(--mut);margin-bottom:0">
+          <b>Les protéines animales</b> contiennent ces 10 acides aminés, indispensables à la croissance et au
+          maintien de l'<b>équilibre azoté</b>. <b>Les protéines végétales sont incomplètes</b> de ce point de vue.
+        </p>
+      </div>
+    </div>
+
+    <h4 id="c1-der">c) Dérivés d'acides aminés &amp; acides aminés libres <span class="page">(p. 7)</span></h4>
+    <p>
+      En plus des 20 acides aminés standards communs à toutes les protéines, d'autres acides aminés existent —
+      soit formés <b>après</b> incorporation dans la protéine, soit <b>libres</b> dans la cellule.
+    </p>
+    <table>
+      <thead><tr><th>Dérivé</th><th>Dérive de</th><th>Où / pourquoi c'est important</th></tr></thead>
+      <tbody>
+        <tr><td><b>4-hydroxyproline</b></td><td>Proline</td><td rowspan="2">Protéines fibreuses du <b>tissu conjonctif</b> et du <b>collagène</b>. <b>La non-hydroxylation de ces acides aminés entraîne le scorbut.</b></td></tr>
+        <tr><td><b>5-hydroxylysine</b></td><td>Lysine</td></tr>
+        <tr><td><b>γ-carboxyglutamate</b></td><td>Glutamate</td><td>Présent dans la <b>prothrombine</b> (protéine de la coagulation) et dans les protéines qui <b>fixent le Ca²⁺</b> au cours de leur activité biologique.</td></tr>
+        <tr><td><b>Orthophosphosérine</b></td><td>Sérine</td><td>Présente dans certaines hormones dont la fonction ne peut s'effectuer sans la <b>phosphorylation / déphosphorylation</b> de résidus sérine spécifiques.</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Le lien clinique</div>
+      <p style="margin-bottom:0">
+        <b>Scorbut = défaut d'hydroxylation</b> de la proline et de la lysine du collagène. Sans ces résidus
+        hydroxylés, le collagène ne se stabilise pas → fragilité des tissus conjonctifs, saignements gingivaux.
+        C'est l'exemple parfait de l'objectif «&nbsp;anticiper les conséquences d'un changement structural&nbsp;».
+      </p>
+    </div>
+    <p>
+      <b>Acides aminés libres dans les cellules</b> : il existe environ <b>300 acides aminés supplémentaires</b>
+      dans les cellules, aux fonctions extrêmement diverses. Ils ne sont <b>pas constituants des protéines</b>.
+      Exemple du cours : l'<b>ornithine</b> et la <b>citrulline</b>, intermédiaires clés dans la biosynthèse de
+      l'arginine et dans le <b>cycle de l'urée</b>.
+    </p>
+
+    <h4 id="c1-phys">3) Propriétés physiques <span class="page">(p. 8)</span></h4>
+    <div class="grid2">
+      <div class="card"><b>a. Propriétés optiques</b><span style="font-size:.9rem;color:var(--mut)">Le carbone α est <b>asymétrique</b> (4 substituants différents) pour <b>tous les acides aminés standard sauf la glycine</b> (dont le R est un simple H). D'où l'existence de deux isomères optiques, <b>D</b> et <b>L</b> ; les acides aminés des protéines sont de la série <b>L</b>.</span></div>
+      <div class="card"><b>Absorption de la lumière UV</b><span style="font-size:.9rem;color:var(--mut)">Propriété des acides aminés <b>aromatiques</b> (Phe, Tyr, Trp) : elle permet de doser les protéines par spectrophotométrie UV, sans réactif.</span></div>
+      <div class="card"><b>Solubilité</b><span style="font-size:.9rem;color:var(--mut)">Dictée par R : un R apolaire fuit l'eau, un R polaire ou chargé s'y dissout. C'est ce qui explique le repliement des protéines — les R apolaires se regroupent à l'intérieur.</span></div>
+      <div class="card"><b>Ionisation</b><span style="font-size:.9rem;color:var(--mut)">Un acide aminé porte à la fois un acide (—COOH) et une base (—NH₂) : c'est un <b>amphotère</b>. Son état de charge dépend du pH → base de l'électrophorèse et des échanges ioniques.</span></div>
+    </div>
+
+    <h4 id="c1-ion">4) Propriétés chimiques : acido-basicité, pKa et point isoélectrique <span class="page">(p. 9-11)</span></h4>
+    <p>C'est la partie la plus «&nbsp;chimique&nbsp;» du chapitre, et la plus rentable en QCM.</p>
+    <blockquote>
+      «&nbsp;La connaissance des propriétés acido-basiques des acides aminés est très importante pour la
+      compréhension des propriétés physiques et biologiques des protéines. De plus, la technologie de
+      <b>séparation, d'identification et de quantification</b> des différents acides aminés est fondée sur leur
+      comportement caractéristique acide-base.&nbsp;»
+      <cite>Support de cours, p. 9</cite>
+    </blockquote>
+
+    <h4 style="font-size:.95rem">Les trois formes selon le pH</h4>
+    <table>
+      <thead><tr><th>Milieu</th><th>Forme dominante</th><th>Charge</th></tr></thead>
+      <tbody>
+        <tr><td><b>pH acide</b> (pH &lt; pHi)</td><td><b>Forme cationique</b> — COOH et NH₃⁺</td><td><b>+</b></td></tr>
+        <tr><td><b>pH isoélectrique</b> (pH = pHi)</td><td><b>Forme neutre / zwitterion</b> (ion dipolaire) — COO⁻ et NH₃⁺</td><td><b>0</b></td></tr>
+        <tr><td><b>pH basique</b> (pH &gt; pHi)</td><td><b>Forme anionique</b> — COO⁻ et NH₂</td><td><b>−</b></td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size:.95rem">pK, pHi et électrophorèse</h4>
+    <blockquote>
+      «&nbsp;Tout acide aminé présente au moins <b>2 constantes de dissociation</b>, celle liée au groupement
+      carboxylique (<b>K1</b>) et celle du groupement ammonium (<b>K2</b>), et donc <b>deux pK</b>. Entre les deux
+      valeurs de pK se trouve le <b>point isoélectrique (pHi)</b>, pH auquel les deux dissociations sont équivalentes
+      […]. <b>Les charges électriques s'annulent et ainsi la molécule ne peut se déplacer sous l'influence d'un
+      champ électrique.</b> Du fait qu'à des pH inférieurs à leur pHi les acides aminés sont chargés positivement
+      et à des pH plus élevés ils sont négatifs, alors <b>leur séparation est possible par électrophorèse</b>.&nbsp;»
+      <cite>Support de cours, p. 9</cite>
+    </blockquote>
+    <div class="formula">
+      <span class="c">Équation de Henderson-Hasselbalch :</span>   pH = pK + log ( [A⁻] / [HA] )<br>
+      <span class="c">Au point médian de la courbe de titration :</span>   [A⁻] = [HA]  ⟹  <b>pH = pK</b><br>
+      <span class="c">Exemple du cours :</span> pour la <b>glycine</b>, à <b>pH 2,35</b>, les concentrations de la forme
+      cationique ⁺H₃N–CH₂–COOH et de l'ion dipolaire ⁺H₃N–CH₂–COO⁻ sont <b>égales</b>.
+    </div>
+
+    <h4 style="font-size:.95rem">Les 9 acides aminés à chaîne latérale ionisable</h4>
+    <p>Le cours les énumère explicitement — c'est une liste à connaître :</p>
+    <table>
+      <thead><tr><th>Acide aminé</th><th>Fonction du R</th><th>Comportement</th></tr></thead>
+      <tbody>
+        <tr><td>Tyrosine, Sérine, Thréonine</td><td>hydroxylique (—OH)</td><td>peuvent libérer un H⁺</td></tr>
+        <tr><td>Cystéine</td><td>thiol (—SH)</td><td>peut libérer un H⁺</td></tr>
+        <tr><td>Aspartate, Glutamate</td><td>carboxylique (—COOH) supplémentaire</td><td>acide</td></tr>
+        <tr><td>Lysine</td><td>amine aliphatique supplémentaire</td><td>basique</td></tr>
+        <tr><td>Histidine</td><td>imidazole</td><td>peut libérer un proton</td></tr>
+        <tr><td>Arginine</td><td>guanidine</td><td>peut libérer un proton</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Pourquoi ça compte en clinique</div>
+      <p style="margin-bottom:0">
+        Parce que <b>la charge décide de la séparation</b> : l'<a href="#c1-mut">électrophorèse des hémoglobines</a>
+        (p. 27) ne fonctionne que parce que les protéines sont chargées, et leur charge dépend des acides aminés
+        ionisables qu'elles contiennent au pH du tampon. Un seul acide aminé remplacé peut suffire à déplacer une bande.
+      </p>
+    </div>
+
+    <h3 id="c1-lien">II. La liaison peptidique <span class="page">(p. 12-13)</span></h3>
+    <p>
+      La notion structurale la plus importante du chapitre : <b>une petite liaison chimique impose toute la géométrie
+      des protéines</b>. Elle se forme entre le carboxyle d'un acide aminé et l'amine du suivant, avec perte d'eau.
+    </p>
+    <blockquote>
+      «&nbsp;Structure <b>planaire rigide</b> résultant du fait que la liaison carbone-azote présente une longueur
+      intermédiaire (<b>1,32&nbsp;Å</b>) entre celle de la liaison double C=N (1,27&nbsp;Å) et de la liaison simple
+      C–N (1,49&nbsp;Å).&nbsp;»
+      <cite>Support de cours, p. 12</cite>
+    </blockquote>
+    <blockquote>
+      «&nbsp;R1 et R2 sont en position <b>trans</b> par rapport au plan de la liaison peptidique et sont aussi
+      perpendiculaires à ce plan. Il y a <b>libre rotation d'un plan par rapport à l'autre au niveau du carbone</b>
+      centre de la rotation et <b>non autour de la liaison peptidique</b> qui est une liaison <b>partiellement
+      double</b>. La conformation d'une chaîne peptidique est <b>complètement définie lorsque ψ (psi) et φ (phi)
+      sont connues</b> pour chaque acide aminé.&nbsp;»
+      <cite>Support de cours, p. 13</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Grandeur</th><th>Valeur</th><th>Conséquence</th></tr></thead>
+      <tbody>
+        <tr><td>Liaison C–N du peptide</td><td><b>1,32 Å</b></td><td>Longueur intermédiaire → caractère <b>partiellement double</b></td></tr>
+        <tr><td>Référence C=N double</td><td>1,27 Å</td><td>—</td></tr>
+        <tr><td>Référence C–N simple</td><td>1,49 Å</td><td>—</td></tr>
+        <tr><td>Géométrie</td><td><b>plane et rigide</b></td><td><b>Pas de rotation</b> libre autour de C–N</td></tr>
+        <tr><td>Angles du plan</td><td>114° et 125°</td><td>Géométrie imposée du groupe peptidique</td></tr>
+        <tr><td>Position de R1 / R2</td><td><b>trans</b>, perpendiculaires au plan</td><td>Minimise l'encombrement stérique</td></tr>
+        <tr><td>Rotation possible</td><td>autour du <b>Cα</b> : angles <b>φ</b> et <b>ψ</b></td><td>Ces deux angles <b>définissent entièrement</b> la conformation</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège d'examen</div>
+      <p style="margin-bottom:0">
+        «&nbsp;Où tourne-t-on ?&nbsp;» → <b>autour du Cα, jamais autour de la liaison peptidique</b>.
+        Et <b>2 angles (φ, ψ) par résidu suffisent</b> à décrire toute la structure 3D d'une protéine.
+        La valeur <b>1,32 Å</b> tombe aussi régulièrement : retiens qu'elle est <em>entre</em> 1,27 et 1,49.
+      </p>
+    </div>
+
+    <h3 id="c1-pep">III. Les peptides <span class="page">(p. 13)</span></h3>
+    <blockquote>
+      «&nbsp;Les protéines sont des chaînes d'acides aminés. Les poids moléculaires peuvent varier de moins de
+      <b>1000 daltons</b> pour de petites protéines, à plus de <b>10⁶ daltons</b> pour les protéines avec de très
+      longues chaînes polypeptidiques. Lorsque la masse moléculaire est inférieure à <b>4000 daltons</b>
+      (équivalent à <b>100 acides aminés</b>), le polymère est appelé <b>peptide</b>. Certains possèdent une
+      activité biologique importante et exercent leurs effets à <b>très faibles concentrations</b>.&nbsp;»
+      <cite>Support de cours, p. 13</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Peptide</th><th>Ce qu'il faut en dire</th></tr></thead>
+      <tbody>
+        <tr><td><b>Glutathion (GSH)</b></td><td><b>Tripeptide</b>. Agit comme un <b>puissant anti-oxydant</b> qui protège les cellules des radicaux libres.</td></tr>
+        <tr><td><b>Insuline</b></td><td>Hormone <b>hypoglycémiante</b> sécrétée par le <b>pancréas</b> ; possède <b>2 chaînes</b> polypeptidiques, l'une de <b>30</b> et l'autre de <b>21</b> résidus.</td></tr>
+        <tr><td><b>Glucagon</b></td><td>Hormone pancréatique (effet opposé à l'insuline sur la glycémie).</td></tr>
+        <tr><td><b>Vasopressine (ADH)</b></td><td>Peptide sécrété par l'<b>hypophyse</b> ; sa structure comprend <b>9 acides aminés</b>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège d'examen</div>
+      <p style="margin-bottom:0">
+        Les chiffres tombent en QCM : <b>glutathion = 3 AA</b> · <b>insuline = 30 + 21</b> · <b>vasopressine = 9 AA</b>
+        · seuil peptide = <b>&lt; 4000 Da ≈ 100 AA</b>. Et le point de fond : un peptide peut agir à
+        <b>très faible concentration</b> — c'est la logique des hormones.
+      </p>
+    </div>
+
+    <h3 id="c1-prot">IV. Les protéines <span class="page">(p. 14-18)</span></h3>
+    <blockquote>
+      «&nbsp;Ce sont des molécules dont la <b>diversité</b> et la <b>complexité structurale</b> sont les plus grandes
+      et elles représentent <b>50 à 80&nbsp;% du poids sec des cellules</b>.&nbsp;»
+      <cite>Support de cours, p. 14</cite>
+    </blockquote>
+    <p>Le cours les classe selon trois critères : <b>rôle biologique</b>, <b>composition</b>, <b>forme</b>.</p>
+
+    <h4 style="font-size:.95rem">a) Classification par rôle biologique</h4>
+    <div class="grid2">
+      <div class="card"><b>Enzymes</b><span style="font-size:.9rem;color:var(--mut)">Catalyseurs biologiques → tout le chapitre 2.</span></div>
+      <div class="card"><b>Histones</b><span style="font-size:.9rem;color:var(--mut)">Associées à l'ADN dans les chromosomes ; participent au moins partiellement au contrôle de son <b>expression génétique</b>.</span></div>
+      <div class="card"><b>Substances musculaires</b><span style="font-size:.9rem;color:var(--mut)">La partie principale du muscle est constituée de protéines : l'<b>actine</b> et la <b>myosine</b>, qui assurent la contraction musculaire.</span></div>
+      <div class="card"><b>Anticorps (γ-globulines)</b><span style="font-size:.9rem;color:var(--mut)">Chargés de la défense des organismes supérieurs contre les invasions extérieures.</span></div>
+      <div class="card"><b>Protéines régulatrices</b><span style="font-size:.9rem;color:var(--mut)">Dont de nombreuses hormones, qui assurent la régulation de l'activité cellulaire.</span></div>
+    </div>
+
+    <h4 id="c1-sec" style="font-size:.95rem">b) Structure des protéines — niveau secondaire <span class="page">(p. 15-16)</span></h4>
+    <p>
+      La structure <b>primaire</b> est la séquence linéaire des acides aminés unis par les liaisons peptidiques.
+      La structure <b>secondaire</b> décrit les arrangements locaux <b>répétitifs</b> du squelette :
+    </p>
+    <table>
+      <thead><tr><th>Élément</th><th>Ce que c'est</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hélice α</b></td><td>Enroulement régulier de la chaîne, stabilisé par des liaisons hydrogène du squelette.</td></tr>
+        <tr><td><b>Feuillet β antiparallèle</b></td><td>Chaînes polypeptidiques de <b>sens opposé</b> — <b>stable</b>.</td></tr>
+        <tr><td><b>Feuillet β parallèle</b></td><td>Chaînes polypeptidiques de <b>même sens</b>.</td></tr>
+        <tr><td><b>Structures non répétitives</b></td><td>Structures secondaires <b>irrégulières</b> et fastidieuses à décrire : les <b>boucles</b> et les <b>coudes</b>.</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Le cours précise que <b>les protéines fibreuses ont généralement un seul type de structure secondaire</b>,
+      alors que <b>les protéines globulaires peuvent en incorporer plusieurs</b> dans la même molécule.
+      Les assemblages les plus connus :
+      <span class="tag">Motif βαβ (deux feuillets β parallèles reliés par une hélice α)</span>
+      <span class="tag">Motif en épingle à cheveux</span>
+      <span class="tag">Motif αα</span>
+      <span class="tag">Barrils β</span>
+    </p>
+
+    <h4 id="c1-ter" style="font-size:.95rem">c) &amp; d) Structures tertiaire et quaternaire <span class="page">(p. 16-17)</span></h4>
+    <blockquote>
+      «&nbsp;La <b>disposition tridimensionnelle de tous les atomes</b> dans une protéine définit sa structure
+      tertiaire. Lorsque la protéine est enroulée, les acides aminés qui sont éloignés peuvent interagir.
+      L'enroulement tertiaire […] est stabilisé par des <b>interactions faibles</b>, impliquant les chaînes
+      latérales d'acides aminés : <b>liaisons hydrogènes, interactions hydrophobes, interactions ioniques et
+      interactions de van der Waals</b> — et par l'établissement des <b>ponts disulfure</b> (pas toujours).&nbsp;»
+      <cite>Support de cours, p. 16</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Niveau</th><th>Définition</th><th>Ce qui le stabilise</th></tr></thead>
+      <tbody>
+        <tr><td><b>Primaire</b></td><td>Séquence linéaire des acides aminés.</td><td>Liaisons peptidiques <b>covalentes</b></td></tr>
+        <tr><td><b>Secondaire</b></td><td>Arrangements locaux répétitifs (hélice α, feuillet β) + boucles et coudes.</td><td>Liaisons <b>hydrogène</b> du squelette</td></tr>
+        <tr><td><b>Tertiaire</b></td><td>Disposition 3D de <b>tous les atomes</b> ; des AA éloignés dans la séquence interagissent.</td><td><b>Interactions faibles</b> des chaînes latérales (H, hydrophobes, ioniques, van der Waals) + <b>ponts disulfure</b> (pas toujours)</td></tr>
+        <tr><td><b>Quaternaire</b></td><td>Protéines contenant <b>deux ou plusieurs chaînes</b> polypeptidiques séparées (sous-unités), identiques ou différentes ; leur arrangement spatial.</td><td>Liaisons faibles, parfois ponts disulfure</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Exemples de structure tertiaire donnés en cours (figure 13) : <b>immunoglobuline</b>, <b>pyruvate kinase</b>,
+      <b>préalbumine</b>.
+    </p>
+
+    <h4 id="c1-fib" style="font-size:.95rem">Protéines fibreuses : structure et fonction <span class="page">(p. 17)</span></h4>
+    <blockquote>
+      «&nbsp;Les protéines fibreuses sont adaptées à une <b>fonction structurale</b> : la <b>kératine</b>
+      (des cheveux et des ongles), le <b>collagène</b> (des tendons) et l'<b>élastine</b> (des ligaments)
+      constituent des exemples clairs de la relation existant entre structure protéique et fonction biologique.
+      Ces protéines […] sont toutes <b>insolubles dans l'eau</b>, propriété qui leur est conférée par une
+      <b>forte concentration d'acides aminés hydrophobes</b>.&nbsp;»
+      <cite>Support de cours, p. 17</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Protéine</th><th>Localisation</th><th>Propriété conférée</th></tr></thead>
+      <tbody>
+        <tr><td><b>Kératine</b></td><td>Cheveux, ongles</td><td>Résistance</td></tr>
+        <tr><td><b>Collagène</b></td><td>Tendons (et tissu conjonctif)</td><td>Résistance — nécessite la 4-hydroxyproline et la 5-hydroxylysine</td></tr>
+        <tr><td><b>Élastine</b></td><td>Ligaments</td><td>Élasticité</td></tr>
+      </tbody>
+    </table>
+
+    <h4 id="c1-den" style="font-size:.95rem">3) Dénaturation <span class="page">(p. 18)</span></h4>
+    <p>
+      Dès que la chaîne peptidique est synthétisée, elle adopte spontanément sa conformation native. La
+      <b>dénaturation</b> est la perte de cette conformation : rupture des <b>interactions faibles</b> qui
+      maintiennent les structures secondaire et tertiaire, <b>sans rupture des liaisons peptidiques</b> —
+      la séquence primaire reste intacte, mais l'activité biologique est perdue.
+    </p>
+    <div class="grid2">
+      <div class="card"><b>Ce qui est cassé</b><span style="font-size:.9rem;color:var(--mut)">Liaisons hydrogène, interactions hydrophobes, interactions ioniques, van der Waals (les ponts disulfure covalents résistent mieux).</span></div>
+      <div class="card"><b>Ce qui reste intact</b><span style="font-size:.9rem;color:var(--mut)">La <b>structure primaire</b> : la suite des acides aminés et les liaisons peptidiques.</span></div>
+      <div class="card"><b>Agents classiques</b><span style="font-size:.9rem;color:var(--mut)">Chaleur, pH défavorable, solvants organiques, agents chaotropiques, sels concentrés.</span></div>
+      <div class="card"><b>Conséquence</b><span style="font-size:.9rem;color:var(--mut)">Perte d'activité — c'est exactement le mécanisme de l'inactivation thermique des enzymes (<a href="#c2-t">p. 43</a>).</span></div>
+    </div>
+    <p><b>4) Relation entre structure &amp; fonction</b> <span class="page">(p. 18)</span> : un changement structural, même minime, peut suffire à modifier ou abolir la fonction. Le cours l'illustre aussitôt avec les <b>hémoglobines mutantes</b>.</p>
+
+    <h3 id="c1-hb">V. L'hémoglobine <span class="page">(p. 19-28)</span></h3>
+    <p>
+      Le grand cas d'école : une protéine <b>quaternaire</b>, <b>allostérique</b>, à <b>groupement prosthétique</b>.
+      Elle prépare directement les enzymes allostériques du chapitre 2 — le cours le dit explicitement
+      («&nbsp;cf. hémoglobine&nbsp;», p. 45).
+    </p>
+
+    <h4 id="c1-hbg" style="font-size:.95rem">a) Fraction protéique : la globine <span class="page">(p. 19-20)</span></h4>
+    <blockquote>
+      «&nbsp;L'hémoglobine est constituée de <b>quatre protomères identiques 2 à 2</b>. Les protomères sont formés
+      d'une seule sous-unité chacun, mais ces sous-unités sont exprimées à partir de <b>neuf gènes différents</b>,
+      aboutissant à des formes différentes du tétramère.&nbsp;»
+      <cite>Support de cours, p. 19</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Hémoglobine</th><th>Composition</th><th>Quand</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hb A1</b></td><td>α₂β₂</td><td>Principale hémoglobine de l'<b>adulte</b></td></tr>
+        <tr><td><b>Hb A2</b></td><td>α₂δ₂</td><td>Adulte, <b>mineure : ne dépasse pas 3&nbsp;%</b> de l'hémoglobine totale</td></tr>
+        <tr><td><b>Hb F</b></td><td>α₂γ₂</td><td><b>Fœtale</b> — prédominante en fin de grossesse</td></tr>
+        <tr><td><b>Gower 1</b></td><td>ζ₂ε₂</td><td>Embryonnaire — synthétisée <b>exclusivement au début</b></td></tr>
+        <tr><td><b>Portland</b></td><td>ζ₂γ₂</td><td>Embryonnaire, phase intermédiaire</td></tr>
+        <tr><td><b>Gower 2</b></td><td>α₂ε₂</td><td>Embryonnaire, phase intermédiaire</td></tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="card">
+        <b>Séquence du développement</b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          Embryon : <b>Gower 1 (ζ₂ε₂)</b> avec chaînes ζ (dzêta, semblable à α) et ε (semblable à β)
+          → phase intermédiaire : <b>Gower 2 (α₂ε₂)</b> et <b>Portland (ζ₂γ₂)</b>
+          → fin de grossesse : <b>HbF (α₂γ₂)</b>
+          → après la naissance : HbF remplacée progressivement par <b>HbA (α₂β₂)</b>.
+        </p>
+      </div>
+      <div class="card">
+        <b>Localisation des gènes</b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          <b>α-globines → chromosome 16</b> · <b>β-globines → chromosome 11</b>.<br>
+          Sur ces deux chromosomes, <b>plusieurs gènes sont exprimés successivement</b> au cours du développement
+          (hémoglobines embryonnaires, fœtales, adultes).
+        </p>
+      </div>
+    </div>
+
+    <h4 style="font-size:.95rem">Structure physique et comparaison avec la myoglobine <span class="page">(p. 20)</span></h4>
+    <table>
+      <thead><tr><th></th><th>Hémoglobine</th><th>Myoglobine</th></tr></thead>
+      <tbody>
+        <tr><td>Chaînes</td><td>2 α (<b>141 AA</b>) + 2 β (<b>146 AA</b>)</td><td>1 seule chaîne de <b>153 AA</b></td></tr>
+        <tr><td>Hème</td><td>4 (un par chaîne)</td><td>1</td></tr>
+        <tr><td>Niveau structural</td><td><b>Quaternaire</b></td><td>Tertiaire seulement</td></tr>
+        <tr><td>Localisation</td><td>Globule rouge</td><td>Muscle rouge</td></tr>
+        <tr><td>Comportement</td><td><b>Allostérique</b> (coopérativité, effet Bohr, 2,3-DPG)</td><td>Simple — première structure 3D de protéine <b>élucidée</b></td></tr>
+      </tbody>
+    </table>
+    <blockquote>
+      «&nbsp;Chacune des chaînes adopte une conformation spatiale lui donnant une forme <b>globuleuse</b> et
+      ménageant une <b>«&nbsp;poche&nbsp;» superficielle</b> dans laquelle se trouve logé l'hème. La cohérence du
+      tétramère résulte de liaisons dues aux <b>chaînes latérales hydrophobes</b> des acides aminés situés à la
+      périphérie.&nbsp;»
+      <cite>Support de cours, p. 20</cite>
+    </blockquote>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Application directe de la classification des R : ce sont les résidus <b>hydrophobes</b> qui assurent la
+      cohésion du tétramère.
+    </p>
+
+    <h4 id="c1-heme" style="font-size:.95rem">b) Groupement prosthétique : l'hème <span class="page">(p. 21-22)</span></h4>
+    <p>
+      L'hème est la partie <b>non protéique</b> de la molécule : un noyau <b>porphyrine</b> chélatant un atome de
+      <b>fer</b>. C'est lui qui fixe l'oxygène ; la globine fournit la poche qui protège le fer et règle son affinité.
+      On retrouve la même logique dans les <b>cytochromes</b> (métalloporphyrines, <a href="#c2-coen">p. 53</a>).
+    </p>
+
+    <h4 id="c1-gaz" style="font-size:.95rem">c) Propriétés chimiques — combinaison avec les gaz <span class="page">(p. 23-25)</span></h4>
+
+    <h4 style="font-size:.92rem;color:var(--acc2)">Le monoxyde de carbone (CO) <span class="page">(p. 25)</span></h4>
+    <blockquote>
+      «&nbsp;Le monoxyde de carbone (CO) peut se lier avec le fer de l'hème, <b>au même site que l'oxygène</b>,
+      mais avec une <b>affinité 250 fois plus grande</b> ; il en chasse donc l'oxygène, ce qui explique sa
+      <b>grande toxicité</b>. La dissociation est possible par de très fortes pressions de l'oxygène :
+      <b>oxygénothérapie</b>.&nbsp;»
+      <cite>Support de cours, p. 25</cite>
+    </blockquote>
+
+    <h4 id="c1-bohr" style="font-size:.92rem;color:var(--acc2)">Transport du CO₂ et effet Bohr <span class="page">(p. 24)</span></h4>
+    <p>
+      Tout le CO₂ fourni par la respiration des tissus ne peut pas être transporté tel quel faute de solubilité.
+      Il est solubilisé en s'unissant à l'eau pour former l'<b>acide carbonique</b>, qui libère des protons —
+      réaction catalysée par une enzyme, l'<b>anhydrase carbonique</b>.
+    </p>
+    <blockquote>
+      «&nbsp;En l'absence d'hémoglobine, cette réaction devrait s'arrêter rapidement par suite de la quantité élevée
+      des protons libérés. <b>La désoxyhémoglobine neutralise les protons, en jouant le rôle d'une base.</b>
+      Le processus s'inverse dans les poumons […]. Le site de fixation de H⁺ se trouve au niveau de la chaîne
+      latérale de <b>His 146 de la chaîne β</b>. <b>Deux protons environ sont captés pour quatre molécules
+      d'oxygène abandonnées</b>, et deux protons sont libérés lorsque quatre molécules d'oxygène sont fixées.
+      Cette réciprocité s'appelle l'<b>effet Bohr</b> et c'est la clé du mécanisme du transport du gaz carbonique.&nbsp;»
+      <cite>Support de cours, p. 24</cite>
+    </blockquote>
+    <div class="formula">
+      <span class="c">Fixation du CO₂ sur l'extrémité N-terminale (groupement α-aminé) :</span><br>
+      R–NH₂ + CO₂  ⟶  R–NH–COO⁻ + H⁺   <span class="c">(carbamate → carbaminohémoglobine)</span>
+    </div>
+    <div class="note ok">
+      <div class="lbl">À retenir</div>
+      <ul style="margin-bottom:0">
+        <li>Le CO₂ est lié sous forme d'un groupement <b>carbamate</b> au groupement α-aminé N-terminal de
+          <b>chacune des 4 chaînes</b> → <b>carbaminohémoglobine</b>.</li>
+        <li>Cette réaction <b>produit aussi des H⁺</b>, qui participent à l'effet Bohr.</li>
+        <li>Les carbamates liés forment des <b>ponts salins supplémentaires</b> qui aident à <b>stabiliser la forme T</b>.</li>
+        <li>L'hémoglobine lie le CO₂ <b>inversement proportionnellement</b> à sa liaison à l'oxygène.</li>
+      </ul>
+    </div>
+
+    <h4 id="c1-dpg" style="font-size:.95rem">d) Action du 2,3-diphosphoglycérate (2,3-DPG) <span class="page">(p. 25)</span></h4>
+    <blockquote>
+      «&nbsp;Le 2,3-DPG est un <b>effecteur allostérique</b> de l'hémoglobine : il se fixe donc en un
+      <b>site distinct</b> de l'oxygène, dans la <b>cavité centrale</b>. Au pH physiologique, les
+      <b>charges négatives</b> portées par le 2,3-BPG interagissent avec les <b>charges positives</b> de la cavité
+      centrale de la <b>désoxyhémoglobine</b>. La conformation <b>T (Tendu)</b> correspond à la forme
+      <b>désoxygénée</b> et la conformation <b>R (Relax)</b> à la forme <b>oxygénée</b>. La fixation du 2,3-BPG
+      <b>stabilise donc la conformation T</b>.&nbsp;»
+      <cite>Support de cours, p. 25</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Conformation</th><th>État</th><th>Affinité pour O₂</th><th>Stabilisée par</th></tr></thead>
+      <tbody>
+        <tr><td><b>T</b> — Tendu</td><td><b>Désoxygénée</b></td><td>faible → <b>libère</b> l'O₂</td><td>2,3-DPG, H⁺ (effet Bohr), carbamates, CO₂</td></tr>
+        <tr><td><b>R</b> — Relax</td><td><b>Oxygénée</b></td><td>forte → <b>capte</b> l'O₂</td><td>Fixation de l'O₂</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Physiologie : dans les tissus, le 2,3-DPG stabilise la forme T → l'hémoglobine <b>libère</b> plus facilement
+      son oxygène là où on en a besoin. C'est l'exemple type du <b>modulateur allostérique</b> annoncé p. 45.
+    </p>
+
+    <h4 style="font-size:.95rem">Oxydation : la méthémoglobine <span class="page">(p. 25)</span></h4>
+    <p>
+      Oxydation du fer <b>ferreux (Fe²⁺)</b> en fer <b>ferrique (Fe³⁺)</b> : la <b>méthémoglobine</b> qui en résulte
+      <b>ne fixe plus l'oxygène</b>. C'est le pendant du chapitre 2 — le blocage des ions Fe²⁺ par les cyanures
+      (<a href="#c2-inh">p. 41</a>) repose sur la même chimie du fer.
+    </p>
+
+    <h4 id="c1-mut" style="font-size:.95rem">e) Aperçu des hémoglobines mutantes <span class="page">(p. 26-27)</span></h4>
+    <div class="grid3">
+      <div class="card"><b>1. Anomalies qualitatives</b><span style="font-size:.9rem;color:var(--mut)">Hémoglobine de <b>structure anormale</b> : modification d'un acide aminé. Exemple canonique : la <b>drépanocytose</b> — un seul AA remplacé, la protéine polymérise, le globule se déforme.</span></div>
+      <div class="card"><b>2. Anomalies quantitatives</b><span style="font-size:.9rem;color:var(--mut)">Structure <b>normale</b> mais <b>quantité</b> anormale d'une chaîne : mécanisme des <b>thalassémies</b> (déficit de synthèse α ou β).</span></div>
+      <div class="card"><b>3. Persistance héréditaire de l'Hb fœtale</b><span style="font-size:.9rem;color:var(--mut)">L'HbF (α₂γ₂), normalement remplacée après la naissance, continue d'être synthétisée à l'âge adulte.</span></div>
+    </div>
+
+    <h4 style="font-size:.95rem">f) Méthodes de séparation <span class="page">(p. 27-28)</span></h4>
+    <table>
+      <thead><tr><th>Méthode</th><th>Principe</th><th>Ce qu'elle détecte</th></tr></thead>
+      <tbody>
+        <tr><td><b>Électrophorèse</b></td><td>Sépare les hémoglobines selon leur <b>charge</b> — conséquence directe de leur composition en acides aminés ionisables (<a href="#c1-ion">p. 9</a>).</td><td>Hémoglobinopathies (HbS, HbC…), HbA2, HbF</td></tr>
+        <tr><td><b>Solubilité en solutions salines</b></td><td>Teste la <b>solubilité</b> de l'hémoglobine désoxygénée — propriété liée aux acides aminés hydrophobes (<a href="#c1-fib">p. 17</a>).</td><td>Présence d'<b>HbS</b></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================ -->
+    <h2>Chapitre 2 — Enzymes &amp; coenzymes <span class="page">(p. 29-70)</span></h2>
+    <p>
+      On passe de la <b>structure</b> (chapitre 1) à la <b>fonction</b>. Le plan est physico-chimique :
+      définitions → nomenclature → cinétique → facteurs physiques → allostérie → vitamines et coenzymes.
+    </p>
+    <div class="note">
+      <div class="lbl">Ce que le cours attend de vous (objectifs, p. 30)</div>
+      <p style="margin-bottom:0">
+        Utiliser <b>V<sub>max</sub></b> et <b>K<sub>M</sub></b> · utiliser un système de représentation graphique
+        permettant de déterminer les constantes cinétiques · définir et donner les différents modes d'expression
+        d'une activité enzymatique et ses unités (<b>katal</b>, <b>unité internationale</b>) · définir la notion
+        d'<b>inhibition</b> et montrer sur quel(s) paramètre(s) elle agit · donner <b>3 exemples</b> d'inhibition ·
+        donner des exemples d'effets allostériques (<b>activation</b>, <b>rétroinhibition</b>) et définir
+        <b>isoenzymes</b> et <b>proenzymes</b> · définir l'<b>énergie d'activation</b>, la réaction enzymatique
+        couplée et la liaison riche en énergie · différencier vitamines <b>hydrosolubles</b> et <b>liposolubles</b> ·
+        associer chaque coenzyme à son <b>précurseur vitaminique</b> · déterminer pour chaque coenzyme les
+        sous-classes d'enzymes pour lesquelles il sert de cofacteur · connaître les couples
+        <b>NADH,H⁺/NAD⁺</b>, <b>NADPH,H⁺/NADP⁺</b>, <b>FADH₂/FAD</b>, leurs sites réactionnels et modes d'action ·
+        connaître la séquence d'oxydation du <b>pyruvate en acétyl-CoA</b>, la composition du complexe
+        multienzymatique et l'ordre d'intervention des coenzymes · connaître les principales pathologies liées aux
+        <b>déficiences vitaminiques</b> ou aux <b>hypervitaminoses</b>.
+      </p>
+    </div>
+
+    <h3 id="c2-def">I. Introduction : qu'est-ce qu'une enzyme ? <span class="page">(p. 30-31)</span></h3>
+    <blockquote>
+      «&nbsp;L'<b>enzymologie</b> est l'étude des enzymes. Le substantif «&nbsp;enzyme&nbsp;» est du genre
+      <b>féminin</b>. <b>Toutes les enzymes sont des protéines.</b> Les protéines enzymatiques sont des
+      <b>catalyseurs</b>, c'est-à-dire qu'en agissant à des concentrations très petites, elles augmentent la
+      vitesse des réactions chimiques, <b>sans en modifier le résultat</b>. À la fin de la réaction la structure
+      de l'enzyme se retrouve <b>inchangée</b>. Une enzyme donnée est <b>spécifique d'une réaction</b>,
+      c'est-à-dire qu'elle catalyse toujours la même transformation, se produisant sur les mêmes corps chimiques
+      initiaux. Les protéines enzymatiques sont synthétisées par des êtres vivants ; cette synthèse est
+      <b>déterminée génétiquement</b>.&nbsp;»
+      <cite>Support de cours, p. 30</cite>
+    </blockquote>
+    <div class="note ok">
+      <div class="lbl">Les 5 propriétés à réciter</div>
+      <ol style="margin-bottom:0">
+        <li><b>Catalytique</b> : augmente la vitesse, agit à très faible concentration.</li>
+        <li><b>Non consommée</b> : structure inchangée en fin de réaction.</li>
+        <li><b>Ne modifie pas le résultat</b> : ni l'équilibre ni le ΔG de la réaction.</li>
+        <li><b>Spécifique</b> d'une réaction (mêmes substrats, même transformation).</li>
+        <li><b>Protéique</b>, d'origine biologique, sous contrôle génétique.</li>
+      </ol>
+    </div>
+    <div class="grid2">
+      <div class="card"><b>a) Site actif</b> <span class="page">(p. 31)</span><span style="font-size:.9rem;color:var(--mut)">Petite région de la protéine où se fixe le substrat et où se produit la catalyse. Sa géométrie et les charges de ses radicaux expliquent la <b>spécificité</b> — et sa fragilité face au pH et à la température.</span></div>
+      <div class="card"><b>b) Cofacteurs</b> <span class="page">(p. 31)</span><span style="font-size:.9rem;color:var(--mut)">Partie non protéique nécessaire à l'activité : <b>ion métallique</b> ou <b>coenzyme</b> (souvent dérivé d'une vitamine). Enzyme sans cofacteur = <b>apoenzyme</b> ; avec = <b>holoenzyme</b>. C'est le pont vers la section VI.</span></div>
+    </div>
+
+    <h3 id="c2-nom">II. Nomenclature et classification des enzymes <span class="page">(p. 32)</span></h3>
+    <p>
+      Les enzymes sont nommées d'après la réaction qu'elles catalysent, avec le suffixe <b>-ase</b>, et classées en
+      grandes classes selon le type de réaction :
+      <span class="tag">Oxydoréductases</span><span class="tag">Transférases</span><span class="tag">Hydrolases</span>
+      <span class="tag">Lyases</span><span class="tag">Isomérases</span><span class="tag">Ligases</span>
+      Chacune porte un numéro de la classification internationale. L'idée à retenir :
+      <b>le nom annonce la réaction</b> — l'<em>alcool déshydrogénase</em> oxyde un alcool,
+      l'<em>anhydrase carbonique</em> agit sur l'acide carbonique.
+    </p>
+
+    <h3 id="c2-e">III.1 Effet de la concentration d'enzyme <span class="page">(p. 33-35)</span></h3>
+    <p>
+      À substrat en excès, la vitesse est <b>directement proportionnelle à [E]</b> : doubler l'enzyme double la
+      vitesse, car chaque molécule d'enzyme travaille indépendamment. C'est le fondement de tous les
+      <b>dosages enzymatiques</b> — et la raison pour laquelle on dose des enzymes dans le sang comme marqueurs
+      d'atteinte tissulaire.
+    </p>
+
+    <h3 id="c2-mm">III.2 Effet de la concentration de substrat : modèle de Michaelis-Menten <span class="page">(p. 36-38)</span></h3>
+    <p>Le cœur quantitatif du chapitre. Voici la démonstration telle qu'elle est développée dans le cours :</p>
+    <div class="formula">
+      <span class="c">Bilan de matière sur l'enzyme totale :</span><br>
+      [E<sub>T</sub>] = [E] + [E–S]      ⟹      [E] = [E<sub>T</sub>] − [E–S]<br><br>
+      <span class="c">État quasi stationnaire du complexe E–S :</span><br>
+      k₁([E<sub>T</sub>] − [E–S])[S] = (k₂ + k₋₁)[E–S]<br>
+      k₁[E<sub>T</sub>][S] = [ k₁[S] + (k₋₁ + k₂) ] [E–S]<br><br>
+      <span class="c">Donc :</span><br>
+      [E–S] = [E<sub>T</sub>][S] / ( [S] + (k₋₁ + k₂)/k₁ )<br><br>
+      <span class="c">La vitesse initiale est donnée par la dissociation de E–S :</span><br>
+      V<sub>i</sub> = k₂[E–S]  =  k₂[E<sub>T</sub>][S] / ( [S] + (k₋₁ + k₂)/k₁ )
+    </div>
+    <div class="formula" style="text-align:center;font-size:1.02rem">
+      <b>K<sub>M</sub> = (k₋₁ + k₂) / k₁</b>          <b>V<sub>max</sub> = k₂[E<sub>T</sub>]</b><br><br>
+      <b>V<sub>i</sub> = V<sub>max</sub> · [S] / ( K<sub>M</sub> + [S] )</b>
+    </div>
+    <table>
+      <thead><tr><th>Cas limite</th><th>Résultat</th><th>Lecture</th></tr></thead>
+      <tbody>
+        <tr><td>[S] <b>&lt;&lt;&lt;</b> K<sub>M</sub></td><td>V<sub>i</sub> est <b>directement proportionnelle à [S]</b></td><td>Régime du premier ordre</td></tr>
+        <tr><td>[S] <b>&gt;&gt;&gt;</b> K<sub>M</sub></td><td>V<sub>i</sub> = <b>V<sub>max</sub></b>, indépendante de [S]</td><td>Saturation : tous les sites actifs occupés</td></tr>
+        <tr><td>[S] <b>=</b> K<sub>M</sub></td><td>V<sub>i</sub> = <b>V<sub>max</sub> / 2</b></td><td>C'est la <b>définition</b> de K<sub>M</sub></td></tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="card">
+        <b>Signification de V<sub>max</sub></b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          V<sub>max</sub> = k₂·[E<sub>T</sub>] : vitesse maximale lorsque l'enzyme est <b>totalement saturée</b>
+          par le substrat. La constante <b>k₂</b> est appelée le <b>«&nbsp;turnover&nbsp;»</b> ou
+          <b>activité moléculaire</b> de l'enzyme — le nombre de molécules de substrat transformées par site actif
+          et par unité de temps.
+        </p>
+      </div>
+      <div class="card">
+        <b>Signification de K<sub>M</sub></b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          Constante de Michaelis : concentration de substrat pour laquelle la vitesse atteint la <b>moitié de sa
+          valeur maximale</b>. Elle donne une idée de l'<b>affinité</b> de l'enzyme pour un substrat donné :
+          <b>cette affinité est d'autant plus grande que K<sub>M</sub> est petit</b>.
+        </p>
+      </div>
+    </div>
+
+    <h4 id="c2-lb" style="font-size:.95rem">Représentation de Lineweaver-Burk <span class="page">(p. 38)</span></h4>
+    <div class="formula">
+      1/V<sub>i</sub>  =  (K<sub>M</sub> + [S]) / (V<sub>max</sub>·[S])  =  (K<sub>M</sub>/V<sub>max</sub>)·(1/[S])  +  1/V<sub>max</sub><br><br>
+      <span class="c">soit la droite</span>      Y = A·X + B      <span class="c">avec</span>   Y = 1/V<sub>i</sub> ,  X = 1/[S]
+    </div>
+    <blockquote>
+      «&nbsp;Cette relation possède le grand avantage de permettre une <b>détermination plus précise de
+      V<sub>max</sub></b>, qui ne peut être qu'estimée à partir d'une représentation simple de V<sub>i</sub> par
+      rapport à [S].&nbsp;»
+      <cite>Support de cours, p. 38</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Sur le graphique</th><th>Vaut</th></tr></thead>
+      <tbody>
+        <tr><td>Pente de la droite</td><td><b>K<sub>M</sub> / V<sub>max</sub></b></td></tr>
+        <tr><td>Ordonnée à l'origine</td><td><b>1 / V<sub>max</sub></b></td></tr>
+        <tr><td>Intersection avec l'axe des abscisses</td><td><b>−1 / K<sub>M</sub></b></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Pourquoi c'est demandé : la courbe V = f([S]) est une <b>hyperbole</b> qui s'approche de V<sub>max</sub> sans
+      jamais l'atteindre — on ne peut que l'<em>estimer</em>. La transformation en doubles inverses donne une
+      <b>droite</b>, dont l'extrapolation donne V<sub>max</sub> et K<sub>M</sub> avec précision.
+    </p>
+
+    <h3 id="c2-inh">III.3 Effet de la concentration des effecteurs <span class="page">(p. 39-42)</span></h3>
+    <blockquote>
+      «&nbsp;Les ligands qui peuvent modifier la vitesse de la réaction <b>sans être des cofacteurs
+      indispensables</b>, nous les appellerons <b>effecteurs</b>. Ceux des effecteurs qui accélèrent la réaction
+      sont les <b>activateurs</b>.&nbsp;»
+      <cite>Support de cours, p. 39</cite>
+    </blockquote>
+    <p>Les autres sont des <b>inhibiteurs</b>. Le cours demande trois exemples d'inhibition et leurs effets sur les paramètres :</p>
+    <table>
+      <thead><tr><th>Type</th><th>Où se fixe l'inhibiteur</th><th>V<sub>max</sub></th><th>K<sub>M</sub></th><th>Sur Lineweaver-Burk</th></tr></thead>
+      <tbody>
+        <tr><td><b>Compétitive</b></td><td>Sur le <b>site actif</b>, en compétition avec le substrat</td><td><b>inchangée</b></td><td><b>augmente</b></td><td>Même ordonnée à l'origine, pente plus forte</td></tr>
+        <tr><td><b>Non compétitive</b></td><td>Ailleurs que le site actif (sur E <em>et</em> sur E–S)</td><td><b>diminue</b></td><td><b>inchangé</b></td><td>Même intersection sur l'axe des abscisses</td></tr>
+        <tr><td><b>Incompétitive (anti-compétitive)</b></td><td>Uniquement sur le <b>complexe E–S</b></td><td><b>diminue</b></td><td><b>diminue</b></td><td>Droites parallèles</td></tr>
+      </tbody>
+    </table>
+    <div class="formula">
+      <span class="c">Schéma de l'inhibition non compétitive (p. 41) :</span><br>
+      E + S  ⇄  E–S  →  E + P<br>
+      E + I  ⇄  E–I<br>
+      E–S + I  ⇄  E–S–I
+    </div>
+
+    <h4 style="font-size:.95rem">Les exemples donnés en cours</h4>
+    <table>
+      <thead><tr><th>Inhibiteur</th><th>Enzyme / cible</th><th>Type</th><th>À savoir</th></tr></thead>
+      <tbody>
+        <tr><td><b>Malonate</b></td><td>Succinate (succinate déshydrogénase, mitochondrie)</td><td><b>Compétitive</b></td><td>L'exemple type : le malonate ressemble au succinate et occupe le site actif.</td></tr>
+        <tr><td><b>Éthanol</b> (à dose élevée)</td><td><b>Alcool déshydrogénase</b></td><td><b>Compétitive</b></td><td><b>Application pratique</b> : traitement des empoisonnements à l'<b>éthylène glycol</b> (constituant <em>non toxique</em> de l'antigel automobile) dont le produit d'oxydation, l'<b>acide oxalique</b>, est <b>toxique</b>.</td></tr>
+        <tr><td><b>Ions cyanure CN⁻</b></td><td>Bloquent les ions <b>Fe²⁺</b> et <b>Cu²⁺</b></td><td><b>Non compétitive</b></td><td>→ <b>blocage de la chaîne respiratoire</b></td></tr>
+        <tr><td><b>Ions fluorure F⁻</b></td><td>Bloquent les ions <b>Mg²⁺</b></td><td><b>Non compétitive</b></td><td>→ <b>blocage de la glycolyse</b> (utilisé dans les tubes de prélèvement)</td></tr>
+        <tr><td><b>Acétazolamide</b> (médicament)</td><td><b>Anhydrase carbonique</b></td><td><b>Non compétitive</b> vis-à-vis du CO₂</td><td>On retrouve cette enzyme dans l'<a href="#c1-bohr">effet Bohr</a> : le cours boucle la boucle.</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège d'examen</div>
+      <ul style="margin-bottom:0">
+        <li>«&nbsp;V<sub>max</sub> inchangée + K<sub>M</sub> augmenté&nbsp;» = <b>compétitive</b> ; un excès de substrat <b>lève</b> l'inhibition.</li>
+        <li>«&nbsp;V<sub>max</sub> diminuée + K<sub>M</sub> inchangé&nbsp;» = <b>non compétitive</b> ; l'excès de substrat <b>ne lève rien</b>.</li>
+        <li>Ne pas confondre inhibition <b>réversible</b> et <b>irréversible</b> (modification covalente du site actif, «&nbsp;poisons&nbsp;» enzymatiques).</li>
+        <li>Distinguer aussi de la <b>rétroinhibition</b>, qui est une <em>régulation physiologique</em> : le produit final d'une voie inhibe la première enzyme de la voie.</li>
+      </ul>
+    </div>
+
+    <h3 id="c2-ph">IV.1 Effet du pH <span class="page">(p. 43)</span></h3>
+    <blockquote>
+      «&nbsp;Les enzymes sont des protéines. Elles sont sensibles aux variations du pH du milieu. Le pH intervient
+      de <b>deux manières différentes</b> : soit en modifiant la <b>structure secondaire ou tertiaire</b> de
+      l'enzyme, soit en modifiant l'<b>état d'ionisation des groupements chargés</b>, aussi bien dans le site actif
+      de l'enzyme (en fonction du <b>pKa propre à chaque résidu chargé</b> participant à la constitution du site
+      actif), que dans le <b>substrat</b>.&nbsp;»
+      <cite>Support de cours, p. 43</cite>
+    </blockquote>
+    <p>
+      Si l'enzyme est conservée dans un milieu dont le pH est défavorable au maintien de sa structure, elle subit
+      une <b>dénaturation</b>. Il existe donc un pH où les charges des radicaux du site actif sont les plus
+      favorables à la liaison enzyme-substrat : le <b>pH optimum</b>. La courbe activité = f(pH) est <b>en cloche</b>.
+    </p>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Lien direct avec le chapitre 1 : ce sont les <b>9 acides aminés à R ionisable</b> (His, Asp, Glu, Cys, Lys,
+      Arg, Tyr, Ser, Thr) qui portent ces charges — d'où l'importance du <a href="#c1-ion">pKa et du pHi</a>.
+    </p>
+
+    <h3 id="c2-t">IV.2 Effet de la température <span class="page">(p. 43-44)</span></h3>
+    <blockquote>
+      «&nbsp;Les effets de la température sur l'activité d'une enzyme sont complexes, et peuvent être considérés
+      comme le résultat de l'action de <b>2 forces agissant simultanément mais dans des sens opposés</b> :
+      <b>Activation</b> — quand la température augmente, la vitesse de réaction augmente ;
+      <b>Dénaturation</b> — quand la température augmente, il se produit une inactivation («&nbsp;dénaturation&nbsp;»)
+      progressive de la protéine enzymatique, de telle sorte qu'il existe une <b>température optimale
+      apparente</b>.&nbsp;»
+      <cite>Support de cours, p. 43</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Température</th><th>Ce qui se passe</th></tr></thead>
+      <tbody>
+        <tr><td><b>&lt; 30&nbsp;°C</b></td><td>Dénaturation <b>négligeable</b> → l'activation domine, la vitesse monte.</td></tr>
+        <tr><td><b>&gt; 40&nbsp;°C</b></td><td>Dénaturation <b>appréciable</b> → l'activité chute : c'est la température optimale apparente.</td></tr>
+        <tr><td>Bien &gt; 40&nbsp;°C</td><td>Quelques enzymes gardent une activité importante, par exemple les <b>enzymes des bactéries thermophiles</b> — propriété aux applications pratiques importantes.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      La température à laquelle la dénaturation devient importante <b>varie d'une enzyme à l'autre</b>.
+    </p>
+
+    <h3 id="c2-ea">IV.3 Énergie d'activation <span class="page">(p. 44)</span></h3>
+    <blockquote>
+      «&nbsp;Pour qu'un composé A puisse réagir, il faut qu'il se mette en <b>état de transition</b> (sommet de la
+      barrière énergétique). Ceci nécessite un apport d'énergie, dite <b>énergie d'activation (ΔEA)</b>. C'est à
+      partir de cet état de transition que la réaction se produit. Les catalyseurs en général et les enzymes en
+      particulier <b>abaissent l'énergie d'activation</b> des réactions. <b>Même une réaction exergonique, où le
+      ΔG est négatif, requiert l'absorption d'énergie.</b>&nbsp;»
+      <cite>Support de cours, p. 44</cite>
+    </blockquote>
+    <div class="note ok">
+      <div class="lbl">La phrase qui tombe en QCM</div>
+      <p style="margin-bottom:0">
+        Une enzyme <b>abaisse l'énergie d'activation</b> mais <b>ne change pas le ΔG</b> de la réaction :
+        elle accélère l'atteinte de l'équilibre <b>sans le déplacer</b>. Une réaction spontanée (ΔG &lt; 0)
+        peut être très lente sans enzyme.
+      </p>
+    </div>
+
+    <h3 id="c2-allo">V. Les enzymes allostériques <span class="page">(p. 45-47)</span></h3>
+    <blockquote>
+      «&nbsp;Les enzymes allostériques sont des protéines allostériques (<b>cf. hémoglobine</b>) et en partagent les
+      caractéristiques. Ce sont des protéines complexes composées de <b>plusieurs sous-unités ou protomères</b>.
+      Les enzymes allostériques font intervenir une <b>liaison réversible, non covalente</b>, d'une molécule
+      régulatrice appelée <b>modulateur allostérique</b>. Le terme allostérique vient du grec <em>allos</em>, autre,
+      et <em>stereos</em>, forme. Les enzymes allostériques prennent <b>une autre forme</b> (une autre conformation)
+      à la suite de la liaison du modulateur. […] Il existe au moins un site de fixation pour le substrat
+      (<b>site actif, catalytique</b>) et au moins un site de fixation spécifique pour un modulateur.&nbsp;»
+      <cite>Support de cours, p. 45</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th></th><th>Enzyme michaelienne</th><th>Enzyme allostérique</th></tr></thead>
+      <tbody>
+        <tr><td>Sous-unités</td><td>souvent une</td><td><b>plusieurs</b> (protomères)</td></tr>
+        <tr><td>Sites</td><td>site actif</td><td>site actif <b>+</b> site spécifique du modulateur</td></tr>
+        <tr><td>Courbe V = f([S])</td><td><b>hyperbole</b></td><td><b>sigmoïde</b></td></tr>
+        <tr><td>Régulation</td><td>concentration de substrat</td><td><b>modulateur</b>, liaison réversible non covalente</td></tr>
+        <tr><td>Exemple du cours</td><td>—</td><td><b>hémoglobine</b> (avec le 2,3-DPG)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Notions associées demandées dans les objectifs : <b>activation</b> allostérique ·
+      <b>rétroinhibition</b> (le produit final freine la première enzyme de sa voie) ·
+      <b>isoenzymes</b> (formes différentes d'une même enzyme : même réaction, propriétés distinctes — utiles en
+      diagnostic) · <b>proenzymes / zymogènes</b> (précurseurs inactifs qu'il faut activer).
+    </p>
+
+    <h3 id="c2-coen">VI. Vitamines et coenzymes <span class="page">(p. 48-70)</span></h3>
+
+    <h4 style="font-size:.95rem">1) Généralités <span class="page">(p. 48-49)</span></h4>
+    <p>
+      Une <b>vitamine</b> est une substance organique indispensable, non synthétisable (ou insuffisamment) par
+      l'organisme, nécessaire en très petite quantité. Un <b>coenzyme</b> est la molécule organique non protéique
+      qui assiste l'enzyme dans la catalyse. L'idée centrale de la section :
+      <b>la plupart des coenzymes dérivent d'une vitamine</b>, qui en est le <b>précurseur</b>.
+      Conséquence logique : <b>carence vitaminique → déficit enzymatique → pathologie</b>.
+    </p>
+
+    <h4 style="font-size:.95rem">2) Coenzymes d'oxydoréduction <span class="page">(p. 50-53)</span></h4>
+    <table>
+      <thead><tr><th>Famille</th><th>Couples</th><th>Rôle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nicotiniques</b> <span class="page">(vit. B3 / PP)</span></td><td><b>NADH,H⁺/NAD⁺</b> · <b>NADPH,H⁺/NADP⁺</b></td><td>Transport d'<b>hydrogène et d'électrons</b>. NAD⁺ plutôt catabolique, NADP⁺ plutôt biosynthétique.</td></tr>
+        <tr><td><b>Flaviniques</b> <span class="page">(vit. B2)</span> <span class="page">(p. 52)</span></td><td><b>FADH₂/FAD</b> (et FMN)</td><td>Transport de 2 hydrogènes ; souvent liés fermement à l'enzyme (groupement prosthétique).</td></tr>
+        <tr><td><b>Quinoniques</b> <span class="page">(p. 53)</span></td><td><b>Ubiquinone</b> (respiration) · <b>plastoquinone</b> (photosynthèse)</td><td>Transporteurs <b>liposolubles</b> d'électrons dans les membranes.</td></tr>
+        <tr><td><b>Métalloporphyrines</b> <span class="page">(p. 53)</span></td><td><b>Cytochromes</b></td><td>Transport d'électrons par changement d'état d'oxydation du <b>fer</b> — même logique que l'hème du chapitre 1.</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size:.95rem">3) Coenzymes de transport de groupements <span class="page">(p. 54-64)</span></h4>
+    <ul>
+      <li><b>a) Radicaux monocarbonés</b> <span class="page">(p. 54)</span> — transfert de fragments à <b>un carbone</b> (méthyle, formyle, méthylène…). Rôle de l'<b>acide folique (B9)</b> et de la <b>cobalamine (B12)</b>.</li>
+      <li><b>b) Radicaux à deux carbones ou plus</b> <span class="page">(p. 58)</span> — le <b>coenzyme A</b> (dérivé de l'<b>acide pantothénique, B5</b>) et ses liaisons <b>thioester riches en énergie</b> : c'est la «&nbsp;liaison riche en énergie&nbsp;» des objectifs.</li>
+      <li><b>c) Pyridoxal phosphate</b> <span class="page">(p. 62)</span> — coenzyme des <b>aminotransférases</b> (transaminases), dérivé de la vitamine <b>B6</b>. Il explique biochimiquement le métabolisme des acides aminés du chapitre 1.</li>
+    </ul>
+    <div class="note">
+      <div class="lbl">L'exemple intégrateur demandé par le cours</div>
+      <p style="margin-bottom:0">
+        L'oxydation du <b>pyruvate en acétyl-CoA</b> : connaître la <b>séquence de réactions</b>, la composition du
+        <b>complexe multienzymatique</b> et l'<b>ordre d'intervention des coenzymes</b>
+        (thiamine pyrophosphate → lipoamide → CoA-SH → FAD → NAD⁺). C'est le cas d'école qui réunit enzymes,
+        cofacteurs et vitamines en une seule question.
+      </p>
+    </div>
+
+    <h4 style="font-size:.95rem">4) Vitamines liposolubles <span class="page">(p. 65-69)</span></h4>
+    <table>
+      <thead><tr><th>Vitamine</th><th>Forme(s) active(s)</th><th>Besoins journaliers</th><th>Pathologies de déficit</th></tr></thead>
+      <tbody>
+        <tr><td><b>A</b> — rétinol</td><td>Rétinol, rétinal, acide rétinoïque</td><td>1 à 2 mg·jour⁻¹</td><td>Dégénérescence rétinienne, <b>cécité nocturne</b>, cécité</td></tr>
+        <tr><td><b>D</b> — calcitriol</td><td>Calcitriol</td><td>10 µg·jour⁻¹</td><td><b>Rachitisme</b> chez l'enfant, <b>ostéomalacie</b> chez l'adulte</td></tr>
+        <tr><td><b>E</b> — tocophérol</td><td>Tocophérol</td><td>12 à 15 mg·jour⁻¹</td><td>Signes discrets</td></tr>
+        <tr><td><b>K</b> — phylloquinone</td><td>Phyllohydroquinone</td><td>Non fixés</td><td><b>Anomalies de la coagulation</b></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Le cours distingue, au sein des liposolubles, les vitamines <b>coenzymatiques</b> et <b>non coenzymatiques</b>.
+    </p>
+
+    <h4 style="font-size:.95rem">Vitamines hydrosolubles : besoins et sources <span class="page">(p. 70)</span></h4>
+    <table>
+      <thead><tr><th>Vitamine</th><th>Besoins/jour</th><th>Principales sources alimentaires</th></tr></thead>
+      <tbody>
+        <tr><td><b>B1</b> (thiamine)</td><td>1,5 à 2,0 mg</td><td>Levure, germe de blé, cuticule du riz, maïs</td></tr>
+        <tr><td><b>B2</b> (riboflavine)</td><td>1,5 à 2,0 mg</td><td>Levure, lait, enveloppe des graines, abats</td></tr>
+        <tr><td><b>B3 / PP</b> (niacine)</td><td>18 mg</td><td>Levure, son de blé, abats et viandes — + synthèse par la <b>flore intestinale à partir du tryptophane</b></td></tr>
+        <tr><td><b>B5</b> (acide pantothénique)</td><td>15 mg</td><td>Levure, cuticule du riz, abats, jaune d'œuf</td></tr>
+        <tr><td><b>B6</b> (pyridoxine)</td><td>2 à 3 mg</td><td>Levure, germe de blé, abats, jaune d'œuf, viandes, fruits</td></tr>
+        <tr><td><b>B8 / H</b> (biotine)</td><td>20 mg</td><td>Levure, abats, jaune d'œuf, chocolat, arachide</td></tr>
+        <tr><td><b>B9</b> (acide folique)</td><td>15 mg</td><td>Légumes verts, abats, viandes, jaune d'œuf</td></tr>
+        <tr><td><b>B12</b> (cobalamine)</td><td>2 mg</td><td><b>Produits animaux</b> : viandes, foie, lait</td></tr>
+        <tr><td><b>C</b> (acide ascorbique)</td><td>60 mg</td><td>Agrumes, légumes verts</td></tr>
+        <tr><td><b>Choline</b></td><td>500 mg</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:var(--mut)">
+      Valeurs telles que présentées dans le tableau p. 70 du support (mg·jour⁻¹). Sources des liposolubles :
+      A — huile de foie de poisson, beurre, foie, légumes, fruits, jaune d'œuf · D — huiles de foie de morue, foie,
+      chair de poissons gras, jaune d'œuf · E — huiles végétales, germes de blé, légumes verts · K — légumes verts,
+      foie, œufs.
+    </p>
+    <div class="note warn">
+      <div class="lbl">Piège d'examen</div>
+      <p style="margin-bottom:0">
+        La <b>B12</b> ne se trouve que dans les <b>produits animaux</b> → carence possible chez le végétalien strict.
+        La <b>B3</b> est la seule dont une partie est produite par la <b>flore intestinale à partir du tryptophane</b>
+        — or le tryptophane est un acide aminé <a href="#c1-ess">essentiel</a> (chapitre 1).
+      </p>
+    </div>
+
+    <!-- ================= REVISION ================= -->
+    <h2 id="chiffres">Les chiffres à retenir d'un coup d'œil</h2>
+    <table>
+      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th><th>Page</th></tr></thead>
+      <tbody>
+        <tr><td><b>27</b> / <b>11</b> / <b>99&nbsp;%</b></td><td>Éléments chimiques du vivant / ceux qui font 99&nbsp;% de la masse</td><td>2</td></tr>
+        <tr><td><b>96&nbsp;%</b></td><td>Part du CHON dans la matière vivante</td><td>2</td></tr>
+        <tr><td><b>20</b> / <b>8</b> / <b>2</b></td><td>Acides aminés / essentiels / semi-indispensables</td><td>5-6</td></tr>
+        <tr><td><b>~300</b></td><td>Acides aminés libres non protéinogènes dans les cellules</td><td>7</td></tr>
+        <tr><td><b>9</b></td><td>Acides aminés à chaîne latérale ionisable</td><td>9</td></tr>
+        <tr><td><b>2</b> pK, <b>1</b> pHi</td><td>K1 (carboxyle) et K2 (ammonium) ; glycine : pH 2,35</td><td>9-10</td></tr>
+        <tr><td><b>1,32 Å</b></td><td>Longueur de la liaison C–N peptidique (entre 1,27 et 1,49 Å)</td><td>12</td></tr>
+        <tr><td><b>114° / 125°</b></td><td>Angles du groupe peptidique plan</td><td>12</td></tr>
+        <tr><td><b>φ, ψ</b></td><td>Les 2 angles qui définissent toute la conformation d'une chaîne</td><td>13</td></tr>
+        <tr><td><b>&lt; 4000 Da ≈ 100 AA</b></td><td>Seuil au-dessous duquel on parle de peptide</td><td>13</td></tr>
+        <tr><td><b>3 / 30+21 / 9</b></td><td>Glutathion / insuline / vasopressine (en AA)</td><td>13</td></tr>
+        <tr><td><b>50 à 80&nbsp;%</b></td><td>Part des protéines dans le poids sec des cellules</td><td>14</td></tr>
+        <tr><td><b>141 / 146 / 153</b></td><td>AA des chaînes α / β de l'Hb / de la myoglobine</td><td>20</td></tr>
+        <tr><td><b>9 gènes</b></td><td>Nombre de gènes exprimant les sous-unités de la globine</td><td>19</td></tr>
+        <tr><td><b>chr 16 / chr 11</b></td><td>Gènes des α-globines / des β-globines</td><td>20</td></tr>
+        <tr><td><b>≤ 3&nbsp;%</b></td><td>Part maximale de l'HbA2 (α₂δ₂) chez l'adulte</td><td>19</td></tr>
+        <tr><td><b>His 146 β</b></td><td>Site de fixation des H⁺ dans l'effet Bohr</td><td>24</td></tr>
+        <tr><td><b>2 H⁺ / 4 O₂</b></td><td>Stœchiométrie de l'effet Bohr</td><td>24</td></tr>
+        <tr><td><b>× 250</b></td><td>Affinité du CO pour l'hème par rapport à l'O₂</td><td>25</td></tr>
+        <tr><td><b>30&nbsp;°C / 40&nbsp;°C</b></td><td>Dénaturation négligeable en dessous / appréciable au-dessus</td><td>44</td></tr>
+        <tr><td><b>K<sub>M</sub> = (k₋₁+k₂)/k₁</b></td><td>Constante de Michaelis ; V<sub>max</sub> = k₂[E<sub>T</sub>]</td><td>37</td></tr>
+        <tr><td><b>pH = pK + log(A⁻/HA)</b></td><td>Henderson-Hasselbalch</td><td>10</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="quiz">🎯 Auto-évaluation — 10 questions</h2>
+    <p>Format QCM, comme l'épreuve. Réponds, la correction s'affiche immédiatement.</p>
+    <div id="quiz-root"></div>
+    <p style="margin-top:14px">Score : <span id="quiz-score">0 / 0</span>
+      <button class="btn" id="quiz-reset" style="margin-left:10px">↺ Recommencer</button></p>
+
+    <h2 id="reviser">Comment réviser ce cours</h2>
+    <ol>
+      <li><b>Passer d'abord le support écrit</b> (71 p.) : il contient tout, texte et figures. Les diaporamas servent à revoir le rythme de l'amphi.</li>
+      <li><b>Apprendre les quatre tableaux par cœur</b> : classification des 20 AA par R (p. 5) · les 9 R ionisables (p. 9) · les hémoglobines et leurs compositions (p. 19-20) · les inhibitions enzymatiques (p. 39-42).</li>
+      <li><b>Mémoriser les chiffres</b> du <a href="#chiffres">tableau récapitulatif</a> ci-dessus — c'est le plus gros pourvoyeur de QCM.</li>
+      <li><b>Savoir refaire la démonstration</b> de Michaelis-Menten et tracer la représentation de Lineweaver-Burk, avec et sans inhibiteur.</li>
+      <li><b>Suivre le fil logique</b> plutôt que les listes : <code>R → charge → liaisons → repliement → fonction → régulation</code>. Le chapitre 2 réutilise tout le chapitre 1 : l'hémoglobine <em>est</em> le modèle des enzymes allostériques, et les 9 R ionisables expliquent le pH optimum.</li>
+      <li><b>Chercher les boucles du cours</b> : l'anhydrase carbonique apparaît dans l'effet Bohr (p. 24) puis comme cible de l'acétazolamide (p. 42) ; le fer de l'hème (p. 21) réapparaît dans les cytochromes (p. 53) et dans le blocage par le cyanure (p. 41). Ce sont exactement les questions de synthèse.</li>
+      <li><b>Vérifier dans le portail</b> : QCM, annales et résumés du Pr. Khlil sont rangés dans <a href="../index.html#/m/chimie">le module Chimie &amp; Biochimie</a>.</li>
+    </ol>
+    <div class="note">
+      <div class="lbl">Rappel</div>
+      <p style="margin-bottom:0">
+        Format d'épreuve du module : <b>QCM</b>. Les «&nbsp;notes d'examen&nbsp;» partagées par la promotion
+        (chapitres insistés, parties retirées) sont consultables dans le portail — à toujours confronter aux
+        annonces officielles de la faculté.
+      </p>
+    </div>
+
+    <h2 id="docs">Les 3 documents du dossier</h2>
+    <p>Dossier Drive : <code>Promo 2025/2026 › S1 › Chimie et Biochimie Structurale › Biochimie structurale › Prof Khlil › Cours</code></p>
+    <table>
+      <thead><tr><th>Document</th><th>Taille</th><th>Ce que c'est</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Support de cours — Biochimie structurale (KHLIL 2024-25)</b></td>
+          <td>5,1 Mo · 71 p.</td>
+          <td>Le cours complet rédigé : introduction générale + chapitre 1 + chapitre 2 + bibliographie. <b>À lire en priorité.</b></td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1hRKTt2hq6NyjxYmwF-N4dfM2LKYyUc5J/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Biochimie Structurale CHAP I (FMDC 2024-25)</b></td>
+          <td>55,8 Mo</td>
+          <td>Diaporama du chapitre 1 — acides aminés et protéines, hémoglobine (pages 4 à 28 du support).</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1Nd9_Hv8fWtU1-iloNN_AuHaQFxHXfhfx/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Biochimie Structurale CHAP II (FMDC 2024-25)</b></td>
+          <td>47,1 Mo</td>
+          <td>Diaporama du chapitre 2 — enzymes et coenzymes, vitamines (pages 29 à 70 du support).</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1i3cGXFLytV4CQtriBn2qn2UouOdl1WS2/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Note de transparence</div>
+      <p style="margin-bottom:0">
+        Les explications de cette page sont construites sur le <b>support écrit</b>, dont le texte a pu être extrait.
+        Les deux diaporamas dépassent la limite d'extraction de texte (55,8 Mo et 47,1 Mo pour un plafond de 25 Mo) :
+        leur contenu n'a donc <b>pas</b> pu être lu. Ils portent sur les mêmes chapitres et les mêmes pages que le
+        support — s'ils contiennent des diapositives supplémentaires (schémas, exercices corrigés), celles-ci ne sont
+        pas reprises ici.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        Page de révision non officielle, réalisée par la promotion — les documents appartiennent à leur auteure,
+        <b>Pr. Naima Khlil</b> (Faculté de Médecine Dentaire de Casablanca, Université Hassan&nbsp;II).
+        Le contenu est référencé, jamais recopié : chaque lien ouvre le PDF original sur Google Drive.
+      </p>
+      <p style="margin-bottom:0">
+        Bibliographie citée par le support (p. 71) : Lehninger <em>Principes de Biochimie</em> · Jacque Kruch
+        <em>Biologie cellulaire et moléculaire</em> · Stryer <em>La Biochimie</em> · Boulanger &amp; Polonovski
+        <em>La Biochimie médicale</em> · Routh &amp; Chauveau-Dupin <em>Introduction à la Biochimie</em> ·
+        Serge Bernard <em>Biochimie clinique</em> · P. Louisot <em>Biochimie générale médicale</em> ·
+        Harper <em>Précis de Biochimie</em> · Horton, Moran, Ochs, Rawn, Scrimgeour <em>Principes de Biochimie</em>.
+      </p>
+      <p>
+        <a href="../index.html">← Retour au portail FMDC 1A</a> ·
+        <a href="https://drive.google.com/drive/folders/1-oZ2aepQC3M2RGisfK87u46zsj7FwkEL" target="_blank" rel="noopener">Dossier Drive du cours</a>
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+/* ---------------- Thème clair/sombre ---------------- */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{ var s=localStorage.getItem('fmdc-theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var n = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',n);
+    try{ localStorage.setItem('fmdc-theme',n); }catch(e){}
+  });
+})();
+
+/* ---------------- Barre de progression ---------------- */
+(function(){
+  var bar=document.getElementById('bar');
+  function upd(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0 ? (h.scrollTop/max)*100 : 0)+'%';
+  }
+  addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+})();
+
+/* ---------------- Sommaire actif ---------------- */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var map=links.map(function(a){ return {a:a, t:document.querySelector(a.getAttribute('href'))}; })
+               .filter(function(o){ return o.t; });
+  function spy(){
+    var y=scrollY+110, cur=null;
+    map.forEach(function(o){ if(o.t.offsetTop<=y) cur=o; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  addEventListener('scroll',spy,{passive:true}); spy();
+})();
+
+/* ---------------- Auto-évaluation ---------------- */
+(function(){
+  var QS = [
+    { q:"La liaison C–N de la liaison peptidique mesure…", o:["1,27 Å","1,32 Å","1,49 Å","1,53 Å"], a:1,
+      w:"1,32 Å : longueur intermédiaire entre C=N (1,27 Å) et C–N simple (1,49 Å), d'où son caractère partiellement double — p. 12." },
+    { q:"La rotation d'une chaîne polypeptidique se fait…", o:["autour de la liaison peptidique","autour du carbone α (angles φ et ψ)","autour de la liaison C=O","elle est impossible"], a:1,
+      w:"La liaison peptidique est partiellement double donc plane et rigide ; la rotation se fait autour du Cα, via φ et ψ — p. 13." },
+    { q:"Un polymère d'acides aminés est appelé « peptide » quand sa masse est inférieure à…", o:["1000 Da","2000 Da","4000 Da","10 000 Da"], a:2,
+      w:"< 4000 Da, soit environ 100 acides aminés — p. 13." },
+    { q:"L'hémoglobine fœtale (HbF) a pour composition…", o:["α₂β₂","α₂δ₂","α₂γ₂","ζ₂ε₂"], a:2,
+      w:"HbF = α₂γ₂. α₂β₂ = HbA1 (adulte), α₂δ₂ = HbA2 (≤ 3 %), ζ₂ε₂ = Gower 1 (embryon) — p. 19-20." },
+    { q:"Dans l'effet Bohr, les protons se fixent sur…", o:["l'hème","la chaîne latérale de His 146 de la chaîne β","le groupement N-terminal α","le 2,3-DPG"], a:1,
+      w:"Site de fixation de H⁺ : chaîne latérale de His 146 de la chaîne β ; ~2 H⁺ captés pour 4 O₂ abandonnés — p. 24." },
+    { q:"L'affinité du CO pour le fer de l'hème est, par rapport à celle de l'O₂…", o:["2,5 fois plus grande","25 fois plus grande","250 fois plus grande","identique"], a:2,
+      w:"250 fois plus grande — il chasse l'O₂, d'où sa toxicité ; dissociation par oxygénothérapie — p. 25." },
+    { q:"La conformation T de l'hémoglobine correspond à…", o:["la forme oxygénée, stabilisée par l'O₂","la forme désoxygénée, stabilisée par le 2,3-DPG","la forme méthylée","la forme dénaturée"], a:1,
+      w:"T = Tendu = désoxygénée, stabilisée par le 2,3-DPG dans la cavité centrale ; R = Relax = oxygénée — p. 25." },
+    { q:"K_M est définie comme…", o:["la vitesse maximale","la concentration de substrat donnant V = V_max/2","la constante de dissociation du produit","le turnover"], a:1,
+      w:"K_M = concentration de substrat pour laquelle V atteint la moitié de V_max ; K_M = (k₋₁+k₂)/k₁. Le turnover, c'est k₂ — p. 37-38." },
+    { q:"Une inhibition compétitive se traduit par…", o:["V_max diminuée, K_M inchangé","V_max inchangée, K_M augmenté","V_max et K_M diminués","aucun changement"], a:1,
+      w:"L'inhibiteur occupe le site actif : V_max inchangée (levée par excès de substrat), K_M augmenté. Exemple du cours : malonate vs succinate — p. 39-41." },
+    { q:"L'acétazolamide inhibe l'anhydrase carbonique de façon…", o:["compétitive vis-à-vis du CO₂","non compétitive vis-à-vis du CO₂","irréversible","allostérique activatrice"], a:1,
+      w:"Inhibition non compétitive vis-à-vis du CO₂, substrat de l'enzyme — p. 42." }
+  ];
+  var root=document.getElementById('quiz-root'), scoreEl=document.getElementById('quiz-score');
+  var done=0, right=0;
+  function render(){
+    root.innerHTML=''; done=0; right=0; update();
+    QS.forEach(function(item,i){
+      var box=document.createElement('div'); box.className='quiz';
+      var t=document.createElement('div'); t.className='q'; t.textContent=(i+1)+'. '+item.q; box.appendChild(t);
+      var opts=document.createElement('div'); opts.className='opts';
+      item.o.forEach(function(label,j){
+        var b=document.createElement('button'); b.className='opt'; b.type='button'; b.textContent=label;
+        b.addEventListener('click',function(){
+          if(box.dataset.done) return;
+          box.dataset.done='1'; done++;
+          [].forEach.call(opts.children,function(c){ c.disabled=true; });
+          opts.children[item.a].classList.add('right');
+          if(j===item.a){ right++; } else { b.classList.add('wrong'); }
+          why.classList.add('show'); update();
+        });
+        opts.appendChild(b);
+      });
+      box.appendChild(opts);
+      var why=document.createElement('div'); why.className='why'; why.innerHTML='<b>Explication — </b>'+item.w;
+      box.appendChild(why);
+      root.appendChild(box);
+    });
+  }
+  function update(){ scoreEl.textContent = right + ' / ' + QS.length + (done===QS.length ? ' — terminé' : '  (répondu : '+done+')'); }
+  document.getElementById('quiz-reset').addEventListener('click', render);
+  render();
+})();
+</script>
+</body>
+</html>
