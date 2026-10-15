@@ -32,6 +32,9 @@ Site **statique** (HTML / CSS / JS), sans build, sans dépendance, publié sur G
 
 ```
 index.html                 page d’accueil (landing) + exploration + fiches + stats
+biopc/index.html           PAGE AUTONOME du cours biopc.pdf (Pr. Bouzoubaa) : tout le cours
+                           expliqué dans l’ordre du Drive + QCM interactif — ouvrable sans Internet
+tools/make-biopc.js        régénère biopc/index.html depuis la fiche biophy-radiologie
 assets/style.css           thème et mise en page
 assets/app.js              application (routage, fiches, recherche, statistiques, notes/images)
 data/s1.js                 arborescence complète du Drive S1 (9 rubriques, 68 documents)
