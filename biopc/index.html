@@ -1,740 +1,227 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Imagerie en odontologie : rayons X, radiologie &amp; radioprotection (cours complet) — cours complet expliqué (biopc.pdf)</title>
-<meta name="description" content="biopc.pdf — Partie I : principes physiques des RX · Partie II : initiation à la radiologie · Partie III : radiobiologie / radioprotection">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La radiologie, enfin limpide — cours complet biopc.pdf (Pr. Bouzoubaa)</title>
+<meta name="description" content="Tout le cours biopc.pdf du Pr. BOUZOUBAA Sidi Mohammed (FMDC, S1) expliqué dans l'ordre du Drive : principes physiques des rayons X, initiation à la radiologie, radiobiologie & radioprotection — avec simulateurs et QCM.">
 <style>
-:root{--ink:#101418;--soft:#4b5563;--bg:#f6f7f9;--card:#fff;--line:#e3e7ec;--acc:#1d4ed8;--acc2:#f5b301;--ok:#15803d;--ko:#dc2626;--rad:14px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-header.top{background:#0b0d10;color:#fff;padding:34px 18px 26px;text-align:center}
-header.top .kicker{color:var(--acc2);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-header.top h1{margin:10px auto 6px;max-width:860px;font-size:clamp(22px,4vw,34px);line-height:1.25}
-header.top p{margin:4px auto;max-width:760px;color:#cbd5e1;font-size:14.5px}
-header.top .badges{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-header.top .badges span{background:#1f242b;border:1px solid #333a44;border-radius:999px;padding:4px 12px;font-size:12.5px;color:#e5e7eb}
-.wrap{max-width:1020px;margin:0 auto;padding:0 16px 70px}
-nav.toc{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);margin:22px 0 8px;padding:16px}
-.toc-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.toc-col h4{margin:2px 0 8px;font-size:13px;color:var(--acc);text-transform:uppercase;letter-spacing:.05em}
-.toc-col a{display:block;padding:4px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:13.5px}
-.toc-col a:hover{background:#eef2ff;color:var(--acc)}
-.part{margin:44px 0 0}
-.part-t{background:#0b0d10;color:var(--acc2);font-size:clamp(17px,2.6vw,22px);padding:12px 18px;border-radius:var(--rad) var(--rad) 0 0;margin:0;border-bottom:3px solid var(--acc2)}
-.sec{background:var(--card);border:1px solid var(--line);border-top:0;padding:22px 22px 18px;scroll-margin-top:14px}
-.sec.intro{border:1px solid var(--line);border-radius:var(--rad);margin-top:18px}
-.sec:last-of-type{border-radius:0 0 var(--rad) var(--rad)}
-.sec h2{font-size:19px;margin:2px 0 14px;display:flex;align-items:center;gap:10px;line-height:1.35}
-.sec h2 .num{flex:0 0 auto;background:var(--acc);color:#fff;border-radius:8px;font-size:13px;font-weight:700;padding:3px 9px}
-.sec h2 .num.warn{background:var(--ko)}
-.sec p{margin:10px 0}
-.sec ul,.sec ol{margin:10px 0;padding-left:22px}
-.sec li{margin:5px 0}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px;background:#fff}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#eef2ff;font-size:13.5px}
-tr:nth-child(even) td{background:#fafbfc}
-pre.sch{background:#0b0d10;color:#e8eaed;border-radius:10px;padding:14px 16px;overflow-x:auto;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:12px 0}
-.keys{background:#fff8e1;border:1px solid #f0d47a;border-left:5px solid var(--acc2);border-radius:10px;padding:10px 14px;margin:14px 0;font-size:14.5px}
-.quote{background:#eef2ff;border-left:5px solid var(--acc);border-radius:10px;padding:10px 14px;margin:12px 0}
-.biglist{columns:1;padding-left:22px}
-.biglist li{margin:7px 0}
-.biglist.pieges li{color:#7f1d1d}
-.qcm-hint{color:var(--soft);font-size:14px}
-.qcm-q{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:#fff}
-.qcm-qt{font-weight:600;margin-bottom:10px}
-.qnum{display:inline-block;background:var(--acc);color:#fff;border-radius:6px;font-size:11px;font-weight:700;padding:1px 7px;margin-right:8px}
-.qcm-opts{display:grid;gap:7px}
-.qcm-opt{text-align:left;padding:9px 12px;border:1px solid var(--line);background:#fbfcfd;border-radius:9px;font-size:14px;cursor:pointer;color:var(--ink);font-family:inherit;transition:border-color .15s,background .15s}
-.qcm-opt:hover:not(:disabled){border-color:var(--acc);background:#f5f8ff}
-.qcm-opt:disabled{cursor:default}
-.qcm-opt.ok{border-color:var(--ok);background:#ecfdf5}
-.qcm-opt.ko{border-color:var(--ko);background:#fef2f2}
-.qcm-expl{margin-top:10px;font-size:13.5px;color:var(--soft);background:#f8fafc;border-left:3px solid var(--acc);padding:8px 12px;border-radius:6px}
-.qcm-foot{display:flex;align-items:center;gap:14px;margin:16px 0 6px;flex-wrap:wrap}
-.qcm-score{font-weight:800;font-size:16px;padding:6px 16px;border-radius:999px;background:#fff;border:2px solid var(--line)}
-.qcm-score.full{border-color:var(--ok);color:var(--ok)}
-.qcm-score.low{border-color:var(--ko);color:var(--ko)}
-.btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 14px;font-size:14px;cursor:pointer;font-family:inherit}
-.btn:hover{border-color:var(--acc);color:var(--acc)}
-footer{background:#0b0d10;color:#94a3b8;text-align:center;padding:22px 16px;font-size:13px}
-footer b{color:#e2e8f0}
-@media print{nav.toc,.qcm-opts,.qcm-foot,.qcm-hint{display:none!important}body{background:#fff}.sec,.part-t{border-color:#bbb}}
-@media (max-width:640px){.sec{padding:16px 14px}table{font-size:13px}th,td{padding:6px 7px}}
+
+:root{--ink:#183b36;--muted:#6a7b76;--green:#286d57;--lime:#d4eb7b;--paper:#f7f8f2;--line:#dce3d9;--white:#fff;--radius:20px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button,a{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #549985;outline-offset:4px}button{color:inherit}header{border-bottom:1px solid var(--line);background:#f7f8f2f5;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.nav{max-width:1200px;margin:auto;padding:19px 28px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-size:23px;font-weight:800;letter-spacing:-1px;display:flex;gap:9px;align-items:center}.brand svg{width:31px;height:31px}.navlinks{display:flex;gap:30px;font-size:13px}.navlinks a:hover{color:var(--green)}.pill{border:1px solid var(--line);padding:7px 13px;border-radius:50px;font-size:11px;letter-spacing:.6px;white-space:nowrap}.wrap{max-width:1144px;margin:auto;padding:0 28px}.hero{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;min-height:540px;gap:24px;padding:62px 0 52px}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;background:#64946b;border-radius:50%}h1{font-size:clamp(42px,5vw,66px);letter-spacing:-3px;line-height:1.09;margin:22px 0}h1 em{font-family:Georgia,serif;font-weight:400;color:var(--green)}.lead{max-width:430px;font-size:15px;color:var(--muted);line-height:1.8}.btn{display:inline-flex;gap:16px;align-items:center;justify-content:center;border:0;background:var(--green);color:white;border-radius:9px;padding:13px 20px;font-size:13px;font-weight:600}.btn:hover{background:#194e3d}.btn.light{background:white;color:var(--ink);border:1px solid var(--line)}.btn.light:hover{background:#eff4e9}.actions{display:flex;gap:12px;margin:26px 0 20px;flex-wrap:wrap}.micro{font-size:11px;color:var(--muted)}.heroart{position:relative;height:405px;border-radius:50%;background:radial-gradient(ellipse,#e0ecd0 0%,#edf2e3 48%,transparent 70%)}.heroart svg{width:100%;height:100%}.floatlabel{position:absolute;background:#ffffffeb;border:1px solid #e2e8dd;box-shadow:0 8px 30px #244d3610;padding:12px 17px;border-radius:12px;font-size:12px}.floatlabel b{display:block;font-size:13px}.f1{top:30px;right:8px}.f2{bottom:35px;left:5px}.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding-left:28px;border-right:1px solid var(--line);display:flex;align-items:center;gap:14px}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font-family:Georgia,serif;font-size:30px;font-weight:400}.stat span{font-size:11px;line-height:1.5;color:var(--muted)}section{padding:64px 0 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:0 0 26px}h2{font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.2;letter-spacing:-.7px;margin:10px 0}h3{font-size:19px;line-height:1.3;letter-spacing:-.35px;margin:14px 0 10px}.sectionhead p{color:var(--muted);font-size:13px;margin:0}.search{border:1px solid var(--line);background:white;border-radius:9px;padding:10px 14px;width:230px;font-size:12px}.filters{display:flex;gap:9px;margin-bottom:24px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:transparent;border-radius:25px;padding:7px 16px;font-size:12px}.chip.active{background:var(--ink);color:white;border-color:var(--ink)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:23px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px #23473509}.cardtop{display:flex;justify-content:space-between;align-items:center}.icon{width:44px;height:44px;border-radius:12px;background:#eff3e6;display:grid;place-items:center;font-size:24px;font-family:Georgia,serif}.card:nth-child(2n) .icon{background:#f9ecdf;color:#ab7143}.card:nth-child(3n) .icon{background:#eaf0f8;color:#577ba6}.tag{font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}.card p{font-size:12px;color:var(--muted);margin:0 0 20px;flex:1;line-height:1.8}.cardfoot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #edf0e9;padding-top:16px;font-size:11px;color:var(--muted)}.read{border:0;background:transparent;color:var(--green);font-weight:700;font-size:12px;padding:0}.progressline{margin-top:22px;display:flex;gap:15px;align-items:center;font-size:11px;color:var(--muted)}.track{height:5px;background:#e5eadf;border-radius:10px;flex:1;overflow:hidden}.track i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}.lab{background:#eaf0e1;border-radius:24px;padding:32px;margin-top:60px}.labgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:30px}.lab p{font-size:13px;color:var(--muted)}.controls{padding:8px 0}.control{margin:14px 0}.control label{font-size:12px;display:flex;justify-content:space-between;gap:12px}.control input[type=range]{width:100%;accent-color:var(--green)}select{max-width:100%;padding:9px;border:1px solid #cddac4;border-radius:8px;background:white;font-size:12px}.chartbox{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;display:flex;flex-direction:column;justify-content:center;min-width:0}.chartbox svg{width:100%;height:auto}.metric{display:flex;justify-content:space-between;font-size:12px;border-top:1px solid var(--line);padding-top:14px}.metric strong{color:var(--green);font-size:20px}.tabs{display:flex;gap:8px;margin-bottom:25px}.tabs button{border:0;border-bottom:2px solid transparent;background:transparent;padding:8px 14px;font-size:12px}.tabs .active{border-color:var(--green);font-weight:700}.note{border-left:3px solid #aec666;background:#f3f7e8;padding:13px 17px;font-size:13px;margin:20px 0;border-radius:0 8px 8px 0}.darija{background:#eef4f0;border-left-color:#739b84}.quizlayout{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}.quizbox{background:white;border:1px solid var(--line);border-radius:20px;padding:28px}.quizbox h3{font-size:19px;margin:12px 0 20px}.answers{display:grid;gap:9px}.answer{text-align:left;padding:12px 15px;background:var(--paper);border:1px solid var(--line);border-radius:9px;font-size:13px}.answer:hover:not(:disabled){border-color:var(--green)}.answer.correct{background:#e2efdb;border-color:#87ad73}.answer.wrong{background:#f8e3dd;border-color:#c78a7a}.feedback{font-size:13px;margin:16px 0}.quizbottom{display:flex;justify-content:space-between;align-items:center;margin-top:19px;font-size:11px}.resourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.resource{background:white;border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;gap:13px;align-items:center}.resource:hover{border-color:var(--green)}.pdf{color:#9a6250;background:#f9eee8;border-radius:7px;padding:10px 7px;font-size:9px;font-weight:700}.resource b{font-size:12px;display:block}.resource small{font-size:10px;color:var(--muted)}.source-note{font-size:11px;color:var(--muted);margin:20px 0 0}footer{border-top:1px solid var(--line);margin-top:56px;padding:25px 0;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}.empty{padding:20px;text-align:center;grid-column:1/-1}.hidden{display:none!important}dialog{padding:0;border:1px solid var(--line);border-radius:20px;width:min(850px,95vw);max-height:90vh;background:var(--paper);color:var(--ink)}dialog::backdrop{background:#123a32a8;backdrop-filter:blur(5px)}.dialogbar{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 25px;display:flex;justify-content:space-between;align-items:center;z-index:1}.close{background:white;border:1px solid var(--line);border-radius:50%;width:32px;height:32px;font-size:20px}.lesson{padding:24px 35px 35px}.lesson h2{font-size:33px}.lesson h3{margin-top:30px;font-size:18px}.lesson p,.lesson li{font-size:14px}.lesson li{margin:7px 0}.lesson ul{padding-left:20px}.lesson .formula{background:var(--ink);color:#eef7d1;padding:22px;border-radius:12px;text-align:center;font-size:19px;font-family:Georgia,serif;margin:18px 0}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px;margin:18px 0}td,th{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left}th{background:#eaf0e1}.lessonend{border-top:1px solid var(--line);padding-top:22px;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:15px}.lessonend span{font-size:11px;color:var(--muted)}details{background:white;border:1px solid var(--line);border-radius:9px;padding:14px;margin:14px 0;font-size:13px}summary{font-weight:600;cursor:pointer}.phresult{text-align:center;padding:24px}.phresult .charge{font-size:46px;font-family:Georgia,serif}.phscale{height:14px;background:linear-gradient(90deg,#dfb5a0,#e1e8b6,#91bf9c,#8daebf);border-radius:12px;position:relative;margin:30px 0}.phscale i{position:absolute;top:-5px;width:4px;height:24px;background:var(--ink);border-radius:5px}.flash{margin-top:22px;width:100%;border:1px dashed #b7c6af;background:#eff4e7;border-radius:14px;padding:20px;text-align:left}.flash small{font-size:10px;color:var(--muted)}.flash b{display:block;font-size:14px;margin:8px 0}.flash span{font-size:12px}.reset{background:transparent;border:0;color:var(--muted);font-size:10px;text-decoration:underline}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:800px){.hero{grid-template-columns:1fr 1fr;min-height:450px}h1{font-size:46px}.heroart{height:320px}.floatlabel{padding:8px;font-size:10px}.floatlabel b{font-size:11px}.cards{grid-template-columns:repeat(2,1fr)}.navlinks{gap:17px}.nav .pill{display:none}.stat{padding-left:15px;gap:8px}.resourcegrid{grid-template-columns:1fr}.quizlayout{gap:25px}}@media(max-width:600px){.wrap{padding:0 20px}.nav{padding:14px 20px}.brand{font-size:21px}.navlinks{font-size:11px;gap:15px}.navlinks a:last-child{display:none}.hero{grid-template-columns:1fr;padding-top:36px;gap:0}.heroart{height:290px;max-width:360px;width:100%;margin:0 auto}h1{font-size:48px}.lead{font-size:14px}.stats{grid-template-columns:1fr 1fr;gap:18px}.stat:nth-child(2){border:0}.stat:nth-child(3){padding-left:0}.stat strong{font-size:27px}.sectionhead{align-items:start;flex-direction:column}.search{width:100%}.cards{grid-template-columns:1fr}.card{padding:22px}.lab{padding:22px 17px}.labgrid,.quizlayout{grid-template-columns:1fr}.chartbox{padding:12px}.labgrid{gap:12px}h2{font-size:30px}.lesson{padding:18px 20px 26px}.lesson h2{font-size:28px}.lessonend{align-items:start;flex-direction:column}section{padding-top:45px}footer{gap:20px;align-items:start}.quizbox{padding:22px}.progressline{flex-wrap:wrap}.progressline .track{min-width:80px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}@media print{header,.heroart,.filters,.search,.lab,.quizlayout,dialog,.actions,.read,.reset{display:none!important}.cards{grid-template-columns:repeat(2,1fr)}body{background:white}.card{break-inside:avoid}section{padding-top:20px}}
+
+.learning-goal{background:#eaf0e1;border:1px solid #d6e2cc;border-radius:12px;padding:19px 22px;margin:22px 0 15px}.learning-goal p{margin:8px 0 0}.lesson-jumps{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}.lesson-jumps button{border:1px solid var(--line);border-radius:25px;padding:9px 13px;font-size:11px;background:white}.lesson-jumps button:hover{background:#eaf0e1}.part-heading{display:flex;gap:17px;align-items:center;border-top:1px solid var(--line);padding-top:25px;margin:38px 0 20px;scroll-margin-top:80px}.part-heading>span{font:32px Georgia,serif;color:#769460}.lesson .part-heading h3{font-size:23px;margin:0}.part-heading p{margin:4px 0 0!important;font-size:12px!important;color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}.steps>div{padding:17px;background:white;border:1px solid var(--line);border-radius:12px}.steps b{font-size:13px}.steps p{font-size:13px;margin:8px 0 0}.lesson ol{padding-left:23px}.lesson ol li{padding-left:5px;margin:12px 0}.lesson details[open]{background:#f0f5e8}.lesson details[open] summary{margin-bottom:15px}.lesson .formula small{font-size:14px}.reading-tools{display:flex;align-items:center;gap:12px}.reading-tools button:not(.close){background:transparent;border:0;font-size:11px;color:var(--muted);text-decoration:underline}@media(max-width:600px){.steps{grid-template-columns:1fr}.learning-goal{padding:16px}.lesson .part-heading h3{font-size:21px}.lesson-jumps button{font-size:10px;padding:8px 10px}.reading-tools{gap:8px}.dialogbar{padding:12px 15px}.dialogbar .eyebrow{font-size:9px;letter-spacing:1px}}
+
+.schgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}.sch{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.sch img{width:100%;display:block}.sch figcaption{font-size:12px;color:var(--muted);padding:8px 10px;line-height:1.4}.toc{background:#fff;border:1px solid var(--line,#d9e2d0);border-radius:18px;padding:22px;margin:0 0 22px}.toc h4{font-size:13px;letter-spacing:.04em;color:var(--green);margin:12px 0 6px;text-transform:uppercase}.toc ul{list-style:none;padding:0;margin:0}.toc li{padding:4px 0 4px 14px;position:relative;font-size:14px;line-height:1.5}.toc li::before{content:"·";position:absolute;left:2px;color:var(--green);font-weight:700}.toc ul.sub{padding-left:14px;margin-top:2px}.toc ul.sub li::before{content:"–"}.toc button{all:unset;cursor:pointer;color:var(--green);font-weight:600;border-bottom:1px dotted var(--green)}.toc button:focus-visible{outline:2px solid var(--green);outline-offset:2px}.tocgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 22px}.tocfoot{font-size:12px;color:var(--muted,#6b7a72);margin:12px 0 0}figure.sch pre{margin:0;padding:14px 16px;overflow-x:auto;font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fbfcf9;color:#2a463c;white-space:pre}
+figure.sch{margin:18px 0}
+.tocgrid h4:first-child{margin-top:0}
+dialog .lesson h2{margin:6px 0 4px}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="kicker">FMDC Casablanca · S1 · Biophysique</div>
-  <h1>Imagerie en odontologie : rayons X, radiologie &amp; radioprotection (cours complet)</h1>
-  <p>biopc.pdf — Partie I : principes physiques des RX · Partie II : initiation à la radiologie · Partie III : radiobiologie / radioprotection</p>
-  <p><b style="color:#fff">Pr. Bouzoubaa Sidi Mohammed</b> — Professeur Agrégé en Odontologie chirurgicale</p>
-  <div class="badges">
-    <span>📄 Source : Drive → Biophysique → Pr. Bouzoubaa → Cours → biopc.pdf</span>
-    <span>🧩 22 sections dans l'ordre du document</span>
-    <span>🎯 30 QCM corrigés</span>
-    <span>⏱️ ~75 min de lecture</span>
-  </div>
-</header>
-<div class="wrap">
-<nav class="toc"><div class="toc-in">
-  <div class="toc-col"><h4>📖 Plan & Partie I</h4>
-    <a href="#sec-plan">1. Le plan du cours (ordre du Drive / du PDF)</a>
-    <a href="#sec-historique">2. 1-1 · Historique : Röntgen, 1895</a>
-    <a href="#sec-definition">3. 1-2 · Définition du rayon X</a>
-    <a href="#sec-production">4. 1-3 · Production des RX : le tube de Coolidge</a>
-    <a href="#sec-photo">5. 1-4 · Interaction avec la matière : l’effet photoélectrique</a>
-    <a href="#sec-compton">6. 1-4 · L’effet Compton + comparaison des deux effets</a>
-  </div>
-  <div class="toc-col"><h4>Partie II — Initiation à la radiologie</h4>
-    <a href="#sec-radiodef">7. 2-1 · Définition de la radiologie &amp; schéma général</a>
-    <a href="#sec-source">8. 2-2-1 · La source : mA, kV, générateur, filtration, collimation</a>
-    <a href="#sec-objet">9. 2-2-2 · L’objet : pourquoi l’image est blanche, grise ou noire</a>
-    <a href="#sec-film">10. 2-2-3-1 · Détecteur analogique : le film radiographique</a>
-    <a href="#sec-dev">11. 2-2-3-1 · Développement du film : 5 étapes + monobain</a>
-    <a href="#sec-num">12. 2-2-3-2 · Détecteur numérique : du photon au pixel</a>
-    <a href="#sec-geo">13. 2-2-4 · Formations géométriques de l’image</a>
-  </div>
-  <div class="toc-col"><h4>Partie III — Radiobiologie &amp; radioprotection</h4>
-    <a href="#sec-rpdef">14. 3-1 · Radioprotection : définitions (irradiation vs exposition)</a>
-    <a href="#sec-expo">15. 3-2 · Types d’exposition aux rayonnements ionisants</a>
-    <a href="#sec-doses">16. 3-2/3-3 · Bases physiques : Gy, Sv, Wr, Wt et doses</a>
-    <a href="#sec-effets">17. 3-3 · Effets des rayonnements : déterministes vs aléatoires</a>
-    <a href="#sec-principes">18. 3-4 · Les 3 principes généraux de la radioprotection</a>
-    <a href="#sec-regles">19. 3-5 · Règles de protection : personnel, locaux, préalables</a>
-    <a href="#sec-cabinet">20. 3-5 · Radioprotection en dentisterie : pendant le cliché</a>
-    <a href="#sec-patient">21. 3-5 · Protection du patient &amp; femme enceinte</a>
-    <a href="#sec-recap">22. Récapitulatif final : NE PAS NUIRE</a>
-  </div>
-  <div class="toc-col"><h4>✍️ Révision</h4>
-    <a href="#sec-retenir">✓ À retenir (21)</a>
-    <a href="#sec-pieges">! Pièges (14)</a>
-    <a href="#sec-qcm">🎯 QCM (30)</a>
-  </div>
-</div></nav>
-
-<section class="sec intro" id="sec-plan">
-  <h2><span class="num">1</span>Le plan du cours (ordre du Drive / du PDF)</h2>
-  
-      <p>Le fichier <b>biopc.pdf</b> (Drive : <i>Biophysique → Pr. Bouzoubaa → Cours</i>) regroupe les <b>3 parties du S1</b>. Les parties 4 à 7 tombent plus tard dans le cursus — le prof les annonce dès le plan :</p>
-      <table>
-        <tr><th>#</th><th>Chapitre</th><th>Semestre</th><th>Dans cette fiche</th></tr>
-        <tr><td>1</td><td><b>Principes physiques des rayons X</b> (historique, définition, production, interactions)</td><td><b>S1</b></td><td>Sections 2 → 6</td></tr>
-        <tr><td>2</td><td><b>Initiation à la radiologie</b> (définition, schéma général : source, objet, détecteurs, géométrie)</td><td><b>S1</b></td><td>Sections 7 → 13</td></tr>
-        <tr><td>3</td><td><b>Radiobiologie / radioprotection</b></td><td><b>S1</b></td><td>Sections 14 → 22</td></tr>
-        <tr><td>4</td><td>Incidences standards : intra-orales (rétroalvéolaire, rétro-coronaire, occlusal) / extra-orales (téléradiographie de profil, face)</td><td>S3 / S6</td><td>—</td></tr>
-        <tr><td>5</td><td>Incidence tomographique : panoramique</td><td>S6</td><td>—</td></tr>
-        <tr><td>6</td><td>Incidence volumétrique 3D : scanner, cone beam</td><td>S8</td><td>—</td></tr>
-        <tr><td>7</td><td>Examens complémentaires : IRM, échographie…</td><td>—</td><td>—</td></tr>
-      </table>
-      <div class="keys">La <b>triade de la radiologie</b> traverse tout le cours : <b>source RX → objet → détecteur</b>. Garde-la en tête : chaque section du cours décrit un maillon de cette chaîne.</div>
-</section>
-<div class="part"><h2 class="part-t">Partie I — Principes physiques des rayons X</h2></div>
-<section class="sec" id="sec-historique">
-  <h2><span class="num">2</span>1-1 · Historique : Röntgen, 1895</h2>
-  
-      <table>
-        <tr><th>Élément</th><th>Détail</th></tr>
-        <tr><td><b>1895</b></td><td><b>Wilhelm Conrad Röntgen</b> découvre les rayons X</td></tr>
-        <tr><td><b>1901</b></td><td><b>Prix Nobel</b> (le tout premier prix Nobel de physique)</td></tr>
-        <tr><td>Expérience</td><td>Production des RX dans un <b>tube en absence d’air</b>, avec <b>anode et cathode</b></td></tr>
-        <tr><td>Preuve</td><td><b>Sensibilisation d’un film à distance</b> de l’expérience : il photographie le <b>squelette de sa main</b></td></tr>
-        <tr><td>Noms</td><td>Ry X · <b>X rays</b> · الأشعة السينية</td></tr>
-      </table>
-      <div class="keys">Trois mots-clés de l’expérience à placer dans un QCM : <b>vide</b> (tube sans air), <b>film sensibilisé à distance</b>, <b>main de Mme/ M. Röntgen</b> → le rayon X traverse la matière et impressionne un film sans contact.</div>
-</section>
-<section class="sec" id="sec-definition">
-  <h2><span class="num">3</span>1-2 · Définition du rayon X</h2>
-  
-      <p>Le rayon X est un <b>rayonnement électromagnétique</b>, de même nature que les ondes radio, la lumière visible ou les infrarouges — mais <b>très pénétrant</b>.</p>
-      <table>
-        <tr><th>Grandeur</th><th>Valeur</th></tr>
-        <tr><td>Fréquences</td><td><b>10¹⁶ Hz à 10²⁰ Hz</b></td></tr>
-        <tr><td>Longueurs d’onde</td><td>de l’ordre de <b>10⁻⁸ à 10⁻¹² m</b></td></tr>
-        <tr><td>Énergie des photons X</td><td><b>40 eV à 4·10⁵ eV</b></td></tr>
-        <tr><td>Propriété clé</td><td>Rayon X = <b>très pénétrant</b></td></tr>
-      </table>
-      <pre class="sch">SPECTRE ÉLECTROMAGNÉTIQUE (λ décroissantes → énergie croissante)
-ondes radio › micro-ondes › infrarouge › lumière visible › UV › ➤ RAYONS X ➤ › gamma
-                                                          10⁻⁸ … 10⁻¹² m</pre>
-      <div class="keys">Plus la longueur d’onde est <b>courte</b>, plus le photon est <b>énergétique</b> et <b>pénétrant</b>. C’est pour ça que les RX traversent les tissus mous mais sont arrêtés par l’os.</div>
-</section>
-<section class="sec" id="sec-production">
-  <h2><span class="num">4</span>1-3 · Production des RX : le tube de Coolidge</h2>
-  
-      <p>Les faisceaux utilisés en médecine sont produits par des <b>« tubes à rayons X »</b> ou <b>tube de Coolidge</b> : un tube de verre où règne un <b>vide poussé</b>.</p>
-      <pre class="sch">TUBE DE COOLIDGE (vide poussé)
-  CATHODE (tungstène chauffée)          ANODE = cible (anti-cathode)
-        │  ① extraction des électrons          │
-        │  ② accélération par la tension       │
-        └──────────► ③ bombardement ──────────►│
-                                       ④ interactions de FREINAGE
-                                          ⇒ ÉMISSION DE RAYONS X</pre>
-      <table>
-        <tr><th>Étape</th><th>Ce qui se passe</th></tr>
-        <tr><td>① Extraction</td><td>Les électrons sont extraits d’une <b>cathode de tungstène chauffée</b></td></tr>
-        <tr><td>② Accélération</td><td>Ils sont accélérés par une <b>tension électrique</b> dans le tube sous vide</td></tr>
-        <tr><td>③ Bombardement</td><td>Le faisceau bombarde une <b>cible métallique</b> = <b>anode</b> (ou anti-cathode)</td></tr>
-        <tr><td>④ Émission</td><td>Conséquence des <b>interactions (freinage)</b> entre électrons rapides et particules de la cible</td></tr>
-      </table>
-      <p><b>Anode tournante :</b> le faisceau d’électrons la frappe sur sa <b>partie périphérique</b> — une <b>piste en tungstène</b> dont l’orientation est <b>oblique</b> par rapport au faisceau d’électrons. La rotation répartit la chaleur et permet des expositions répétées.</p>
-      <div class="keys">L’émission de RX vient du <b>freinage</b> des électrons sur la cible — pas de la chaleur, pas de la cathode. Vide poussé = condition sine qua non (sinon les électrons percutent l’air).</div>
-</section>
-<section class="sec" id="sec-photo">
-  <h2><span class="num">5</span>1-4 · Interaction avec la matière : l’effet photoélectrique</h2>
-  
-      <p>En radiodiagnostic, l’interaction RX / matière organique comprend essentiellement <b>l’effet photoélectrique</b> et <b>l’effet Compton</b>. Comprendre ces mécanismes = comprendre l’<b>atténuation sélective</b> du faisceau, donc le <b>contraste</b> de l’image.</p>
-      <p><b>Mécanisme :</b> un rayon X arrive à proximité d’un <b>électron d’une couche profonde</b> avec assez d’énergie pour l’<b>éjecter</b>. Le rayon X est <b>absorbé</b> ; le trop-plein d’énergie part dans l’<b>énergie cinétique du « photoélectron »</b>. Le « trou » laissé est rempli par un électron d’une couche plus superficielle, qui laisse échapper un <b>rayon X caractéristique de faible énergie</b> lors de sa « descente ».</p>
-      <pre class="sch">Photon X ──► électron couche PROFONDE ──► éjection (photoélectron)
-   │                                        │
-   │ photon ABSORBÉ (arrêt du RX)           ├─► effets biologiques néfastes possibles
-   ▼                                        └─► ion POSITIF
-RX caractéristique de faible énergie (sans effet significatif)</pre>
-      <table>
-        <tr><th>Résultat de l’effet photoélectrique</th></tr>
-        <tr><td><b>Arrêt du rayon X</b> (le RX caractéristique est trop faible pour compter)</td></tr>
-        <tr><td>Production d’un <b>photoélectron</b> (effets biologiques néfastes possibles)</td></tr>
-        <tr><td>Production d’un <b>ion positif</b></td></tr>
-      </table>
-      <div class="keys">Effet <b>principal</b> dans les matières organiques pour des RX de <b>faible énergie</b> : effet majeur pour des tensions <b>inférieures à 70 kV</b>. C’est lui qui donne le <b>contraste</b> (absorption sélective selon le tissu).</div>
-</section>
-<section class="sec" id="sec-compton">
-  <h2><span class="num">6</span>1-4 · L’effet Compton + comparaison des deux effets</h2>
-  
-      <p><b>Mécanisme :</b> un rayon X passe à proximité d’un <b>électron périphérique peu lié</b> à l’atome (parfois appelé électron « libre »). L’énergie du RX est transmise <b>en partie</b> à l’électron, qui s’échappe avec une certaine énergie cinétique ; le reste repart sous forme d’un <b>rayon X de direction différente et d’énergie inférieure</b>.</p>
-      <pre class="sch">Photon X ──► électron PÉRIPHÉRIQUE (peu lié)
-   │                │
-   │                └─► électron éjecté + ion POSITIF
-   ▼
-RX DIFFUSÉ : direction ALÉATOIRE, énergie inférieure
-   ⇒ diffusion dans TOUTES les directions (même vers l'arrière)</pre>
-      <table>
-        <tr><th>Résultat de l’effet Compton</th></tr>
-        <tr><td><b>Déviation + perte d’énergie</b> du rayon X ; électron + ion positif</td></tr>
-        <tr><td>Direction <b>aléatoire</b> → <b>diffusion</b> du faisceau dans toutes les directions (y compris en sens opposé au faisceau primaire)</td></tr>
-        <tr><td>Rayonnement diffusé encore assez énergétique pour <b>voiler l’image</b> et <b>constituer un danger</b> → il faut s’en protéger</td></tr>
-        <tr><td>Probabilité d’interaction : dépend <b>uniquement de la densité</b> du matériel, <b>pas du numéro atomique</b></td></tr>
-        <tr><td>Prépondérant dans les tissus organiques à <b>forte énergie</b> : tension <b>&gt; 100 kV</b></td></tr>
-      </table>
-      <table>
-        <tr><th></th><th>Effet photoélectrique</th><th>Effet Compton</th></tr>
-        <tr><td>Électron visé</td><td>Couche <b>profonde</b></td><td>Couche <b>périphérique</b>, peu lié (« libre »)</td></tr>
-        <tr><td>Sort du photon</td><td><b>Absorbé</b> (arrêt du RX)</td><td><b>Diffusé</b>, dévié, énergie inférieure</td></tr>
-        <tr><td>Dépend de</td><td>Numéro atomique (Z) / énergie faible</td><td><b>Densité</b> seulement / énergie forte</td></tr>
-        <tr><td>Domaine de tension</td><td>Majeur <b>&lt; 70 kV</b></td><td>Prépondérant <b>&gt; 100 kV</b></td></tr>
-        <tr><td>Conséquence image</td><td><b>Contraste</b> (atténuation sélective)</td><td><b>Voile / flou</b> + danger (diffusion)</td></tr>
-        <tr><td>Produits communs</td><td colspan="2">Électron + <b>ion positif</b> dans les deux cas</td></tr>
-      </table>
-</section>
-<div class="part"><h2 class="part-t">Partie II — Initiation à la radiologie</h2></div>
-<section class="sec" id="sec-radiodef">
-  <h2><span class="num">7</span>2-1 · Définition de la radiologie &amp; schéma général</h2>
-  
-      <p><b>La radiographie</b> est un procédé d’imagerie qui permet de <b>visualiser les structures anatomiques internes</b> au moyen de <b>faisceaux de rayons X traversant le patient</b>. Technique utilisée pour <b>affiner un diagnostic</b> afin de réaliser un traitement adapté.</p>
-      <div class="keys">Règle légale et éthique : la réalisation d’un examen radiographique doit être <b>justifiée par la prescription d’un médecin</b>.</div>
-      <pre class="sch">SCHÉMA GÉNÉRAL DE LA RADIOLOGIE (le patient ENTRE la source et le récepteur)
-
-   FOYER RADIOGÈNE          PATIENT (région à radiographier)        RÉCEPTEUR
-   (tube à rayons X)   ──►   les RX interagissent avec les tissus  ──►  (film radiographique)
-        SOURCE                         OBJET                          DÉTECTEUR
-                            + FORMATIONS GÉOMÉTRIQUES de l'image</pre>
-      <p>Lors de l’examen, le sujet (la région anatomique dont on veut former l’image) est placé <b>entre le foyer radiogène (tube) et le récepteur (film)</b> ; les RX sont projetés à travers le corps et interagissent avec les tissus.</p>
-</section>
-<section class="sec" id="sec-source">
-  <h2><span class="num">8</span>2-2-1 · La source : mA, kV, générateur, filtration, collimation</h2>
-  
-      <table>
-        <tr><th>Paramètre</th><th>Rôle / ce que dit le cours</th></tr>
-        <tr><td><b>Intensité (mA)</b></td><td>Le <b>nombre de photons</b> → degré de <b>noirceur</b> de l’image sur le film. Générateurs actuels : <b>4 à 8 mA</b></td></tr>
-        <tr><td><b>Tension (kV)</b></td><td>L’<b>énergie du photon</b>. Il faut un maximum de RX au récepteur → faisceau <b>homogène</b>, photons d’énergie suffisante et similaire</td></tr>
-        <tr><td><b>Générateur</b></td><td>Le courant alternatif change de sens toutes les demi-périodes, soit <b>50 fois par seconde</b> ; les générateurs <b>« haute fréquence »</b> = avancée technologique majeure</td></tr>
-        <tr><td><b>Transformateur</b></td><td>Convertit le <b>220 V</b> en haute tension <b>60 000 – 70 000 V (60 à 70 kV)</b></td></tr>
-        <tr><td><b>Filtration</b></td><td>Ne laisse passer que les photons d’<b>énergie adéquate</b>. L’<b>aluminium</b> filtre le mieux : plaque de <b>1 à 3 mm</b> ; pour un générateur ≤ 70 kV → filtration équivalente à <b>1,5 mm d’Al</b></td></tr>
-        <tr><td><b>Temps d’exposition</b></td><td>Le <b>nombre de photons par seconde</b></td></tr>
-        <tr><td><b>Longueur du tube</b></td><td>Rôle important dans la qualité d’image : localisateur <b>long cône de 30 ou 40 cm</b> → technique « long cône »</td></tr>
-        <tr><td><b>Collimation</b></td><td><b>Réduire le diamètre du faisceau</b> (moins de diffusion, moins de dose)</td></tr>
-        <tr><td><b>Guidage laser</b></td><td>Guidage par <b>faisceau laser</b> pour le positionnement</td></tr>
-      </table>
-      <p class="mt"><b>Effet de la tension (kV) :</b> les nouveaux générateurs à <b>60-70 kV</b> produisent des rayons <b>plus pénétrants</b> → images <b>moins contrastées</b>.</p>
-      <table>
-        <tr><th>Tension</th><th>Contraste</th><th>Dose d’irradiation</th></tr>
-        <tr><td><b>Faible</b></td><td>Augmente le contraste</td><td>Augmente la dose</td></tr>
-        <tr><td><b>Élevée</b></td><td>Diminue le contraste</td><td>Diminue la dose</td></tr>
-        <tr><td><b>&gt; 90-100 kV</b></td><td colspan="2">Contraste <b>insuffisant</b> : on n’augmente pas indéfiniment</td></tr>
-      </table>
-      <pre class="sch">FICHE TECHNIQUE TYPE D'UN GÉNÉRATEUR DENTAIRE (diapos du cours)
-Tension du tube            60 – 70 kV          Fréquence         50 / 60 Hz
-Courant du tube            4 – 7 mA            Filtration totale min. 2,0 mm Al
-Foyer du tube              0,4 mm (CEI 336)    Temps d'exposition  0,04 à 2 s
-Compatibilité : film argentique · écran à mémoire · capteur digital
-Bras : court 1,81 m · moyen 1,96 m · long 2,26 m — montage mural
-Générateur CC haute fréquence : réduit la dose du patient de PLUS DE 25 %</pre>
-</section>
-<section class="sec" id="sec-objet">
-  <h2><span class="num">9</span>2-2-2 · L’objet : pourquoi l’image est blanche, grise ou noire</h2>
-  
-      <p>Le comportement des tissus devant les RX dépend de leur <b>coefficient d’absorption</b> :</p>
-      <table>
-        <tr><th>Structure</th><th>Absorption</th><th>Sur le cliché</th></tr>
-        <tr><td><b>Dense (os, émail…)</b></td><td>Coefficient d’absorption <b>très élevé</b> → très opaques aux photons</td><td><b>BLANC</b> (radio-opaque)</td></tr>
-        <tr><td><b>Intermédiaire (tissus mous)</b></td><td>Coefficient légèrement plus faible → peu opaques</td><td><b>GRIS</b> (différents tons)</td></tr>
-        <tr><td><b>Aérique (air)</b></td><td>Laissent passer la <b>quasi-totalité</b> des rayonnements</td><td><b>SOMBRE / NOIR</b> (radio-claire)</td></tr>
-      </table>
-      <pre class="sch">RADIO-OPAQUE (blanc)  ›  NIVEAU DE GRIS  ›  RADIO-CLAIRE (noir)
-   structure minéralisée      structures intermédiaires     structure NON minéralisée</pre>
-      <div class="keys">Radio-opaque = arrête les RX (blanc) · radio-claire = laisse passer les RX (noir). Toute la sémiologie radiologique repose sur cette échelle de gris.</div>
-</section>
-<section class="sec" id="sec-film">
-  <h2><span class="num">10</span>2-2-3-1 · Détecteur analogique : le film radiographique</h2>
-  
-      <p>Le film radiographique a <b>deux principaux composants</b> : le <b>film proprement dit</b> et l’<b>emballage</b>.</p>
-      <table>
-        <tr><th>Composant</th><th>Détail</th></tr>
-        <tr><td><b>Support</b></td><td>En <b>acétate de cellulose</b></td></tr>
-        <tr><td><b>Gélatine</b></td><td>Suspend l’émulsion sur le support</td></tr>
-        <tr><td><b>Émulsion photographique</b></td><td>Constituée de <b>cristaux de bromures d’argent</b> (AgBr) — c’est elle qui capte les RX</td></tr>
-        <tr><td>Usage</td><td>Ces détecteurs ne servent qu’<b>une seule fois</b></td></tr>
-      </table>
-      <p class="mt"><b>Emballage (3 éléments) :</b></p>
-      <table>
-        <tr><th>Élément</th><th>Rôle</th></tr>
-        <tr><td><b>Papier noir</b></td><td>Protection (lumière)</td></tr>
-        <tr><td><b>Feuille de plomb</b></td><td>Arrête les <b>RX diffusés</b> (rayonnement rétro-diffusé)</td></tr>
-        <tr><td><b>Enveloppe plastique</b></td><td>Protection (humidité)</td></tr>
-      </table>
-      <p class="mt"><b>Formats des films intra-oraux :</b></p>
-      <table>
-        <tr><th>Type de cliché</th><th>Dimensions</th></tr>
-        <tr><td>Rétro-alvéolaire <b>adulte</b></td><td><b>31 × 41 mm</b></td></tr>
-        <tr><td>Rétro-alvéolaire <b>enfant</b></td><td><b>22 × 35 mm</b></td></tr>
-        <tr><td><b>Occlusal</b></td><td><b>57 × 76 mm</b></td></tr>
-      </table>
-      <div class="keys">Le film est <b>sensible à la lumière et à l’humidité</b> → d’où le papier noir + l’enveloppe plastique. La feuille de plomb, elle, combat le <b>rayonnement diffusé</b> (celui de l’effet Compton !).</div>
-</section>
-<section class="sec" id="sec-dev">
-  <h2><span class="num">11</span>2-2-3-1 · Développement du film : 5 étapes + monobain</h2>
-  
-      <pre class="sch">TRAITEMENT DU FILM ARGENTIQUE
-① RÉVÉLATION  →  ② RINÇAGE  →  ③ FIXATION  →  ④ LAVAGE FINAL  →  ⑤ SÉCHAGE</pre>
-      <table>
-        <tr><th>Étape</th><th>Ce qui se passe / chiffres</th></tr>
-        <tr><td><b>1. Révélation</b></td><td>Processus <b>physico-chimique</b> : rendre visible l’<b>image latente</b> en réduisant la <b>totalité des ions Ag⁺ en atomes Ag</b>. Réaction : <b>Réducteur + Ag⁺ → Ag + réducteur oxydé</b>. Durée optimale : <b>5 minutes à 20 °C</b></td></tr>
-        <tr><td><b>2. Rinçage</b></td><td>Rinçage <b>intermédiaire</b> : élimine toute trace du révélateur (<b>basique</b>) et <b>arrête son effet</b> → évite de souiller et d’altérer le fixateur (<b>acide</b>)</td></tr>
-        <tr><td><b>3. Fixation</b></td><td>Les cristaux de bromure d’argent <b>non atteints par un photon</b> ne sont pas modifiés par le révélateur et doivent être <b>éliminés</b> : dissolution du bromure non sensibilisé pour <b>empêcher un noircissement ultérieur</b>. Film lisible après 1-2 min mais à replacer au bain : <b>10 minutes au total à 20 °C</b></td></tr>
-        <tr><td><b>4. Lavage final</b></td><td>À l’<b>eau courante, 10 à 20 minutes</b> : élimine complètement l’<b>hyposulfite</b> et les <b>complexes d’argent</b> qui imprègnent la gélatine → prévient la formation d’un <b>voile jaune de sulfure</b></td></tr>
-        <tr><td><b>5. Séchage</b></td><td>À l’air libre ou courant d’air <b>sec tiède (30 à 40 °C)</b> sans poussière, <b>10 à 30 minutes</b></td></tr>
-      </table>
-      <p class="mt"><b>Le monobain :</b> réalise <b>dans une même étape</b> la révélation de l’image latente <b>et</b> la fixation de l’image obtenue (seuls les sels d’argent sensibilisés subissent le révélateur ; les cristaux non sensibilisés sont dissous par le fixateur). Traitement <b>moins sensible à la température</b> et <b>plus court</b> : <b>8 minutes</b> avec monobain contre <b>15 minutes</b> en traitement classique.</p>
-      <div class="keys">Révélateur = <b>basique</b> · fixateur = <b>acide</b> → le rinçage intermédiaire protège le fixateur. Chiffres favoris des QCM : 5 min / 20 °C (révélation), 10 min (fixation), 10-20 min (lavage), 8 vs 15 min (monobain vs classique).</div>
-</section>
-<section class="sec" id="sec-num">
-  <h2><span class="num">12</span>2-2-3-2 · Détecteur numérique : du photon au pixel</h2>
-  
-      <p>Les détecteurs numériques permettent la <b>transformation directe des photons en signaux électriques</b>, eux-mêmes transformés en image.</p>
-      <pre class="sch">PHOTONS X ──► DÉTECTEUR ──► SIGNAUX ÉLECTRIQUES ──► IMAGE NUMÉRIQUE
-                              une MATRICE = unités de PIXELS
-                              palette de 256 NIVEAUX DE GRIS (0 → 255)</pre>
-      <table>
-        <tr><th>Notion</th><th>Détail</th></tr>
-        <tr><td><b>Matrice</b></td><td>Constituée d’unités de <b>pixel</b> : chaque pixel porte une valeur de gris</td></tr>
-        <tr><td><b>Niveaux de gris</b></td><td>Palette de <b>256 niveaux</b> (comme l’échelle radio-opaque → radio-claire du film)</td></tr>
-        <tr><td><b>Détecteurs 2D</b></td><td>Capteurs plans (radiographie conventionnelle numérique)</td></tr>
-        <tr><td><b>Détecteurs 3D</b></td><td>Acquisition volumique (annoncée pour le scanner / cone beam, S8)</td></tr>
-      </table>
-      <div class="keys">Analogique = chimie (AgBr, bains) · numérique = <b>photons → électrons → pixels</b>. Avantage pratique du numérique : <b>moins de dose</b> (voir partie radioprotection : 6× moins que les films D).</div>
-</section>
-<section class="sec" id="sec-geo">
-  <h2><span class="num">13</span>2-2-4 · Formations géométriques de l’image</h2>
-  
-      <ul>
-        <li>La formation géométrique de l’image radiologique est une <b>ombre projetée</b> d’objets plus ou moins opaques aux RX.</li>
-        <li>L’image radiologique est une <b>représentation en 2 dimensions</b> d’une épaisseur complexe.</li>
-        <li>La <b>conicité du faisceau RX</b> et l’<b>orientation du rayon directeur</b> entraînent une <b>déformation</b> des structures radiographiées.</li>
-        <li>Il en résulte une <b>perte d’information</b> quant à la <b>position (profondeur)</b> et la <b>forme exacte</b> des objets.</li>
-        <li>Une <b>deuxième vue</b>, la plupart du temps avec une <b>incidence perpendiculaire</b> à la première, est nécessaire pour évaluer position et forme dans l’espace.</li>
-        <li>La projection obéit à des <b>règles géométriques très simples</b> : projection <b>conique</b>, images en <b>superposition</b>.</li>
-      </ul>
-      <pre class="sch">   SOURCE ponctuelle ──faisceau CONIQUE──► OBJET ──► DÉTECTEUR
-        ⇒ ombre projetée, agrandissement, déformation, SUPERPOSITION
-        ⇒ 1 seul cliché = 2D : profondeur perdue  →  2 vues ⊥ nécessaires</pre>
-      <div class="keys">Un cliché = une <b>ombre en 2D</b> : les structures se <b>superposent</b>. Toujours raisonner « quelle incidence complémentaire ? » devant une image unique.</div>
-</section>
-<div class="part"><h2 class="part-t">Partie III — Radiobiologie &amp; radioprotection</h2></div>
-<section class="sec" id="sec-rpdef">
-  <h2><span class="num">14</span>3-1 · Radioprotection : définitions (irradiation vs exposition)</h2>
-  
-      <table>
-        <tr><th>Terme</th><th>Définition du cours</th></tr>
-        <tr><td><b>Radioprotection</b></td><td>Ensemble de <b>mesures</b> permettant l’utilisation des <b>rayonnements ionisants (RI)</b> dans un but <b>diagnostique ou thérapeutique</b>, tout en <b>limitant le plus raisonnablement possible</b> les effets néfastes pour <b>les praticiens, les patients et le public</b></td></tr>
-        <tr><td><b>Irradiation</b></td><td>Les rayons sont utilisés pour en <b>obtenir un effet biologique déterminé</b> : <b>guérir un cancer / RADIOTHÉRAPIE</b></td></tr>
-        <tr><td><b>Exposition</b></td><td>Les rayons qui entrent dans un volume sont <b>fortuits</b> (rayonnement naturel) ou délivrés <b>dans un autre but</b> que leur effet biologique (diagnostic ou interventionnel) : <b>imagerie médicale</b></td></tr>
-        <tr><td><b>Radiobiologie</b></td><td>L’<b>étude des effets des RI</b> (rayons X entre autres) de façon générale <b>sur les tissus vivants</b></td></tr>
-      </table>
-      <pre class="sch">RÉPONSES DE LA CELLULE AU RAYONNEMENT IONISANT (schéma du cours)
-RI ─► effet DIRECT sur l'ADN            TEMPS : 10⁻¹⁵ s → 10⁻⁶ s → minutes/heures
-   ─► effet INDIRECT : radiolyse                     (réponses précoces)
-      de l'eau → RADICAUX LIBRES                    jours/années/générations
-Lésions moléculaires (protéines, ADN, lipides)       (réponses tardives)
-   ├─ pas de réparation   → effet LÉTAL → mort cellulaire non contrôlée (nécrose) → pathologie tissulaire
-   ├─ réparation FAUTIVE  → MUTATION NON LÉTALE → anomalie héréditaire · CANCER · élimination immunitaire
-   └─ réparation FIDÈLE   → arrêt du cycle (p53…) → survie cellulaire normale</pre>
-      <div class="keys">Irradiation = effet <b>voulu</b> (radiothérapie) · exposition = effet <b>subi/fortuit</b> (imagerie). En dentaire, nous sommes toujours dans le cas <b>exposition</b>.</div>
-</section>
-<section class="sec" id="sec-expo">
-  <h2><span class="num">15</span>3-2 · Types d’exposition aux rayonnements ionisants</h2>
-  
-      <table>
-        <tr><th></th><th>Contamination EXTERNE</th><th>Contamination INTERNE</th></tr>
-        <tr><td>Définition</td><td>Exposition <b>externe</b> aux rayonnements ionisants</td><td>Exposition <b>interne</b> aux <b>particules radioactives</b></td></tr>
-        <tr><td>Mécanisme</td><td>Personne exposée <b>de l’extérieur</b> à une source radioactive située <b>dans son voisinage</b></td><td><b>Inhalation</b> de particules radioactives présentes dans l’air · <b>ingestion</b> d’aliments contaminés · particules à <b>visée thérapeutique</b></td></tr>
-        <tr><td>Fin de l’exposition</td><td>Cesse dès que la source est <b>éloignée</b> ou qu’un <b>écran (blindage)</b> est interposé</td><td>Se <b>poursuit</b> tant que la source est <b>à l’intérieur</b> ou au contact du corps</td></tr>
-      </table>
-      <div class="keys">Externe = on s’en protège par <b>distance + écran</b> · interne = la source est <b>dedans</b>, l’exposition continue. C’est la logique des 3 règles de protection (temps, distance, écran).</div>
-</section>
-<section class="sec" id="sec-doses">
-  <h2><span class="num">16</span>3-2/3-3 · Bases physiques : Gy, Sv, Wr, Wt et doses</h2>
-  
-      <table>
-        <tr><th>Grandeur</th><th>Définition / unité</th></tr>
-        <tr><td><b>Dose absorbée (D)</b></td><td><b>Énergie transmise à l’unité de masse</b> ; s’exprime en <b>Gray (Gy)</b> : <b>1 Gy = 1 Joule/Kg</b>. Mesurable. C’est la dose reçue <b>localement</b> par le patient pour une exploration donnée ; directement corrélée aux paramètres d’exposition ; <b>ne tient pas compte</b> de la sensibilité des tissus</td></tr>
-        <tr><td><b>Dose efficace</b></td><td>Somme des doses délivrées aux organes <b>pondérées</b> par un coefficient proportionnel à la <b>sensibilité des tissus</b> ; exprime le <b>risque d’effets aléatoires</b> à l’échelon individuel ; traduit une irradiation locale en exposition globale équivalente corps entier. Unité : <b>Sievert (Sv)</b> — calculable, <b>non mesurable</b></td></tr>
-        <tr><td><b>Passage Gy → Sv</b></td><td>Deux facteurs de pondération : <b>Wr</b> (qualité du rayonnement) et <b>Wt</b> (nature du tissu irradié) → <b>Sv = Gy × Wr × Wt</b></td></tr>
-        <tr><td>Repères</td><td><b>1 Gy = 1 Sv = 100 rads</b> · irradiation naturelle en France : <b>2,4 mSv/an</b></td></tr>
-      </table>
-      <pre class="sch">Gray  = MESURE de la dose absorbée (énergie/masse, J/Kg)  → mesurable
-Sievert = ÉVALUATION du RISQUE BIOLOGIQUE (pondérations)   → calculable, non mesurable
-                    Sv = Gy × Wr × Wt</pre>
-      <p class="mt"><b>Doses reçues par les organes sensibles lors d’un cliché panoramique :</b></p>
-      <table>
-        <tr><th>Organe</th><th>Dose (mSv)</th></tr>
-        <tr><td>Hypophyse</td><td>0,05</td></tr>
-        <tr><td>Thyroïdes</td><td>0,05</td></tr>
-        <tr><td><b>Glandes salivaires</b></td><td><b>0,39</b> (la plus exposée)</td></tr>
-        <tr><td>Surfaces osseuses</td><td>0,06</td></tr>
-        <tr><td>Moelle osseuse</td><td>0,01</td></tr>
-        <tr><td>Équivalent de doses efficaces</td><td>0,03</td></tr>
-      </table>
-      <div class="keys">Gy = physique (mesurable) · Sv = biologique (calculé). Au panoramique, l’organe le plus irradié = <b>glandes salivaires (0,39 mSv)</b>.</div>
-</section>
-<section class="sec" id="sec-effets">
-  <h2><span class="num">17</span>3-3 · Effets des rayonnements : déterministes vs aléatoires</h2>
-  
-      <p><b>Effets cliniques :</b> trois sites d’effets — <b>lésions cellulaires</b>, <b>lésions moléculaires</b>, <b>effets sur les tissus humains</b> — et des effets <b>cumulatifs</b>.</p>
-      <p><b>Lésions moléculaires :</b> toutes les molécules de l’organisme peuvent être modifiées ; deux sont particulièrement touchées : l’<b>ADN</b> (modifications du patrimoine génétique) et la <b>molécule d’eau</b> (<b>70 % du poids de l’homme</b>). H₂O : <b>radiolyse</b> avec formation de <b>radicaux libres</b>, capables de modifier des liaisons chimiques, induire des lésions moléculaires, inactiver des enzymes ou dégrader des macromolécules.</p>
-      <p><b>Effets sur les tissus :</b> deux types chez l’homme — effets <b>obligatoires ou déterministes</b> (secondaires aux lésions <b>létales</b>) et effets <b>aléatoires ou stochastiques</b> (secondaires aux lésions <b>non létales</b>).</p>
-      <table>
-        <tr><th></th><th>Effets DÉTERMINISTES</th><th>Effets ALÉATOIRES (stochastiques)</th></tr>
-        <tr><td>Nature</td><td><b>Non stochastiques</b>, obligatoires</td><td>Probabilistes (« plus de risque »)</td></tr>
-        <tr><td>Seuil</td><td>À partir d’un <b>seuil déterminé</b> : jamais si dose &lt; D seuil, <b>à coup sûr</b> si dose &gt; D seuil</td><td>Se produisent à <b>faible ou forte dose</b> (pas de seuil)</td></tr>
-        <tr><td>Gravité</td><td><b>Croît avec la dose</b></td><td><b>Indépendante de la dose</b></td></tr>
-        <tr><td>Exemples</td><td>Fœtus ; tous les organes (gonades, tube digestif, peau, cerveau, moelle) ; myélite, perforation digestive, diarrhée, atteinte pulmonaire post-radique, céphalées, convulsions, œdème</td><td><b>Cancérogénèse</b> (cancers radio-induits) · <b>malformations congénitales héréditaires</b></td></tr>
-        <tr><td>Protection</td><td><b>Simple</b> : risque prévisible, « attendu » → mesures préventives</td><td><b>Complexe</b></td></tr>
-      </table>
-      <div class="keys">Déterministe = <b>seuil + gravité dose-dépendante</b> · stochastique = <b>pas de seuil, gravité indépendante de la dose</b> (cancer, hérédité). Le cours insiste : effets <b>cumulatifs</b>.</div>
-</section>
-<section class="sec" id="sec-principes">
-  <h2><span class="num">18</span>3-4 · Les 3 principes généraux de la radioprotection</h2>
-  
-      <table>
-        <tr><th>Principe</th><th>Concept</th><th>Application</th></tr>
-        <tr><td><b>1. Justification</b></td><td>Les <b>avantages</b> (diagnostiques, thérapeutiques…) de l’exposition doivent l’<b>emporter sur les risques</b> et inconvénients potentiels ; le bénéfice pour le patient est <b>supérieur au risque encouru</b></td><td>Un examen impliquant des rayonnements doit être <b>médicalement indiqué et utile</b> ; pas d’exposition sans raison bénéfique claire (= prescription médicale)</td></tr>
-        <tr><td><b>2. Optimisation</b></td><td>Principe <b>ALARA</b> : « As Low As Reasonably Achievable » — aussi bas que raisonnablement possible ; s’applique <b>après</b> justification et limitation</td><td><b>Réduire la dose</b> et le <b>nombre de personnes exposées</b> ; utiliser les techniques les plus efficaces pour le résultat voulu avec la <b>dose la plus faible possible</b> ; image compatible avec l’objectif diagnostique</td></tr>
-        <tr><td><b>3. Limitation</b></td><td>Établit des <b>doses maximales à ne pas dépasser</b> : exigence <b>légale</b> pour rester dans des limites acceptables</td><td>Limites fixées par groupes (professionnels, étudiants, public) ; ex. : <b>limite annuelle de 20 millisieverts</b> pour les travailleurs exposés ; limiter examens et doses — <b>non appliquée si l’irradiation est thérapeutique</b></td></tr>
-      </table>
-      <div class="keys">Ordre logique : <b>justifier → limiter → optimiser (ALARA)</b>. La limitation ne s’applique <b>pas</b> en radiothérapie (le bénéfice thérapeutique prime).</div>
-</section>
-<section class="sec" id="sec-regles">
-  <h2><span class="num">19</span>3-5 · Règles de protection : personnel, locaux, préalables</h2>
-  
-      <p><b>Protection du personnel soignant — le trio gagnant :</b></p>
-      <pre class="sch">TEMPS  ↓   réduire le temps d'irradiation
-DISTANCE ↑  travailler à distance MAXIMALE de la source
-ÉCRANS ■   utiliser des écrans protecteurs</pre>
-      <table>
-        <tr><th>Mesure</th><th>Détail</th></tr>
-        <tr><td><b>Blindage des salles</b></td><td>Non-transmission du rayonnement aux salles avoisinantes, couloirs…</td></tr>
-        <tr><td><b>Normes de construction</b></td><td>Respect des normes de construction des salles de radiologie</td></tr>
-        <tr><td><b>Dispositifs protecteurs</b></td><td>Port de : <b>blouse (tablier plombé)</b>, <b>cache-thyroïdes</b>, <b>cache-gonades</b></td></tr>
-        <tr><td><b>Surveillance dosimétrique</b></td><td>Dosimètre pour le personnel exposé</td></tr>
-      </table>
-      <p class="mt"><b>Préalables — dosimétrie comparée des examens dentaires :</b></p>
-      <table>
-        <tr><th>Support</th><th>Dose par rapport aux films D</th></tr>
-        <tr><td>Films <b>E/F</b></td><td><b>2× moins</b> de dose que les films D</td></tr>
-        <tr><td><b>Détecteurs digitaux</b></td><td><b>6× moins</b> de dose que les films D — au prix d’une <b>moins bonne définition</b></td></tr>
-        <tr><td><b>Panoramiques anciens</b> (20 ans)</td><td><b>3× plus</b> de dose que les appareils récents</td></tr>
-        <tr><td>Règle</td><td><b>Pas d’installation de matériel de + de 25 ans</b></td></tr>
-      </table>
-      <div class="keys">Changer de support = lever de dose immédiat : D → E/F (÷2) → digital (÷6 vs D). Un panoramique vieux de 20 ans = ×3 de dose.</div>
-</section>
-<section class="sec" id="sec-cabinet">
-  <h2><span class="num">20</span>3-5 · Radioprotection en dentisterie : pendant le cliché</h2>
-  
-      <p><b>Personnel concerné :</b> chirurgiens-dentistes, médecins · assistantes dentaires · <b>toutes personnes susceptibles d’intervenir dans les locaux concernés</b>.</p>
-      <p><b>Lors de la prise du cliché, le praticien devra soit :</b></p>
-      <ul>
-        <li><b>sortir de la salle</b> dans le cas d’une commande située à l’extérieur ;</li>
-        <li><b>s’éloigner le plus possible du patient</b> (longueur du cordon recommandée : <b>environ 2 m</b>) en excluant toute présence dans le <b>faisceau direct</b>.</li>
-      </ul>
-      <p>Présence du praticien ou de l’assistant(e) à proximité immédiate du patient : <b>exceptionnellement justifiée</b>. Sauf justification particulière (enfants, personnes handicapées ou agitées…), les <b>accompagnants sortent de la salle</b> avant la prise de clichés.</p>
-      <p class="mt"><b>Conception de la pièce / protection de l’opérateur :</b></p>
-      <table>
-        <tr><th>Exigence</th><th>Détail</th></tr>
-        <tr><td>Faisceau primaire</td><td>L’opérateur demeure <b>à l’extérieur du faisceau primaire</b></td></tr>
-        <tr><td>Distance</td><td>Demeurer éloigné d’<b>au moins 3 mètres</b> du tube radiogène et du sujet</td></tr>
-        <tr><td>Écran</td><td>Écran de protection adéquat <b>transparent</b>, formant une <b>barrière ininterrompue</b></td></tr>
-        <tr><td>Blindage</td><td>Murs, planchers, plafonds et portes blindés selon la <b>distance</b>, la <b>haute tension maximale</b> du tube et la <b>charge de travail</b></td></tr>
-        <tr><td>Absorption</td><td>Absorption du faisceau primaire et du rayonnement parasite <b>aussi près que possible de la source</b></td></tr>
-        <tr><td>Direction du faisceau</td><td>Rayonnement primaire toujours dirigé vers une <b>section blindée ou inoccupée</b></td></tr>
-        <tr><td>Commandes</td><td>Installées <b>à l’extérieur de la pièce</b>, à distance suffisante du tube, ou derrière un écran protecteur convenable</td></tr>
-        <tr><td>Plans de travaux</td><td>Faire examiner les plans définitifs par le <b>service gouvernemental approprié</b> (construction / modification)</td></tr>
-      </table>
-      <p class="mt"><b>En pratique — positions autour du patient :</b> représentation des positions à <b>50 cm (1 à 8)</b> et <b>100 cm (9 à 16)</b> autour du patient : zones <b>vertes</b> = positions favorables · zones <b>oranges</b> = positions à éviter · zone <b>rouge</b> = positions fortement déconseillées. <b>Attention :</b> ce code couleur ne correspond <b>aucunement</b> aux zones réglementaires.</p>
-      <div class="keys">Deux distances à ne jamais mélanger : <b>2 m</b> = cordon de commande du praticien resté dans la salle · <b>3 m</b> = distance minimale opérateur / tube + sujet pour la conception de la pièce.</div>
-</section>
-<section class="sec" id="sec-patient">
-  <h2><span class="num">21</span>3-5 · Protection du patient &amp; femme enceinte</h2>
-  
-      <table>
-        <tr><th>Mesure</th><th>Détail</th></tr>
-        <tr><td><b>Entretien</b></td><td>Veiller à l’<b>entretien des appareils</b> de radiographie dentaire</td></tr>
-        <tr><td><b>Tablier plombé</b></td><td>Pour les <b>gonades</b></td></tr>
-        <tr><td><b>Protecteur thyroïdien</b></td><td><b>Enfant +++</b>, surtout pour l’examen radiographique de l’<b>occlusion maxillaire</b></td></tr>
-        <tr><td><b>Panoramique</b></td><td>Utiliser un tablier à protection <b>avant et arrière</b> (rayons postérieurs)</td></tr>
-      </table>
-      <p class="mt"><b>Femme enceinte :</b></p>
-      <ul>
-        <li>Attention : femme en <b>période d’activité génitale</b> → risque d’être enceinte ; <b>précautions prises en tout temps</b> ; risque potentiellement <b>plus grave en début de grossesse</b>.</li>
-        <li><b>Mais :</b> dose délivrée au fœtus lors d’un examen dentaire estimée entre <b>0,3 et 1 microsievert (µSv)</b> ;</li>
-        <li><b>inférieure</b> à l’exposition naturelle quotidienne (<b>7 µSv</b>) reçue par le fœtus ;</li>
-        <li>le risque encouru par un fœtus exposé à quelques µSv lors d’un examen de radiologie dentaire est <b>extrêmement faible</b> (source : IRSN, France).</li>
-      </ul>
-      <div class="keys">Message d’examen : un cliché dentaire ≠ danger pour le fœtus (0,3-1 µSv &lt; 7 µSv/jour naturels) — mais les précautions restent de mise en toute circonstance.</div>
-</section>
-<section class="sec" id="sec-recap">
-  <h2><span class="num">22</span>Récapitulatif final : NE PAS NUIRE</h2>
-  
-      <table>
-        <tr><th>Bloc</th><th>À retenir</th></tr>
-        <tr><td>Effets des RI</td><td><b>Déterministes</b> : certains pour un seuil déterminé · <b>aléatoires</b> : plus de risque</td></tr>
-        <tr><td>Règles de la radioprotection</td><td><b>Justification · optimisation · limitation</b></td></tr>
-        <tr><td>Qui est concerné</td><td>Le <b>praticien</b>, le <b>patient</b>, l’<b>environnement</b></td></tr>
-        <tr><td>Cadres</td><td>Codes réglementaires <b>universels</b></td></tr>
-        <tr><td><b>OBJECTIF</b></td><td><b>NE PAS NUIRE</b></td></tr>
-        <tr><td><b>ALARA+++</b></td><td>« <b>A</b>s <b>L</b>ow <b>A</b>s <b>R</b>easonably <b>A</b>chievable » = <b>aussi bas que raisonnablement possible</b></td></tr>
-      </table>
-      <pre class="sch">CHAÎNE COMPLÈTE VUE DANS CE COURS
-RX (tube de Coolidge) ─► matière (photoélectrique / Compton)
-   ─► OBJET (blanc / gris / noir) ─► DÉTECTEUR (film Ag → bains · numérique → pixels)
-   ─► IMAGE (ombre 2D, conique, superpositions)
-   ─► RISQUE (Gy → Sv) ─► PROTECTION (justification, optimisation, limitation)</pre>
-</section>
-<div class="part"><h2 class="part-t">Synthèse pour la veille de l'examen</h2></div>
-<section class="sec" id="sec-retenir">
-  <h2><span class="num">✓</span>À retenir absolument (21 points)</h2>
-  <ul class="biglist"><li>1895 Röntgen découvre les RX (tube sous vide, anode/cathode, film à distance, main) · Prix Nobel 1901.</li><li>RX = rayonnement électromagnétique : 10¹⁶-10²⁰ Hz · 10⁻⁸ à 10⁻¹² m · 40 eV à 4·10⁵ eV · très pénétrant.</li><li>Tube de Coolidge : cathode tungstène chauffée → électrons accélérés (tension, vide) → cible = anode ; émission par FREINAGE.</li><li>Anode tournante : faisceau frappé en périphérie, piste tungstène oblique.</li><li>Photoélectrique : électron couche profonde, photon ABSORBÉ, majeur &lt; 70 kV → contraste.</li><li>Compton : électron périphérique peu lié, photon DIFFUSÉ (direction aléatoire), dépend de la densité seule, &gt; 100 kV → voile + danger.</li><li>Triade : source → objet → détecteur ; le patient entre le foyer radiogène et le récepteur.</li><li>mA = nombre de photons (noirceur, 4-8 mA) · kV = énergie du photon (60-70 kV ; faible kV = +contraste +dose) · transformateur 220 V → 60-70 kV.</li><li>Filtration aluminium 1-3 mm (1,5 mm Al si ≤ 70 kV) · collimation = réduire le diamètre · long cône 30-40 cm.</li><li>Os = blanc (radio-opaque) · tissus mous = gris · air = noir (radio-claire).</li><li>Film : support acétate de cellulose + gélatine + émulsion AgBr ; emballage = papier noir + feuille de plomb + enveloppe plastique ; rétro-alv. adulte 31×41, enfant 22×35, occlusal 57×76.</li><li>Développement : révélation (5 min/20 °C) → rinçage → fixation (10 min/20 °C) → lavage (10-20 min) → séchage (30-40 °C) ; monobain 8 min vs 15 min.</li><li>Numérique : photons → signaux électriques → image ; matrice de pixels, 256 niveaux de gris.</li><li>Image = ombre projetée 2D, projection conique, superpositions → 2ᵉ vue perpendiculaire.</li><li>Radioprotection = limiter les effets néfastes (praticiens, patients, public) · irradiation = effet voulu (radiothérapie) · exposition = effet fortuit (imagerie).</li><li>Dose absorbée = Gy (1 Gy = 1 J/Kg, mesurable) · dose efficace = Sv (calculable) ; Sv = Gy × Wr × Wt ; 1 Gy = 1 Sv = 100 rads ; naturel France 2,4 mSv/an.</li><li>Panoramique : glandes salivaires 0,39 mSv (max) · équivalent doses efficaces 0,03 mSv.</li><li>Déterministes = seuil + gravité ∝ dose · aléatoires = pas de seuil, gravité indépendante (cancers, malformations).</li><li>3 principes : justification, optimisation (ALARA), limitation (20 mSv/an travailleurs ; non appliquée en thérapeutique).</li><li>Cabinet : temps ↓, distance ↑, écrans · praticien sort ou cordon ≈ 2 m · opérateur ≥ 3 m du tube et du sujet · tablier plombé, cache-thyroïde (enfant +++), panoramique = tablier avant + arrière.</li><li>Femme enceinte : dose fœtus 0,3-1 µSv &amp;lt; 7 µSv/jour naturels → risque extrêmement faible (IRSN).</li></ul>
-</section>
-<section class="sec" id="sec-pieges">
-  <h2><span class="num warn">!</span>Pièges classiques des QCM (14)</h2>
-  <ul class="biglist pieges"><li>L’émission de RX vient du FREINAGE des électrons sur la cible — pas de la chaleur ni de la cathode.</li><li>Photoélectrique = photon ABSORBÉ (couche profonde) ; Compton = photon DIFFUSÉ (couche périphérique). Ne pas inverser.</li><li>Compton ne dépend PAS du numéro atomique : seulement de la DENSITÉ.</li><li>Seuils de tension : photoélectrique majeur &lt; 70 kV · Compton prépondérant &gt; 100 kV · &gt; 90-100 kV contraste insuffisant.</li><li>Faible kV = PLUS de contraste ET PLUS de dose (pas l’inverse).</li><li>Révélateur BASIQUE / fixateur ACIDE : le rinçage intermédiaire protège le fixateur.</li><li>La fixation élimine le bromure d’argent NON sensibilisé (empêche le noircissement ultérieur) ; le lavage élimine hyposulfite + complexes d’argent (voile jaune).</li><li>Feuille de plomb de l’emballage = contre les RX DIFFUSÉS ; papier noir = lumière ; enveloppe plastique = humidité.</li><li>Gy mesurable / Sv calculable (non mesurable) — et Sv = Gy × Wr × Wt, pas l’inverse.</li><li>Effets déterministes = avec SEUIL et gravité dose-dépendante ; stochastiques = sans seuil, gravité indépendante de la dose.</li><li>2 m = cordon de commande (praticien dans la salle) ; 3 m = distance minimale opérateur-tube-sujet (conception). Ne pas confondre.</li><li>Le code couleur vert/orange/rouge des positions autour du patient ≠ zones réglementaires.</li><li>La limitation ne s’applique PAS quand l’irradiation est thérapeutique.</li><li>Digital = 6× moins de dose que films D mais moins bonne définition ; films E/F = 2× moins ; pano de 20 ans = 3× plus.</li></ul>
-</section>
-<div class="part"><h2 class="part-t">🎯 QCM d'auto-évaluation — 30 questions</h2></div>
-<section class="sec" id="sec-qcm">
-  <p class="qcm-hint">Clique sur ta réponse : correction immédiate + explication. Le score se met à jour tout seul.</p>
-  <div class="qcm-list">
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q1</span>Qui découvre les rayons X en 1895 ?</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Wilhelm Conrad Röntgen</button><button class="qcm-opt" data-o="1"><b>B.</b> Marie Curie</button><button class="qcm-opt" data-o="2"><b>C.</b> Coolidge</button><button class="qcm-opt" data-o="3"><b>D.</b> Henri Becquerel</button></div>
-      <div class="qcm-expl" hidden>💡 Röntgen, 1895 ; prix Nobel 1901. Il sensibilise un film à distance et photographie le squelette de sa main.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q2</span>Les longueurs d’onde des rayons X sont de l’ordre de :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 10⁻³ à 10⁻⁶ m</button><button class="qcm-opt" data-o="1"><b>B.</b> 10⁻⁸ à 10⁻¹² m</button><button class="qcm-opt" data-o="2"><b>C.</b> 1 à 10⁶ m</button><button class="qcm-opt" data-o="3"><b>D.</b> 10⁻¹⁵ à 10⁻¹⁸ m</button></div>
-      <div class="qcm-expl" hidden>💡 10⁻⁸ à 10⁻¹² m ; fréquences 10¹⁶-10²⁰ Hz ; énergies 40 eV à 4·10⁵ eV.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q3</span>Dans le tube de Coolidge, l’émission de rayons X résulte :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> De l’échauffement de la cathode</button><button class="qcm-opt" data-o="1"><b>B.</b> Des interactions de freinage des électrons rapides sur la cible</button><button class="qcm-opt" data-o="2"><b>C.</b> De la désintégration du tungstène</button><button class="qcm-opt" data-o="3"><b>D.</b> De la fluorescence du verre</button></div>
-      <div class="qcm-expl" hidden>💡 Les électrons accélérés bombardent l’anode (cible) : le freinage produit les RX.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q4</span>L’anode tournante est frappée par le faisceau d’électrons :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> En son centre, piste en cuivre</button><button class="qcm-opt" data-o="1"><b>B.</b> Sur sa partie périphérique, piste en tungstène oblique</button><button class="qcm-opt" data-o="2"><b>C.</b> Sur sa face arrière, piste en plomb</button><button class="qcm-opt" data-o="3"><b>D.</b> Uniformément sur toute sa surface</button></div>
-      <div class="qcm-expl" hidden>💡 Partie périphérique, piste tungstène orientée obliquement → dissipation de la chaleur.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q5</span>L’effet photoélectrique concerne un électron :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Périphérique peu lié</button><button class="qcm-opt" data-o="1"><b>B.</b> D’une couche profonde</button><button class="qcm-opt" data-o="2"><b>C.</b> Du noyau</button><button class="qcm-opt" data-o="3"><b>D.</b> De la couche de valence uniquement</button></div>
-      <div class="qcm-expl" hidden>💡 Couche profonde : le photon est ABSORBÉ, éjection d’un photoélectron + ion positif.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q6</span>L’effet photoélectrique est l’effet majeur pour des tensions :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Supérieures à 100 kV</button><button class="qcm-opt" data-o="1"><b>B.</b> Inférieures à 70 kV</button><button class="qcm-opt" data-o="2"><b>C.</b> Comprises entre 90 et 100 kV</button><button class="qcm-opt" data-o="3"><b>D.</b> Indifférentes à la tension</button></div>
-      <div class="qcm-expl" hidden>💡 &lt; 70 kV : effet principal dans les matières organiques → c’est lui qui donne le contraste.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q7</span>La probabilité d’un effet Compton dépend :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Du numéro atomique</button><button class="qcm-opt" data-o="1"><b>B.</b> Uniquement de la densité du matériel</button><button class="qcm-opt" data-o="2"><b>C.</b> De la couleur du tissu</button><button class="qcm-opt" data-o="3"><b>D.</b> De la température</button></div>
-      <div class="qcm-expl" hidden>💡 Compton : densité seulement (≠ photoélectrique qui dépend du Z). Prépondérant &gt; 100 kV.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q8</span>Le résultat de l’effet Compton comprend :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Un photon absorbé totalement</button><button class="qcm-opt" data-o="1"><b>B.</b> Une déviation avec perte d’énergie + diffusion dans toutes les directions</button><button class="qcm-opt" data-o="2"><b>C.</b> Une augmentation d’énergie du photon</button><button class="qcm-opt" data-o="3"><b>D.</b> Aucun ion produit</button></div>
-      <div class="qcm-expl" hidden>💡 Photon diffusé (direction aléatoire, énergie inférieure) + électron + ion positif ; voile et danger.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q9</span>La radiographie est justifiée par :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> La demande du patient</button><button class="qcm-opt" data-o="1"><b>B.</b> La prescription d’un médecin</button><button class="qcm-opt" data-o="2"><b>C.</b> Le choix de l’assistante</button><button class="qcm-opt" data-o="3"><b>D.</b> La disponibilité de l’appareil</button></div>
-      <div class="qcm-expl" hidden>💡 Tout examen radiographique doit être justifié par une prescription médicale (principe de justification).</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q10</span>L’intensité (mA) du tube correspond :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> À l’énergie du photon</button><button class="qcm-opt" data-o="1"><b>B.</b> Au nombre de photons (noirceur de l’image)</button><button class="qcm-opt" data-o="2"><b>C.</b> À la filtration</button><button class="qcm-opt" data-o="3"><b>D.</b> À la distance foyer-film</button></div>
-      <div class="qcm-expl" hidden>💡 mA = nombre de photons → noirceur ; générateurs actuels 4-8 mA. Le kV = énergie.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q11</span>Une faible tension (kV) :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Diminue contraste et dose</button><button class="qcm-opt" data-o="1"><b>B.</b> Augmente le contraste et la dose d’irradiation</button><button class="qcm-opt" data-o="2"><b>C.</b> Augmente le contraste et diminue la dose</button><button class="qcm-opt" data-o="3"><b>D.</b> N’a aucun effet</button></div>
-      <div class="qcm-expl" hidden>💡 Faible kV = +contraste +dose ; tension élevée = -contraste -dose ; &gt; 90-100 kV contraste insuffisant.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q12</span>Pour un générateur ≤ 70 kV, la filtration doit équivaloir à :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 0,5 mm d’aluminium</button><button class="qcm-opt" data-o="1"><b>B.</b> 1,5 mm d’aluminium</button><button class="qcm-opt" data-o="2"><b>C.</b> 5 mm de plomb</button><button class="qcm-opt" data-o="3"><b>D.</b> 3 mm de cuivre</button></div>
-      <div class="qcm-expl" hidden>💡 Filtration conventionnelle en aluminium 1-3 mm ; équivalente à 1,5 mm Al si tension ≤ 70 kV.</div>
-    </div>
-    <div class="qcm-q" data-ans="2">
-      <div class="qcm-qt"><span class="qnum">Q13</span>Sur un cliché, les structures aériques apparaissent :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Blanches</button><button class="qcm-opt" data-o="1"><b>B.</b> Grises claires</button><button class="qcm-opt" data-o="2"><b>C.</b> Sombres ou noires</button><button class="qcm-opt" data-o="3"><b>D.</b> Jaunes</button></div>
-      <div class="qcm-expl" hidden>💡 Elles laissent passer la quasi-totalité des rayonnements → radio-claires (noires). Os = blanc.</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q14</span>L’émulsion du film radiographique est constituée de cristaux de :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Bromure d’argent</button><button class="qcm-opt" data-o="1"><b>B.</b> Sulfate de baryum</button><button class="qcm-opt" data-o="2"><b>C.</b> Iodure de potassium</button><button class="qcm-opt" data-o="3"><b>D.</b> Carbonate de calcium</button></div>
-      <div class="qcm-expl" hidden>💡 Cristaux de bromures d’argent (AgBr) suspendus dans la gélatine sur support acétate de cellulose.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q15</span>La feuille de plomb de l’emballage du film sert à :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Protéger de la lumière</button><button class="qcm-opt" data-o="1"><b>B.</b> Arrêter les RX diffusés</button><button class="qcm-opt" data-o="2"><b>C.</b> Protéger de l’humidité</button><button class="qcm-opt" data-o="3"><b>D.</b> Rigidifier le film</button></div>
-      <div class="qcm-expl" hidden>💡 Papier noir = lumière ; enveloppe plastique = humidité ; feuille de plomb = rayonnement diffusé.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q16</span>Dimensions du film rétro-alvéolaire adulte / occlusal :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 22×35 mm / 57×76 mm</button><button class="qcm-opt" data-o="1"><b>B.</b> 31×41 mm / 57×76 mm</button><button class="qcm-opt" data-o="2"><b>C.</b> 31×41 mm / 22×35 mm</button><button class="qcm-opt" data-o="3"><b>D.</b> 24×30 mm / 50×70 mm</button></div>
-      <div class="qcm-expl" hidden>💡 Rétro-alvéolaire adulte 31×41 mm ; enfant 22×35 mm ; occlusal 57×76 mm.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q17</span>Ordre correct du développement du film :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Fixation → révélation → rinçage → lavage → séchage</button><button class="qcm-opt" data-o="1"><b>B.</b> Révélation → rinçage → fixation → lavage final → séchage</button><button class="qcm-opt" data-o="2"><b>C.</b> Rinçage → révélation → lavage → fixation → séchage</button><button class="qcm-opt" data-o="3"><b>D.</b> Révélation → fixation → rinçage → séchage → lavage</button></div>
-      <div class="qcm-expl" hidden>💡 Révélation (5 min/20 °C) → rinçage → fixation (10 min/20 °C) → lavage (10-20 min) → séchage (30-40 °C).</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q18</span>Le monobain permet un traitement complet en :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 8 minutes contre 15 en classique</button><button class="qcm-opt" data-o="1"><b>B.</b> 15 minutes contre 8 en classique</button><button class="qcm-opt" data-o="2"><b>C.</b> 5 minutes à 20 °C</button><button class="qcm-opt" data-o="3"><b>D.</b> 30 minutes à 40 °C</button></div>
-      <div class="qcm-expl" hidden>💡 Monobain = révélation + fixation en une étape : 8 min vs 15 min, moins sensible à la température.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q19</span>La dose absorbée s’exprime en … et vaut … :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Sievert ; 1 Sv = 1 J/Kg</button><button class="qcm-opt" data-o="1"><b>B.</b> Gray ; 1 Gy = 1 J/Kg</button><button class="qcm-opt" data-o="2"><b>C.</b> Rad ; 1 rad = 1 J/Kg</button><button class="qcm-opt" data-o="3"><b>D.</b> Gray ; 1 Gy = 100 J/Kg</button></div>
-      <div class="qcm-expl" hidden>💡 Dose absorbée = Gy = 1 J/Kg (mesurable). Dose efficace = Sv (calculable). 1 Gy = 1 Sv = 100 rads.</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q20</span>Pour passer du Gy au Sv, on fait intervenir :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Wr (qualité du rayonnement) et Wt (nature du tissu)</button><button class="qcm-opt" data-o="1"><b>B.</b> Uniquement le temps d’exposition</button><button class="qcm-opt" data-o="2"><b>C.</b> La distance foyer-peau</button><button class="qcm-opt" data-o="3"><b>D.</b> Le numéro atomique du tissu</button></div>
-      <div class="qcm-expl" hidden>💡 Sv = Gy × Wr × Wt : pondération qualité du rayonnement + sensibilité tissulaire.</div>
-    </div>
-    <div class="qcm-q" data-ans="2">
-      <div class="qcm-qt"><span class="qnum">Q21</span>Lors d’un panoramique, l’organe le plus irradié est :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> La moelle osseuse (0,01 mSv)</button><button class="qcm-opt" data-o="1"><b>B.</b> L’hypophyse (0,05 mSv)</button><button class="qcm-opt" data-o="2"><b>C.</b> Les glandes salivaires (0,39 mSv)</button><button class="qcm-opt" data-o="3"><b>D.</b> La thyroïde (0,05 mSv)</button></div>
-      <div class="qcm-expl" hidden>💡 Glandes salivaires 0,39 mSv ; équivalent de doses efficaces 0,03 mSv.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q22</span>Les effets déterministes :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Se produisent à toute dose sans seuil</button><button class="qcm-opt" data-o="1"><b>B.</b> Ont un seuil : jamais en dessous, toujours au-dessus ; gravité ∝ dose</button><button class="qcm-opt" data-o="2"><b>C.</b> Ont une gravité indépendante de la dose</button><button class="qcm-opt" data-o="3"><b>D.</b> Sont toujours héréditaires</button></div>
-      <div class="qcm-expl" hidden>💡 Non stochastiques : seuil déterminé, gravité croît avec la dose ; protection simple (prévisible).</div>
-    </div>
-    <div class="qcm-q" data-ans="2">
-      <div class="qcm-qt"><span class="qnum">Q23</span>Les effets aléatoires (stochastiques) comprennent :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> L’érythème cutané</button><button class="qcm-opt" data-o="1"><b>B.</b> La cataracte</button><button class="qcm-opt" data-o="2"><b>C.</b> Cancers radio-induits et malformations congénitales héréditaires</button><button class="qcm-opt" data-o="3"><b>D.</b> La radiolyse de l’eau</button></div>
-      <div class="qcm-expl" hidden>💡 Cancérogénèse + effets héréditaires ; sans seuil, gravité indépendante de la dose ; protection complexe.</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q24</span>Les 3 principes de la radioprotection sont :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Justification, optimisation, limitation</button><button class="qcm-opt" data-o="1"><b>B.</b> Distance, temps, écran</button><button class="qcm-opt" data-o="2"><b>C.</b> Révélation, fixation, lavage</button><button class="qcm-opt" data-o="3"><b>D.</b> Absorption, diffusion, transmission</button></div>
-      <div class="qcm-expl" hidden>💡 Justification (bénéfice &gt; risque) · optimisation (ALARA) · limitation (doses max, ex. 20 mSv/an travailleurs).</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q25</span>ALARA signifie :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> As Low As Reasonably Achievable</button><button class="qcm-opt" data-o="1"><b>B.</b> Always Limit And Reduce Absorption</button><button class="qcm-opt" data-o="2"><b>C.</b> As Long As Radiation Applies</button><button class="qcm-opt" data-o="3"><b>D.</b> A Low And Reasonable Attenuation</button></div>
-      <div class="qcm-expl" hidden>💡 « Aussi bas que raisonnablement possible » — principe d’optimisation.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q26</span>Pendant le cliché, si le praticien reste dans la salle, la longueur du cordon recommandée est :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Environ 50 cm</button><button class="qcm-opt" data-o="1"><b>B.</b> Environ 2 m</button><button class="qcm-opt" data-o="2"><b>C.</b> Au moins 3 m</button><button class="qcm-opt" data-o="3"><b>D.</b> 10 m</button></div>
-      <div class="qcm-expl" hidden>💡 ≈ 2 m pour s’éloigner du patient hors du faisceau direct ; 3 m = distance minimale de conception opérateur-tube-sujet.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q27</span>Chez l’enfant, le protecteur à privilégier (surtout pour l’occlusion maxillaire) est :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Le tablier plombé gonadique</button><button class="qcm-opt" data-o="1"><b>B.</b> Le protecteur thyroïdien</button><button class="qcm-opt" data-o="2"><b>C.</b> Les lunettes plombées</button><button class="qcm-opt" data-o="3"><b>D.</b> Le cache-oreilles</button></div>
-      <div class="qcm-expl" hidden>💡 Protecteur thyroïdien enfant +++ ; tablier plombé pour les gonades ; panoramique = tablier avant + arrière.</div>
-    </div>
-    <div class="qcm-q" data-ans="0">
-      <div class="qcm-qt"><span class="qnum">Q28</span>Dose délivrée au fœtus lors d’un examen dentaire :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 0,3 à 1 µSv</button><button class="qcm-opt" data-o="1"><b>B.</b> 7 mSv</button><button class="qcm-opt" data-o="2"><b>C.</b> 20 mSv</button><button class="qcm-opt" data-o="3"><b>D.</b> 2,4 Sv</button></div>
-      <div class="qcm-expl" hidden>💡 0,3-1 µSv, inférieure à l’exposition naturelle quotidienne du fœtus (7 µSv) → risque extrêmement faible (IRSN).</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q29</span>Par rapport aux films D, les détecteurs digitaux délivrent :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> 2× moins de dose</button><button class="qcm-opt" data-o="1"><b>B.</b> 6× moins de dose</button><button class="qcm-opt" data-o="2"><b>C.</b> 3× plus de dose</button><button class="qcm-opt" data-o="3"><b>D.</b> Autant de dose</button></div>
-      <div class="qcm-expl" hidden>💡 Digital = 6× moins (définition moindre) ; films E/F = 2× moins ; panoramique ancien (20 ans) = 3× plus.</div>
-    </div>
-    <div class="qcm-q" data-ans="1">
-      <div class="qcm-qt"><span class="qnum">Q30</span>L’image radiologique est une ombre projetée en 2D : pour évaluer la profondeur d’un objet il faut :</div>
-      <div class="qcm-opts"><button class="qcm-opt" data-o="0"><b>A.</b> Augmenter les kV</button><button class="qcm-opt" data-o="1"><b>B.</b> Une deuxième vue d’incidence perpendiculaire</button><button class="qcm-opt" data-o="2"><b>C.</b> Un film plus grand</button><button class="qcm-opt" data-o="3"><b>D.</b> Réduire la collimation</button></div>
-      <div class="qcm-expl" hidden>💡 Projection conique = perte de la profondeur et déformation → 2ᵉ vue ⊥ à la première.</div>
-    </div>
-  </div>
-  <div class="qcm-foot">
-    <span class="qcm-score" id="qcm-score">0 / 30</span>
-    <button class="btn" id="qcm-reset">↺ Recommencer le QCM</button>
-  </div>
-</section>
-
+<header><nav class="nav" aria-label="Navigation principale"><a href="#" class="brand"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 6L31 13L28 26L12 26L9 13Z" stroke="#286d57" stroke-width="2"/><circle cx="20" cy="18" r="5" fill="#286d57"/><circle cx="12" cy="28" r="4" fill="#a3bf6e"/><circle cx="28" cy="28" r="4" fill="#286d57"/><path d="M20 23v5M16 27l-3 2M24 27l3 2" stroke="#a3bf6e" stroke-width="2"/></svg>radiologie<span style="color:#789d62">.</span></a><div class="navlinks"><a href="#cours">Les cours</a><a href="#atelier">L’atelier</a><a href="#revision">Se tester</a><a href="#ressources">Ressources ↗</a></div><span class="pill">FMDC · 1ÈRE ANNÉE · S1</span></nav></header>
+<main class="wrap">
+<div class="hero"><div><div class="eyebrow"><span class="dot"></span> Ton espace de révision · S1</div><h1>La radiologie,<br>enfin <em>limpide.</em></h1><p class="lead">Des rayons X à la radioprotection : comprends comment naît une image radiologique et comment protéger tout le monde. Des explications détaillées, des schémas, un peu de darija et beaucoup de déclics.</p><div class="actions"><a class="btn" href="#cours">Explorer les cours <span>↗</span></a><a class="btn light" href="#revision">Tester mes connaissances</a></div><p class="micro">D’après le support biopc.pdf de Pr. BOUZOUBAA Sidi Mohammed · FMDC</p></div><div class="heroart"><svg viewBox="0 0 460 400" role="img" aria-label="Illustration stylisée d’un tube radiogène : les électrons frappent l’anode et un faisceau conique traverse une dent"><defs><radialGradient id="g" cx="32%" cy="25%"><stop stop-color="#8ab49c"/><stop offset=".6" stop-color="#47806a"/><stop offset="1" stop-color="#24533f"/></radialGradient><radialGradient id="l" cx="28%" cy="20%"><stop stop-color="#f2f7c4"/><stop offset=".6" stop-color="#d2e58c"/><stop offset="1" stop-color="#9eb965"/></radialGradient><filter id="s"><feDropShadow dx="3" dy="12" stdDeviation="8" flood-color="#335735" flood-opacity=".14"/></filter></defs><g fill="none" stroke="#cbd8bd"><ellipse cx="227" cy="210" rx="183" ry="128" transform="rotate(-30 227 210)" stroke-dasharray="4 6"/><circle cx="225" cy="208" r="151"/><path d="M42 306H420M50 100H420" stroke-dasharray="2 8"/></g><g stroke="#73977b" stroke-width="10" stroke-linecap="round"><path d="M96 132L176 176"/><path d="M176 176L300 236" stroke-dasharray="1 14"/><path d="M300 236L352 300"/></g><g filter="url(#s)"><rect x="62" y="102" width="70" height="60" rx="14" fill="url(#g)"/><rect x="160" y="150" width="34" height="52" rx="8" transform="rotate(24 177 176)" fill="url(#l)"/><path d="M282 208c26-10 52 2 54 26 2 22-12 34-16 52-3 14-21 16-27 4-8-16-24-22-27-42-3-18 2-32 16-40z" fill="url(#g)"/><circle cx="352" cy="306" r="26" fill="url(#l)"/></g><g font-family="Georgia" fill="#315344" font-style="italic"><text x="48" y="66" font-size="19">e⁻ → RX (freinage)</text><text x="252" y="120" font-size="15">faisceau conique</text><text x="286" y="368" font-size="15">source → objet → détecteur</text></g></svg><div class="floatlabel f1"><b>Tout commence par un freinage.</b><span class="micro">Les électrons frappent l’anode : les RX naissent.</span></div><div class="floatlabel f2"><b>✦ Bchwiya bchwiya.</b><span class="micro">Une notion à la fois.</span></div></div></div>
+<div class="stats"><div class="stat"><strong>03</strong><span>parties<br>du programme S1</span></div><div class="stat"><strong>22</strong><span>sections pour<br>tout relier</span></div><div class="stat"><strong>02</strong><span>simulateurs<br>interactifs</span></div><div class="stat"><strong>30</strong><span>questions<br>pour progresser</span></div></div>
+<section id="cours"><div class="sectionhead"><div><div class="toc" aria-label="Sommaire du cours"><div class="eyebrow">Sommaire · suit le plan du support de cours</div>
+<div class="tocgrid">
+<div><h4>Partie I : Principes physiques des rayons X</h4><ul>
+<li><button data-lesson="0">Le plan du cours (ordre du Drive / du PDF)</button></li>
+<li><button data-lesson="1">Historique : Röntgen, 1895</button></li>
+<li><button data-lesson="2">Définition du rayon X</button></li>
+<li><button data-lesson="3">Production des RX : le tube de Coolidge</button></li>
+<li><button data-lesson="4">Interaction avec la matière : l’effet photoélectrique</button></li>
+<li><button data-lesson="5">L’effet Compton + comparaison des deux effets</button></li></ul></div>
+<div><h4>Partie II : Initiation à la radiologie</h4><ul>
+<li><button data-lesson="6">Définition de la radiologie & schéma général</button></li>
+<li><button data-lesson="7">2-2-1 · La source : mA, kV, générateur, filtration, collimation</button></li>
+<li><button data-lesson="8">2-2-2 · L’objet : pourquoi l’image est blanche, grise ou noire</button></li>
+<li><button data-lesson="9">2-2-3-1 · Détecteur analogique : le film radiographique</button></li>
+<li><button data-lesson="10">2-2-3-1 · Développement du film : 5 étapes + monobain</button></li>
+<li><button data-lesson="11">2-2-3-2 · Détecteur numérique : du photon au pixel</button></li>
+<li><button data-lesson="12">2-2-4 · Formations géométriques de l’image</button></li></ul></div>
+<div><h4>Partie III : Radiobiologie & radioprotection</h4><ul>
+<li><button data-lesson="13">Radioprotection : définitions (irradiation vs exposition)</button></li>
+<li><button data-lesson="14">Types d’exposition aux rayonnements ionisants</button></li>
+<li><button data-lesson="15">Bases physiques : Gy, Sv, Wr, Wt et doses</button></li>
+<li><button data-lesson="16">Effets des rayonnements : déterministes vs aléatoires</button></li>
+<li><button data-lesson="17">Les 3 principes généraux de la radioprotection</button></li>
+<li><button data-lesson="18">Règles de protection : personnel, locaux, préalables</button></li>
+<li><button data-lesson="19">Radioprotection en dentisterie : pendant le cliché</button></li>
+<li><button data-lesson="20">Protection du patient & femme enceinte</button></li>
+<li><button data-lesson="21">Récapitulatif final : NE PAS NUIRE</button></li></ul></div>
 </div>
-<footer>
-  <b>Espace de révision FMDC S1</b> — page autonome générée depuis la fiche <i>biophy-radiologie</i> du site.<br>
-  Ouvrable sans Internet (CSS & JS inclus) · les liens Drive nécessitent une connexion.
-</footer>
+<p class="tocfoot">Ordre du document Drive (biopc.pdf) : Partie I → II → III. Les incidences (S3, S6, S8) et l’IRM / écho viennent plus tard dans le cursus.</p></div>
+<div class="eyebrow">01 / Comprendre</div><h2>Les grandes idées, simplement.</h2><p>Chaque section : les bases du cours pas à pas, avec tableaux et schémas.</p></div><label><span class="sr">Rechercher une notion</span><input class="search" id="search" placeholder="⌕  Rechercher une notion…" type="search"></label></div><div class="filters" aria-label="Filtrer les sections"><button class="chip active" data-filter="all" aria-pressed="true">Tout le programme</button><button class="chip" data-filter="0" aria-pressed="false">Partie I · Physique des RX</button><button class="chip" data-filter="1" aria-pressed="false">Partie II · Initiation à la radiologie</button><button class="chip" data-filter="2" aria-pressed="false">Partie III · Radioprotection</button></div><div class="cards" id="cards"></div><div class="progressline"><span id="progressText">Ton parcours : 0 / 22 sections terminées</span><div class="track"><i id="progress"></i></div><button class="reset" id="resetProgress">Réinitialiser</button></div></section>
+<section class="lab" id="atelier"><div class="sectionhead"><div><div class="eyebrow">02 / Expérimenter</div><h2>Moins abstrait. Plus interactif.</h2><p>Fais varier les paramètres et observe ce qui change.</p></div><span class="pill">LE MINI-LABO</span></div><div class="tabs" role="tablist" aria-label="Simulateurs"><button id="tab-tube" role="tab" aria-selected="true" aria-controls="tube" class="active">Tube & tension (kV)</button><button id="tab-dose" role="tab" aria-selected="false" aria-controls="dose">Dose Gy → Sv</button></div>
+<div id="tube" role="tabpanel" aria-labelledby="tab-tube" class="labgrid"><div><h3>Le tube sous contrôle.</h3><p>La tension (kV) fixe l’énergie des photons et l’effet dominant ; le courant (mA) et le temps fixent le nombre de photons — donc la noirceur et la dose.</p><div class="controls"><div class="control"><label for="kv">Tension du tube <b id="kvv"></b></label><input id="kv" type="range" min="40" max="120" value="65"></div><div class="control"><label for="ma">Courant du tube <b id="mav"></b></label><input id="ma" type="range" min="4" max="8" step="0.5" value="6"></div><div class="control"><label for="tps">Temps d’exposition <b id="tpsv"></b></label><input id="tps" type="range" min="0.05" max="2" step="0.05" value="0.4"></div></div><p id="contrastNote" class="micro"></p></div><div class="chartbox"><svg id="chart" viewBox="0 0 460 290" role="img" aria-label="Part des effets photoélectrique et Compton selon la tension du tube"></svg><div class="metric"><span>Effet dominant<br><strong id="dominant"></strong></span><span>Indice de dose relatif<br><strong id="doseidx"></strong></span></div><p class="micro">Modèle illustratif : part photoélectrique = 1 / (1 + (kV/80)⁴) ; indice de dose = mA × temps × (kV/70)². Repères du cours : photoélectrique majeur &lt; 70 kV · Compton prépondérant &gt; 100 kV.</p></div></div>
+<div id="dose" role="tabpanel" aria-labelledby="tab-dose" class="labgrid hidden"><div><h3>Du Gray au Sievert.</h3><p>Une même dose absorbée n’a pas le même risque : on la pondère par la qualité du rayonnement (Wr) et la sensibilité du tissu (Wt).</p><label class="micro" for="wr">Qualité du rayonnement (Wr) <b id="wrv"></b></label><br><select id="wr"><option value="1">Rayons X / gamma · Wr = 1</option><option value="20">Particules alpha · Wr = 20</option></select><div class="control" style="margin-top:14px"><label for="wt">Tissu irradié (Wt) <b id="wtv"></b></label></div><select id="wt"><option value="0.12">Moelle osseuse · Wt = 0,12</option><option value="0.08">Gonades · Wt = 0,08</option><option value="0.04">Thyroïde · Wt = 0,04</option><option value="0.01">Peau · Wt = 0,01</option></select><div class="control"><label for="mgy">Dose absorbée <b id="mgyv"></b></label><input id="mgy" type="range" min="0" max="20" step="0.5" value="2"></div><div id="doseFormula" class="note"></div><p class="micro">Dose efficace illustrative : E = D × Wr × Wt. Le Sv est calculable, jamais mesurable.</p></div><div class="chartbox phresult" aria-live="polite"><span class="micro">DOSE EFFICACE OBTENUE</span><div class="charge" id="svbig"></div><div id="svcompare"></div><div class="phscale"><i id="doseMarker"></i></div><span id="doseExplain" class="micro"></span></div></div></section>
+<section id="revision"><div class="quizlayout"><div><div class="eyebrow">03 / Ancrer les notions</div><h2>Un petit test.<br>Un grand déclic.</h2><p class="lead" style="font-size:14px">Pas de pression : chaque réponse vient avec son explication. L’objectif, c’est de comprendre pourquoi.</p><div class="note darija"><b>B darija</b><br>Maشي ghir t7fed : fhem 3lach la réponse s7i7a, w 3awd l-QCM 7tta tjibha kamla.</div><button class="flash" id="flash"><small>CARTE MÉMO · CLIQUE POUR RETOURNER</small><b id="flashText"></b><span id="flashHint">La réponse est de l’autre côté ↻</span></button></div><div class="quizbox" id="quiz" aria-live="polite"></div></div></section>
+<section id="ressources"><div class="sectionhead"><div><div class="eyebrow">04 / Aller à la source</div><h2>Les supports, à portée de clic.</h2><p>Retrouve le document du dossier partagé Drive.</p></div></div><div class="resourcegrid"><a class="resource" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view"><span class="pdf">PDF</span><div><b>Cours complet · biopc.pdf ↗</b><small>114 pages · Parties I, II & III</small></div></a><a class="resource" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1OWf90LF1M4IL3ZUQfJ2q0eUCSF_E-xNj"><span class="pdf">DRIVE</span><div><b>Dossier du cours ↗</b><small>Biophysique → Pr. Bouzoubaa → Cours</small></div></a><a class="resource" target="_blank" rel="noopener" href="https://ayooub55.github.io/ayooub/#/f/biophy-radiologie"><span class="pdf">WEB</span><div><b>Fiche intégrée au site ↗</b><small>Notes, surlignage & progression</small></div></a></div><p class="source-note">Synthèse pédagogique indépendante du support biopc.pdf de Pr. BOUZOUBAA Sidi Mohammed, Université Hassan II de Casablanca, Faculté de Médecine Dentaire. Ne remplace pas le cours original. Les liens Drive nécessitent une connexion Internet ; le reste fonctionne hors ligne.</p></section>
+<footer><a href="#" class="brand" style="font-size:19px">radiologie.</a><span>Comprendre l’image, une notion à la fois.<br>HTML autonome · Français + Darija</span><a href="#">Retour en haut ↑</a></footer>
+</main>
+<dialog id="lessonDialog" aria-labelledby="lessonTitle"><div class="dialogbar"><span class="eyebrow" id="lessonCategory"></span><div class="reading-tools"><button id="backToPlan">Plan ↑</button><button class="close" id="closeDialog" aria-label="Fermer la section">×</button></div></div><article class="lesson" id="lessonContent"></article></dialog>
 <script>
-(function(){
-  var good=0, total=document.querySelectorAll('.qcm-q').length, done={};
-  var score=document.getElementById('qcm-score');
-  function upd(){
-    score.textContent=good+' / '+total+(good===total?' 🎉':'');
-    score.className='qcm-score'+(good===total?' full':(good>0&&good<Math.ceil(total/2)?' low':''));
+const CH=["Partie I · Principes physiques des RX","Partie II · Initiation à la radiologie","Partie III · Radiobiologie & radioprotection"];
+const lessons=[{"title":"Le plan du cours (ordre du Drive / du PDF)","sub":"biopc.pdf · Partie I","chapter":0,"icon":"🗺","time":"3 min","keywords":"plan semestre S1 S3 S6 S8 panoramique cone beam IRM échographie","desc":"Le plan du cours dans l’ordre du Drive / du PDF : les 3 parties du S1 et les chapitres à venir (S3, S6, S8).","goal":"Situer chaque chapitre du module dans le bon semestre et voir ce que couvre biopc.pdf.","content":"\n      <p>Le fichier <b>biopc.pdf</b> (Drive : <i>Biophysique → Pr. Bouzoubaa → Cours</i>) regroupe les <b>3 parties du S1</b>. Les parties 4 à 7 tombent plus tard dans le cursus — le prof les annonce dès le plan :</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>#</th><th>Chapitre</th><th>Semestre</th><th>Dans cette fiche</th></tr>\n        <tr><td>1</td><td><b>Principes physiques des rayons X</b> (historique, définition, production, interactions)</td><td><b>S1</b></td><td>Sections 2 → 6</td></tr>\n        <tr><td>2</td><td><b>Initiation à la radiologie</b> (définition, schéma général : source, objet, détecteurs, géométrie)</td><td><b>S1</b></td><td>Sections 7 → 13</td></tr>\n        <tr><td>3</td><td><b>Radiobiologie / radioprotection</b></td><td><b>S1</b></td><td>Sections 14 → 22</td></tr>\n        <tr><td>4</td><td>Incidences standards : intra-orales (rétroalvéolaire, rétro-coronaire, occlusal) / extra-orales (téléradiographie de profil, face)</td><td>S3 / S6</td><td>—</td></tr>\n        <tr><td>5</td><td>Incidence tomographique : panoramique</td><td>S6</td><td>—</td></tr>\n        <tr><td>6</td><td>Incidence volumétrique 3D : scanner, cone beam</td><td>S8</td><td>—</td></tr>\n        <tr><td>7</td><td>Examens complémentaires : IRM, échographie…</td><td>—</td><td>—</td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>La <b>triade de la radiologie</b> traverse tout le cours : <b>source RX → objet → détecteur</b>. Garde-la en tête : chaque section du cours décrit un maillon de cette chaîne.</div>"},{"title":"Historique : Röntgen, 1895","sub":"biopc.pdf · Partie I","chapter":0,"icon":"📜","time":"3 min","keywords":"röntgen 1895 nobel 1901 découverte main film x rays","desc":"1895 : Röntgen, tube sans air, anode et cathode, film sensibilisé à distance… et le prix Nobel 1901.","goal":"Retenir les éléments clés de la découverte : vide, film à distance, main, Nobel.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Élément</th><th>Détail</th></tr>\n        <tr><td><b>1895</b></td><td><b>Wilhelm Conrad Röntgen</b> découvre les rayons X</td></tr>\n        <tr><td><b>1901</b></td><td><b>Prix Nobel</b> (le tout premier prix Nobel de physique)</td></tr>\n        <tr><td>Expérience</td><td>Production des RX dans un <b>tube en absence d’air</b>, avec <b>anode et cathode</b></td></tr>\n        <tr><td>Preuve</td><td><b>Sensibilisation d’un film à distance</b> de l’expérience : il photographie le <b>squelette de sa main</b></td></tr>\n        <tr><td>Noms</td><td>Ry X · <b>X rays</b> · الأشعة السينية</td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Trois mots-clés de l’expérience à placer dans un QCM : <b>vide</b> (tube sans air), <b>film sensibilisé à distance</b>, <b>main de Mme/ M. Röntgen</b> → le rayon X traverse la matière et impressionne un film sans contact.</div><div class=\"note darija\"><b>B darija :</b> Röntgen ma 7tajch yfssed l-jism — l-film tsejjel bo7do mn b3id, w l-3dam dyal l-yed bano fih. Hadchi 3lach kanet sda9a kbira : chwft l-dakhel bla ma tqssed.</div>"},{"title":"Définition du rayon X","sub":"biopc.pdf · Partie I","chapter":0,"icon":"⚡","time":"3 min","keywords":"spectre fréquence longueur d’onde énergie électronvolt pénétrant hertz","desc":"Le rayon X : rayonnement électromagnétique très pénétrant — fréquences, longueurs d’onde, énergie des photons.","goal":"Situer les RX dans le spectre électromagnétique avec les ordres de grandeur.","content":"\n      <p>Le rayon X est un <b>rayonnement électromagnétique</b>, de même nature que les ondes radio, la lumière visible ou les infrarouges — mais <b>très pénétrant</b>.</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Grandeur</th><th>Valeur</th></tr>\n        <tr><td>Fréquences</td><td><b>10¹⁶ Hz à 10²⁰ Hz</b></td></tr>\n        <tr><td>Longueurs d’onde</td><td>de l’ordre de <b>10⁻⁸ à 10⁻¹² m</b></td></tr>\n        <tr><td>Énergie des photons X</td><td><b>40 eV à 4·10⁵ eV</b></td></tr>\n        <tr><td>Propriété clé</td><td>Rayon X = <b>très pénétrant</b></td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>SPECTRE ÉLECTROMAGNÉTIQUE (λ décroissantes → énergie croissante)\nondes radio › micro-ondes › infrarouge › lumière visible › UV › ➤ RAYONS X ➤ › gamma\n                                                          10⁻⁸ … 10⁻¹² m</pre></figure>\n      <div class=\"note\"><b>✦ À retenir : </b>Plus la longueur d’onde est <b>courte</b>, plus le photon est <b>énergétique</b> et <b>pénétrant</b>. C’est pour ça que les RX traversent les tissus mous mais sont arrêtés par l’os.</div>"},{"title":"Production des RX : le tube de Coolidge","sub":"biopc.pdf · Partie I","chapter":0,"icon":"🔌","time":"4 min","keywords":"coolidge tube cathode anode tungstène vide freinage anode tournante piste","desc":"Tube de Coolidge : cathode de tungstène chauffée, accélération sous vide, bombardement de l’anode, émission par freinage ; anode tournante.","goal":"Décrire les 4 étapes de la production des RX dans l’ordre.","content":"\n      <p>Les faisceaux utilisés en médecine sont produits par des <b>« tubes à rayons X »</b> ou <b>tube de Coolidge</b> : un tube de verre où règne un <b>vide poussé</b>.</p>\n      <figure class=\"sch\"><pre>TUBE DE COOLIDGE (vide poussé)\n  CATHODE (tungstène chauffée)          ANODE = cible (anti-cathode)\n        │  ① extraction des électrons          │\n        │  ② accélération par la tension       │\n        └──────────► ③ bombardement ──────────►│\n                                       ④ interactions de FREINAGE\n                                          ⇒ ÉMISSION DE RAYONS X</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Étape</th><th>Ce qui se passe</th></tr>\n        <tr><td>① Extraction</td><td>Les électrons sont extraits d’une <b>cathode de tungstène chauffée</b></td></tr>\n        <tr><td>② Accélération</td><td>Ils sont accélérés par une <b>tension électrique</b> dans le tube sous vide</td></tr>\n        <tr><td>③ Bombardement</td><td>Le faisceau bombarde une <b>cible métallique</b> = <b>anode</b> (ou anti-cathode)</td></tr>\n        <tr><td>④ Émission</td><td>Conséquence des <b>interactions (freinage)</b> entre électrons rapides et particules de la cible</td></tr>\n      </table></div>\n      <p><b>Anode tournante :</b> le faisceau d’électrons la frappe sur sa <b>partie périphérique</b> — une <b>piste en tungstène</b> dont l’orientation est <b>oblique</b> par rapport au faisceau d’électrons. La rotation répartit la chaleur et permet des expositions répétées.</p>\n      <div class=\"note\"><b>✦ À retenir : </b>L’émission de RX vient du <b>freinage</b> des électrons sur la cible — pas de la chaleur, pas de la cathode. Vide poussé = condition sine qua non (sinon les électrons percutent l’air).</div>"},{"title":"Interaction avec la matière : l’effet photoélectrique","sub":"biopc.pdf · Partie I","chapter":0,"icon":"🎯","time":"4 min","keywords":"photoélectrique absorption couche profonde photoélectron 70 kV contraste ion","desc":"Effet photoélectrique : électron de couche profonde, photon absorbé, photoélectron et ion positif ; effet majeur sous 70 kV.","goal":"Expliquer pourquoi l’effet photoélectrique crée le contraste radiographique.","content":"\n      <p>En radiodiagnostic, l’interaction RX / matière organique comprend essentiellement <b>l’effet photoélectrique</b> et <b>l’effet Compton</b>. Comprendre ces mécanismes = comprendre l’<b>atténuation sélective</b> du faisceau, donc le <b>contraste</b> de l’image.</p>\n      <p><b>Mécanisme :</b> un rayon X arrive à proximité d’un <b>électron d’une couche profonde</b> avec assez d’énergie pour l’<b>éjecter</b>. Le rayon X est <b>absorbé</b> ; le trop-plein d’énergie part dans l’<b>énergie cinétique du « photoélectron »</b>. Le « trou » laissé est rempli par un électron d’une couche plus superficielle, qui laisse échapper un <b>rayon X caractéristique de faible énergie</b> lors de sa « descente ».</p>\n      <figure class=\"sch\"><pre>Photon X ──► électron couche PROFONDE ──► éjection (photoélectron)\n   │                                        │\n   │ photon ABSORBÉ (arrêt du RX)           ├─► effets biologiques néfastes possibles\n   ▼                                        └─► ion POSITIF\nRX caractéristique de faible énergie (sans effet significatif)</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Résultat de l’effet photoélectrique</th></tr>\n        <tr><td><b>Arrêt du rayon X</b> (le RX caractéristique est trop faible pour compter)</td></tr>\n        <tr><td>Production d’un <b>photoélectron</b> (effets biologiques néfastes possibles)</td></tr>\n        <tr><td>Production d’un <b>ion positif</b></td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Effet <b>principal</b> dans les matières organiques pour des RX de <b>faible énergie</b> : effet majeur pour des tensions <b>inférieures à 70 kV</b>. C’est lui qui donne le <b>contraste</b> (absorption sélective selon le tissu).</div><div class=\"note darija\"><b>B darija :</b> f l-effet photoélectrique l-photon kaytbla3 kamel — l-3dam kaywqef l-RX temma, 3lach hadchi l-3dam kayban abyad f l-cliché.</div>"},{"title":"L’effet Compton + comparaison des deux effets","sub":"biopc.pdf · Partie I","chapter":0,"icon":"💥","time":"4 min","keywords":"compton diffusion densité électron libre 100 kV voile danger numéro atomique","desc":"Effet Compton : électron périphérique « libre », photon diffusé dans une direction aléatoire ; dépend de la densité ; prépondérant au-dessus de 100 kV.","goal":"Opposer Compton et photoélectrique (électron visé, sort du photon, facteurs, tension).","content":"\n      <p><b>Mécanisme :</b> un rayon X passe à proximité d’un <b>électron périphérique peu lié</b> à l’atome (parfois appelé électron « libre »). L’énergie du RX est transmise <b>en partie</b> à l’électron, qui s’échappe avec une certaine énergie cinétique ; le reste repart sous forme d’un <b>rayon X de direction différente et d’énergie inférieure</b>.</p>\n      <figure class=\"sch\"><pre>Photon X ──► électron PÉRIPHÉRIQUE (peu lié)\n   │                │\n   │                └─► électron éjecté + ion POSITIF\n   ▼\nRX DIFFUSÉ : direction ALÉATOIRE, énergie inférieure\n   ⇒ diffusion dans TOUTES les directions (même vers l'arrière)</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Résultat de l’effet Compton</th></tr>\n        <tr><td><b>Déviation + perte d’énergie</b> du rayon X ; électron + ion positif</td></tr>\n        <tr><td>Direction <b>aléatoire</b> → <b>diffusion</b> du faisceau dans toutes les directions (y compris en sens opposé au faisceau primaire)</td></tr>\n        <tr><td>Rayonnement diffusé encore assez énergétique pour <b>voiler l’image</b> et <b>constituer un danger</b> → il faut s’en protéger</td></tr>\n        <tr><td>Probabilité d’interaction : dépend <b>uniquement de la densité</b> du matériel, <b>pas du numéro atomique</b></td></tr>\n        <tr><td>Prépondérant dans les tissus organiques à <b>forte énergie</b> : tension <b>&gt; 100 kV</b></td></tr>\n      </table></div>\n      <div class=\"tablewrap\"><table>\n        <tr><th></th><th>Effet photoélectrique</th><th>Effet Compton</th></tr>\n        <tr><td>Électron visé</td><td>Couche <b>profonde</b></td><td>Couche <b>périphérique</b>, peu lié (« libre »)</td></tr>\n        <tr><td>Sort du photon</td><td><b>Absorbé</b> (arrêt du RX)</td><td><b>Diffusé</b>, dévié, énergie inférieure</td></tr>\n        <tr><td>Dépend de</td><td>Numéro atomique (Z) / énergie faible</td><td><b>Densité</b> seulement / énergie forte</td></tr>\n        <tr><td>Domaine de tension</td><td>Majeur <b>&lt; 70 kV</b></td><td>Prépondérant <b>&gt; 100 kV</b></td></tr>\n        <tr><td>Conséquence image</td><td><b>Contraste</b> (atténuation sélective)</td><td><b>Voile / flou</b> + danger (diffusion)</td></tr>\n        <tr><td>Produits communs</td><td colspan=\"2\">Électron + <b>ion positif</b> dans les deux cas</td></tr>\n      </table></div><div class=\"note darija\"><b>B darija :</b> Compton howa l-fogaga dyal l-faisceau : l-photon kaytfrrqech f kol jiha, kayghbbrech l-image w kayzid l-khatar. Kayzid ghir m3a l-kathafa (densité), bla cha’n dyal l-numéro atomique.</div>"},{"title":"Définition de la radiologie & schéma général","sub":"biopc.pdf · Partie II","chapter":1,"icon":"🩻","time":"3 min","keywords":"radiologie définition triade source objet détecteur prescription schéma","desc":"Définition de la radiographie et schéma général : le patient entre le foyer radiogène et le récepteur ; examen justifié par prescription.","goal":"Schématiser la triade source → objet → détecteur et citer la règle de justification.","content":"\n      <p><b>La radiographie</b> est un procédé d’imagerie qui permet de <b>visualiser les structures anatomiques internes</b> au moyen de <b>faisceaux de rayons X traversant le patient</b>. Technique utilisée pour <b>affiner un diagnostic</b> afin de réaliser un traitement adapté.</p>\n      <div class=\"note\"><b>✦ À retenir : </b>Règle légale et éthique : la réalisation d’un examen radiographique doit être <b>justifiée par la prescription d’un médecin</b>.</div>\n      <figure class=\"sch\"><pre>SCHÉMA GÉNÉRAL DE LA RADIOLOGIE (le patient ENTRE la source et le récepteur)\n\n   FOYER RADIOGÈNE          PATIENT (région à radiographier)        RÉCEPTEUR\n   (tube à rayons X)   ──►   les RX interagissent avec les tissus  ──►  (film radiographique)\n        SOURCE                         OBJET                          DÉTECTEUR\n                            + FORMATIONS GÉOMÉTRIQUES de l'image</pre></figure>\n      <p>Lors de l’examen, le sujet (la région anatomique dont on veut former l’image) est placé <b>entre le foyer radiogène (tube) et le récepteur (film)</b> ; les RX sont projetés à travers le corps et interagissent avec les tissus.</p>"},{"title":"2-2-1 · La source : mA, kV, générateur, filtration, collimation","sub":"biopc.pdf · Partie II","chapter":1,"icon":"🎛","time":"5 min","keywords":"mA kV générateur transformateur filtration aluminium collimation cône temps laser","desc":"mA, kV, générateur haute fréquence, transformateur, filtration aluminium, temps, long cône, collimation, laser : toute la source.","goal":"Prédire l’effet de chaque paramètre de la source sur l’image et sur la dose.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Paramètre</th><th>Rôle / ce que dit le cours</th></tr>\n        <tr><td><b>Intensité (mA)</b></td><td>Le <b>nombre de photons</b> → degré de <b>noirceur</b> de l’image sur le film. Générateurs actuels : <b>4 à 8 mA</b></td></tr>\n        <tr><td><b>Tension (kV)</b></td><td>L’<b>énergie du photon</b>. Il faut un maximum de RX au récepteur → faisceau <b>homogène</b>, photons d’énergie suffisante et similaire</td></tr>\n        <tr><td><b>Générateur</b></td><td>Le courant alternatif change de sens toutes les demi-périodes, soit <b>50 fois par seconde</b> ; les générateurs <b>« haute fréquence »</b> = avancée technologique majeure</td></tr>\n        <tr><td><b>Transformateur</b></td><td>Convertit le <b>220 V</b> en haute tension <b>60 000 – 70 000 V (60 à 70 kV)</b></td></tr>\n        <tr><td><b>Filtration</b></td><td>Ne laisse passer que les photons d’<b>énergie adéquate</b>. L’<b>aluminium</b> filtre le mieux : plaque de <b>1 à 3 mm</b> ; pour un générateur ≤ 70 kV → filtration équivalente à <b>1,5 mm d’Al</b></td></tr>\n        <tr><td><b>Temps d’exposition</b></td><td>Le <b>nombre de photons par seconde</b></td></tr>\n        <tr><td><b>Longueur du tube</b></td><td>Rôle important dans la qualité d’image : localisateur <b>long cône de 30 ou 40 cm</b> → technique « long cône »</td></tr>\n        <tr><td><b>Collimation</b></td><td><b>Réduire le diamètre du faisceau</b> (moins de diffusion, moins de dose)</td></tr>\n        <tr><td><b>Guidage laser</b></td><td>Guidage par <b>faisceau laser</b> pour le positionnement</td></tr>\n      </table></div>\n      <p><b>Effet de la tension (kV) :</b> les nouveaux générateurs à <b>60-70 kV</b> produisent des rayons <b>plus pénétrants</b> → images <b>moins contrastées</b>.</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Tension</th><th>Contraste</th><th>Dose d’irradiation</th></tr>\n        <tr><td><b>Faible</b></td><td>Augmente le contraste</td><td>Augmente la dose</td></tr>\n        <tr><td><b>Élevée</b></td><td>Diminue le contraste</td><td>Diminue la dose</td></tr>\n        <tr><td><b>&gt; 90-100 kV</b></td><td colspan=\"2\">Contraste <b>insuffisant</b> : on n’augmente pas indéfiniment</td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>FICHE TECHNIQUE TYPE D'UN GÉNÉRATEUR DENTAIRE (diapos du cours)\nTension du tube            60 – 70 kV          Fréquence         50 / 60 Hz\nCourant du tube            4 – 7 mA            Filtration totale min. 2,0 mm Al\nFoyer du tube              0,4 mm (CEI 336)    Temps d'exposition  0,04 à 2 s\nCompatibilité : film argentique · écran à mémoire · capteur digital\nBras : court 1,81 m · moyen 1,96 m · long 2,26 m — montage mural\nGénérateur CC haute fréquence : réduit la dose du patient de PLUS DE 25 %</pre></figure><div class=\"note darija\"><b>B darija :</b> mA = ch7al mn photon (hiya li kat3ti l-noirceur) ; kV = ch7al qwi kol photon. Zid l-kV → contraste kaynqes walakin l-dose katnqes m3ah. Ma t3kssch !</div>"},{"title":"2-2-2 · L’objet : pourquoi l’image est blanche, grise ou noire","sub":"biopc.pdf · Partie II","chapter":1,"icon":"🦴","time":"3 min","keywords":"radio-opaque radio-claire gris os air absorption blanc noir tissus mous","desc":"Pourquoi l’os est blanc, les tissus mous gris et l’air noir : coefficients d’absorption et échelle des gris.","goal":"Expliquer les trois aspects radiographiques par l’absorption des tissus.","content":"\n      <p>Le comportement des tissus devant les RX dépend de leur <b>coefficient d’absorption</b> :</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Structure</th><th>Absorption</th><th>Sur le cliché</th></tr>\n        <tr><td><b>Dense (os, émail…)</b></td><td>Coefficient d’absorption <b>très élevé</b> → très opaques aux photons</td><td><b>BLANC</b> (radio-opaque)</td></tr>\n        <tr><td><b>Intermédiaire (tissus mous)</b></td><td>Coefficient légèrement plus faible → peu opaques</td><td><b>GRIS</b> (différents tons)</td></tr>\n        <tr><td><b>Aérique (air)</b></td><td>Laissent passer la <b>quasi-totalité</b> des rayonnements</td><td><b>SOMBRE / NOIR</b> (radio-claire)</td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>RADIO-OPAQUE (blanc)  ›  NIVEAU DE GRIS  ›  RADIO-CLAIRE (noir)\n   structure minéralisée      structures intermédiaires     structure NON minéralisée</pre></figure>\n      <div class=\"note\"><b>✦ À retenir : </b>Radio-opaque = arrête les RX (blanc) · radio-claire = laisse passer les RX (noir). Toute la sémiologie radiologique repose sur cette échelle de gris.</div>"},{"title":"2-2-3-1 · Détecteur analogique : le film radiographique","sub":"biopc.pdf · Partie II","chapter":1,"icon":"🎞","time":"4 min","keywords":"film argentique AgBr acétate gélatine emballage plomb formats 31x41 occlusal","desc":"Film argentique : support acétate, gélatine, émulsion AgBr ; emballage papier noir + plomb + plastique ; formats des films.","goal":"Connaître la composition du film, le rôle de chaque emballage et les dimensions.","content":"\n      <p>Le film radiographique a <b>deux principaux composants</b> : le <b>film proprement dit</b> et l’<b>emballage</b>.</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Composant</th><th>Détail</th></tr>\n        <tr><td><b>Support</b></td><td>En <b>acétate de cellulose</b></td></tr>\n        <tr><td><b>Gélatine</b></td><td>Suspend l’émulsion sur le support</td></tr>\n        <tr><td><b>Émulsion photographique</b></td><td>Constituée de <b>cristaux de bromures d’argent</b> (AgBr) — c’est elle qui capte les RX</td></tr>\n        <tr><td>Usage</td><td>Ces détecteurs ne servent qu’<b>une seule fois</b></td></tr>\n      </table></div>\n      <p><b>Emballage (3 éléments) :</b></p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Élément</th><th>Rôle</th></tr>\n        <tr><td><b>Papier noir</b></td><td>Protection (lumière)</td></tr>\n        <tr><td><b>Feuille de plomb</b></td><td>Arrête les <b>RX diffusés</b> (rayonnement rétro-diffusé)</td></tr>\n        <tr><td><b>Enveloppe plastique</b></td><td>Protection (humidité)</td></tr>\n      </table></div>\n      <p><b>Formats des films intra-oraux :</b></p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Type de cliché</th><th>Dimensions</th></tr>\n        <tr><td>Rétro-alvéolaire <b>adulte</b></td><td><b>31 × 41 mm</b></td></tr>\n        <tr><td>Rétro-alvéolaire <b>enfant</b></td><td><b>22 × 35 mm</b></td></tr>\n        <tr><td><b>Occlusal</b></td><td><b>57 × 76 mm</b></td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Le film est <b>sensible à la lumière et à l’humidité</b> → d’où le papier noir + l’enveloppe plastique. La feuille de plomb, elle, combat le <b>rayonnement diffusé</b> (celui de l’effet Compton !).</div>"},{"title":"2-2-3-1 · Développement du film : 5 étapes + monobain","sub":"biopc.pdf · Partie II","chapter":1,"icon":"🧪","time":"5 min","keywords":"développement révélation fixation rinçage lavage séchage monobain 20 °C hyposulfite","desc":"Les 5 étapes du développement (révélation, rinçage, fixation, lavage, séchage) + monobain : durées et températures.","goal":"Remettre les étapes dans l’ordre et expliquer le rôle de chaque bain.","content":"\n      <figure class=\"sch\"><pre>TRAITEMENT DU FILM ARGENTIQUE\n① RÉVÉLATION  →  ② RINÇAGE  →  ③ FIXATION  →  ④ LAVAGE FINAL  →  ⑤ SÉCHAGE</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Étape</th><th>Ce qui se passe / chiffres</th></tr>\n        <tr><td><b>1. Révélation</b></td><td>Processus <b>physico-chimique</b> : rendre visible l’<b>image latente</b> en réduisant la <b>totalité des ions Ag⁺ en atomes Ag</b>. Réaction : <b>Réducteur + Ag⁺ → Ag + réducteur oxydé</b>. Durée optimale : <b>5 minutes à 20 °C</b></td></tr>\n        <tr><td><b>2. Rinçage</b></td><td>Rinçage <b>intermédiaire</b> : élimine toute trace du révélateur (<b>basique</b>) et <b>arrête son effet</b> → évite de souiller et d’altérer le fixateur (<b>acide</b>)</td></tr>\n        <tr><td><b>3. Fixation</b></td><td>Les cristaux de bromure d’argent <b>non atteints par un photon</b> ne sont pas modifiés par le révélateur et doivent être <b>éliminés</b> : dissolution du bromure non sensibilisé pour <b>empêcher un noircissement ultérieur</b>. Film lisible après 1-2 min mais à replacer au bain : <b>10 minutes au total à 20 °C</b></td></tr>\n        <tr><td><b>4. Lavage final</b></td><td>À l’<b>eau courante, 10 à 20 minutes</b> : élimine complètement l’<b>hyposulfite</b> et les <b>complexes d’argent</b> qui imprègnent la gélatine → prévient la formation d’un <b>voile jaune de sulfure</b></td></tr>\n        <tr><td><b>5. Séchage</b></td><td>À l’air libre ou courant d’air <b>sec tiède (30 à 40 °C)</b> sans poussière, <b>10 à 30 minutes</b></td></tr>\n      </table></div>\n      <p><b>Le monobain :</b> réalise <b>dans une même étape</b> la révélation de l’image latente <b>et</b> la fixation de l’image obtenue (seuls les sels d’argent sensibilisés subissent le révélateur ; les cristaux non sensibilisés sont dissous par le fixateur). Traitement <b>moins sensible à la température</b> et <b>plus court</b> : <b>8 minutes</b> avec monobain contre <b>15 minutes</b> en traitement classique.</p>\n      <div class=\"note\"><b>✦ À retenir : </b>Révélateur = <b>basique</b> · fixateur = <b>acide</b> → le rinçage intermédiaire protège le fixateur. Chiffres favoris des QCM : 5 min / 20 °C (révélation), 10 min (fixation), 10-20 min (lavage), 8 vs 15 min (monobain vs classique).</div><div class=\"note darija\"><b>B darija :</b> l-film b7al tsswira : ila ma dkhaltouch l-bains b tartib (révélation → rinçage → fixation → lavage → séchage), l-image katkhreb aw katwli safra m3a l-waqt (voile jaune).</div>"},{"title":"2-2-3-2 · Détecteur numérique : du photon au pixel","sub":"biopc.pdf · Partie II","chapter":1,"icon":"💾","time":"3 min","keywords":"numérique pixel matrice 256 gris capteur signal électrique 2D 3D","desc":"Numérique : photons → signaux électriques → image ; matrice de pixels, 256 niveaux de gris, détecteurs 2D et 3D.","goal":"Comparer détection analogique (chimie) et numérique (pixels).","content":"\n      <p>Les détecteurs numériques permettent la <b>transformation directe des photons en signaux électriques</b>, eux-mêmes transformés en image.</p>\n      <figure class=\"sch\"><pre>PHOTONS X ──► DÉTECTEUR ──► SIGNAUX ÉLECTRIQUES ──► IMAGE NUMÉRIQUE\n                              une MATRICE = unités de PIXELS\n                              palette de 256 NIVEAUX DE GRIS (0 → 255)</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Notion</th><th>Détail</th></tr>\n        <tr><td><b>Matrice</b></td><td>Constituée d’unités de <b>pixel</b> : chaque pixel porte une valeur de gris</td></tr>\n        <tr><td><b>Niveaux de gris</b></td><td>Palette de <b>256 niveaux</b> (comme l’échelle radio-opaque → radio-claire du film)</td></tr>\n        <tr><td><b>Détecteurs 2D</b></td><td>Capteurs plans (radiographie conventionnelle numérique)</td></tr>\n        <tr><td><b>Détecteurs 3D</b></td><td>Acquisition volumique (annoncée pour le scanner / cone beam, S8)</td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Analogique = chimie (AgBr, bains) · numérique = <b>photons → électrons → pixels</b>. Avantage pratique du numérique : <b>moins de dose</b> (voir partie radioprotection : 6× moins que les films D).</div>"},{"title":"2-2-4 · Formations géométriques de l’image","sub":"biopc.pdf · Partie II","chapter":1,"icon":"📐","time":"3 min","keywords":"géométrie conique ombre superposition déformation deuxième vue perpendiculaire profondeur","desc":"Image = ombre projetée conique en 2D : déformations, superpositions, perte de profondeur → 2ᵉ vue perpendiculaire.","goal":"Justifier la nécessité d’une deuxième incidence perpendiculaire.","content":"\n      <ul>\n        <li>La formation géométrique de l’image radiologique est une <b>ombre projetée</b> d’objets plus ou moins opaques aux RX.</li>\n        <li>L’image radiologique est une <b>représentation en 2 dimensions</b> d’une épaisseur complexe.</li>\n        <li>La <b>conicité du faisceau RX</b> et l’<b>orientation du rayon directeur</b> entraînent une <b>déformation</b> des structures radiographiées.</li>\n        <li>Il en résulte une <b>perte d’information</b> quant à la <b>position (profondeur)</b> et la <b>forme exacte</b> des objets.</li>\n        <li>Une <b>deuxième vue</b>, la plupart du temps avec une <b>incidence perpendiculaire</b> à la première, est nécessaire pour évaluer position et forme dans l’espace.</li>\n        <li>La projection obéit à des <b>règles géométriques très simples</b> : projection <b>conique</b>, images en <b>superposition</b>.</li>\n      </ul>\n      <figure class=\"sch\"><pre>   SOURCE ponctuelle ──faisceau CONIQUE──► OBJET ──► DÉTECTEUR\n        ⇒ ombre projetée, agrandissement, déformation, SUPERPOSITION\n        ⇒ 1 seul cliché = 2D : profondeur perdue  →  2 vues ⊥ nécessaires</pre></figure>\n      <div class=\"note\"><b>✦ À retenir : </b>Un cliché = une <b>ombre en 2D</b> : les structures se <b>superposent</b>. Toujours raisonner « quelle incidence complémentaire ? » devant une image unique.</div>"},{"title":"Radioprotection : définitions (irradiation vs exposition)","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🛡","time":"4 min","keywords":"radioprotection irradiation exposition radiobiologie ADN réparation mutation nécrose","desc":"Radioprotection, irradiation vs exposition, radiobiologie ; chronologie des réponses cellulaires (réparation, mutation, mort).","goal":"Distinguer irradiation (effet voulu) et exposition (effet fortuit).","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Terme</th><th>Définition du cours</th></tr>\n        <tr><td><b>Radioprotection</b></td><td>Ensemble de <b>mesures</b> permettant l’utilisation des <b>rayonnements ionisants (RI)</b> dans un but <b>diagnostique ou thérapeutique</b>, tout en <b>limitant le plus raisonnablement possible</b> les effets néfastes pour <b>les praticiens, les patients et le public</b></td></tr>\n        <tr><td><b>Irradiation</b></td><td>Les rayons sont utilisés pour en <b>obtenir un effet biologique déterminé</b> : <b>guérir un cancer / RADIOTHÉRAPIE</b></td></tr>\n        <tr><td><b>Exposition</b></td><td>Les rayons qui entrent dans un volume sont <b>fortuits</b> (rayonnement naturel) ou délivrés <b>dans un autre but</b> que leur effet biologique (diagnostic ou interventionnel) : <b>imagerie médicale</b></td></tr>\n        <tr><td><b>Radiobiologie</b></td><td>L’<b>étude des effets des RI</b> (rayons X entre autres) de façon générale <b>sur les tissus vivants</b></td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>RÉPONSES DE LA CELLULE AU RAYONNEMENT IONISANT (schéma du cours)\nRI ─► effet DIRECT sur l'ADN            TEMPS : 10⁻¹⁵ s → 10⁻⁶ s → minutes/heures\n   ─► effet INDIRECT : radiolyse                     (réponses précoces)\n      de l'eau → RADICAUX LIBRES                    jours/années/générations\nLésions moléculaires (protéines, ADN, lipides)       (réponses tardives)\n   ├─ pas de réparation   → effet LÉTAL → mort cellulaire non contrôlée (nécrose) → pathologie tissulaire\n   ├─ réparation FAUTIVE  → MUTATION NON LÉTALE → anomalie héréditaire · CANCER · élimination immunitaire\n   └─ réparation FIDÈLE   → arrêt du cycle (p53…) → survie cellulaire normale</pre></figure>\n      <div class=\"note\"><b>✦ À retenir : </b>Irradiation = effet <b>voulu</b> (radiothérapie) · exposition = effet <b>subi/fortuit</b> (imagerie). En dentaire, nous sommes toujours dans le cas <b>exposition</b>.</div>"},{"title":"Types d’exposition aux rayonnements ionisants","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🌍","time":"3 min","keywords":"contamination externe interne inhalation ingestion blindage distance écran","desc":"Contamination externe (distance + écran y mettent fin) vs contamination interne (inhalation, ingestion : elle se poursuit).","goal":"Choisir la mesure de protection adaptée à chaque type d’exposition.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th></th><th>Contamination EXTERNE</th><th>Contamination INTERNE</th></tr>\n        <tr><td>Définition</td><td>Exposition <b>externe</b> aux rayonnements ionisants</td><td>Exposition <b>interne</b> aux <b>particules radioactives</b></td></tr>\n        <tr><td>Mécanisme</td><td>Personne exposée <b>de l’extérieur</b> à une source radioactive située <b>dans son voisinage</b></td><td><b>Inhalation</b> de particules radioactives présentes dans l’air · <b>ingestion</b> d’aliments contaminés · particules à <b>visée thérapeutique</b></td></tr>\n        <tr><td>Fin de l’exposition</td><td>Cesse dès que la source est <b>éloignée</b> ou qu’un <b>écran (blindage)</b> est interposé</td><td>Se <b>poursuit</b> tant que la source est <b>à l’intérieur</b> ou au contact du corps</td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Externe = on s’en protège par <b>distance + écran</b> · interne = la source est <b>dedans</b>, l’exposition continue. C’est la logique des 3 règles de protection (temps, distance, écran).</div>"},{"title":"Bases physiques : Gy, Sv, Wr, Wt et doses","sub":"biopc.pdf · Partie III","chapter":2,"icon":"⚖️","time":"5 min","keywords":"gray sievert dose absorbée efficace Wr Wt panoramique 2,4 mSv rads","desc":"Dose absorbée (Gy, mesurable) vs dose efficace (Sv, calculable) ; Sv = Gy × Wr × Wt ; doses du panoramique ; 2,4 mSv/an.","goal":"Calculer un Sv à partir d’un Gy et citer les repères (1 Gy = 1 Sv = 100 rads).","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Grandeur</th><th>Définition / unité</th></tr>\n        <tr><td><b>Dose absorbée (D)</b></td><td><b>Énergie transmise à l’unité de masse</b> ; s’exprime en <b>Gray (Gy)</b> : <b>1 Gy = 1 Joule/Kg</b>. Mesurable. C’est la dose reçue <b>localement</b> par le patient pour une exploration donnée ; directement corrélée aux paramètres d’exposition ; <b>ne tient pas compte</b> de la sensibilité des tissus</td></tr>\n        <tr><td><b>Dose efficace</b></td><td>Somme des doses délivrées aux organes <b>pondérées</b> par un coefficient proportionnel à la <b>sensibilité des tissus</b> ; exprime le <b>risque d’effets aléatoires</b> à l’échelon individuel ; traduit une irradiation locale en exposition globale équivalente corps entier. Unité : <b>Sievert (Sv)</b> — calculable, <b>non mesurable</b></td></tr>\n        <tr><td><b>Passage Gy → Sv</b></td><td>Deux facteurs de pondération : <b>Wr</b> (qualité du rayonnement) et <b>Wt</b> (nature du tissu irradié) → <b>Sv = Gy × Wr × Wt</b></td></tr>\n        <tr><td>Repères</td><td><b>1 Gy = 1 Sv = 100 rads</b> · irradiation naturelle en France : <b>2,4 mSv/an</b></td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>Gray  = MESURE de la dose absorbée (énergie/masse, J/Kg)  → mesurable\nSievert = ÉVALUATION du RISQUE BIOLOGIQUE (pondérations)   → calculable, non mesurable\n                    Sv = Gy × Wr × Wt</pre></figure>\n      <p><b>Doses reçues par les organes sensibles lors d’un cliché panoramique :</b></p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Organe</th><th>Dose (mSv)</th></tr>\n        <tr><td>Hypophyse</td><td>0,05</td></tr>\n        <tr><td>Thyroïdes</td><td>0,05</td></tr>\n        <tr><td><b>Glandes salivaires</b></td><td><b>0,39</b> (la plus exposée)</td></tr>\n        <tr><td>Surfaces osseuses</td><td>0,06</td></tr>\n        <tr><td>Moelle osseuse</td><td>0,01</td></tr>\n        <tr><td>Équivalent de doses efficaces</td><td>0,03</td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Gy = physique (mesurable) · Sv = biologique (calculé). Au panoramique, l’organe le plus irradié = <b>glandes salivaires (0,39 mSv)</b>.</div><div class=\"note darija\"><b>B darija :</b> Gy = ch7al mn énergie tkatbat f l-kilo ; Sv = ch7al mn khatar 3la l-jism. Nefs l-dose ma3ndch nefs l-khatar f l-thyroïde w f l-peau — 3lach hadchi kayn Wr w Wt.</div>"},{"title":"Effets des rayonnements : déterministes vs aléatoires","sub":"biopc.pdf · Partie III","chapter":2,"icon":"☣️","time":"5 min","keywords":"déterministes stochastiques aléatoires seuil cancer radicaux libres radiolyse malformations","desc":"Lésions moléculaires (ADN, radiolyse de l’eau, radicaux libres) ; effets déterministes vs stochastiques : seuil, gravité, exemples.","goal":"Classer un effet clinique en déterministe ou stochastique et justifier.","content":"\n      <p><b>Effets cliniques :</b> trois sites d’effets — <b>lésions cellulaires</b>, <b>lésions moléculaires</b>, <b>effets sur les tissus humains</b> — et des effets <b>cumulatifs</b>.</p>\n      <p><b>Lésions moléculaires :</b> toutes les molécules de l’organisme peuvent être modifiées ; deux sont particulièrement touchées : l’<b>ADN</b> (modifications du patrimoine génétique) et la <b>molécule d’eau</b> (<b>70 % du poids de l’homme</b>). H₂O : <b>radiolyse</b> avec formation de <b>radicaux libres</b>, capables de modifier des liaisons chimiques, induire des lésions moléculaires, inactiver des enzymes ou dégrader des macromolécules.</p>\n      <p><b>Effets sur les tissus :</b> deux types chez l’homme — effets <b>obligatoires ou déterministes</b> (secondaires aux lésions <b>létales</b>) et effets <b>aléatoires ou stochastiques</b> (secondaires aux lésions <b>non létales</b>).</p>\n      <div class=\"tablewrap\"><table>\n        <tr><th></th><th>Effets DÉTERMINISTES</th><th>Effets ALÉATOIRES (stochastiques)</th></tr>\n        <tr><td>Nature</td><td><b>Non stochastiques</b>, obligatoires</td><td>Probabilistes (« plus de risque »)</td></tr>\n        <tr><td>Seuil</td><td>À partir d’un <b>seuil déterminé</b> : jamais si dose &lt; D seuil, <b>à coup sûr</b> si dose &gt; D seuil</td><td>Se produisent à <b>faible ou forte dose</b> (pas de seuil)</td></tr>\n        <tr><td>Gravité</td><td><b>Croît avec la dose</b></td><td><b>Indépendante de la dose</b></td></tr>\n        <tr><td>Exemples</td><td>Fœtus ; tous les organes (gonades, tube digestif, peau, cerveau, moelle) ; myélite, perforation digestive, diarrhée, atteinte pulmonaire post-radique, céphalées, convulsions, œdème</td><td><b>Cancérogénèse</b> (cancers radio-induits) · <b>malformations congénitales héréditaires</b></td></tr>\n        <tr><td>Protection</td><td><b>Simple</b> : risque prévisible, « attendu » → mesures préventives</td><td><b>Complexe</b></td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Déterministe = <b>seuil + gravité dose-dépendante</b> · stochastique = <b>pas de seuil, gravité indépendante de la dose</b> (cancer, hérédité). Le cours insiste : effets <b>cumulatifs</b>.</div>"},{"title":"Les 3 principes généraux de la radioprotection","sub":"biopc.pdf · Partie III","chapter":2,"icon":"📏","time":"3 min","keywords":"justification optimisation limitation ALARA 20 mSv principes travailleurs","desc":"Justification, optimisation (ALARA), limitation : concepts et applications, dont les 20 mSv/an des travailleurs.","goal":"Appliquer les 3 principes à une situation clinique donnée.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Principe</th><th>Concept</th><th>Application</th></tr>\n        <tr><td><b>1. Justification</b></td><td>Les <b>avantages</b> (diagnostiques, thérapeutiques…) de l’exposition doivent l’<b>emporter sur les risques</b> et inconvénients potentiels ; le bénéfice pour le patient est <b>supérieur au risque encouru</b></td><td>Un examen impliquant des rayonnements doit être <b>médicalement indiqué et utile</b> ; pas d’exposition sans raison bénéfique claire (= prescription médicale)</td></tr>\n        <tr><td><b>2. Optimisation</b></td><td>Principe <b>ALARA</b> : « As Low As Reasonably Achievable » — aussi bas que raisonnablement possible ; s’applique <b>après</b> justification et limitation</td><td><b>Réduire la dose</b> et le <b>nombre de personnes exposées</b> ; utiliser les techniques les plus efficaces pour le résultat voulu avec la <b>dose la plus faible possible</b> ; image compatible avec l’objectif diagnostique</td></tr>\n        <tr><td><b>3. Limitation</b></td><td>Établit des <b>doses maximales à ne pas dépasser</b> : exigence <b>légale</b> pour rester dans des limites acceptables</td><td>Limites fixées par groupes (professionnels, étudiants, public) ; ex. : <b>limite annuelle de 20 millisieverts</b> pour les travailleurs exposés ; limiter examens et doses — <b>non appliquée si l’irradiation est thérapeutique</b></td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Ordre logique : <b>justifier → limiter → optimiser (ALARA)</b>. La limitation ne s’applique <b>pas</b> en radiothérapie (le bénéfice thérapeutique prime).</div><div class=\"note darija\"><b>B darija :</b> 1) Wach l-examen ghadi ynf3? (justification) · 2) Nqello l-dose b l-ma3qoul (optimisation / ALARA) · 3) Bla ma nfoto l-7doud l-qanouniya (limitation).</div>"},{"title":"Règles de protection : personnel, locaux, préalables","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🚧","time":"4 min","keywords":"temps distance écran blindage tablier dosimétrie films E/F digital panoramique ancien","desc":"Protection du personnel : temps, distance, écrans ; blindage des salles ; dispositifs protecteurs ; dosimétrie ; préalables (films D vs E/F vs digital).","goal":"Citer les 3 leviers de protection du personnel et la dosimétrie comparée.","content":"\n      <p><b>Protection du personnel soignant — le trio gagnant :</b></p>\n      <figure class=\"sch\"><pre>TEMPS  ↓   réduire le temps d'irradiation\nDISTANCE ↑  travailler à distance MAXIMALE de la source\nÉCRANS ■   utiliser des écrans protecteurs</pre></figure>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Mesure</th><th>Détail</th></tr>\n        <tr><td><b>Blindage des salles</b></td><td>Non-transmission du rayonnement aux salles avoisinantes, couloirs…</td></tr>\n        <tr><td><b>Normes de construction</b></td><td>Respect des normes de construction des salles de radiologie</td></tr>\n        <tr><td><b>Dispositifs protecteurs</b></td><td>Port de : <b>blouse (tablier plombé)</b>, <b>cache-thyroïdes</b>, <b>cache-gonades</b></td></tr>\n        <tr><td><b>Surveillance dosimétrique</b></td><td>Dosimètre pour le personnel exposé</td></tr>\n      </table></div>\n      <p><b>Préalables — dosimétrie comparée des examens dentaires :</b></p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Support</th><th>Dose par rapport aux films D</th></tr>\n        <tr><td>Films <b>E/F</b></td><td><b>2× moins</b> de dose que les films D</td></tr>\n        <tr><td><b>Détecteurs digitaux</b></td><td><b>6× moins</b> de dose que les films D — au prix d’une <b>moins bonne définition</b></td></tr>\n        <tr><td><b>Panoramiques anciens</b> (20 ans)</td><td><b>3× plus</b> de dose que les appareils récents</td></tr>\n        <tr><td>Règle</td><td><b>Pas d’installation de matériel de + de 25 ans</b></td></tr>\n      </table></div>\n      <div class=\"note\"><b>✦ À retenir : </b>Changer de support = lever de dose immédiat : D → E/F (÷2) → digital (÷6 vs D). Un panoramique vieux de 20 ans = ×3 de dose.</div>"},{"title":"Radioprotection en dentisterie : pendant le cliché","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🦷","time":"4 min","keywords":"cabinet dentaire 2 m 3 m cordon écran ininterrompu positions zones praticien","desc":"Pendant le cliché : sortir de la salle ou cordon ≈ 2 m ; conception : ≥ 3 m, écran ininterrompu ; positions autour du patient (vert/orange/rouge).","goal":"Ne jamais confondre 2 m (cordon) et 3 m (conception) ; situer les zones favorables.","content":"\n      <p><b>Personnel concerné :</b> chirurgiens-dentistes, médecins · assistantes dentaires · <b>toutes personnes susceptibles d’intervenir dans les locaux concernés</b>.</p>\n      <p><b>Lors de la prise du cliché, le praticien devra soit :</b></p>\n      <ul>\n        <li><b>sortir de la salle</b> dans le cas d’une commande située à l’extérieur ;</li>\n        <li><b>s’éloigner le plus possible du patient</b> (longueur du cordon recommandée : <b>environ 2 m</b>) en excluant toute présence dans le <b>faisceau direct</b>.</li>\n      </ul>\n      <p>Présence du praticien ou de l’assistant(e) à proximité immédiate du patient : <b>exceptionnellement justifiée</b>. Sauf justification particulière (enfants, personnes handicapées ou agitées…), les <b>accompagnants sortent de la salle</b> avant la prise de clichés.</p>\n      <p><b>Conception de la pièce / protection de l’opérateur :</b></p>\n      <div class=\"tablewrap\"><table>\n        <tr><th>Exigence</th><th>Détail</th></tr>\n        <tr><td>Faisceau primaire</td><td>L’opérateur demeure <b>à l’extérieur du faisceau primaire</b></td></tr>\n        <tr><td>Distance</td><td>Demeurer éloigné d’<b>au moins 3 mètres</b> du tube radiogène et du sujet</td></tr>\n        <tr><td>Écran</td><td>Écran de protection adéquat <b>transparent</b>, formant une <b>barrière ininterrompue</b></td></tr>\n        <tr><td>Blindage</td><td>Murs, planchers, plafonds et portes blindés selon la <b>distance</b>, la <b>haute tension maximale</b> du tube et la <b>charge de travail</b></td></tr>\n        <tr><td>Absorption</td><td>Absorption du faisceau primaire et du rayonnement parasite <b>aussi près que possible de la source</b></td></tr>\n        <tr><td>Direction du faisceau</td><td>Rayonnement primaire toujours dirigé vers une <b>section blindée ou inoccupée</b></td></tr>\n        <tr><td>Commandes</td><td>Installées <b>à l’extérieur de la pièce</b>, à distance suffisante du tube, ou derrière un écran protecteur convenable</td></tr>\n        <tr><td>Plans de travaux</td><td>Faire examiner les plans définitifs par le <b>service gouvernemental approprié</b> (construction / modification)</td></tr>\n      </table></div>\n      <p><b>En pratique — positions autour du patient :</b> représentation des positions à <b>50 cm (1 à 8)</b> et <b>100 cm (9 à 16)</b> autour du patient : zones <b>vertes</b> = positions favorables · zones <b>oranges</b> = positions à éviter · zone <b>rouge</b> = positions fortement déconseillées. <b>Attention :</b> ce code couleur ne correspond <b>aucunement</b> aux zones réglementaires.</p>\n      <div class=\"note\"><b>✦ À retenir : </b>Deux distances à ne jamais mélanger : <b>2 m</b> = cordon de commande du praticien resté dans la salle · <b>3 m</b> = distance minimale opérateur / tube + sujet pour la conception de la pièce.</div><div class=\"note darija\"><b>B darija :</b> 2 m = l-cordon dyal l-commande ila bqiti f la salle ; 3 m = l-massafa f l-conception bin l-opérateur, l-tube w l-patient. Ma tkhlattchom f l-QCM !</div>"},{"title":"Protection du patient & femme enceinte","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🤰","time":"3 min","keywords":"patient tablier plombé thyroïde panoramique femme enceinte fœtus µSv IRSN","desc":"Patient : entretien, tablier plombé, protecteur thyroïdien (enfant +++), tablier avant + arrière au panoramique ; femme enceinte : 0,3 à 1 µSv.","goal":"Protéger le patient et argumenter sereinement le risque fœtal.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Mesure</th><th>Détail</th></tr>\n        <tr><td><b>Entretien</b></td><td>Veiller à l’<b>entretien des appareils</b> de radiographie dentaire</td></tr>\n        <tr><td><b>Tablier plombé</b></td><td>Pour les <b>gonades</b></td></tr>\n        <tr><td><b>Protecteur thyroïdien</b></td><td><b>Enfant +++</b>, surtout pour l’examen radiographique de l’<b>occlusion maxillaire</b></td></tr>\n        <tr><td><b>Panoramique</b></td><td>Utiliser un tablier à protection <b>avant et arrière</b> (rayons postérieurs)</td></tr>\n      </table></div>\n      <p><b>Femme enceinte :</b></p>\n      <ul>\n        <li>Attention : femme en <b>période d’activité génitale</b> → risque d’être enceinte ; <b>précautions prises en tout temps</b> ; risque potentiellement <b>plus grave en début de grossesse</b>.</li>\n        <li><b>Mais :</b> dose délivrée au fœtus lors d’un examen dentaire estimée entre <b>0,3 et 1 microsievert (µSv)</b> ;</li>\n        <li><b>inférieure</b> à l’exposition naturelle quotidienne (<b>7 µSv</b>) reçue par le fœtus ;</li>\n        <li>le risque encouru par un fœtus exposé à quelques µSv lors d’un examen de radiologie dentaire est <b>extrêmement faible</b> (source : IRSN, France).</li>\n      </ul>\n      <div class=\"note\"><b>✦ À retenir : </b>Message d’examen : un cliché dentaire ≠ danger pour le fœtus (0,3-1 µSv &lt; 7 µSv/jour naturels) — mais les précautions restent de mise en toute circonstance.</div><div class=\"note darija\"><b>B darija :</b> l-fœtus kayakhod 0,3-1 µSv mn cliché dentaire — aqal mn li kayakhod kol nhar mn la nature (7 µSv). Walakin l-7tiyat dyalman wajibin.</div>"},{"title":"Récapitulatif final : NE PAS NUIRE","sub":"biopc.pdf · Partie III","chapter":2,"icon":"🧠","time":"3 min","keywords":"récapitulatif ALARA ne pas nuire synthèse codes réglementaires","desc":"Récap final : effets déterministes / aléatoires, les 3 règles, ALARA+++, objectif = NE PAS NUIRE.","goal":"Réciter la charpente de la radioprotection en cinq lignes.","content":"\n      <div class=\"tablewrap\"><table>\n        <tr><th>Bloc</th><th>À retenir</th></tr>\n        <tr><td>Effets des RI</td><td><b>Déterministes</b> : certains pour un seuil déterminé · <b>aléatoires</b> : plus de risque</td></tr>\n        <tr><td>Règles de la radioprotection</td><td><b>Justification · optimisation · limitation</b></td></tr>\n        <tr><td>Qui est concerné</td><td>Le <b>praticien</b>, le <b>patient</b>, l’<b>environnement</b></td></tr>\n        <tr><td>Cadres</td><td>Codes réglementaires <b>universels</b></td></tr>\n        <tr><td><b>OBJECTIF</b></td><td><b>NE PAS NUIRE</b></td></tr>\n        <tr><td><b>ALARA+++</b></td><td>« <b>A</b>s <b>L</b>ow <b>A</b>s <b>R</b>easonably <b>A</b>chievable » = <b>aussi bas que raisonnablement possible</b></td></tr>\n      </table></div>\n      <figure class=\"sch\"><pre>CHAÎNE COMPLÈTE VUE DANS CE COURS\nRX (tube de Coolidge) ─► matière (photoélectrique / Compton)\n   ─► OBJET (blanc / gris / noir) ─► DÉTECTEUR (film Ag → bains · numérique → pixels)\n   ─► IMAGE (ombre 2D, conique, superpositions)\n   ─► RISQUE (Gy → Sv) ─► PROTECTION (justification, optimisation, limitation)</pre></figure>"}];
+const questions=[["Qui découvre les rayons X en 1895 ?",["Wilhelm Conrad Röntgen","Marie Curie","Coolidge","Henri Becquerel"],0,"Röntgen, 1895 ; prix Nobel 1901. Il sensibilise un film à distance et photographie le squelette de sa main."],["Les longueurs d’onde des rayons X sont de l’ordre de :",["10⁻³ à 10⁻⁶ m","10⁻⁸ à 10⁻¹² m","1 à 10⁶ m","10⁻¹⁵ à 10⁻¹⁸ m"],1,"10⁻⁸ à 10⁻¹² m ; fréquences 10¹⁶-10²⁰ Hz ; énergies 40 eV à 4·10⁵ eV."],["Dans le tube de Coolidge, l’émission de rayons X résulte :",["De l’échauffement de la cathode","Des interactions de freinage des électrons rapides sur la cible","De la désintégration du tungstène","De la fluorescence du verre"],1,"Les électrons accélérés bombardent l’anode (cible) : le freinage produit les RX."],["L’anode tournante est frappée par le faisceau d’électrons :",["En son centre, piste en cuivre","Sur sa partie périphérique, piste en tungstène oblique","Sur sa face arrière, piste en plomb","Uniformément sur toute sa surface"],1,"Partie périphérique, piste tungstène orientée obliquement → dissipation de la chaleur."],["L’effet photoélectrique concerne un électron :",["Périphérique peu lié","D’une couche profonde","Du noyau","De la couche de valence uniquement"],1,"Couche profonde : le photon est ABSORBÉ, éjection d’un photoélectron + ion positif."],["L’effet photoélectrique est l’effet majeur pour des tensions :",["Supérieures à 100 kV","Inférieures à 70 kV","Comprises entre 90 et 100 kV","Indifférentes à la tension"],1,"< 70 kV : effet principal dans les matières organiques → c’est lui qui donne le contraste."],["La probabilité d’un effet Compton dépend :",["Du numéro atomique","Uniquement de la densité du matériel","De la couleur du tissu","De la température"],1,"Compton : densité seulement (≠ photoélectrique qui dépend du Z). Prépondérant > 100 kV."],["Le résultat de l’effet Compton comprend :",["Un photon absorbé totalement","Une déviation avec perte d’énergie + diffusion dans toutes les directions","Une augmentation d’énergie du photon","Aucun ion produit"],1,"Photon diffusé (direction aléatoire, énergie inférieure) + électron + ion positif ; voile et danger."],["La radiographie est justifiée par :",["La demande du patient","La prescription d’un médecin","Le choix de l’assistante","La disponibilité de l’appareil"],1,"Tout examen radiographique doit être justifié par une prescription médicale (principe de justification)."],["L’intensité (mA) du tube correspond :",["À l’énergie du photon","Au nombre de photons (noirceur de l’image)","À la filtration","À la distance foyer-film"],1,"mA = nombre de photons → noirceur ; générateurs actuels 4-8 mA. Le kV = énergie."],["Une faible tension (kV) :",["Diminue contraste et dose","Augmente le contraste et la dose d’irradiation","Augmente le contraste et diminue la dose","N’a aucun effet"],1,"Faible kV = +contraste +dose ; tension élevée = -contraste -dose ; > 90-100 kV contraste insuffisant."],["Pour un générateur ≤ 70 kV, la filtration doit équivaloir à :",["0,5 mm d’aluminium","1,5 mm d’aluminium","5 mm de plomb","3 mm de cuivre"],1,"Filtration conventionnelle en aluminium 1-3 mm ; équivalente à 1,5 mm Al si tension ≤ 70 kV."],["Sur un cliché, les structures aériques apparaissent :",["Blanches","Grises claires","Sombres ou noires","Jaunes"],2,"Elles laissent passer la quasi-totalité des rayonnements → radio-claires (noires). Os = blanc."],["L’émulsion du film radiographique est constituée de cristaux de :",["Bromure d’argent","Sulfate de baryum","Iodure de potassium","Carbonate de calcium"],0,"Cristaux de bromures d’argent (AgBr) suspendus dans la gélatine sur support acétate de cellulose."],["La feuille de plomb de l’emballage du film sert à :",["Protéger de la lumière","Arrêter les RX diffusés","Protéger de l’humidité","Rigidifier le film"],1,"Papier noir = lumière ; enveloppe plastique = humidité ; feuille de plomb = rayonnement diffusé."],["Dimensions du film rétro-alvéolaire adulte / occlusal :",["22×35 mm / 57×76 mm","31×41 mm / 57×76 mm","31×41 mm / 22×35 mm","24×30 mm / 50×70 mm"],1,"Rétro-alvéolaire adulte 31×41 mm ; enfant 22×35 mm ; occlusal 57×76 mm."],["Ordre correct du développement du film :",["Fixation → révélation → rinçage → lavage → séchage","Révélation → rinçage → fixation → lavage final → séchage","Rinçage → révélation → lavage → fixation → séchage","Révélation → fixation → rinçage → séchage → lavage"],1,"Révélation (5 min/20 °C) → rinçage → fixation (10 min/20 °C) → lavage (10-20 min) → séchage (30-40 °C)."],["Le monobain permet un traitement complet en :",["8 minutes contre 15 en classique","15 minutes contre 8 en classique","5 minutes à 20 °C","30 minutes à 40 °C"],0,"Monobain = révélation + fixation en une étape : 8 min vs 15 min, moins sensible à la température."],["La dose absorbée s’exprime en … et vaut … :",["Sievert ; 1 Sv = 1 J/Kg","Gray ; 1 Gy = 1 J/Kg","Rad ; 1 rad = 1 J/Kg","Gray ; 1 Gy = 100 J/Kg"],1,"Dose absorbée = Gy = 1 J/Kg (mesurable). Dose efficace = Sv (calculable). 1 Gy = 1 Sv = 100 rads."],["Pour passer du Gy au Sv, on fait intervenir :",["Wr (qualité du rayonnement) et Wt (nature du tissu)","Uniquement le temps d’exposition","La distance foyer-peau","Le numéro atomique du tissu"],0,"Sv = Gy × Wr × Wt : pondération qualité du rayonnement + sensibilité tissulaire."],["Lors d’un panoramique, l’organe le plus irradié est :",["La moelle osseuse (0,01 mSv)","L’hypophyse (0,05 mSv)","Les glandes salivaires (0,39 mSv)","La thyroïde (0,05 mSv)"],2,"Glandes salivaires 0,39 mSv ; équivalent de doses efficaces 0,03 mSv."],["Les effets déterministes :",["Se produisent à toute dose sans seuil","Ont un seuil : jamais en dessous, toujours au-dessus ; gravité ∝ dose","Ont une gravité indépendante de la dose","Sont toujours héréditaires"],1,"Non stochastiques : seuil déterminé, gravité croît avec la dose ; protection simple (prévisible)."],["Les effets aléatoires (stochastiques) comprennent :",["L’érythème cutané","La cataracte","Cancers radio-induits et malformations congénitales héréditaires","La radiolyse de l’eau"],2,"Cancérogénèse + effets héréditaires ; sans seuil, gravité indépendante de la dose ; protection complexe."],["Les 3 principes de la radioprotection sont :",["Justification, optimisation, limitation","Distance, temps, écran","Révélation, fixation, lavage","Absorption, diffusion, transmission"],0,"Justification (bénéfice > risque) · optimisation (ALARA) · limitation (doses max, ex. 20 mSv/an travailleurs)."],["ALARA signifie :",["As Low As Reasonably Achievable","Always Limit And Reduce Absorption","As Long As Radiation Applies","A Low And Reasonable Attenuation"],0,"« Aussi bas que raisonnablement possible » — principe d’optimisation."],["Pendant le cliché, si le praticien reste dans la salle, la longueur du cordon recommandée est :",["Environ 50 cm","Environ 2 m","Au moins 3 m","10 m"],1,"≈ 2 m pour s’éloigner du patient hors du faisceau direct ; 3 m = distance minimale de conception opérateur-tube-sujet."],["Chez l’enfant, le protecteur à privilégier (surtout pour l’occlusion maxillaire) est :",["Le tablier plombé gonadique","Le protecteur thyroïdien","Les lunettes plombées","Le cache-oreilles"],1,"Protecteur thyroïdien enfant +++ ; tablier plombé pour les gonades ; panoramique = tablier avant + arrière."],["Dose délivrée au fœtus lors d’un examen dentaire :",["0,3 à 1 µSv","7 mSv","20 mSv","2,4 Sv"],0,"0,3-1 µSv, inférieure à l’exposition naturelle quotidienne du fœtus (7 µSv) → risque extrêmement faible (IRSN)."],["Par rapport aux films D, les détecteurs digitaux délivrent :",["2× moins de dose","6× moins de dose","3× plus de dose","Autant de dose"],1,"Digital = 6× moins (définition moindre) ; films E/F = 2× moins ; panoramique ancien (20 ans) = 3× plus."],["L’image radiologique est une ombre projetée en 2D : pour évaluer la profondeur d’un objet il faut :",["Augmenter les kV","Une deuxième vue d’incidence perpendiculaire","Un film plus grand","Réduire la collimation"],1,"Projection conique = perte de la profondeur et déformation → 2ᵉ vue ⊥ à la première."]];
+const flashCards=[["Pourquoi le film noircit-il là où les RX passent ?","Les photons sensibilisent les cristaux d’AgBr ; la révélation réduit les Ag⁺ en argent métallique : plus de photons reçus, plus de noir après développement."],["Différence Gy / Sv en une phrase ?","Le Gy mesure l’énergie déposée par kg (physique, mesurable) ; le Sv pondère cette dose par Wr (rayonnement) et Wt (tissu) pour exprimer le risque biologique (calculable, non mesurable)."],["Pourquoi une 2ᵉ vue perpendiculaire ?","Le cliché est une ombre conique en 2D : la profondeur et la forme exacte sont perdues (superpositions) → une incidence perpendiculaire les retrouve."],["Praticien resté dans la salle : quelle distance ?","Cordon de commande ≈ 2 m, hors du faisceau direct ; la conception de la pièce exige ≥ 3 m entre l’opérateur, le tube et le sujet."],["Compton dépend de quoi ?","Uniquement de la DENSITÉ du matériel (pas du numéro atomique). Prépondérant > 100 kV : diffusion dans toutes les directions → voile et danger."]];
+/* Moteur de la page biopc/index.html — attend les globales : CH, lessons, questions, flashCards */
+const $ = id => document.getElementById(id);
+let done = [];
+try {
+  done = JSON.parse(localStorage.getItem('biopc-progress') || '[]');
+  if (!Array.isArray(done)) done = [];
+  done = done.filter(i => Number.isInteger(i) && i >= 0 && i < lessons.length);
+} catch (e) {}
+let filter = 'all';
+const normalize = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+function renderCards() {
+  const q = normalize($('search').value);
+  $('cards').innerHTML = lessons.map((l, i) => ({ ...l, i }))
+    .filter(l => (filter === 'all' || +l.chapter === +filter) && normalize(l.title + ' ' + l.desc + ' ' + l.keywords).includes(q))
+    .map(l => `<article class="card"><div class="cardtop"><span class="icon" aria-hidden="true">${l.icon}</span><span class="tag">${CH[+l.chapter]} · Section ${String(l.i + 1).padStart(2, '0')}</span></div><h3>${l.title}</h3><p>${l.desc}</p><div class="cardfoot"><span>${done.includes(l.i) ? '✓ Terminée' : l.time + ' de lecture'}</span><button class="read" data-lesson="${l.i}" aria-label="Lire la section ${l.title}">Explorer <span aria-hidden="true">↗</span></button></div></article>`).join('')
+    || '<p class="empty">Aucune section trouvée. Essaie « Compton », « Sievert » ou « film ».</p>';
+  $('progressText').textContent = `Ton parcours : ${done.length} / ${lessons.length} sections terminées`;
+  $('progress').style.width = done.length / lessons.length * 100 + '%';
+}
+$('cards').addEventListener('click', e => { const b = e.target.closest('[data-lesson]'); if (b) openLesson(+b.dataset.lesson); });
+document.querySelector('.toc').addEventListener('click', e => { const b = e.target.closest('[data-lesson]'); if (b) openLesson(+b.dataset.lesson); });
+
+function hydrateFigures() {}
+const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function openLesson(i) {
+  const l = lessons[i];
+  $('lessonCategory').textContent = `${CH[l.chapter]} · Section ${String(i + 1).padStart(2, '0')}`;
+  $('lessonContent').innerHTML = `<span class="micro">${l.sub} · ${l.time}</span><h2 id="lessonTitle">${l.title}</h2>` +
+    (l.goal ? `<div class="learning-goal"><span class="eyebrow">Objectif de la section</span><p>${l.goal}</p></div>` : '') +
+    l.content +
+    `<div class="lessonend"><span>Sources : biopc.pdf · Pr. BOUZOUBAA Sidi Mohammed<br>FMDC Casablanca · Université Hassan II · S1</span><button class="btn" id="markDone">${done.includes(i) ? '✓ Section terminée' : 'Marquer comme terminée'}</button></div>`;
+  hydrateFigures();
+  $('markDone').onclick = () => {
+    if (!done.includes(i)) done.push(i);
+    try { localStorage.setItem('biopc-progress', JSON.stringify(done)); } catch (e) {}
+    renderCards(); $('lessonDialog').close();
+  };
+  $('lessonDialog').showModal();
+  $('lessonDialog').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+$('backToPlan').onclick = () => $('lessonDialog').scrollTo({ top: 0, behavior: reduced() ? 'auto' : 'smooth' });
+$('lessonContent').addEventListener('click', e => {
+  const b = e.target.closest('[data-jump]');
+  if (b) $(b.dataset.jump).scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
+});
+$('closeDialog').onclick = () => $('lessonDialog').close();
+$('lessonDialog').addEventListener('close', () => document.body.style.overflow = '');
+$('lessonDialog').addEventListener('click', e => {
+  if (e.target === $('lessonDialog')) {
+    const r = e.target.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.target.close();
   }
-  document.querySelectorAll('.qcm-q').forEach(function(q,qi){
-    var ans=+q.getAttribute('data-ans');
-    q.querySelectorAll('.qcm-opt').forEach(function(b){
-      b.addEventListener('click',function(){
-        if(done[qi])return; done[qi]=true;
-        var pick=+b.getAttribute('data-o');
-        q.querySelectorAll('.qcm-opt').forEach(function(o){
-          var oj=+o.getAttribute('data-o');
-          o.disabled=true;
-          if(oj===ans)o.classList.add('ok');
-          else if(oj===pick)o.classList.add('ko');
-        });
-        if(pick===ans)good++;
-        var ex=q.querySelector('.qcm-expl'); if(ex)ex.hidden=false;
-        upd();
-      });
+});
+$('search').oninput = renderCards;
+document.querySelectorAll('[data-filter]').forEach(b => b.onclick = () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(x => { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', x === b); });
+  renderCards();
+});
+$('resetProgress').onclick = () => { done = []; try { localStorage.removeItem('biopc-progress'); } catch (e) {} renderCards(); };
+renderCards();
+
+/* ---- atelier : onglets ---- */
+for (const name of ['tube', 'dose']) $('tab-' + name).onclick = () => {
+  for (const n of ['tube', 'dose']) {
+    $(n).classList.toggle('hidden', n !== name);
+    $('tab-' + n).classList.toggle('active', n === name);
+    $('tab-' + n).setAttribute('aria-selected', n === name);
+  }
+};
+const fmt = (n, d = 1) => n.toLocaleString('fr-FR', { maximumFractionDigits: d, minimumFractionDigits: d });
+
+/* ---- simulateur 1 : le tube (kV, mA, temps) ---- */
+const pPhoto = kV => 1 / (1 + Math.pow(kV / 80, 4));
+function drawTube() {
+  const kV = +$('kv').value, mA = +$('ma').value, t = +$('tps').value;
+  const p = pPhoto(kV);
+  $('kvv').textContent = kV + ' kV'; $('mav').textContent = fmt(mA, 1) + ' mA'; $('tpsv').textContent = fmt(t, 2) + ' s';
+  const dominant = p > 0.6 ? 'Photoélectrique' : p < 0.4 ? 'Compton' : 'Mixte';
+  $('dominant').textContent = dominant;
+  const dose = mA * t * Math.pow(kV / 70, 2);
+  $('doseidx').textContent = fmt(dose, 2);
+  $('contrastNote').textContent = kV < 70
+    ? 'Tension faible : contraste ÉLEVÉ mais dose accrue (effet photoélectrique majeur < 70 kV).'
+    : kV <= 90
+      ? 'Tension moyenne (60-70 kV en dentaire) : bon compromis contraste / dose.'
+      : 'Tension élevée : contraste diminué, dose diminuée ; au-delà de 90-100 kV le contraste devient insuffisant (Compton prépondérant > 100 kV).';
+  const x = k => 48 + (k - 40) * 4.75, y = s => 235 - s * 211;
+  let svg = '';
+  for (let n = 0; n <= 100; n += 25) svg += `<path d="M48 ${y(n / 100)}H428" stroke="#e7ece2"/><text x="38" y="${y(n / 100) + 4}" text-anchor="end" font-size="10" fill="#78877c">${n} %</text>`;
+  for (let k = 40; k <= 120; k += 20) svg += `<text x="${x(k)}" y="255" text-anchor="middle" font-size="10" fill="#78877c">${k}</text>`;
+  svg += '<path d="M48 24V235H435" fill="none" stroke="#afbeaa"/><text x="8" y="16" font-size="11" fill="#537161">part</text><text x="208" y="280" font-size="11" fill="#537161">tension du tube (kV)</text>';
+  const path = f => Array.from({ length: 161 }, (_, i) => { const k = 40 + i / 2; return `${i ? 'L' : 'M'}${x(k)},${y(f(k))}`; }).join(' ');
+  svg += `<path d="${path(k => 1 - pPhoto(k))}" fill="none" stroke="#b1bcab" stroke-width="2" stroke-dasharray="5 4"/>`;
+  svg += `<path d="${path(pPhoto)}" fill="none" stroke="#286d57" stroke-width="3"/>`;
+  svg += `<path d="M${x(kV)} 235V${y(p)}H48" fill="none" stroke="#89aa70" stroke-dasharray="4 4"/><circle cx="${x(kV)}" cy="${y(p)}" r="5" fill="#286d57" stroke="white" stroke-width="2"/>`;
+  svg += `<text x="300" y="60" font-size="11" fill="#286d57">effet photoélectrique</text><text x="300" y="200" font-size="11" fill="#8d9a88">effet Compton (pointillé)</text>`;
+  $('chart').innerHTML = svg;
+}
+['kv', 'ma', 'tps'].forEach(id => $(id).addEventListener('input', drawTube));
+drawTube();
+
+/* ---- simulateur 2 : Gy → Sv ---- */
+function drawDose() {
+  const mGy = +$('mgy').value, wr = +$('wr').value, wt = +$('wt').value;
+  const mSv = mGy * wr * wt;
+  $('mgyv').textContent = fmt(mGy, 1) + ' mGy';
+  $('wrv').textContent = '×' + wr; $('wtv').textContent = '×' + wt;
+  $('doseFormula').textContent = `Sv = Gy × Wr × Wt → ${fmt(mGy, 1)} mGy × ${wr} × ${wt} = ${mSv < 1 ? fmt(mSv * 1000, 1) + ' µSv' : fmt(mSv, 3) + ' mSv'}`;
+  $('svbig').textContent = mSv < 1 ? fmt(mSv * 1000, 1) + ' µSv' : fmt(mSv, 3) + ' mSv';
+  $('svcompare').textContent = mSv === 0 ? 'Dose nulle : pas d’effet.' :
+    mSv < 0.0024 ? `Inférieure à l’exposition naturelle d’UNE journée (≈ 7 µSv) : ${fmt(mSv / 2.4 * 100, 2)} % de l’année naturelle.` :
+      `≈ ${fmt(mSv / 2.4 * 100, 1)} % de l’exposition naturelle annuelle (2,4 mSv/an en France).`;
+  $('doseMarker').style.left = `calc(${Math.min(mSv / 2.4, 1) * 100}% - 2px)`;
+  $('doseExplain').textContent = 'Échelle : 0 → 2,4 mSv (une année d’exposition naturelle). Le Sievert est calculable, pas mesurable.';
+}
+['mgy', 'wr', 'wt'].forEach(id => $(id).addEventListener('input', drawDose));
+drawDose();
+
+/* ---- quiz ---- */
+let qi = 0, score = 0, answered = false;
+function quiz() {
+  answered = false;
+  if (qi === questions.length) {
+    $('quiz').innerHTML = `<span class="eyebrow">Session terminée</span><h2>${score} / ${questions.length}</h2><p>${score >= Math.round(questions.length * .8) ? 'Très bien ! Les grandes notions du cours sont en place.' : 'Bien joué d’être allé au bout. Relis les sections puis essaie à nouveau.'}</p><button class="btn" id="restart">Recommencer ↻</button>`;
+    $('restart').onclick = () => { qi = 0; score = 0; quiz(); };
+    return;
+  }
+  const q = questions[qi];
+  $('quiz').innerHTML = `<span class="eyebrow">Question ${String(qi + 1).padStart(2, '0')} / ${questions.length}</span><h3>${q[0]}</h3><div class="answers">${q[1].map((a, i) => `<button class="answer" data-answer="${i}"><span style="color:#8d9a88;margin-right:12px">${String.fromCharCode(65 + i)}</span>${a}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="quizbottom"><span>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</span><button class="btn light hidden" id="nextQuestion">${qi === questions.length - 1 ? 'Voir mon résultat' : 'Question suivante'} →</button></div>`;
+  document.querySelectorAll('[data-answer]').forEach(b => b.onclick = () => {
+    if (answered) return; answered = true;
+    const n = +b.dataset.answer;
+    if (n === q[2]) score++;
+    document.querySelectorAll('[data-answer]').forEach(x => {
+      x.disabled = true;
+      if (+x.dataset.answer === q[2]) x.classList.add('correct');
+      else if (x === b) x.classList.add('wrong');
     });
+    $('feedback').textContent = (n === q[2] ? '✓ Exact ! ' : '↳ Pas tout à fait. ') + q[3];
+    $('nextQuestion').classList.remove('hidden');
   });
-  document.getElementById('qcm-reset').addEventListener('click',function(){location.hash='';location.reload();});
-  upd();
-})();
+  $('nextQuestion').onclick = () => { qi++; quiz(); };
+}
+quiz();
+
+/* ---- cartes mémo ---- */
+let fi = 0, flipped = false;
+function paintFlash() {
+  $('flashText').textContent = flipped ? flashCards[fi][1] : flashCards[fi][0];
+  $('flashHint').textContent = flipped ? 'Clique pour la carte suivante ↻' : 'La réponse est de l’autre côté ↻';
+}
+$('flash').onclick = () => { if (flipped) { flipped = false; fi = (fi + 1) % flashCards.length; } else { flipped = true; } paintFlash(); };
+paintFlash();
+
 </script>
 </body>
 </html>
