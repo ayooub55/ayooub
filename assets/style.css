@@ -680,6 +680,26 @@ pre.sch {
 .box-ret ul, .box-piege ul { margin: 0; padding-left: 20px; font-size: 14px; color: var(--text-soft); }
 .box-ret li, .box-piege li { margin: 6px 0; }
 
+/* ---- QCM interactif ---- */
+.box-qcm { margin-top: 26px; padding: 18px 18px 14px; border: 1px solid var(--border); border-radius: var(--radius, 14px); background: color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+.box-qcm h3 { font-size: 15px; margin-bottom: 6px; }
+.qcm-q { padding: 12px 2px; border-top: 1px dashed var(--border); }
+.qcm-list .qcm-q:first-child { border-top: 0; }
+.qcm-qt { font-size: 14px; font-weight: 600; margin-bottom: 8px; line-height: 1.45; }
+.qnum { display: inline-block; background: var(--accent); color: #fff; border-radius: 6px; font-size: 11px; font-weight: 700; padding: 1px 7px; margin-right: 7px; vertical-align: 1px; }
+.qcm-opts { display: grid; gap: 6px; }
+.qcm-opt { text-align: left; padding: 8px 11px; border: 1px solid var(--border); background: var(--surface); border-radius: 9px; font-size: 13.5px; line-height: 1.4; cursor: pointer; color: var(--text); transition: border-color .15s, background .15s; }
+.qcm-opt:hover:not(:disabled) { border-color: var(--accent); }
+.qcm-opt:disabled { cursor: default; }
+.qcm-opt.ok { border-color: #22b07d; background: color-mix(in srgb, #22b07d 15%, var(--surface)); }
+.qcm-opt.ko { border-color: #ef4d63; background: color-mix(in srgb, #ef4d63 12%, var(--surface)); }
+.qcm-expl { margin-top: 8px; font-size: 13px; color: var(--text-soft); background: var(--surface); border-left: 3px solid var(--accent); padding: 8px 10px; border-radius: 6px; }
+.qcm-foot { display: flex; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.qcm-score { font-weight: 700; font-size: 15px; padding: 4px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+.qcm-score.full { border-color: #22b07d; color: #22b07d; }
+.qcm-score.low { border-color: #ef4d63; color: #ef4d63; }
+@media print { .qcm-opts, .qcm-foot, .box-qcm .nc-hint { display: none !important; } }
+
 mark.hl { background: var(--hl); color: var(--text); padding: 1px 2px; border-radius: 3px; }
 html[data-theme="dark"] mark.hl { color: #ffe9a8; }
 

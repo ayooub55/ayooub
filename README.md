@@ -17,7 +17,8 @@ Site **statique** (HTML / CSS / JS), sans build, sans dépendance, publié sur G
 
 | | |
 |---|---|
-| 📘 **20 fiches de cours expliquées** | Chaque fiche = un cours du Drive, découpé en sections : explications, tableaux comparatifs, schémas en texte, **✅ à retenir** et **⚠️ pièges des QCM**. |
+| 📘 **22 fiches de cours expliquées** | Chaque fiche = un cours du Drive, découpé en sections : explications, tableaux comparatifs, schémas en texte, **✅ à retenir** et **⚠️ pièges des QCM**. |
+| 🎯 **QCM interactifs** | Sur les fiches qui en proposent : correction immédiate, explication de chaque réponse et score en direct. |
 | 🗂️ **Sommaire cliquable** | Dans chaque fiche : navigation par sections, « à retenir », « pièges », notes. |
 | 🖍️ **Surlignage** | Sélectionne un passage dans une fiche → bouton **Surligner**. Tes surlignages sont listés et supprimables. |
 | ✅ **Statut de révision par fiche** | Non lue · En cours · **Maîtrisée** · À revoir. |
@@ -35,7 +36,7 @@ assets/style.css           thème et mise en page
 assets/app.js              application (routage, fiches, recherche, statistiques, notes/images)
 data/s1.js                 arborescence complète du Drive S1 (9 rubriques, 68 documents)
 data/cours-imd.js          fiches de cours IMD & pathologies (10 fiches)
-data/cours-sciences.js     fiches Biologie · Biochimie · Chimie · Biophysique · Physiologie (10 fiches)
+data/cours-sciences.js     fiches Biologie · Biochimie · Chimie · Biophysique · Physiologie (12 fiches)
 2024-2025/index.html       ancien portail de la promo 2024-2025
 .nojekyll                  désactive Jekyll sur GitHub Pages
 .github/workflows/         déploiement automatique sur GitHub Pages

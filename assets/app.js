@@ -68,7 +68,8 @@
   FICHES.forEach(f => { ficheIndex[f.id] = f; });
 
   const ficheTexte = f => [f.titre, f.sousTitre, f.prof, f.resume, (f.retenir || []).join(' '),
-    (f.pieges || []).join(' '), (f.sections || []).map(s => s.titre + ' ' + s.html).join(' ')].join(' ');
+    (f.pieges || []).join(' '), (f.qcm || []).map(q => q.q + ' ' + (q.opts || []).join(' ')).join(' '),
+    (f.sections || []).map(s => s.titre + ' ' + s.html).join(' ')].join(' ');
 
   /* ------------------------------ OUTILS ------------------------------ */
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -477,6 +478,7 @@
           <div class="toc-sep"></div>
           <a href="#ret" data-jump="ret">✅ À retenir</a>
           <a href="#pieges" data-jump="pieges">⚠️ Pièges classiques</a>
+          ${(f.qcm || []).length ? `<a href="#qcm" data-jump="qcm">🎯 QCM (${f.qcm.length})</a>` : ''}
           <a href="#mesnotes" data-jump="mesnotes">📝 Mes notes & photos</a>
           <div class="toc-sep"></div>
           <h4>Surlignage</h4>
@@ -497,6 +499,23 @@
           ${(f.pieges || []).length ? `<div class="box-piege" id="pieges" style="scroll-margin-top:84px">
             <h3>⚠️ Pièges classiques (QCM)</h3>
             <ul>${f.pieges.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+          </div>` : ''}
+
+          ${(f.qcm || []).length ? `<div class="box-qcm" id="qcm" style="scroll-margin-top:84px">
+            <h3>🎯 QCM d'auto-évaluation — ${f.qcm.length} questions</h3>
+            <div class="nc-hint">Clique sur ta réponse : correction immédiate + explication. Le score se met à jour en bas.</div>
+            <div class="qcm-list">
+              ${f.qcm.map((q, i) => `
+                <div class="qcm-q" data-q="${i}">
+                  <div class="qcm-qt"><span class="qnum">Q${i + 1}</span>${esc(q.q)}</div>
+                  <div class="qcm-opts">${(q.opts || []).map((o, j) => `<button class="qcm-opt" data-q="${i}" data-o="${j}"><b>${String.fromCharCode(65 + j)}.</b> ${esc(o)}</button>`).join('')}</div>
+                  <div class="qcm-expl" hidden>💡 ${esc(q.expl || '')}</div>
+                </div>`).join('')}
+            </div>
+            <div class="qcm-foot">
+              <span class="qcm-score" id="qcm-score">0 / ${f.qcm.length}</span>
+              <button class="btn btn-ghost" id="qcm-reset">↺ Recommencer le QCM</button>
+            </div>
           </div>` : ''}
 
           <div class="notes-card" id="mesnotes" style="scroll-margin-top:84px">
@@ -553,6 +572,37 @@
       e.preventDefault();
       document.getElementById(a.dataset.jump)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }));
+
+    /* QCM interactif : correction immédiate + score */
+    if ((f.qcm || []).length) {
+      const answered = {};
+      let good = 0;
+      const scoreEl = document.getElementById('qcm-score');
+      const updScore = () => {
+        scoreEl.textContent = `${good} / ${f.qcm.length}` + (good === f.qcm.length ? ' 🎉' : '');
+        scoreEl.classList.toggle('full', good === f.qcm.length);
+        scoreEl.classList.toggle('low', good > 0 && good < Math.ceil(f.qcm.length / 2));
+      };
+      view.querySelectorAll('.qcm-opt').forEach(btn => btn.addEventListener('click', () => {
+        const qi = +btn.dataset.q, oi = +btn.dataset.o;
+        if (answered[qi]) return;
+        answered[qi] = true;
+        const q = f.qcm[qi];
+        const boxQ = btn.closest('.qcm-q');
+        boxQ.classList.add('done');
+        boxQ.querySelectorAll('.qcm-opt').forEach(o => {
+          const oj = +o.dataset.o;
+          o.disabled = true;
+          if (oj === q.ans) o.classList.add('ok');
+          else if (oj === oi) o.classList.add('ko');
+        });
+        if (oi === q.ans) good++;
+        const ex = boxQ.querySelector('.qcm-expl');
+        if (ex) ex.hidden = false;
+        updScore();
+      }));
+      document.getElementById('qcm-reset').addEventListener('click', () => renderFiche2(f.id));
+    }
 
     /* surlignage */
     const body = document.getElementById('fiche-body');
