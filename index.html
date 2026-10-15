@@ -3,96 +3,827 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S1 — Espace de révision | 1ère année Médecine Dentaire · FMDC Casablanca</title>
-<meta name="description" content="Tout le Semestre 1 de la 1ère année de Médecine Dentaire (FMDC Casablanca) : fiches de cours expliquées (tableaux, schémas, à retenir), cours, QCM, TP et annales du Drive, avec suivi de révision, statistiques et tes propres notes & photos.">
+<title>Biophysique — Principes physiques de l'imagerie en odontologie (S1) · FMDC Casablanca</title>
+<meta name="description" content="Cours complet et expliqué en détail, dans l'ordre exact du PDF du Drive (biopc .pdf — Pr Bouzoubaa S. M., FMDC Casablanca) : I. Principes physiques des rayons X, II. Initiation à la radiologie, III. Radioprotection. Schémas SVG redessinés, tableaux, à retenir, pièges et auto-tests.">
 <meta name="theme-color" content="#0b1020">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Palette et typographie reprises du portail S1 (mêmes couleurs, même police) */
+:root{
+  --bg:#f5f6fb; --bg-soft:#eceef7; --surface:#ffffff; --surface-2:#f2f4fa;
+  --text:#12162a; --text-soft:#3d4560; --muted:#6b7391;
+  --border:#e3e6f1; --border-strong:#d2d7e8;
+  --accent:#4f46e5; --accent-soft:#eeecff; --cyan:#0891b2; --pink:#db2777;
+  --ok:#16a34a; --warn:#b45309; --bad:#dc2626;
+  --shadow-s:0 1px 2px rgba(16,22,48,.06),0 6px 18px -10px rgba(16,22,48,.18);
+  --shadow-m:0 2px 4px rgba(16,22,48,.05),0 22px 40px -24px rgba(16,22,48,.35);
+  --r-s:10px; --r-m:16px; --r-l:24px; --max:1180px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+html[data-theme="dark"]{
+  --bg:#080c19; --bg-soft:#0d1428; --surface:#111730; --surface-2:#161e3b;
+  --text:#e9ecf9; --text-soft:#c3cae4; --muted:#8f9abd;
+  --border:#232c4d; --border-strong:#313c63; --accent:#8b8cf9; --accent-soft:#1b2145;
+  --cyan:#22d3ee; --pink:#f472b6; --ok:#34d399; --warn:#fbbf24; --bad:#f87171;
+  --shadow-s:0 1px 2px rgba(0,0,0,.4); --shadow-m:0 24px 50px -28px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(620px 420px at 12% -6%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),radial-gradient(560px 380px at 96% 2%,color-mix(in srgb,#06b6d4 18%,transparent),transparent 70%),radial-gradient(700px 520px at 50% 108%,color-mix(in srgb,#f472b6 12%,transparent),transparent 70%);opacity:.9}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px;position:relative;z-index:1}
+h1,h2,h3,h4{line-height:1.2;margin:0;letter-spacing:-.02em}
+p{margin:0 0 10px}
+ul,ol{margin:6px 0 12px;padding-left:22px}
+li{margin:4px 0}
+small{color:var(--muted)}
+code{background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.92em}
+.top{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,calc((100vw - var(--max))/2));background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-logo{width:38px;height:38px;display:grid;place-items:center;font-size:20px;border-radius:12px;background:linear-gradient(140deg,var(--accent),#06b6d4);box-shadow:var(--shadow-s)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15}
+.brand-txt b{font-size:15px}
+.brand-txt i{font-style:normal;font-size:11.5px;color:var(--muted)}
+.top nav{display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{padding:7px 12px;border-radius:999px;font-size:13.5px;color:var(--text-soft);text-decoration:none}
+.top nav a:hover{background:var(--surface-2)}
+.btn{font:inherit;cursor:pointer;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);border-radius:999px;padding:8px 14px;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;box-shadow:var(--shadow-s)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+html[data-theme="dark"] .btn.primary{color:#0b1020}
+.btn.ghost{box-shadow:none}
+.search{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;flex:1 1 200px;max-width:360px}
+.search input{border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:14px;width:100%}
+.hero{padding:38px 0 8px}
+.eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--border);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.hero h1{font-size:clamp(28px,4.5vw,46px);margin:14px 0 10px}
+.hero .sub{font-size:clamp(15px,2vw,18px);color:var(--text-soft);max-width:860px}
+.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 6px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12.5px;color:var(--text-soft);box-shadow:var(--shadow-s)}
+.progressbar{height:9px;background:var(--surface-2);border:1px solid var(--border);border-radius:99px;overflow:hidden;margin:14px 0 4px}
+.progressbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#06b6d4);transition:width .35s}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:22px;align-items:start;padding:22px 0 40px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static!important}}
+.toc{position:sticky;top:76px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-m);padding:14px;box-shadow:var(--shadow-s);font-size:13.5px}
+.toc h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:8px}
+.toc a{display:block;padding:5px 8px;border-radius:8px;color:var(--text-soft);text-decoration:none}
+.toc a:hover,.toc a.on{background:var(--accent-soft);color:var(--accent)}
+.toc .lvl2{padding-left:20px;font-size:12.5px}
+section.part,section.blk{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-l);padding:26px;margin-bottom:22px;box-shadow:var(--shadow-s);scroll-margin-top:84px}
+section.part>h2{font-size:clamp(22px,3vw,30px);margin-bottom:6px}
+section.blk>h2{font-size:clamp(19px,2.5vw,24px);margin-bottom:8px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.def,.note,.retenir,.piege,.obj{border-radius:var(--r-m);padding:14px 16px;margin:14px 0;border:1px solid var(--border)}
+.def{background:var(--accent-soft)}
+.obj{background:var(--surface-2)}
+.retenir{background:color-mix(in srgb,var(--ok) 10%,var(--surface));border-color:color-mix(in srgb,var(--ok) 35%,var(--border))}
+.piege{background:color-mix(in srgb,var(--warn) 10%,var(--surface));border-color:color-mix(in srgb,var(--warn) 40%,var(--border))}
+.note{background:var(--surface-2)}
+.def b.t,.retenir b.t,.piege b.t,.obj b.t,.note b.t{display:block;margin-bottom:5px}
+table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface-2)}
+figure{margin:16px 0;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-m);padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+figcaption b{color:var(--text-soft)}
+.svgbox text{font-family:var(--font)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-m);padding:14px 16px}
+.card h3,.card h4{margin-bottom:6px}
+.done{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13.5px;color:var(--text-soft);cursor:pointer}
+.qcm{border:1px solid var(--border);border-radius:var(--r-m);padding:14px 16px;margin:12px 0;background:var(--surface)}
+.qcm h4{margin-bottom:8px}
+.qcm label{display:block;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r-s);margin:6px 0;cursor:pointer;background:var(--surface-2)}
+.qcm label.good{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--surface))}
+.qcm label.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--surface))}
+.qcm .expl{font-size:13.5px;color:var(--text-soft);margin-top:8px}
+footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+#topBtn{position:fixed;right:16px;bottom:16px;z-index:50}
+mark{background:#fde68a;color:#111;padding:0 2px;border-radius:3px}
+html[data-theme="dark"] mark{background:#92600a;color:#fff}
+.hide{display:none!important}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding-left:42px;margin:10px 0}
+.steps li::before{content:counter(st);position:absolute;left:0;top:1px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+html[data-theme="dark"] .steps li::before{color:#0b1020}
+.formula{background:var(--surface-2);border:1px dashed var(--border-strong);border-radius:var(--r-m);padding:12px 16px;text-align:center;font-size:17px;margin:12px 0}
+@media print{.top,.toc,.hero-actions,#topBtn,.done,.noprint{display:none!important}.layout{grid-template-columns:1fr}section.part,section.blk{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
 <script>
-  /* Thème appliqué avant le rendu pour éviter tout flash */
-  try {
-    var t = localStorage.getItem('fmdc.s1.theme');
-    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.dataset.theme = t;
-  } catch (e) {}
+try{var t=localStorage.getItem('fmdc.s1.theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){}
 </script>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="top">
-  <a class="brand" href="#/">
+  <a class="brand" href="#debut">
     <span class="brand-logo">🦷</span>
-    <span class="brand-txt">
-      <b>FMDC · S1</b>
-      <i>Espace de révision — 1ère année</i>
-    </span>
+    <span class="brand-txt"><b>Biophysique · S1</b><i>Imagerie en odontologie — FMDC Casablanca</i></span>
   </a>
-
-  <nav class="top-nav" id="top-nav">
-    <a href="#/" data-nav="home">Accueil</a>
-    <a href="#/modules" data-nav="modules">Modules</a>
-    <a href="#/fiches" data-nav="fiches">📘 Fiches</a>
-    <a href="#/annales" data-nav="annales">Annales</a>
-    <a href="#/exercices" data-nav="exercices">🎯 Exercices</a>
-    <a href="#/ajouter" data-nav="ajouter">➕ Ajouter</a>
-    <a href="#/stats" data-nav="stats">📊 Statistiques</a>
-    <a href="#/mesnotes" data-nav="mesnotes">📝 Mes notes <span class="pill" id="img-count">0</span></a>
-    <a href="#/favoris" data-nav="favoris">★ Favoris <span class="pill" id="fav-count">0</span></a>
+  <nav>
+    <a href="#partie1">I · Rayons X</a>
+    <a href="#partie2">II · Radiologie</a>
+    <a href="#partie3">III · Radioprotection</a>
+    <a href="#synthese">Synthèse</a>
+    <a href="#autotest">Auto-test</a>
   </nav>
-
-  <div class="top-actions">
-    <div class="search" id="search-box">
-      <span class="s-ic">🔍</span>
-      <input id="search" type="search" placeholder="Rechercher un cours, un QCM, un prof…" autocomplete="off" spellcheck="false">
-      <kbd>/</kbd>
-      <div class="results" id="results" hidden></div>
-    </div>
-    <button class="icon-btn" id="theme-btn" title="Thème clair / sombre" aria-label="Changer de thème">🌗</button>
-    <a class="icon-btn drive" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive S1">📁<span class="hide-sm">Drive</span></a>
-    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-  </div>
+  <div class="search" role="search"><span aria-hidden="true">🔍</span><input id="search" type="search" placeholder="Rechercher (ex. Compton, kV, ALARA…)" autocomplete="off"></div>
+  <button class="btn ghost" id="themeBtn" title="Thème clair / sombre" aria-label="Changer de thème">🌗 Thème</button>
+  <button class="btn ghost noprint" onclick="window.print()">🖨️ Imprimer</button>
 </header>
 
-<main id="view" class="view"></main>
+<div class="wrap" id="debut">
 
-<footer class="foot">
-  <div class="foot-grid">
-    <div>
-      <div class="foot-brand">🦷 FMDC 1A — Semestre 1</div>
-      <p>Portail de révision <b>non officiel</b>, construit par et pour les étudiants de 1ère année de la Faculté de Médecine Dentaire de Casablanca. Aucun fichier n’est copié : chaque lien ouvre le document sur Google Drive.</p>
+  <div class="hero">
+    <span class="eyebrow">Module Biophysique (Biopc) · Semestre 1</span>
+    <h1>Principes physiques de l'imagerie en odontologie</h1>
+    <p class="sub">Explication <strong>complète et détaillée</strong> du cours du Drive, <strong>dans l'ordre exact du fichier</strong> <em>biopc .pdf</em> : d'abord comment naît un rayon X et comment il interagit avec la matière, ensuite comment on s'en sert pour faire une radiographie, enfin comment on s'en protège. Chaque schéma du cours est redessiné ci-dessous en SVG, au même endroit que dans le PDF.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">📁 Voir le PDF original sur Drive</a>
+      <a class="btn" href="https://drive.google.com/uc?export=download&amp;id=1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z" target="_blank" rel="noopener">⬇️ Télécharger le PDF (25 Mo)</a>
+      <a class="btn" href="#partie1">Commencer le cours ↓</a>
     </div>
-    <div>
-      <h4>Accès rapide</h4>
-      <a href="#/fiches">Fiches de cours</a>
-      <a href="#/modules">Tous les modules</a>
-      <a href="#/annales">Examens & annales</a>
-      <a href="#/stats">Statistiques</a>
-      <a href="#/mesnotes">Mes notes & photos</a>
-      <a href="#/favoris">Mes favoris</a>
-      <a id="drive-foot" href="#" target="_blank" rel="noopener">Drive S1 ↗</a>
+    <div class="meta">
+      <span class="chip">👨‍🏫 Pr Bouzoubaa Sidi Mohammed</span>
+      <span class="chip">🏛️ Université Hassan II · Faculté de Médecine Dentaire de Casablanca</span>
+      <span class="chip">📄 Source : biopc .pdf (Drive)</span>
+      <span class="chip">🎯 Périmètre : parties I + II + III (S1)</span>
     </div>
-    <div>
-      <h4>Télécharger</h4>
-      <a href="telecharger/index.html" data-download-single>⬇️ Télécharger en 1 seul fichier (index.html)</a>
-      <a href="telecharger/site-fmdc-s1.zip" data-download-site>🗂️ Télécharger le site complet (ZIP)</a>
-      <a href="#" data-export-data>💾 Exporter mes données (notes, photos…)</a>
-      <div class="nc-saved" id="export-msg" style="margin-top:6px"></div>
-
-      <h4 style="margin-top:14px">Autres espaces</h4>
-      <a href="2024-2025/index.html" data-portal-link>Portail promo 2024-2025 ↗</a>
-      <a href="#/a-propos">À propos & données</a>
-    </div>
+    <div class="progressbar" aria-hidden="true"><i id="progFill"></i></div>
+    <small id="progTxt">Progression : 0 section terminée. Coche « J'ai compris cette section » à la fin de chaque partie pour suivre ton avancement (enregistré sur cet appareil).</small>
   </div>
-  <div class="foot-bar">
-    <span>© <span id="year"></span> — Promo FMDC. Contenu © leurs auteurs respectifs.</span>
-    <span id="foot-stats"></span>
-  </div>
-</footer>
 
-<script src="data/s1.js"></script>
-<script src="data/cours-imd.js"></script>
-<script src="data/cours-sciences.js"></script>
-<script src="assets/app.js"></script>
+  <section class="blk" id="mode-emploi">
+    <span class="kicker">Avant de commencer</span>
+    <h2>Comment utiliser cette page</h2>
+    <div class="grid2">
+      <div class="card"><h3>📖 Lis dans l'ordre</h3><p>La page suit le plan du PDF à la lettre : <strong>I → II → III</strong>. Ne saute pas la partie I : tout ce qui suit (contraste d'une radio, danger d'un rayon diffusé, tablier de plomb…) s'explique par l'effet photoélectrique et l'effet Compton.</p></div>
+      <div class="card"><h3>🖼️ Schémas recréés</h3><p>Les photos et schémas du PDF de 25 Mo ne peuvent pas être copiés en base64 dans cette page. Ils sont donc <strong>redessinés fidèlement en SVG</strong> (même contenu, même ordre), et chaque figure renvoie au PDF original pour voir la vraie photo.</p></div>
+      <div class="card"><h3>✅ « À retenir » + pièges</h3><p>À la fin de chaque partie : un encadré vert <strong>À retenir</strong> (ce qui tombe à l'examen) et un encadré orange <strong>Pièges classiques</strong> (confusions fréquentes en QCM).</p></div>
+      <div class="card"><h3>🎯 Termine par l'auto-test</h3><p>14 QCM corrigés immédiatement, avec explication. Objectif : 12/14 minimum avant de passer à un autre module. La recherche en haut filtre le cours par mot-clé.</p></div>
+    </div>
+    <div class="note"><b class="t">📌 Plan général du cours (tel qu'il apparaît dans le PDF)</b>
+      <ol>
+        <li><strong>Les principes physiques des rayons X (S1)</strong> — détaillé ici, Partie I.</li>
+        <li><strong>Initiation à la radiologie (S1)</strong> — détaillée ici, Partie II.</li>
+        <li><strong>Radioprotection (S1)</strong> — détaillée ici, Partie III.</li>
+        <li>Incidences standards intra-orales (S3) et extra-orales (S6) — <em>seulement annoncées dans ce PDF, sans contenu : non traitées ici.</em></li>
+        <li>Incidence tomographique : panoramique (S6) — <em>annoncée seulement.</em></li>
+        <li>Incidence volumétrique 3D : scanner, Cone Beam (S8) — <em>annoncée seulement.</em></li>
+        <li>Examens complémentaires : IRM, échographie… — <em>annoncés seulement.</em></li>
+      </ol>
+      <p><small>Conformément à ton choix, seules les parties réellement présentes dans le PDF (I, II, III) sont expliquées. Aucun contenu extérieur n'a été ajouté aux parties 4 à 7.</small></p>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc" aria-label="Sommaire">
+      <h3>Sommaire</h3>
+      <a href="#mode-emploi">Mode d'emploi & plan</a>
+      <a href="#partie1"><strong>I. Principes physiques des rayons X</strong></a>
+      <a class="lvl2" href="#s11">1-1 · Historique</a>
+      <a class="lvl2" href="#s12">1-2 · Définition</a>
+      <a class="lvl2" href="#s13">1-3 · Production (tube de Coolidge)</a>
+      <a class="lvl2" href="#s14">1-4 · Interactions avec la matière</a>
+      <a class="lvl2" href="#photo">Effet photoélectrique</a>
+      <a class="lvl2" href="#compton">Effet Compton</a>
+      <a href="#partie2"><strong>II. Initiation à la radiologie</strong></a>
+      <a class="lvl2" href="#s21">2-1 · Définition</a>
+      <a class="lvl2" href="#s22">2-2 · Schéma général</a>
+      <a class="lvl2" href="#source">2-2-1 · La source</a>
+      <a class="lvl2" href="#objet">2-2-2 · L'objet</a>
+      <a class="lvl2" href="#detecteurs">2-2-3 · Les détecteurs</a>
+      <a class="lvl2" href="#geometrie">Formations géométriques</a>
+      <a href="#partie3"><strong>III. Radioprotection</strong></a>
+      <a class="lvl2" href="#effets">Effets des rayonnements</a>
+      <a class="lvl2" href="#principes-rp">Justification · Optimisation · Limitation</a>
+      <a class="lvl2" href="#protection">Protection en pratique</a>
+      <a class="lvl2" href="#grossesse">Cas de la grossesse</a>
+      <a href="#synthese">Synthèse & chiffres</a>
+      <a href="#autotest">Auto-test (14 QCM)</a>
+      <a href="#sources">Sources & limites</a>
+    </aside>
+
+    <main id="cours">
+
+    <!-- ================= PARTIE I ================= -->
+    <section class="part" id="partie1">
+      <span class="kicker">Partie I · S1</span>
+      <h2>I. Principes physiques des rayons X</h2>
+      <p>C'est la base de tout le module. Si tu comprends cette partie, tu comprends pourquoi une dent paraît blanche sur une radio, pourquoi l'os arrête plus les rayons que la joue, et pourquoi le praticien sort de la pièce pendant le cliché.</p>
+      <div class="obj"><b class="t">🎯 Objectifs du cours (PDF)</b>
+        <ul>
+          <li>Définir le rayon X.</li>
+          <li>Décrire le mécanisme de production des rayons X.</li>
+          <li>Décrire les différents types d'interaction des rayons X avec la matière.</li>
+          <li>Décrire l'interaction des rayons X avec le détecteur.</li>
+        </ul>
+      </div>
+
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 170" role="img" aria-label="Triade de la radiologie : source, objet, détecteur">
+          <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker></defs>
+          <rect x="20" y="45" width="170" height="80" rx="14" fill="#eeecff" stroke="#4f46e5" stroke-width="2"/>
+          <text x="105" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#12162a">SOURCE RX</text>
+          <text x="105" y="100" text-anchor="middle" font-size="12" fill="#3d4560">Tube à rayons X</text>
+          <rect x="295" y="45" width="170" height="80" rx="14" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+          <text x="380" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#12162a">OBJET</text>
+          <text x="380" y="100" text-anchor="middle" font-size="12" fill="#3d4560">Patient · dent · tissus</text>
+          <rect x="570" y="45" width="170" height="80" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+          <text x="655" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#12162a">DÉTECTEUR</text>
+          <text x="655" y="100" text-anchor="middle" font-size="12" fill="#3d4560">Film · écran · capteur</text>
+          <line x1="195" y1="85" x2="288" y2="85" stroke="#4f46e5" stroke-width="3" marker-end="url(#ar)"/>
+          <line x1="470" y1="85" x2="563" y2="85" stroke="#4f46e5" stroke-width="3" marker-end="url(#ar)"/>
+          <text x="380" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#4f46e5">LA TRIADE DE LA RADIOLOGIE</text>
+        </svg>
+        <figcaption><b>Schéma 1 — La triade de la radiologie.</b> Toute radiographie, du petit cliché rétro-alvéolaire au scanner, repose sur ces trois éléments dans cet ordre : une <b>source</b> qui émet les rayons X, un <b>objet</b> (le patient) qui les atténue différemment selon les tissus, et un <b>détecteur</b> qui enregistre ce qui reste du faisceau. C'est ce schéma qui structure toute la Partie II. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+
+      <h3 id="s11">1-1 · Historique : la découverte de Röntgen (1895)</h3>
+      <p>En <strong>1895</strong>, le physicien allemand <strong>Wilhelm Conrad Röntgen</strong> expérimente un tube dans lequel il a fait le vide (tube sans air), muni de deux électrodes : une <strong>cathode</strong> et une <strong>anode</strong>. En appliquant une tension élevée, il constate qu'un écran placé <em>à distance</em> de son expérience devient fluorescent, et que ce rayonnement invisible traverse les corps opaques : il obtient l'image du <strong>squelette de la main</strong> (celle de son épouse, devenue la première radiographie de l'histoire).</p>
+      <p>Ne sachant pas nommer ce rayonnement inconnu, il l'appelle <strong>« rayon X »</strong> — X comme l'inconnue en mathématiques (<em>X rays</em> en anglais). Cette découverte lui vaut le <strong>prix Nobel de physique en 1901</strong>, le tout premier de l'histoire.</p>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 150" role="img" aria-label="Frise historique : 1895 découverte, 1901 prix Nobel">
+          <line x1="40" y1="75" x2="720" y2="75" stroke="#d2d7e8" stroke-width="4"/>
+          <circle cx="150" cy="75" r="12" fill="#4f46e5"/><circle cx="610" cy="75" r="12" fill="#0891b2"/>
+          <text x="150" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#12162a">1895</text>
+          <text x="150" y="115" text-anchor="middle" font-size="12" fill="#3d4560">Röntgen découvre les rayons X</text>
+          <text x="150" y="132" text-anchor="middle" font-size="12" fill="#3d4560">(tube sous vide, main radiographiée)</text>
+          <text x="610" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#12162a">1901</text>
+          <text x="610" y="115" text-anchor="middle" font-size="12" fill="#3d4560">Prix Nobel de physique</text>
+          <text x="610" y="132" text-anchor="middle" font-size="12" fill="#3d4560">(premier Nobel décerné)</text>
+        </svg>
+        <figcaption><b>Schéma 2 — Repères historiques à connaître par cœur :</b> 1895 = découverte ; Röntgen = découvreur ; 1901 = prix Nobel. Ce sont trois réponses de QCM quasi certaines.</figcaption>
+      </figure>
+      <div class="retenir"><b class="t">✅ À retenir — Historique</b>1895 · Wilhelm Conrad Röntgen · tube sous vide avec anode et cathode · première image : squelette d'une main · nom « X » = inconnue · prix Nobel en 1901.</div>
+
+      <h3 id="s12">1-2 · Définition : qu'est-ce qu'un rayon X ?</h3>
+      <div class="def"><b class="t">📖 Définition du cours</b>Le rayon X est un <strong>rayonnement électromagnétique</strong>, de même nature que les ondes radio, la lumière visible ou les infrarouges — mais beaucoup plus énergétique.</div>
+      <p>Tous les rayonnements électromagnétiques sont faits de <strong>photons</strong> qui se propagent à la vitesse de la lumière. Ce qui les distingue, c'est leur <strong>fréquence</strong> (et donc leur longueur d'onde et leur énergie). Le cours donne trois chiffres fondamentaux pour les rayons X :</p>
+      <table>
+        <tr><th>Grandeur</th><th>Valeur pour les rayons X (cours)</th><th>Ce que ça signifie</th></tr>
+        <tr><td><strong>Fréquence ν</strong></td><td>10<sup>16</sup> à 10<sup>20</sup> Hz</td><td>Des milliards de milliards d'oscillations par seconde : fréquence très élevée.</td></tr>
+        <tr><td><strong>Longueur d'onde λ</strong></td><td>10<sup>−8</sup> à 10<sup>−12</sup> m</td><td>Longueur d'onde très courte, de l'ordre de la taille des atomes ou plus petite.</td></tr>
+        <tr><td><strong>Énergie des photons</strong></td><td>40 à 4×10<sup>5</sup> eV</td><td>Énergie suffisante pour arracher des électrons aux atomes : c'est un <strong>rayonnement ionisant</strong>.</td></tr>
+      </table>
+      <div class="formula">E = h · ν &nbsp;et&nbsp; λ = c / ν &nbsp;&nbsp;➜&nbsp;&nbsp; plus la fréquence est élevée, plus le photon est énergétique et pénétrant.</div>
+      <p>Conséquence clinique immédiate, soulignée dans le cours : le rayon X est <strong>très pénétrant</strong>. Il traverse les tissus mous, est partiellement arrêté par les tissus durs (dent, os), et c'est précisément cette différence d'arrêt — l'<strong>atténuation sélective</strong> — qui dessine l'image radiographique.</p>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 190" role="img" aria-label="Spectre électromagnétique : des ondes radio aux rayons gamma">
+          <defs><linearGradient id="spec" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset=".35" stop-color="#4ade80"/><stop offset=".55" stop-color="#facc15"/><stop offset=".75" stop-color="#fb923c"/><stop offset="1" stop-color="#e879f9"/></linearGradient></defs>
+          <rect x="30" y="70" width="700" height="34" rx="8" fill="url(#spec)"/>
+          <g font-size="11.5" fill="#3d4560" text-anchor="middle">
+            <text x="85" y="125">Ondes radio</text><text x="215" y="125">Micro-ondes</text><text x="330" y="125">Infrarouge</text><text x="430" y="125">Lumière visible</text><text x="525" y="125">Ultraviolet</text><text x="615" y="60" font-weight="700" fill="#12162a">RAYONS X</text><text x="695" y="125">Rayons γ</text>
+          </g>
+          <rect x="575" y="64" width="85" height="46" rx="8" fill="none" stroke="#12162a" stroke-width="2.5"/>
+          <text x="380" y="160" text-anchor="middle" font-size="12" fill="#3d4560">Fréquence et énergie augmentent ➜ · Longueur d'onde diminue ➜</text>
+          <text x="380" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#4f46e5">LE SPECTRE ÉLECTROMAGNÉTIQUE</text>
+        </svg>
+        <figcaption><b>Schéma 3 — Place des rayons X dans le spectre électromagnétique.</b> À gauche, les rayonnements peu énergétiques (radio, lumière) ; à droite, les plus énergétiques. Les rayons X se situent entre les ultraviolets et les rayons gamma : assez énergétiques pour traverser le corps et ioniser la matière, ce qui explique à la fois leur intérêt diagnostique et leur danger (Partie III).</figcaption>
+      </figure>
+      <div class="piege"><b class="t">⚠️ Pièges classiques</b>Confondre rayon X et rayon gamma (même famille, origine différente : le X naît dans le tube, le gamma dans le noyau) ; croire que le rayon X est une particule matérielle (c'est un photon, sans masse ni charge) ; inverser fréquence et longueur d'onde (quand l'une monte, l'autre descend).</div>
+      <div class="retenir"><b class="t">✅ À retenir — Définition</b>Rayonnement électromagnétique ionisant · ν = 10<sup>16</sup>–10<sup>20</sup> Hz · λ = 10<sup>−8</sup>–10<sup>−12</sup> m · E = 40 à 4×10<sup>5</sup> eV · très pénétrant.</div>
+
+      <h3 id="s13">1-3 · Production des rayons X : le tube de Coolidge</h3>
+      <p>En médecine, les rayons X ne viennent pas d'une source radioactive : on les <strong>fabrique à la demande</strong> dans un appareil appelé <strong>tube à rayons X</strong>, ou <strong>tube de Coolidge</strong>. C'est un tube de verre dans lequel règne un <strong>vide poussé</strong>. Le principe tient en une phrase du cours : des électrons rapides viennent bombarder une cible métallique, et c'est leur <strong>freinage</strong> brutal au contact de cette cible qui émet les rayons X.</p>
+      <ol class="steps">
+        <li><strong>Émission des électrons.</strong> Un filament de <strong>tungstène</strong> situé dans la <strong>cathode</strong> est chauffé par un courant électrique. Chauffé, il libère des électrons (émission thermo-ionique) : la cathode est la source d'électrons du tube.</li>
+        <li><strong>Accélération.</strong> Une forte tension électrique (la haute tension, en kilovolts) est appliquée entre cathode (−) et anode (+). Les électrons, chargés négativement, sont violemment attirés et accélérés vers l'anode à travers le vide.</li>
+        <li><strong>Bombardement de la cible.</strong> Le faisceau d'électrons rapides percute la cible métallique de l'<strong>anode</strong> (appelée aussi <strong>anti-cathode</strong>).</li>
+        <li><strong>Émission des rayons X.</strong> En pénétrant dans le métal, les électrons interagissent avec les particules de la cible et sont <strong>freinés</strong>. L'énergie perdue lors de ce freinage est émise sous forme de photons X (le reste, l'essentiel, part en chaleur — d'où la nécessité de refroidir l'anode).</li>
+      </ol>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 300" role="img" aria-label="Tube de Coolidge : cathode, anode, faisceau d'électrons et rayons X">
+          <rect x="60" y="50" width="640" height="180" rx="90" fill="#f2f4fa" stroke="#6b7391" stroke-width="2"/>
+          <text x="380" y="38" text-anchor="middle" font-size="13" font-weight="700" fill="#4f46e5">TUBE DE COOLIDGE — VIDE POUSSÉ</text>
+          <rect x="110" y="105" width="70" height="70" rx="10" fill="#eeecff" stroke="#4f46e5" stroke-width="2"/>
+          <text x="145" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#12162a">CATHODE −</text>
+          <text x="145" y="152" text-anchor="middle" font-size="10.5" fill="#3d4560">Filament de</text>
+          <text x="145" y="166" text-anchor="middle" font-size="10.5" fill="#3d4560">tungstène chauffé</text>
+          <g stroke="#f59e0b" stroke-width="2.5">
+            <line x1="185" y1="120" x2="545" y2="108"/><line x1="185" y1="140" x2="545" y2="140"/><line x1="185" y1="160" x2="545" y2="172"/>
+          </g>
+          <g fill="#f59e0b" font-size="11"><text x="330" y="112">électrons e⁻ ➜</text><text x="330" y="132">électrons e⁻ ➜</text><text x="330" y="168">électrons e⁻ ➜</text></g>
+          <path d="M560 85 L620 105 L620 195 L560 215 Z" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+          <text x="592" y="135" text-anchor="middle" font-size="12" font-weight="700" fill="#12162a">ANODE +</text>
+          <text x="592" y="152" text-anchor="middle" font-size="10.5" fill="#3d4560">(anti-cathode)</text>
+          <text x="592" y="166" text-anchor="middle" font-size="10.5" fill="#3d4560">cible métallique</text>
+          <g stroke="#0891b2" stroke-width="3"><line x1="615" y1="150" x2="690" y2="105"/><line x1="620" y1="155" x2="705" y2="150"/><line x1="615" y1="160" x2="690" y2="200"/></g>
+          <text x="700" y="92" font-size="12" font-weight="700" fill="#0891b2">RAYONS X</text>
+          <text x="145" y="262" text-anchor="middle" font-size="11.5" fill="#3d4560">Haute tension (kV) entre cathode et anode : elle accélère les électrons</text>
+          <text x="592" y="262" text-anchor="middle" font-size="11.5" fill="#b45309">Freinage des e⁻ ➜ photons X + chaleur</text>
+        </svg>
+        <figcaption><b>Schéma 4 — Le tube de Coolidge (tube à rayons X).</b> À gauche, la cathode et son filament de tungstène chauffé libèrent les électrons ; accélérés par la haute tension dans le vide poussé, ils bombardent l'anode (anti-cathode) à droite ; leur freinage dans la cible métallique émet les rayons X. Retiens le trajet en 4 temps : <b>chauffage → accélération → bombardement → freinage/émission</b>. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+      <div class="card"><h4>🔄 Variante du cours : l'anode tournante</h4><p>Pour évacuer la chaleur, les tubes performants utilisent une <strong>anode tournante</strong> : le faisceau d'électrons frappe la <strong>périphérie</strong> d'un disque en rotation, sur une <strong>piste d'anode en tungstène</strong> orientée <strong>obliquement</strong> par rapport au faisceau. La chaleur se répartit ainsi sur toute la piste au lieu de fondre un seul point, et l'inclinaison de la piste dirige les rayons X vers la fenêtre de sortie du tube.</p></div>
+      <div class="piege"><b class="t">⚠️ Pièges classiques</b>Inverser cathode et anode (la cathode émet les électrons, l'anode reçoit le bombardement) ; oublier le rôle du vide (sans vide, les électrons seraient freinés par l'air et n'atteindraient jamais la cible) ; croire que les rayons X naissent de la chaleur du filament (ils naissent du <strong>freinage</strong> des électrons dans l'anode).</div>
+      <div class="retenir"><b>✅ À retenir — Production</b>Tube de Coolidge = tube de verre sous vide poussé · cathode de tungstène chauffée = source d'électrons · haute tension = accélération · anode/anti-cathode = cible bombardée · freinage des électrons = émission des rayons X (+ chaleur) · anode tournante à piste de tungstène oblique = gestion de la chaleur.</div>
+
+      <h3 id="s14">1-4 · Interaction des rayons X avec la matière</h3>
+      <p>Un rayon X qui entre dans le corps a trois destins possibles : traverser sans rien toucher, être <strong>absorbé</strong>, ou être <strong>dévié (diffusé)</strong>. En radiodiagnostic, le cours retient essentiellement <strong>deux mécanismes d'interaction</strong> avec la matière organique :</p>
+      <div class="grid2">
+        <div class="card"><h4>1 · Effet photoélectrique</h4><p>Le photon X est <strong>entièrement absorbé</strong> par un électron profond de l'atome. C'est l'effet qui crée le <strong>contraste</strong> de l'image.</p></div>
+        <div class="card"><h4>2 · Effet Compton</h4><p>Le photon X est <strong>dévié et affaibli</strong> par un électron périphérique. C'est l'effet qui crée le <strong>rayonnement diffusé</strong>, gênant et dangereux.</p></div>
+      </div>
+      <div class="note"><b class="t">💡 Pourquoi c'est LA clé de tout le module</b>Le cours le dit explicitement : comprendre ces mécanismes atomiques permet de comprendre <strong>l'atténuation sélective</strong> du faisceau — le fait que chaque tissu arrête une fraction différente des rayons — et donc le <strong>contraste de l'image radiographique</strong>. Sans atténuation sélective, l'image serait uniformément grise et inexploitable.</div>
+
+      <h3 id="photo">Effet photoélectrique : l'absorption totale</h3>
+      <p><strong>Mécanisme (cours) :</strong> l'effet photoélectrique se produit lorsqu'un rayon X arrive à proximité d'un <strong>électron d'une couche profonde</strong> de l'atome, avec suffisamment d'énergie pour pouvoir l'<strong>éjecter</strong>.</p>
+      <ol class="steps">
+        <li><strong>Absorption du photon.</strong> Le rayon X est <strong>absorbé</strong> : il disparaît en cédant toute son énergie.</li>
+        <li><strong>Éjection du photoélectron.</strong> Le surplus d'énergie se retrouve dans l'<strong>énergie cinétique</strong> de l'électron éjecté, appelé <strong>photoélectron</strong>.</li>
+        <li><strong>Réorganisation de l'atome.</strong> Le « trou » laissé par l'électron éjecté est rempli par un électron d'une couche plus superficielle, qui laisse échapper, lors de sa « descente », un <strong>rayon X caractéristique de faible énergie</strong> (négligeable pour les atomes des matières organiques).</li>
+      </ol>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 290" role="img" aria-label="Effet photoélectrique : photon absorbé, photoélectron éjecté">
+          <circle cx="400" cy="145" r="16" fill="#db2777"/><text x="400" y="150" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">N</text>
+          <circle cx="400" cy="145" r="55" fill="none" stroke="#4f46e5" stroke-width="2"/>
+          <circle cx="400" cy="145" r="95" fill="none" stroke="#0891b2" stroke-width="2"/>
+          <circle cx="345" cy="145" r="9" fill="#4f46e5"/><text x="345" y="125" text-anchor="middle" font-size="11" font-weight="700" fill="#4f46e5">e⁻ profond</text>
+          <circle cx="400" cy="50" r="8" fill="#0891b2"/><text x="400" y="35" text-anchor="middle" font-size="11" fill="#0891b2">e⁻ superficiel</text>
+          <line x1="80" y1="145" x2="325" y2="145" stroke="#f59e0b" stroke-width="4"/>
+          <text x="150" y="128" font-size="12" font-weight="700" fill="#b45309">Photon X incident ➜</text>
+          <line x1="345" y1="145" x2="215" y2="245" stroke="#12162a" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="120" y="268" font-size="12" font-weight="700" fill="#12162a">Photoélectron éjecté (énergie cinétique) ➘</text>
+          <text x="470" y="90" font-size="11.5" fill="#3d4560">L'électron superficiel « descend »</text>
+          <text x="470" y="107" font-size="11.5" fill="#3d4560">combler le trou ➜ rayon X</text>
+          <text x="470" y="124" font-size="11.5" fill="#3d4560">caractéristique faible (négligeable)</text>
+          <text x="580" y="245" font-size="12" font-weight="700" fill="#dc2626">Atome ionisé (ion +)</text>
+        </svg>
+        <figcaption><b>Schéma 5 — Effet photoélectrique.</b> Le photon X (flèche orange) rencontre un électron d'une couche profonde (cercle intérieur) et est <b>entièrement absorbé</b> : l'électron est éjecté (photoélectron, flèche pointillée), l'atome devient un ion positif, et un électron superficiel vient combler le vide en émettant un faible rayon caractéristique. Résultat net : le rayon X incident est <b>arrêté</b>. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+      <div class="note"><b class="t">📋 Résultat de l'effet photoélectrique (cours)</b>
+        <ul>
+          <li><strong>Arrêt du rayon X</strong> (le rayon caractéristique émis est trop faible pour avoir un effet significatif).</li>
+          <li>Production d'un <strong>photoélectron</strong>, qui pourra avoir des <strong>effets biologiques néfastes</strong> (c'est un mécanisme d'irradiation des tissus — voir Partie III).</li>
+          <li>Production d'un <strong>ion positif</strong> : l'atome est ionisé.</li>
+          <li>Effet <strong>principal dans les matières organiques à relativement faible énergie</strong> ; effet <strong>majeur pour des tensions inférieures à 70 kV</strong> — c'est-à-dire précisément le domaine de la radiologie dentaire (60–70 kV) !</li>
+        </ul>
+      </div>
+      <p><strong>Conséquence pour l'image :</strong> la probabilité de l'effet photoélectrique augmente fortement avec le <strong>numéro atomique Z</strong> du tissu traversé (le cours le rappelle par contraste avec l'effet Compton). L'émail, la dentine et l'os (riches en calcium, Z élevé) absorbent donc beaucoup plus que les tissus mous : ils laissent passer peu de rayons, donc apparaissent <strong>clairs (radio-opaques)</strong> sur le cliché. C'est ce mécanisme qui donne son <strong>contraste utile</strong> à la radiographie dentaire.</p>
+
+      <h3 id="compton">Effet Compton : la diffusion</h3>
+      <p><strong>Mécanisme (cours) :</strong> l'effet Compton se produit lorsqu'un rayon X se trouve à proximité d'un <strong>électron périphérique peu lié</strong> à l'atome (parfois appelé électron « libre »).</p>
+      <ol class="steps">
+        <li><strong>Partage d'énergie.</strong> L'énergie du rayon X est transmise <strong>en partie</strong> à l'électron, qui s'échappe avec une certaine énergie cinétique.</li>
+        <li><strong>Photon diffusé.</strong> Le reste de l'énergie se retrouve sous la forme d'un <strong>rayon X de direction différente et d'énergie inférieure</strong>.</li>
+        <li><strong>Diffusion dans toutes les directions.</strong> La nouvelle direction est <strong>aléatoire</strong> : le faisceau est diffusé dans toutes les directions, <strong>y compris vers l'arrière</strong>, dans le sens opposé au faisceau primaire.</li>
+      </ol>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 290" role="img" aria-label="Effet Compton : photon dévié et affaibli, électron périphérique éjecté">
+          <circle cx="400" cy="145" r="16" fill="#db2777"/><text x="400" y="150" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">N</text>
+          <circle cx="400" cy="145" r="55" fill="none" stroke="#4f46e5" stroke-width="2"/>
+          <circle cx="400" cy="145" r="95" fill="none" stroke="#0891b2" stroke-width="2"/>
+          <circle cx="495" cy="145" r="8" fill="#0891b2"/><text x="545" y="130" font-size="11" fill="#0891b2">e⁻ périphérique peu lié</text>
+          <line x1="80" y1="145" x2="482" y2="145" stroke="#f59e0b" stroke-width="4"/>
+          <text x="140" y="128" font-size="12" font-weight="700" fill="#b45309">Photon X incident ➜</text>
+          <line x1="505" y1="145" x2="640" y2="60" stroke="#f59e0b" stroke-width="3"/>
+          <text x="560" y="45" font-size="12" font-weight="700" fill="#b45309">Photon diffusé (énergie ↓, direction aléatoire) ↗</text>
+          <line x1="505" y1="150" x2="620" y2="235" stroke="#12162a" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="520" y="262" font-size="12" font-weight="700" fill="#12162a">Électron éjecté ➘ · ion +</text>
+          <g stroke="#dc2626" stroke-width="2" opacity=".65"><line x1="500" y1="140" x2="610" y2="150"/><line x1="495" y1="135" x2="560" y2="70"/><line x1="490" y1="150" x2="520" y2="245"/></g>
+          <text x="90" y="262" font-size="11.5" fill="#dc2626">Diffusion possible dans toutes les directions, même vers l'arrière ⚠️</text>
+        </svg>
+        <figcaption><b>Schéma 6 — Effet Compton.</b> Le photon X ne disparaît pas : il cède une partie de son énergie à un électron périphérique peu lié (éjecté) et repart <b>dévié et affaibli</b> dans une direction aléatoire. Ce rayonnement diffusé voile l'image et irradie inutilement le patient et le personnel — c'est le fondement physique de la radioprotection (Partie III). <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+      <div class="note"><b class="t">📋 Résultat de l'effet Compton (cours)</b>
+        <ul>
+          <li><strong>Déviation avec perte d'énergie</strong> du rayon X + production d'un <strong>électron</strong> et d'un <strong>ion positif</strong>.</li>
+          <li>Le rayonnement diffusé, bien que moins énergétique que le faisceau primaire, reste <strong>suffisamment énergétique pour dégrader l'image et constituer un danger</strong> dont il faut se protéger.</li>
+          <li>Sa probabilité ne dépend que de la <strong>densité</strong> du matériel — elle ne dépend <strong>pas du numéro atomique</strong> (contrairement à l'effet photoélectrique).</li>
+          <li>Effet <strong>prépondérant dans les tissus organiques à forte énergie (tension &gt; 100 kV)</strong>.</li>
+        </ul>
+      </div>
+
+      <h3>Application médicale : photoélectrique contre Compton</h3>
+      <table>
+        <tr><th>Critère</th><th>Effet photoélectrique</th><th>Effet Compton</th></tr>
+        <tr><td>Électron concerné</td><td>Couche <strong>profonde</strong>, bien lié</td><td>Couche <strong>périphérique</strong>, peu lié (« libre »)</td></tr>
+        <tr><td>Devenir du photon</td><td><strong>Totalement absorbé</strong> (arrêté)</td><td><strong>Dévié + affaibli</strong> (diffusé)</td></tr>
+        <tr><td>Produits</td><td>Photoélectron + ion + (+ X caractéristique faible)</td><td>Électron + ion + + photon diffusé</td></tr>
+        <tr><td>Dépendance au numéro atomique Z</td><td><strong>Oui</strong>, forte (tissus denses et calciques absorbent plus)</td><td><strong>Non</strong> : dépend seulement de la <strong>densité</strong></td></tr>
+        <tr><td>Domaine de prédominance</td><td>Faibles énergies · <strong>&lt; 70 kV</strong></td><td>Fortes énergies · <strong>&gt; 100 kV</strong></td></tr>
+        <tr><td>Rôle dans l'image</td><td><strong>Crée le contraste utile</strong> (atténuation sélective)</td><td><strong>Dégrade l'image</strong> (voile par rayonnement diffusé)</td></tr>
+        <tr><td>Rôle biologique</td><td>Photoélectron potentiellement néfaste</td><td>Rayonnement diffusé = danger pour patient et personnel</td></tr>
+      </table>
+      <div class="note"><b class="t">🦷 Le point qui relie tout le module</b>La radiologie dentaire travaille à <strong>60–70 kV</strong> : on est donc dans le domaine où l'effet <strong>photoélectrique domine</strong>. C'est une chance pour le diagnostic (contraste maximal entre dent/os et tissus mous) — mais chaque photon absorbé dépose son énergie dans les tissus, d'où l'exigence de ne radiographier que lorsque c'est justifié et avec la dose la plus faible possible (Partie III, principe ALARA).</div>
+      <div class="retenir"><b class="t">✅ À retenir — Interactions</b>Photoélectrique = électron profond, photon absorbé, photoélectron + ion +, dépend de Z, &lt; 70 kV, crée le contraste. Compton = électron périphérique, photon dévié/affaibli, dépend de la densité (pas de Z), &gt; 100 kV, crée le diffusé dangereux et voilant.</div>
+      <div class="piege"><b class="t">⚠️ Pièges classiques</b>Les deux effets produisent un électron et un ion positif : ce n'est donc pas un critère pour les distinguer. Les vrais critères sont : couche de l'électron (profonde / périphérique), devenir du photon (absorbé / diffusé), dépendance (Z / densité) et seuils (70 kV / 100 kV). Autre piège : le photon diffusé de Compton n'est pas inoffensif — il reste énergétique.</div>
+      <label class="done"><input type="checkbox" data-done="partie1"> J'ai compris cette section (Partie I)</label>
+    </section>
+
+    <!-- ================= PARTIE II ================= -->
+    <section class="part" id="partie2">
+      <span class="kicker">Partie II · S1</span>
+      <h2>II. Initiation à la radiologie</h2>
+      <p>On passe de la physique à la pratique : comment la triade Source → Objet → Détecteur devient un examen réel, avec quels réglages, et quels critères de qualité pour l'image obtenue.</p>
+      <div class="obj"><b class="t">🎯 Objectifs du cours (PDF)</b>
+        <ul>
+          <li>Définir la radiologie.</li>
+          <li>Décrire le schéma général d'utilisation des rayons X en odontologie.</li>
+          <li>Décrire les critères de qualité d'une source de rayonnement.</li>
+          <li>Décrire le secteur intéressé par ces rayonnements (l'objet).</li>
+          <li>Décrire les moyens et la façon de détecter les rayons X.</li>
+        </ul>
+      </div>
+
+      <h3 id="s21">2-1 · Définition de la radiologie</h3>
+      <div class="def"><b class="t">📖 Définition du cours</b>La <strong>radiographie</strong> est un procédé d'imagerie qui permet de <strong>visualiser les structures anatomiques internes</strong> au moyen de faisceaux de rayons X traversant le patient. C'est une technique utilisée en médecine pour <strong>affiner un diagnostic</strong> afin de réaliser un <strong>traitement adapté</strong>. La réalisation d'un examen radiographique doit être <strong>justifiée par la prescription d'un médecin</strong>.</div>
+      <p>Trois idées à dégager de cette définition : (1) la radio ne montre pas la surface mais l'<strong>intérieur</strong> du corps, grâce au pouvoir pénétrant vu en 1-2 ; (2) c'est un outil d'<strong>aide au diagnostic</strong>, pas un geste systématique ; (3) elle engage une responsabilité : rayonnement ionisant = examen <strong>justifié et prescrit</strong>. Retiens ce troisième point : c'est la première phrase de la radioprotection (principe de justification, Partie III).</p>
+
+      <h3 id="s22">2-2 · Schéma général de la radiologie</h3>
+      <p>Le cours décrit la géométrie de tout examen radiographique ainsi : lors de l'examen, le sujet à radiographier — le patient, c'est-à-dire la région anatomique dont on veut former l'image — est placé <strong>entre le foyer radiogène (le tube à rayons X) et le récepteur (le film radiographique)</strong>. Les rayons X sont projetés à travers le corps et interagissent avec les tissus.</p>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 250" role="img" aria-label="Schéma général : tube, patient, récepteur alignés">
+          <rect x="30" y="85" width="120" height="80" rx="12" fill="#eeecff" stroke="#4f46e5" stroke-width="2"/>
+          <text x="90" y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#12162a">TUBE RX</text>
+          <text x="90" y="138" text-anchor="middle" font-size="11" fill="#3d4560">Foyer radiogène</text>
+          <polygon points="155,95 330,60 330,190 155,155" fill="#f59e0b" opacity=".22"/>
+          <g stroke="#f59e0b" stroke-width="2"><line x1="155" y1="100" x2="600" y2="70"/><line x1="155" y1="125" x2="600" y2="125"/><line x1="155" y1="150" x2="600" y2="180"/></g>
+          <ellipse cx="380" cy="125" rx="52" ry="78" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+          <text x="380" y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#12162a">PATIENT</text>
+          <text x="380" y="138" text-anchor="middle" font-size="11" fill="#3d4560">Objet traversé</text>
+          <rect x="600" y="55" width="26" height="140" rx="6" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+          <text x="613" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="#0891b2">RÉCEPTEUR</text>
+          <text x="230" y="235" text-anchor="middle" font-size="11.5" fill="#b45309">Faisceau primaire ➜ atténuation sélective dans les tissus</text>
+        </svg>
+        <figcaption><b>Schéma 7 — Schéma général d'un examen radiographique.</b> De gauche à droite : le tube (foyer radiogène) émet le faisceau, le patient placé au milieu l'atténue sélectivement (Partie I), et le récepteur (film, écran à mémoire ou capteur) enregistre le faisceau résiduel : c'est ce « moulage » du faisceau qui forme l'image. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+
+      <div class="note"><b class="t">🛠️ Fiche technique du générateur dentaire présenté dans le cours</b><p>Ces valeurs décrivent l'appareil de radiographie dentaire intra-orale pris comme exemple dans le PDF. Ce sont des chiffres concrets, parfaits pour les QCM :</p></div>
+      <table>
+        <tr><th>Paramètre</th><th>Valeur (cours)</th><th>Rôle à comprendre</th></tr>
+        <tr><td>Tension du tube</td><td><strong>60–70 kV</strong></td><td>Énergie/pénétration des photons (domaine photoélectrique).</td></tr>
+        <tr><td>Courant du tube</td><td><strong>4–7 mA</strong></td><td>Nombre de photons émis → noirceur de l'image.</td></tr>
+        <tr><td>Foyer du tube</td><td><strong>0,4 mm</strong> (CEI 336)</td><td>Petit foyer = image plus nette (peu de flou géométrique).</td></tr>
+        <tr><td>Fréquence de fonctionnement</td><td>50 / 60 Hz</td><td>Alimentation secteur du générateur.</td></tr>
+        <tr><td>Filtration totale</td><td><strong>Min. 2,0 mm Al</strong> (aluminium)</td><td>Élimine les photons mous inutiles qui ne feraient qu'irradier la peau.</td></tr>
+        <tr><td>Temps d'exposition</td><td>0,04 à 2 secondes</td><td>Durée d'émission : avec le mA, il règle la dose totale.</td></tr>
+        <tr><td>Compatibilité récepteurs</td><td>Film argentique · Écran à mémoire · Capteur digital</td><td>Les trois familles de détecteurs du § 2-2-3.</td></tr>
+        <tr><td>Paramètres de minuterie</td><td>Réglage du type de dent · paramètres de radiographie · sélection Adulte / Enfant · sélection Écran à mémoire / Capteur</td><td>Pré-réglages pour adapter la dose à la situation.</td></tr>
+        <tr><td>Affichages</td><td>Dose émise · produit dose-surface après exposition</td><td>Traçabilité de la dose délivrée à chaque cliché.</td></tr>
+        <tr><td>Longueur de bras</td><td>Court 1,81 m · moyen 1,96 m · long 2,26 m</td><td>Positionnement de la tête autour du patient.</td></tr>
+        <tr><td>Autres caractéristiques</td><td>Montage mural · rayonnement constant · réglage variable de l'intensité (mA) et de la tension (kV) · tête avec poignée de positionnement · kit d'angulateurs (technique des plans parallèles)</td><td>Ergonomie et reproductibilité des incidences.</td></tr>
+        <tr><td>Technologie</td><td>Générateur <strong>haute fréquence (CC)</strong> : réduit la dose patient de <strong>plus de 25 %</strong> par rapport aux générateurs habituels</td><td>Faisceau plus homogène = même image pour moins de dose.</td></tr>
+      </table>
+
+      <h3 id="source">2-2-1 · La source : régler le faisceau</h3>
+      <p>La qualité d'une source se juge sur sa capacité à produire un faisceau <strong>adapté</strong> : assez de photons, d'énergie suffisante et homogène. Deux boutons commandent tout : l'<strong>intensité</strong> et la <strong>tension</strong>.</p>
+      <div class="grid2">
+        <div class="card"><h4>💡 L'intensité (mA) : le nombre de photons</h4><p>Le cours la définit comme le <strong>nombre de photons</strong> émis. Elle commande le <strong>degré de noirceur</strong> (la densité) de l'image sur le film : plus il y a de photons qui atteignent le récepteur, plus l'image est noire. Les générateurs actuels fonctionnent entre <strong>4 et 8 mA</strong>. Trop faible : image pâle, inexploitable. Trop fort : image noire, brûlée — et dose inutile au patient.</p></div>
+        <div class="card"><h4>⚡ Le générateur : du courant alternatif à la haute fréquence</h4><p>Le courant alternatif change de sens à chaque demi-période, soit <strong>50 fois par seconde</strong> : avec un générateur classique, le faisceau «pulse» et contient des photons d'énergies très variables. La création des générateurs <strong>haute fréquence</strong> représente une <strong>avancée technologique importante</strong> : tension quasi constante, faisceau homogène, et — chiffre du cours — <strong>plus de 25 % de dose en moins</strong> pour le patient.</p></div>
+      </div>
+      <h4>Le voltage (kV) : l'énergie du photon</h4>
+      <p>Pour obtenir une image de qualité, le maximum de rayons X doit <strong>atteindre le récepteur</strong> : il faut donc des photons d'énergie suffisante pour traverser le tube et les tissus. Le but recherché est un <strong>faisceau homogène</strong>, formé de photons d'énergie suffisante et <strong>similaire</strong> — c'est exactement ce que la tension règle.</p>
+      <ul>
+        <li>Des tests de variation de tension à débit de dose fixe, sur un faisceau traversant une forme en aluminium d'épaisseur croissante (le fantôme de test du cours), montrent le comportement du faisceau selon le kV.</li>
+        <li>Les générateurs travaillant à des tensions plus élevées (<strong>60–70 kV</strong>) produisent des rayons <strong>plus pénétrants</strong> et, par conséquent, des images <strong>moins contrastées</strong>.</li>
+        <li><strong>Faible tension</strong> ➜ contraste augmenté, mais dose d'irradiation augmentée (plus de photons absorbés dans les tissus — effet photoélectrique).</li>
+        <li><strong>Tension élevée</strong> ➜ contraste diminué, mais dose d'irradiation diminuée (les photons traversent au lieu d'être absorbés).</li>
+      </ul>
+      <div class="formula">kV ↑ ➜ pénétration ↑ · contraste ↓ · dose ↓ &nbsp;&nbsp;|&nbsp;&nbsp; kV ↓ ➜ pénétration ↓ · contraste ↑ · dose ↑</div>
+      <p>Augmenter la tension n'est toutefois pas une solution miracle : au-delà de la zone utile, on perd le contraste qui fait tout l'intérêt du diagnostic, et l'effet Compton (déviant) prend le dessus sur l'effet photoélectrique. Tout le réglage d'un examen est donc un <strong>compromis</strong> : assez de kV pour traverser sans irradier, pas trop pour garder le contraste. La zone <strong>60–70 kV</strong> de la radiologie dentaire est ce compromis.</p>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 210" role="img" aria-label="Compromis tension : contraste et dose en sens inverse">
+          <line x1="70" y1="170" x2="690" y2="170" stroke="#6b7391" stroke-width="2"/><line x1="70" y1="170" x2="70" y2="35" stroke="#6b7391" stroke-width="2"/>
+          <text x="690" y="192" text-anchor="end" font-size="12" fill="#3d4560">Tension (kV) ➜</text>
+          <polyline points="90,60 380,110 660,150" fill="none" stroke="#4f46e5" stroke-width="3.5"/>
+          <polyline points="90,150 380,105 660,62" fill="none" stroke="#db2777" stroke-width="3.5"/>
+          <text x="470" y="92" font-size="13" font-weight="700" fill="#db2777">Pénétration ↑</text>
+          <text x="470" y="140" font-size="13" font-weight="700" fill="#4f46e5">Contraste ↓ et dose absorbée ↓</text>
+          <rect x="330" y="40" width="150" height="130" fill="#16a34a" opacity=".10"/>
+          <text x="405" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="#16a34a">Zone dentaire 60–70 kV</text>
+        </svg>
+        <figcaption><b>Schéma 8 — Le compromis de la tension.</b> Quand le kV monte, les photons pénètrent mieux (courbe rose) mais le contraste chute et la dose absorbée diminue (courbe violette). La zone 60–70 kV équilibre les deux exigences : contraste photoélectrique exploitable et dose contenue.</figcaption>
+      </figure>
+
+      <h3 id="objet">2-2-2 · L'objet : le secteur intéressé par les rayonnements</h3>
+      <p>L'objet, c'est la <strong>région anatomique dont on veut former l'image</strong>. Son rôle n'est pas passif : en traversant les tissus, le faisceau est <strong>atténué sélectivement</strong> selon trois propriétés de chaque structure rencontrée :</p>
+      <table>
+        <tr><th>Propriété du tissu</th><th>Effet sur le faisceau</th><th>Exemple dentaire</th></tr>
+        <tr><td><strong>Numéro atomique Z</strong> élevé</td><td>Absorption photoélectrique forte ➜ peu de photons transmis ➜ zone <strong>claire</strong> (radio-opaque)</td><td>Émail (le plus opaque), dentine, os cortical, restaurations métalliques</td></tr>
+        <tr><td><strong>Densité / épaisseur</strong> importante</td><td>Plus d'interactions (photoélectriques et Compton) ➜ atténuation forte</td><td>Racine épaisse vs couronne fine ; superposition de structures</td></tr>
+        <tr><td>Tissus <strong>mous</strong> (Z faible, faible densité)</td><td>Faible absorption ➜ beaucoup de photons transmis ➜ zone <strong>sombre</strong> (radio-claire)</td><td>Pulpe, ligament, joue, langue, air des sinus (le plus clair/sombre selon convention d'affichage)</td></tr>
+      </table>
+      <p>C'est donc l'objet qui « écrit » l'image : le détecteur ne reçoit pas une photographie, mais la <strong>carte des atténuations</strong> du faisceau. Comprendre l'objet, c'est comprendre pourquoi une carie (tissu déminéralisé, moins absorbant) apparaît sombre dans une dent claire, et pourquoi une couronne métallique apparaît d'un blanc opaque.</p>
+
+      <h3 id="detecteurs">2-2-3 · Les détecteurs : capter le faisceau résiduel</h3>
+      <p>Dernier maillon de la triade : le détecteur convertit le faisceau X invisible, après traversée du patient, en image exploitable. Le cours cite les trois supports compatibles avec le générateur dentaire :</p>
+      <table>
+        <tr><th>Détecteur</th><th>Principe</th><th>Points forts</th><th>Points faibles</th></tr>
+        <tr><td><strong>Film argentique</strong></td><td>Les photons impressionnent une émulsion de sels d'argent ; le développement chimique révèle l'image latente.</td><td>Support historique de référence, fine résolution, pas d'électronique en bouche.</td><td>Développement chimique (temps, produits), pas d'image immédiate, dose souvent supérieure.</td></tr>
+        <tr><td><strong>Écran à mémoire</strong> (plaque photostimulable)</td><td>La plaque stocke l'énergie du faisceau, puis un lecteur laser la scanne et reconstruit l'image numérique.</td><td>Souple et fin comme un film, image numérique relisible, plaque réutilisable.</td><td>Nécessite un lecteur ; image non instantanée ; plaque fragile aux rayures.</td></tr>
+        <tr><td><strong>Capteur digital</strong> (capteur numérique intra-oral)</td><td>Le faisceau est converti directement en signal électrique puis en image à l'écran, en quelques secondes.</td><td>Image immédiate, retouche/zoom possibles, dose réduite, archivage facile.</td><td>Capteur rigide et épais (confort), coût, câble ou boîtier à placer avec précision.</td></tr>
+      </table>
+      <p>Dans les trois cas, le principe physique reste celui de la Partie I : là où l'objet a fortement atténué (dent, os), peu de photons atteignent le détecteur ➜ zone claire ; là où l'objet a peu atténué (tissus mous, cavité), beaucoup de photons l'atteignent ➜ zone sombre et, pour le film, <strong>noirceur</strong> proportionnelle au nombre de photons — donc réglée par le <strong>mA</strong> et le temps d'exposition.</p>
+
+      <h3 id="geometrie">Formations géométriques : la géométrie de l'image</h3>
+      <p>Une radiographie est une <strong>projection</strong> : l'image d'un objet en 3 dimensions projetée en 2 dimensions depuis un foyer quasi ponctuel. Trois règles géométriques, illustrées ci-dessous, gouvernent la fidélité de cette projection :</p>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 270" role="img" aria-label="Géométrie : foyer, objet, film, agrandissement et flou">
+          <circle cx="90" cy="135" r="9" fill="#4f46e5"/><text x="90" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#4f46e5">FOYER (0,4 mm)</text>
+          <rect x="360" y="95" width="46" height="80" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+          <text x="383" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#db2777">DENT (objet)</text>
+          <rect x="640" y="70" width="16" height="130" rx="5" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+          <text x="648" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#0891b2">FILM</text>
+          <g stroke="#f59e0b" stroke-width="2"><line x1="95" y1="128" x2="645" y2="78"/><line x1="95" y1="142" x2="645" y2="192"/></g>
+          <g stroke="#6b7391" stroke-width="1.4" stroke-dasharray="5 4"><line x1="90" y1="245" x2="383" y2="245"/><line x1="383" y1="245" x2="648" y2="245"/></g>
+          <text x="235" y="262" text-anchor="middle" font-size="11.5" fill="#3d4560">Distance foyer–objet (grande = moins d'agrandissement)</text>
+          <text x="540" y="232" text-anchor="middle" font-size="11.5" fill="#3d4560">Objet–film (petite = plus net)</text>
+        </svg>
+        <figcaption><b>Schéma 9 — Formation géométrique de l'image.</b> Les rayons divergent depuis le foyer : l'image projetée sur le film est donc <b>agrandie</b>. Plus l'objet est proche du film et loin du foyer, plus l'agrandissement et le flou diminuent. D'où les règles pratiques ci-dessous. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+      <ul>
+        <li><strong>Foyer petit</strong> (0,4 mm dans la fiche technique) : la source est quasi ponctuelle, les contours sont <strong>nets</strong>. Un gros foyer créerait une pénombre (flou géométrique) sur chaque bord.</li>
+        <li><strong>Distance foyer–film grande</strong> : les rayons sont moins divergents sur la zone utile, l'<strong>agrandissement</strong> diminue et l'image est plus fidèle aux dimensions réelles.</li>
+        <li><strong>Distance objet–film minimale</strong> : la dent doit être au plus près du récepteur pour limiter agrandissement et flou — c'est le principe de la <strong>technique des plans parallèles</strong>, réalisée avec le <strong>kit d'angulateurs</strong> cité dans la fiche technique : le film est maintenu parallèle à l'axe de la dent et le faisceau lui est perpendiculaire.</li>
+      </ul>
+      <div class="note"><b class="t">📐 Les 4 critères de qualité d'une image radiographique (à relier aux § précédents)</b>
+        <ul>
+          <li><strong>Contraste</strong> : différence de gris entre structures voisines — gouverné par le <strong>kV</strong> et l'effet photoélectrique (dépend de Z).</li>
+          <li><strong>Noirceur (densité)</strong> : niveau global de noircissement — gouverné par le <strong>mA</strong>, le temps d'exposition et la distance.</li>
+          <li><strong>Netteté</strong> : précision des contours — gouvernée par la taille du <strong>foyer</strong> et la distance objet–film.</li>
+          <li><strong>Fidélité géométrique</strong> : absence de distorsion/agrandissement excessif — gouvernée par les <strong>distances</strong> et le parallélisme dent–film.</li>
+        </ul>
+      </div>
+      <div class="retenir"><b class="t">✅ À retenir — Radiologie</b>Patient placé entre foyer radiogène et récepteur · mA = quantité de photons = noirceur (4–8 mA en pratique) · kV = énergie = pénétration, et contraste/dose en sens inverse · générateur haute fréquence = faisceau homogène et −25 % de dose · l'objet atténue selon Z, densité, épaisseur · 3 détecteurs : film argentique, écran à mémoire, capteur digital · géométrie : petit foyer, grande distance foyer–film, objet collé au film, plans parallèles.</div>
+      <div class="piege"><b class="t">⚠️ Pièges classiques</b>Confondre mA et kV (quantité contre énergie : c'est LE piège n° 1) ; croire que monter le kV augmente le contraste (c'est l'inverse) ; oublier que toute radiographie doit être <strong>justifiée et prescrite</strong> ; placer le film loin de la dent (agrandissement + flou).</div>
+      <label class="done"><input type="checkbox" data-done="partie2"> J'ai compris cette section (Partie II)</label>
+    </section>
+
+    <!-- ================= PARTIE III ================= -->
+    <section class="part" id="partie3">
+      <span class="kicker">Partie III · S1</span>
+      <h2>III. Radioprotection</h2>
+      <p>Les rayons X sont <strong>ionisants</strong> : chaque interaction (photoélectrique ou Compton) crée des ions et des électrons capables d'endommager les cellules. La radioprotection est l'ensemble des règles qui permettent de bénéficier de l'image tout en réduisant ce risque au minimum — pour le <strong>praticien</strong>, le <strong>patient</strong>, le <strong>public</strong> et l'<strong>environnement</strong>.</p>
+
+      <h3 id="effets">Effets des rayonnements ionisants</h3>
+      <table>
+        <tr><th>Type d'effet</th><th>Mécanisme</th><th>Ce qu'il faut retenir</th></tr>
+        <tr><td><strong>Effets déterministes</strong></td><td>Apparaissent à coup sûr au-delà d'un <strong>seuil</strong> de dose ; leur gravité augmente avec la dose.</td><td>« Certains pour un seuil déterminé » (cours). Jamais atteints aux doses de la radiologie dentaire correctement pratiquée.</td></tr>
+        <tr><td><strong>Effets aléatoires (stochastiques)</strong></td><td>Effets du hasard : la <strong>probabilité</strong> augmente avec la dose, sans seuil de sécurité garanti ; la gravité, elle, n'en dépend pas.</td><td>« Plus de risque » avec la dose (cours) : c'est pour eux qu'on impose de réduire <strong>toutes</strong> les doses, même faibles.</td></tr>
+      </table>
+      <p>Point de repère donné dans le cours pour la grossesse : la dose délivrée au fœtus lors d'un examen dentaire est estimée <strong>entre 0,5 et 1 µSv</strong> — soit <strong>moins que l'exposition naturelle reçue en une seule journée</strong> — et le risque encouru par un fœtus exposé à quelques µSv lors d'un examen de radiologie dentaire est <strong>extrêmement faible</strong>. Cela ne supprime pas les précautions (voir plus bas) : cela permet de rassurer une patiente qui aurait eu un cliché avant de se savoir enceinte, sans jamais banaliser l'examen.</p>
+
+      <h3 id="principes-rp">Les trois règles d'or : justification, optimisation, limitation</h3>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 190" role="img" aria-label="Les trois principes de la radioprotection">
+          <g font-size="13">
+            <rect x="25" y="55" width="225" height="95" rx="14" fill="#eeecff" stroke="#4f46e5" stroke-width="2"/>
+            <text x="137" y="90" text-anchor="middle" font-weight="700" fill="#12162a">1 · JUSTIFICATION</text>
+            <text x="137" y="112" text-anchor="middle" font-size="11.5" fill="#3d4560">Aucun cliché sans bénéfice</text>
+            <text x="137" y="128" text-anchor="middle" font-size="11.5" fill="#3d4560">diagnostique attendu · prescription</text>
+            <rect x="268" y="55" width="225" height="95" rx="14" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+            <text x="380" y="90" text-anchor="middle" font-weight="700" fill="#12162a">2 · OPTIMISATION (ALARA)</text>
+            <text x="380" y="112" text-anchor="middle" font-size="11.5" fill="#3d4560">Dose aussi basse que</text>
+            <text x="380" y="128" text-anchor="middle" font-size="11.5" fill="#3d4560">raisonnablement possible</text>
+            <rect x="511" y="55" width="225" height="95" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+            <text x="623" y="90" text-anchor="middle" font-weight="700" fill="#12162a">3 · LIMITATION</text>
+            <text x="623" y="112" text-anchor="middle" font-size="11.5" fill="#3d4560">Ne jamais dépasser les</text>
+            <text x="623" y="128" text-anchor="middle" font-size="11.5" fill="#3d4560">limites de dose réglementaires</text>
+          </g>
+          <text x="380" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#4f46e5">LES RÈGLES DE LA RADIOPROTECTION (CODES RÉGLEMENTAIRES UNIVERSELS)</text>
+        </svg>
+        <figcaption><b>Schéma 10 — Les trois principes universels.</b> Ils s'enchaînent logiquement : d'abord se demander si l'examen sert à quelque chose (justification), puis le réaliser avec la plus petite dose utile (optimisation), sans jamais franchir les limites fixées (limitation).</figcaption>
+      </figure>
+      <ol class="steps">
+        <li><strong>Justification.</strong> Tout examen doit apporter un bénéfice diagnostique supérieur au risque d'irradiation. C'est la traduction pratique de la définition du § 2-1 : un examen radiographique doit être <strong>justifié par la prescription d'un médecin</strong>. Pas d'indication = pas de cliché, même « de routine ».</li>
+        <li><strong>Optimisation — principe ALARA.</strong> <em>As Low As Reasonably Achievable</em> : « <strong>aussi bas que raisonnablement possible</strong> ». Une fois l'examen justifié, on règle l'appareil (kV, mA, temps, collimation, récepteur rapide) pour obtenir une image diagnostique avec la dose minimale. C'est ce principe qui motive les générateurs haute fréquence (−25 % de dose), la filtration de 2,0 mm d'aluminium et les capteurs numériques sensibles.</li>
+        <li><strong>Limitation.</strong> Des limites de dose réglementaires encadrent l'exposition des professionnels et du public ; elles ne doivent jamais être dépassées, même si chaque examen pris isolément semble anodin (c'est l'accumulation qui compte).</li>
+      </ol>
+
+      <h3 id="protection">Protection en pratique : opérateur, patient, locaux</h3>
+      <h4>🧑‍⚕️ Protection de l'opérateur et des personnes présentes</h4>
+      <ul>
+        <li><strong>Ne jamais se trouver dans le faisceau primaire</strong> : l'opérateur demeure <strong>à l'extérieur du faisceau primaire</strong>, qui doit toujours être dirigé vers une section blindée ou inoccupée.</li>
+        <li><strong>Distance</strong> : pouvoir demeurer <strong>éloigné du tube radiogène et du sujet</strong> — l'intensité du rayonnement chute très vite avec la distance (loi en carré inverse) ; à défaut, se placer derrière un <strong>écran de protection adéquat, transparent, formant une barrière ininterrompue</strong>.</li>
+        <li><strong>Absorption au plus près de la source</strong> : absorber le faisceau primaire et le rayonnement parasite (diffusé Compton !) aussi près que possible de la source, plutôt que de laisser le rayonnement se disperser dans la pièce.</li>
+        <li><strong>Positions autour du patient</strong> : le cours représente les positions favorables (zones vertes), à éviter (zones oranges) et fortement déconseillées (zone rouge) autour du patient — avec cette précision importante : <strong>le code couleur utilisé ne correspond aucunement aux zones réglementaires</strong> (ne pas confondre schéma pédagogique et zonage officiel).</li>
+        <li><strong>Commandes à distance</strong> : installer les commandes de l'appareil de radiographie dentaire <strong>à l'extérieur de la pièce</strong> où se trouve le patient, ou derrière un écran protecteur convenable, à distance suffisante du tube.</li>
+        <li><strong>Entretien</strong> : veiller à l'<strong>entretien des appareils</strong> de radiographie dentaire — un appareil déréglé ou fuyard irradie sans bénéfice.</li>
+      </ul>
+      <figure>
+        <svg class="svgbox" viewBox="0 0 760 300" role="img" aria-label="Positions de l'opérateur autour du patient : favorables, à éviter, déconseillées">
+          <circle cx="380" cy="150" r="26" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+          <text x="380" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#12162a">PATIENT</text>
+          <text x="380" y="160" text-anchor="middle" font-size="9.5" fill="#3d4560">+ tube RX</text>
+          <path d="M380 150 L150 60 A240 240 0 0 1 610 60 Z" fill="#dc2626" opacity=".20"/>
+          <path d="M380 150 L120 200 A250 250 0 0 1 150 60 Z" fill="#f59e0b" opacity=".28"/>
+          <path d="M380 150 L610 60 A240 240 0 0 1 640 200 Z" fill="#f59e0b" opacity=".28"/>
+          <path d="M380 150 L120 200 A250 250 0 0 0 640 200 Z" fill="#16a34a" opacity=".20"/>
+          <g font-size="12" font-weight="700">
+            <text x="380" y="75" text-anchor="middle" fill="#dc2626">ZONE ROUGE : fortement déconseillée (axe du faisceau)</text>
+            <text x="130" y="285" fill="#b45309">Orange : à éviter</text>
+            <text x="520" y="285" fill="#b45309">Orange : à éviter</text>
+            <text x="380" y="245" text-anchor="middle" fill="#16a34a">VERT : positions favorables (derrière / à distance)</text>
+          </g>
+        </svg>
+        <figcaption><b>Schéma 11 — Positions de l'opérateur autour du patient (schéma pédagogique du cours, recréé).</b> Règle d'or : jamais dans l'axe du faisceau primaire (rouge), éviter les positions latérales exposées au diffusé (orange), privilégier les positions éloignées et/ou protégées (vert). Attention, comme le précise le cours : <b>ce code couleur ne correspond aucunement aux zones réglementaires</b> officielles. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Voir l'original dans le PDF ↗</a></figcaption>
+      </figure>
+      <h4>🏠 Protection des locaux et des installations</h4>
+      <ul>
+        <li><strong>Blindage des murs, planchers, plafonds et portes</strong> en tenant compte de trois facteurs : la <strong>distance</strong>, la <strong>haute tension maximale</strong> prévue du tube radiogène, et la <strong>charge de travail</strong> de l'installation (nombre d'examens).</li>
+        <li>Faire examiner les <strong>plans définis des travaux</strong> par le <strong>service gouvernemental approprié</strong> lorsqu'on prévoit la construction d'une installation ou la modification d'une installation existante.</li>
+      </ul>
+      <h4>🦷 Protection du patient</h4>
+      <ul>
+        <li><strong>Tablier plombé pour les gonades</strong> lors des examens dentaires.</li>
+        <li><strong>Protecteur thyroïdien</strong> — particulièrement chez l'<strong>enfant</strong>, et surtout pour l'examen radiographique de l'<strong>occlusion maxillaire</strong> (le faisceau passe près de la thyroïde).</li>
+        <li><strong>Radiographie panoramique</strong> : utiliser un tablier à protection <strong>avant et arrière</strong> (les rayons arrivent aussi par l'arrière pendant la rotation).</li>
+        <li>Et bien sûr les réglages ALARA de la Partie II : bon kV, temps le plus court, récepteur adapté, cliché réussi du premier coup (chaque cliché raté et refait double la dose).</li>
+      </ul>
+
+      <h3 id="grossesse">Cas particulier : la femme enceinte</h3>
+      <ul>
+        <li><strong>Attention à toute femme en période d'activité génitale</strong> : le risque d'être enceinte doit être envisagé, et les précautions prises <strong>en tout temps</strong> (question systématique avant l'examen).</li>
+        <li>Le risque est potentiellement <strong>plus grave en début de grossesse</strong> (période d'organogenèse du fœtus).</li>
+        <li>Rappel chiffré rassurant du cours : dose au fœtus pour un examen dentaire ≈ <strong>0,5 à 1 µSv</strong>, inférieure à l'exposition naturelle quotidienne, risque <strong>extrêmement faible</strong> — à condition de respecter justification stricte, tablier plombé et paramètres optimisés.</li>
+      </ul>
+      <div class="retenir"><b class="t">✅ À retenir — Radioprotection</b>Effets déterministes = seuil + gravité liée à la dose ; effets aléatoires = probabilité liée à la dose, sans seuil garanti · 3 principes : justification, optimisation (ALARA : aussi bas que raisonnablement possible), limitation · jamais dans le faisceau primaire, distance et/ou écran transparent, blindage des locaux selon distance + HT max + charge de travail, plans validés par le service gouvernemental · patient : tablier gonades, protecteur thyroïdien (enfant, occlusion maxillaire), panoramique = tablier avant + arrière · grossesse : précautions en tout temps, risque maximal en début de grossesse, dose fœtale dentaire ≈ 0,5–1 µSv (extrêmement faible).</div>
+      <div class="piege"><b class="t">⚠️ Pièges classiques</b>Prendre le vert/orange/rouge du schéma pédagogique pour le zonage réglementaire (le cours dit explicitement que non) ; mettre un tablier simple pour une panoramique (il faut avant + arrière) ; oublier le protecteur thyroïdien chez l'enfant en occlusion maxillaire ; croire que « faible dose » autorise un examen non justifié (la justification passe toujours en premier).</div>
+      <label class="done"><input type="checkbox" data-done="partie3"> J'ai compris cette section (Partie III)</label>
+    </section>
+
+    <!-- ================= SYNTHÈSE ================= -->
+    <section class="blk" id="synthese">
+      <span class="kicker">Révision express</span>
+      <h2>Synthèse : tous les chiffres du module en un tableau</h2>
+      <table>
+        <tr><th>Question type QCM</th><th>Réponse</th></tr>
+        <tr><td>Découverte des rayons X</td><td><strong>1895</strong>, Wilhelm Conrad Röntgen</td></tr>
+        <tr><td>Prix Nobel de Röntgen</td><td><strong>1901</strong></td></tr>
+        <tr><td>Nature du rayon X</td><td>Rayonnement <strong>électromagnétique ionisant</strong> (photons)</td></tr>
+        <tr><td>Fréquence des rayons X</td><td>10<sup>16</sup> à 10<sup>20</sup> Hz</td></tr>
+        <tr><td>Longueur d'onde</td><td>10<sup>−8</sup> à 10<sup>−12</sup> m</td></tr>
+        <tr><td>Énergie des photons X</td><td>40 à 4×10<sup>5</sup> eV</td></tr>
+        <tr><td>Appareil producteur</td><td><strong>Tube de Coolidge</strong> (vide poussé, cathode de tungstène, anode = anti-cathode)</td></tr>
+        <tr><td>Mécanisme d'émission</td><td><strong>Freinage</strong> des électrons rapides dans la cible métallique</td></tr>
+        <tr><td>Effet photoélectrique</td><td>Électron profond, photon absorbé, dépend de <strong>Z</strong>, majeur <strong>&lt; 70 kV</strong>, crée le contraste</td></tr>
+        <tr><td>Effet Compton</td><td>Électron périphérique, photon dévié/affaibli, dépend de la <strong>densité</strong>, prépondérant <strong>&gt; 100 kV</strong>, crée le diffusé</td></tr>
+        <tr><td>Tension dentaire usuelle</td><td><strong>60–70 kV</strong></td></tr>
+        <tr><td>Intensité (mA)</td><td>Nombre de photons → noirceur ; générateurs actuels <strong>4–8 mA</strong> (fiche technique : 4–7 mA)</td></tr>
+        <tr><td>Foyer du tube</td><td><strong>0,4 mm</strong> (CEI 336)</td></tr>
+        <tr><td>Filtration totale</td><td>Min. <strong>2,0 mm Al</strong></td></tr>
+        <tr><td>Temps d'exposition</td><td>0,04 à 2 s</td></tr>
+        <tr><td>Générateur haute fréquence</td><td>Dose patient réduite de <strong>plus de 25 %</strong></td></tr>
+        <tr><td>Détecteurs</td><td>Film argentique · écran à mémoire · capteur digital</td></tr>
+        <tr><td>Principes de radioprotection</td><td><strong>Justification · Optimisation (ALARA) · Limitation</strong></td></tr>
+        <tr><td>ALARA</td><td><em>As Low As Reasonably Achievable</em> = aussi bas que raisonnablement possible</td></tr>
+        <tr><td>Dose fœtale (examen dentaire)</td><td>≈ <strong>0,5 à 1 µSv</strong> (risque extrêmement faible, précautions maintenues)</td></tr>
+      </table>
+      <div class="formula">Triade à ne jamais oublier : SOURCE ➜ OBJET ➜ DÉTECTEUR</div>
+      <label class="done"><input type="checkbox" data-done="synthese"> J'ai relu la synthèse</label>
+    </section>
+
+    <!-- ================= AUTO-TEST ================= -->
+    <section class="blk" id="autotest">
+      <span class="kicker">Entraînement</span>
+      <h2>Auto-test — 14 QCM du module</h2>
+      <p>Clique sur une réponse : la correction et l'explication s'affichent immédiatement. Score visé : <strong>12/14</strong>.</p>
+      <p><strong>Score : <span id="score">0 / 14</span></strong> &nbsp; <button class="btn ghost" id="resetQuiz" type="button">↺ Recommencer</button></p>
+      <div id="quiz"></div>
+      <label class="done"><input type="checkbox" data-done="autotest"> J'ai fait l'auto-test</label>
+    </section>
+
+    <section class="blk" id="sources">
+      <span class="kicker">Transparence</span>
+      <h2>Sources & limites de cette page</h2>
+      <ul>
+        <li><strong>Source unique :</strong> fichier <em>biopc .pdf</em> (25 Mo) du Drive — « I- Principe physique de l'imagerie en odontologie », Pr Bouzoubaa Sidi Mohammed, Faculté de Médecine Dentaire de Casablanca (Université Hassan II). L'ordre, les définitions, les seuils (70 kV / 100 kV), la fiche technique du générateur et les règles de radioprotection suivent ce document. <a href="https://drive.google.com/file/d/1AH0mLhLm0UB1zkc-brafWzA_u-lL3e4Z/view?usp=drive_link" target="_blank" rel="noopener">Ouvrir le PDF ↗</a></li>
+        <li><strong>Images :</strong> les photos et schémas originaux du PDF n'ont pas pu être extraits en base64 (fichier de 25 Mo) ; ils sont <strong>redessinés en SVG</strong> dans le même ordre et avec le même contenu pédagogique. Pour voir chaque photo originale, utilise le lien « Voir l'original dans le PDF » sous les schémas concernés.</li>
+        <li><strong>Périmètre :</strong> seules les parties I, II et III (S1), réellement présentes dans le PDF, sont expliquées. Les parties 4 à 7 du plan général (incidences, panoramique, 3D, IRM…) sont uniquement annoncées dans ce fichier : elles ne sont donc pas traitées ici.</li>
+        <li><strong>Usage :</strong> page de révision étudiante non officielle. En cas de doute sur une valeur, le PDF du cours fait foi.</li>
+      </ul>
+    </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>🦷 <strong>Biophysique S1 — Principes physiques de l'imagerie en odontologie</strong> · FMDC Casablanca · Cours du Pr Bouzoubaa S. M. (source : biopc .pdf, Drive). Page de révision autonome, un seul fichier HTML.</p>
+    <p>© <span id="year"></span> — Contenu du cours © son auteur. Schémas SVG recréés à des fins de révision.</p>
+  </footer>
+</div>
+
+<button class="btn primary" id="topBtn" title="Retour en haut" aria-label="Retour en haut">↑ Haut</button>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Thème clair / sombre (même clé que le portail S1) */
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    var cur = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = cur;
+    try{ localStorage.setItem('fmdc.s1.theme', cur); }catch(e){}
+  });
+
+  /* Retour en haut */
+  document.getElementById('topBtn').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* Progression (sections comprises) */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-done]'));
+  function refreshProgress(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    document.getElementById('progFill').style.width = (boxes.length ? (n/boxes.length*100) : 0) + '%';
+    document.getElementById('progTxt').textContent = 'Progression : ' + n + ' / ' + boxes.length + ' sections terminées. Coche « J\'ai compris cette section » à la fin de chaque partie pour suivre ton avancement (enregistré sur cet appareil).';
+  }
+  boxes.forEach(function(b){
+    try{ b.checked = localStorage.getItem('biopc.done.' + b.dataset.done) === '1'; }catch(e){}
+    b.addEventListener('change', function(){
+      try{ localStorage.setItem('biopc.done.' + b.dataset.done, b.checked ? '1' : '0'); }catch(e){}
+      refreshProgress();
+    });
+  });
+  refreshProgress();
+
+  /* Recherche : filtre les sections contenant le mot-clé */
+  var search = document.getElementById('search');
+  var blocks = Array.prototype.slice.call(document.querySelectorAll('#cours section'));
+  search.addEventListener('input', function(){
+    var q = search.value.trim().toLowerCase();
+    blocks.forEach(function(s){
+      if(!q){ s.classList.remove('hide'); return; }
+      s.classList.toggle('hide', s.textContent.toLowerCase().indexOf(q) === -1);
+    });
+  });
+
+  /* Sommaire : surbrillance de la section visible */
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  if('IntersectionObserver' in window){
+    var map = {};
+    tocLinks.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting && map[en.target.id]){
+          tocLinks.forEach(function(a){ a.classList.remove('on'); });
+          map[en.target.id].classList.add('on');
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px'});
+    blocks.forEach(function(s){ if(s.id) obs.observe(s); });
+    ['s11','s12','s13','s14','photo','compton','s21','s22','source','objet','detecteurs','geometrie','effets','principes-rp','protection','grossesse'].forEach(function(id){
+      var el = document.getElementById(id); if(el) obs.observe(el);
+    });
+  }
+
+  /* ---------------- Auto-test ---------------- */
+  var QUESTIONS = [
+    {q:"Qui a découvert les rayons X, et en quelle année ?", opts:["Wilhelm Conrad Röntgen, en 1895","Marie Curie, en 1898","Wilhelm Conrad Röntgen, en 1901","Henri Becquerel, en 1895"], good:0, why:"1895 = découverte (tube sous vide, anode/cathode, squelette d'une main radiographié). 1901, c'est l'année de son prix Nobel — le piège classique."},
+    {q:"Le rayon X est :", opts:["Une particule matérielle chargée","Un rayonnement électromagnétique ionisant","Une onde sonore à haute fréquence","Un faisceau d'électrons"], good:1, why:"Même nature que la lumière ou les ondes radio, mais photon très énergétique (40 à 4×10⁵ eV) : il ionise la matière."},
+    {q:"Dans le tube de Coolidge, les rayons X naissent :", opts:["Du chauffage du filament de tungstène","De la fluorescence du verre du tube","Du freinage des électrons rapides dans la cible de l'anode","De l'accélération des électrons dans le vide"], good:2, why:"Le filament chauffé ne fait qu'émettre les électrons ; accélérés par la haute tension, ils sont freinés dans l'anode (anti-cathode) : c'est ce freinage qui émet les photons X (le reste part en chaleur)."},
+    {q:"Effet photoélectrique : que devient le photon X ?", opts:["Il est dévié sans perdre d'énergie","Il est dévié en perdant une partie de son énergie","Il est totalement absorbé par un électron d'une couche profonde","Il traverse l'atome sans interaction"], good:2, why:"Absorption totale : l'énergie part dans le photoélectron éjecté (+ ion positif et faible rayon caractéristique). La déviation avec perte partielle, c'est Compton."},
+    {q:"L'effet Compton se distingue de l'effet photoélectrique car il :", opts:["Dépend fortement du numéro atomique Z","Ne dépend que de la densité du matériel","Concerne un électron d'une couche profonde","Arrête complètement le rayon X"], good:1, why:"Compton : électron périphérique peu lié, photon diffusé affaibli, probabilité liée à la densité seulement. La dépendance en Z appartient à l'effet photoélectrique."},
+    {q:"En radiologie dentaire (60–70 kV), l'effet prédominant est :", opts:["L'effet Compton, car la tension est élevée","L'effet photoélectrique, effet majeur sous 70 kV","Aucun des deux","Les deux à égalité parfaite"], good:1, why:"Le cours situe l'effet photoélectrique comme majeur pour les tensions inférieures à 70 kV ; Compton ne domine qu'au-delà de 100 kV. D'où le bon contraste dentaire."},
+    {q:"Sur un cliché, l'émail apparaît clair (radio-opaque) parce que :", opts:["Il contient de l'air qui bloque les rayons","Son numéro atomique et sa densité élevés absorbent fortement les photons (effet photoélectrique)","Il réfléchit les rayons X vers le film","Le film est plus sensible derrière l'émail"], good:1, why:"Atténuation sélective : Z et densité élevés ➜ absorption forte ➜ peu de photons atteignent le détecteur ➜ zone claire."},
+    {q:"Le mA (intensité du tube) règle principalement :", opts:["L'énergie des photons et la pénétration","Le nombre de photons, donc le noirceur de l'image","La taille du foyer, donc la netteté","La filtration du faisceau"], good:1, why:"mA = quantité de photons = degré de noirceur (générateurs actuels : 4–8 mA). L'énergie/pénétration, c'est le kV."},
+    {q:"Si on augmente la tension (kV) à dose fixe, on obtient :", opts:["Plus de contraste et plus de dose","Moins de contraste et moins de dose absorbée","Plus de contraste et moins de dose","Aucun changement d'image"], good:1, why:"kV élevé = photons plus pénétrants : ils traversent au lieu d'être absorbés ➜ dose ↓, mais contraste ↓. Faible kV : contraste ↑, dose ↑."},
+    {q:"Lequel de ces éléments N'EST PAS un détecteur cité dans le cours ?", opts:["Film argentique","Écran à mémoire","Capteur digital","Écran fluorescent de scopie télévisée"], good:3, why:"Fiche technique du générateur : compatibilité film argentique, écran à mémoire et capteur digital. La scopie n'est pas un récepteur de radiographie dentaire ici."},
+    {q:"Pour une image nette et peu agrandie, il faut :", opts:["Un gros foyer et le film loin de la dent","Un petit foyer (0,4 mm), une grande distance foyer–film et l'objet proche du film","Augmenter le mA au maximum","Éloigner le tube le plus possible du patient"], good:1, why:"Géométrie de projection : foyer quasi ponctuel + rayons peu divergents (longue distance) + objet collé au récepteur (technique des plans parallèles avec angulateurs)."},
+    {q:"Que signifie ALARA ?", opts:["Arrêt Limité Après Radiographie Abdominale","As Low As Reasonably Achievable : dose aussi basse que raisonnablement possible","Association des Laboratoires de Radiologie Appliquée","Alarme de rayonnement automatique"], good:1, why:"C'est le nom du principe d'optimisation : une fois l'examen justifié, utiliser la plus faible dose donnant une image diagnostique."},
+    {q:"Pour une radiographie panoramique, la protection du patient exige :", opts:["Aucun tablier, l'appareil tourne","Un tablier plombé protégeant seulement l'avant","Un tablier à protection avant et arrière","Uniquement un protecteur thyroïdien"], good:2, why:"Pendant la rotation, les rayons arrivent aussi par l'arrière : le cours impose un tablier à protection avant + arrière pour la panoramique."},
+    {q:"Concernant la grossesse et la radiologie dentaire, le cours dit :", opts:["Tout examen est formellement interdit pendant 9 mois","La dose au fœtus (≈0,5–1 µSv) donne un risque extrêmement faible, mais les précautions s'appliquent en tout temps, surtout en début de grossesse","Le risque est maximal au 9e mois","Aucune précaution n'est nécessaire"], good:1, why:"Précautions systématiques chez toute femme en période d'activité génitale, vigilance maximale en début de grossesse (organogenèse), tout en sachant la dose fœtale dentaire très inférieure à l'exposition naturelle quotidienne."}
+  ];
+  var quizEl = document.getElementById('quiz');
+  var answered = {};
+  function renderScore(){
+    var n = Object.keys(answered).filter(function(k){ return answered[k]; }).length;
+    document.getElementById('score').textContent = n + ' / ' + QUESTIONS.length;
+  }
+  QUESTIONS.forEach(function(item, qi){
+    var box = document.createElement('div'); box.className = 'qcm';
+    var h = document.createElement('h4'); h.textContent = 'Q' + (qi+1) + '. ' + item.q; box.appendChild(h);
+    var expl = document.createElement('p'); expl.className = 'expl hide';
+    item.opts.forEach(function(opt, oi){
+      var lab = document.createElement('label');
+      var inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'q' + qi; inp.style.marginRight = '7px';
+      lab.appendChild(inp); lab.appendChild(document.createTextNode(opt));
+      lab.addEventListener('click', function(){
+        Array.prototype.forEach.call(box.querySelectorAll('label'), function(l){ l.classList.remove('good','bad'); });
+        if(oi === item.good){ lab.classList.add('good'); answered[qi] = true; }
+        else { lab.classList.add('bad'); box.querySelectorAll('label')[item.good].classList.add('good'); answered[qi] = false; }
+        expl.textContent = (oi === item.good ? '✅ Bonne réponse. ' : '❌ Pas tout à fait. ') + item.why;
+        expl.classList.remove('hide'); renderScore();
+      });
+      box.appendChild(lab);
+    });
+    box.appendChild(expl); quizEl.appendChild(box);
+  });
+  document.getElementById('resetQuiz').addEventListener('click', function(){
+    answered = {}; renderScore();
+    quizEl.innerHTML = ''; location.hash = '#autotest';
+    /* reconstruction simple : recharger les états visuels en réinitialisant la page quiz */
+    Array.prototype.forEach.call(document.querySelectorAll('.qcm'), function(){});
+    window.location.reload();
+  });
+  renderScore();
+})();
+</script>
 </body>
 </html>
