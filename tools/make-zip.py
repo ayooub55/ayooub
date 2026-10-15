@@ -13,6 +13,7 @@ LISEZ_MOI = """FMDC S1 — Espace de révision (version hors ligne)
 
 Ce que tu peux faire :
  - Lire les 22 fiches de cours (explications, tableaux, schemas, a retenir, pieges QCM)
+ - T'entrainer avec les QCM interactifs (correction immediate + score)
  - Parcourir les 9 rubriques du Drive S1 et ouvrir chaque document (Internet requis pour les liens Drive)
  - Suivre ta revision, surligner, ecrire tes notes
  - Ajouter TES cours, TES exercices et TES photos (stockes dans le navigateur)
