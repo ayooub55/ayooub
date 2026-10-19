@@ -26,6 +26,7 @@ window.DRIVE.modules.push(
       ]},
       { nom: 'Pr. Idelhaj', folder: '1sTTU6ikwmtbNF6zDm8zOsgtprNiDpFl8', sections: [
         { nom: 'Cours — Thorax', folder: '1xgSvlgY0680h_xUhAiFAETUej-LKHnxk', fichiers: [
+          ['ANATOMIE DU THORAX.pdf', '1K3GUOZhKB50YR6mvGqAQPJRrDqxnNhLu'],
           ['4-Médiastin_241201_201440.pdf', '1CWN_2hjj4OqAKK_3m4zWIqZ953fn99Ck'],
           ['CONTENU-DU-THORAX.pdf', '1_CEeN0sMlo0UtCQKsuenkgVV-rDshBIK'],
           ['LA-CAGE-THORACIQUE.pdf', '19hhhAgdkQZYjpZFHKCjYSPBCkl2g2KeY'],
