@@ -13,8 +13,8 @@ cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par modu
 
 | | |
 |---|---|
-| 📚 **8 modules / 281 documents** | Anatomie & Physiologie, Biologie, Biophysique & Sciences des matériaux, Chimie & Biochimie, IMD, Langue, MTU, Links |
-| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) |
+| 📚 **8 modules / 282 documents** | Anatomie & Physiologie, Biologie, Biophysique & Sciences des matériaux, Chimie & Biochimie, IMD, Langue, MTU, Links |
+| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Anatomie du thorax — Pr. Id El Haj](cours/anatomie-thorax.html) · [Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) |
 | 👩‍🏫 **Vue par professeur** | Chaque module se déplie en rubriques (Pr. X → Cours / TD / Résumés / Vidéos…) |
 | 🔍 **Recherche globale** | Accents ignorés, insensible à la casse — cherche dans les noms de fichiers **et** le chemin (module › professeur). Raccourci : `/` |
 | 💡 **Notes d'examen** | Les conseils donnés par chaque professeur (chapitres insistés, parties retirées, format d'épreuve) transformés en fiches filtrables |
@@ -88,14 +88,17 @@ pas par l'application du portail ; elles y sont simplement liées depuis la barr
 
 | Page | Cours | Source |
 |---|---|---|
+| [`cours/anatomie-thorax.html`](cours/anatomie-thorax.html) | Anatomie du thorax — Pr. N. Id El Haj (Chirurgie thoracique) · Partie 1 : cage thoracique (constitution, configuration externe, orifices supérieur D1 / inférieur D12 et diaphragme) · Partie 2 : sternum (D2→D10-D11, 15-20 cm, faces antérieure convexe et postérieure concave avec leurs insertions dans l'ordre, 7 surfaces articulaires) · Partie 3 : côtes (classification 7 vraies / 3 fausses / 2 flottantes, tête-col-tubercule, corps et paquet vasculo-nerveux, extrémité antérieure en cupule) — + plan des 24 diapos, 4 schémas redessinés à légender, 5 QROC types corrigés (sternum et cage thoracique, sujets « insistés »), chiffres à retenir et auto-évaluation de 12 QCM corrigés | Diaporama du cours, 24 diapos (ostéologie de la paroi ; le contenu — poumons/médiastin — est traité dans les autres fichiers du dossier Thorax) |
 | [`cours/biochimie-structurale.html`](cours/biochimie-structurale.html) | Biochimie structurale — Pr. Naima Khlil · Chap. 1 : acides aminés, ionisation et pHi, liaison peptidique, structures des protéines, hémoglobine (effet Bohr, 2,3-DPG) · Chap. 2 : enzymes, Michaelis-Menten et Lineweaver-Burk, inhibitions, allostérie, vitamines et coenzymes — + tableau des chiffres à retenir et auto-évaluation de 10 QCM corrigés | Support de cours 2024-25, 71 p. |
 
 **Ajouter une page** : copier `cours/biochimie-structurale.html`, remplacer le contenu, puis ajouter une entrée
 dans le bloc « Cours expliqués » de la barre latérale d'`index.html` et dans le tableau ci-dessus.
 
-> Les passages cités entre guillemets sont repris du support de l'enseignante ; le reste est une explication
-> rédigée pour la révision. Les diaporamas de plus de 25 Mo n'ont pas pu être lus automatiquement : se référer
-> au support écrit pour le contenu intégral.
+> Les passages cités entre guillemets sont repris du support de l'enseignant(e), avec leur numéro de page/diapo ;
+> le reste est une explication rédigée pour la révision. Pour la Biochimie, les diaporamas de plus de 25 Mo n'ont
+> pas pu être lus automatiquement : se référer au support écrit pour le contenu intégral. Pour l'Anatomie du
+> thorax, les 24 diapositives ont été lues en intégralité (texte + schémas) ; les schémas de la page sont des
+> redessins d'entraînement — les schémas du PDF restent la référence pour l'examen.
 
 ## 🤝 Contribution
 

@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anatomie du thorax expliquée en détail — Pr. N. Id El Haj | FMDC 1A</title>
+<meta name="description" content="Cours d'Anatomie du thorax (Pr. N. Id El Haj, Chirurgie thoracique, FMDC Casablanca, 1re année médecine dentaire) expliqué diapo par diapo : cage thoracique, configuration externe, orifices supérieur et inférieur, sternum (faces antérieure et postérieure, insertions, bords latéraux), côtes (classification vraies/fausses/flottantes, tête, col, tubercule, corps), QROC types corrigés et auto-évaluation.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫁</text></svg>">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#141b24; --card:#161f2b; --line:#263244;
+  --txt:#e6edf3; --mut:#93a4b8; --acc:#5aa9e6; --acc2:#e08b2f; --ok:#3fb950;
+  --warn:#d29922; --quote:#1c2733; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e1e7ef;
+  --txt:#1b2430; --mut:#5a6b7d; --acc:#1f6fb2; --acc2:#b96a12; --ok:#1a7f37;
+  --warn:#9a6700; --quote:#f0f5fb; --shadow:0 6px 24px rgba(20,40,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:16px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.28;margin:0 0 .5rem}
+h2{font-size:1.55rem;margin:3rem 0 .8rem;padding-bottom:.45rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.2rem;margin:2rem 0 .5rem;color:var(--acc);scroll-margin-top:80px}
+h4{font-size:1.02rem;margin:1.3rem 0 .4rem;scroll-margin-top:80px}
+p{margin:.55rem 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;
+  background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:262px 1fr;gap:34px}
+
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.top-in .crumb{font-size:.85rem;color:var(--mut)}
+.top-in .crumb b{color:var(--txt)}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--txt);border-radius:9px;padding:7px 12px;font-size:.86rem;cursor:pointer;text-align:left}
+.btn:hover{border-color:var(--acc);text-decoration:none}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.bar{height:3px;background:var(--acc);width:0;position:fixed;top:0;left:0;z-index:40}
+
+nav.toc{position:sticky;top:66px;align-self:start;max-height:calc(100vh - 86px);overflow:auto;
+  padding:14px 0 30px;font-size:.85rem}
+nav.toc .t{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin:13px 0 5px;font-weight:700}
+nav.toc a{display:block;padding:3px 10px;border-left:2px solid transparent;color:var(--mut);border-radius:0 6px 6px 0}
+nav.toc a.sub{padding-left:20px;font-size:.8rem}
+nav.toc a:hover{color:var(--txt);background:var(--bg2);text-decoration:none}
+nav.toc a.on{color:var(--acc);border-left-color:var(--acc);background:var(--bg2);font-weight:600}
+
+.hero{background:linear-gradient(140deg,color-mix(in srgb,var(--acc) 18%,var(--bg2)),var(--bg2));
+  border:1px solid var(--line);border-radius:16px;padding:28px;margin:22px 0 8px;box-shadow:var(--shadow)}
+.hero .kick{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);font-weight:700}
+.hero h1{font-size:2.15rem;margin:.35rem 0 .3rem}
+.hero .sub{color:var(--mut);max-width:74ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 13px;min-width:104px}
+.stat b{display:block;font-size:1.15rem}
+.stat span{font-size:.75rem;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:13px 0}
+.card b:first-child{display:block;margin-bottom:3px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.note{border-left:4px solid var(--acc);background:var(--bg2);border-radius:0 10px 10px 0;padding:11px 15px;margin:14px 0}
+.note.warn{border-left-color:var(--warn)}
+.note.ok{border-left-color:var(--ok)}
+.note .lbl{font-size:.71rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--mut)}
+blockquote{margin:12px 0;padding:12px 16px;background:var(--quote);border-left:3px solid var(--acc2);
+  border-radius:0 10px 10px 0;font-style:italic}
+blockquote cite{display:block;margin-top:6px;font-style:normal;font-size:.77rem;color:var(--mut)}
+ul,ol{padding-left:1.25rem;margin:.45rem 0}
+li{margin:.25rem 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.89rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:700}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--bg2) 60%,transparent)}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);
+  color:var(--mut);margin:0 4px 4px 0;background:var(--bg2)}
+.page{font-size:.75rem;color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}
+.pill{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--acc);color:#fff;vertical-align:middle}
+details{border:1px solid var(--line);border-radius:10px;padding:0 14px;margin:9px 0;background:var(--bg2)}
+details summary{cursor:pointer;padding:11px 0;font-weight:600;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";color:var(--acc)}
+details[open] summary::before{content:"▾ "}
+details .body{padding:0 0 12px}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg2);
+  border:1px solid var(--line);border-radius:9px;padding:11px 14px;margin:10px 0;font-size:.9rem;overflow-x:auto}
+.formula .c{color:var(--mut)}
+/* quiz */
+.quiz{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:14px 0;background:var(--card)}
+.quiz .q{font-weight:600;margin-bottom:9px}
+.quiz .opts{display:grid;gap:7px}
+.quiz button.opt{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:8px;
+  padding:8px 11px;text-align:left;cursor:pointer;font:inherit;font-size:.9rem}
+.quiz button.opt:hover:not(:disabled){border-color:var(--acc)}
+.quiz button.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--bg2))}
+.quiz button.opt.wrong{border-color:#e5534b;background:color-mix(in srgb,#e5534b 13%,var(--bg2))}
+.quiz .why{font-size:.86rem;color:var(--mut);margin-top:8px;display:none}
+.quiz .why.show{display:block}
+#quiz-score{font-weight:700}
+footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;color:var(--mut);font-size:.85rem}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}nav.toc{display:none}.hero h1{font-size:1.6rem}}
+@media print{
+  header.top,nav.toc,.cta,.bar{display:none}
+  .wrap{grid-template-columns:1fr}body{background:#fff;color:#000}
+  details{break-inside:avoid}details[open]{border:none}
+  .quiz button.opt{border:1px solid #999}
+}
+
+/* --- schémas SVG (redessins originaux) --- */
+.schema{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.schema svg{width:100%;height:auto;display:block}
+.schema figcaption{font-size:.85rem;color:var(--mut);margin-top:10px;line-height:1.55}
+.schema .bone{fill:none;stroke:#8fa6bb;stroke-linecap:round}
+.schema .cart{fill:none;stroke:var(--acc);stroke-linecap:round}
+.schema .cartfill{fill:var(--acc);opacity:.45}
+.schema .stb{fill:var(--bg2);stroke:var(--mut);stroke-width:2}
+.schema .ln{fill:none;stroke:var(--mut);stroke-width:1.4}
+.schema .tip{fill:var(--acc2)}
+.schema .hl{fill:var(--bg2);stroke:var(--acc2);stroke-width:2.5}
+.schema .dot{fill:var(--bg2);stroke:var(--mut);stroke-width:1.6}
+.schema .ins{fill:var(--acc2);opacity:.48}
+.schema .ins2{fill:var(--acc);opacity:.36}
+.schema .rib{fill:none;stroke:#8fa6bb;stroke-width:17;stroke-linecap:round}
+.schema .cartrib{fill:none;stroke:var(--acc);stroke-width:15;stroke-linecap:round}
+.schema .ring{fill:var(--bg2);stroke:var(--mut);stroke-width:2.5}
+.schema text{font-family:inherit;paint-order:stroke;stroke:var(--card);stroke-width:3.5px;stroke-linejoin:round}
+.schema text.lab{fill:var(--txt);font-size:13.5px}
+.schema text.lab.sm{font-size:11.5px;fill:var(--mut)}
+.schema text.lab.b{font-weight:700;fill:var(--txt)}
+.schema text.lab.acc{fill:var(--acc)}
+.schema text.lab.warnc,.schema text.warnc{fill:var(--acc2)}
+.schema text.num{fill:var(--mut);font-size:11px}
+.schema text.num.b{font-weight:700;fill:var(--txt)}
+@media print{.schema svg{max-width:520px;margin:0 auto}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="btn" href="../index.html">← Portail FMDC 1A</a>
+    <span class="crumb"><b>Anatomie générale</b> › Anatomie du thorax › Pr. N. Id El Haj</span>
+    <span class="spacer"></span>
+    <button class="btn" id="theme" title="Thème clair / sombre">🌗</button>
+    <a class="btn primary" href="https://drive.google.com/file/d/1K3GUOZhKB50YR6mvGqAQPJRrDqxnNhLu/view" target="_blank" rel="noopener">📕 PDF d'origine</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" id="toc">
+    <div class="t">Avant de commencer</div>
+    <a href="#apercu">Vue d'ensemble</a>
+    <a href="#plan-pdf">Le PDF diapo par diapo</a>
+    <a href="#methode-qroc">Méthode QROC</a>
+    <div class="t">1 · La cage thoracique</div>
+    <a href="#thorax-general">Le thorax : définition</a>
+    <a href="#paroi">La paroi thoracique</a>
+    <a href="#config">Forme &amp; configuration externe</a>
+    <a href="#orifice-sup">Orifice supérieur</a>
+    <a href="#orifice-inf">Orifice inférieur</a>
+    <div class="t">2 · Le sternum</div>
+    <a href="#sternum">Définition, repères, dimensions</a>
+    <a href="#sternum-ant">Face antérieure</a>
+    <a href="#sternum-post">Face postérieure</a>
+    <a href="#sternum-bords">Bords latéraux</a>
+    <div class="t">3 · Les côtes</div>
+    <a href="#cotes">Caractères généraux</a>
+    <a href="#cotes-class">Classification 7 · 3 · 2</a>
+    <a href="#cotes-post">Extrémité postérieure</a>
+    <a href="#cotes-corps">Le corps</a>
+    <a href="#cotes-ant">Extrémité antérieure</a>
+    <div class="t">Révision &amp; examen</div>
+    <a href="#limites-pdf">Ce que ce PDF ne contient pas</a>
+    <a href="#chiffres">Chiffres &amp; repères à retenir</a>
+    <a href="#schemas">Schémas à savoir légender</a>
+    <a href="#qroc">QROC types corrigés</a>
+    <a href="#quiz">Auto-évaluation (QCM)</a>
+    <a href="#reviser">Plan de révision</a>
+    <a href="#docs">Documents sources</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="apercu">
+      <div class="kick">Module Anatomie &amp; physiologie générales · Anatomie générale · S1</div>
+      <h1>Anatomie du thorax, expliquée en détail</h1>
+      <p class="sub">
+        <b>Pr. N. Id El Haj</b> — Chirurgie thoracique · 1<sup>re</sup> année de Médecine Dentaire,
+        Faculté de Médecine Dentaire de Casablanca.
+        Cette page reprend <b>les 24 diapositives du PDF «&nbsp;ANATOMIE DU THORAX&nbsp;», une par une</b>,
+        et les explique dans l'ordre du cours : la <b>cage thoracique</b> et ses deux orifices,
+        le <b>sternum</b> (faces, insertions, bords), puis les <b>côtes</b> (classification et côte type) —
+        avec les réponses QROC rédigées comme à l'examen.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>24</b><span>diapositives du PDF</span></div>
+        <div class="stat"><b>3</b><span>parties : cage · sternum · côtes</span></div>
+        <div class="stat"><b>12</b><span>paires de côtes</span></div>
+        <div class="stat"><b>7·3·2</b><span>vraies · fausses · flottantes</span></div>
+        <div class="stat"><b>QROC</b><span>format d'épreuve (anatomie)</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://drive.google.com/file/d/1K3GUOZhKB50YR6mvGqAQPJRrDqxnNhLu/view" target="_blank" rel="noopener">📕 Ouvrir le PDF d'origine</a>
+        <a class="btn" href="#paroi">1 · La cage</a>
+        <a class="btn" href="#sternum">2 · Le sternum</a>
+        <a class="btn" href="#cotes">3 · Les côtes</a>
+        <a class="btn" href="#qroc">✍️ QROC corrigés</a>
+        <a class="btn" href="#quiz">🎯 Teste-toi</a>
+      </div>
+    </section>
+
+    <div class="note">
+      <div class="lbl">Comment cette page a été construite — lis ceci d'abord</div>
+      <p style="margin-bottom:0">
+        Le plan, les formulations entre guillemets et les numéros <span class="page">(p. …)</span> suivent
+        <b>exactement</b> le PDF <em>ANATOMIE DU THORAX — Pr N. ID EL HAJ, Chirurgie thoracique</em>
+        (24 diapositives exportées d'un diaporama). Les blocs en italique sont des <b>citations mot à mot</b>
+        des diapositives ; tout le reste est une <b>explication rédigée pour la révision</b> et les moyens
+        mnémotechniques sont signalés comme «&nbsp;maison&nbsp;». Les schémas de cette page sont des
+        <b>redessins schématiques originaux</b> : ils servent à comprendre et à s'entraîner à légender,
+        mais pour l'examen, entraîne-toi sur les <b>schémas du PDF lui-même</b> (notamment p. 3, 12, 18 et 21).
+      </p>
+    </div>
+
+    <div class="note warn">
+      <div class="lbl">⚠️ Portée exacte de ce PDF</div>
+      <p style="margin-bottom:0">
+        Malgré son titre général, ce fichier ne traite que l'<b>ostéologie de la paroi</b> :
+        cage thoracique → sternum → côtes, et il <b>s'arrête à l'extrémité antérieure de la côte (p. 23)</b>.
+        Le <b>contenu</b> (cavités pleurales, poumons, médiastin) est seulement <em>annoncé</em> p. 2 —
+        il fait l'objet des autres fichiers du même professeur déjà rangés dans le portail
+        (voir <a href="#docs">Documents sources</a>). Ne cherche donc pas le cœur ou la segmentation
+        bronchique dans ce PDF : ils n'y sont pas.
+      </p>
+    </div>
+
+    <!-- ================= PLAN PDF ================= -->
+    <h2 id="plan-pdf">Le PDF diapo par diapo <span class="page">(p. 1-24)</span></h2>
+    <p>
+      Voici la carte complète du fichier. Elle te permet de réviser page ouverte à côté du PDF,
+      et de vérifier qu'aucune diapositive n'est sautée sur cette page.
+    </p>
+    <table>
+      <thead><tr><th>Diapo</th><th>Contenu</th><th>Section de cette page</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td>Titre — <em>Anatomie du thorax</em>, Pr N. Id El Haj, Chirurgie thoracique</td><td>—</td></tr>
+        <tr><td><b>2</b></td><td>Le thorax : paroi semi-rigide, moteur de la respiration, <b>3 composantes</b></td><td><a href="#thorax-general">Définition</a></td></tr>
+        <tr><td><b>3</b></td><td>Schéma seul : cage thoracique en vues antérieure et postérieure</td><td><a href="#schemas">Schémas</a></td></tr>
+        <tr><td><b>4</b></td><td>La paroi thoracique : constitution (avant / arrière / latéralement)</td><td><a href="#paroi">Paroi</a></td></tr>
+        <tr><td><b>5</b></td><td>Forme d'un cône ; orifice inférieur plus large</td><td><a href="#config">Forme</a></td></tr>
+        <tr><td><b>6</b></td><td>Configuration externe : faces antérieure, postérieure, latérales</td><td><a href="#config">Configuration</a></td></tr>
+        <tr><td><b>7</b></td><td>Orifice supérieur : limites + communication avec le cou</td><td><a href="#orifice-sup">Orifice supérieur</a></td></tr>
+        <tr><td><b>8</b></td><td>Orifice inférieur : limites + diaphragme</td><td><a href="#orifice-inf">Orifice inférieur</a></td></tr>
+        <tr><td><b>9</b></td><td><em>Diapo de transition (sans texte)</em></td><td>—</td></tr>
+        <tr><td><b>10</b></td><td>Le sternum : définition, repères D2 → D10-D11, dimensions</td><td><a href="#sternum">Sternum</a></td></tr>
+        <tr><td><b>11</b></td><td>Les 3 parties : manubrium, corps, appendice xiphoïde</td><td><a href="#sternum">Sternum</a></td></tr>
+        <tr><td><b>12</b></td><td>Face antérieure + schéma des insertions (SCM, grand pectoral, droit de l'abdomen)</td><td><a href="#sternum-ant">Face antérieure</a></td></tr>
+        <tr><td><b>13</b></td><td>Face postérieure : insertions de haut en bas</td><td><a href="#sternum-post">Face postérieure</a></td></tr>
+        <tr><td><b>14</b></td><td>Bords latéraux : 7 surfaces articulaires ; repères de la 2ᵉ et de la 7ᵉ</td><td><a href="#sternum-bords">Bords latéraux</a></td></tr>
+        <tr><td><b>15</b></td><td><em>Diapo de transition (sans texte)</em></td><td>—</td></tr>
+        <tr><td><b>16</b></td><td>Les côtes : définition, nombre, prolongement cartilagineux</td><td><a href="#cotes">Côtes</a></td></tr>
+        <tr><td><b>17</b></td><td>Classification en vraies / fausses / flottantes (texte)</td><td><a href="#cotes-class">Classification</a></td></tr>
+        <tr><td><b>18</b></td><td>Schéma de classification légendé (C1-C12, D1-D2, T11-T12)</td><td><a href="#cotes-class">Classification</a></td></tr>
+        <tr><td><b>19</b></td><td><em>Diapo de transition (sans texte)</em></td><td>—</td></tr>
+        <tr><td><b>20</b></td><td>Caractères généraux : direction, longueur 1→7, tête-col-corps</td><td><a href="#cotes">Caractères généraux</a></td></tr>
+        <tr><td><b>21</b></td><td>Extrémité postérieure : tête, col, tubercule (+ schéma)</td><td><a href="#cotes-post">Extrémité postérieure</a></td></tr>
+        <tr><td><b>22</b></td><td>Le corps : face interne, plèvre, paquet vasculo-nerveux, bords</td><td><a href="#cotes-corps">Corps</a></td></tr>
+        <tr><td><b>23</b></td><td>Extrémité antérieure : cupule → cartilage costal</td><td><a href="#cotes-ant">Extrémité antérieure</a></td></tr>
+        <tr><td><b>24</b></td><td><em>Diapo finale vide — fin du fichier</em></td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="methode-qroc">Méthode QROC : comment ce cours sera interrogé</h2>
+    <p>
+      En anatomie générale, le format d'épreuve indiqué dans le portail est le <b>QROC</b>
+      (question à réponse ouverte courte) : on ne choisit pas une proposition, on <b>rédige</b>.
+      Les notes d'examen de la promotion pour ce professeur précisent deux choses essentielles :
+    </p>
+    <div class="grid2">
+      <div class="card">
+        <b>🎯 Sujets sur lesquels le Pr. Idelhaj a insisté</b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          Segmentations bronchiques et pulmonaires droite/gauche et leurs différences ·
+          vaisseaux supra-cardiaques · anatomie descriptive du cœur et du péricarde ·
+          <b>le sternum</b> · description du médiastin · <b>anatomie descriptive de la cage thoracique</b>.
+          <br><span style="color:var(--mut)">→ Dans ce PDF, les deux sujets «&nbsp;insistés&nbsp;» sont donc
+          <b>le sternum</b> et <b>la cage thoracique</b> : ce sont tes QROC n°1 et n°2 ci-dessous.</span>
+        </p>
+      </div>
+      <div class="card">
+        <b>✍️ La réponse type attendue</b>
+        <p style="font-size:.9rem;margin-bottom:0">
+          Pour une <b>anatomie descriptive</b> : <b>définition → situation → limites → composantes</b>,
+          dans cet ordre. Pour un sujet à schéma : <b>dessiner, légender, puis expliquer</b>.
+          Cette page suit exactement ce plan dans chaque section, pour que ta lecture soit déjà un entraînement.
+        </p>
+      </div>
+    </div>
+    <div class="note ok">
+      <div class="lbl">Le réflexe à prendre dès maintenant</div>
+      <p style="margin-bottom:0">
+        À chaque fois que tu lis une description ci-dessous, reformule-la mentalement en
+        <b>«&nbsp;définition · situation · limites · composantes&nbsp;»</b>. C'est ce découpage — plus que la
+        quantité de détails — qui rapporte les points en QROC. Les <a href="#qroc">5 QROC corrigés</a> en fin
+        de page te donnent des modèles rédigés prêts à recopier à l'entraînement.
+      </p>
+    </div>
+
+    <!-- ================= PARTIE 1 ================= -->
+    <h2>Partie 1 — La cage thoracique <span class="page">(p. 2-8)</span></h2>
+    <p>
+      Le fil de cette partie : d'abord <b>ce qu'est le thorax</b> et ses trois composantes (p. 2),
+      puis on zoome sur la première d'entre elles — la <b>paroi</b> (p. 4) — dont on décrit la forme,
+      les faces et les deux orifices (p. 5-8). Les parties 2 et 3 détailleront ensuite les deux os
+      de cette paroi vus dans ce PDF : le sternum et les côtes.
+    </p>
+
+    <h3 id="thorax-general">Le thorax : définition et trois composantes <span class="page">(p. 2)</span></h3>
+    <blockquote>
+      «&nbsp;Paroi semi-rigide&nbsp;» · «&nbsp;Moteur essentiel de la respiration&nbsp;» ·
+      «&nbsp;Trois Composantes&nbsp;» : la paroi, «&nbsp;les espaces intercostaux et plans de couverture&nbsp;»,
+      et le «&nbsp;contenu : cavités pleurales ; poumon ; médiastin&nbsp;».
+      <cite>Diaporama du cours, p. 2 (formulations regroupées)</cite>
+    </blockquote>
+    <p>Trois idées sont posées dès la première diapositive de contenu, et il faut savoir les développer :</p>
+    <div class="grid3">
+      <div class="card"><b>1 · Une paroi semi-rigide</b>
+        <span style="font-size:.9rem;color:var(--mut)">Ni totalement rigide (sinon elle ne pourrait pas bouger),
+        ni souple (sinon elle ne protégerait rien) : l'armature est osseuse et cartilagineuse, mais articulée.
+        Le mot <b>«&nbsp;semi-rigide&nbsp;»</b> est la réponse attendue si on te demande la nature de la paroi.</span></div>
+      <div class="card"><b>2 · Le moteur de la respiration</b>
+        <span style="font-size:.9rem;color:var(--mut)">Le thorax n'est pas qu'une boîte protectrice :
+        ses mouvements (côtes + muscles intercostaux + diaphragme en bas) <b>font entrer et sortir l'air</b>.
+        C'est pour cela que paroi et contenu sont étudiés ensemble dans le cours complet.</span></div>
+      <div class="card"><b>3 · Trois composantes</b>
+        <span style="font-size:.9rem;color:var(--mut)"><b>(a)</b> la paroi (la cage) ·
+        <b>(b)</b> les espaces intercostaux et les plans de couverture ·
+        <b>(c)</b> le contenu : cavités pleurales, poumons, médiastin.
+        Ce PDF ne développe que <b>(a)</b>.</span></div>
+    </div>
+    <div class="note">
+      <div class="lbl">Comment retenir les 3 composantes</div>
+      <p style="margin-bottom:0">
+        Pense «&nbsp;<b>contenant → intervalles → contenu</b>&nbsp;» : d'abord l'armature, puis ce qui remplit
+        les intervalles entre les côtes, puis ce qui est enfermé dedans. C'est aussi l'ordre logique d'une
+        réponse QROC «&nbsp;le thorax : composantes&nbsp;».
+      </p>
+    </div>
+
+    <h3 id="paroi">La paroi thoracique : constitution <span class="page">(p. 4)</span></h3>
+    <blockquote>
+      «&nbsp;Formée d'une armature ostéo-cartilagineuse : cage thoracique. Maintenue par les articulations
+      et les muscles de recouvrement. En avant, le sternum et […] l'appendice xiphoïde. En arrière,
+      douze vertèbres thoraciques avec leurs disques intervertébraux. Latéralement, douze paires de côtes
+      entourées de trois couches de muscles plats qui remplissent les espaces intercostaux.&nbsp;»
+      <cite>Diaporama du cours, p. 4</cite>
+    </blockquote>
+    <p>
+      Cette diapositive est le <b>squelette de ta QROC «&nbsp;cage thoracique&nbsp;»</b> : elle donne la nature,
+      le maintien, puis la constitution dans les trois directions. Décomposons-la :
+    </p>
+    <table>
+      <thead><tr><th>Élément de la réponse</th><th>Ce qu'il faut écrire</th><th>Pourquoi / piège</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nature</b></td><td>Armature <b>ostéo-cartilagineuse</b> = la cage thoracique</td><td>Deux tissus : os (sternum, côtes osseuses, vertèbres) + cartilage (cartilages costaux, disques). Ne dis pas «&nbsp;que de l'os&nbsp;».</td></tr>
+        <tr><td><b>Maintien</b></td><td>Par les <b>articulations</b> et les <b>muscles de recouvrement</b></td><td>La cage tient parce que les pièces sont articulées entre elles et gainées de muscles — d'où la semi-rigidité.</td></tr>
+        <tr><td><b>En avant</b></td><td>Le <b>sternum</b> et l'<b>appendice xiphoïde</b></td><td>L'xiphoïde est la pointe inférieure du sternum (partie 2).</td></tr>
+        <tr><td><b>En arrière</b></td><td><b>12 vertèbres thoraciques</b> + leurs <b>disques intervertébraux</b></td><td>Le chiffre <b>12</b> revient partout : 12 vertèbres, 12 paires de côtes, D1 → D12.</td></tr>
+        <tr><td><b>Latéralement</b></td><td><b>12 paires de côtes</b> entourées de <b>trois couches de muscles plats</b> remplissant les espaces intercostaux</td><td>«&nbsp;Trois couches&nbsp;» : retens le chiffre, le PDF ne nomme pas ici chaque muscle intercostal.</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="schema">
+      <svg viewBox="0 0 560 450" role="img" aria-label="Schéma original : cage thoracique en vue antérieure, classification des côtes">
+<path d="M262 58 C 215 38, 175 36, 132 52" class="bone" stroke-width="7"/>
+<path d="M298 58 C 345 38, 385 36, 428 52" class="bone" stroke-width="7"/>
+<path d="M261 70 C 250 68, 228 78, 208 96" class="bone" stroke-width="7"/>
+<path d="M261 70 C 258 69, 248 73, 240 80" class="cart" stroke-width="7.5"/>
+<path d="M299 70 C 310 68, 332 78, 352 96" class="bone" stroke-width="7"/>
+<path d="M299 70 C 302 69, 312 73, 320 80" class="cart" stroke-width="7.5"/>
+<path d="M261 95 C 239 93, 209 103, 182 121" class="bone" stroke-width="7"/>
+<path d="M261 95 C 251 94, 236 98, 226 105" class="cart" stroke-width="7.5"/>
+<path d="M299 95 C 321 93, 351 103, 378 121" class="bone" stroke-width="7"/>
+<path d="M299 95 C 309 94, 324 98, 334 105" class="cart" stroke-width="7.5"/>
+<path d="M261 120 C 229 118, 192 128, 158 146" class="bone" stroke-width="7"/>
+<path d="M261 120 C 243 119, 225 123, 213 130" class="cart" stroke-width="7.5"/>
+<path d="M299 120 C 331 118, 368 128, 402 146" class="bone" stroke-width="7"/>
+<path d="M299 120 C 317 119, 335 123, 347 130" class="cart" stroke-width="7.5"/>
+<path d="M261 145 C 220 143, 178 153, 138 171" class="bone" stroke-width="7"/>
+<path d="M261 145 C 237 144, 216 148, 202 155" class="cart" stroke-width="7.5"/>
+<path d="M299 145 C 340 143, 382 153, 422 171" class="bone" stroke-width="7"/>
+<path d="M299 145 C 323 144, 344 148, 358 155" class="cart" stroke-width="7.5"/>
+<path d="M261 170 C 214 168, 166 178, 122 196" class="bone" stroke-width="7"/>
+<path d="M261 170 C 233 169, 209 173, 193 180" class="cart" stroke-width="7.5"/>
+<path d="M299 170 C 346 168, 394 178, 438 196" class="bone" stroke-width="7"/>
+<path d="M299 170 C 327 169, 351 173, 367 180" class="cart" stroke-width="7.5"/>
+<path d="M261 195 C 209 193, 158 203, 110 221" class="bone" stroke-width="7"/>
+<path d="M261 195 C 229 194, 204 198, 186 205" class="cart" stroke-width="7.5"/>
+<path d="M299 195 C 351 193, 402 203, 450 221" class="bone" stroke-width="7"/>
+<path d="M299 195 C 331 194, 356 198, 374 205" class="cart" stroke-width="7.5"/>
+<path d="M261 220 C 204 218, 150 228, 100 246" class="bone" stroke-width="7"/>
+<path d="M261 220 C 226 219, 199 223, 181 230" class="cart" stroke-width="7.5"/>
+<path d="M299 220 C 356 218, 410 228, 460 246" class="bone" stroke-width="7"/>
+<path d="M299 220 C 334 219, 361 223, 379 230" class="cart" stroke-width="7.5"/>
+<path d="M179 267 C 132 255, 106 263, 106 283" class="bone" stroke-width="7"/>
+<path d="M179 267 C 210 253, 238 250, 256 238" class="cart" stroke-width="7"/>
+<path d="M381 267 C 428 255, 454 263, 454 283" class="bone" stroke-width="7"/>
+<path d="M381 267 C 350 253, 322 250, 304 238" class="cart" stroke-width="7"/>
+<path d="M186 292 C 142 280, 118 288, 118 308" class="bone" stroke-width="7"/>
+<path d="M186 292 C 210 278, 238 250, 256 238" class="cart" stroke-width="7"/>
+<path d="M374 292 C 418 280, 442 288, 442 308" class="bone" stroke-width="7"/>
+<path d="M374 292 C 350 278, 322 250, 304 238" class="cart" stroke-width="7"/>
+<path d="M195 317 C 156 305, 134 313, 134 333" class="bone" stroke-width="7"/>
+<path d="M195 317 C 210 303, 238 250, 256 238" class="cart" stroke-width="7"/>
+<path d="M365 317 C 404 305, 426 313, 426 333" class="bone" stroke-width="7"/>
+<path d="M365 317 C 350 303, 322 250, 304 238" class="cart" stroke-width="7"/>
+<path d="M218 338 C 185 328, 168 324, 158 334" class="bone" stroke-width="7"/>
+<circle cx="218" cy="338" r="5.5" class="tip"/>
+<path d="M342 338 C 375 328, 392 324, 402 334" class="bone" stroke-width="7"/>
+<circle cx="342" cy="338" r="5.5" class="tip"/>
+<path d="M234 368 C 209 358, 196 354, 186 364" class="bone" stroke-width="7"/>
+<circle cx="234" cy="368" r="5.5" class="tip"/>
+<path d="M326 368 C 351 358, 364 354, 374 364" class="bone" stroke-width="7"/>
+<circle cx="326" cy="368" r="5.5" class="tip"/>
+<path d="M252 48 L308 48 L300 104 L260 104 Z" class="stb"/>
+<rect x="261" y="104" width="38" height="148" rx="9" class="stb"/>
+<path d="M270 252 L290 252 L280 286 Z" class="stb"/>
+<path d="M264 50 Q280 62 296 50" class="ln" stroke-width="2.5"/>
+<text x="362" y="98" class="num">1</text>
+<text x="388" y="123" class="num">2</text>
+<text x="412" y="148" class="num">3</text>
+<text x="432" y="173" class="num">4</text>
+<text x="448" y="198" class="num">5</text>
+<text x="460" y="223" class="num">6</text>
+<text x="470" y="248" class="num">7</text>
+<text x="464" y="273" class="num">8</text>
+<text x="452" y="298" class="num">9</text>
+<text x="436" y="323" class="num">10</text>
+<text x="408" y="344" class="num">11</text>
+<text x="380" y="374" class="num">12</text>
+<text x="280" y="26" text-anchor="middle" class="lab b">Orifice supérieur — plus étroit</text>
+<text x="280" y="430" text-anchor="middle" class="lab b">Orifice inférieur — plus large · diaphragme</text>
+<path d="M205 438 L355 438" class="ln"/>
+<text x="18" y="150" class="lab b acc">Vraies côtes</text><text x="18" y="168" class="lab">1 à 7 → sternum</text>
+<text x="18" y="262" class="lab b acc">Fausses côtes</text><text x="18" y="280" class="lab">8 à 10 → cartilage</text><text x="18" y="296" class="lab">précédent / 7ᵉ</text>
+<text x="18" y="340" class="lab b warnc">Flottantes</text><text x="18" y="358" class="lab">11-12 · bout libre ●</text>
+<text x="280" y="178" text-anchor="middle" class="lab b" transform="rotate(90 280 178)">STERNUM</text>
+</svg>
+      <figcaption><b>Schéma redessiné (vue antérieure)</b> — sternum au centre, côtes numérotées de 1 à 12,
+      cartilages costaux en bleu. Les vraies côtes (1-7) atteignent le sternum ; les fausses (8-10) rejoignent
+      le cartilage sus-jacent et forment le rebord ; les flottantes (11-12) se terminent librement (●).
+      Compare avec les schémas du PDF p. 3 (vues antérieure/postérieure) et p. 18 (classification).</figcaption>
+    </figure>
+
+    <h3 id="config">Forme et configuration externe <span class="page">(p. 5-6)</span></h3>
+    <div class="grid2">
+      <div class="card">
+        <b>Forme générale <span class="page">(p. 5)</span></b>
+        <ul style="margin-bottom:0;font-size:.92rem">
+          <li>Forme d'un <b>cône</b> (tronqué) : étroit en haut, large en bas.</li>
+          <li>Constitué d'éléments <b>musculaires et squelettiques</b>.</li>
+          <li><b>Orifice supérieur</b> étroit, <b>orifice inférieur plus large</b>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Configuration externe <span class="page">(p. 6)</span></b>
+        <ul style="margin-bottom:0;font-size:.92rem">
+          <li><b>Face antérieure</b> : sternum, cartilages costaux, partie antérieure des côtes.</li>
+          <li><b>Face postérieure</b> : vertèbres thoraciques, partie postérieure des côtes.</li>
+          <li><b>Faces latérales</b> : parties latérales des côtes.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note ok">
+      <div class="lbl">L'idée à retenir</div>
+      <p style="margin-bottom:0">
+        Chaque côte traverse les trois faces : sa partie <b>postérieure</b> appartient à la face postérieure,
+        sa partie <b>latérale</b> aux faces latérales, sa partie <b>antérieure</b> (et son cartilage) à la face
+        antérieure. C'est pour cela qu'une côte se décrit d'arrière en avant (partie 3) : on suit ce trajet.
+        Et retiens le contraste qui revient sans cesse : <b>haut étroit (D1) ↔ bas large (D12)</b>.
+      </p>
+    </div>
+
+    <h3 id="orifice-sup">L'orifice supérieur du thorax <span class="page">(p. 7)</span></h3>
+    <blockquote>
+      «&nbsp;Le corps de la 1<sup>ère</sup> vertèbre thoracique (D1). La concavité de la première côte et le
+      premier cartilage costal. L'articulation sterno-claviculaire. L'incisure jugulaire du manubrium sternal.
+      Communique en haut avec la région cervicale.&nbsp;»
+      <cite>Diaporama du cours, p. 7 (ordre de la diapositive)</cite>
+    </blockquote>
+    <p>
+      Pour décrire un orifice en QROC, on donne ses <b>limites</b> en tournant dans un ordre fixe —
+      le plus sûr : <b>en arrière → latéralement → en avant</b> — puis ce avec quoi il communique.
+      Reprenons la diapositive dans cet ordre :
+    </p>
+    <table>
+      <thead><tr><th>Limite</th><th>Élément (selon le cours)</th><th>Repère pour le retenir</th></tr></thead>
+      <tbody>
+        <tr><td><b>En arrière</b></td><td>Corps de la <b>1<sup>re</sup> vertèbre thoracique (D1)</b></td><td>«&nbsp;1 en haut&nbsp;» : tout commence à 1 à l'orifice supérieur.</td></tr>
+        <tr><td><b>Latéralement</b></td><td>Concavité de la <b>1<sup>re</sup> côte</b> + <b>1<sup>er</sup> cartilage costal</b> (de chaque côté)</td><td>La 1<sup>re</sup> côte, la plus courte et la plus courbée, forme l'essentiel de l'anneau.</td></tr>
+        <tr><td><b>En avant</b></td><td><b>Incisure jugulaire</b> du manubrium sternal ; la diapositive cite aussi l'<b>articulation sterno-claviculaire</b></td><td>L'incisure jugulaire est l'échancrure médiane du bord supérieur du manubrium — palpable au niveau du cou.</td></tr>
+        <tr><td><b>Communication</b></td><td>En haut, avec la <b>région cervicale</b> (le cou)</td><td>Le thorax n'est pas fermé en haut : c'est un passage cervico-thoracique.</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège classique</div>
+      <p style="margin-bottom:0">
+        Ne confonds pas les deux «&nbsp;1&nbsp;» et «&nbsp;2&nbsp;» du haut du thorax :
+        l'orifice supérieur est limité en arrière par <b>D1</b> (p. 7), alors que l'extrémité supérieure
+        du <em>sternum</em> se projette en regard de <b>D2</b> (p. 10). Les deux phrases sont dans le cours,
+        à trois diapositives d'écart — c'est exactement le genre de confusion testée en QROC/QCM.
+      </p>
+    </div>
+
+    <h3 id="orifice-inf">L'orifice inférieur du thorax <span class="page">(p. 8)</span></h3>
+    <blockquote>
+      «&nbsp;Le corps de la 12<sup>ème</sup> vertèbre thoracique (D12). La 12<sup>ème</sup> côte et l'extrémité
+      distale de la 11<sup>ème</sup> côte. Les extrémités distales cartilagineuses de la 7<sup>ème</sup> à la
+      10<sup>ème</sup> côte et l'appendice xiphoïde. Fermé de façon incomplète par le diaphragme et sépare
+      le thorax de l'abdomen.&nbsp;»
+      <cite>Diaporama du cours, p. 8</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Limite</th><th>Élément (selon le cours)</th><th>Repère pour le retenir</th></tr></thead>
+      <tbody>
+        <tr><td><b>En arrière</b></td><td>Corps de la <b>12ᵉ vertèbre thoracique (D12)</b></td><td>Symétrique du D1 de l'orifice supérieur : «&nbsp;1 en haut, 12 en bas&nbsp;».</td></tr>
+        <tr><td><b>Latéralement</b></td><td>La <b>12ᵉ côte</b> et l'extrémité distale de la <b>11ᵉ côte</b></td><td>Ce sont les deux côtes <b>flottantes</b> : logique, elles ferment la cage en bas sur les côtés.</td></tr>
+        <tr><td><b>En avant</b></td><td>Extrémités distales cartilagineuses des côtes <b>7 à 10</b> + <b>appendice xiphoïde</b></td><td>C'est le <b>rebord costal</b> : la 7ᵉ (dernière vraie) prolongée par les cartilages des fausses côtes.</td></tr>
+        <tr><td><b>Fermeture</b></td><td><b>Incomplète</b>, par le <b>diaphragme</b> ; sépare le thorax de l'<b>abdomen</b></td><td>«&nbsp;Incomplète&nbsp;» : le diaphragme obture l'orifice mais laisse passer des éléments entre thorax et abdomen.</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="schema">
+      <svg viewBox="0 0 580 310" role="img" aria-label="Schéma original : orifices supérieur et inférieur du thorax">
+<ellipse cx="145" cy="155" rx="92" ry="56" class="ring"/>
+<text x="145" y="52" text-anchor="middle" class="lab b">ORIFICE SUPÉRIEUR</text>
+<text x="145" y="89" text-anchor="middle" class="lab sm">D1 (en arrière)</text>
+<text x="145" y="235" text-anchor="middle" class="lab sm">incisure jugulaire (en avant)</text>
+<text x="145" y="159" text-anchor="middle" class="lab sm">1ʳᵉ côte + 1ᵉʳ cartilage</text>
+<ellipse cx="415" cy="155" rx="124" ry="78" class="ring"/>
+<text x="415" y="52" text-anchor="middle" class="lab b">ORIFICE INFÉRIEUR</text>
+<text x="415" y="67" text-anchor="middle" class="lab sm">D12 (en arrière)</text>
+<text x="415" y="257" text-anchor="middle" class="lab sm">rebord 7ᵉ→10ᵉ + xiphoïde (en avant)</text>
+<text x="415" y="159" text-anchor="middle" class="lab sm">12ᵉ côte + pointe de la 11ᵉ</text>
+<path d="M310 205 Q415 130 520 205" class="cart" stroke-width="5"/>
+<text x="415" y="292" text-anchor="middle" class="lab sm b acc">diaphragme : fermeture incomplète</text>
+<text x="145" y="292" text-anchor="middle" class="lab sm b acc">↕ communique avec le cou</text>
+</svg>
+      <figcaption><b>Schéma redessiné — les deux orifices vus en anneau.</b> À gauche l'orifice supérieur,
+      étroit (D1 · 1<sup>re</sup> côte · incisure jugulaire) ouvert vers le cou ; à droite l'orifice inférieur,
+      plus large (D12 · 11ᵉ-12ᵉ côtes · rebord 7ᵉ→10ᵉ et xiphoïde), fermé incomplètement par le diaphragme.</figcaption>
+    </figure>
+
+    <h4>Les deux orifices face à face — le tableau comparatif à apprendre</h4>
+    <table>
+      <thead><tr><th>Critère</th><th>Orifice supérieur <span class="page">(p. 7)</span></th><th>Orifice inférieur <span class="page">(p. 8)</span></th></tr></thead>
+      <tbody>
+        <tr><td><b>Taille relative</b></td><td>Étroit</td><td><b>Plus large</b> (p. 5)</td></tr>
+        <tr><td><b>En arrière</b></td><td>D1</td><td>D12</td></tr>
+        <tr><td><b>Latéralement</b></td><td>1<sup>re</sup> côte + 1<sup>er</sup> cartilage costal</td><td>12ᵉ côte + extrémité distale de la 11ᵉ</td></tr>
+        <tr><td><b>En avant</b></td><td>Incisure jugulaire du manubrium (+ articulation sterno-claviculaire citée)</td><td>Cartilages 7ᵉ→10ᵉ + appendice xiphoïde</td></tr>
+        <tr><td><b>Communication / fermeture</b></td><td>Ouvert vers la <b>région cervicale</b></td><td>Fermé <b>incomplètement</b> par le <b>diaphragme</b> → sépare de l'abdomen</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Moyen mnémotechnique (maison)</div>
+      <p style="margin-bottom:0">
+        «&nbsp;<b>1 — 1 — cou</b> en haut ; <b>12 — 11/12 — 7→10 — diaphragme</b> en bas&nbsp;».
+        Si tu retrouves D1/D12 et «&nbsp;cou en haut, abdomen en bas&nbsp;», le reste se reconstruit :
+        en haut il ne peut s'agir que de la 1<sup>re</sup> côte et du haut du manubrium ; en bas, que des
+        flottantes et du rebord costal terminé par l'xiphoïde.
+      </p>
+    </div>
+
+    <!-- ================= PARTIE 2 ================= -->
+    <h2>Partie 2 — Le sternum <span class="page">(p. 10-14)</span></h2>
+    <p>
+      C'est, avec la cage thoracique, le <b>sujet «&nbsp;insisté&nbsp;»</b> de ce PDF. Le cours le décrit
+      dans l'ordre classique d'un os plat : définition et repères, constitution en 3 parties,
+      face antérieure, face postérieure, bords latéraux. Retiens cet ordre : c'est ton plan de QROC.
+    </p>
+
+    <h3 id="sternum">Définition, repères vertébraux et dimensions <span class="page">(p. 10-11)</span></h3>
+    <blockquote>
+      «&nbsp;Os plat, impair et médian de la paroi antérieure du thorax. Son extrémité supérieure se situe
+      en regard de D2 et son extrémité inférieure au niveau de D10-D11. Il est long de 15-20 cm, large de
+      5-6 cm et épais de 10-12 mm au maximum au niveau du manubrium.&nbsp;»
+      <cite>Diaporama du cours, p. 10</cite>
+    </blockquote>
+    <div class="grid2">
+      <div class="card">
+        <b>Les 4 mots de la définition</b>
+        <ul style="margin-bottom:0;font-size:.92rem">
+          <li><b>Os plat</b> — deux faces (antérieure/postérieure) et des bords : d'où le plan de description.</li>
+          <li><b>Impair</b> — il n'en existe qu'un seul.</li>
+          <li><b>Médian</b> — sur la ligne médiane.</li>
+          <li><b>Paroi antérieure</b> — il ferme la cage en avant, entre les cartilages costaux.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Les chiffres à citer tels quels</b>
+        <ul style="margin-bottom:0;font-size:.92rem">
+          <li>Extrémité supérieure en regard de <b>D2</b> ; extrémité inférieure à <b>D10-D11</b>.</li>
+          <li>Longueur <b>15-20 cm</b> · largeur <b>5-6 cm</b>.</li>
+          <li>Épaisseur <b>10-12 mm au maximum, au niveau du manubrium</b>.</li>
+        </ul>
+      </div>
+    </div>
+    <blockquote>
+      «&nbsp;Il est constitué de 3 parties de haut en bas : le manubrium, large et épais ; le corps, allongé ;
+      l'appendice xiphoïde, de petite taille.&nbsp;»
+      <cite>Diaporama du cours, p. 11</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Partie (de haut en bas)</th><th>Caractère donné par le cours</th><th>Ce qu'elle porte (détaillé ensuite)</th></tr></thead>
+      <tbody>
+        <tr><td><b>1 · Manubrium</b></td><td>Large et épais (épaisseur maximale de l'os)</td><td>Incisure jugulaire en haut ; crêtes pour SCM et grand pectoral en avant ; 4 insertions en arrière</td></tr>
+        <tr><td><b>2 · Corps</b></td><td>Allongé</td><td>Lignes sternales transverses en avant ; transverse du thorax en arrière (moitié inférieure)</td></tr>
+        <tr><td><b>3 · Appendice (processus) xiphoïde</b></td><td>De petite taille</td><td>Faisceaux xiphoïdiens du diaphragme en arrière ; pointe inférieure de l'orifice inférieur</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Vocabulaire du cours</div>
+      <p style="margin-bottom:0">
+        Le PDF emploie indifféremment <b>«&nbsp;appendice xiphoïde&nbsp;»</b> (p. 4, 8, 11) et
+        <b>«&nbsp;processus xiphoïde&nbsp;»</b> (p. 13, 14) : c'est la même pièce. En QROC, les deux termes sont
+        acceptables — utilise celui de la question si elle en impose un.
+      </p>
+    </div>
+
+    <figure class="schema">
+      <svg viewBox="0 0 645 430" role="img" aria-label="Schéma original : sternum, faces antérieure et postérieure et leurs insertions">
+<path d="M94 62 L186 62 L174 152 L171 332 L150 332 L140 368 L130 332 L109 332 L106 152 Z" class="stb"/><path d="M106 152 L174 152 M109 332 L171 332" class="ln" stroke-width="2"/><path d="M122 62 Q140 76 158 62" class="ln" stroke-width="2.5"/>
+<text x="140" y="34" text-anchor="middle" class="lab b">Face ANTÉRIEURE</text>
+<text x="140" y="52" text-anchor="middle" class="lab sm">convexe de haut en bas</text>
+
+
+
+<path d="M364 62 L456 62 L444 152 L441 332 L420 332 L410 368 L400 332 L379 332 L376 152 Z" class="stb"/><path d="M376 152 L444 152 M379 332 L441 332" class="ln" stroke-width="2"/><path d="M392 62 Q410 76 428 62" class="ln" stroke-width="2.5"/>
+<text x="410" y="34" text-anchor="middle" class="lab b">Face POSTÉRIEURE</text>
+<text x="410" y="52" text-anchor="middle" class="lab sm">concave · ferme le médiastin</text>
+
+
+
+<circle cx="102" cy="88" r="8" class="dot"/><text x="102" y="92" text-anchor="middle" class="num b">1</text>
+<circle cx="102" cy="152" r="8" class="hl"/><text x="102" y="156" text-anchor="middle" class="num b">2</text>
+<circle cx="102" cy="188" r="8" class="dot"/><text x="102" y="192" text-anchor="middle" class="num b">3</text>
+<circle cx="102" cy="224" r="8" class="dot"/><text x="102" y="228" text-anchor="middle" class="num b">4</text>
+<circle cx="102" cy="260" r="8" class="dot"/><text x="102" y="264" text-anchor="middle" class="num b">5</text>
+<circle cx="102" cy="296" r="8" class="dot"/><text x="102" y="300" text-anchor="middle" class="num b">6</text>
+<circle cx="102" cy="332" r="8" class="hl"/><text x="102" y="336" text-anchor="middle" class="num b">7</text>
+<text x="52" y="396" class="lab sm">7 surfaces articulaires</text><text x="52" y="412" class="lab sm warnc b">2ᵉ et 7ᵉ = les 2 jonctions</text>
+<ellipse cx="140" cy="92" rx="24" ry="14" class="ins"/>
+<rect x="122" y="120" width="36" height="188" rx="14" class="ins"/>
+<circle cx="140" cy="350" r="7" class="ins"/>
+<text x="196" y="92" class="lab sm">SCM (crêtes)</text><path d="M192 92 L166 92" class="ln"/>
+<text x="196" y="214" class="lab sm">Grand pectoral</text><text x="196" y="230" class="lab sm">(crêtes + lignes</text><text x="196" y="246" class="lab sm">transverses)</text><path d="M192 222 L160 222" class="ln"/>
+<text x="196" y="354" class="lab sm">Droit de l’abdomen</text><path d="M192 352 L150 352" class="ln"/>
+<rect x="382" y="76" width="56" height="15" rx="6" class="ins2"/><text x="410" y="88" text-anchor="middle" class="num b">1</text>
+<rect x="382" y="96" width="56" height="15" rx="6" class="ins2"/><text x="410" y="108" text-anchor="middle" class="num b">2</text>
+<rect x="382" y="116" width="56" height="15" rx="6" class="ins2"/><text x="410" y="128" text-anchor="middle" class="num b">3</text>
+<rect x="382" y="136" width="56" height="15" rx="6" class="ins2"/><text x="410" y="148" text-anchor="middle" class="num b">4</text>
+<rect x="384" y="238" width="52" height="72" rx="10" class="ins2"/><text x="410" y="278" text-anchor="middle" class="num b">5</text>
+<path d="M384 322 L436 322" class="ln" stroke-width="3"/><text x="410" y="318" text-anchor="middle" class="num b">6</text>
+<circle cx="410" cy="350" r="8" class="ins2"/><text x="410" y="354" text-anchor="middle" class="num b">7</text>
+<text x="462" y="70" class="lab sm"><tspan x="462" dy="0">1 Lig. sterno-clavic. post.</tspan><tspan x="462" dy="17">2 Sterno-hyoïdien</tspan><tspan x="462" dy="17">3 Sterno-thyroïdien</tspan><tspan x="462" dy="17">4 Lig. sterno-péricard. sup.</tspan><tspan x="462" dy="26">5 Transverse du thorax</tspan><tspan x="462" dy="17">6 Lig. sterno-péricard. inf.</tspan><tspan x="462" dy="17">7 Diaphragme (xiph.)</tspan></text>
+<text x="140" y="112" text-anchor="middle" class="lab b sm">manubrium</text><text x="140" y="246" text-anchor="middle" class="lab b sm">corps</text><text x="140" y="356" text-anchor="middle" class="lab sm">xiph.</text><text x="410" y="112" text-anchor="middle" class="lab b sm">manubrium</text><text x="410" y="246" text-anchor="middle" class="lab b sm">corps</text><text x="410" y="356" text-anchor="middle" class="lab sm">xiph.</text></svg>
+      <figcaption><b>Schéma redessiné — le sternum et ses insertions.</b> À gauche, face antérieure
+      (zones d'insertion en orange, d'après le schéma p. 12) et les <b>7 surfaces articulaires</b> numérotées
+      le long du bord latéral ; à droite, face postérieure avec les insertions numérotées <b>dans l'ordre
+      de haut en bas</b> de la p. 13. Les deux traits horizontaux marquent les jonctions manubrium/corps
+      et corps/xiphoïde — là où siègent la 2ᵉ et la 7ᵉ surfaces articulaires.</figcaption>
+    </figure>
+
+    <h3 id="sternum-ant">Face antérieure <span class="page">(p. 12)</span></h3>
+    <blockquote>
+      «&nbsp;Est convexe de haut en bas. Sur le manubrium sternal, on trouve 2 crêtes osseuses obliques
+      en bas et en dedans. Sur ces crêtes s'insèrent 2 muscles : le sterno-cléido-mastoïdien, le muscle
+      grand pectoral. Sur le corps du sternum, on trouve les lignes sternales transverses. Ces 2 lignes
+      sternales donnent insertion au grand pectoral.&nbsp;»
+      <cite>Diaporama du cours, p. 12 — le schéma de la diapo légende en plus «&nbsp;le m. droit de l'abdomen&nbsp;» sur l'xiphoïde</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Niveau</th><th>Relief de la face antérieure</th><th>Insertion(s)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Ensemble de la face</b></td><td><b>Convexe de haut en bas</b></td><td>— (c'est la face sous-cutanée, palpable)</td></tr>
+        <tr><td><b>Manubrium</b></td><td><b>2 crêtes osseuses</b> obliques en bas et en dedans</td><td><b>Sterno-cléido-mastoïdien</b> + <b>grand pectoral</b></td></tr>
+        <tr><td><b>Corps</b></td><td><b>Lignes sternales transverses</b> (2 lignes selon le cours)</td><td><b>Grand pectoral</b></td></tr>
+        <tr><td><b>Xiphoïde</b> <span class="page">(schéma p. 12)</span></td><td>Petite zone légendée sur le schéma</td><td><b>Droit de l'abdomen</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">L'idée à retenir</div>
+      <p style="margin-bottom:0">
+        La face antérieure est une face de <b>muscles «&nbsp;externes&nbsp;»</b> : le SCM et le grand pectoral en haut,
+        le grand pectoral encore sur le corps, le droit de l'abdomen tout en bas. Le <b>grand pectoral est donc le
+        seul muscle cité à deux niveaux</b> (manubrium <em>et</em> corps) — détail parfait pour une question piège.
+        Retiens aussi le couple de reliefs : <b>crêtes obliques (manubrium) ↔ lignes transverses (corps)</b>.
+      </p>
+    </div>
+
+    <h3 id="sternum-post">Face postérieure <span class="page">(p. 13)</span></h3>
+    <blockquote>
+      «&nbsp;Concave et ferme en avant le médiastin. Sur le manubrium s'insèrent de haut en bas le ligament
+      sterno-claviculaire postérieur, le muscle sterno-hyoïdien, le muscle sterno-thyroïdien et le ligament
+      sterno-péricardique supérieur. Sur la moitié inférieure du corps s'insèrent le muscle transverse du
+      thorax et le ligament sterno-péricardique inférieur. Sur le processus xiphoïde s'insèrent les faisceaux
+      xiphoïdiens du diaphragme.&nbsp;»
+      <cite>Diaporama du cours, p. 13</cite>
+    </blockquote>
+    <p>
+      C'est la diapositive la plus «&nbsp;liste&nbsp;» du PDF — et donc celle qui se prête le mieux à une question
+      fermée. Apprends-la <b>dans l'ordre, de haut en bas</b>, exactement comme le cours l'énonce :
+    </p>
+    <table>
+      <thead><tr><th>Ordre ↓</th><th>Insertion sur la face postérieure</th><th>Niveau</th><th>Nature</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td>Ligament sterno-claviculaire <b>postérieur</b></td><td>Manubrium</td><td>Ligament</td></tr>
+        <tr><td><b>2</b></td><td>Muscle <b>sterno-hyoïdien</b></td><td>Manubrium</td><td>Muscle</td></tr>
+        <tr><td><b>3</b></td><td>Muscle <b>sterno-thyroïdien</b></td><td>Manubrium</td><td>Muscle</td></tr>
+        <tr><td><b>4</b></td><td>Ligament sterno-péricardique <b>supérieur</b></td><td>Manubrium</td><td>Ligament</td></tr>
+        <tr><td><b>5</b></td><td>Muscle <b>transverse du thorax</b></td><td>Moitié inférieure du corps</td><td>Muscle</td></tr>
+        <tr><td><b>6</b></td><td>Ligament sterno-péricardique <b>inférieur</b></td><td>Moitié inférieure du corps</td><td>Ligament</td></tr>
+        <tr><td><b>7</b></td><td>Faisceaux xiphoïdiens du <b>diaphragme</b></td><td>Processus xiphoïde</td><td>Muscle (diaphragme)</td></tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="note" style="margin:0">
+        <div class="lbl">Logique d'ensemble (pour ne pas apprendre bêtement)</div>
+        <p style="margin-bottom:0;font-size:.92rem">
+          La face postérieure «&nbsp;<b>ferme en avant le médiastin</b>&nbsp;» : ses insertions racontent ce qui se
+          trouve derrière le sternum — en haut les muscles sous-hyoïdiens (vers le cou), au milieu les deux
+          <b>ligaments sterno-péricardiques</b> qui amarrent le <b>péricarde</b> (donc le cœur) au sternum,
+          en bas le transverse du thorax et le diaphragme. Retiens le couple
+          <b>supérieur (manubrium) / inférieur (corps)</b> des ligaments sterno-péricardiques.
+        </p>
+      </div>
+      <div class="note ok" style="margin:0">
+        <div class="lbl">Mnémotechnique (maison)</div>
+        <p style="margin-bottom:0;font-size:.92rem">
+          Pour le manubrium, de haut en bas : «&nbsp;<b>P</b>apa <b>H</b>ésite, <b>T</b>homas <b>S</b>uit&nbsp;» =
+          <b>P</b>ostérieur (lig. sterno-claviculaire) → <b>H</b>yoïdien → <b>T</b>hyroïdien →
+          <b>S</b>upérieur (lig. sterno-péricardique). Puis, corps : «&nbsp;<b>T</b>ransverse puis
+          <b>I</b>nférieur&nbsp;», et xiphoïde : diaphragme. Total : <b>4 + 2 + 1 = 7 insertions</b> —
+          comme les 7 surfaces articulaires des bords.
+        </p>
+      </div>
+    </div>
+    <div class="note warn">
+      <div class="lbl">Contraste antérieur / postérieur — la question piège</div>
+      <p style="margin-bottom:0">
+        <b>Antérieure = convexe</b> · muscles du cou et du thorax «&nbsp;de surface&nbsp;» (SCM, grand pectoral,
+        droit de l'abdomen). <b>Postérieure = concave</b> · muscles profonds (sterno-hyoïdien, sterno-thyroïdien,
+        transverse) + <b>trois ligaments</b> (sterno-claviculaire postérieur, sterno-péricardiques supérieur et
+        inférieur). Attention aux faux amis : <em>sterno-cléido-mastoïdien</em> (antérieur) ≠
+        <em>ligament sterno-claviculaire</em> (postérieur) ; <em>sterno-thyroïdien</em> ne s'insère
+        <b>que</b> sur la face postérieure du manubrium.
+      </p>
+    </div>
+
+    <h3 id="sternum-bords">Bords latéraux <span class="page">(p. 14)</span></h3>
+    <blockquote>
+      «&nbsp;Très épais et irréguliers. Présentent 7 surfaces articulaires costales qui vont s'articuler avec
+      les cartilages costaux. La 2ᵉ surface articulaire est située au niveau de l'union du manubrium et du
+      corps sternal. La 7ᵉ surface articulaire est située à la jonction du corps sternal et du processus
+      xiphoïde.&nbsp;»
+      <cite>Diaporama du cours, p. 14</cite>
+    </blockquote>
+    <ul>
+      <li><b>Caractère</b> : bords <b>très épais et irréguliers</b> (les irrégularités = les encoches costales).</li>
+      <li><b>Nombre</b> : <b>7 surfaces articulaires</b> de chaque côté, pour les <b>cartilages costaux</b> des
+        7 vraies côtes — le chiffre 7 boucle avec la classification des côtes (partie 3).</li>
+      <li><b>Repère n°1</b> : la <b>2ᵉ</b> surface siège <b>à l'union manubrium ↔ corps</b>.</li>
+      <li><b>Repère n°2</b> : la <b>7ᵉ</b> surface siège <b>à la jonction corps ↔ processus xiphoïde</b>.</li>
+    </ul>
+    <div class="note ok">
+      <div class="lbl">Le « 2 et 7 » à retenir d'un coup</div>
+      <p style="margin-bottom:0">
+        Les deux seules surfaces dont le cours donne la position sont précisément celles des
+        <b>deux jonctions</b> de l'os : <b>2ᵉ = première jonction</b> (manubrium/corps) et
+        <b>7ᵉ = deuxième jonction</b> (corps/xiphoïde). Retiens «&nbsp;<b>les jonctions portent les repères</b>&nbsp;» :
+        savoir où est le 2ᵉ cartilage permet de compter les côtes et les espaces intercostaux vers le bas —
+        c'est un repère d'examen clinique autant que d'anatomie descriptive.
+      </p>
+    </div>
+
+    <h4>Synthèse du sternum — la fiche complète en un tableau</h4>
+    <table>
+      <thead><tr><th>Élément</th><th>À écrire en QROC</th></tr></thead>
+      <tbody>
+        <tr><td><b>Définition</b></td><td>Os plat, impair, médian, de la paroi antérieure du thorax</td></tr>
+        <tr><td><b>Situation / repères</b></td><td>Extrémité supérieure en regard de D2 ; extrémité inférieure à D10-D11</td></tr>
+        <tr><td><b>Dimensions</b></td><td>15-20 cm × 5-6 cm × 10-12 mm max (au manubrium)</td></tr>
+        <tr><td><b>Constitution</b></td><td>Manubrium (large, épais) → corps (allongé) → appendice xiphoïde (petit)</td></tr>
+        <tr><td><b>Face antérieure</b></td><td>Convexe ; crêtes obliques du manubrium (SCM, grand pectoral) ; lignes transverses du corps (grand pectoral) ; droit de l'abdomen sur le schéma xiphoïdien</td></tr>
+        <tr><td><b>Face postérieure</b></td><td>Concave, ferme le médiastin ; 7 insertions de haut en bas (4 manubrium · 2 corps · 1 xiphoïde-diaphragme)</td></tr>
+        <tr><td><b>Bords latéraux</b></td><td>Épais, irréguliers ; 7 surfaces articulaires ; 2ᵉ à l'union manubrium/corps, 7ᵉ à la jonction corps/xiphoïde</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ================= PARTIE 3 ================= -->
+    <h2>Partie 3 — Les côtes <span class="page">(p. 16-23)</span></h2>
+    <p>
+      Après l'os médian antérieur (le sternum), le cours passe aux pièces latérales : les côtes.
+      L'ordre est celui d'une description type : définition et caractères généraux → classification
+      des 12 côtes → description d'une côte «&nbsp;en général&nbsp;» d'arrière en avant
+      (extrémité postérieure, corps, extrémité antérieure).
+    </p>
+
+    <h3 id="cotes">Définition et caractères généraux <span class="page">(p. 16 et 20)</span></h3>
+    <blockquote>
+      «&nbsp;Os plats, allongés, concaves médialement. Au nombre de 12 de chaque côté, s'articulent avec les
+      vertèbres en arrière et se prolongent par les cartilages costaux en avant.&nbsp;»
+      <cite>Diaporama du cours, p. 16</cite>
+    </blockquote>
+    <blockquote>
+      «&nbsp;Les côtes sont dans leur ensemble concaves médialement et obliques en bas et en avant. Leur longueur
+      augmente de 1 à 7 puis diminue. Chaque côte présente une tête, un col et un corps.&nbsp;»
+      <cite>Diaporama du cours, p. 20</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Caractère général</th><th>Détail du cours</th><th>Ce que ça implique</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nature</b></td><td>Os <b>plats, allongés</b></td><td>Deux faces et deux bords, comme le sternum — mais en arc de cercle.</td></tr>
+        <tr><td><b>Courbure</b></td><td><b>Concaves médialement</b> (concavité tournée en dedans)</td><td>La concavité embrasse le contenu thoracique (plèvre, poumon).</td></tr>
+        <tr><td><b>Nombre</b></td><td><b>12 de chaque côté</b></td><td>12 paires = 24 côtes ; fait écho aux 12 vertèbres thoraciques.</td></tr>
+        <tr><td><b>Connexions</b></td><td>En arrière : les <b>vertèbres</b> · en avant : prolongement par le <b>cartilage costal</b></td><td>Une côte complète = <b>os costal + cartilage costal</b> (schéma p. 18).</td></tr>
+        <tr><td><b>Direction</b></td><td><b>Obliques en bas et en avant</b></td><td>L'extrémité antérieure est plus basse que l'extrémité postérieure : une côte «&nbsp;descend&nbsp;».</td></tr>
+        <tr><td><b>Longueur</b></td><td><b>Augmente de la 1<sup>re</sup> à la 7ᵉ, puis diminue</b></td><td>La 7ᵉ côte est la plus longue — cohérent avec le cône thoracique large en bas… jusqu'au rebord.</td></tr>
+        <tr><td><b>Constitution</b></td><td><b>Tête · col · corps</b></td><td>Le triptyque «&nbsp;T-C-C&nbsp;» structure toute la description qui suit.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="cotes-class">Classification des côtes : 7 · 3 · 2 <span class="page">(p. 17-18)</span></h3>
+    <blockquote>
+      «&nbsp;Les vraies côtes (1 à 7) : s'articulent avec le sternum par leur cartilage costal. Les fausses
+      côtes (8 à 10) : ont leur cartilage qui s'unit avec celui de la 7<sup>ème</sup> côte. Les côtes flottantes
+      (11 et 12) : ont leur extrémité antérieure libre.&nbsp;»
+      <cite>Diaporama du cours, p. 17 — le schéma p. 18 précise pour les fausses côtes :
+      «&nbsp;attachées par leur cartilage au cartilage costal précédent&nbsp;»</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Catégorie</th><th>Côtes</th><th>Critère = terminaison du cartilage</th><th>Nombre</th></tr></thead>
+      <tbody>
+        <tr><td><b>Vraies côtes</b></td><td><b>C1 à C7</b></td><td>Chaque cartilage s'articule <b>directement avec le sternum</b> (sur les 7 surfaces des bords latéraux)</td><td><b>7</b></td></tr>
+        <tr><td><b>Fausses côtes</b></td><td><b>C8 à C10</b></td><td>Le cartilage <b>s'unit au cartilage sus-jacent</b> (en chaîne jusqu'à la 7ᵉ) au lieu d'atteindre le sternum → forme le rebord costal</td><td><b>3</b></td></tr>
+        <tr><td><b>Côtes flottantes</b></td><td><b>C11 et C12</b></td><td>Extrémité antérieure <b>libre</b> : le cartilage ne rejoint ni le sternum ni le cartilage précédent</td><td><b>2</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Les deux formulations du PDF (p. 17 vs p. 18) — à savoir reconciler</div>
+      <p style="margin-bottom:0">
+        Le texte (p. 17) dit que le cartilage des fausses côtes «&nbsp;s'unit avec celui de la
+        <b>7<sup>ème</sup> côte</b>&nbsp;», tandis que le schéma (p. 18) dit «&nbsp;attachées au cartilage costal
+        <b>précédent</b>&nbsp;». Les deux décrivent la même réalité en chaîne : C8 se soude à C7, C9 à C8,
+        C10 à C9 — l'ensemble rejoint donc <em>in fine</em> la 7ᵉ et forme le <b>rebord costal</b> qui limite
+        l'orifice inférieur en avant (p. 8 : cartilages «&nbsp;de la 7ᵉ à la 10ᵉ&nbsp;»). En QROC, écris la
+        formulation du texte et tu peux ajouter «&nbsp;par l'intermédiaire du cartilage sus-jacent&nbsp;».
+      </p>
+    </div>
+    <div class="note warn">
+      <div class="lbl">Pièges d'examen</div>
+      <ul style="margin-bottom:0">
+        <li>«&nbsp;Vraie/fausse&nbsp;» ne juge pas l'os mais la <b>terminaison du cartilage</b> : sternum direct = vraie ; cartilage précédent = fausse ; libre = flottante.</li>
+        <li>Les <b>flottantes comptent parmi les fausses au sens large</b> dans certains ouvrages, mais <b>le cours les classe à part</b> (11-12) : recopie la classification en <b>3 catégories</b> du professeur.</li>
+        <li>Sur le schéma p. 18, les repères vertébraux sont notés <b>D1, D2</b> en haut et <b>T11, T12</b> en bas (D = T = vertèbre thoracique/dorsale) et les côtes <b>C5…C10</b> : sache relire ces légendes.</li>
+        <li>Contrôle arithmétique : <b>7 + 3 + 2 = 12</b>. Si ta réponse ne totalise pas 12, elle est fausse.</li>
+      </ul>
+    </div>
+
+    <figure class="schema">
+      <svg viewBox="0 0 665 340" role="img" aria-label="Schéma original : une côte type et son extrémité postérieure">
+<rect x="46" y="58" width="92" height="44" rx="10" class="stb"/><rect x="46" y="126" width="92" height="44" rx="10" class="stb"/>
+<rect x="52" y="102" width="80" height="24" rx="6" class="cartfill"/>
+<text x="92" y="84" text-anchor="middle" class="lab sm b">corps</text><text x="92" y="118" text-anchor="middle" class="lab sm b">disque</text><text x="92" y="152" text-anchor="middle" class="lab sm b">corps</text>
+<rect x="126" y="146" width="112" height="20" rx="8" class="stb"/><text x="150" y="190" class="lab sm">processus transverse</text><path d="M170 184 L186 168" class="ln"/>
+<path d="M150 114 L232 128 C 330 138, 438 168, 444 222 C 448 262, 404 286, 354 290" class="rib"/>
+<path d="M354 290 L282 300" class="cartrib"/>
+<circle cx="150" cy="114" r="17" class="hl"/><path d="M136 114 L164 114" class="ln" stroke-width="2.5"/>
+<circle cx="232" cy="128" r="13" class="hl"/>
+<path d="M150 96 L150 34" class="ln"/><text x="146" y="38" text-anchor="middle" class="lab sm">Tête — 2 facettes + crête (disque)</text>
+<path d="M196 112 L196 66" class="ln"/><text x="192" y="70" text-anchor="middle" class="lab sm">Col</text>
+<path d="M238 116 L262 66" class="ln"/><text x="266" y="70" text-anchor="start" class="lab sm">Tubercule costal</text>
+<path d="M420 178 L452 120" class="ln"/><text x="456" y="124" text-anchor="start" class="lab sm">Corps — face interne : plèvre</text>
+<path d="M430 205 L452 140" class="ln"/><text x="456" y="144" text-anchor="start" class="lab sm">+ paquet vasculo-nerveux</text>
+<path d="M354 296 L354 322" class="ln"/><text x="350" y="326" text-anchor="middle" class="lab sm">Ext. ant. en cupule</text>
+<path d="M292 302 L282 322" class="ln"/><text x="278" y="326" text-anchor="middle" class="lab sm">Cartilage costal</text>
+</svg>
+      <figcaption><b>Schéma redessiné — la côte type d'arrière en avant.</b> La tête (deux facettes séparées
+      par une crête en regard du disque) s'articule avec deux corps vertébraux ; le tubercule répond au
+      processus transverse ; le corps contourne la cage (face interne contre la plèvre et le paquet
+      vasculo-nerveux) ; l'extrémité antérieure en cupule reçoit le cartilage costal.
+      Compare avec le schéma du PDF p. 21.</figcaption>
+    </figure>
+
+    <h3 id="cotes-post">L'extrémité postérieure : tête, col, tubercule <span class="page">(p. 21)</span></h3>
+    <blockquote>
+      «&nbsp;La tête s'articule avec les corps vertébraux par deux facettes articulaires séparées par une crête
+      répondant au disque intervertébral. Le col unit la tête au tubercule costal et se dirige en bas et en
+      arrière. Sa face postérieure est rugueuse et donne des insertions ligamentaires. Le tubercule costal est
+      une saillie à la face superficielle de la côte. Il présente une surface articulaire inférieure pour le
+      processus transverse de la vertèbre. Il donne également insertion aux ligaments costo-transversaires
+      postérieur et inférieur.&nbsp;»
+      <cite>Diaporama du cours, p. 21</cite>
+    </blockquote>
+    <div class="grid3">
+      <div class="card"><b>1 · La tête</b>
+        <span style="font-size:.9rem;color:var(--mut)">Extrémité vertébrale proprement dite.
+        <b>Deux facettes articulaires</b> pour les <b>corps vertébraux</b>, séparées par une <b>crête</b>
+        qui répond au <b>disque intervertébral</b>. Retiens le triptyque : <b>2 facettes + 1 crête + disque</b>.</span></div>
+      <div class="card"><b>2 · Le col</b>
+        <span style="font-size:.9rem;color:var(--mut)">Segment rétréci qui <b>unit la tête au tubercule</b>,
+        dirigé <b>en bas et en arrière</b>. Face postérieure <b>rugueuse</b> → <b>insertions ligamentaires</b>.
+        «&nbsp;Rugueux = ça accroche (ligaments)&nbsp;».</span></div>
+      <div class="card"><b>3 · Le tubercule costal</b>
+        <span style="font-size:.9rem;color:var(--mut)"><b>Saillie de la face superficielle</b> (externe).
+        Sa <b>surface articulaire inférieure</b> s'articule avec le <b>processus transverse</b> de la vertèbre ;
+        il donne aussi insertion aux ligaments <b>costo-transversaires postérieur et inférieur</b>.</span></div>
+    </div>
+    <div class="note ok">
+      <div class="lbl">L'idée mécanique à retenir</div>
+      <p style="margin-bottom:0">
+        La tête costale est «&nbsp;à cheval&nbsp;» sur le disque : une facette pour le corps vertébral du dessus,
+        une pour celui du dessous, la crête entre les deux répondant au disque. Et l'extrémité postérieure a
+        <b>deux articulations vertébrales distinctes</b> : tête ↔ corps vertébraux, tubercule ↔ processus
+        transverse. Ne les confonds jamais : <b>tête = corps, tubercule = transverse</b>
+        (les deux commencent par T — «&nbsp;<b>T</b>ubercule-<b>T</b>ransverse&nbsp;»).
+      </p>
+    </div>
+
+    <h3 id="cotes-corps">Le corps de la côte <span class="page">(p. 22)</span></h3>
+    <blockquote>
+      «&nbsp;Le corps est concave médialement et aplati transversalement. La face interne [est] au contact de la
+      plèvre, qui répond au paquet vasculo-nerveux intercostal. Les bords supérieur et inférieur donnent
+      insertions aux muscles intercostaux.&nbsp;»
+      <cite>Diaporama du cours, p. 22</cite>
+    </blockquote>
+    <table>
+      <thead><tr><th>Élément du corps</th><th>Description du cours</th><th>Point d'attention</th></tr></thead>
+      <tbody>
+        <tr><td><b>Forme</b></td><td>Concave <b>médialement</b>, <b>aplati transversalement</b></td><td>Plat + courbé : comme une lame cintrée, pas un cylindre.</td></tr>
+        <tr><td><b>Face interne (médiale)</b></td><td>Au contact de la <b>plèvre</b> ; répond au <b>paquet vasculo-nerveux intercostal</b></td><td>La face «&nbsp;dangereuse&nbsp;» : vaisseaux + nerf intercostaux longent la côte par en dedans.</td></tr>
+        <tr><td><b>Bords supérieur et inférieur</b></td><td>Donnent insertion aux <b>muscles intercostaux</b></td><td>Boucle avec la p. 4 : les 3 couches de muscles plats s'accrochent sur ces bords et remplissent l'espace.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Comment décrire « le corps » sans rien oublier</div>
+      <p style="margin-bottom:0">
+        Pour un os plat allongé, décris toujours <b>forme → faces → bords</b>. Ici : forme (concave médialement,
+        aplati transversalement), face interne (plèvre + paquet vasculo-nerveux), bords (insertions des
+        intercostaux). Trois phrases, aucun oubli — c'est la structure même de la diapositive.
+      </p>
+    </div>
+
+    <h3 id="cotes-ant">L'extrémité antérieure <span class="page">(p. 23)</span></h3>
+    <blockquote>
+      «&nbsp;Se présente comme une facette ovalaire en forme de cupule ; se prolonge par le cartilage costal.&nbsp;»
+      <cite>Diaporama du cours, p. 23 — dernière diapositive de contenu du PDF</cite>
+    </blockquote>
+    <p>
+      Deux informations seulement, mais elles ferment la description : l'os costal ne se termine pas en pointe,
+      il s'évase en <b>cupule ovalaire</b> (petite coupe) qui <b>reçoit le cartilage costal</b>. La suite du trajet
+      dépend alors de la catégorie : cartilage direct vers le sternum (1-7), soudé au cartilage sus-jacent
+      (8-10) ou libre (11-12) — voir <a href="#cotes-class">classification</a>.
+    </p>
+    <div class="formula">
+CÔTE COMPLÈTE (d'arrière en avant) :<br>
+<span class="c">vertèbres ←</span> TÊTE (2 facettes + crête) — COL — TUBERCULE — CORPS — cupule <span class="c">→ CARTILAGE → sternum / cartilage sus-jacent / libre</span>
+    </div>
+
+    <h4>Synthèse des côtes — la fiche complète en un tableau</h4>
+    <table>
+      <thead><tr><th>Élément</th><th>À écrire en QROC</th></tr></thead>
+      <tbody>
+        <tr><td><b>Définition</b></td><td>Os plats, allongés, concaves médialement ; 12 de chaque côté</td></tr>
+        <tr><td><b>Connexions</b></td><td>Vertèbres en arrière · cartilage costal en avant</td></tr>
+        <tr><td><b>Direction / longueur</b></td><td>Obliques en bas et en avant ; longueur croissante de 1 à 7 puis décroissante</td></tr>
+        <tr><td><b>Classification</b></td><td>Vraies 1-7 (sternum) · fausses 8-10 (cartilage sus-jacent/7ᵉ) · flottantes 11-12 (libres)</td></tr>
+        <tr><td><b>Extrémité postérieure</b></td><td>Tête (2 facettes, crête ↔ disque) · col (bas/arrière, face post. rugueuse ligamentaire) · tubercule (surface inf. ↔ processus transverse ; lig. costo-transversaires post. et inf.)</td></tr>
+        <tr><td><b>Corps</b></td><td>Concave médialement, aplati transversalement ; face interne ↔ plèvre + paquet vasculo-nerveux ; bords sup./inf. → muscles intercostaux</td></tr>
+        <tr><td><b>Extrémité antérieure</b></td><td>Facette ovalaire en cupule → cartilage costal</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ================= LIMITES ================= -->
+    <h2 id="limites-pdf">Ce que ce PDF ne contient pas (à chercher ailleurs)</h2>
+    <p>
+      Pour réviser juste, il faut aussi savoir où s'arrête ce fichier. Voici ce qu'il <b>mentionne sans
+      le développer</b> — ou ne contient pas du tout — et où le trouver dans le portail :
+    </p>
+    <table>
+      <thead><tr><th>Sujet</th><th>Statut dans ce PDF</th><th>Où le travailler</th></tr></thead>
+      <tbody>
+        <tr><td><b>Contenu : poumons, plèvre, médiastin</b></td><td>Annoncé p. 2, non développé</td><td>Fichiers du Pr. Idelhaj : <em>CONTENU-DU-THORAX</em>, <em>poumon-et-mediastin</em>, <em>4-Médiastin</em> — module Anatomie du portail</td></tr>
+        <tr><td><b>Vertèbres thoraciques</b> (description d'une vertèbre type)</td><td>Seulement citées (12 + disques ; repères D1/D2/D10-D12)</td><td><em>OSTEO-THORAX-1</em> et <em>LA-CAGE-THORACIQUE</em> (même dossier)</td></tr>
+        <tr><td><b>Muscles intercostaux &amp; myologie</b></td><td>«&nbsp;3 couches de muscles plats&nbsp;» (p. 4) et insertions sur les bords des côtes (p. 22), sans détail des plans</td><td><em>myologie.pdf</em> (même dossier)</td></tr>
+        <tr><td><b>Diaphragme</b> (description complète)</td><td>Fermeture de l'orifice inférieur + faisceaux xiphoïdiens seulement</td><td>Cours/résumés du module Anatomie</td></tr>
+        <tr><td><b>Côtes particulières</b> (1<sup>re</sup>, 2ᵉ, 11ᵉ, 12ᵉ) et articulations costo-vertébrales détaillées</td><td>Non traités : seule la <b>côte en général</b> est décrite</td><td>À ne pas inventer en QROC sur ce support ; vérifier les autres fichiers du dossier</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Honnêteté de révision</div>
+      <p style="margin-bottom:0">
+        Si un détail n'est pas sur cette page, c'est qu'il n'est pas dans les 24 diapositives — par choix,
+        rien n'a été importé d'un autre ouvrage. Pour les sujets «&nbsp;insistés&nbsp;» hors de ce PDF
+        (segmentation bronchopulmonaire, cœur et péricarde, vaisseaux supra-cardiaques, médiastin),
+        travaille les fichiers ci-dessus : ce sont les compléments directs de ce cours.
+      </p>
+    </div>
+
+    <!-- ================= CHIFFRES ================= -->
+    <h2 id="chiffres">Chiffres &amp; repères à retenir d'un coup d'œil</h2>
+    <table>
+      <thead><tr><th>Valeur / repère</th><th>À quoi il se rapporte</th><th>Diapo</th></tr></thead>
+      <tbody>
+        <tr><td><b>3</b> composantes</td><td>Paroi · espaces intercostaux et plans de couverture · contenu (plèvre, poumons, médiastin)</td><td>2</td></tr>
+        <tr><td><b>12</b> vertèbres thoraciques</td><td>Limite postérieure de la cage (+ disques intervertébraux)</td><td>4</td></tr>
+        <tr><td><b>12</b> paires de côtes</td><td>Limites latérales, entourées de <b>3 couches</b> de muscles plats intercostaux</td><td>4</td></tr>
+        <tr><td><b>D1</b></td><td>Limite postérieure de l'orifice supérieur</td><td>7</td></tr>
+        <tr><td><b>D12</b></td><td>Limite postérieure de l'orifice inférieur</td><td>8</td></tr>
+        <tr><td><b>7ᵉ → 10ᵉ</b> côtes (cartilages)</td><td>Limite antérieure de l'orifice inférieur (rebord costal) + xiphoïde</td><td>8</td></tr>
+        <tr><td><b>D2 / D10-D11</b></td><td>Projection des extrémités supérieure / inférieure du sternum</td><td>10</td></tr>
+        <tr><td><b>15-20 cm · 5-6 cm · 10-12 mm</b></td><td>Longueur · largeur · épaisseur max (manubrium) du sternum</td><td>10</td></tr>
+        <tr><td><b>3</b> parties du sternum</td><td>Manubrium · corps · appendice xiphoïde</td><td>11</td></tr>
+        <tr><td><b>2</b> crêtes / <b>2</b> lignes</td><td>Crêtes obliques du manubrium (SCM + grand pectoral) / lignes sternales transverses du corps (grand pectoral)</td><td>12</td></tr>
+        <tr><td><b>7</b> insertions postérieures</td><td>4 sur le manubrium · 2 sur la moitié inférieure du corps · 1 (diaphragme) sur l'xiphoïde</td><td>13</td></tr>
+        <tr><td><b>7</b> surfaces articulaires</td><td>Sur chaque bord latéral du sternum, pour les cartilages costaux</td><td>14</td></tr>
+        <tr><td><b>2ᵉ / 7ᵉ</b> surfaces</td><td>À l'union manubrium-corps / à la jonction corps-xiphoïde</td><td>14</td></tr>
+        <tr><td><b>7 · 3 · 2 = 12</b></td><td>Vraies (1-7) · fausses (8-10) · flottantes (11-12)</td><td>17-18</td></tr>
+        <tr><td>Longueur <b>↑ 1→7 puis ↓</b></td><td>Évolution de la longueur des côtes ; la 7ᵉ est la plus longue</td><td>20</td></tr>
+        <tr><td><b>2</b> facettes + <b>1</b> crête</td><td>Tête costale ↔ corps vertébraux ; crête ↔ disque intervertébral</td><td>21</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ================= SCHEMAS ================= -->
+    <h2 id="schemas">Schémas à savoir dessiner et légender</h2>
+    <p>
+      La méthodologie QROC de la promo est claire : pour un sujet à schéma, <b>dessiner → légender → expliquer</b>.
+      Voici les 4 schémas du PDF, avec la liste exacte des légendes attendues. Entraîne-toi à les refaire
+      de mémoire, en commençant par le p. 18 (le plus complet).
+    </p>
+    <div class="grid2">
+      <div class="card">
+        <b>Schéma 1 — Classification des côtes <span class="page">(PDF p. 18 — prioritaire)</span></b>
+        <p style="font-size:.9rem;margin-bottom:0">Légendes du PDF à reproduire :
+        <span class="tag">D1</span><span class="tag">D2</span><span class="tag">Côte = os costal + cartilage</span>
+        <span class="tag">12 côtes</span><span class="tag">Sternum</span><span class="tag">C5</span><span class="tag">C6</span>
+        <span class="tag">C7</span><span class="tag">C8</span><span class="tag">C9</span><span class="tag">C10</span>
+        <span class="tag">11ᵉ côte (T11)</span><span class="tag">12ᵉ côte (T12)</span>
+        <span class="tag">Vraies C1→C7</span><span class="tag">Fausses C8→C10 — cartilage précédent</span><span class="tag">Flottantes C11→C12</span></p>
+      </div>
+      <div class="card">
+        <b>Schéma 2 — Cage thoracique, vues ant. et post. <span class="page">(PDF p. 3)</span></b>
+        <p style="font-size:.9rem;margin-bottom:0">Diapo 100 % schéma : repère en vue antérieure le sternum,
+        les cartilages et le rebord costal ; en vue postérieure la colonne thoracique et les parties
+        postérieures des côtes. C'est le schéma de la QROC «&nbsp;configuration externe&nbsp;» (faces p. 6).</p>
+      </div>
+      <div class="card">
+        <b>Schéma 3 — Sternum, face antérieure <span class="page">(PDF p. 12)</span></b>
+        <p style="font-size:.9rem;margin-bottom:0">Légendes du PDF :
+        <span class="tag">m. sterno-cléido-mastoïdien</span><span class="tag">m. grand pectoral</span><span class="tag">m. droit de l'abdomen</span><br>
+        À placer : SCM en haut du manubrium, grand pectoral sur le manubrium <em>et</em> le corps, droit de
+        l'abdomen au niveau de l'xiphoïde.</p>
+      </div>
+      <div class="card">
+        <b>Schéma 4 — Côte type, extrémité postérieure <span class="page">(PDF p. 21)</span></b>
+        <p style="font-size:.9rem;margin-bottom:0">Légendes à placer d'arrière en avant :
+        <span class="tag">Tête</span><span class="tag">Col</span><span class="tag">Tubercule</span><span class="tag">Corps</span><span class="tag">Cartilage</span><br>
+        Plus, en regard : corps vertébraux + disque (pour la tête), processus transverse (pour le tubercule).</p>
+      </div>
+    </div>
+
+    <!-- ================= QROC ================= -->
+    <h2 id="qroc">✍️ QROC types — sujets probables et réponses modèles</h2>
+    <p>
+      Cinq sujets rédigés <b>uniquement avec le contenu des 24 diapositives</b>, dans le format attendu
+      (définition → situation → limites → composantes). Mode d'emploi : lis l'énoncé, rédige ta réponse
+      au brouillon <b>sans ouvrir</b> la correction, puis compare avec la checklist «&nbsp;mots-clés&nbsp;».
+      Les deux premiers sujets correspondent aux points «&nbsp;insistés&nbsp;» relevés par la promotion.
+    </p>
+
+    <h3>QROC 1 — Anatomie descriptive du sternum <span class="pill">sujet insisté</span></h3>
+    <details>
+      <summary>Réponse modèle (ne l'ouvre qu'après avoir rédigé la tienne)</summary>
+      <div class="body">
+        <p>
+          Le sternum est un <b>os plat, impair et médian de la paroi antérieure du thorax</b>. Son extrémité
+          supérieure se situe en regard de <b>D2</b> et son extrémité inférieure au niveau de <b>D10-D11</b> ;
+          il est long de <b>15-20 cm</b>, large de <b>5-6 cm</b> et épais de <b>10-12 mm au maximum au niveau
+          du manubrium</b>. Il est constitué de trois parties de haut en bas : le <b>manubrium</b> (large et épais),
+          le <b>corps</b> (allongé) et l'<b>appendice xiphoïde</b> (de petite taille).
+        </p>
+        <p>
+          Sa <b>face antérieure</b> est <b>convexe de haut en bas</b>. Le manubrium porte <b>deux crêtes osseuses
+          obliques en bas et en dedans</b> sur lesquelles s'insèrent le <b>sterno-cléido-mastoïdien</b> et le
+          <b>grand pectoral</b> ; le corps présente les <b>lignes sternales transverses</b>, donnant insertion au
+          <b>grand pectoral</b> (le droit de l'abdomen est légendé sur l'xiphoïde).
+        </p>
+        <p>
+          Sa <b>face postérieure</b> est <b>concave et ferme en avant le médiastin</b>. S'y insèrent, de haut en bas :
+          sur le manubrium, le <b>ligament sterno-claviculaire postérieur</b>, le <b>sterno-hyoïdien</b>, le
+          <b>sterno-thyroïdien</b> et le <b>ligament sterno-péricardique supérieur</b> ; sur la moitié inférieure du
+          corps, le <b>transverse du thorax</b> et le <b>ligament sterno-péricardique inférieur</b> ; sur le processus
+          xiphoïde, les <b>faisceaux xiphoïdiens du diaphragme</b>.
+        </p>
+        <p style="margin-bottom:0">
+          Ses <b>bords latéraux</b>, très épais et irréguliers, présentent <b>7 surfaces articulaires</b> pour les
+          cartilages costaux : la <b>2ᵉ</b> est située à l'union du manubrium et du corps, la <b>7ᵉ</b> à la jonction
+          du corps et du processus xiphoïde.
+        </p>
+      </div>
+    </details>
+    <p style="font-size:.88rem;color:var(--mut)"><b>Mots-clés qui doivent apparaître :</b>
+      os plat impair médian · D2 · D10-D11 · 15-20 cm · manubrium/corps/xiphoïde · convexe · crêtes (SCM, grand pectoral) ·
+      lignes transverses · concave/médiastin · les 7 insertions postérieures dans l'ordre · 7 surfaces · 2ᵉ et 7ᵉ aux jonctions.
+      <b>Piège :</b> inverser convexe/concave, ou placer les sterno-péricardiques sur la face antérieure.</p>
+
+    <h3>QROC 2 — Anatomie descriptive de la cage thoracique <span class="pill">sujet insisté</span></h3>
+    <details>
+      <summary>Réponse modèle</summary>
+      <div class="body">
+        <p>
+          Le thorax est une <b>paroi semi-rigide</b>, <b>moteur essentiel de la respiration</b>, formée de trois
+          composantes : la paroi, les espaces intercostaux et plans de couverture, et le contenu
+          (cavités pleurales, poumons, médiastin). Sa paroi est une <b>armature ostéo-cartilagineuse</b>, la
+          <b>cage thoracique</b>, maintenue par les articulations et les muscles de recouvrement, en forme de
+          <b>cône</b> à orifice supérieur étroit et orifice inférieur plus large.
+        </p>
+        <p>
+          Elle est constituée : <b>en avant</b> par le sternum et l'appendice xiphoïde ; <b>en arrière</b> par les
+          <b>douze vertèbres thoraciques</b> et leurs disques intervertébraux ; <b>latéralement</b> par les
+          <b>douze paires de côtes</b> entourées de trois couches de muscles plats remplissant les espaces
+          intercostaux. Sa configuration externe comprend une face antérieure (sternum, cartilages costaux,
+          parties antérieures des côtes), une face postérieure (vertèbres thoraciques, parties postérieures des
+          côtes) et des faces latérales (parties latérales des côtes).
+        </p>
+        <p style="margin-bottom:0">
+          Son <b>orifice supérieur</b> est limité par le corps de <b>D1</b>, la concavité de la première côte et le
+          premier cartilage costal, et l'incisure jugulaire du manubrium ; il communique avec la région cervicale.
+          Son <b>orifice inférieur</b> est limité par le corps de <b>D12</b>, la 12ᵉ côte et l'extrémité distale de la
+          11ᵉ, et les extrémités cartilagineuses des 7ᵉ à 10ᵉ côtes avec l'appendice xiphoïde ; il est fermé de
+          façon incomplète par le diaphragme et sépare le thorax de l'abdomen.
+        </p>
+      </div>
+    </details>
+    <p style="font-size:.88rem;color:var(--mut)"><b>Mots-clés :</b> semi-rigide · respiration · 3 composantes · ostéo-cartilagineuse ·
+      cône · avant/arrière/latéralement (12 et 12) · 3 couches musculaires · 3 faces · orifices D1/D12 complets · cou/diaphragme.
+      <b>Piège :</b> oublier les disques intervertébraux, ou ne citer que les os sans les muscles intercostaux.</p>
+
+    <h3>QROC 3 — Décrire les orifices supérieur et inférieur du thorax</h3>
+    <details>
+      <summary>Réponse modèle</summary>
+      <div class="body">
+        <p>
+          Le thorax, en forme de cône, présente un orifice supérieur étroit et un orifice inférieur plus large.
+        </p>
+        <p>
+          <b>L'orifice supérieur</b> est limité <b>en arrière</b> par le corps de la 1<sup>re</sup> vertèbre thoracique
+          (D1), <b>latéralement</b> par la concavité de la première côte et le premier cartilage costal, et
+          <b>en avant</b> par l'incisure jugulaire du manubrium sternal (la diapositive cite aussi l'articulation
+          sterno-claviculaire). Il <b>communique en haut avec la région cervicale</b>.
+        </p>
+        <p style="margin-bottom:0">
+          <b>L'orifice inférieur</b> est limité <b>en arrière</b> par le corps de la 12ᵉ vertèbre thoracique (D12),
+          <b>latéralement</b> par la 12ᵉ côte et l'extrémité distale de la 11ᵉ côte, et <b>en avant</b> par les
+          extrémités distales cartilagineuses de la 7ᵉ à la 10ᵉ côte et l'appendice xiphoïde. Il est
+          <b>fermé de façon incomplète par le diaphragme</b>, qui sépare le thorax de l'abdomen.
+        </p>
+      </div>
+    </details>
+    <p style="font-size:.88rem;color:var(--mut)"><b>Plan en 10 secondes :</b> pour chaque orifice → arrière / latéral / avant / communication.
+      <b>Piège :</b> écrire D2 au lieu de D1 en haut (D2 = sommet du sternum), ou «&nbsp;fermé par le diaphragme&nbsp;» sans «&nbsp;de façon incomplète&nbsp;».</p>
+
+    <h3>QROC 4 — Classification des côtes (schéma légendé + explication)</h3>
+    <details>
+      <summary>Réponse modèle</summary>
+      <div class="body">
+        <p>
+          <b>[Schéma attendu :</b> celui de la p. 18 — sternum au centre, côtes C1 à C12, distinguer
+          <b>os costal</b> et <b>cartilage</b>, repères D1-D2 en haut, T11-T12 en bas, et légender les trois groupes.<b>]</b>
+        </p>
+        <p>
+          Au nombre de <b>12 de chaque côté</b>, les côtes sont classées selon la terminaison de leur cartilage
+          costal. Les <b>vraies côtes (1 à 7)</b> s'articulent avec le sternum par leur propre cartilage costal.
+          Les <b>fausses côtes (8 à 10)</b> ont leur cartilage qui s'unit à celui de la 7ᵉ côte — chacune étant
+          attachée au cartilage costal précédent — formant le rebord costal. Les <b>côtes flottantes (11 et 12)</b>
+          ont leur extrémité antérieure libre.
+        </p>
+        <p style="margin-bottom:0">
+          Chaque côte complète comprend un os costal prolongé en avant par un cartilage costal ; c'est le mode
+          de terminaison de ce cartilage qui définit les trois catégories (7 + 3 + 2 = 12).
+        </p>
+      </div>
+    </details>
+    <p style="font-size:.88rem;color:var(--mut)"><b>Légendes indispensables du schéma :</b> sternum · os costal · cartilage · les n° des côtes ·
+      les 3 encadrés (vraies/fausses/flottantes). <b>Piège :</b> dessiner les flottantes rattachées au rebord costal.</p>
+
+    <h3>QROC 5 — Description d'une côte type</h3>
+    <details>
+      <summary>Réponse modèle</summary>
+      <div class="body">
+        <p>
+          Les côtes sont des <b>os plats, allongés, concaves médialement</b>, au nombre de <b>12 de chaque côté</b>,
+          <b>obliques en bas et en avant</b>, dont la longueur augmente de la 1<sup>re</sup> à la 7ᵉ puis diminue.
+          Chaque côte s'articule en arrière avec les vertèbres et se prolonge en avant par un cartilage costal ;
+          elle présente <b>une tête, un col et un corps</b>.
+        </p>
+        <p>
+          Son <b>extrémité postérieure</b> comprend : la <b>tête</b>, qui s'articule avec les corps vertébraux par
+          <b>deux facettes séparées par une crête répondant au disque intervertébral</b> ; le <b>col</b>, qui unit la
+          tête au tubercule en se dirigeant en bas et en arrière, à face postérieure rugueuse donnant des insertions
+          ligamentaires ; et le <b>tubercule costal</b>, saillie de la face superficielle dont la surface articulaire
+          inférieure répond au processus transverse de la vertèbre et qui donne insertion aux ligaments
+          costo-transversaires postérieur et inférieur.
+        </p>
+        <p style="margin-bottom:0">
+          Le <b>corps</b> est concave médialement et aplati transversalement ; sa face interne, au contact de la
+          plèvre, répond au paquet vasculo-nerveux intercostal, et ses bords supérieur et inférieur donnent insertion
+          aux muscles intercostaux. L'<b>extrémité antérieure</b>, facette ovalaire en forme de cupule, se prolonge
+          par le cartilage costal.
+        </p>
+      </div>
+    </details>
+    <p style="font-size:.88rem;color:var(--mut)"><b>Ordre imposé :</b> caractères généraux → extrémité postérieure (tête-col-tubercule) → corps → extrémité antérieure.
+      <b>Piège :</b> articuler la tête avec le processus transverse (c'est le tubercule) ; oublier la crête et le disque.</p>
+
+    <!-- ================= QUIZ ================= -->
+    <h2 id="quiz">🎯 Auto-évaluation — 12 questions</h2>
+    <p>
+      L'épreuve d'anatomie est en QROC, mais ces QCM servent d'autotest rapide des détails chiffrés
+      (chaque correction renvoie à la diapo). Vise le sans-faute avant de passer aux QROC rédigés.
+    </p>
+    <div id="quiz-root"></div>
+    <p style="margin-top:14px">Score : <span id="quiz-score">0 / 0</span>
+      <button class="btn" id="quiz-reset" style="margin-left:10px">↺ Recommencer</button></p>
+
+    <!-- ================= REVISER ================= -->
+    <h2 id="reviser">Comment réviser ce cours</h2>
+    <ol>
+      <li><b>Parcours le PDF (24 diapos) en regardant surtout les schémas</b> p. 3, 12, 18 et 21 : en anatomie, la moitié des points est visuelle. Cette page te donne le texte et la logique ; le PDF te donne les images à reproduire.</li>
+      <li><b>Apprends les trois tableaux de synthèse</b> de cette page : <a href="#paroi">constitution de la paroi</a>, <a href="#sternum">fiche du sternum</a>, <a href="#cotes">fiche des côtes</a> — ce sont tes plans de QROC 1, 2 et 5.</li>
+      <li><b>Récite les listes dans l'ordre, de haut en bas</b> : limites des orifices (arrière → latéral → avant), insertions postérieures du sternum (4 + 2 + 1), pièces de la côte d'arrière en avant. L'ordre fait partie de la réponse.</li>
+      <li><b>Fais le <a href="#quiz">quiz de 12 questions</a></b> jusqu'au sans-faute, puis <b>rédige les <a href="#qroc">5 QROC</a> en temps limité</b> (5-7 min par sujet) avant d'ouvrir les corrections.</li>
+      <li><b>Refais les 4 schémas légendés de mémoire</b> (<a href="#schemas">checklists ici</a>), en commençant par la classification des côtes p. 18.</li>
+      <li><b>Enchaîne sur le contenu</b> (hors de ce PDF) : <em>CONTENU-DU-THORAX</em>, <em>poumon-et-mediastin</em> et le médiastin du même professeur dans <a href="../index.html#/m/anatomie">le module Anatomie du portail</a>, puis les résumés <em>Resume-Anatomie-Thorax</em>.</li>
+    </ol>
+    <div class="note">
+      <div class="lbl">Rappel format</div>
+      <p style="margin-bottom:0">
+        Anatomie générale : <b>QROC</b>. Sujets «&nbsp;insistés&nbsp;» du Pr. Idelhaj d'après les notes de la
+        promotion — pour ce PDF : <b>le sternum</b> et <b>l'anatomie descriptive de la cage thoracique</b>
+        (les autres sujets insistés relèvent des fichiers «&nbsp;contenu&nbsp;»). Les notes d'examen sont à
+        confronter aux annonces officielles de la faculté.
+      </p>
+    </div>
+
+    <!-- ================= DOCS ================= -->
+    <h2 id="docs">Documents sources</h2>
+    <table>
+      <thead><tr><th>Document</th><th>Détail</th><th>Ce que c'est</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>ANATOMIE DU THORAX.pdf — Pr N. Id El Haj</b> <span class="pill">source de cette page</span></td>
+          <td>835 Ko · 24 diapos</td>
+          <td>Diaporama «&nbsp;Chirurgie thoracique&nbsp;» : cage thoracique (constitution, faces, orifices), sternum complet, côtes (classification + côte type). <b>À ouvrir en parallèle de cette page pour les schémas.</b></td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1K3GUOZhKB50YR6mvGqAQPJRrDqxnNhLu/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Dossier «&nbsp;Cours — Thorax&nbsp;» du Pr. Idelhaj</b> (portail)</td>
+          <td>7 fichiers avec celui-ci</td>
+          <td>Les compléments directs : <em>LA-CAGE-THORACIQUE</em>, <em>OSTEO-THORAX-1</em>, <em>myologie</em>, <em>CONTENU-DU-THORAX</em>, <em>poumon-et-mediastin</em>, <em>4-Médiastin</em>.</td>
+          <td><a class="btn" href="../index.html#/m/anatomie">Portail</a></td>
+        </tr>
+        <tr>
+          <td><b>Résumés — Thorax</b> (portail)</td>
+          <td>3 fichiers</td>
+          <td><em>Resume-Anatomie-Thorax</em>, <em>Anatomie du thorax (1) Aya.S</em>, <em>Anatomie - Salwa</em> : à confronter à ta révision du cours.</td>
+          <td><a class="btn" href="../index.html#/m/anatomie">Portail</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Transparence</div>
+      <p style="margin-bottom:0">
+        Tout le texte des 24 diapositives a été extrait et relu : cette page en couvre l'intégralité
+        (voir le <a href="#plan-pdf">plan diapo par diapo</a>). Les diapositives 9, 15, 19 et 24 sont des
+        transitions sans texte et la p. 3 est un schéma sans texte — décrite dans
+        «&nbsp;<a href="#schemas">Schémas à savoir légender</a>&nbsp;». Les schémas d'origine restant la
+        référence pour l'examen, ceux de cette page sont des redessins d'entraînement et ne remplacent pas le PDF.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        Page de révision non officielle, réalisée par la promotion — le document source appartient à son auteur,
+        le <b>Pr. N. Id El Haj</b> (Chirurgie thoracique). Le contenu est <b>référencé, jamais recopié en fichier</b> :
+        chaque lien ouvre le PDF original sur Google Drive ; les passages entre guillemets sont des citations
+        courtes des diapositives, données avec leur numéro de diapo à des fins de révision.
+      </p>
+      <p style="margin-bottom:0">
+        <a href="../index.html">← Retour au portail FMDC 1A</a> ·
+        <a href="https://drive.google.com/file/d/1K3GUOZhKB50YR6mvGqAQPJRrDqxnNhLu/view" target="_blank" rel="noopener">PDF d'origine (Drive)</a> ·
+        <a href="../index.html#/m/anatomie">Module Anatomie dans le portail</a>
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+
+/* ---------------- Thème clair/sombre ---------------- */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{ var s=localStorage.getItem('fmdc-theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var n = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',n);
+    try{ localStorage.setItem('fmdc-theme',n); }catch(e){}
+  });
+})();
+
+/* ---------------- Barre de progression ---------------- */
+(function(){
+  var bar=document.getElementById('bar');
+  function upd(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0 ? (h.scrollTop/max)*100 : 0)+'%';
+  }
+  addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+})();
+
+/* ---------------- Sommaire actif ---------------- */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var map=links.map(function(a){ return {a:a, t:document.querySelector(a.getAttribute('href'))}; })
+               .filter(function(o){ return o.t; });
+  function spy(){
+    var y=scrollY+110, cur=null;
+    map.forEach(function(o){ if(o.t.offsetTop<=y) cur=o; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  addEventListener('scroll',spy,{passive:true}); spy();
+})();
+
+/* ---------------- Auto-évaluation ---------------- */
+(function(){
+  var QS = [
+    { q:"Le thorax, selon le cours, est composé de trois éléments. Lesquels ?", o:["Le sternum, les côtes et les vertèbres","La paroi, les espaces intercostaux et plans de couverture, et le contenu (cavités pleurales, poumons, médiastin)","La cage, le diaphragme et le cœur","Les muscles intercostaux, la plèvre et le poumon"], a:1,
+      w:"Les trois composantes de la p. 2 : paroi · espaces intercostaux et plans de couverture · contenu (cavités pleurales, poumon, médiastin). Sternum/côtes/vertèbres décrivent seulement la paroi." },
+    { q:"La cage thoracique a la forme d'un cône dont…", o:["l'orifice supérieur est le plus large","l'orifice inférieur est plus large que le supérieur","les deux orifices sont identiques","l'orifice inférieur est fermé par l'os"], a:1,
+      w:"« Orifice supérieure et orifice inférieure plus large » (p. 5) ; l'orifice inférieur est fermé incomplètement par le diaphragme (muscle), pas par de l'os (p. 8)." },
+    { q:"En arrière, l'orifice supérieur du thorax est limité par…", o:["le corps de D2","le corps de D1","le corps de D12","l'incisure jugulaire"], a:1,
+      w:"Corps de la 1re vertèbre thoracique D1 (p. 7). D2 est le repère de l'extrémité supérieure du sternum (p. 10) ; D12 limite l'orifice inférieur (p. 8)." },
+    { q:"La limite antérieure de l'orifice inférieur est formée par…", o:["l'incisure jugulaire du manubrium","les 1ers cartilages costaux","les extrémités cartilagineuses des 7e à 10e côtes et l'appendice xiphoïde","le diaphragme"], a:2,
+      w:"Rebord costal (cartilages 7→10) + appendice xiphoïde (p. 8). Le diaphragme ferme l'orifice, il ne le limite pas en avant ; l'incisure jugulaire appartient à l'orifice supérieur." },
+    { q:"Le sternum mesure et se projette…", o:["10-12 cm, de D1 à D12","15-20 cm, extrémité supérieure en regard de D2 et inférieure à D10-D11","20-25 cm, de D3 à D9","5-6 cm, épais de 15-20 mm"], a:1,
+      w:"Long de 15-20 cm, large de 5-6 cm, épais de 10-12 mm au maximum au manubrium ; D2 en haut, D10-D11 en bas (p. 10)." },
+    { q:"Sur la face antérieure du sternum, les crêtes obliques du manubrium donnent insertion…", o:["au sterno-hyoïdien et au sterno-thyroïdien","au transverse du thorax","au sterno-cléido-mastoïdien et au grand pectoral","au diaphragme"], a:2,
+      w:"2 crêtes obliques en bas et en dedans → SCM + grand pectoral (p. 12). Le grand pectoral s'insère aussi sur les lignes transverses du corps. Les autres muscles cités sont postérieurs (p. 13)." },
+    { q:"Sur la face postérieure du manubrium, l'ordre des insertions de haut en bas est…", o:["Sterno-hyoïdien, sterno-thyroïdien, ligament sterno-claviculaire postérieur, ligament sterno-péricardique supérieur","Ligament sterno-claviculaire postérieur, sterno-hyoïdien, sterno-thyroïdien, ligament sterno-péricardique supérieur","Ligament sterno-péricardique supérieur, sterno-thyroïdien, sterno-hyoïdien, ligament sterno-claviculaire postérieur","Sterno-thyroïdien, sterno-hyoïdien, ligament sterno-péricardique inférieur"], a:1,
+      w:"« De haut en bas : ligament sterno-claviculaire postérieur, sterno-hyoïdien, sterno-thyroïdien, ligament sterno-péricardique supérieur » (p. 13). Mnémotechnique maison : Papa Hésite, Thomas Suit." },
+    { q:"Les bords latéraux du sternum présentent…", o:["12 surfaces articulaires, la 1re à l'union manubrium/corps","7 surfaces articulaires ; la 2e à l'union manubrium/corps, la 7e à la jonction corps/xiphoïde","10 surfaces articulaires pour les vraies et fausses côtes","7 surfaces, la 7e sur le manubrium"], a:1,
+      w:"7 surfaces costales (pour les 7 vraies côtes) ; les deux repères donnés sont les deux jonctions de l'os (p. 14)." },
+    { q:"La 9e côte est…", o:["une vraie côte, articulée directement au sternum","une fausse côte : son cartilage s'unit au cartilage précédent (chaîne jusqu'à la 7e)","une côte flottante à extrémité libre","la côte la plus longue"], a:1,
+      w:"Fausses côtes = 8 à 10 (p. 17-18). La plus longue est la 7e (longueur croissante de 1 à 7, p. 20) ; les flottantes sont 11 et 12." },
+    { q:"La tête costale s'articule avec les corps vertébraux par…", o:["une seule facette ovalaire","trois facettes séparées par deux crêtes","deux facettes séparées par une crête répondant au disque intervertébral","le processus transverse"], a:2,
+      w:"2 facettes + 1 crête en regard du disque (p. 21). Le processus transverse reçoit la surface inférieure du tubercule costal — « Tubercule-Transverse »." },
+    { q:"Sur le tubercule costal s'insèrent…", o:["les muscles intercostaux","les ligaments costo-transversaires postérieur et inférieur","le paquet vasculo-nerveux intercostal","le cartilage costal"], a:1,
+      w:"Tubercule : surface articulaire inférieure pour le processus transverse + ligaments costo-transversaires postérieur et inférieur (p. 21). Les intercostaux s'insèrent sur les bords du corps (p. 22)." },
+    { q:"La face interne du corps de la côte…", o:["est rugueuse et donne des insertions ligamentaires","est au contact de la plèvre et répond au paquet vasculo-nerveux intercostal","présente la facette ovalaire en cupule","s'articule avec le sternum"], a:1,
+      w:"Corps : concave médialement, aplati transversalement ; face interne ↔ plèvre + paquet vasculo-nerveux (p. 22). La face rugueuse ligamentaire est celle du col ; la cupule est l'extrémité antérieure (p. 21 et 23)." }
+  ];
+  var root=document.getElementById('quiz-root'), scoreEl=document.getElementById('quiz-score');
+  var done=0, right=0;
+  function render(){
+    root.innerHTML=''; done=0; right=0; update();
+    QS.forEach(function(item,i){
+      var box=document.createElement('div'); box.className='quiz';
+      var t=document.createElement('div'); t.className='q'; t.textContent=(i+1)+'. '+item.q; box.appendChild(t);
+      var opts=document.createElement('div'); opts.className='opts';
+      item.o.forEach(function(label,j){
+        var b=document.createElement('button'); b.className='opt'; b.type='button'; b.textContent=label;
+        b.addEventListener('click',function(){
+          if(box.dataset.done) return;
+          box.dataset.done='1'; done++;
+          [].forEach.call(opts.children,function(c){ c.disabled=true; });
+          opts.children[item.a].classList.add('right');
+          if(j===item.a){ right++; } else { b.classList.add('wrong'); }
+          why.classList.add('show'); update();
+        });
+        opts.appendChild(b);
+      });
+      box.appendChild(opts);
+      var why=document.createElement('div'); why.className='why'; why.innerHTML='<b>Explication — </b>'+item.w;
+      box.appendChild(why);
+      root.appendChild(box);
+    });
+  }
+  function update(){ scoreEl.textContent = right + ' / ' + QS.length + (done===QS.length ? ' — terminé' : '  (répondu : '+done+')'); }
+  document.getElementById('quiz-reset').addEventListener('click', render);
+  render();
+})();
+</script>
+</body>
+</html>
