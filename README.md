@@ -14,7 +14,7 @@ cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par modu
 | | |
 |---|---|
 | 📚 **8 modules / 281 documents** | Anatomie & Physiologie, Biologie, Biophysique & Sciences des matériaux, Chimie & Biochimie, IMD, Langue, MTU, Links |
-| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) |
+| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html) · [Génétique humaine — Pr. Dehbi](cours/genetique-humaine.html)) |
 | 👩‍🏫 **Vue par professeur** | Chaque module se déplie en rubriques (Pr. X → Cours / TD / Résumés / Vidéos…) |
 | 🔍 **Recherche globale** | Accents ignorés, insensible à la casse — cherche dans les noms de fichiers **et** le chemin (module › professeur). Raccourci : `/` |
 | 💡 **Notes d'examen** | Les conseils donnés par chaque professeur (chapitres insistés, parties retirées, format d'épreuve) transformés en fiches filtrables |
@@ -89,6 +89,7 @@ pas par l'application du portail ; elles y sont simplement liées depuis la barr
 | Page | Cours | Source |
 |---|---|---|
 | [`cours/biochimie-structurale.html`](cours/biochimie-structurale.html) | Biochimie structurale — Pr. Naima Khlil · Chap. 1 : acides aminés, ionisation et pHi, liaison peptidique, structures des protéines, hémoglobine (effet Bohr, 2,3-DPG) · Chap. 2 : enzymes, Michaelis-Menten et Lineweaver-Burk, inhibitions, allostérie, vitamines et coenzymes — + tableau des chiffres à retenir et auto-évaluation de 10 QCM corrigés | Support de cours 2024-25, 71 p. |
+| [`cours/genetique-humaine.html`](cours/genetique-humaine.html) | Génétique humaine — Pr. H. Dehbi · Cours 1 : cytogénétique conventionnelle et moléculaire (chromosome métaphasique, classification de Denver, caryotype, bandes Q/G/R/C/T/NOR, nomenclature ISCN, FISH, M-FISH, ACPA) · Cours 2 : anomalies chromosomiques de nombre et de structure (aneuploïdies, triploïdie, mosaïque vs chimère, DUP, délétions, anneau, inversion, isochromosome, Robertson, réciproque, insertion, maladies cassantes) · Cours 3 : hérédité mendélienne (AD et ses 7 particularités, AR et consanguinité, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle) — + tableau des chiffres à retenir et auto-évaluation de 12 QCM corrigés | 3 cours officiels 2023-24, 8 h |
 
 **Ajouter une page** : copier `cours/biochimie-structurale.html`, remplacer le contenu, puis ajouter une entrée
 dans le bloc « Cours expliqués » de la barre latérale d'`index.html` et dans le tableau ci-dessus.

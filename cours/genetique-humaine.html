@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Génétique humaine expliquée en détail — Pr. H. Dehbi | FMDC 1A</title>
+<meta name="description" content="Cours de Biologie génétique et moléculaire (Pr. H. Dehbi, FMDC Casablanca) expliqué section par section : cytogénétique conventionnelle (chromosome métaphasique, caryotype, bandes, ISCN), cytogénétique moléculaire (FISH, M-FISH, ACPA), anomalies chromosomiques de nombre et de structure, hérédité mendélienne (AD, AR, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#141b24; --card:#161f2b; --line:#263244;
+  --txt:#e6edf3; --mut:#93a4b8; --acc:#7c5cff; --acc2:#e08b2f; --ok:#3fb950;
+  --warn:#d29922; --quote:#1c2733; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e1e7ef;
+  --txt:#1b2430; --mut:#5a6b7d; --acc:#5a43d6; --acc2:#b96a12; --ok:#1a7f37;
+  --warn:#9a6700; --quote:#f0f2fd; --shadow:0 6px 24px rgba(20,40,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:16px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.28;margin:0 0 .5rem}
+h2{font-size:1.55rem;margin:3rem 0 .8rem;padding-bottom:.45rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.2rem;margin:2rem 0 .5rem;color:var(--acc);scroll-margin-top:80px}
+h4{font-size:1.02rem;margin:1.3rem 0 .4rem;scroll-margin-top:80px}
+p{margin:.55rem 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;
+  background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:262px 1fr;gap:34px}
+
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.top-in .crumb{font-size:.85rem;color:var(--mut)}
+.top-in .crumb b{color:var(--txt)}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--txt);border-radius:9px;padding:7px 12px;font-size:.86rem;cursor:pointer;text-align:left}
+.btn:hover{border-color:var(--acc);text-decoration:none}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.bar{height:3px;background:var(--acc);width:0;position:fixed;top:0;left:0;z-index:40}
+
+nav.toc{position:sticky;top:66px;align-self:start;max-height:calc(100vh - 86px);overflow:auto;
+  padding:14px 0 30px;font-size:.85rem}
+nav.toc .t{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin:13px 0 5px;font-weight:700}
+nav.toc a{display:block;padding:3px 10px;border-left:2px solid transparent;color:var(--mut);border-radius:0 6px 6px 0}
+nav.toc a.sub{padding-left:20px;font-size:.8rem}
+nav.toc a:hover{color:var(--txt);background:var(--bg2);text-decoration:none}
+nav.toc a.on{color:var(--acc);border-left-color:var(--acc);background:var(--bg2);font-weight:600}
+
+.hero{background:linear-gradient(140deg,color-mix(in srgb,var(--acc) 18%,var(--bg2)),var(--bg2));
+  border:1px solid var(--line);border-radius:16px;padding:28px;margin:22px 0 8px;box-shadow:var(--shadow)}
+.hero .kick{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);font-weight:700}
+.hero h1{font-size:2.15rem;margin:.35rem 0 .3rem}
+.hero .sub{color:var(--mut);max-width:74ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 13px;min-width:104px}
+.stat b{display:block;font-size:1.15rem}
+.stat span{font-size:.75rem;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:13px 0}
+.card b:first-child{display:block;margin-bottom:3px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.note{border-left:4px solid var(--acc);background:var(--bg2);border-radius:0 10px 10px 0;padding:11px 15px;margin:14px 0}
+.note.warn{border-left-color:var(--warn)}
+.note.ok{border-left-color:var(--ok)}
+.note .lbl{font-size:.71rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--mut)}
+blockquote{margin:12px 0;padding:12px 16px;background:var(--quote);border-left:3px solid var(--acc2);
+  border-radius:0 10px 10px 0;font-style:italic}
+blockquote cite{display:block;margin-top:6px;font-style:normal;font-size:.77rem;color:var(--mut)}
+ul,ol{padding-left:1.25rem;margin:.45rem 0}
+li{margin:.25rem 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.89rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:700}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--bg2) 60%,transparent)}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);
+  color:var(--mut);margin:0 4px 4px 0;background:var(--bg2)}
+.page{font-size:.75rem;color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}
+.pill{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--acc);color:#fff;vertical-align:middle}
+details{border:1px solid var(--line);border-radius:10px;padding:0 14px;margin:9px 0;background:var(--bg2)}
+details summary{cursor:pointer;padding:11px 0;font-weight:600;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";color:var(--acc)}
+details[open] summary::before{content:"▾ "}
+details .body{padding:0 0 12px}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg2);
+  border:1px solid var(--line);border-radius:9px;padding:11px 14px;margin:10px 0;font-size:.9rem;overflow-x:auto}
+.formula .c{color:var(--mut)}
+/* quiz */
+.quiz{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:14px 0;background:var(--card)}
+.quiz .q{font-weight:600;margin-bottom:9px}
+.quiz .opts{display:grid;gap:7px}
+.quiz button.opt{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:8px;
+  padding:8px 11px;text-align:left;cursor:pointer;font:inherit;font-size:.9rem}
+.quiz button.opt:hover:not(:disabled){border-color:var(--acc)}
+.quiz button.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--bg2))}
+.quiz button.opt.wrong{border-color:#e5534b;background:color-mix(in srgb,#e5534b 13%,var(--bg2))}
+.quiz .why{font-size:.86rem;color:var(--mut);margin-top:8px;display:none}
+.quiz .why.show{display:block}
+#quiz-score{font-weight:700}
+footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;color:var(--mut);font-size:.85rem}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}nav.toc{display:none}.hero h1{font-size:1.6rem}}
+@media print{
+  header.top,nav.toc,.cta,.bar{display:none}
+  .wrap{grid-template-columns:1fr}body{background:#fff;color:#000}
+  details{break-inside:avoid}details[open]{border:none}
+  .quiz button.opt{border:1px solid #999}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="btn" href="../index.html">← Portail FMDC 1A</a>
+    <span class="crumb"><b>Biologie cellulaire, moléculaire et génétique</b> › Biologie génétique et moléculaire › Pr. Dehbi</span>
+    <span class="spacer"></span>
+    <button class="btn" id="theme" title="Thème clair / sombre">🌗</button>
+    <a class="btn primary" href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">📁 Dossier Drive</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" id="toc">
+    <div class="t">Avant de commencer</div>
+    <a href="#apercu">Vue d'ensemble</a>
+    <a href="#methode">Comment lire cette page</a>
+    <div class="t">Cours 1 — Cytogénétique</div>
+    <a href="#c1-hist">Repères historiques</a>
+    <a href="#c1-chr">Le chromosome métaphasique</a>
+    <a class="sub" href="#c1-centro">Centromère</a>
+    <a class="sub" href="#c1-telo">Télomères</a>
+    <a class="sub" href="#c1-orig">Origines de réplication</a>
+    <a href="#c1-denver">Classification de Denver</a>
+    <a href="#c1-caryo">Le caryotype</a>
+    <a class="sub" href="#c1-indic">Indications &amp; prélèvements</a>
+    <a class="sub" href="#c1-etapes">Les étapes techniques</a>
+    <a href="#c1-bandes">Bandes &amp; colorations</a>
+    <a href="#c1-iscn">Nomenclature ISCN</a>
+    <a href="#c1-hr">Haute résolution &amp; BrdU</a>
+    <a href="#c1-fish">Cytogénétique moléculaire : FISH</a>
+    <a class="sub" href="#c1-mfish">M-FISH / SKY</a>
+    <a href="#c1-acpa">ACPA / array-CGH</a>
+    <a href="#c1-comp">Tableau comparatif</a>
+    <div class="t">Cours 2 — Anomalies</div>
+    <a href="#c2-def">Définitions</a>
+    <a href="#c2-mos">Mosaïque vs chimère</a>
+    <a href="#c2-freq">Fréquences</a>
+    <a href="#c2-nb">Anomalies de nombre</a>
+    <a class="sub" href="#c2-aneu">Aneuploïdies</a>
+    <a class="sub" href="#c2-tri">Triploïdie &amp; tétraploïdie</a>
+    <a class="sub" href="#c2-mar">Marqueurs surnuméraires</a>
+    <a class="sub" href="#c2-dup">Disomie uniparentale</a>
+    <a href="#c2-struct">Anomalies de structure</a>
+    <a class="sub" href="#c2-del">Délétions</a>
+    <a class="sub" href="#c2-anneau">Anneau</a>
+    <a class="sub" href="#c2-inv">Inversion</a>
+    <a class="sub" href="#c2-iso">Isochromosome</a>
+    <a class="sub" href="#c2-dup2">Duplication</a>
+    <a class="sub" href="#c2-rob">Translocation robertsonienne</a>
+    <a class="sub" href="#c2-t">Translocation réciproque</a>
+    <a class="sub" href="#c2-ins">Insertion</a>
+    <a href="#c2-part">Cas particuliers</a>
+    <a href="#c2-cons">Les conséquences</a>
+    <div class="t">Cours 3 — Hérédité</div>
+    <a href="#c3-voc">Vocabulaire</a>
+    <a href="#c3-ad">Transmission autosomique dominante</a>
+    <a class="sub" href="#c3-ad7">Les 7 particularités</a>
+    <a href="#c3-ar">Transmission autosomique récessive</a>
+    <a href="#c3-x">Transmission liée à l'X</a>
+    <a href="#c3-non">Hérédité non mendélienne</a>
+    <a class="sub" href="#c3-mito">Mitochondriale</a>
+    <a class="sub" href="#c3-emp">Empreinte parentale</a>
+    <a class="sub" href="#c3-multi">Multifactorielle</a>
+    <a href="#c3-arbre">Lire un arbre généalogique</a>
+    <div class="t">Révision</div>
+    <a href="#chiffres">Les chiffres à retenir</a>
+    <a href="#pieges">Les pièges classiques</a>
+    <a href="#quiz">Auto-évaluation (QCM)</a>
+    <a href="#reviser">Plan de révision</a>
+    <a href="#docs">Les documents du dossier</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="apercu">
+      <div class="kick">Module Biologie cellulaire, moléculaire et génétique · S1</div>
+      <h1>Génétique humaine, expliquée en détail</h1>
+      <p class="sub">
+        <b>Pr. H. Dehbi</b> — 1<sup>re</sup> année, Faculté de Médecine Dentaire de Casablanca
+        (Université Hassan&nbsp;II), année universitaire 2023-2024.
+        Cette page suit <b>le plan des trois cours officiels</b> : la cytogénétique (comment on voit et
+        nomme un chromosome), les anomalies chromosomiques (ce qui se casse et ce que ça donne), puis
+        l'hérédité (comment une mutation se transmet dans une famille). Chaque notion est expliquée, et
+        chaque piège de QCM est signalé.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>3</b><span>cours officiels</span></div>
+        <div class="stat"><b>8 h</b><span>de cours magistral</span></div>
+        <div class="stat"><b>46</b><span>chromosomes humains</span></div>
+        <div class="stat"><b>QCM</b><span>format d'épreuve</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">📁 Dossier Drive complet</a>
+        <a class="btn" href="#c1-chr">Cours 1 · Cytogénétique</a>
+        <a class="btn" href="#c2-struct">Cours 2 · Anomalies</a>
+        <a class="btn" href="#c3-ad">Cours 3 · Hérédité</a>
+        <a class="btn" href="#quiz">🎯 Teste-toi</a>
+      </div>
+    </section>
+
+    <div class="note">
+      <div class="lbl">Comment cette page a été construite</div>
+      <p style="margin-bottom:0">
+        Plan, chiffres, définitions et exemples suivent les <b>trois PDF officiels du cours</b>
+        (<em>1 er cours</em>, <em>2ème cours</em>, <em>3ème cours</em>), recoupés avec le résumé
+        <em>GENETIQUE FALGHASS</em>. Les citations en retrait sont des <b>points de cours reformulés</b>
+        à partir de ces supports — pas des recopies littérales. Les renvois «&nbsp;cours&nbsp;1/2/3&nbsp;»
+        indiquent le support d'origine, pas une pagination : les PDF sont des diaporamas, la pagination
+        varie d'un export à l'autre.
+      </p>
+    </div>
+
+    <h2 id="methode">Comment lire cette page</h2>
+    <p>
+      Les trois cours forment une seule chaîne logique, et c'est cette chaîne qu'il faut réciter le jour du QCM :
+    </p>
+    <div class="formula">
+      ADN <span class="c">→</span> chromosome <span class="c">→</span> caryotype <span class="c">→</span> anomalie de nombre / de structure
+      <span class="c">→</span> phénotype <span class="c">→</span> arbre généalogique <span class="c">→</span> conseil génétique
+    </div>
+    <p>
+      Concrètement : le <b>cours 1</b> donne les outils (voir, colorer, nommer). Le <b>cours 2</b> classe ce que
+      ces outils révèlent. Le <b>cours 3</b> change d'échelle — on passe du chromosome au gène — et explique la
+      transmission. Une question de QCM peut toujours être ramenée à un des trois étages.
+    </p>
+    <div class="note ok">
+      <div class="lbl">Les trois réflexes qui font gagner des points</div>
+      <ol style="margin-bottom:0">
+        <li><b>Toujours se demander : équilibré ou déséquilibré ?</b> C'est la première question du cours 2, et elle décide du pronostic.</li>
+        <li><b>Compter les chromosomes.</b> <code>45</code> chez un porteur de translocation robertsonienne est un piège permanent.</li>
+        <li><b>Pour l'hérédité : le sexe du parent transmetteur</b> et la <b>présence de sauts de génération</b> donnent le mode de transmission avant même de lire les diagnostics.</li>
+      </ol>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ====================== COURS 1 ============================= -->
+    <!-- ============================================================ -->
+
+    <h2 id="c1-hist">Cours 1 — Cytogénétique : voir les chromosomes <span class="page">(cours 1)</span></h2>
+
+    <p>
+      La cytogénétique est l'étude des chromosomes <b>au microscope</b> : leur nombre, leur forme, leurs
+      remaniements. Elle repose sur une propriété simple — au moment de la division cellulaire, la chromatine
+      se condense en objets assez gros pour être comptés et photographiés.
+    </p>
+
+    <h3>Les quatre dates qui structurent le cours</h3>
+    <table>
+      <thead><tr><th>Date</th><th>Événement</th><th>Pourquoi c'est important</th></tr></thead>
+      <tbody>
+        <tr><td><b>1956</b></td><td>Le nombre exact de chromosomes humains est fixé à <b>46</b> (22 paires d'autosomes + 2 gonosomes)</td><td>Fin d'une errance de plusieurs décennies : on croyait 48. Toute la cytogénétique commence là.</td></tr>
+        <tr><td><b>1970</b></td><td>Bandes <b>Q</b> par Caspersson (moutarde de quinacrine en lumière UV)</td><td>On peut enfin <b>identifier chaque paire</b> et voir les remaniements fins, pas seulement compter.</td></tr>
+        <tr><td><b>1986</b></td><td><b>FISH</b> — hybridation in situ fluorescente</td><td>On passe du chromosome au <b>locus</b> : la cytogénétique devient moléculaire.</td></tr>
+        <tr><td><b>2008</b></td><td><b>ACPA</b> (CGH sur puce)</td><td>Résolution de quelques kilobases : les microdélétions/subduplications deviennent visibles, sans culture cellulaire.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Les indications du caryotype</h4>
+    <p>Le cours les donne en quatre grands cadres — à savoir citer :</p>
+    <div class="grid2">
+      <div class="card"><b>Malformations congénitales</b>Polymalformations, dysmorphie, retard de croissance intra-utérin : on cherche une anomalie <b>déséquilibrée</b>.</div>
+      <div class="card"><b>Troubles de la reproduction</b>Infertilité, avortements à répétition, aménorrhée primaire (penser à <code>45,X</code>), azoospermie (penser à <code>47,XXY</code>).</div>
+      <div class="card"><b>Retard mental / psychomoteur</b>Avec ou sans dysmorphie : le caryotype puis l'ACPA sont de première intention.</div>
+      <div class="card"><b>Cancers</b>Hémopathies malignes surtout : le caryotype médullaire est <b>diagnostique et pronostique</b> (LAM, LMC…).</div>
+    </div>
+
+    <h3 id="c1-chr">Le chromosome métaphasique</h3>
+    <p>
+      Un chromosome, c'est de l'<b>ADN</b> enroulé autour d'<b>histones</b>. Au début de la mitose, cette
+      chromatine se compacte : chaque chromosome apparaît alors comme <b>deux chromatides sœurs</b> jointes
+      au niveau du centromère. C'est cette forme, dite <b>métaphasique</b>, que l'on photographie.
+    </p>
+    <div class="grid3">
+      <div class="card"><b>Homme</b><code>2n = 46</code> · <code>n = 23</code> : 22 paires d'autosomes + XX ou XY.</div>
+      <div class="card"><b>Singe</b><code>2n = 48</code> — le nombre n'est pas un critère d'«&nbsp;évolution&nbsp;».</div>
+      <div class="card"><b>Drosophile</b><code>2n = 8</code> — un classique des QCM de comparaison.</div>
+    </div>
+
+    <p>
+      Un chromosome doit posséder <b>trois éléments fonctionnels</b>. La question «&nbsp;lesquels&nbsp;?&nbsp;»
+      tombe très souvent, et la réponse n'est pas «&nbsp;un bras court et un bras long&nbsp;» (ce sont des
+      régions, pas des éléments fonctionnels).
+    </p>
+
+    <h4 id="c1-centro">1) Le centromère — la constriction primaire</h4>
+    <p>
+      C'est le point de jonction des deux chromatides. Il porte le <b>kinétochore</b>, structure protéique qui
+      fixe les microtubules du <b>fuseau mitotique</b> et assure la bonne répartition des chromatides dans
+      chaque cellule fille. Ce qui est fondamental — et souvent demandé — c'est que la position du centromère
+      est définie de façon <b>épigénétique</b>, <b>indépendamment de la séquence d'ADN</b>.
+    </p>
+    <div class="note">
+      <div class="lbl">Deux conséquences de ce caractère épigénétique</div>
+      <ul style="margin-bottom:0">
+        <li><b>Néocentromère</b> : un centromère peut apparaître <i>de novo</i> sur une séquence qui n'en portait pas — un chromosome remanié reste ségrégé correctement.</li>
+        <li><b>Inactivation dans un dicentrique</b> : un chromosome à deux centromères n'en garde qu'<b>un actif</b>, sinon il serait déchiré à l'anaphase. C'est pourquoi certains dicentriques sont viables.</li>
+      </ul>
+    </div>
+
+    <h4 id="c1-telo">2) Les télomères — les extrémités</h4>
+    <p>
+      Ce sont des séquences répétées <b><code>(TTAGGG)n</code></b> qui coiffent les extrémités. Juste en amont
+      se trouvent les <b>régions subtélomériques</b> (TAR), et le cours insiste sur deux échelles :
+    </p>
+    <table>
+      <thead><tr><th>Région</th><th>Taille</th><th>Caractère</th></tr></thead>
+      <tbody>
+        <tr><td><b>TAR</b> (telomere-associated repeats)</td><td><b>&lt; 2 kb</b></td><td>Répétitions, plutôt pauvres en gènes</td></tr>
+        <tr><td><b>Région subtélomérique</b> proprement dite</td><td><b>10 à 40 kb</b></td><td><b>Riche en gènes</b> — d'où la gravité des remaniements subtélomériques</td></tr>
+      </tbody>
+    </table>
+    <p>Quatre rôles à retenir pour les télomères :</p>
+    <ul>
+      <li><b>Protection contre les fusions</b> : sans télomère, deux chromosomes se recollent (ponts anaphasiques, instabilité).</li>
+      <li><b>Ancrage à l'enveloppe nucléaire</b> : ils participent à l'organisation du noyau.</li>
+      <li><b>Appariement en méiose</b> : ce sont les <b>premières régions à s'apparier</b> entre chromosomes homologues — le point de départ du crossing-over.</li>
+      <li><b>Horloge cellulaire</b> : leur <b>raccourcissement</b> à chaque division est un marqueur du <b>vieillissement</b>.</li>
+    </ul>
+
+    <h4 id="c1-orig">3) Les origines de réplication</h4>
+    <p>
+      Pour que l'ADN soit entièrement dupliqué en phase S, il faut de nombreux points d'initiation. Ce troisième
+      élément est souvent oublié dans les réponses — c'est justement pour cela qu'il est demandé.
+    </p>
+
+    <h3 id="c1-denver">La classification de Denver : nommer les 22 paires</h3>
+    <p>
+      Les chromosomes sont rangés en <b>7 groupes (A à G)</b> selon trois critères :
+      la <b>taille</b>, l'<b>index centromérique</b> et les <b>bandes</b>.
+    </p>
+    <div class="formula">
+      index centromérique = longueur du bras court / longueur totale = <b>p / (p + q)</b>
+      <br><span class="c">≈ 0,5 → métacentrique · entre 0,5 et 0,25 → submétacentrique · proche de 0 → acrocentrique</span>
+    </div>
+    <table>
+      <thead><tr><th>Groupe</th><th>Chromosomes</th><th>Morphologie</th><th>Repère mémoire</th></tr></thead>
+      <tbody>
+        <tr><td><b>A</b></td><td><b>1, 2, 3</b></td><td>Grands <b>métacentriques</b></td><td>les plus gros, centromère au milieu</td></tr>
+        <tr><td><b>B</b></td><td><b>4, 5</b></td><td>Grands <b>submétacentriques</b></td><td>«&nbsp;4-5&nbsp;» : c'est là que se trouve le <b>Cri du chat</b> (<code>5p</code>)</td></tr>
+        <tr><td><b>C</b></td><td><b>6 à 12, + X</b></td><td>Médiums <b>submétacentriques</b></td><td>le groupe le plus nombreux ; <b>X</b> y est inclus</td></tr>
+        <tr><td><b>D</b></td><td><b>13, 14, 15</b></td><td>Médiums <b>acrocentriques à satellites</b></td><td>portent les <b>NOR</b> ; impliqués dans les translocations robertsoniennes</td></tr>
+        <tr><td><b>E</b></td><td><b>16, 17, 18</b></td><td><b>Submétacentriques</b>, plus petits que le groupe C</td><td><b>18</b> = trisomie d'Edwards</td></tr>
+        <tr><td><b>F</b></td><td><b>19, 20</b></td><td>Petits <b>métacentriques</b></td><td>petits mais centromère central</td></tr>
+        <tr><td><b>G</b></td><td><b>21, 22, + Y</b></td><td>Petits <b>acrocentriques</b></td><td><b>21</b> = trisomie de Down ; <b>Y</b> n'a pas de satellite</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège</div>
+      <p style="margin-bottom:0">
+        Les chromosomes porteurs de <b>satellites</b> (et donc de <b>NOR</b>, organisateurs nucléolaires) sont
+        <b>13, 14, 15, 21 et 22</b> — c'est-à-dire les <b>acrocentriques D et G sauf Y</b>. Le bras court des
+        acrocentriques est très court et contient les gènes des ARN ribosomiques.
+      </p>
+    </div>
+
+    <h3 id="c1-caryo">Le caryotype : la technique de référence</h3>
+    <p>
+      Le caryotype se fait sur des <b>cellules nucléées</b> — jamais sur des globules rouges, qui n'ont pas de
+      noyau. Le choix du tissu dépend du contexte, et les <b>délais</b> sont une question de QCM à part entière.
+    </p>
+
+    <h4 id="c1-indic">Prélèvements</h4>
+    <table>
+      <thead><tr><th>Contexte</th><th>Tissu</th><th>Délai / repère</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3"><b>Prénatal</b></td><td><b>Villosités choriales</b> (biopsie du trophoblaste)</td><td><b>11 à 12 SA</b> — le plus précoce</td></tr>
+        <tr><td><b>Liquide amniotique</b> (amniocentèse → amniocytes)</td><td><b>14 à 15 SA</b></td></tr>
+        <tr><td><b>Sang fœtal</b> (cordocentèse)</td><td><b>20 SA</b> — le plus tardif</td></tr>
+        <tr><td rowspan="3"><b>Postnatal</b></td><td><b>Sang total</b> → lymphocytes</td><td>Le prélèvement de référence : lymphocytes stimulés par un mitogène</td></tr>
+        <tr><td><b>Peau</b> → fibroblastes</td><td>Utile quand le sang est difficile (mosaïque cutanée)</td></tr>
+        <tr><td><b>Moelle osseuse</b></td><td>Indispensable en hématologie : on voit les cellules qui se divisent déjà</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Le transport du prélèvement</div>
+      <p style="margin-bottom:0">
+        Le sang est recueilli dans un <b>tube hépariné stérile</b>, conservé à <b>4&nbsp;°C</b>, analysé dans un
+        délai maximal de <b>4 à 5 jours</b>. On n'ajoute <b>ni antibiotique ni antimitotique</b> : l'antibiotique
+        n'a pas de sens sur un prélèvement stérile, et l'antimitotique bloquerait précisément les divisions que
+        l'on veut observer.
+      </p>
+    </div>
+
+    <h4 id="c1-etapes">Les étapes techniques — à savoir dans l'ordre</h4>
+    <ol>
+      <li><b>Culture stérile</b> des cellules, à <b>37&nbsp;°C</b>, à <b>pH 7,2–7,4</b>, sous CO₂, avec <b>L-glutamine</b>, <b>sérum</b> et un <b>mitogène</b> (phytohémagglutinine pour les lymphocytes). Il faut des cellules en division.</li>
+      <li><b>Colchicine</b> : poison du fuseau, elle bloque les cellules <b>en métaphase</b> — c'est le moment où les chromosomes sont le plus condensés.</li>
+      <li><b>Choc hypotonique</b> (solution hypotonique) : la cellule gonfle, éclate, et les chromosomes se <b>dispersent</b> sur la lame au lieu de rester superposés.</li>
+      <li><b>Fixation</b> par <b>alcool + acide acétique</b> (fixateur de Carnoy) : conserve la morphologie.</li>
+      <li><b>Étalement</b> sur lame, puis <b>coloration</b> — Giemsa pour un caryotype standard, ou traitement spécial pour les bandes.</li>
+    </ol>
+    <div class="formula">
+      culture <span class="c">→</span> colchicine (blocage métaphase) <span class="c">→</span> choc hypotonique
+      <span class="c">→</span> fixation alcool/acide acétique <span class="c">→</span> étalement <span class="c">→</span> coloration
+    </div>
+    <div class="note ok">
+      <div class="lbl">La question piège</div>
+      <p style="margin-bottom:0">
+        «&nbsp;À quoi sert la colchicine ?&nbsp;» → à <b>bloquer le fuseau</b> donc à accumuler les cellules en
+        <b>métaphase</b>. Ce n'est <i>pas</i> elle qui colore, ni elle qui fait éclater la cellule : cela, c'est
+        le choc hypotonique.
+      </p>
+    </div>
+
+    <h3 id="c1-bandes">Les bandes : lire un chromosome</h3>
+    <p>
+      Une coloration uniforme ne permet que de compter. Les <b>bandes</b> alternées claires et foncées, propres à
+      chaque paire, permettent d'<b>identifier</b> les chromosomes et de repérer les remaniements. Elles
+      reflètent la composition en bases et le moment de réplication de la chromatine.
+    </p>
+    <table>
+      <thead><tr><th>Bande</th><th>Technique</th><th>Ce qu'elle met en évidence</th><th>Repères</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Q</b></td>
+          <td>Moutarde de <b>quinacrine</b>, lumière <b>UV</b></td>
+          <td>Équivalent des bandes G ; peu stable dans le temps</td>
+          <td>Télomères <b>pâles</b> ; la première technique historique (1970)</td>
+        </tr>
+        <tr>
+          <td><b>G</b> <span class="pill">GTG</span></td>
+          <td>Lames <b>vieillies</b> + <b>trypsine</b> + <b>Giemsa</b></td>
+          <td>Régions <b>A-T</b>, <b>pauvres en gènes</b>, souvent tissu-spécifiques, <b>hétérochromatine</b></td>
+          <td>Réplication <b>tardive</b> ; extrémités <b>claires</b>. C'est la coloration de référence.</td>
+        </tr>
+        <tr>
+          <td><b>R</b> <span class="pill">RHG</span></td>
+          <td><b>87&nbsp;°C</b> dans du <b>Earle pH 5,8</b>, puis tampon phosphate pH 6,7, puis Giemsa</td>
+          <td>Régions <b>G-C</b>, <b>riches en gènes</b> (gènes de ménage), <b>euchromatine</b></td>
+          <td>Réplication <b>précoce</b> ; extrémités <b>foncées</b>. C'est le <b>négatif</b> des bandes G.</td>
+        </tr>
+        <tr>
+          <td><b>C</b></td>
+          <td><b>Sulfate de baryum</b> (Ba(OH)₂)</td>
+          <td><b>Hétérochromatine constitutive</b> : centromères, régions <code>1q</code>, <code>9q</code>, <code>16q</code>, <code>Yq</code> distal</td>
+          <td>ADN <b>satellite</b>, <b>10 à 15&nbsp;%</b> du génome, très <b>polymorphe</b> → utile pour l'identification des chromosomes</td>
+        </tr>
+        <tr>
+          <td><b>T</b></td>
+          <td>Traitement thermique poussé</td>
+          <td><b>Télomères</b></td>
+          <td>Met en évidence les extrémités</td>
+        </tr>
+        <tr>
+          <td><b>NOR</b></td>
+          <td><b>Nitrate d'argent</b> (AgNO₃)</td>
+          <td><b>Organisateurs nucléolaires</b> = gènes des ARN ribosomiques</td>
+          <td>Sur les <b>acrocentriques D et G</b> (13, 14, 15, 21, 22)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">L'astuce G / R</div>
+      <p style="margin-bottom:0">
+        <b>G</b> = <b>A-T</b>, pauvre en gènes, répliqué <b>tard</b>, extrémités <b>claires</b>.
+        <b>R</b> = <b>G-C</b>, riche en gènes, répliqué <b>tôt</b>, extrémités <b>foncées</b>.
+        Tout va par paires d'opposés : si tu te souviens d'un seul des deux, tu reconstruis l'autre.
+      </p>
+    </div>
+
+    <h3 id="c1-iscn">La nomenclature ISCN : écrire un caryotype</h3>
+    <p>
+      L'écriture d'un caryotype suit une norme internationale (ISCN). La formule de base est :
+    </p>
+    <div class="formula"><b>nombre de chromosomes, gonosomes, anomalies</b> &nbsp;<span class="c">ex. 46,XY · 47,XX,+21 · 46,XX,del(5p)</span></div>
+    <ul>
+      <li>Le <b>nombre total</b> compte tous les chromosomes, gonosomes inclus, mais <b>pas</b> les <b>double minutes</b> (<code>dmin</code>), qui sont des éléments acentromériques extracellulaires exclus du compte.</li>
+      <li>Viennent ensuite les <b>gonosomes</b> : <code>XX</code>, <code>XY</code>, ou une anomalie (<code>45,X</code>, <code>47,XXY</code>).</li>
+      <li>Puis les anomalies, une par chromosome, dans l'ordre croissant.</li>
+    </ul>
+
+    <h4>Écrire un locus</h4>
+    <div class="formula">
+      chromosome <b>z</b> + bras <b>[p|q]</b> + région <b>r</b> + bande <b>b</b> + sous-bande <b>.s</b>
+      <br><span class="c">1p32 = chromosome 1, bras court, région 3, bande 2</span>
+      <br><span class="c">5p15.2 = région 1, bande 5, sous-bande 2 — locus du Cri du chat</span>
+    </div>
+    <p style="font-size:.9rem;color:var(--mut)">
+      <b>p</b> = petit bras (<i>petit</i>), <b>q</b> = grand bras (la lettre qui suit p). Le numéro de région part
+      du <b>centromère</b> vers le <b>télomère</b>.
+    </p>
+
+    <h4>Les abréviations à connaître</h4>
+    <table>
+      <thead><tr><th>Abrév.</th><th>Signification</th><th>Abrév.</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><code>add</code></td><td>matériel supplémentaire d'origine inconnue</td><td><code>inv</code></td><td>inversion</td></tr>
+        <tr><td><code>c</code></td><td>mosaïque constitutionnelle (constitution)</td><td><code>mar</code></td><td>marqueur (chromosome surnuméraire)</td></tr>
+        <tr><td><code>chi</code></td><td><b>chimère</b></td><td><code>mat</code> / <code>pat</code></td><td>d'origine maternelle / paternelle</td></tr>
+        <tr><td><code>del</code></td><td>délétion</td><td><code>psu</code></td><td>pseudodicentrique</td></tr>
+        <tr><td><code>der</code></td><td>chromosome dérivé</td><td><code>r</code></td><td>chromosome en anneau</td></tr>
+        <tr><td><code>dic</code> / <code>idic</code></td><td>dicentric / isodicentric</td><td><code>rcp</code></td><td>translocation réciproque</td></tr>
+        <tr><td><code>dup</code></td><td>duplication</td><td><code>rob</code></td><td>translocation robertsonienne</td></tr>
+        <tr><td><code>fra</code></td><td>site fragile</td><td><code>t</code></td><td>translocation</td></tr>
+        <tr><td><code>i</code></td><td>isochromosome</td><td><code>tel</code></td><td>fusion télomérique</td></tr>
+        <tr><td><code>ins</code></td><td>insertion</td><td><code>tr</code> / <code>trc</code></td><td>triplication / triplication complexe</td></tr>
+        <tr><td><code>+</code></td><td>gain d'un chromosome entier</td><td><code>upd</code></td><td>disomie uniparentale</td></tr>
+        <tr><td><code>−</code></td><td>perte d'un chromosome entier</td><td><code>/</code></td><td>sépare les populations d'une <b>mosaïque</b></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="c1-hr">Deux techniques complémentaires</h3>
+    <h4>Haute résolution</h4>
+    <p>
+      En bloquant les cellules en <b>prométaphase</b> (chromosomes moins condensés), on obtient
+      <b>800 à 1 000 bandes</b> au lieu des <b>300 à 550</b> d'un caryotype standard. On gagne en finesse de
+      détection… mais la technique est délicate, longue, et a été <b>abandonnée</b> au profit de l'ACPA.
+    </p>
+    <h4>BrdU : voir la réplication</h4>
+    <p>
+      La <b>bromodésoxyuridine</b> s'incorpore à l'ADN néosynthétisé et permet de distinguer, après deux cycles,
+      les chromatides «&nbsp;vieilles&nbsp;» des «&nbsp;nouvelles&nbsp;» (aspect <b>arlequin</b>). Deux applications :
+    </p>
+    <ul>
+      <li>Le <b>chromosome X inactif</b> (corps de Barr) est <b>répliqué en fin de phase S</b> : c'est ainsi qu'on le repère.</li>
+      <li>Les <b>échanges entre chromatides sœurs</b> (SCE) : leur nombre augmente fortement dans le syndrome de
+        <b>Bloom</b> — c'est le test diagnostique historique.</li>
+    </ul>
+
+    <h3 id="c1-fish">Cytogénétique moléculaire — la FISH</h3>
+    <p>
+      La <b>FISH</b> (<i>fluorescence in situ hybridization</i>) fait se fixer une <b>sonde d'ADN marquée</b> sur
+      sa séquence complémentaire, directement sur la lame. On peut l'appliquer à des <b>métaphases</b> ou à des
+      <b>noyaux interphasiques</b> — c'est là son grand avantage : plus besoin de culture quand on travaille en
+      interphase.
+    </p>
+    <div class="formula">
+      pepsine (perméabilisation) <span class="c">→</span> dénaturation de l'ADN <span class="c">→</span>
+      hybridation <b>37&nbsp;°C</b> <span class="c">→</span> lavages <span class="c">→</span> contre-coloration <b>DAPI</b>
+    </div>
+    <p>Le cours distingue <b>quatre types de sondes</b>, avec pour chacune l'application typique :</p>
+    <table>
+      <thead><tr><th>Sonde</th><th>Cible</th><th>Application</th><th>Exemple du cours</th></tr></thead>
+      <tbody>
+        <tr><td><b>Centromérique</b></td><td>ADN satellite du centromère</td><td><b>Compter</b> un chromosome (interphase possible)</td><td>Compter le 21 dans la trisomie 21</td></tr>
+        <tr><td><b>Peinture</b> (<i>painting</i>)</td><td>Tout un chromosome</td><td><b>Métaphase uniquement</b> : identifier un chromosome ou un dérivé</td><td><code>t(2;7)</code></td></tr>
+        <tr><td><b>Locus-spécifique</b></td><td>Une région précise</td><td><b>Microdélétions</b> impossibles à voir en caryotype</td><td><code>5p15.2</code> (Cri du chat) · <code>15q11-q12</code> (Prader-Willi) · <code>7q11.23</code> (Williams)</td></tr>
+        <tr><td><b>Télomérique</b></td><td>Extrémités</td><td>Remaniements subtélomériques</td><td><code>t(8;18)</code></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège</div>
+      <p style="margin-bottom:0">
+        On ne peut pas faire de <b>peinture chromosomique</b> en interphase : la sonde couvre tout le chromosome,
+        il faut qu'il soit condensé et identifiable. En revanche une sonde <b>centromérique</b> ou
+        <b>locus-spécifique</b> donne un <b>point fluorescent par copie</b>, donc 2 points = 2 copies,
+        3 points = trisomie.
+      </p>
+    </div>
+
+    <h4 id="c1-mfish">M-FISH et SKY : colorer les 24 chromosomes</h4>
+    <p>
+      En combinant <b>24 peintures</b> chromosomiques et <b>5 fluorochromes</b>, chaque paire acquiert une couleur
+      propre, analysée par un <b>interféromètre</b> (ou un système de filtres équivalent). Indications : les
+      <b>cancers à caryotype complexe</b>, les <b>insertions</b> et les <b>marqueurs surnuméraires</b>
+      (<code>+mar</code>) impossibles à identifier autrement.
+    </p>
+
+    <h3 id="c1-acpa">L'ACPA (array-CGH) : la cytogénétique de nouvelle génération</h3>
+    <p>
+      Principe compétitif : l'<b>ADN du patient</b> est marqué en <b>vert</b>, l'<b>ADN témoin</b> en <b>rouge</b>,
+      les deux sont hybridés ensemble sur une puce portant des milliers de sondes, en présence de <b>Cot-1</b>
+      (ADN répété qui bloque les séquences non informatives).
+    </p>
+    <table>
+      <thead><tr><th>Signal</th><th>Interprétation</th></tr></thead>
+      <tbody>
+        <tr><td><b>Vert</b></td><td><b>Gain</b> de matériel chez le patient (duplication)</td></tr>
+        <tr><td><b>Rouge</b></td><td><b>Perte</b> de matériel chez le patient (délétion)</td></tr>
+        <tr><td><b>Orangé</b> (jaune)</td><td>Rapport équilibré : <b>normal</b></td></tr>
+      </tbody>
+    </table>
+    <p>
+      L'ACPA détecte les <b>CNV</b> (variations du nombre de copies) avec une résolution de quelques kilobases.
+      L'écriture suit la nomenclature : <code>arr[hg19] 11p13p12(...)x1</code> signifie «&nbsp;perte d'une copie
+      de la région 11p13→p12&nbsp;». Convention d'écriture : les <b>gonosomes d'abord</b>, puis les autosomes dans
+      l'<b>ordre numérique</b>, en allant de <b>pter</b> (télomère du bras court) vers <b>qter</b>.
+    </p>
+    <div class="note warn">
+      <div class="lbl">Les deux limites majeures</div>
+      <ul style="margin-bottom:0">
+        <li>L'ACPA <b>ne voit pas les remaniements équilibrés</b> : une translocation réciproque sans perte ni gain ne modifie aucun signal.</li>
+        <li>Elle <b>ne donne pas la localisation</b> du remaniement : elle dit «&nbsp;il manque&nbsp;», pas «&nbsp;où est-ce accroché&nbsp;». D'où le couple <b>caryotype + ACPA</b>.</li>
+      </ul>
+    </div>
+
+    <h3 id="c1-comp">Tableau comparatif des techniques cytogénétiques</h3>
+    <table>
+      <thead><tr><th>Technique</th><th>Résolution</th><th>Culture ?</th><th>Voit les équilibrés ?</th><th>Force</th><th>Limite</th></tr></thead>
+      <tbody>
+        <tr><td><b>Caryotype standard</b></td><td>5 à 10 <b>Mb</b></td><td><b>Oui</b></td><td><b>Oui</b></td><td>Pangénomique, équilibré + déséquilibré, peu coûteux</td><td>Résolution grossière, délai de culture</td></tr>
+        <tr><td><b>Haute résolution</b></td><td>~2–3 Mb (800–1 000 bandes)</td><td>Oui</td><td>Oui</td><td>Plus fin que le standard</td><td>Technique délicate, <b>abandonnée</b></td></tr>
+        <tr><td><b>FISH</b></td><td>~100 kb à 1 Mb</td><td>Non si interphase</td><td>Oui, si sonde adaptée</td><td>Rapide, ciblé, sur noyau interphasique</td><td><b>Une seule cible</b> à la fois : il faut savoir quoi chercher</td></tr>
+        <tr><td><b>M-FISH / SKY</b></td><td>~Mb</td><td>Oui (métaphase)</td><td>Oui</td><td>Identifie tous les chromosomes d'un coup</td><td>Coûteux, cancers complexes</td></tr>
+        <tr><td><b>ACPA (array-CGH)</b></td><td>quelques <b>kb</b></td><td><b>Non</b></td><td><b>Non</b></td><td>Très haute résolution, pangénomique, sans culture</td><td>Aveugle aux équilibrés, ne localise pas</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">La phrase à retenir</div>
+      <p style="margin-bottom:0">
+        <b>Le caryotype voit la forme, l'ACPA voit la quantité, la FISH voit la position.</b> Les trois sont
+        complémentaires, et c'est souvent l'objet d'une question de synthèse.
+      </p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ====================== COURS 2 ============================= -->
+    <!-- ============================================================ -->
+
+    <h2 id="c2-def">Cours 2 — Les anomalies chromosomiques <span class="page">(cours 2)</span></h2>
+
+    <p>
+      Une anomalie chromosomique est un changement <b>visible au microscope</b> du nombre ou de la structure des
+      chromosomes. Le cours commence par quatre distinctions de vocabulaire : elles déterminent le pronostic, et
+      elles tombent en QCM sous forme de «&nbsp;vrai/faux&nbsp;».
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <b>Constitutionnelle vs acquise</b>
+        <table style="margin-top:6px">
+          <tbody>
+            <tr><td><b>Constitutionnelle</b></td><td>Présente dès la fécondation, dans <b>toutes</b> les cellules. Transmissible.</td></tr>
+            <tr><td><b>Acquise</b></td><td>Apparaît dans une cellule somatique, <b>clonale</b> (une population issue d'une cellule). Typique des <b>cancers</b>. Non transmissible.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <b>Équilibrée vs déséquilibrée</b>
+        <table style="margin-top:6px">
+          <tbody>
+            <tr><td><b>Équilibrée</b></td><td>Pas de perte ni de gain de matériel : le sujet est souvent <b>phénotypiquement normal</b>, mais son risque de transmission est élevé.</td></tr>
+            <tr><td><b>Déséquilibrée</b></td><td>Perte ou gain de matériel → <b>pathologie</b>. Une <b>trisomie</b> (gain) est mieux tolérée qu'une <b>monosomie</b> (perte) : le corps supporte l'excès mieux que le manque.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3 id="c2-mos">Mosaïque et chimère : deux mécanismes opposés</h3>
+    <table>
+      <thead><tr><th></th><th>Mosaïque</th><th>Chimère</th></tr></thead>
+      <tbody>
+        <tr><td><b>Origine</b></td><td><b>Un seul zygote</b></td><td><b>Au moins deux zygotes</b></td></tr>
+        <tr><td><b>Mécanisme</b></td><td>Erreur <b>mitotique</b> après la fécondation : deux populations cellulaires issues du même œuf</td><td><b>Fusion</b> de deux embryons, <b>jumeaux dizygotes</b> qui se mélangent, ou <b>dispermie</b> (un ovotide fécondé par deux spermatozoïdes)</td></tr>
+        <tr><td><b>Notation</b></td><td><code>46,XX/47,XX,+21</code></td><td><code>chi</code> — ex. <code>46,XX/46,XY</code></td></tr>
+        <tr><td><b>Signature</b></td><td>Un caryotype normal + un caryotype anormal, dans des proportions variables</td><td>Deux lignées <b>génétiquement incompatibles</b> : c'est le seul cas possible de <code>XX/XY</code> chez un même individu (hermaphrodisme vrai)</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Le critère qui tranche</div>
+      <p style="margin-bottom:0">
+        <b>Un zygote = mosaïque. Deux zygotes = chimère.</b> Et la formule <code>XX/XY</code> ne peut
+        <b>jamais</b> être une mosaïque : une seule cellule diploïde ne peut pas produire à la fois XX et XY par
+        erreur mitotique simple.
+      </p>
+    </div>
+
+    <h3 id="c2-freq">Les fréquences à connaître</h3>
+    <div class="grid3">
+      <div class="card"><b>60&nbsp;%</b>des <b>fausses couches du 1<sup>er</sup> trimestre</b> — qui concernent 15&nbsp;% des grossesses.</div>
+      <div class="card"><b>5&nbsp;%</b>des fausses couches <b>tardives</b> et des mort-nés.</div>
+      <div class="card"><b>0,6 à 0,9&nbsp;%</b>des <b>naissances vivantes</b>.</div>
+    </div>
+    <p style="font-size:.9rem;color:var(--mut)">
+      Lecture : plus la grossesse avance, plus les anomalies chromosomiques sont rares — parce que les plus
+      graves sont éliminées. C'est un argument de physiologie, pas juste un chiffre à réciter.
+    </p>
+
+    <h3 id="c2-nb">Les anomalies de nombre</h3>
+
+    <h4 id="c2-aneu">Aneuploïdies : l'erreur de non-disjonction</h4>
+    <p>
+      L'aneuploïdie est un nombre de chromosomes anormal par <b>gain ou perte d'un seul chromosome</b>. Elle
+      résulte d'une <b>non-disjonction</b> en méiose. Le point à comprendre, c'est le <b>moment</b> :
+    </p>
+    <table>
+      <thead><tr><th>Non-disjonction</th><th>Ce qui se passe</th><th>Résultat dans les gamètes</th></tr></thead>
+      <tbody>
+        <tr><td><b>Méiose I</b> (MI)</td><td>Les chromosomes <b>homologues</b> ne se séparent pas</td><td><b>4 gamètes sur 4</b> anormaux (2 avec un homologue en double, 2 sans)</td></tr>
+        <tr><td><b>Méiose II</b> (MII)</td><td>Les <b>chromatides sœurs</b> ne se séparent pas</td><td><b>2 gamètes normaux</b> + <b>2 anormaux</b></td></tr>
+      </tbody>
+    </table>
+    <div class="formula">
+      MI <span class="c">→</span> 4/4 gamètes anormaux &nbsp;&nbsp;·&nbsp;&nbsp; MII <span class="c">→</span> 2 normaux + 2 anormaux
+    </div>
+    <p>
+      Après fécondation : un gamète avec <b>n+1</b> donne une <b>trisomie</b>, un gamète avec <b>n−1</b> donne
+      une <b>monosomie</b>.
+    </p>
+
+    <h4>Quelles aneuploïdies sont viables ?</h4>
+    <table>
+      <thead><tr><th></th><th>Formule</th><th>Nom</th><th>Points clés</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Seule monosomie viable</b></td><td><code>45,X</code></td><td><b>Turner</b></td>
+          <td>La perte d'un autosome est <b>toujours</b> létale ; seul un gonosome peut manquer.</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><b>Trisomies viables</b></td><td><code>47,+21</code></td><td><b>Down</b></td>
+          <td>La plus fréquente et la mieux tolérée ; risque ↑ avec l'âge maternel.</td>
+        </tr>
+        <tr><td><code>47,+18</code></td><td><b>Edwards</b></td><td>Pronostic très sévère, survie courte.</td></tr>
+        <tr><td><code>47,+13</code></td><td><b>Patau</b></td><td>Très sévère ; holoprosencéphalie, polydactylie.</td></tr>
+        <tr><td><b>Autres viables (mosaïques)</b></td><td><code>+8</code>, <code>+9</code></td><td>—</td><td>Ne s'expriment que sous forme de <b>mosaïque</b>.</td></tr>
+        <tr><td><b>Jamais viable à la naissance</b></td><td><code>+16</code></td><td>—</td><td>Trisomie 16 = cause classique de <b>fausse couche du 1<sup>er</sup> trimestre</b>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Les gonosomes en plus</div>
+      <p style="margin-bottom:0">
+        <code>47,XXY</code> (Klinefelter), <code>47,XXX</code>, <code>47,XYY</code> : les excès de gonosomes
+        sont beaucoup mieux tolérés que les excès d'autosomes, car la compensation du dosage (lyonisation,
+        inactivation de l'X surnuméraire) limite le déséquilibre.
+      </p>
+    </div>
+
+    <h4 id="c2-tri">Triploïdie et tétraploïdie</h4>
+    <table>
+      <thead><tr><th></th><th>Formule</th><th>Mécanismes</th><th>Devenir</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Triploïdie</b></td><td><code>3n = 69</code></td>
+          <td><b>Dispermie</b> : deux spermatozoïdes fécondent le même ovule (le mécanisme le plus fréquent) ·
+              <b>diandrie</b> : un spermatozoïde diploïde (2n) · <b>digynie</b> : un ovule diploïde (2n)</td>
+          <td>Non viable ; fausse couche. Le <b>rapport des sexes du placenta</b> (môle partielle) aide à trancher le mécanisme.</td>
+        </tr>
+        <tr>
+          <td><b>Tétraploïdie</b></td><td><code>4n = 92</code></td>
+          <td>Doublement du génome : <code>XXXX</code> ou <code>XXYY</code></td>
+          <td>Fausse couche vers la <b>3<sup>e</sup> semaine</b>. Aussi rencontrée comme <b>endomitose</b> dans les <b>cancers</b>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Piège</div>
+      <p style="margin-bottom:0">
+        <b>Dispermie ≠ diandrie.</b> La dispermie = <b>deux</b> spermatozoïdes (chacun haploïde). La diandrie =
+        <b>un</b> spermatozoïde diploïde. Le résultat est bien <code>3n</code> dans les deux cas, mais ce sont
+        deux mécanismes distincts — et c'est exactement le genre de distinction demandée.
+      </p>
+    </div>
+
+    <h4 id="c2-mar">Les marqueurs chromosomiques surnuméraires (MCS, <code>+mar</code>)</h4>
+    <ul>
+      <li>Petit chromosome supplémentaire, de structure anormale, <b>≤ 20 chromosomes</b> de matériel, non identifiable par les bandes.</li>
+      <li>Prévalence : <b>0,044&nbsp;%</b> des naissances.</li>
+      <li>Le plus souvent dérivés d'un <b>acrocentrique</b> — <b>15</b> et <b>22</b> en tête.</li>
+      <li><b>70&nbsp;% bénins</b> / <b>30&nbsp;% pathologiques</b>. Le pronostic dépend de : la présence d'<b>euchromatine</b> (mauvais signe), la <b>taille</b>, le caractère <b>mosaïque</b>, et la présence d'une région <b>dupliquée</b> identifiée par ACPA.</li>
+    </ul>
+
+    <h4 id="c2-dup">La disomie uniparentale (DUP, <code>upd</code>)</h4>
+    <p>
+      Les deux chromosomes d'une paire viennent du <b>même parent</b>. Deux formes :
+    </p>
+    <table>
+      <thead><tr><th>Forme</th><th>Définition</th><th>Conséquence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Isodisomie</b></td><td>Les deux copies sont <b>identiques</b> (dupliquées d'un seul chromosome)</td><td>Perte d'hétérozygotie → révèle une mutation récessive portée par ce chromosome</td></tr>
+        <tr><td><b>Hétérodisomie</b></td><td>Les deux <b>homologues distincts</b> du même parent</td><td>Pas de perte d'hétérozygotie, mais <b>anomalie d'empreinte</b> si la région est soumise à empreinte</td></tr>
+      </tbody>
+    </table>
+    <p>Trois mécanismes génèrent une DUP :</p>
+    <ol>
+      <li><b>Complémentation gamétique</b> : un gamète nul (n−1) fécondé par un gamète normal → le chromosome manquant est «&nbsp;remplacé&nbsp;» par la copie du même parent.</li>
+      <li><b>Duplication monosomie</b> : duplication d'un chromosome puis perte de l'autre.</li>
+      <li><b>Correction d'une trisomie</b> : un zygote trisomique perd un des trois chromosomes — s'il perd celui du parent différent, il reste avec deux chromosomes du même parent.</li>
+    </ol>
+    <div class="note ok">
+      <div class="lbl">Pourquoi c'est important</div>
+      <p style="margin-bottom:0">
+        La DUP révèle les maladies <b>récessives</b> (isodisomie) et les maladies d'<b>empreinte</b>
+        (hétérodisomie) comme les syndromes de <b>Prader-Willi</b> et <b>Angelman</b>. C'est le pont entre le
+        cours 2 et l'hérédité non mendélienne du cours 3.
+      </p>
+    </div>
+
+    <h3 id="c2-struct">Les anomalies de structure</h3>
+    <p>
+      Une anomalie de structure naît d'une ou plusieurs <b>cassures</b> suivies d'une réparation incorrecte.
+      La règle de lecture : <b>compter les cassures</b> et se demander si le matériel est <b>conservé</b>
+      (équilibré) ou non.
+    </p>
+
+    <h4 id="c2-del">1) La délétion (<code>del</code>)</h4>
+    <p>
+      Perte d'un segment : c'est une anomalie <b>toujours déséquilibrée</b>. Elle est <b>de novo dans 85 à 90&nbsp;%</b>
+      des cas (les formes héritées sont rares, car la transmission est souvent létale ou sévère).
+    </p>
+    <table>
+      <thead><tr><th>Type</th><th>Cassures</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td><b>Terminale</b></td><td><b>1 cassure</b> : tout ce qui est distal est perdu</td><td><code>del(4p)</code> → Wolf-Hirschhorn · <code>del(5p)</code> → Cri du chat · <code>del(Xp)</code> → Turner</td></tr>
+        <tr><td><b>Interstitielle</b></td><td><b>2 cassures</b> : le segment entre les deux est perdu, les extrémités se ressoudent</td><td><code>del(13)(q14)</code> → rétinoblastome (délétion du gène <i>RB1</i>)</td></tr>
+      </tbody>
+    </table>
+
+    <h4 id="c2-anneau">2) Le chromosome en anneau (<code>r</code>)</h4>
+    <p>
+      <b>Deux cassures distales</b>, une sur chaque bras : les extrémités cassées se rejoignent et forment un
+      anneau. Les segments télomériques sont <b>perdus</b> → l'anneau est <b>déséquilibré</b>. Il est en outre
+      <b>instable</b> à la mitose (double anneau, perte), ce qui explique la fréquence des mosaïques.
+    </p>
+
+    <h4 id="c2-inv">3) L'inversion (<code>inv</code>)</h4>
+    <p>
+      Un segment est retourné sur <b>180°</b> : aucune perte de matériel, l'anomalie est <b>équilibrée</b>.
+      Deux types, selon la position des cassures :
+    </p>
+    <table>
+      <thead><tr><th></th><th>Péricentrique</th><th>Paracentrique</th></tr></thead>
+      <tbody>
+        <tr><td><b>Cassures</b></td><td>De part et d'autre du centromère : l'inversion <b>inclut le CEN</b></td><td>Sur le <b>même bras</b> : le CEN n'est pas inclus</td></tr>
+        <tr><td><b>Conséquence</b></td><td>Le centromère reste présent, l'anomalie passe souvent inaperçue</td><td>Aucun changement de morphologie du centromère</td></tr>
+        <tr><td><b>Méiose</b></td><td>Formation d'une <b>boucle d'inversion</b> pour apparier les homologues → crossing-over → <b>duplication + déficience</b> dans les gamètes</td><td>Idem, avec un risque plus faible (souvent pas de crossing-over dans la boucle)</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Le mécanisme central</div>
+      <p style="margin-bottom:0">
+        Le porteur est <b>phénotypiquement normal</b> mais produit des gamètes <b>déséquilibrés</b>. C'est le
+        schéma commun à toutes les anomalies équilibrées : <b>normal pour soi, à risque pour ses enfants</b>.
+      </p>
+    </div>
+
+    <h4 id="c2-iso">4) L'isochromosome (<code>i</code>)</h4>
+    <p>
+      Chromosome constitué de <b>deux bras identiques</b> (deux <code>q</code>, ou deux <code>p</code>) et d'un
+      seul centromère : il y a donc <b>perte d'un bras et duplication de l'autre</b>. Exemple classique :
+      <code>i(Xq)</code>, qui donne un syndrome de <b>Turner</b> (monosomie pour le bras court de l'X).
+    </p>
+    <table>
+      <thead><tr><th>Mécanisme</th><th>Résultat</th></tr></thead>
+      <tbody>
+        <tr><td>Non-disjonction en <b>MI</b> chez un sujet hétérozygote</td><td>Isochromosome <b>hétérozygote</b> (les deux bras ne sont pas strictement identiques)</td></tr>
+        <tr><td>Non-disjonction en <b>MII</b> ou accident <b>mitotique</b></td><td>Isochromosome <b>homozygote</b> (deux bras strictement identiques) — le plus fréquent</td></tr>
+      </tbody>
+    </table>
+
+    <h4 id="c2-dup2">5) La duplication (<code>dup</code>)</h4>
+    <p>
+      Un segment est présent en <b>deux exemplaires</b> sur le même chromosome : déséquilibre par <b>excès</b>,
+      qui correspond à une <b>trisomie partielle</b> («&nbsp;trisomie pure&nbsp;» du segment). Le pronostic
+      dépend de la taille et du contenu en gènes du segment dupliqué.
+    </p>
+
+    <h4 id="c2-rob">6) La translocation robertsonienne (<code>rob</code>)</h4>
+    <p>
+      Fusion <b>centromérique</b> de deux chromosomes <b>acrocentriques</b> (<b>13, 14, 15, 21, 22</b>) : les
+      deux bras longs se soudent, les bras courts (avec les satellites) sont perdus — sans conséquence, car
+      leur contenu (gènes des ARNr) est redondant sur les autres acrocentriques.
+    </p>
+    <div class="grid2">
+      <div class="card">
+        <b>Le porteur</b>
+        <p style="margin-bottom:0">Phénotype <b>normal</b>, mais caryotype à <b>45 chromosomes</b>. C'est le grand classique : <code>45,XX,t(13;14)</code> ou <code>45,XY,t(14;21)</code>.</p>
+      </div>
+      <div class="card">
+        <b>La méiose</b>
+        <p style="margin-bottom:0">Les chromosomes s'apparient en <b>trivalent</b>. La ségrégation peut être <b>2:1</b> (deux chromosomes d'un côté, un de l'autre) ou alterne. La ségrégation <b>2:1</b> produit <b>6 types de gamètes</b>, dont des gamètes déséquilibrés (trisomie ou monosomie du chromosome concerné).</p>
+      </div>
+    </div>
+    <div class="note warn">
+      <div class="lbl">Le cas <code>t(21;21)</code> — à connaître absolument</div>
+      <p style="margin-bottom:0">
+        Quand les deux chromosomes 21 sont fusionnés (<code>45,XX,t(21;21)</code> ou <code>45,XY,t(21;21)</code>),
+        il ne reste <b>qu'un seul chromosome 21 libre</b>. La ségrégation est alors <b>1:0</b> : tous les gamètes
+        reçoivent soit ce 21 unique, soit rien. Après fécondation, <b>100&nbsp;% des conceptions sont anormales</b> :
+        <b>trisomie 21</b> ou <b>monosomie 21</b> (létale). Aucune descendance normale n'est possible — d'où
+        l'importance du conseil génétique.
+      </p>
+    </div>
+
+    <h4 id="c2-t">7) La translocation réciproque (<code>t</code>)</h4>
+    <p>
+      Échange de segments entre <b>deux chromosomes non homologues</b>, avec <b>46 chromosomes</b> conservés :
+      l'anomalie est <b>équilibrée</b>. En méiose, l'appariement forme un <b>quadrivalent</b> ; la ségrégation
+      <b>alterne</b> (la plus fréquente) redonne des gamètes équilibrés, la ségrégation <b>adjacente 1</b> donne
+      des gamètes déséquilibrés.
+    </p>
+    <ul>
+      <li>Si les segments échangés sont <b>petits</b>, les gamètes déséquilibrés peuvent être viables → enfants <b>polymalformés</b>.</li>
+      <li>Exemple de translocation <b>acquise</b>, pathologique : <b><code>t(8;14)</code></b> du <b>lymphome de Burkitt</b> — le gène <i>MYC</i> passe sous le contrôle du promoteur des immunoglobulines.</li>
+    </ul>
+
+    <h4 id="c2-ins">8) L'insertion (<code>ins</code>)</h4>
+    <p>
+      Un segment d'un chromosome est inséré dans un autre. Elle nécessite <b>trois cassures</b> : deux sur le
+      chromosome donneur (pour en extraire le segment) et une sur le chromosome receveur. C'est une anomalie
+      <b>équilibrée</b>, mais elle pose un risque majeur de gamètes déséquilibrés.
+    </p>
+
+    <h3 id="c2-part">Les cas particuliers</h3>
+
+    <h4>Sites fragiles (<code>fra</code>)</h4>
+    <ul>
+      <li>Régions qui se cassent préférentiellement en culture dans des conditions particulières.</li>
+      <li><b><code>fra(X)(q27.3)</code></b> : le plus important — associé au <b>retard mental lié à l'X</b>, surtout chez les <b>garçons</b> ; l'expression est favorisée par une <b>carence en folates</b>.</li>
+      <li>Les sites fragiles des <b>autosomes</b> sont le plus souvent <b>bénins</b> (polymorphismes).</li>
+    </ul>
+
+    <h4>Microdélétions</h4>
+    <p>
+      Invisibles en caryotype standard (sous la résolution de 5–10 Mb), elles surviennent souvent par
+      <b>crossing-over inégal</b> entre séquences répétées (duplicons, LCR) mal alignées en méiose. Détection :
+      FISH locus-spécifique ou ACPA. Exemples : <b>Cri du chat</b> (<code>5p15.2</code>),
+      <b>Prader-Willi</b> / <b>Angelman</b> (<code>15q11-q12</code>), <b>Williams</b> (<code>7q11.23</code>).
+    </p>
+
+    <h4>Maladies cassantes (instabilité chromosomique)</h4>
+    <p>
+      On teste la sensibilité des chromosomes à des <b>agents pontants</b> : <b>mitomycine C</b>,
+      <b>DEB</b> (diépoxybutane), <b>moutarde azotée</b>, <b>cisplatine</b>, <b>cyclophosphamide</b> — toujours
+      avec un <b>témoin</b> en parallèle. L'aspect typique est fait d'<b>images radiales</b> et de
+      <b>rosettes</b> (chromosomes accrochés les uns aux autres).
+    </p>
+    <table>
+      <thead><tr><th>Maladie</th><th>Signature cytogénétique</th></tr></thead>
+      <tbody>
+        <tr><td><b>Anémie de Fanconi</b></td><td>Cassures et images radiales sous agents pontants</td></tr>
+        <tr><td><b>Ataxie-télangiectasie</b></td><td>Cassures, remaniements multiples</td></tr>
+        <tr><td><b>Xeroderma pigmentosum</b></td><td>Défaut de réparation des lésions UV</td></tr>
+        <tr><td><b>Syndrome de Bloom</b></td><td><b>Échanges entre chromatides sœurs (SCE)</b> augmentés, jusqu'à <b>× 10</b>, visualisés par <b>BrdU</b> (aspect arlequin)</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Polymorphismes chromosomiques</h4>
+    <p>
+      Variations <b>sans conséquence clinique</b>, très utiles pour identifier l'origine parentale d'un
+      chromosome. Deux exemples à retenir :
+    </p>
+    <ul>
+      <li><b><code>inv(9)</code></b> : présente chez environ <b>1&nbsp;%</b> de la population — le polymorphisme le plus cité.</li>
+      <li>Aussi : <code>inv(2)</code>, <code>inv(10)</code>, et la taille variable du <b>bras court des acrocentriques</b>.</li>
+    </ul>
+
+    <h3 id="c2-cons">Les conséquences d'un remaniement : 9 mécanismes</h3>
+    <p>
+      Que fait un remaniement à l'échelle du gène ? Le cours en énumère neuf — c'est une question de cours
+      classique, souvent posée en «&nbsp;citez&nbsp;».
+    </p>
+    <ol>
+      <li><b>Effet de dosage</b> : perte ou gain d'une copie de gène (le mécanisme le plus direct, celui des trisomies et des délétions).</li>
+      <li><b>Interruption du gène</b> : la cassure tombe au milieu d'une séquence codante → protéine tronquée.</li>
+      <li><b>Pseudogénisation</b> : un gène devient non fonctionnel après remaniement (perte de promoteur, séquence altérée).</li>
+      <li><b>Effet de position</b> : le gène est intact mais déplacé près d'une région <b>d'hétérochromatine</b> qui l'éteint.</li>
+      <li><b>Gène de fusion (chimérique)</b> : deux gènes fusionnés → protéine hybride, souvent activatrice (ex. <code>t(8;14)</code> de Burkitt, <code>BCR-ABL</code> dans la LMC).</li>
+      <li><b>Anomalie d'empreinte</b> : la région remaniée perd sa marque parentale (Prader-Willi, Angelman).</li>
+      <li><b>Néofonctionnalisation</b> : le gène réarrangé acquiert une fonction nouvelle.</li>
+      <li><b>Subfonctionnalisation</b> : la fonction ancestrale se répartit entre deux copies dupliquées.</li>
+      <li><b>Adaptation</b> : le réarrangement est conservé parce qu'il procure un avantage sélectif.</li>
+    </ol>
+    <div class="note">
+      <div class="lbl">Hiérarchie utile</div>
+      <p style="margin-bottom:0">
+        Les trois premiers sont des mécanismes de <b>perte</b> (quantité ou fonction), les trois suivants
+        (<b>position, fusion, empreinte</b>) sont des mécanismes de <b>dérégulation</b>, les trois derniers
+        relèvent de l'<b>évolution</b> des gènes. Ranger les 9 en 3 groupes de 3 est plus solide qu'une liste
+        apprise au hasard.
+      </p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ====================== COURS 3 ============================= -->
+    <!-- ============================================================ -->
+
+    <h2 id="c3-voc">Cours 3 — Hérédité mendélienne et non mendélienne <span class="page">(cours 3)</span></h2>
+
+    <p>
+      Changement d'échelle : on quitte le chromosome pour le <b>gène</b>. L'objectif est de savoir, devant une
+      famille, <b>quel mode de transmission</b> est en jeu et <b>quel risque</b> annoncer. Le cours commence par
+      le vocabulaire, parce que la moitié des erreurs de QCM sont des erreurs de mots.
+    </p>
+
+    <h3>Le vocabulaire qui piège</h3>
+    <table>
+      <thead><tr><th>Terme</th><th>Définition exacte</th><th>Le piège</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Hémizygote</b></td>
+          <td>Un seul allèle présent, faute de deuxième copie du gène. C'est le cas des gènes de l'<b>X chez le garçon</b> (<code>XY</code>).</td>
+          <td>Un garçon n'est <b>jamais</b> hétérozygote pour un gène de l'X : il est hémizygote, donc <b>malade ou sain</b>, jamais conducteur.</td>
+        </tr>
+        <tr>
+          <td><b>Congénital ≠ génétique</b></td>
+          <td><b>Congénital</b> = présent à la naissance. <b>Génétique</b> = dû à une anomalie de l'ADN.</td>
+          <td>La <b>rubéole congénitale</b> est congénitale mais <b>pas</b> génétique. La <b>maladie de Huntington</b> est génétique mais <b>pas</b> congénitale (elle se révèle à l'âge adulte).</td>
+        </tr>
+        <tr>
+          <td><b>Semi-dominance</b></td>
+          <td>L'hétérozygote a un phénotype <b>intermédiaire</b> entre les deux homozygotes.</td>
+          <td>Ne pas confondre avec la codominance.</td>
+        </tr>
+        <tr>
+          <td><b>Codominance</b></td>
+          <td>Les <b>deux</b> allèles s'expriment <b>pleinement</b> et simultanément.</td>
+          <td>Modèle : le <b>groupe AB</b> — on porte à la fois l'antigène A et l'antigène B, pas un mélange.</td>
+        </tr>
+        <tr>
+          <td><b>AFAB / AMAB</b></td>
+          <td><i>Assigned female / male at birth</i> : sexe assigné à la naissance.</td>
+          <td>Vocabulaire utilisé pour distinguer le sexe assigné du génotype et du phénotype — utile en conseil génétique.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="c3-ad">Transmission autosomique dominante (AD)</h3>
+    <p>
+      L'allèle muté <b>suffit</b> à rendre malade : il est dominant. Il est porté par un <b>autosome</b>, donc
+      les deux sexes sont atteints <b>à égalité</b>.
+    </p>
+    <div class="grid2">
+      <div class="card">
+        <b>Les 4 signatures de l'arbre</b>
+        <ul style="margin-bottom:0">
+          <li>Transmission <b>verticale</b> : on est malade <b>à chaque génération</b>.</li>
+          <li><b>Hommes = femmes</b> (autosome).</li>
+          <li><b>Un père malade peut avoir un fils malade</b> — c'est ce qui distingue l'AD de la transmission liée à l'X.</li>
+          <li>Un sujet <b>sain n'a aucun risque</b> de transmettre (hors pénétrance incomplète et néomutation).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Le risque</b>
+        <p>Parent hétérozygote × parent sain :</p>
+        <div class="formula" style="margin:6px 0">Aa × aa → <b>1/2 (50&nbsp;%)</b> malades · 1/2 sains</div>
+        <p style="margin-bottom:0">À chaque grossesse, <b>indépendamment</b> du résultat précédent.</p>
+      </div>
+    </div>
+    <h4>Les exemples du cours</h4>
+    <p>
+      <span class="tag">Achondroplasie</span><span class="tag">Syndrome de Marfan</span><span class="tag">Neurofibromatose de type 1 (NF1)</span>
+      <span class="tag">Maladie de Huntington</span><span class="tag">Hypercholestérolémie familiale (PKAD)</span>
+      <span class="tag">Cancers héréditaires (<i>BRCA</i>)</span><span class="tag">Sclérose tubéreuse de Bourneville</span>
+      <span class="tag">Dystrophie myotonique de Steinert</span>
+    </p>
+
+    <h4 id="c3-ad7">Les 7 particularités de l'AD — le cœur du cours</h4>
+    <p>
+      Une maladie AD «&nbsp;parfaite&nbsp;» n'existe presque jamais. Ces sept exceptions expliquent pourquoi un
+      arbre AD peut <b>sauter une génération</b> ou surprendre par l'absence d'antécédents.
+    </p>
+
+    <details open>
+      <summary>1. Pénétrance incomplète</summary>
+      <div class="body">
+        <p>La pénétrance est la <b>proportion de porteurs qui sont malades</b> : <code>malades / porteurs</code>.</p>
+        <p>Exemple du cours, la <b>maladie de Huntington</b> :</p>
+        <table>
+          <thead><tr><th>Âge</th><th>Pénétrance</th></tr></thead>
+          <tbody>
+            <tr><td>À la naissance</td><td><b>0&nbsp;%</b></td></tr>
+            <tr><td>À 40 ans</td><td><b>50&nbsp;%</b></td></tr>
+            <tr><td>À 70 ans</td><td><b>100&nbsp;%</b></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom:0">
+          Conséquence : un porteur jeune est asymptomatique, donc l'arbre semble «&nbsp;négatif&nbsp;». Ce n'est
+          pas une absence de maladie, c'est une <b>maladie pas encore exprimée</b>.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>2. Expressivité variable</summary>
+      <div class="body">
+        <p>
+          La même mutation donne des tableaux <b>différents</b> d'un individu à l'autre. Le cours prend l'exemple
+          de la <b>NF1</b> et de son origine <b>crête neurale</b> : les tissus dérivés de la crête neurale sont
+          touchés de façon variable (taches café-au-lait, neurofibromes, atteinte osseuse…), ce qui explique la
+          grande variabilité d'expression au sein d'une même famille.
+        </p>
+        <p style="margin-bottom:0">
+          <b>Pénétrance</b> = «&nbsp;malade ou pas&nbsp;» (tout ou rien). <b>Expressivité</b> = «&nbsp;à quel
+          point&nbsp;» (intensité). Cette distinction est un classique.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>3. Néomutations</summary>
+      <div class="body">
+        <p>Un enfant est malade alors que <b>les deux parents sont sains</b> : la mutation est apparue dans le gamète.</p>
+        <table>
+          <thead><tr><th>Maladie</th><th>Part de néomutations</th></tr></thead>
+          <tbody>
+            <tr><td><b>Achondroplasie</b></td><td><b>80&nbsp;%</b></td></tr>
+            <tr><td><b>NF1</b></td><td><b>50&nbsp;%</b></td></tr>
+            <tr><td><b>Marfan</b></td><td><b>50&nbsp;%</b></td></tr>
+          </tbody>
+        </table>
+        <p>
+          Pourquoi ? Parce que l'<b>ovogenèse</b> ne compte que <b>22 mitoses</b> (toutes avant la naissance),
+          alors que la <b>spermatogenèse</b> en compte environ <b>200</b> et continue à chaque cycle, avec un
+          nombre de divisions qui <b>croît avec l'âge paternel</b>. Deux mécanismes d'erreur sont favorisés chez
+          l'homme : le <b>nombre de divisions</b> et la <b>méthylation des îlots CpG</b>.
+        </p>
+        <p style="margin-bottom:0">
+          D'où la notion d'<b>âge paternel élevé</b> comme facteur de risque de néomutation — le miroir de
+          l'âge maternel pour les aneuploïdies.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>4. Mosaïque germinale</summary>
+      <div class="body">
+        <p>
+          La mutation touche une partie des <b>cellules germinales primordiales</b> (définies au cours de la
+          <b>5<sup>e</sup> semaine</b>) : le parent est <b>sain</b> (mutation absente du sang), mais plusieurs de
+          ses gamètes sont mutés. Conséquence : une <b>récurrence chez des parents sains</b> — deux enfants
+          atteints, une seule grossesse «&nbsp;par hasard&nbsp;».
+        </p>
+        <p style="margin-bottom:0">
+          C'est la situation qui justifie de proposer un diagnostic prénatal même quand les parents sont
+          indemnes, après un premier enfant atteint.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>5. Anticipation</summary>
+      <div class="body">
+        <p>
+          La maladie se déclare <b>plus tôt</b> et/ou est <b>plus sévère</b> à la génération suivante. Exemples
+          du cours : <b>Steinert</b> (dystrophie myotonique) et <b>Huntington</b>.
+        </p>
+        <p style="margin-bottom:0">
+          Le support sous-jacent est l'expansion de <b>répétitions de trinucléotides</b> : la répétition
+          s'allonge au fil des générations. C'est la seule des 7 particularités qui donne une information sur le
+          mécanisme moléculaire.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>6. Pléiotropie</summary>
+      <div class="body">
+        <p>
+          <b>Un</b> gène muté → <b>plusieurs</b> organes atteints. Exemple : la <b>sclérose tubéreuse de
+          Bourneville</b>, qui touche la peau, le système nerveux et le rein.
+        </p>
+        <p style="margin-bottom:0">
+          Ne pas confondre avec l'<b>hétérogénéité</b> (plusieurs gènes → une même maladie), qui est son
+          symétrique et qui est vue plus bas.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>7. Transmission biallélique (ou «&nbsp;pseudo-dominante&nbsp;»)</summary>
+      <div class="body">
+        <p>
+          Une maladie classiquement récessive, ou une maladie dominante, peut avoir un effet <b>différent</b>
+          quand deux allèles mutés sont présents. Quatre cas cités :
+        </p>
+        <ul>
+          <li><b><i>BRCA1</i></b> : la forme biallélique est <b>létale</b>.</li>
+          <li><b>Hypercholestérolémie familiale</b> : la forme biallélique donne une forme <b>très sévère</b>.</li>
+          <li><b><i>ATM</i></b> : la forme biallélique correspond à <b>une autre maladie</b> (ataxie-télangiectasie).</li>
+          <li><b>Huntington</b> : la forme biallélique est <b>identique</b> à la forme hétérozygote.</li>
+        </ul>
+        <p style="margin-bottom:0">
+          Message : «&nbsp;dominant&nbsp;» et «&nbsp;récessif&nbsp;» ne sont pas des étiquettes fixées au gène,
+          mais des propriétés du <b>couple d'allèles</b> dans un contexte donné.
+        </p>
+      </div>
+    </details>
+
+    <h3 id="c3-ar">Transmission autosomique récessive (AR)</h3>
+    <p>
+      Il faut <b>deux allèles mutés</b> pour être malade. Les parents sont <b>hétérozygotes conducteurs</b> :
+      sains, mais porteurs d'un allèle muté chacun.
+    </p>
+    <div class="grid2">
+      <div class="card">
+        <b>Les signatures de l'arbre</b>
+        <ul style="margin-bottom:0">
+          <li>Transmission <b>horizontale</b> : plusieurs malades dans la <b>même fratrie</b>, une seule génération.</li>
+          <li><b>Hommes = femmes</b>.</li>
+          <li>Les parents sont <b>sains</b>.</li>
+          <li>Notion de <b>consanguinité</b>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Le risque</b>
+        <div class="formula" style="margin:6px 0">Aa × Aa → <b>1/4 (25&nbsp;%)</b> malades<br>1/2 conducteurs · 1/4 sains</div>
+        <p style="margin-bottom:0">
+          Parmi les enfants <b>sains</b>, <b>2/3</b> sont conducteurs (<cite>proportion 2/3, pas 1/2</cite>) :
+          c'est le point de calcul le plus souvent raté.
+        </p>
+      </div>
+    </div>
+    <p>
+      <b>Exemples :</b>
+      <span class="tag">Mucoviscidose (<i>CFTR</i>)</span><span class="tag">Hypercholestérolémie familiale</span>
+      <span class="tag">Surdités génétiques</span><span class="tag">Thalassémie</span><span class="tag">Drépanocytose</span>
+    </p>
+
+    <h4>La consanguinité</h4>
+    <p>
+      Chez des cousins germains, le risque de maladie récessive augmente de <b>2 à 3&nbsp;%</b>. Point capital :
+      <b>cet effet ne concerne que les maladies récessives</b>. Une consanguinité n'augmente <b>pas</b> le risque
+      de maladie dominante ni d'anomalie chromosomique de nombre.
+    </p>
+    <div class="formula">
+      cousins germains <span class="c">→</span> risque AR <b>+ 2 à 3&nbsp;%</b> &nbsp;&nbsp;·&nbsp;&nbsp; risque AD : <b>inchangé</b>
+    </div>
+
+    <h4>Hétérogénéité allélique et hétérogénéité interlocus</h4>
+    <table>
+      <thead><tr><th></th><th>Hétérogénéité allélique</th><th>Hétérogénéité interlocus</th></tr></thead>
+      <tbody>
+        <tr><td><b>Définition</b></td><td><b>Un seul gène</b>, mais de nombreuses mutations différentes</td><td><b>Plusieurs gènes</b> (loci) différents donnent la même maladie</td></tr>
+        <tr><td><b>Exemple</b></td><td><i>CFTR</i> : <b>plus de 700 mutations</b> différentes dans la mucoviscidose</td><td><b>Rétinite pigmentaire</b> : plus de <b>40 loci</b></td></tr>
+        <tr><td><b>Conséquence</b></td><td>Un patient peut être <b>hétérozygote composite</b> : deux mutations <b>différentes</b> du même gène</td><td>Deux malades peuvent avoir des gènes différents — attention au conseil génétique</td></tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Les deux moteurs de fréquence des allèles récessifs</div>
+      <ul style="margin-bottom:0">
+        <li><b>Avantage de l'hétérozygote</b> : le conducteur est protégé contre une maladie infectieuse (drépanocytose vs paludisme, thalassémie vs paludisme) → l'allèle se maintient dans la population.</li>
+        <li><b>Effet fondateur</b> : une mutation apparue chez un ancêtre commun se diffuse dans une population isolée.</li>
+      </ul>
+    </div>
+
+    <h3 id="c3-x">Transmission liée à l'X</h3>
+    <div class="note warn">
+      <div class="lbl">La règle absolue</div>
+      <p style="margin-bottom:0">
+        <b>Jamais de transmission père → fils</b> pour un gène de l'X : un père donne son <b>X à ses filles</b> et
+        son <b>Y à ses fils</b>. Toute observation contraire signifie qu'il ne s'agit pas d'une transmission liée
+        à l'X.
+      </p>
+    </div>
+
+    <h4>Récessif lié à l'X (RLX)</h4>
+    <p>
+      Les garçons sont <b>hémizygotes</b> : un seul allèle muté suffit. Les filles doivent avoir <b>deux</b>
+      allèles mutés pour être malades — elles sont donc essentiellement <b>conductrices</b>.
+    </p>
+    <table>
+      <thead><tr><th>Situation</th><th>Risque pour les enfants</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Mère conductrice</b> (père sain)</td>
+          <td><b>1/2 des fils malades</b> · 1/2 des fils sains · <b>1/2 des filles conductrices</b> · 1/2 des filles non conductrices. <b>Aucune fille malade.</b></td>
+        </tr>
+        <tr>
+          <td><b>Père atteint</b> (mère saine non conductrice)</td>
+          <td><b>0 garçon malade</b> (il leur donne son Y) · <b>100&nbsp;% des filles conductrices</b> (elles reçoivent son X).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <b>Exemples :</b> <b>Duchenne</b> (myopathie, avec <b>CPK</b> élevées) · <b>hémophilie A</b> (facteur
+      <b>VIII</b>) · daltonisme · déficit en G6PD.
+    </p>
+
+    <h4>La lyonisation : pourquoi les filles conductrices ne sont pas «&nbsp;normales&nbsp;» à 100&nbsp;%</h4>
+    <p>
+      Chez la fille, un des deux X est <b>inactivé aléatoirement</b>, <b>précocement</b> et de façon
+      <b>définitive</b> (l'X inactif est répliqué en <b>fin de phase S</b>). L'inactivation est <b>aléatoire</b> :
+      dans environ 50&nbsp;% des cellules c'est l'X muté qui est éteint, dans 50&nbsp;% c'est l'X sain. Si
+      l'inactivation est <b>déséquilibrée</b>, la conductrice peut exprimer des signes.
+    </p>
+    <div class="note">
+      <div class="lbl">Le paradoxe de Sherman</div>
+      <p style="margin-bottom:0">
+        Dans les maladies <b>dominantes</b> liées à l'X (comme l'incontinentia pigmenti ou le syndrome de Rett),
+        la plupart des garçons porteurs sont <b>létaux in utero</b>. Les filles atteintes survivent grâce à la
+        lyonisation — mais leur inactivation <b>biaisée en faveur de l'X sain</b> peut expliquer leur phénotype
+        plus modéré, et fausser les proportions observées dans les familles. D'où un écart apparent aux
+        proportions mendéliennes attendues.
+      </p>
+    </div>
+
+    <h4>Dominant lié à l'X (DLX)</h4>
+    <div class="grid2">
+      <div class="card"><b>Chez la fille</b>Un seul allèle muté suffit : les filles sont <b>atteintes, mais souvent moins gravement</b> que les garçons (lyonisation partielle).</div>
+      <div class="card"><b>Chez le garçon</b>Hémizygote → forme <b>très sévère</b>, souvent <b>létale</b>.</div>
+    </div>
+    <div class="formula">
+      père atteint <span class="c">→</span> <b>100&nbsp;% des filles atteintes</b> · <b>0&nbsp;% des fils atteints</b>
+    </div>
+    <p>Exemples : rachitisme vitamino-résistant (hypophosphatémique), incontinentia pigmenti, syndrome de Rett.</p>
+
+    <h4>Holandrique (lié à l'Y)</h4>
+    <p>
+      Le gène est sur l'<b>Y</b> : il ne peut venir que du père et ne va qu'aux <b>fils</b>.
+      <b>Père atteint → 100&nbsp;% des fils atteints, 0&nbsp;% des filles.</b> Exemple : l'<b>hypertrichose des
+      oreilles</b> — le seul exemple classique, et le plus souvent cité en QCM.
+    </p>
+
+    <h3 id="c3-non">L'hérédité non mendélienne</h3>
+
+    <h4 id="c3-mito">1) Transmission mitochondriale (maternelle)</h4>
+    <p>
+      L'ADN mitochondrial est <b>circulaire</b>, présent en <b>nombreuses copies</b> par cellule, et se transmet
+      <b>exclusivement par la mère</b> : les mitochondries du zygote viennent de l'ovocyte. Les spermatozoïdes
+      n'en apportent pas (ou de façon négligeable).
+    </p>
+    <table>
+      <thead><tr><th>Parent transmetteur</th><th>Descendance</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mère atteinte</b></td><td><b>Tous les enfants</b> peuvent être atteints (filles comme garçons)</td></tr>
+        <tr><td><b>Père atteint</b></td><td><b>Aucun</b> enfant atteint</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><b>Organes touchés</b> : ceux qui consomment le plus d'énergie — <b>muscle</b>, <b>cerveau</b>, <b>cœur</b>, <b>rétine</b>, oreille interne.</li>
+      <li><b>Les globules rouges sont épargnés</b> : ils n'ont pas de mitochondries (ils produisent leur ATP par glycolyse).</li>
+      <li><b>Homoplasmie</b> : toutes les copies d'ADNmt sont identiques. <b>Hétéroplasmie</b> : coexistence de copies normales et mutées, avec une répartition <b>variable selon les tissus</b>.</li>
+      <li><b>Effet seuil</b> : les symptômes n'apparaissent qu'au-delà d'une proportion critique de mitochondries mutées — ce qui explique la variabilité d'expression et l'aggravation avec l'âge.</li>
+    </ul>
+
+    <h4 id="c3-emp">2) Empreinte parentale (empreinte génomique)</h4>
+    <p>
+      Pour quelques <b>dizaines de gènes</b> — souvent impliqués dans la <b>croissance</b> — l'expression dépend
+      de l'<b>origine parentale</b> de l'allèle : un seul des deux allèles est exprimé, l'autre est <b>silencieux</b>
+      (expression <b>mono-allélique</b>).
+    </p>
+    <div class="formula">
+      centres d'empreinte (IC) <span class="c">→</span> marques <b>effacées</b> dans les cellules germinales
+      <span class="c">→</span> <b>réapposées</b> selon le sexe du parent
+    </div>
+    <p>
+      Autrement dit, une marque d'empreinte est <b>remise à zéro</b> à chaque génération puis réécrite : le
+      «&nbsp;sexe du parent&nbsp;» est réinscrit dans le gamète. D'où les deux syndromes miroirs de la région
+      <code>15q11-q12</code> :
+    </p>
+    <table>
+      <thead><tr><th>Anomalie</th><th>Origine</th><th>Syndrome</th></tr></thead>
+      <tbody>
+        <tr><td>Délétion ou DUP <b>maternelle</b> de la région</td><td>La copie maternelle (normalement active) est perdue</td><td><b>Prader-Willi</b></td></tr>
+        <tr><td>Délétion ou DUP <b>paternelle</b> de la région</td><td>La copie paternelle (normalement active) est perdue</td><td><b>Angelman</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Pourquoi c'est un pont entre les cours</div>
+      <p style="margin-bottom:0">
+        Le même segment chromosomique, la même taille de délétion, mais <b>deux maladies différentes</b> selon le
+        parent d'origine : c'est exactement le lien avec la <b>DUP (disomie uniparentale)</b> du cours 2, et cela
+        montre la limite du raisonnement «&nbsp;gène → protéine&nbsp;» du cours 3.
+      </p>
+    </div>
+
+    <h4 id="c3-multi">3) Hérédité multifactorielle</h4>
+    <p>
+      Plusieurs gènes <b>plus</b> l'environnement. Pas de proportion mendélienne, un <b>risque de récurrence</b>
+      faible mais non nul, qui augmente avec le nombre de parents atteints et la sévérité. Exemples du cours :
+      <b>maladie de Hirschsprung</b>, <b>hypertension artérielle</b>, <b>polyarthrite rhumatoïde</b>, <b>diabète</b>.
+    </p>
+
+    <h3 id="c3-arbre">Lire un arbre généalogique en 30 secondes</h3>
+    <table>
+      <thead><tr><th>Observation</th><th>Conclusion</th></tr></thead>
+      <tbody>
+        <tr><td>Malades à <b>chaque génération</b>, hommes et femmes</td><td><b>AD</b></td></tr>
+        <tr><td><b>Père malade → fils malade</b></td><td>Exclut le <b>lié à l'X</b> ; AD ou AR ou multifactoriel</td></tr>
+        <tr><td>Malades uniquement dans <b>une fratrie</b>, parents sains</td><td><b>AR</b> (ou néomutation / mosaïque germinale si un seul cas)</td></tr>
+        <tr><td><b>Uniquement des garçons</b> malades, transmis par des femmes</td><td><b>RLX</b></td></tr>
+        <tr><td><b>Père malade → toutes ses filles malades</b>, aucun garçon</td><td><b>DLX</b></td></tr>
+        <tr><td><b>Père malade → tous ses fils</b>, aucune fille</td><td><b>Holandrique (Y)</b></td></tr>
+        <tr><td>Transmission par les <b>femmes uniquement</b>, atteinte très variable</td><td><b>Mitochondrial</b></td></tr>
+        <tr><td>Consanguinité dans l'arbre</td><td>Chercher une <b>AR</b></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ============================================================ -->
+    <!-- ======================= REVISION =========================== -->
+    <!-- ============================================================ -->
+
+    <h2 id="chiffres">Les chiffres à retenir d'un coup d'œil</h2>
+    <table>
+      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th><th>Cours</th></tr></thead>
+      <tbody>
+        <tr><td><b>46 · 23</b></td><td>Chromosomes humains (2n) · par gamète (n)</td><td>1</td></tr>
+        <tr><td><b>48 · 8</b></td><td>Chromosomes du singe · de la drosophile</td><td>1</td></tr>
+        <tr><td><b>1956 · 1970 · 1986 · 2008</b></td><td>46 chr · bandes Q · FISH · ACPA</td><td>1</td></tr>
+        <tr><td><b>(TTAGGG)n</b></td><td>Séquence répétée du télomère</td><td>1</td></tr>
+        <tr><td><b>&lt; 2 kb · 10–40 kb</b></td><td>TAR · région subtélomérique (riche en gènes)</td><td>1</td></tr>
+        <tr><td><b>p/(p+q)</b></td><td>Index centromérique</td><td>1</td></tr>
+        <tr><td><b>11–12 · 14–15 · 20 SA</b></td><td>Villosités choriales · liquide amniotique · sang fœtal</td><td>1</td></tr>
+        <tr><td><b>4 °C · 4–5 j</b></td><td>Conservation du tube hépariné</td><td>1</td></tr>
+        <tr><td><b>37 °C · pH 7,2–7,4</b></td><td>Conditions de culture</td><td>1</td></tr>
+        <tr><td><b>300–550 · 800–1 000</b></td><td>Bandes en standard · en haute résolution</td><td>1</td></tr>
+        <tr><td><b>87 °C · pH 5,8 · pH 6,7</b></td><td>Bandes R (Earle · Earle · phosphate)</td><td>1</td></tr>
+        <tr><td><b>10–15 %</b></td><td>Part du génome en hétérochromatine C</td><td>1</td></tr>
+        <tr><td><b>5–10 Mb</b></td><td>Résolution du caryotype standard</td><td>1</td></tr>
+        <tr><td><b>24 · 5</b></td><td>Peintures · fluorochromes du M-FISH</td><td>1</td></tr>
+        <tr><td><b>37 °C · DAPI</b></td><td>Hybridation FISH · contre-coloration</td><td>1</td></tr>
+        <tr><td><b>60 % · 5 % · 0,6–0,9 %</b></td><td>FCS du 1<sup>er</sup> trimestre · tardives/mort-nés · naissances</td><td>2</td></tr>
+        <tr><td><b>4/4 · 2+2</b></td><td>Gamètes anormaux en non-disjonction MI · MII</td><td>2</td></tr>
+        <tr><td><b>45,X</b></td><td>Seule monosomie viable (Turner)</td><td>2</td></tr>
+        <tr><td><b>21 · 18 · 13</b></td><td>Les trois trisomies viables</td><td>2</td></tr>
+        <tr><td><b>69 · 92</b></td><td>Triploïdie (3n) · tétraploïdie (4n)</td><td>2</td></tr>
+        <tr><td><b>0,044 %</b></td><td>Prévalence des marqueurs surnuméraires</td><td>2</td></tr>
+        <tr><td><b>≤ 20 chr · 15/22 · 70/30 %</b></td><td>MCS : taille · acrocentriques d'origine · bénins/pathologiques</td><td>2</td></tr>
+        <tr><td><b>85–90 %</b></td><td>Délétions <i>de novo</i></td><td>2</td></tr>
+        <tr><td><b>1 %</b></td><td>Fréquence de <code>inv(9)</code> dans la population</td><td>2</td></tr>
+        <tr><td><b>× 10</b></td><td>SCE dans le syndrome de Bloom (BrdU)</td><td>2</td></tr>
+        <tr><td><b>1/2 · 1/4</b></td><td>Risque de transmission AD · AR</td><td>3</td></tr>
+        <tr><td><b>2/3</b></td><td>Part de conducteurs parmi les enfants sains d'un couple Aa × Aa</td><td>3</td></tr>
+        <tr><td><b>2–3 %</b></td><td>Surcroît de risque AR chez les cousins germains</td><td>3</td></tr>
+        <tr><td><b>0 · 50 · 100 %</b></td><td>Pénétrance de Huntington à la naissance · 40 ans · 70 ans</td><td>3</td></tr>
+        <tr><td><b>80 % · 50 %</b></td><td>Néomutations : achondroplasie · NF1 et Marfan</td><td>3</td></tr>
+        <tr><td><b>22 · ~200</b></td><td>Mitoses de l'ovogenèse · de la spermatogenèse</td><td>3</td></tr>
+        <tr><td><b>5<sup>e</sup> semaine</b></td><td>Définition des cellules germinales primordiales (mosaïque germinale)</td><td>3</td></tr>
+        <tr><td><b>&gt; 700 · &gt; 40</b></td><td>Mutations de <i>CFTR</i> · loci de la rétinite pigmentaire</td><td>3</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="pieges">Les pièges classiques, en vrac</h2>
+    <div class="grid2">
+      <div class="card">
+        <b>«&nbsp;Caryotype = 45 ?&nbsp;»</b>
+        <p style="margin-bottom:0">Chez un porteur de translocation robertsonienne, oui : <code>45</code> chromosomes, phénotype <b>normal</b>. Ne pas conclure à une monosomie.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Mosaïque ou chimère ?&nbsp;»</b>
+        <p style="margin-bottom:0"><b>Un</b> zygote = mosaïque. <b>Deux</b> zygotes = chimère. <code>XX/XY</code> = chimère, jamais mosaïque.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Équilibré veut dire bénin ?&nbsp;»</b>
+        <p style="margin-bottom:0">Non : équilibré pour le porteur, mais <b>risque majeur pour la descendance</b> et parfois effet de position ou gène de fusion.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Consanguinité = tout augmente ?&nbsp;»</b>
+        <p style="margin-bottom:0">Non : elle n'augmente que le risque des maladies <b>récessives</b> (+2 à 3&nbsp;% chez les cousins germains).</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Pénétrance ou expressivité ?&nbsp;»</b>
+        <p style="margin-bottom:0">Pénétrance = malade ou pas (<b>tout ou rien</b>). Expressivité = <b>intensité</b> chez les malades.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Père atteint → fils atteint en RLX ?&nbsp;»</b>
+        <p style="margin-bottom:0">Impossible. Le père donne son <b>Y</b> à son fils. Cette observation exclut formellement une transmission liée à l'X.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;L'ACPA remplace le caryotype ?&nbsp;»</b>
+        <p style="margin-bottom:0">Non : elle <b>ne voit pas</b> les remaniements équilibrés et <b>ne localise pas</b>. Les deux sont complémentaires.</p>
+      </div>
+      <div class="card">
+        <b>«&nbsp;Mitochondrial = les deux parents ?&nbsp;»</b>
+        <p style="margin-bottom:0">Non : <b>maternel uniquement</b>. Un père atteint ne transmet pas, et les globules rouges sont épargnés.</p>
+      </div>
+    </div>
+
+    <h2 id="quiz">🎯 Auto-évaluation — 12 questions</h2>
+    <p>Format QCM, comme l'épreuve. Réponds, la correction s'affiche immédiatement.</p>
+    <div id="quiz-root"></div>
+    <p style="margin-top:14px">Score : <span id="quiz-score">0 / 0</span>
+      <button class="btn" id="quiz-reset" style="margin-left:10px">↺ Recommencer</button></p>
+
+    <h2 id="reviser">Comment réviser ce cours</h2>
+    <ol>
+      <li><b>Lire les trois PDF dans l'ordre.</b> Le cours 2 suppose le cours 1 (bandes, ISCN), le cours 3 suppose le cours 2 (DUP, empreinte).</li>
+      <li><b>Apprendre les 4 tableaux pivots</b> : les 7 groupes de Denver · les 6 colorations de bandes · les 8 anomalies de structure · les modes de transmission du cours 3.</li>
+      <li><b>Mémoriser les chiffres</b> du <a href="#chiffres">tableau récapitulatif</a> : c'est le plus gros pourvoyeur de QCM.</li>
+      <li><b>Savoir écrire un caryotype</b> et le lire à voix haute : <code>47,XX,+21</code>, <code>45,XX,rob(14;21)</code>, <code>46,XY,del(5p)</code>, <code>46,X,i(Xq)</code>.</li>
+      <li><b>Refaire le raisonnement de risque</b> pour chaque mode : AD (1/2), AR (1/4, 2/3 des sains conducteurs), RLX (1/2 des fils), DLX (100&nbsp;% des filles), holandrique (100&nbsp;% des fils).</li>
+      <li><b>Travailler les arbres généalogiques</b> : utiliser le <a href="#c3-arbre">tableau de lecture rapide</a>, puis vérifier sur des exercices.</li>
+      <li><b>S'entraîner sur l'annal QCM</b> du dossier Drive (QCM Rochd + Dehbi, décembre 2022) — c'est le format réel.</li>
+    </ol>
+    <div class="note">
+      <div class="lbl">Rappel</div>
+      <p style="margin-bottom:0">
+        Format d'épreuve du module : <b>QCM</b>, 8 heures de cours. Les notes d'examen partagées par la promotion
+        renvoient au cours ou au résumé FALGHASS — à confronter toujours aux annonces officielles de la faculté.
+      </p>
+    </div>
+
+    <h2 id="docs">Les documents du dossier</h2>
+    <p>Dossier Drive : <code>Pr. DEHBI › 2023-2024 › Cours &amp; Résumés</code></p>
+    <table>
+      <thead><tr><th>Document</th><th>Taille</th><th>Ce que c'est</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>1 er cours.pdf</b></td><td>4,4 Mo</td>
+          <td>Cytogénétique conventionnelle et moléculaire : chromosome métaphasique, Denver, caryotype, bandes, ISCN, FISH, M-FISH, ACPA. <b>La base de la partie 1 de cette page.</b></td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1GQ_u8wdXePDdFUEa2VJw3hYH5RsnqsVU/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>2ème cours.pdf</b></td><td>2,9 Mo</td>
+          <td>Anomalies chromosomiques : nombre, structure, mosaïques et chimères, DUP, maladies cassantes, conséquences. <b>La base de la partie 2.</b></td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1CwUx5tzM9wk4omkr6wAyoGN08tOo5qr7/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>3ème cours.pdf</b></td><td>2,2 Mo</td>
+          <td>Hérédité mendélienne (AD, AR, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle). <b>La base de la partie 3.</b></td>
+          <td><a class="btn" href="https://drive.google.com/file/d/16DCa4ENcrcfEMcwU2HiVOSEQD6-2Do5d/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>GENETIQUE FALGHASS.pdf</b></td><td>2,9 Mo</td>
+          <td>Résumé de la génétique — sert de <b>deuxième lecture</b> pour vérifier les notions et les chiffres. C'est le résumé auquel renvoient les notes d'examen du module.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/13erUcVz7kdHkexgnEha7s4W18mxc2mxR/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Résumé Dehbi.pdf</b></td><td>6,5 Mo</td>
+          <td>Résumé/fiches du cours par l'enseignante. <b>PDF scanné</b> : non parcourable, à lire à l'écran.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1gLy_1WBY4BCbz97XQuygblpR1iFJPO02/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>QCM Rochd + Dehbi (23-12-2022)</b></td><td>—</td>
+          <td>Session d'entraînement au format réel de l'épreuve. Le meilleur test de dernière minute.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1-nk9r4kSPV-N5rpT6bpHTZtBAQKCZ97o/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="lbl">Note de transparence</div>
+      <p style="margin-bottom:0">
+        Cette page est construite sur les <b>trois cours officiels textuels</b>, recoupés avec le résumé FALGHASS.
+        Les deux documents <em>Résumé Dehbi</em> et <em>QCM Rochd + Dehbi</em> sont des <b>PDF scannés sans texte
+        extractible</b> : ils ne sont donc pas résumés ici, seulement liés. Les diaporamas contenant des
+        schémas (cartes chromosomiques, arbres, images de bandes), ceux-ci ne sont pas reproduits : se référer
+        aux PDF pour l'iconographie.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        Page de révision non officielle, réalisée par la promotion — les documents appartiennent à leur auteure,
+        <b>Pr. H. Dehbi</b> (Faculté de Médecine Dentaire de Casablanca, Université Hassan&nbsp;II).
+        Le contenu est référencé, jamais recopié : chaque lien ouvre le PDF original sur Google Drive.
+      </p>
+      <p>
+        Module <b>Biologie cellulaire, moléculaire et génétique</b> › Biologie génétique et moléculaire ·
+        année 2023-2024 · 8&nbsp;h · épreuve en QCM.
+      </p>
+      <p style="margin-bottom:0">
+        <a href="../index.html">← Retour au portail FMDC 1A</a> ·
+        <a href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">Dossier Drive du cours</a>
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+/* ---------------- Thème clair/sombre ---------------- */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{ var s=localStorage.getItem('fmdc-theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var n = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',n);
+    try{ localStorage.setItem('fmdc-theme',n); }catch(e){}
+  });
+})();
+
+/* ---------------- Barre de progression ---------------- */
+(function(){
+  var bar=document.getElementById('bar');
+  function upd(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0 ? (h.scrollTop/max)*100 : 0)+'%';
+  }
+  addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+})();
+
+/* ---------------- Sommaire actif ---------------- */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var map=links.map(function(a){ return {a:a, t:document.querySelector(a.getAttribute('href'))}; })
+               .filter(function(o){ return o.t; });
+  function spy(){
+    var y=scrollY+110, cur=null;
+    map.forEach(function(o){ if(o.t.offsetTop<=y) cur=o; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  addEventListener('scroll',spy,{passive:true}); spy();
+})();
+
+/* ---------------- Auto-évaluation ---------------- */
+(function(){
+  var QS = [
+    { q:"Les trois éléments fonctionnels d'un chromosome sont…", o:["un bras court, un centromère et un bras long","un centromère, deux télomères et des origines de réplication","un kinétochore, des histones et des satellites","un centromère, des télomères et des gènes"], a:1,
+      w:"Centromère (constriction primaire, fixation du fuseau), télomères (TTAGGG)n et origines de réplication. Les bras p et q sont des régions, pas des éléments fonctionnels — cours 1." },
+    { q:"La position du centromère est déterminée…", o:["par la séquence d'ADN","de façon épigénétique, indépendamment de la séquence","par les télomères","par le nombre de bandes G"], a:1,
+      w:"Caractère épigénétique : d'où l'existence des néocentromères et l'inactivation d'un des deux centromères dans un chromosome dicentrique — cours 1." },
+    { q:"Le groupe de Denver des chromosomes 4 et 5 est…", o:["A — grands métacentriques","B — grands submétacentriques","C — médiums submétacentriques","D — médiums acrocentriques"], a:1,
+      w:"B = 4 et 5, grands submétacentriques — c'est là que se trouve le locus 5p15.2 du Cri du chat. A = 1-3, C = 6-12 + X, D = 13-15 — cours 1." },
+    { q:"La colchicine sert à…", o:["colorer les chromosomes","bloquer le fuseau et accumuler les cellules en métaphase","faire éclater la cellule par choc hypotonique","stimuler la division des lymphocytes"], a:1,
+      w:"Poison du fuseau → blocage en métaphase. Le choc hypotonique disperse les chromosomes ; le mitogène (phytohémagglutinine) stimule les lymphocytes — cours 1." },
+    { q:"Dans les bandes R (RHG), les régions colorées correspondent à…", o:["A-T, pauvres en gènes, réplication tardive","G-C, riches en gènes, réplication précoce","l'hétérochromatine constitutive","les organisateurs nucléolaires"], a:1,
+      w:"R = négatif des G : G-C, euchromatine, gènes de ménage, réplication précoce, extrémités foncées — cours 1." },
+    { q:"Le caryotype prénatal sur villosités choriales se fait…", o:["à 11-12 SA","à 14-15 SA","à 20 SA","à 24 SA"], a:0,
+      w:"Villosités choriales 11-12 SA · liquide amniotique 14-15 SA · sang fœtal 20 SA — cours 1." },
+    { q:"L'ACPA (array-CGH) ne permet pas de détecter…", o:["les microdélétions","les duplications","les translocations réciproques équilibrées","les variations du nombre de copies"], a:2,
+      w:"Pas de perte ni de gain de matériel → aucun signal modifié. L'ACPA est aussi aveugle à la localisation : d'où le couple caryotype + ACPA — cours 1." },
+    { q:"Une non-disjonction en méiose I donne…", o:["4 gamètes sur 4 anormaux","2 gamètes normaux et 2 anormaux","1 gamète anormal sur 4","aucun gamète anormal"], a:0,
+      w:"MI : les homologues ne se séparent pas → les 4 gamètes sont anormaux. MII (chromatides sœurs) : 2 normaux + 2 anormaux — cours 2." },
+    { q:"Le caryotype 46,XX/46,XY correspond à…", o:["une mosaïque","une chimère","une disomie uniparentale","une translocation robertsonienne"], a:1,
+      w:"Deux lignées incompatibles issues d'au moins deux zygotes = chimère (chi). Une mosaïque ne peut pas produire XX et XY à partir d'un seul zygote — cours 2." },
+    { q:"Un porteur de translocation robertsonienne t(14;21) a un caryotype à…", o:["44 chromosomes","45 chromosomes","46 chromosomes","47 chromosomes"], a:1,
+      w:"Deux acrocentriques fusionnés = un chromosome de moins : 45, phénotype normal. La ségrégation 2:1 en méiose produit 6 types de gamètes, dont des déséquilibrés — cours 2." },
+    { q:"Chez un couple Aa × Aa (maladie autosomique récessive), la probabilité qu'un enfant sain soit conducteur est…", o:["1/4","1/2","2/3","3/4"], a:2,
+      w:"Parmi les enfants sains (3/4), 2/3 sont conducteurs (Aa). C'est le calcul le plus souvent raté — cours 3." },
+    { q:"Un homme atteint d'une maladie récessive liée à l'X transmet…", o:["la maladie à 50 % de ses fils","la maladie à 100 % de ses filles conductrices et 0 % de ses fils malades","la maladie à 50 % de ses filles","la maladie à tous ses enfants"], a:1,
+      w:"Il donne son X à toutes ses filles (conductrices, 100 %) et son Y à tous ses fils (0 % malades) : jamais de transmission père → fils — cours 3." }
+  ];
+  var root=document.getElementById('quiz-root'), scoreEl=document.getElementById('quiz-score');
+  var done=0, right=0;
+  function render(){
+    root.innerHTML=''; done=0; right=0; update();
+    QS.forEach(function(item,i){
+      var box=document.createElement('div'); box.className='quiz';
+      var t=document.createElement('div'); t.className='q'; t.textContent=(i+1)+'. '+item.q; box.appendChild(t);
+      var opts=document.createElement('div'); opts.className='opts';
+      var why=document.createElement('div'); why.className='why';
+      why.innerHTML='<b>Explication — </b>'+item.w;
+      item.o.forEach(function(label,j){
+        var b=document.createElement('button'); b.className='opt'; b.type='button'; b.textContent=label;
+        b.addEventListener('click',function(){
+          if(box.dataset.done) return;
+          box.dataset.done='1'; done++;
+          [].forEach.call(opts.children,function(c){ c.disabled=true; });
+          opts.children[item.a].classList.add('right');
+          if(j===item.a){ right++; } else { b.classList.add('wrong'); }
+          why.classList.add('show'); update();
+        });
+        opts.appendChild(b);
+      });
+      box.appendChild(opts);
+      box.appendChild(why);
+      root.appendChild(box);
+    });
+  }
+  function update(){ scoreEl.textContent = right + ' / ' + QS.length + (done===QS.length ? ' — terminé' : '  (répondu : '+done+')'); }
+  document.getElementById('quiz-reset').addEventListener('click', render);
+  render();
+})();
+</script>
+</body>
+</html>
