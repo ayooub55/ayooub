@@ -27,6 +27,7 @@ h1,h2,h3,h4{line-height:1.28;margin:0 0 .5rem}
 h2{font-size:1.55rem;margin:3rem 0 .8rem;padding-bottom:.45rem;border-bottom:2px solid var(--line)}
 h3{font-size:1.2rem;margin:2rem 0 .5rem;color:var(--acc);scroll-margin-top:80px}
 h4{font-size:1.02rem;margin:1.3rem 0 .4rem;scroll-margin-top:80px}
+h5{font-size:.97rem;margin:1.35rem 0 .35rem;color:var(--txt);scroll-margin-top:80px}
 p{margin:.55rem 0}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;
   background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
@@ -161,13 +162,15 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <a class="sub" href="#c2-mar">Marqueurs surnuméraires</a>
     <a class="sub" href="#c2-dup">Disomie uniparentale</a>
     <a href="#c2-struct">Anomalies de structure</a>
-    <a class="sub" href="#c2-del">Délétions</a>
-    <a class="sub" href="#c2-anneau">Anneau</a>
+    <a class="sub" href="#c2-un">A · Un seul chromosome</a>
+    <a class="sub" href="#c2-del">Délétion</a>
+    <a class="sub" href="#c2-dup2">Duplication</a>
     <a class="sub" href="#c2-inv">Inversion</a>
     <a class="sub" href="#c2-iso">Isochromosome</a>
-    <a class="sub" href="#c2-dup2">Duplication</a>
-    <a class="sub" href="#c2-rob">Translocation robertsonienne</a>
-    <a class="sub" href="#c2-t">Translocation réciproque</a>
+    <a class="sub" href="#c2-anneau">Anneau</a>
+    <a class="sub" href="#c2-deux">B · Deux chromosomes</a>
+    <a class="sub" href="#c2-rob">Robertsonienne</a>
+    <a class="sub" href="#c2-t">Réciproque</a>
     <a class="sub" href="#c2-ins">Insertion</a>
     <a href="#c2-part">Cas particuliers</a>
     <a href="#c2-cons">Les conséquences</a>
@@ -798,11 +801,140 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <h3 id="c2-struct">Les anomalies de structure</h3>
     <p>
       Une anomalie de structure naît d'une ou plusieurs <b>cassures</b> suivies d'une réparation incorrecte.
-      La règle de lecture : <b>compter les cassures</b> et se demander si le matériel est <b>conservé</b>
-      (équilibré) ou non.
+      Pour s'y retrouver, le cours les classe selon <b>un seul critère</b> : le <b>nombre de chromosomes
+      impliqués</b>.
+    </p>
+    <div class="formula">
+      <b>1 chromosome</b> touché <span class="c">→ remaniement intrachromosomique</span> &nbsp;|&nbsp;
+      <b>2 chromosomes</b> touchés <span class="c">→ remaniement interchromosomique</span>
+    </div>
+    <div class="note warn">
+      <div class="lbl">Attention — «&nbsp;un seul chromosome&nbsp;» a deux sens dans le cours</div>
+      <table style="margin:8px 0 0">
+        <thead><tr><th>On parle de…</th><th>«&nbsp;Un seul chromosome&nbsp;»</th><th>Le contraire</th></tr></thead>
+        <tbody>
+          <tr><td><b>Nombre</b></td><td><b>Aneuploïdie</b> : un chromosome entier en plus ou en moins (ex. <code>+21</code>, <code>45,X</code>)</td><td><b>Polyploïdie</b> : <b>tout le lot</b> est en cause (<code>3n</code>, <code>4n</code>)</td></tr>
+          <tr><td><b>Structure</b></td><td><b>Remaniement intrachromosomique</b> : les 5 anomalies de la partie A ci-dessous</td><td><b>Remaniement interchromosomique</b> : 2 chromosomes échangent (partie B)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 id="c2-un">A · Les anomalies qui touchent <u>un seul</u> chromosome</h4>
+    <div class="note ok">
+      <div class="lbl">L'idée directrice — à ne pas confondre</div>
+      <p style="margin-bottom:0">
+        <b>«&nbsp;Un seul chromosome&nbsp;» ne veut pas dire «&nbsp;une seule cassure&nbsp;».</b>
+        Le chromosome se casse <b>une ou deux fois</b>, puis se répare <b>sur lui-même</b> : aucun morceau ne
+        part vers un autre chromosome. Deux conséquences à retenir : ces remaniements sont le plus souvent
+        <b>déséquilibrés</b> (sauf l'inversion), et ils sont le plus souvent <b>de novo</b>.
+      </p>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <b>Délétion terminale</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome avec une cassure près de l'extrémité, le segment distal est perdu.">
+          <rect x="10" y="12" width="150" height="14" rx="7" fill="var(--acc)" opacity=".22" stroke="var(--acc)"/>
+          <rect x="164" y="12" width="66" height="14" rx="7" fill="none" stroke="var(--mut)" stroke-dasharray="3 3"/>
+          <line x1="161" y1="5" x2="161" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <circle cx="100" cy="19" r="3.4" fill="var(--acc)"/>
+          <text x="50" y="22" font-size="8" fill="var(--mut)" text-anchor="middle">p</text>
+          <text x="130" y="22" font-size="8" fill="var(--mut)" text-anchor="middle">q</text>
+          <text x="197" y="44" font-size="8.5" fill="var(--warn)" text-anchor="middle">perdu</text>
+        </svg>
+        <p style="margin-bottom:0"><b>1 cassure</b> → tout ce qui est distal disparaît. Ex. <code>del(5p)</code> (Cri du chat), <code>del(4p)</code> (Wolf-Hirschhorn).</p>
+      </div>
+
+      <div class="card">
+        <b>Délétion interstitielle</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome avec deux cassures, le segment du milieu est perdu et les extrémités se ressoudent.">
+          <rect x="10" y="12" width="92" height="14" rx="7" fill="var(--acc)" opacity=".22" stroke="var(--acc)"/>
+          <rect x="106" y="12" width="62" height="14" rx="7" fill="none" stroke="var(--mut)" stroke-dasharray="3 3"/>
+          <rect x="172" y="12" width="58" height="14" rx="7" fill="var(--acc)" opacity=".22" stroke="var(--acc)"/>
+          <line x1="103" y1="5" x2="103" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <line x1="171" y1="5" x2="171" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="137" y="44" font-size="8.5" fill="var(--warn)" text-anchor="middle">perdu</text>
+        </svg>
+        <p style="margin-bottom:0"><b>2 cassures</b> → le segment du milieu est perdu, les deux extrémités se soudent. Ex. <code>del(13)(q14)</code> (rétinoblastome).</p>
+      </div>
+
+      <div class="card">
+        <b>Duplication</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome dont un segment est présent en deux exemplaires.">
+          <rect x="10" y="12" width="220" height="14" rx="7" fill="var(--acc)" opacity=".22" stroke="var(--acc)"/>
+          <rect x="86" y="12" width="70" height="14" rx="4" fill="var(--acc2)" opacity=".5" stroke="var(--acc2)"/>
+          <line x1="86" y1="5" x2="86" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <line x1="156" y1="5" x2="156" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="121" y="44" font-size="8.5" fill="var(--acc2)" text-anchor="middle">× 2</text>
+        </svg>
+        <p style="margin-bottom:0">Le segment existe en <b>deux exemplaires</b> sur le même chromosome = <b>trisomie partielle</b> → déséquilibré par <b>excès</b>.</p>
+      </div>
+
+      <div class="card">
+        <b>Inversion</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome dont un segment est retourné sur 180 degrés, sans perte de matériel.">
+          <rect x="10" y="12" width="220" height="14" rx="7" fill="var(--acc)" opacity=".22" stroke="var(--acc)"/>
+          <rect x="86" y="12" width="70" height="14" rx="4" fill="var(--acc2)" opacity=".5" stroke="var(--acc2)"/>
+          <line x1="86" y1="5" x2="86" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <line x1="156" y1="5" x2="156" y2="33" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="121" y="44" font-size="8.5" fill="var(--acc2)" text-anchor="middle">⟲ 180° — rien de perdu</text>
+        </svg>
+        <p style="margin-bottom:0"><b>2 cassures</b>, segment retourné : la quantité de matériel ne change pas → <b>équilibré</b>. Péricentrique si le centromère est inclus.</p>
+      </div>
+
+      <div class="card">
+        <b>Isochromosome</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome à deux bras longs identiques et un seul centromère.">
+          <rect x="10" y="12" width="110" height="14" rx="7" fill="var(--acc2)" opacity=".45" stroke="var(--acc2)"/>
+          <rect x="124" y="12" width="106" height="14" rx="7" fill="var(--acc2)" opacity=".45" stroke="var(--acc2)"/>
+          <circle cx="122" cy="19" r="3.4" fill="var(--acc)"/>
+          <text x="65" y="22" font-size="8" fill="var(--mut)" text-anchor="middle">q</text>
+          <text x="180" y="22" font-size="8" fill="var(--mut)" text-anchor="middle">q</text>
+          <text x="120" y="44" font-size="8.5" fill="var(--warn)" text-anchor="middle">2 bras identiques → déséquilibré</text>
+        </svg>
+        <p style="margin-bottom:0">Accident de <b>division</b> (le centromère se sépare <b>transversalement</b> au lieu de longitudinalement) : perte d'un bras + duplication de l'autre. Ex. <code>i(Xq)</code> (Turner).</p>
+      </div>
+
+      <div class="card">
+        <b>Chromosome en anneau</b>
+        <svg viewBox="0 0 240 56" width="100%" height="56" role="img" aria-label="Chromosome refermé en anneau après deux cassures distales.">
+          <rect x="62" y="6" width="116" height="34" rx="17" fill="none" stroke="var(--acc2)" stroke-width="5"/>
+          <line x1="120" y1="1" x2="120" y2="11" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <line x1="120" y1="35" x2="120" y2="45" stroke="#e5534b" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="120" y="27" font-size="9" fill="var(--mut)" text-anchor="middle">r</text>
+        </svg>
+        <p style="margin-bottom:0"><b>2 cassures distales</b> (une sur chaque bras) puis <b>soudure des extrémités</b> : les télomères sont perdus → <b>déséquilibré</b> et <b>instable</b> (mosaïques).</p>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:var(--mut)">
+      Schéma : le <b>trait rouge en pointillés</b> est une cassure ; le <b>point violet</b> est le centromère ;
+      en <b>pointillés gris</b>, le matériel perdu. Pour l'anneau, les deux traits rouges marquent l'endroit où
+      les extrémités cassées se sont soudées.
     </p>
 
-    <h4 id="c2-del">1) La délétion (<code>del</code>)</h4>
+    <h5 style="margin-top:1.6rem">Le tableau qui résume la partie A</h5>
+    <table>
+      <thead><tr><th>Remaniement</th><th>Cassures</th><th>Matériel</th><th>Équilibré ?</th><th>Signature / exemple</th></tr></thead>
+      <tbody>
+        <tr><td><b>Délétion terminale</b></td><td><b>1</b></td><td><b>perte</b> distale</td><td>non</td><td><code>del(5p)</code>, <code>del(4p)</code></td></tr>
+        <tr><td><b>Délétion interstitielle</b></td><td><b>2</b></td><td><b>perte</b> médiane</td><td>non</td><td><code>del(13)(q14)</code></td></tr>
+        <tr><td><b>Duplication</b></td><td><b>2</b> (ou crossing-over inégal)</td><td><b>gain</b></td><td>non</td><td>trisomie partielle</td></tr>
+        <tr><td><b>Inversion paracentrique</b></td><td><b>2</b>, même bras</td><td>inchangé</td><td><b>oui</b></td><td>centromère non inclus — <code>inv(9)</code></td></tr>
+        <tr><td><b>Inversion péricentrique</b></td><td><b>2</b>, de part et d'autre du CEN</td><td>inchangé</td><td><b>oui</b></td><td>centromère inclus, forme modifiée</td></tr>
+        <tr><td><b>Isochromosome</b></td><td>accident de <b>division</b></td><td>perte d'un bras + duplication de l'autre</td><td>non</td><td><code>i(Xq)</code> (Turner)</td></tr>
+        <tr><td><b>Anneau</b></td><td><b>2</b>, distales</td><td>perte des <b>télomères</b></td><td>non (+ instable)</td><td>mosaïques fréquentes</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <div class="lbl">Le réflexe qui fait gagner du temps</div>
+      <p style="margin-bottom:0">
+        Une seule question suffit à classer : <b>«&nbsp;est-ce que la quantité de matériel change ?&nbsp;»</b>
+        Si oui → <b>déséquilibré</b> (délétion, duplication, isochromosome, anneau). Si non → <b>équilibré</b>
+        (inversion). Autrement dit, dans la partie A, <b>une seule anomalie est équilibrée : l'inversion</b>.
+      </p>
+    </div>
+
+    <h5 id="c2-del">A1 · La délétion (<code>del</code>)</h5>
     <p>
       Perte d'un segment : c'est une anomalie <b>toujours déséquilibrée</b>. Elle est <b>de novo dans 85 à 90&nbsp;%</b>
       des cas (les formes héritées sont rares, car la transmission est souvent létale ou sévère).
@@ -815,14 +947,14 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </tbody>
     </table>
 
-    <h4 id="c2-anneau">2) Le chromosome en anneau (<code>r</code>)</h4>
+    <h5 id="c2-dup2">A2 · La duplication (<code>dup</code>)</h5>
     <p>
-      <b>Deux cassures distales</b>, une sur chaque bras : les extrémités cassées se rejoignent et forment un
-      anneau. Les segments télomériques sont <b>perdus</b> → l'anneau est <b>déséquilibré</b>. Il est en outre
-      <b>instable</b> à la mitose (double anneau, perte), ce qui explique la fréquence des mosaïques.
+      Un segment est présent en <b>deux exemplaires</b> sur le même chromosome : déséquilibre par <b>excès</b>,
+      qui correspond à une <b>trisomie partielle</b> («&nbsp;trisomie pure&nbsp;» du segment). Le pronostic
+      dépend de la taille et du contenu en gènes du segment dupliqué.
     </p>
 
-    <h4 id="c2-inv">3) L'inversion (<code>inv</code>)</h4>
+    <h5 id="c2-inv">A3 · L'inversion (<code>inv</code>)</h5>
     <p>
       Un segment est retourné sur <b>180°</b> : aucune perte de matériel, l'anomalie est <b>équilibrée</b>.
       Deux types, selon la position des cassures :
@@ -843,7 +975,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </p>
     </div>
 
-    <h4 id="c2-iso">4) L'isochromosome (<code>i</code>)</h4>
+    <h5 id="c2-iso">A4 · L'isochromosome (<code>i</code>)</h5>
     <p>
       Chromosome constitué de <b>deux bras identiques</b> (deux <code>q</code>, ou deux <code>p</code>) et d'un
       seul centromère : il y a donc <b>perte d'un bras et duplication de l'autre</b>. Exemple classique :
@@ -857,14 +989,29 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </tbody>
     </table>
 
-    <h4 id="c2-dup2">5) La duplication (<code>dup</code>)</h4>
+    <h5 id="c2-anneau">A5 · Le chromosome en anneau (<code>r</code>)</h5>
     <p>
-      Un segment est présent en <b>deux exemplaires</b> sur le même chromosome : déséquilibre par <b>excès</b>,
-      qui correspond à une <b>trisomie partielle</b> («&nbsp;trisomie pure&nbsp;» du segment). Le pronostic
-      dépend de la taille et du contenu en gènes du segment dupliqué.
+      <b>Deux cassures distales</b>, une sur chaque bras : les extrémités cassées se rejoignent et forment un
+      anneau. Les segments télomériques sont <b>perdus</b> → l'anneau est <b>déséquilibré</b>. Il est en outre
+      <b>instable</b> à la mitose (double anneau, perte), ce qui explique la fréquence des mosaïques.
     </p>
 
-    <h4 id="c2-rob">6) La translocation robertsonienne (<code>rob</code>)</h4>
+    <h4 id="c2-deux">B · Les anomalies qui touchent <u>deux</u> chromosomes</h4>
+    <p>
+      Ici, le matériel <b>change de chromosome</b> : rien n'est simplement perdu ou retourné sur place. Ces
+      remaniements sont le plus souvent <b>équilibrés</b> chez le porteur — d'où le piège classique :
+      <b>un patient phénotypiquement normal, mais à risque pour sa descendance</b>.
+    </p>
+    <table>
+      <thead><tr><th>Remaniement</th><th>Chromosomes</th><th>Nombre final</th><th>Équilibré ?</th><th>Mécanisme méiotique</th></tr></thead>
+      <tbody>
+        <tr><td><b>Robertsonienne</b> <code>rob</code></td><td>2 <b>acrocentriques</b> (13, 14, 15, 21, 22)</td><td><b>45</b></td><td>oui chez le porteur</td><td><b>trivalent</b>, ségrégation 2:1 → 6 gamètes</td></tr>
+        <tr><td><b>Réciproque</b> <code>t</code></td><td>2 <b>non homologues</b></td><td><b>46</b></td><td>oui chez le porteur</td><td><b>quadrivalent</b>, alterne / adjacente 1</td></tr>
+        <tr><td><b>Insertion</b> <code>ins</code></td><td>2 (donneur + receveur)</td><td><b>46</b></td><td>oui chez le porteur</td><td><b>3 cassures</b> : 2 sur le donneur, 1 sur le receveur</td></tr>
+      </tbody>
+    </table>
+
+    <h5 id="c2-rob">B1 · La translocation robertsonienne (<code>rob</code>)</h5>
     <p>
       Fusion <b>centromérique</b> de deux chromosomes <b>acrocentriques</b> (<b>13, 14, 15, 21, 22</b>) : les
       deux bras longs se soudent, les bras courts (avec les satellites) sont perdus — sans conséquence, car
@@ -891,7 +1038,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </p>
     </div>
 
-    <h4 id="c2-t">7) La translocation réciproque (<code>t</code>)</h4>
+    <h5 id="c2-t">B2 · La translocation réciproque (<code>t</code>)</h5>
     <p>
       Échange de segments entre <b>deux chromosomes non homologues</b>, avec <b>46 chromosomes</b> conservés :
       l'anomalie est <b>équilibrée</b>. En méiose, l'appariement forme un <b>quadrivalent</b> ; la ségrégation
@@ -903,7 +1050,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       <li>Exemple de translocation <b>acquise</b>, pathologique : <b><code>t(8;14)</code></b> du <b>lymphome de Burkitt</b> — le gène <i>MYC</i> passe sous le contrôle du promoteur des immunoglobulines.</li>
     </ul>
 
-    <h4 id="c2-ins">8) L'insertion (<code>ins</code>)</h4>
+    <h5 id="c2-ins">B3 · L'insertion (<code>ins</code>)</h5>
     <p>
       Un segment d'un chromosome est inséré dans un autre. Elle nécessite <b>trois cassures</b> : deux sur le
       chromosome donneur (pour en extraire le segment) et une sur le chromosome receveur. C'est une anomalie
@@ -1466,7 +1613,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </div>
     </div>
 
-    <h2 id="quiz">🎯 Auto-évaluation — 12 questions</h2>
+    <h2 id="quiz">🎯 Auto-évaluation — 14 questions</h2>
     <p>Format QCM, comme l'épreuve. Réponds, la correction s'affiche immédiatement.</p>
     <div id="quiz-root"></div>
     <p style="margin-top:14px">Score : <span id="quiz-score">0 / 0</span>
@@ -1618,6 +1765,10 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       w:"Deux acrocentriques fusionnés = un chromosome de moins : 45, phénotype normal. La ségrégation 2:1 en méiose produit 6 types de gamètes, dont des déséquilibrés — cours 2." },
     { q:"Chez un couple Aa × Aa (maladie autosomique récessive), la probabilité qu'un enfant sain soit conducteur est…", o:["1/4","1/2","2/3","3/4"], a:2,
       w:"Parmi les enfants sains (3/4), 2/3 sont conducteurs (Aa). C'est le calcul le plus souvent raté — cours 3." },
+    { q:"Parmi les remaniements ne touchant qu'UN seul chromosome, lequel est équilibré ?", o:["la délétion","l'inversion","l'isochromosome","le chromosome en anneau"], a:1,
+      w:"L'inversion ne fait que retourner un segment sur 180° : aucune perte ni gain de matériel. Délétion, isochromosome et anneau sont déséquilibrés — cours 2, partie A." },
+    { q:"Le chromosome en anneau (r) résulte de…", o:["deux cassures distales sur le même chromosome, suivies de la soudure des extrémités","une cassure unique au niveau du centromère","un échange de segments entre deux acrocentriques","une division transversale du centromère"], a:0,
+      w:"2 cassures distales + fusion des extrémités = anneau, avec perte des télomères (déséquilibré) et instabilité mitotique. La division transversale du centromère donne un isochromosome ; l'échange entre deux acrocentriques est une robertsonienne — cours 2." },
     { q:"Un homme atteint d'une maladie récessive liée à l'X transmet…", o:["la maladie à 50 % de ses fils","la maladie à 100 % de ses filles conductrices et 0 % de ses fils malades","la maladie à 50 % de ses filles","la maladie à tous ses enfants"], a:1,
       w:"Il donne son X à toutes ses filles (conductrices, 100 %) et son Y à tous ses fils (0 % malades) : jamais de transmission père → fils — cours 3." }
   ];
