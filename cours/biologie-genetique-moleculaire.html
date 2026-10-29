@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Génétique humaine expliquée en détail — Pr. H. Dehbi | FMDC 1A</title>
-<meta name="description" content="Cours de Biologie génétique et moléculaire (Pr. H. Dehbi, FMDC Casablanca) expliqué section par section : cytogénétique conventionnelle (chromosome métaphasique, caryotype, bandes, ISCN), cytogénétique moléculaire (FISH, M-FISH, ACPA), anomalies chromosomiques de nombre et de structure, hérédité mendélienne (AD, AR, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle).">
+<title>Biologie génétique et moléculaire — module complet expliqué | FMDC 1A</title>
+<meta name="description" content="Module Biologie génétique et moléculaire (FMDC Casablanca) expliqué section par section, d'après les supports officiels du dossier : biologie moléculaire et génie génétique (Pr. T. Rochd — acides nucléiques, réplication, mutations et réparation, transcription et maturation, traduction, enzymes de restriction, vecteurs, sondes, clonage, diagnostic, thérapie génique) et génétique (Pr. H. Dehbi — cytogénétique, anomalies chromosomiques, hérédité mendélienne et non mendélienne).">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
 <style>
 :root{
@@ -122,10 +122,10 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
 <header class="top">
   <div class="top-in">
     <a class="btn" href="../index.html">← Portail FMDC 1A</a>
-    <span class="crumb"><b>Biologie cellulaire, moléculaire et génétique</b> › Biologie génétique et moléculaire › Pr. Dehbi</span>
+    <span class="crumb"><b>Biologie cellulaire, moléculaire et génétique</b> › Pr. Rochd + Pr. Dehbi</span>
     <span class="spacer"></span>
     <button class="btn" id="theme" title="Thème clair / sombre">🌗</button>
-    <a class="btn primary" href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">📁 Dossier Drive</a>
+    <a class="btn primary" href="https://drive.google.com/drive/folders/1ZjZwJJNeSi5f_Gc8uNXp44vQfFiyO1yP" target="_blank" rel="noopener">📁 Dossier Drive</a>
   </div>
 </header>
 
@@ -134,8 +134,19 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
   <nav class="toc" id="toc">
     <div class="t">Avant de commencer</div>
     <a href="#apercu">Vue d'ensemble</a>
-    <a href="#methode">Comment lire cette page</a>
-    <div class="t">Cours 1 — Cytogénétique</div>
+    <a href="#plan">Le plan du module</a>
+    <div class="t">Partie 1 — Pr. Rochd</div>
+    <a href="#r-acides">I. Les acides nucléiques</a>
+    <a class="sub" href="#r-nucleo">Nucléotide</a>
+    <a class="sub" href="#r-adn">L'ADN</a>
+    <a class="sub" href="#r-arn">L'ARN</a>
+    <a href="#r-rep">II. La réplication</a>
+    <a href="#r-mut">III. Mutations &amp; réparation</a>
+    <a href="#r-trsc">IV. La transcription</a>
+    <a href="#r-trad">V. La traduction</a>
+    <a href="#r-genie">VI. Le génie génétique</a>
+    <div class="t">Partie 2 — Pr. Dehbi</div>
+<a href="#c1-hist" style="font-weight:700;color:var(--txt)">Cours 1 — Cytogénétique</a>
     <a href="#c1-hist">Repères historiques</a>
     <a href="#c1-chr">Le chromosome métaphasique</a>
     <a class="sub" href="#c1-centro">Centromère</a>
@@ -152,7 +163,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <a class="sub" href="#c1-mfish">M-FISH / SKY</a>
     <a href="#c1-acpa">ACPA / array-CGH</a>
     <a href="#c1-comp">Tableau comparatif</a>
-    <div class="t">Cours 2 — Anomalies</div>
+    <a href="#c2-def" style="font-weight:700;color:var(--txt)">Cours 2 — Anomalies</a>
     <a href="#c2-def">Définitions</a>
     <a href="#c2-mos">Mosaïque vs chimère</a>
     <a href="#c2-freq">Fréquences</a>
@@ -174,7 +185,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <a class="sub" href="#c2-ins">Insertion</a>
     <a href="#c2-part">Cas particuliers</a>
     <a href="#c2-cons">Les conséquences</a>
-    <div class="t">Cours 3 — Hérédité</div>
+    <a href="#c3-voc" style="font-weight:700;color:var(--txt)">Cours 3 — Hérédité</a>
     <a href="#c3-voc">Vocabulaire</a>
     <a href="#c3-ad">Transmission autosomique dominante</a>
     <a class="sub" href="#c3-ad7">Les 7 particularités</a>
@@ -187,79 +198,684 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <a href="#c3-arbre">Lire un arbre généalogique</a>
     <div class="t">Révision</div>
     <a href="#chiffres">Les chiffres à retenir</a>
-    <a href="#pieges">Les pièges classiques</a>
     <a href="#quiz">Auto-évaluation (QCM)</a>
     <a href="#reviser">Plan de révision</a>
-    <a href="#docs">Les documents du dossier</a>
+    <a href="#docs">Les 10 documents</a>
   </nav>
 
   <main>
 
     <section class="hero" id="apercu">
       <div class="kick">Module Biologie cellulaire, moléculaire et génétique · S1</div>
-      <h1>Génétique humaine, expliquée en détail</h1>
+      <h1>Biologie génétique et moléculaire, expliquée section par section</h1>
       <p class="sub">
-        <b>Pr. H. Dehbi</b> — 1<sup>re</sup> année, Faculté de Médecine Dentaire de Casablanca
-        (Université Hassan&nbsp;II), année universitaire 2023-2024.
-        Cette page suit <b>le plan des trois cours officiels</b> : la cytogénétique (comment on voit et
-        nomme un chromosome), les anomalies chromosomiques (ce qui se casse et ce que ça donne), puis
-        l'hérédité (comment une mutation se transmet dans une famille). Chaque notion est expliquée, et
-        chaque piège de QCM est signalé.
+        Cette page couvre <b>tout le dossier Drive du module</b>, c'est-à-dire les deux enseignants qui se
+        partagent le programme : <b>Pr. T. Rochd</b> pour la biologie moléculaire et le génie génétique
+        (polycopié de 28 pages), et <b>Pr. H. Dehbi</b> pour la génétique (trois cours).
+        Pour chaque partie, le plan suivi est <b>celui du support officiel</b> : les mêmes titres, le même ordre,
+        les mêmes exemples, avec les pages en référence.
       </p>
       <div class="stats">
-        <div class="stat"><b>3</b><span>cours officiels</span></div>
-        <div class="stat"><b>8 h</b><span>de cours magistral</span></div>
-        <div class="stat"><b>46</b><span>chromosomes humains</span></div>
+        <div class="stat"><b>2</b><span>enseignants</span></div>
+        <div class="stat"><b>4</b><span>supports de cours</span></div>
+        <div class="stat"><b>10</b><span>documents au dossier</span></div>
         <div class="stat"><b>QCM</b><span>format d'épreuve</span></div>
       </div>
       <div class="cta">
-        <a class="btn primary" href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">📁 Dossier Drive complet</a>
-        <a class="btn" href="#c1-chr">Cours 1 · Cytogénétique</a>
-        <a class="btn" href="#c2-struct">Cours 2 · Anomalies</a>
-        <a class="btn" href="#c3-ad">Cours 3 · Hérédité</a>
+        <a class="btn primary" href="https://drive.google.com/drive/folders/1ZjZwJJNeSi5f_Gc8uNXp44vQfFiyO1yP" target="_blank" rel="noopener">📁 Dossier Drive du module</a>
+        <a class="btn" href="#p1">Partie 1 · Pr. Rochd</a>
+        <a class="btn" href="#p2">Partie 2 · Pr. Dehbi</a>
         <a class="btn" href="#quiz">🎯 Teste-toi</a>
       </div>
     </section>
 
     <div class="note">
-      <div class="lbl">Comment cette page a été construite</div>
+      <div class="lbl">Sources de cette page</div>
       <p style="margin-bottom:0">
-        Plan, chiffres, définitions et exemples suivent les <b>trois PDF officiels du cours</b>
-        (<em>1 er cours</em>, <em>2ème cours</em>, <em>3ème cours</em>), recoupés avec le résumé
-        <em>GENETIQUE FALGHASS</em>. Les citations en retrait sont des <b>points de cours reformulés</b>
-        à partir de ces supports — pas des recopies littérales. Les renvois «&nbsp;cours&nbsp;1/2/3&nbsp;»
-        indiquent le support d'origine, pas une pagination : les PDF sont des diaporamas, la pagination
-        varie d'un export à l'autre.
+        Le contenu suit <b>exclusivement les documents du dossier</b> :
+        le polycopié <em>Biologie moléculaire et génie génétique</em> du Pr. Rochd (texte intégralement extrait,
+        28 pages, avec renvois de pages «&nbsp;p.&nbsp;x&nbsp;»),
+        ses deux figures (<em>ARNm mature</em>, <em>De l'ARN au polypeptide</em>),
+        et les trois cours du Pr. Dehbi (renvois «&nbsp;cours 1/2/3&nbsp;», les diaporamas n'étant pas paginables).
+        Aucune notion extérieure à ces supports n'est ajoutée.
       </p>
     </div>
 
-    <h2 id="methode">Comment lire cette page</h2>
+    <h2 id="plan">Le plan du module</h2>
+    <table>
+      <thead><tr><th>Partie</th><th>Enseignant</th><th>Support du dossier</th><th>Contenu</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Partie 1</b></td><td><b>Pr. T. Rochd</b></td>
+          <td><em>Biologie Moléculaire - Génie Génétique.pdf</em> — 28 p.</td>
+          <td>Chapitre 1 : acides nucléiques, réplication, mutations et réparation, transcription et maturation, traduction (p. 4-21).<br>
+              Chapitre 2 : génie génétique (p. 22-28).</td>
+        </tr>
+        <tr>
+          <td><b>Partie 2</b></td><td><b>Pr. H. Dehbi</b></td>
+          <td><em>1 er cours.pdf</em>, <em>2ème cours.pdf</em>, <em>3ème cours.pdf</em></td>
+          <td>Cours 1 : cytogénétique conventionnelle et moléculaire.<br>
+              Cours 2 : anomalies chromosomiques.<br>
+              Cours 3 : hérédité mendélienne et non mendélienne.</td>
+        </tr>
+        <tr>
+          <td><b>Annales</b></td><td>Rochd + Dehbi</td>
+          <td><em>qcm rochd+dehbi_231222_105008.pdf</em></td>
+          <td>Session QCM du 23-12-2022 — le format réel de l'épreuve.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note ok">
+      <div class="lbl">Le fil logique des deux parties</div>
+      <p style="margin-bottom:0">
+        La partie 1 part de la <b>molécule</b> (ADN → ARN → protéine) ; la partie 2 part du <b>chromosome</b>
+        et remonte jusqu'à la <b>famille</b>. Les deux se rejoignent sur un point : la <b>mutation</b>. Le Pr. Rochd
+        en décrit les mécanismes moléculaires (substitution, insertion, délétion, effets sur la protéine), le
+        Pr. Dehbi en décrit les conséquences chromosomiques et héréditaires.
+      </p>
+    </div>
+
+
+    <!-- ============================================================ -->
+    <!-- ==========  PARTIE 1 — PR. ROCHD (biologie moléculaire) ==== -->
+    <!-- ============================================================ -->
+
+    <h2 id="p1">Partie 1 — Biologie moléculaire et génie génétique <span class="page">(Pr. Rochd)</span></h2>
+
     <p>
-      Les trois cours forment une seule chaîne logique, et c'est cette chaîne qu'il faut réciter le jour du QCM :
+      Le support est le <em>Polycopie de Biologie moléculaire et génie génétique</em> du
+      <b>Pr. T. Rochd</b>, 28 pages, premier semestre. Il comporte <b>deux chapitres</b> : la biologie
+      moléculaire proprement dite (p. 4 à 21) et le génie génétique (p. 22 à 28).
+    </p>
+    <div class="note ok">
+      <div class="lbl">L'enchaînement du polycopié</div>
+      <p style="margin-bottom:0">
+        <b>ADN → réplication → mutation et réparation → transcription → traduction → génie génétique.</b>
+        Chaque partie répond à une question : <i>de quoi est fait</i> l'ADN (I), <i>comment il se copie</i> (II),
+        <i>comment il se modifie et se répare</i> (III), <i>comment il est lu</i> (IV), <i>comment il devient
+        protéine</i> (V), et <i>comment on le manipule en laboratoire</i> (VI).
+      </p>
+    </div>
+
+    <h3 id="r-acides">I. Les acides nucléiques <span class="page">(p. 4-8)</span></h3>
+
+    <p>
+      La biologie moléculaire est définie par le polycopié comme la discipline consacrée à l'étude des
+      <b>molécules porteuses du message héréditaire</b> — ADN et ARN —, de leur structure, de leur synthèse et
+      de leurs altérations.
+    </p>
+
+    <h4 id="r-nucleo">I-1 et I-2-1 · Le nucléotide et les acides nucléiques <span class="page">(p. 4)</span></h4>
+    <p>
+      Les acides nucléiques sont des <b>enchaînements de nucléotides</b> (polynucléotides) qui assurent le
+      <b>stockage, le maintien et le transfert</b> de l'information génétique.
+    </p>
+    <div class="formula">
+      nucléotide = <b>sucre</b> + <b>base</b> + <b>groupement phosphate</b> &nbsp;
+      <span class="c">(nucléoside tri-phosphate : P–P–P + sucre + base)</span>
+    </div>
+    <table>
+      <thead><tr><th>Acide nucléique</th><th>Les 4 bases</th><th>Le sucre</th></tr></thead>
+      <tbody>
+        <tr><td><b>ADN</b></td><td>Adénine (A) · Thymine (T) · Guanine (G) · Cytosine (C)</td><td>Désoxyribose</td></tr>
+        <tr><td><b>ARN</b></td><td>Adénine (A) · <b>Uracile (U)</b> · Guanine (G) · Cytosine (C)</td><td>Ribose</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:0">
+      <b>C'est la succession des bases</b> — donc l'ordre des nucléotides — <b>qui constitue le message
+      génétique</b>.
+    </p>
+
+    <h4 id="r-adn">I-2-2 · L'ADN <span class="page">(p. 5-7)</span></h4>
+    <p>
+      L'ADN est la <b>molécule support de l'information génétique héréditaire</b>. Il forme des pelotes
+      localisées dans le <b>noyau</b> et, pour une partie, dans les <b>mitochondries</b>.
+    </p>
+    <table>
+      <thead><tr><th>Localisation</th><th>Forme de l'ADN</th></tr></thead>
+      <tbody>
+        <tr><td><b>Noyau</b> (eucaryotes)</td><td><b>Linéaire</b>, scindé en plusieurs molécules qui forment les <b>chromosomes</b> ; plus ou moins compacté et <b>associé aux histones</b>.</td></tr>
+        <tr><td><b>Mitochondries et chloroplastes</b></td><td>Formes variées : <b>circulaire</b>, linéaire, ou encore ramifié.</td></tr>
+      </tbody>
+    </table>
+    <p>
+      La structure originale de l'ADN est celle de <b>deux brins complémentaires, antiparallèles, enroulés en
+      hélice</b>. Les bases s'hybrident entre elles : <b>A avec T</b> et <b>C avec G</b> — on dit qu'elles sont
+      complémentaires.
+    </p>
+
+    <h4>La fonction de l'ADN <span class="page">(p. 6)</span></h4>
+    <div class="grid3">
+      <div class="stat"><b>3,3 Md</b><span>paires de bases (ADN humain)</span></div>
+      <div class="stat"><b>10 %</b><span>de séquences codantes</span></div>
+      <div class="stat"><b>1,5 %</b><span>codent pour la synthèse protéique</span></div>
+    </div>
+    <p>Le polycopié énumère <b>trois fonctions</b> :</p>
+    <ol>
+      <li><b>Stocker l'information génétique</b> — contenue dans l'enchaînement <b>non aléatoire</b> des nucléotides.</li>
+      <li><b>Transmettre cette information</b> de génération en génération : c'est le support de l'<b>hérédité</b>.</li>
+      <li><b>Pouvoir être modifié</b> (= mutation), ce qui aboutit à la <b>diversité des individus</b> et à une <b>évolution possible des espèces</b>.</li>
+    </ol>
+
+    <h4>Les différents types d'ADN <span class="page">(p. 6-7)</span></h4>
+    <table>
+      <thead><tr><th>Terme</th><th>Définition du polycopié</th></tr></thead>
+      <tbody>
+        <tr><td><b>ADN polymérase</b></td><td>Enzyme catalysant la formation d'ADN à partir des nucléotides.</td></tr>
+        <tr><td><b>ADN répétitif</b></td><td>Séquences d'ADN identiques qui se répètent dans le génome — <b>ADN non codant</b>.</td></tr>
+        <tr><td><b>ADN circulaire</b></td><td>ADN formant une molécule circulaire.</td></tr>
+        <tr><td><b>ADNr</b></td><td>ADN codant pour les <b>ARN ribosomiques</b>.</td></tr>
+        <tr><td><b>ADNmt</b></td><td>ADN constituant le <b>génome des mitochondries</b>.</td></tr>
+      </tbody>
+    </table>
+
+    <h4 id="r-arn">I-2-3 · L'ARN <span class="page">(p. 7-8)</span></h4>
+    <p>
+      L'ARN est un polynucléotide <b>similaire à l'ADN</b>, aussi bien structurellement que fonctionnellement
+      (matérialisation et traitement de l'information génétique). Le polycopié retient <b>4 différences</b> :
+    </p>
+    <ol>
+      <li>L'ARN est <b>toujours simple brin</b>, sauf chez certains procaryotes.</li>
+      <li>Le sucre est un <b>ribose</b> et non un désoxyribose.</li>
+      <li>La base complémentaire de l'adénine est l'<b>uracile</b> et non la thymine.</li>
+      <li>L'ARN est <b>court</b> : <b>50 à 5 000 nucléotides</b>, et non des millions comme l'ADN.</li>
+    </ol>
+    <p>Dans la cellule eucaryote, il existe <b>5 familles d'ARN</b>, chacune avec une fonction :</p>
+    <table>
+      <thead><tr><th>ARN</th><th>Fonction</th></tr></thead>
+      <tbody>
+        <tr><td><b>ARNr</b> — ribosomique</td><td>Participe, avec les protéines ribosomiques, à la <b>formation des ribosomes</b>.</td></tr>
+        <tr><td><b>ARNt</b> — de transfert</td><td><b>Transfère les acides aminés</b> vers le lieu de synthèse des protéines.</td></tr>
+        <tr><td><b>ARNm</b> — messager</td><td><b>Porte l'information génétique</b> de l'ADN vers le lieu de synthèse des protéines.</td></tr>
+        <tr><td><b>ARNsn</b> — small nuclear</td><td>Présent <b>dans le noyau uniquement</b> ; participe à la <b>régulation post-transcriptionnelle</b>.</td></tr>
+        <tr><td><b>ARN polymérase</b></td><td>Enzyme catalysant la <b>synthèse d'ARN</b>.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="r-rep">II. La réplication <span class="page">(p. 8-11)</span></h3>
+
+    <p>
+      La réplication est un <b>phénomène physiologique</b> au cours duquel l'ADN est synthétisé grâce à l'ADN
+      polymérase : l'ADN est ainsi <b>dupliqué</b> (doublé). Elle a lieu pendant la <b>phase S</b> du cycle
+      cellulaire.
+    </p>
+
+    <h4>II-2 · Les deux caractéristiques <span class="page">(p. 8)</span></h4>
+    <div class="grid2">
+      <div class="card">
+        <b>Semi-conservatrice</b>
+        À l'issue de la réplication, chacune des 2 molécules d'ADN formées est constituée d'un <b>brin parental</b>
+        et d'un <b>brin néoformé</b>.
+      </div>
+      <div class="card">
+        <b>Bidirectionnelle</b>
+        Elle débute à partir d'une <b>origine de réplication</b> et progresse <b>dans les 2 sens</b> à partir de ce
+        point, créant ainsi une <b>fourche de réplication</b>.
+      </div>
+    </div>
+
+    <h4>II-3 · Les outils de la réplication <span class="page">(p. 8-9)</span></h4>
+    <p>La réplication nécessite <b>une matrice d'ADN</b> (le brin parental), <b>des bases</b> puriques et pyrimidiques (A, C, G, T, U) et <b>des enzymes</b> :</p>
+    <table>
+      <thead><tr><th>Acteur</th><th>Rôle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hélicase</b></td><td>Permet la <b>séparation des 2 brins</b>.</td></tr>
+        <tr><td><b>Protéines de liaison</b></td><td>Empêchent les 2 brins de <b>se recoller</b>.</td></tr>
+        <tr><td><b>ARN polymérase / primase</b></td><td>Fournit les <b>amorces ARN</b>.</td></tr>
+        <tr><td><b>ADN polymérase</b></td><td>Synthétise le nouveau brin.</td></tr>
+        <tr><td><b>Topo-isomérase</b></td><td><b>Coupe un brin</b> pour permettre le déroulement.</td></tr>
+        <tr><td><b>ADN ligase</b></td><td><b>Ressoude</b> le brin d'ADN (rétablit les liaisons phosphodiesters).</td></tr>
+        <tr><td><b>RNase H</b></td><td><b>Enlève les amorces</b> ARN.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>II-4 · Les étapes <span class="page">(p. 9-11)</span></h4>
+    <h5 style="margin-top:1rem">1) L'initiation <span class="page">(p. 9)</span></h5>
+    <p>
+      Elle a lieu à l'<b>origine de réplication</b>. Il existe <b>plusieurs origines</b> de réplication, et des
+      protéines capables de les <b>reconnaître</b> et d'initier la réplication. La <b>fourche de réplication</b>
+      est créée par les <b>hélicases</b>, qui brisent les <b>liaisons hydrogène</b> entre les 2 brins ; d'autres
+      protéines (dites <b>de liaison</b>) se fixent sur l'ADN simple brin ainsi formé et empêchent la reformation
+      de la double hélice.
+    </p>
+
+    <h5>2) L'élongation ou synthèse d'ADN <span class="page">(p. 9-10)</span></h5>
+    <p>
+      L'élongation progresse toujours dans le sens <b>5' → 3'</b> pour le brin en création : c'est l'ADN
+      polymérase qui ajoute, à l'<b>extrémité 3'</b> de la molécule en formation, des désoxyribonucléotides.
+      Comme les deux brins sont <b>antiparallèles</b>, les mécanismes diffèrent selon le brin :
+    </p>
+    <table>
+      <thead><tr><th></th><th>Brin direct</th><th>Brin indirect</th></tr></thead>
+      <tbody>
+        <tr><td><b>Définition</b></td><td>Le brin complémentaire du brin parental orienté <b>3' → 5'</b></td><td>Le brin complémentaire du brin parental orienté <b>5' → 3'</b></td></tr>
+        <tr><td><b>Synthèse</b></td><td><b>Continue</b>, dans le sens 5' → 3'</td><td><b>Discontinue</b>, sous forme de <b>fragments d'Okazaki</b>, dans le sens 5' → 3'</td></tr>
+      </tbody>
+    </table>
+    <p>
+      L'ADN polymérase a besoin d'une <b>amorce</b> : c'est l'ARN polymérase (primase) qui la fournit. Il y a donc,
+      sur le brin retardé (fragments d'Okazaki), des <b>jonctions ARN-ADN</b>, ensuite éliminées par une
+      <b>RNase H</b> ; d'autres ADN polymérases comblent les lacunes laissées par l'ARN.
+    </p>
+    <p>
+      Sur l'ADN double brin précédant l'hélicase se fixe une <b>topo-isomérase I</b> : elle évite les
+      <b>torsions</b> entraînées par l'ouverture de la double chaîne (comme une ficelle dont on écarte les deux
+      brins), en coupant un des brins puis en le ressoudant après déroulement.
+    </p>
+
+    <h5>3) La terminaison <span class="page">(p. 11)</span></h5>
+    <p style="margin-bottom:0">
+      Cette phase correspond à l'<b>arrêt de la réplication</b> lorsque <b>deux fourches de réplication se
+      rencontrent</b>.
+    </p>
+
+    <h3 id="r-mut">III. Mutations, système de sauvegarde et réparation <span class="page">(p. 11-14)</span></h3>
+
+    <p>
+      Réplication et réparation sont <b>deux processus strictement régulés</b> : ils maintiennent l'intégrité de
+      l'information génétique, nécessaire à l'activité cellulaire normale et à la mitose. Le polycopié note que
+      <b>beaucoup de cancers sont caractérisés par une instabilité génétique</b>.
+    </p>
+
+    <h4>III-1-1 · Définition <span class="page">(p. 11)</span></h4>
+    <p>
+      Une <b>mutation</b> est une <b>modification irréversible de la séquence d'un génome</b> (ADN ou ARN). Elle
+      peut être :
+    </p>
+    <ul>
+      <li><b>spontanée</b>, lors de la réplication ;</li>
+      <li>due à l'exposition à des <b>agents mutagènes</b> : radiations (UV, X, γ), agents chimiques (pesticides) ;</li>
+      <li>due à une <b>modification du système de réparation</b> de l'ADN, qui cesse alors de corriger les erreurs.</li>
+    </ul>
+    <p>
+      Chez les animaux pluricellulaires, les mutations de la <b>lignée germinale</b> peuvent être transmises à la
+      descendance, <b>contrairement aux mutations somatiques</b>. Un défaut de l'ADN peut engendrer des maladies
+      dites «&nbsp;héréditaires&nbsp;», comme le diabète ou l'alzheimer.
+    </p>
+    <div class="formula">probabilité de mutation = <b>10<sup>-9</sup> à 10<sup>-10</sup></b></div>
+
+    <h4>III-1-2-1 · Les différents types de mutations <span class="page">(p. 11-12)</span></h4>
+    <table>
+      <thead><tr><th>Type</th><th>Définition</th></tr></thead>
+      <tbody>
+        <tr><td><b>Substitution</b></td><td><b>Remplacement</b> d'une base par une autre.</td></tr>
+        <tr><td><b>Délétion</b></td><td><b>Perte</b> d'une base.</td></tr>
+        <tr><td><b>Insertion</b></td><td><b>Ajout</b> d'une base.</td></tr>
+      </tbody>
+    </table>
+    <div class="formula">
+      Brin parental &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;… TGG CAT GTT CGA<br>
+      Brin complémentaire … ACC GTA CAA GCT<br>
+      <b>Substitution</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;… ACC <b>GCA</b> CAA GCT<br>
+      <b>Délétion</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;… ACC <b>GAC</b> AAG CTN<br>
+      <b>Insertion</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;… ACC <b>GAT</b> ACA AGC
+    </div>
+    <p>
+      La mutation peut aussi toucher l'<b>ARN</b> : elle est alors possible mais <b>moins importante</b>, car elle
+      ne concerne qu'une seule protéine. Elle peut enfin toucher les <b>chromosomes</b> — cas de la trisomie.
+    </p>
+
+    <h4>III-1-2-2 · Les effets des mutations <span class="page">(p. 12-13)</span></h4>
+    <table>
+      <thead><tr><th>Effet</th><th>Définition</th><th>Exemple du polycopié</th></tr></thead>
+      <tbody>
+        <tr><td><b>Silencieuse</b></td><td>Le changement de base <b>ne modifie pas</b> l'acide aminé.</td><td><code>UUU → UUC</code> = Phe</td></tr>
+        <tr><td><b>Conservatrice</b></td><td>Changement d'acide aminé, mais <b>de mêmes propriétés</b>.</td><td><code>AAA</code> (Lys) → <code>AGA</code> (Arg) : 2 acides aminés basiques</td></tr>
+        <tr><td><b>Faux sens</b></td><td>Changement d'acide aminé <b>sans les mêmes propriétés</b> : la protéine est <b>non fonctionnelle</b>.</td><td><code>AAA</code> (Lys, basique) → <code>GAG</code> (Gly, acide)</td></tr>
+        <tr><td><b>Du codon stop</b></td><td>Un codon d'acide aminé devient un <b>codon stop</b> → protéine <b>tronquée</b> ; ou l'inverse : un codon stop devient un codon d'acide aminé → protéine <b>allongée</b>.</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h4>III-1-2-3 · Les conséquences <span class="page">(p. 13)</span></h4>
+    <ul>
+      <li><b>Avantage</b> : c'est le principe de l'<b>évolution</b> — les individus portant la mutation sont mieux adaptés à leur environnement.</li>
+      <li><b>Maladies</b> : l'<b>anémie falciforme</b> (maladie génétique caractérisée par une hémoglobine anormale) ; la mutation de certains gènes peut participer à l'apparition de <b>tumeurs</b>, bénignes ou malignes.</li>
+    </ul>
+
+    <h4>III-1-3 · Les mécanismes de réparation <span class="page">(p. 14)</span></h4>
+    <p>
+      La plupart des mutations sont corrigées par des <b>enzymes de réparation</b> au cours de la réplication ;
+      ces enzymes <b>reconnaissent le brin néoformé</b>. La réparation d'une mutation due aux UV se fait en trois
+      temps :
+    </p>
+    <ol>
+      <li>Les <b>endonucléases</b> coupent l'ADN <b>en amont et en aval</b> de la mutation.</li>
+      <li>L'<b>ADN polymérase</b> comble la brèche selon le modèle du <b>brin parental</b>.</li>
+      <li>La <b>ligase</b> relie les 2 parties du brin néoformé.</li>
+    </ol>
+    <p>
+      L'erreur peut aussi être corrigée <b>pendant la réplication</b> : la correction se fait dans le sens
+      <b>3' → 5'</b>, l'<b>exonucléase</b> dégrade la nouvelle extrémité 3' si l'appariement n'est pas correct,
+      puis l'ADN polymérase reprend son travail et insère le bon nucléotide. C'est la fonction d'édition
+      (<i>proofreading</i>).
+    </p>
+
+    <h3 id="r-trsc">IV. Les mécanismes de la transcription <span class="page">(p. 15-19)</span></h3>
+
+    <p>
+      La transcription est le processus biologique permettant la <b>copie des régions dites codantes de l'ADN en
+      molécules d'ARN</b>. C'est la <b>1<sup>re</sup> étape</b> du mécanisme qui permet de passer de l'ADN à la
+      protéine.
+    </p>
+
+    <h4>IV-2 · L'unité de transcription et les 3 étapes <span class="page">(p. 15-16)</span></h4>
+    <p>
+      Une <b>unité de transcription</b> (= un <b>gène</b>) s'étend toujours d'un <b>site d'initiation</b> jusqu'à un
+      <b>site de terminaison</b>. Le mécanisme se divise donc en trois étapes : <b>initiation</b> (reconnaissance
+      du début de l'unité), <b>élongation</b> (polymérisation de la chaîne d'ARN), <b>terminaison</b>
+      (reconnaissance de la région de terminaison).
+    </p>
+    <div class="note">
+      <div class="lbl">Brin matrice et brin codant — le point le plus demandé</div>
+      <p style="margin-bottom:0">
+        La transcription se fait dans le sens <b>5' → 3'</b>. <b>Un seul des 2 brins d'ADN est transcrit</b> :
+        c'est le <b>brin matrice</b>, aussi appelé <b>brin antisens</b>. L'ARN obtenu est la <b>copie
+        complémentaire du brin matrice</b> ; il est donc aussi la <b>copie conforme du brin opposé</b> — le
+        <b>brin codant</b> — à l'exception de la <b>thymine, remplacée par l'uracile</b>.
+      </p>
+    </div>
+
+    <h4>IV-2-1 · L'initiation <span class="page">(p. 16)</span></h4>
+    <p style="margin-bottom:0">
+      L'<b>ARN polymérase</b> est l'enzyme qui assure la transcription : elle <b>reconnaît</b> et se fixe sur une
+      région particulière de l'ADN, le <b>site promoteur</b>.
+    </p>
+
+    <h4>IV-2-2 · L'élongation <span class="page">(p. 16-17)</span></h4>
+    <p>
+      La transcription se fait dans le sens <b>5' → 3'</b>, ce qui signifie qu'elle s'agrandit en <b>3'</b>. Les
+      2 brins d'ADN se séparent devant l'ARN polymérase pour la laisser progresser, puis se referment derrière
+      elle par rétablissement des <b>liaisons hydrogène</b>.
+    </p>
+    <div class="grid3">
+      <div class="stat"><b>≈ 17</b><span>bases ouvertes dans la boucle de transcription</span></div>
+      <div class="stat"><b>30 à 80</b><span>nucléotides polymérisés par seconde</span></div>
+    </div>
+
+    <h4>IV-2-3 · La terminaison <span class="page">(p. 17)</span></h4>
+    <p>
+      La transcription d'un gène s'achève quand l'ARN polymérase arrive à la <b>fin de l'unité de
+      transcription</b> : elle se décroche de la matrice et la boucle se referme. Cette terminaison se produit
+      dans une région appelée <b>site de terminaison</b>, et est assurée par des signaux spécifiques dont le
+      <b>signal de polyadénylation AAUAAA</b>. L'ARN polymérase continue un peu après ce motif, puis est libérée
+      sous l'action de divers facteurs.
+    </p>
+    <div class="note warn">
+      <div class="lbl">La phrase-clé du polycopié</div>
+      <p style="margin-bottom:0">
+        «&nbsp;La transcription proprement dite est terminée mais <b>l'ARN obtenu n'est pas fonctionnel pour
+        autant</b> et doit subir <b>3 étapes de maturation</b>.&nbsp;»
+      </p>
+    </div>
+
+    <h4>IV-3 · La maturation de l'ARNm <span class="page">(p. 17-19)</span></h4>
+    <p>
+      La maturation post-transcriptionnelle a lieu <b>dans le noyau</b>. Chez les eucaryotes, l'ADN possède des
+      séquences <b>codantes (exons)</b> et <b>non codantes (introns)</b> ; <b>seuls les exons</b> participent à la
+      synthèse des protéines.
+    </p>
+    <table>
+      <thead><tr><th>Étape</th><th>Ce qui se passe</th><th>Détail à retenir</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>1. Queue poly A</b></td>
+          <td>L'ARN est <b>clivé</b> au niveau du signal de polyadénylation, puis une polymérase spécifique (la
+              <b>polyA polymérase</b>) ajoute de nombreux résidus adénine.</td>
+          <td><b>200</b> résidus chez les eucaryotes ; essentielle à la <b>stabilité</b> de l'ARN. Cette partie
+              <b>n'est pas codée dans l'ADN sous forme de polyT</b>.</td>
+        </tr>
+        <tr>
+          <td><b>2. Coiffe</b></td>
+          <td>À l'autre extrémité <b>5'</b>, addition d'une <b>coiffe</b> (<i>cap</i>) <b>méthylguanosine</b>.</td>
+          <td>Nécessaire à la <b>reconnaissance par les ribosomes</b> lors de la traduction.</td>
+        </tr>
+        <tr>
+          <td><b>3. Excision-épissage</b></td>
+          <td><b>Excision des introns</b> et <b>réunion (= épissage) des exons</b>.</td>
+          <td>Permet d'obtenir <b>différentes protéines à partir d'un même gène</b> en choisissant les exons
+              conservés : c'est l'<b>épissage alternatif</b>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="formula">
+      Résumé de la maturation du transcrit<br>
+      1- Queue poly A en <b>3'</b> &nbsp;: AAAAAAAAAAAAAAAAAA<br>
+      2- Coiffe en <b>5'</b> &nbsp;: CH<sub>3</sub>-G-ppp<br>
+      3- Excision-épissage : <span class="c">exon-intron-exon-intron-exon → exon-exon-exon</span>
+    </div>
+    <p style="margin-bottom:0">
+      <b>Remarque du polycopié</b> : en fait, la maturation du transcrit primaire a lieu <b>en même temps que la
+      transcription</b>.
+    </p>
+
+    <h3 id="r-trad">V. L'expression du génome : la traduction <span class="page">(p. 19-21)</span></h3>
+
+    <p>
+      La traduction est l'<b>interprétation des codons de l'ARNm en acides aminés</b>. Le <b>code génétique</b>
+      est le système de correspondance permettant à l'ARN d'être traduit en protéine. Un <b>codon</b> est un
+      groupe de <b>3 nucléotides</b>.
+    </p>
+    <p>
+      Elle s'effectue dans le <b>cytoplasme</b> et nécessite des acides aminés polymérisés selon l'ordre donné par
+      les codons, de l'<b>énergie</b>, des <b>ribosomes</b>, des <b>ARNt</b>, des <b>enzymes</b> et l'<b>ARNm</b>.
+    </p>
+
+    <h4>V-2-1 · L'initiation <span class="page">(p. 19-20)</span></h4>
+    <p>
+      Une fois parvenu dans le cytoplasme, l'ARNm se fixe à un <b>ribosome</b>, qui assemble une séquence d'acides
+      aminés selon les «&nbsp;instructions&nbsp;» du code génétique. Chaque codon correspond à un acide aminé,
+      <b>sauf 3 codons</b> appelés codons <b>stop</b>, qui provoquent l'arrêt de la traduction. Le codon
+      <b>AUG</b>, dit <b>codon initiateur</b>, permet de commencer la traduction en formant la <b>méthionine</b>,
+      qui se détachera plus tard de la chaîne polypeptidique.
+    </p>
+
+    <h4>V-2-2 · L'élongation <span class="page">(p. 20)</span></h4>
+    <p style="margin-bottom:0">
+      Le ribosome parcourt l'ARNm <b>codon par codon</b> (= <b>translocation</b>) et ajoute, par l'intermédiaire
+      d'un <b>ARNt</b>, un acide aminé à la protéine en cours de fabrication, selon le codon lu.
+    </p>
+
+    <h4>V-2-3 · La terminaison <span class="page">(p. 20-21)</span></h4>
+    <p>
+      Une fois le <b>codon stop</b> atteint (<b>UAA, UGA ou UAG</b>), la protéine est complète : le ribosome se
+      détache de la protéine et du brin d'ARNm, et la protéine est libérée. Le ribosome se disloque en ses
+      <b>2 sous-unités (60S et 40S)</b> et pourra faire une autre synthèse sur un autre ARNm.
+    </p>
+    <p>
+      Le même filament d'ARNm peut servir à la fabrication <b>simultanée</b> de plusieurs protéines lorsque
+      plusieurs ribosomes s'en chargent : avant d'être détruit, cet ARNm participe à la fabrication de
+      <b>10 à 20 protéines</b>. La protéine synthétisée soit <b>reste dans la cellule</b>, soit la quitte pour
+      aller dans le <b>système sanguin</b>.
+    </p>
+    <div class="card">
+      <b>Le résumé du polycopié</b>
+      <ol style="margin-bottom:0">
+        <li><b>Initiation</b> : formation du complexe d'initiation.</li>
+        <li><b>Élongation</b> : accrochage de nouveaux acides aminés à la chaîne peptidique en cours de synthèse.</li>
+        <li><b>Terminaison</b> : libération de la chaîne polypeptidique.</li>
+      </ol>
+    </div>
+
+    <h4>V-3 · Les modifications post-traductionnelles <span class="page">(p. 21)</span></h4>
+    <p>Avant d'être opérationnelle, une protéine subit souvent des modifications :</p>
+    <ul>
+      <li><b>Acquisition de la conformation active</b> : elle est aidée par des molécules appelées <b>chaperonnes</b> ; formation possible de <b>ponts disulfure</b> et de <b>liaisons hydrogène</b> pour maintenir cette conformation.</li>
+      <li><b>Ajout de molécules non protéiques</b> : lipides, glucides, groupements phosphate, ainsi que de petits peptides.</li>
+      <li><b>Clivage d'un peptide en position N-terminale</b> — par exemple l'enlèvement du <b>peptide signal</b> qui avait dirigé la protéine non mature dans un compartiment particulier de la cellule.</li>
+    </ul>
+
+    <h3 id="r-genie">VI. Le génie génétique <span class="page">(p. 22-28)</span></h3>
+
+    <p>
+      Le génie génétique est l'<b>ensemble des outils et des techniques de la biologie moléculaire</b> permettant,
+      de manière <b>contrôlée</b>, l'étude de la modification des gènes : leur <b>isolement</b>, leur
+      <b>clonage</b>, leur <b>séquençage</b>, leur <b>découpage</b>… dans un but de recherche fondamentale ou
+      appliquée.
+    </p>
+
+    <h4>VI-2-1 · Les enzymes de restriction <span class="page">(p. 22-23)</span></h4>
+    <p>
+      Une enzyme de restriction est une <b>endonucléase</b> : une protéine qui peut <b>couper un fragment d'ADN</b>
+      au niveau d'une séquence de nucléotides caractéristique appelée <b>site de restriction</b>. Chaque enzyme
+      reconnaît ainsi un <b>site spécifique</b>. Plusieurs <b>centaines</b> d'enzymes de restriction sont connues ;
+      on en retrouve naturellement dans un grand nombre d'<b>espèces bactériennes</b>, où elles servent de
+      <b>moyen de défense contre les virus</b>.
+    </p>
+    <p><b>Leurs propriétés :</b></p>
+    <ul>
+      <li>Elles <b>clivent les liaisons phosphodiesters</b> entre 2 nucléotides.</li>
+      <li>Elles coupent au niveau de <b>séquences palindromiques</b>.</li>
+      <li>Certaines réalisent des coupures à <b>bouts cohésifs</b>, d'autres à <b>bouts droits</b>.</li>
+    </ul>
+
+    <h4>VI-2-2 · Les vecteurs <span class="page">(p. 23)</span></h4>
+    <p>
+      Ce sont des <b>molécules d'ADN capables de s'autorépliquer dans une cellule hôte</b>, utilisées pour
+      <b>transférer des gènes</b> dans des cellules réceptrices. Un vecteur possède un <b>site de réplication
+      fonctionnel</b> et contient des <b>marqueurs génétiques</b> facilitant son identification.
+    </p>
+    <table>
+      <thead><tr><th>Vecteur</th><th>Définition</th></tr></thead>
+      <tbody>
+        <tr><td><b>Plasmide</b></td><td>Petite molécule d'<b>ADN circulaire double brin</b> possédant son propre système de réplication. On en trouve chez les <b>bactéries et les levures</b>.</td></tr>
+        <tr><td><b>Phage / bactériophage</b></td><td><b>Virus infectant les bactéries</b>.</td></tr>
+        <tr><td><b>Cosmide</b></td><td>Vecteur <b>totalement artificiel</b>, construit à partir d'un plasmide auquel on a ajouté les <b>séquences cos du phage</b>.</td></tr>
+        <tr><td><b>Virus</b></td><td>Cité par le polycopié parmi les vecteurs.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:0">
+      Pour <b>sélectionner</b> les cellules hôtes ayant intégré un vecteur, il faut des <b>gènes de sélection</b>
+      sur ce dernier : ils permettent d'identifier les cellules qui ont intégré le vecteur.
+    </p>
+
+    <h4>VI-2-3 · Les sondes <span class="page">(p. 24)</span></h4>
+    <p>
+      Ce sont des séquences d'acide nucléique (ADN ou ARN) <b>simple brin</b>, d'<b>au moins 15 nucléotides</b>,
+      <b>complémentaires</b> de la séquence d'ADN (ou d'ARN) recherchée, appelée <b>cible</b>.
+    </p>
+    <ul>
+      <li>C'est un segment d'ADN ou d'ARN <b>fluorescent ou radioactif</b>, obtenu par <b>synthèse chimique</b>.</li>
+      <li>Elle est <b>monobrin</b>, <b>complémentaire</b> et <b>antiparallèle</b> du fragment recherché.</li>
+      <li>Elle est capable de <b>rechercher et de s'hybrider</b> au fragment d'ADN ou d'ARN étudié.</li>
+    </ul>
+    <p><b>Applications :</b> diagnostic des maladies génétiques ; détecter les bactéries qui possèdent le gène d'intérêt.</p>
+
+    <h4>VI-3 · Le clonage <span class="page">(p. 25)</span></h4>
+    <p>
+      Le clonage est la <b>multiplication in vitro</b> d'un organisme, d'une cellule souche ou d'un gène, en
+      <b>grand nombre d'exemplaires identiques</b>. On parle de <b>clonage cellulaire</b> lorsqu'il s'agit d'une
+      cellule, et de <b>clonage moléculaire</b> lorsqu'il s'agit d'un fragment d'ADN.
+    </p>
+    <p>
+      Le <b>clonage d'un gène</b> consiste à <b>insérer un fragment d'ADN dans un vecteur</b> et à le faire
+      <b>amplifier dans une cellule hôte</b>.
+    </p>
+    <div class="formula">
+      gène <span class="c">+</span> plasmide <span class="c">+</span> enzyme de restriction
+      <span class="c">→</span> ADN ligase <span class="c">→</span> vecteur recombinant
+      <span class="c">→</span> transfert dans la cellule hôte <span class="c">→</span> clonage
+      <span class="c">→</span> expression de la protéine souhaitée
+    </div>
+
+    <h4>VI-4-1 · Application : le diagnostic des maladies <span class="page">(p. 25)</span></h4>
+    <p>
+      L'exemple développé est le <b>diagnostic de la drépanocytose</b>, hémoglobinopathie génétique très répandue
+      dans certaines régions du sud de l'Afrique. Elle est secondaire à une <b>mutation ponctuelle</b> au niveau du
+      <b>1<sup>er</sup> exon</b> du gène qui code pour la <b>chaîne bêta de l'hémoglobine</b>, portant sur le
+      triplet qui code pour le <b>6<sup>e</sup> acide aminé</b>.
+    </p>
+    <table>
+      <thead><tr><th></th><th>Triplet</th><th>Acide aminé</th></tr></thead>
+      <tbody>
+        <tr><td><b>Sujet sain</b></td><td><code>GAG</code></td><td>Acide glutamique</td></tr>
+        <tr><td><b>Sujet drépanocytaire</b></td><td><code>GTG</code></td><td>Valine</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>À l'état <b>homozygote</b>, le sujet est <b>malade</b> et présente des <b>hématies falciformes</b>.</li>
+      <li>À l'état <b>hétérozygote</b>, le sujet est <b>porteur sain</b>.</li>
+    </ul>
+    <p style="margin-bottom:0">
+      Le dépistage des sujets malades ou porteurs sains se fait grâce à une enzyme de restriction appelée
+      <b>Mst II</b> : les <b>5<sup>e</sup>, 6<sup>e</sup> et 7<sup>e</sup> triplets</b> de l'exon constituent un
+      <b>palindrome</b> reconnu par Mst II.
+    </p>
+
+    <h4>VI-4-2 · La thérapie génique <span class="page">(p. 26-28)</span></h4>
+    <p>
+      Méthode thérapeutique visant à <b>traiter une maladie en modifiant le programme génétique</b>. Le principe
+      est de <b>remplacer</b>, à l'intérieur des cellules malades, le <b>gène défectueux</b> responsable de la
+      pathologie par un <b>gène fonctionnant normalement</b> (= <b>transgène</b>).
+    </p>
+    <div class="note warn">
+      <div class="lbl">La remarque éthique du polycopié</div>
+      <p style="margin-bottom:0">
+        La thérapie génique peut s'appliquer aux cellules <b>germinales</b> comme aux cellules <b>somatiques</b>.
+        Mais <b>chez l'Homme</b>, pour des <b>raisons d'éthique</b>, <b>seuls les gènes des cellules somatiques</b>
+        peuvent être modifiés — car il n'y a alors <b>pas de transmission aux enfants</b>.
+      </p>
+    </div>
+    <table>
+      <thead><tr><th>Modalité de transfert</th><th>Principe</th></tr></thead>
+      <tbody>
+        <tr><td><b>In vivo</b></td><td>Injection du vecteur dans la <b>circulation sanguine</b> — danger si le vecteur <b>se trompe de cellule</b>.</td></tr>
+        <tr><td><b>Ex vivo</b></td><td>Le vecteur est transféré dans la cellule hôte <b>en dehors de l'organisme</b>, puis l'ensemble est réintroduit dans le corps.</td></tr>
+        <tr><td><b>In situ</b></td><td>Le vecteur est introduit <b>directement dans la cellule cible</b> (ex. destruction des cellules cancéreuses par le gène porté par le vecteur).</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Les exemples de thérapie génique <span class="page">(p. 27-28)</span></h5>
+    <table>
+      <thead><tr><th>Exemple</th><th>Principe</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Le mélanome</b></td>
+          <td>Cancer de la peau dû à une transformation maligne des mélanocytes, <b>rebelle aux traitements classiques</b>. La thérapie génique consiste à <b>stimuler la réponse immunitaire antitumorale</b> par transfert d'un gène codant pour une <b>cytokine</b> qui induit la prolifération des <b>lymphocytes T</b> qui détruisent les cellules cancéreuses.</td>
+        </tr>
+        <tr>
+          <td><b>L'hypercholestérolémie familiale</b></td>
+          <td>Déficit des <b>récepteurs des lipoprotéines LDL</b> → augmentation du cholestérol sanguin → dépôt sur les parois des vaisseaux → <b>athérosclérose</b>. Les récepteurs LDL sont ubiquitaires mais les <b>hépatiques</b> éliminent la majorité des LDL circulants. Traitement <b>ex vivo</b> sur des <b>hépatocytes</b> en introduisant le gène du récepteur LDL. <b>L'effet thérapeutique disparaît après 6 mois</b> car le vecteur n'est pas stable au cours du renouvellement cellulaire des hépatocytes.</td>
+        </tr>
+        <tr>
+          <td><b>Les maladies cardiovasculaires</b></td>
+          <td>Chez les malades souffrant d'obstruction des vaisseaux secondaire à l'athérosclérose : transfert <b>in situ</b> au niveau de la membrane inférieure du cœur d'un gène appelé <b>VEGF</b> (<i>vascular epithelial growth factor</i>) porté par un <b>plasmide</b>. Le gène code pour la <b>croissance et la multiplication de nouveaux vaisseaux</b>, ce qui permet de contourner le blocage.</td>
+        </tr>
+        <tr>
+          <td><b>La stratégie du gène suicide</b></td>
+          <td>Technique qui confère aux cellules tumorales une <b>sensibilité à un médicament</b>. On injecte dans la tumeur un gène codant pour une <b>enzyme</b> capable de transformer une <b>prodrogue non toxique</b> en un <b>métabolite toxique</b>, puis on administre la prodrogue : le métabolite formé dans les cellules tumorales tue ces dernières. L'enzyme largement utilisée est la <b>thymine kinase du virus de l'herpès</b> ; la prodrogue est l'antiviral <b>ganciclovir</b>, qui sous l'action de la thymine kinase devient du <b>ganciclovir triphosphate</b>, toxique.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="lbl">Les deux figures jointes au polycopié</div>
+      <p style="margin-bottom:0">
+        Le dossier <code>Pr.ROCHD › Cours</code> contient deux figures isolées qui complètent le texte :
+        <b>«&nbsp;ARNm mature prêt pour la maturation&nbsp;»</b> (codon d'initiation AUG, codons de terminaison
+        UGA/UAG/UAA, coiffe, leader non codant, région codante, queue poly A) et
+        <b>«&nbsp;De l'ARN au polypeptide&nbsp;»</b> (6 codons <code>AUG GAC UUG CAG CAC UAA</code> →
+        Met-Asp-Leu-Gln-His-STOP, avec la coiffe en 5').
+      </p>
+    </div>
+
+
+    <!-- ============================================================ -->
+    <!-- ==============  PARTIE 2 — PR. DEHBI (génétique) =========== -->
+    <!-- ============================================================ -->
+
+    <h2 id="p2">Partie 2 — Génétique <span class="page">(Pr. Dehbi)</span></h2>
+
+    <p>
+      Trois cours, 8 heures, format QCM. Le premier donne les outils (voir, colorer et nommer un chromosome),
+      le deuxième classe ce que ces outils révèlent, le troisième change d'échelle en passant du chromosome au
+      gène pour expliquer la transmission dans une famille.
     </p>
     <div class="formula">
       ADN <span class="c">→</span> chromosome <span class="c">→</span> caryotype <span class="c">→</span> anomalie de nombre / de structure
       <span class="c">→</span> phénotype <span class="c">→</span> arbre généalogique <span class="c">→</span> conseil génétique
     </div>
-    <p>
-      Concrètement : le <b>cours 1</b> donne les outils (voir, colorer, nommer). Le <b>cours 2</b> classe ce que
-      ces outils révèlent. Le <b>cours 3</b> change d'échelle — on passe du chromosome au gène — et explique la
-      transmission. Une question de QCM peut toujours être ramenée à un des trois étages.
-    </p>
-    <div class="note ok">
-      <div class="lbl">Les trois réflexes qui font gagner des points</div>
-      <ol style="margin-bottom:0">
-        <li><b>Toujours se demander : équilibré ou déséquilibré ?</b> C'est la première question du cours 2, et elle décide du pronostic.</li>
-        <li><b>Compter les chromosomes.</b> <code>45</code> chez un porteur de translocation robertsonienne est un piège permanent.</li>
-        <li><b>Pour l'hérédité : le sexe du parent transmetteur</b> et la <b>présence de sauts de génération</b> donnent le mode de transmission avant même de lire les diagnostics.</li>
-      </ol>
-    </div>
 
-    <!-- ============================================================ -->
-    <!-- ====================== COURS 1 ============================= -->
-    <!-- ============================================================ -->
-
-    <h2 id="c1-hist">Cours 1 — Cytogénétique : voir les chromosomes <span class="page">(cours 1)</span></h2>
+    <h3 id="c1-hist">Cours 1 — Cytogénétique : voir les chromosomes <span class="page">(cours 1)</span></h3>
 
     <p>
       La cytogénétique est l'étude des chromosomes <b>au microscope</b> : leur nombre, leur forme, leurs
@@ -630,7 +1246,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <!-- ====================== COURS 2 ============================= -->
     <!-- ============================================================ -->
 
-    <h2 id="c2-def">Cours 2 — Les anomalies chromosomiques <span class="page">(cours 2)</span></h2>
+    <h3 id="c2-def">Cours 2 — Les anomalies chromosomiques <span class="page">(cours 2)</span></h3>
 
     <p>
       Une anomalie chromosomique est un changement <b>visible au microscope</b> du nombre ou de la structure des
@@ -1131,7 +1747,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
     <!-- ====================== COURS 3 ============================= -->
     <!-- ============================================================ -->
 
-    <h2 id="c3-voc">Cours 3 — Hérédité mendélienne et non mendélienne <span class="page">(cours 3)</span></h2>
+    <h3 id="c3-voc">Cours 3 — Hérédité mendélienne et non mendélienne <span class="page">(cours 3)</span></h3>
 
     <p>
       Changement d'échelle : on quitte le chromosome pour le <b>gène</b>. L'objectif est de savoir, devant une
@@ -1533,171 +2149,220 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       </tbody>
     </table>
 
+
     <!-- ============================================================ -->
     <!-- ======================= REVISION =========================== -->
     <!-- ============================================================ -->
 
     <h2 id="chiffres">Les chiffres à retenir d'un coup d'œil</h2>
+
+    <h3>Biologie moléculaire et génie génétique <span class="page">(Pr. Rochd)</span></h3>
     <table>
-      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th><th>Cours</th></tr></thead>
+      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th><th>Page</th></tr></thead>
       <tbody>
-        <tr><td><b>46 · 23</b></td><td>Chromosomes humains (2n) · par gamète (n)</td><td>1</td></tr>
-        <tr><td><b>48 · 8</b></td><td>Chromosomes du singe · de la drosophile</td><td>1</td></tr>
-        <tr><td><b>1956 · 1970 · 1986 · 2008</b></td><td>46 chr · bandes Q · FISH · ACPA</td><td>1</td></tr>
-        <tr><td><b>(TTAGGG)n</b></td><td>Séquence répétée du télomère</td><td>1</td></tr>
-        <tr><td><b>&lt; 2 kb · 10–40 kb</b></td><td>TAR · région subtélomérique (riche en gènes)</td><td>1</td></tr>
-        <tr><td><b>p/(p+q)</b></td><td>Index centromérique</td><td>1</td></tr>
-        <tr><td><b>11–12 · 14–15 · 20 SA</b></td><td>Villosités choriales · liquide amniotique · sang fœtal</td><td>1</td></tr>
-        <tr><td><b>4 °C · 4–5 j</b></td><td>Conservation du tube hépariné</td><td>1</td></tr>
-        <tr><td><b>37 °C · pH 7,2–7,4</b></td><td>Conditions de culture</td><td>1</td></tr>
-        <tr><td><b>300–550 · 800–1 000</b></td><td>Bandes en standard · en haute résolution</td><td>1</td></tr>
-        <tr><td><b>87 °C · pH 5,8 · pH 6,7</b></td><td>Bandes R (Earle · Earle · phosphate)</td><td>1</td></tr>
-        <tr><td><b>10–15 %</b></td><td>Part du génome en hétérochromatine C</td><td>1</td></tr>
-        <tr><td><b>5–10 Mb</b></td><td>Résolution du caryotype standard</td><td>1</td></tr>
-        <tr><td><b>24 · 5</b></td><td>Peintures · fluorochromes du M-FISH</td><td>1</td></tr>
-        <tr><td><b>37 °C · DAPI</b></td><td>Hybridation FISH · contre-coloration</td><td>1</td></tr>
-        <tr><td><b>60 % · 5 % · 0,6–0,9 %</b></td><td>FCS du 1<sup>er</sup> trimestre · tardives/mort-nés · naissances</td><td>2</td></tr>
-        <tr><td><b>4/4 · 2+2</b></td><td>Gamètes anormaux en non-disjonction MI · MII</td><td>2</td></tr>
-        <tr><td><b>45,X</b></td><td>Seule monosomie viable (Turner)</td><td>2</td></tr>
-        <tr><td><b>21 · 18 · 13</b></td><td>Les trois trisomies viables</td><td>2</td></tr>
-        <tr><td><b>69 · 92</b></td><td>Triploïdie (3n) · tétraploïdie (4n)</td><td>2</td></tr>
-        <tr><td><b>0,044 %</b></td><td>Prévalence des marqueurs surnuméraires</td><td>2</td></tr>
-        <tr><td><b>≤ 20 chr · 15/22 · 70/30 %</b></td><td>MCS : taille · acrocentriques d'origine · bénins/pathologiques</td><td>2</td></tr>
-        <tr><td><b>85–90 %</b></td><td>Délétions <i>de novo</i></td><td>2</td></tr>
-        <tr><td><b>1 %</b></td><td>Fréquence de <code>inv(9)</code> dans la population</td><td>2</td></tr>
-        <tr><td><b>× 10</b></td><td>SCE dans le syndrome de Bloom (BrdU)</td><td>2</td></tr>
-        <tr><td><b>1/2 · 1/4</b></td><td>Risque de transmission AD · AR</td><td>3</td></tr>
-        <tr><td><b>2/3</b></td><td>Part de conducteurs parmi les enfants sains d'un couple Aa × Aa</td><td>3</td></tr>
-        <tr><td><b>2–3 %</b></td><td>Surcroît de risque AR chez les cousins germains</td><td>3</td></tr>
-        <tr><td><b>0 · 50 · 100 %</b></td><td>Pénétrance de Huntington à la naissance · 40 ans · 70 ans</td><td>3</td></tr>
-        <tr><td><b>80 % · 50 %</b></td><td>Néomutations : achondroplasie · NF1 et Marfan</td><td>3</td></tr>
-        <tr><td><b>22 · ~200</b></td><td>Mitoses de l'ovogenèse · de la spermatogenèse</td><td>3</td></tr>
-        <tr><td><b>5<sup>e</sup> semaine</b></td><td>Définition des cellules germinales primordiales (mosaïque germinale)</td><td>3</td></tr>
-        <tr><td><b>&gt; 700 · &gt; 40</b></td><td>Mutations de <i>CFTR</i> · loci de la rétinite pigmentaire</td><td>3</td></tr>
+        <tr><td><b>3,3 milliards</b></td><td>Paires de bases de l'ADN humain</td><td>6</td></tr>
+        <tr><td><b>10 %</b> / <b>1,5 %</b></td><td>Part codante du génome / part codant pour la synthèse protéique</td><td>6</td></tr>
+        <tr><td><b>50 à 5 000</b></td><td>Nombre de nucléotides d'un ARN</td><td>7</td></tr>
+        <tr><td><b>5</b></td><td>Familles d'ARN de la cellule eucaryote</td><td>8</td></tr>
+        <tr><td><b>10<sup>-9</sup> à 10<sup>-10</sup></b></td><td>Probabilité de mutation</td><td>11</td></tr>
+        <tr><td><b>≈ 17</b></td><td>Bases ouvertes dans la boucle de transcription</td><td>17</td></tr>
+        <tr><td><b>30 à 80</b></td><td>Nucléotides polymérisés par seconde (transcription)</td><td>17</td></tr>
+        <tr><td><b>AAUAAA</b></td><td>Signal de polyadénylation</td><td>17</td></tr>
+        <tr><td><b>200</b></td><td>Résidus adénine de la queue poly A chez les eucaryotes</td><td>18</td></tr>
+        <tr><td><b>AUG</b> · <b>UAA UGA UAG</b></td><td>Codon initiateur · codons stop</td><td>20-21</td></tr>
+        <tr><td><b>60S · 40S</b></td><td>Les 2 sous-unités du ribosome</td><td>21</td></tr>
+        <tr><td><b>10 à 20</b></td><td>Protéines fabriquées par un même ARNm avant sa destruction</td><td>21</td></tr>
+        <tr><td><b>≥ 15</b></td><td>Nucléotides minimum d'une sonde</td><td>24</td></tr>
+        <tr><td><b>GAG → GTG</b></td><td>Drépanocytose : Glu → Val, 6<sup>e</sup> acide aminé de la chaîne β</td><td>25</td></tr>
+        <tr><td><b>6 mois</b></td><td>Durée de l'effet thérapeutique dans l'hypercholestérolémie familiale</td><td>27</td></tr>
       </tbody>
     </table>
 
-    <h2 id="pieges">Les pièges classiques, en vrac</h2>
-    <div class="grid2">
-      <div class="card">
-        <b>«&nbsp;Caryotype = 45 ?&nbsp;»</b>
-        <p style="margin-bottom:0">Chez un porteur de translocation robertsonienne, oui : <code>45</code> chromosomes, phénotype <b>normal</b>. Ne pas conclure à une monosomie.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Mosaïque ou chimère ?&nbsp;»</b>
-        <p style="margin-bottom:0"><b>Un</b> zygote = mosaïque. <b>Deux</b> zygotes = chimère. <code>XX/XY</code> = chimère, jamais mosaïque.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Équilibré veut dire bénin ?&nbsp;»</b>
-        <p style="margin-bottom:0">Non : équilibré pour le porteur, mais <b>risque majeur pour la descendance</b> et parfois effet de position ou gène de fusion.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Consanguinité = tout augmente ?&nbsp;»</b>
-        <p style="margin-bottom:0">Non : elle n'augmente que le risque des maladies <b>récessives</b> (+2 à 3&nbsp;% chez les cousins germains).</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Pénétrance ou expressivité ?&nbsp;»</b>
-        <p style="margin-bottom:0">Pénétrance = malade ou pas (<b>tout ou rien</b>). Expressivité = <b>intensité</b> chez les malades.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Père atteint → fils atteint en RLX ?&nbsp;»</b>
-        <p style="margin-bottom:0">Impossible. Le père donne son <b>Y</b> à son fils. Cette observation exclut formellement une transmission liée à l'X.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;L'ACPA remplace le caryotype ?&nbsp;»</b>
-        <p style="margin-bottom:0">Non : elle <b>ne voit pas</b> les remaniements équilibrés et <b>ne localise pas</b>. Les deux sont complémentaires.</p>
-      </div>
-      <div class="card">
-        <b>«&nbsp;Mitochondrial = les deux parents ?&nbsp;»</b>
-        <p style="margin-bottom:0">Non : <b>maternel uniquement</b>. Un père atteint ne transmet pas, et les globules rouges sont épargnés.</p>
-      </div>
-    </div>
+    <h3>Génétique <span class="page">(Pr. Dehbi)</span></h3>
+    <table>
+      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th><th>Cours</th></tr></thead>
+      <tbody>
+        <tr><td><b>46 · 23</b></td><td>Chromosomes humains (2n) · par gamète (n)</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>48 · 8</b></td><td>Chromosomes du singe · de la drosophile</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>1956 · 1970 · 1986 · 2008</b></td><td>46 chr · bandes Q · FISH · ACPA</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>(TTAGGG)n</b></td><td>Séquence répétée du télomère</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>&lt; 2 kb · 10–40 kb</b></td><td>TAR · région subtélomérique (riche en gènes)</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>p/(p+q)</b></td><td>Index centromérique</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>11–12 · 14–15 · 20 SA</b></td><td>Villosités choriales · liquide amniotique · sang fœtal</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>4 °C · 4–5 j</b></td><td>Conservation du tube hépariné</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>37 °C · pH 7,2–7,4</b></td><td>Conditions de culture</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>300–550 · 800–1 000</b></td><td>Bandes en standard · en haute résolution</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>87 °C · pH 5,8 · pH 6,7</b></td><td>Bandes R (Earle · Earle · phosphate)</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>10–15 %</b></td><td>Part du génome en hétérochromatine C</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>5–10 Mb</b></td><td>Résolution du caryotype standard</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>24 · 5</b></td><td>Peintures · fluorochromes du M-FISH</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>37 °C · DAPI</b></td><td>Hybridation FISH · contre-coloration</td><td>Dehbi · cours 1</td></tr>
+        <tr><td><b>60 % · 5 % · 0,6–0,9 %</b></td><td>FCS du 1<sup>er</sup> trimestre · tardives/mort-nés · naissances</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>4/4 · 2+2</b></td><td>Gamètes anormaux en non-disjonction MI · MII</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>45,X</b></td><td>Seule monosomie viable (Turner)</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>21 · 18 · 13</b></td><td>Les trois trisomies viables</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>69 · 92</b></td><td>Triploïdie (3n) · tétraploïdie (4n)</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>0,044 %</b></td><td>Prévalence des marqueurs surnuméraires</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>≤ 20 chr · 15/22 · 70/30 %</b></td><td>MCS : taille · acrocentriques d'origine · bénins/pathologiques</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>85–90 %</b></td><td>Délétions <i>de novo</i></td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>1 %</b></td><td>Fréquence de <code>inv(9)</code> dans la population</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>× 10</b></td><td>SCE dans le syndrome de Bloom (BrdU)</td><td>Dehbi · cours 2</td></tr>
+        <tr><td><b>1/2 · 1/4</b></td><td>Risque de transmission AD · AR</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>2/3</b></td><td>Part de conducteurs parmi les enfants sains d'un couple Aa × Aa</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>2–3 %</b></td><td>Surcroît de risque AR chez les cousins germains</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>0 · 50 · 100 %</b></td><td>Pénétrance de Huntington à la naissance · 40 ans · 70 ans</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>80 % · 50 %</b></td><td>Néomutations : achondroplasie · NF1 et Marfan</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>22 · ~200</b></td><td>Mitoses de l'ovogenèse · de la spermatogenèse</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>5<sup>e</sup> semaine</b></td><td>Définition des cellules germinales primordiales (mosaïque germinale)</td><td>Dehbi · cours 3</td></tr>
+        <tr><td><b>&gt; 700 · &gt; 40</b></td><td>Mutations de <i>CFTR</i> · loci de la rétinite pigmentaire</td><td>Dehbi · cours 3</td></tr>
+      </tbody>
+    </table>
 
-    <h2 id="quiz">🎯 Auto-évaluation — 14 questions</h2>
-    <p>Format QCM, comme l'épreuve. Réponds, la correction s'affiche immédiatement.</p>
+    <h2 id="quiz">🎯 Auto-évaluation — 24 questions</h2>
+    <p>
+      Format QCM, comme l'épreuve. Les 10 premières portent sur la biologie moléculaire (Pr. Rochd), les 14
+      suivantes sur la génétique (Pr. Dehbi). Réponds, la correction s'affiche immédiatement.
+    </p>
     <div id="quiz-root"></div>
     <p style="margin-top:14px">Score : <span id="quiz-score">0 / 0</span>
       <button class="btn" id="quiz-reset" style="margin-left:10px">↺ Recommencer</button></p>
 
-    <h2 id="reviser">Comment réviser ce cours</h2>
+    <h2 id="reviser">Comment réviser ce module</h2>
     <ol>
-      <li><b>Lire les trois PDF dans l'ordre.</b> Le cours 2 suppose le cours 1 (bandes, ISCN), le cours 3 suppose le cours 2 (DUP, empreinte).</li>
-      <li><b>Apprendre les 4 tableaux pivots</b> : les 7 groupes de Denver · les 6 colorations de bandes · les 8 anomalies de structure · les modes de transmission du cours 3.</li>
+      <li><b>Commencer par le polycopié Rochd</b> (28 p.) : il donne la base moléculaire — acides nucléiques, réplication, mutation, transcription, traduction. Sans lui, le cours de génétique reste abstract.</li>
+      <li><b>Puis les trois cours Dehbi</b>, dans l'ordre : le cours 2 suppose le cours 1 (bandes, ISCN), le cours 3 suppose le cours 2 (DUP, empreinte).</li>
+      <li><b>Apprendre les tableaux pivots</b> : les 5 familles d'ARN · les 7 enzymes de la réplication · les 4 effets des mutations · les 3 étapes de la maturation · les 7 groupes de Denver · les 6 colorations de bandes · les modes de transmission.</li>
       <li><b>Mémoriser les chiffres</b> du <a href="#chiffres">tableau récapitulatif</a> : c'est le plus gros pourvoyeur de QCM.</li>
-      <li><b>Savoir écrire un caryotype</b> et le lire à voix haute : <code>47,XX,+21</code>, <code>45,XX,rob(14;21)</code>, <code>46,XY,del(5p)</code>, <code>46,X,i(Xq)</code>.</li>
-      <li><b>Refaire le raisonnement de risque</b> pour chaque mode : AD (1/2), AR (1/4, 2/3 des sains conducteurs), RLX (1/2 des fils), DLX (100&nbsp;% des filles), holandrique (100&nbsp;% des fils).</li>
-      <li><b>Travailler les arbres généalogiques</b> : utiliser le <a href="#c3-arbre">tableau de lecture rapide</a>, puis vérifier sur des exercices.</li>
-      <li><b>S'entraîner sur l'annal QCM</b> du dossier Drive (QCM Rochd + Dehbi, décembre 2022) — c'est le format réel.</li>
+      <li><b>Savoir écrire un caryotype</b> : <code>47,XX,+21</code>, <code>45,XX,rob(14;21)</code>, <code>46,XY,del(5p)</code>, <code>46,X,i(Xq)</code>.</li>
+      <li><b>Refaire le raisonnement de risque</b> pour chaque mode : AD (1/2), AR (1/4 et 2/3 des sains conducteurs), RLX (1/2 des fils), DLX (100 % des filles), holandrique (100 % des fils).</li>
+      <li><b>Finir par l'annale</b> QCM Rochd + Dehbi (décembre 2022) : c'est le format réel de l'épreuve.</li>
     </ol>
     <div class="note">
       <div class="lbl">Rappel</div>
       <p style="margin-bottom:0">
-        Format d'épreuve du module : <b>QCM</b>, 8 heures de cours. Les notes d'examen partagées par la promotion
-        renvoient au cours ou au résumé FALGHASS — à confronter toujours aux annonces officielles de la faculté.
+        Format d'épreuve du module : <b>QCM</b>. Les notes d'examen partagées par la promotion renvoient au cours
+        ou au résumé FALGHASS — à confronter toujours aux annonces officielles de la faculté.
       </p>
     </div>
 
     <h2 id="docs">Les documents du dossier</h2>
-    <p>Dossier Drive : <code>Pr. DEHBI › 2023-2024 › Cours &amp; Résumés</code></p>
+    <p>
+      Dossier Drive : <code>Biologie Génétique Et Moléculaire</code> — il contient <b>3 sous-dossiers</b>
+      (Pr.&nbsp;Dehbi, Pr.&nbsp;Rochd, TD/Annales) et <b>10 documents</b>.
+    </p>
+
+    <h3>Pr. Dehbi — Génétique</h3>
+    <table>
+      <thead><tr><th>Document</th><th>Dossier</th><th>Taille</th><th>Ce que c'est</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>1 er cours.pdf</b></td><td>Cours</td><td>4,4 Mo</td>
+          <td>Cytogénétique conventionnelle et moléculaire : chromosome métaphasique, Denver, caryotype, bandes, ISCN, FISH, M-FISH, ACPA.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1GQ_u8wdXePDdFUEa2VJw3hYH5RsnqsVU/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>2ème cours.pdf</b></td><td>Cours</td><td>2,9 Mo</td>
+          <td>Anomalies chromosomiques : nombre, structure, mosaïques et chimères, DUP, maladies cassantes, conséquences.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1CwUx5tzM9wk4omkr6wAyoGN08tOo5qr7/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>3ème cours.pdf</b></td><td>Cours</td><td>2,2 Mo</td>
+          <td>Hérédité mendélienne (AD, AR, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle).</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/16DCa4ENcrcfEMcwU2HiVOSEQD6-2Do5d/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>GENETIQUE FALGHASS.pdf</b></td><td>Résumés</td><td>2,9 Mo</td>
+          <td>Résumé de la génétique — deuxième lecture pour vérifier les notions et les chiffres.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/13erUcVz7kdHkexgnEha7s4W18mxc2mxR/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Résumé Dehbi.pdf</b></td><td>Résumés</td><td>6,5 Mo</td>
+          <td>Fiches du cours par l'enseignante. <b>Scanné</b> (non parcourable).</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1gLy_1WBY4BCbz97XQuygblpR1iFJPO02/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Pr. Rochd — Biologie moléculaire et génie génétique</h3>
+    <table>
+      <thead><tr><th>Document</th><th>Dossier</th><th>Taille</th><th>Ce que c'est</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Biologie Moléculaire - Génie Génétique.pdf</b></td><td>Cours</td><td>0,6 Mo · 28 p.</td>
+          <td><b>Le polycopié officiel</b> : chapitre 1 biologie moléculaire (p. 4-21) + chapitre 2 génie génétique (p. 22-28). C'est la source de la partie 1 de cette page.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/15TMBAysramxVxpRTgkh5UjZEy-BMmL6s/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>ARNm mature prêt pour la maturation.pdf</b></td><td>Cours</td><td>27 Ko</td>
+          <td>Figure : structure de l'ARNm mature — codon d'initiation AUG, codons stop UGA/UAG/UAA, coiffe, leader, région codante, queue poly A.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1yBlEgpvzZjGJsYOuXdA4Aqti1o2Bc5T-/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>De l'ARN au polypeptide.pdf</b></td><td>Cours</td><td>25 Ko</td>
+          <td>Figure : traduction de 6 codons (<code>AUG GAC UUG CAG CAC UAA</code>) en Met-Asp-Leu-Gln-His-STOP.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1W1AzTc_HyT2TlPVgm_Se7Pg7jn7YIva1/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>Biologie moléculaire (SARA BOUALAT).pdf</b></td><td>Résumés</td><td>13,1 Mo · 16 p.</td>
+          <td>Résumé étudiant. <b>Scanné</b> (16 pages d'images, aucun texte extractible).</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1tZbSbbc8nqHiqjVnIcZYSvmMS6m4Dd1M/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>LA BIOLOGIE MOLÉCULAIRE RESUME.pdf</b></td><td>Résumés</td><td>7,3 Mo · 8 p.</td>
+          <td>Résumé étudiant. <b>Scanné</b>.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1VGl7VDk9kW8iJF77mtDUKeyx-_S4mZ9-/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>R Réplication (Chtioui).pdf</b></td><td>Résumés</td><td>1,0 Mo · 4 p.</td>
+          <td>Résumé sur la réplication. <b>Scanné</b>.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1ZKvafvl2nxDVE5P2PEpy3fSXNMnOY36k/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <td><b>RESUME BIO MOL ESSUIDI.pdf</b></td><td>Résumés</td><td>10,9 Mo · 13 p.</td>
+          <td>Résumé étudiant. <b>Scanné</b>.</td>
+          <td><a class="btn" href="https://drive.google.com/file/d/1EZ8EsLNzGd0TPBKDfLrpIydm4owK-00q/view" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>TD / Annales</h3>
     <table>
       <thead><tr><th>Document</th><th>Taille</th><th>Ce que c'est</th><th></th></tr></thead>
       <tbody>
         <tr>
-          <td><b>1 er cours.pdf</b></td><td>4,4 Mo</td>
-          <td>Cytogénétique conventionnelle et moléculaire : chromosome métaphasique, Denver, caryotype, bandes, ISCN, FISH, M-FISH, ACPA. <b>La base de la partie 1 de cette page.</b></td>
-          <td><a class="btn" href="https://drive.google.com/file/d/1GQ_u8wdXePDdFUEa2VJw3hYH5RsnqsVU/view" target="_blank" rel="noopener">Ouvrir</a></td>
-        </tr>
-        <tr>
-          <td><b>2ème cours.pdf</b></td><td>2,9 Mo</td>
-          <td>Anomalies chromosomiques : nombre, structure, mosaïques et chimères, DUP, maladies cassantes, conséquences. <b>La base de la partie 2.</b></td>
-          <td><a class="btn" href="https://drive.google.com/file/d/1CwUx5tzM9wk4omkr6wAyoGN08tOo5qr7/view" target="_blank" rel="noopener">Ouvrir</a></td>
-        </tr>
-        <tr>
-          <td><b>3ème cours.pdf</b></td><td>2,2 Mo</td>
-          <td>Hérédité mendélienne (AD, AR, liée à l'X) et non mendélienne (mitochondriale, empreinte, multifactorielle). <b>La base de la partie 3.</b></td>
-          <td><a class="btn" href="https://drive.google.com/file/d/16DCa4ENcrcfEMcwU2HiVOSEQD6-2Do5d/view" target="_blank" rel="noopener">Ouvrir</a></td>
-        </tr>
-        <tr>
-          <td><b>GENETIQUE FALGHASS.pdf</b></td><td>2,9 Mo</td>
-          <td>Résumé de la génétique — sert de <b>deuxième lecture</b> pour vérifier les notions et les chiffres. C'est le résumé auquel renvoient les notes d'examen du module.</td>
-          <td><a class="btn" href="https://drive.google.com/file/d/13erUcVz7kdHkexgnEha7s4W18mxc2mxR/view" target="_blank" rel="noopener">Ouvrir</a></td>
-        </tr>
-        <tr>
-          <td><b>Résumé Dehbi.pdf</b></td><td>6,5 Mo</td>
-          <td>Résumé/fiches du cours par l'enseignante. <b>PDF scanné</b> : non parcourable, à lire à l'écran.</td>
-          <td><a class="btn" href="https://drive.google.com/file/d/1gLy_1WBY4BCbz97XQuygblpR1iFJPO02/view" target="_blank" rel="noopener">Ouvrir</a></td>
-        </tr>
-        <tr>
-          <td><b>QCM Rochd + Dehbi (23-12-2022)</b></td><td>—</td>
-          <td>Session d'entraînement au format réel de l'épreuve. Le meilleur test de dernière minute.</td>
+          <td><b>qcm rochd+dehbi_231222_105008.pdf</b></td><td>0,5 Mo</td>
+          <td>Session d'entraînement au format réel de l'épreuve (23-12-2022). <b>Scanné</b> : à faire à l'écran.</td>
           <td><a class="btn" href="https://drive.google.com/file/d/1-nk9r4kSPV-N5rpT6bpHTZtBAQKCZ97o/view" target="_blank" rel="noopener">Ouvrir</a></td>
         </tr>
       </tbody>
     </table>
+
     <div class="note warn">
       <div class="lbl">Note de transparence</div>
       <p style="margin-bottom:0">
-        Cette page est construite sur les <b>trois cours officiels textuels</b>, recoupés avec le résumé FALGHASS.
-        Les deux documents <em>Résumé Dehbi</em> et <em>QCM Rochd + Dehbi</em> sont des <b>PDF scannés sans texte
-        extractible</b> : ils ne sont donc pas résumés ici, seulement liés. Les diaporamas contenant des
-        schémas (cartes chromosomiques, arbres, images de bandes), ceux-ci ne sont pas reproduits : se référer
-        aux PDF pour l'iconographie.
+        Cette page est construite sur les <b>supports textuels du dossier</b> : le polycopié du Pr. Rochd (28 p.,
+        texte intégralement extrait), ses deux figures, et les trois cours du Pr. Dehbi. Les <b>6 autres
+        documents</b> — <em>Résumé Dehbi</em>, les 4 résumés de Rochd et l'annale QCM — sont des <b>PDF
+        scannés</b> sans texte extractible : ils sont donc <b>liés mais non résumés</b> ici. Les schémas des
+        diaporamas (cartes chromosomiques, arbres généalogiques, images de bandes, schémas de clonage) ne sont pas
+        reproduits : se référer aux PDF pour l'iconographie.
       </p>
     </div>
 
     <footer>
       <p>
-        Page de révision non officielle, réalisée par la promotion — les documents appartiennent à leur auteure,
-        <b>Pr. H. Dehbi</b> (Faculté de Médecine Dentaire de Casablanca, Université Hassan&nbsp;II).
-        Le contenu est référencé, jamais recopié : chaque lien ouvre le PDF original sur Google Drive.
+        Page de révision non officielle, réalisée par la promotion — les documents appartiennent à leurs auteurs,
+        <b>Pr. H. Dehbi</b> et <b>Pr. T. Rochd</b> (Faculté de Médecine Dentaire de Casablanca, Université
+        Hassan&nbsp;II). Le contenu est référencé, jamais recopié : chaque lien ouvre le PDF original sur Google
+        Drive.
       </p>
       <p>
         Module <b>Biologie cellulaire, moléculaire et génétique</b> › Biologie génétique et moléculaire ·
-        année 2023-2024 · 8&nbsp;h · épreuve en QCM.
+        année 2023-2024 · épreuve en QCM.
       </p>
       <p style="margin-bottom:0">
         <a href="../index.html">← Retour au portail FMDC 1A</a> ·
-        <a href="https://drive.google.com/drive/folders/1oXU-IDxmNdBSmVI7YNcnUQqdbM4Zn4P8" target="_blank" rel="noopener">Dossier Drive du cours</a>
+        <a href="https://drive.google.com/drive/folders/1ZjZwJJNeSi5f_Gc8uNXp44vQfFiyO1yP" target="_blank" rel="noopener">Dossier Drive du module</a>
       </p>
     </footer>
 
@@ -1705,6 +2370,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
 </div>
 
 <script>
+
 /* ---------------- Thème clair/sombre ---------------- */
 (function(){
   var root=document.documentElement, btn=document.getElementById('theme');
@@ -1743,6 +2409,27 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
 /* ---------------- Auto-évaluation ---------------- */
 (function(){
   var QS = [
+    { q:"Un nucléotide est constitué de…", o:["un sucre, une base et un groupement phosphate","deux bases et un sucre","un acide aminé et un phosphate","une base et un lipide"], a:0,
+      w:"Nucléotide = sucre + base + groupement phosphate (nucléoside tri-phosphate : P–P–P). C'est l'unité de construction des acides nucléiques — Rochd, p. 4." },
+    { q:"Combien de paires de bases contient l'ADN humain, et quelle part est codante ?", o:["3,3 milliards · 10 % dont 1,5 % pour les protéines","3,3 millions · 50 % codants","46 paires · 100 % codants","3,3 milliards · 1,5 % dont 10 % pour les protéines"], a:0,
+      w:"3,3 milliards de paires de bases ; environ 10 % codent, dont 1,5 % pour la synthèse protéique — Rochd, p. 6." },
+    { q:"La réplication de l'ADN est…", o:["conservatrice et unidirectionnelle","semi-conservatrice et bidirectionnelle","dispersive et bidirectionnelle","semi-conservatrice et unidirectionnelle"], a:1,
+      w:"Chaque molécule fille garde un brin parental et un brin néoformé (semi-conservatrice) ; la progression se fait dans les 2 sens depuis l'origine (bidirectionnelle) — Rochd, p. 8." },
+    { q:"Quelle enzyme coupe un brin d'ADN pour éviter les torsions devant l'hélicase ?", o:["l'ADN ligase","la topo-isomérase","la RNase H","la primase"], a:1,
+      w:"La topo-isomérase I coupe un brin puis le ressoude après déroulement. La ligase resoude les liaisons phosphodiesters, la RNase H enlève les amorces ARN — Rochd, p. 9-10." },
+    { q:"Le brin indirect (retardé) est synthétisé…", o:["de façon continue dans le sens 5' → 3'","de façon discontinue, sous forme de fragments d'Okazaki","de façon continue dans le sens 3' → 5'","uniquement chez les procaryotes"], a:1,
+      w:"Le brin direct est continu ; le brin indirect est discontinu (fragments d'Okazaki), toujours dans le sens 5' → 3' — Rochd, p. 10." },
+    { q:"La probabilité de mutation est de…", o:["10⁻³ à 10⁻⁴","10⁻⁶ à 10⁻⁷","10⁻⁹ à 10⁻¹⁰","10⁻¹² à 10⁻¹³"], a:2,
+      w:"10⁻⁹ à 10⁻¹⁰ par génération. Les mutations de la lignée germinale sont transmissibles, les somatiques non — Rochd, p. 11." },
+    { q:"Une mutation qui change l'acide aminé sans changer ses propriétés est dite…", o:["silencieuse","conservatrice","faux sens","non-sens"], a:1,
+      w:"Conservatrice : ex. AAA (Lys) → AGA (Arg), deux acides aminés basiques. Silencieuse = pas de changement d'AA ; faux sens = propriétés différentes (protéine non fonctionnelle) — Rochd, p. 12." },
+    { q:"Le signal de polyadénylation qui participe à la terminaison de la transcription est…", o:["AAUAAA","AUG","UGA","TTAGGG"], a:0,
+      w:"AAUAAA : l'ARN polymérase continue un peu après ce motif puis est libérée. AUG est le codon initiateur, UGA un codon stop — Rochd, p. 17." },
+    { q:"La maturation de l'ARNm comporte…", o:["une coiffe en 3' et une queue poly A en 5'","une queue poly A en 3', une coiffe méthylguanosine en 5' et l'excision-épissage","uniquement l'excision des exons","la traduction des introns"], a:1,
+      w:"Queue poly A (~200 résidus) en 3', coiffe CH3-G-ppp en 5' (reconnaissance par les ribosomes), puis excision des introns et épissage des exons — Rochd, p. 17-18." },
+    { q:"Dans le diagnostic de la drépanocytose, la mutation responsable est…", o:["GAG → GTG, 6ᵉ acide aminé de la chaîne β (Glu → Val)","GAG → GAA, 1ᵉʳ acide aminé de la chaîne α","une délétion de l'exon 1 de la chaîne β","GTG → GAG, 6ᵉ acide aminé de la chaîne α"], a:0,
+      w:"Mutation ponctuelle du 1er exon du gène de la chaîne β : GAG (acide glutamique) → GTG (valine). Le palindrome des 5ᵉ-7ᵉ triplets est reconnu par Mst II — Rochd, p. 25." },
+    
     { q:"Les trois éléments fonctionnels d'un chromosome sont…", o:["un bras court, un centromère et un bras long","un centromère, deux télomères et des origines de réplication","un kinétochore, des histones et des satellites","un centromère, des télomères et des gènes"], a:1,
       w:"Centromère (constriction primaire, fixation du fuseau), télomères (TTAGGG)n et origines de réplication. Les bras p et q sont des régions, pas des éléments fonctionnels — cours 1." },
     { q:"La position du centromère est déterminée…", o:["par la séquence d'ADN","de façon épigénétique, indépendamment de la séquence","par les télomères","par le nombre de bandes G"], a:1,
@@ -1771,7 +2458,7 @@ footer{border-top:1px solid var(--line);margin:46px 0 0;padding:22px 0 40px;colo
       w:"2 cassures distales + fusion des extrémités = anneau, avec perte des télomères (déséquilibré) et instabilité mitotique. La division transversale du centromère donne un isochromosome ; l'échange entre deux acrocentriques est une robertsonienne — cours 2." },
     { q:"Un homme atteint d'une maladie récessive liée à l'X transmet…", o:["la maladie à 50 % de ses fils","la maladie à 100 % de ses filles conductrices et 0 % de ses fils malades","la maladie à 50 % de ses filles","la maladie à tous ses enfants"], a:1,
       w:"Il donne son X à toutes ses filles (conductrices, 100 %) et son Y à tous ses fils (0 % malades) : jamais de transmission père → fils — cours 3." }
-  ];
+  ];;
   var root=document.getElementById('quiz-root'), scoreEl=document.getElementById('quiz-score');
   var done=0, right=0;
   function render(){
