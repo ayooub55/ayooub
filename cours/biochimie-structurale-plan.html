@@ -215,6 +215,12 @@ footer.foot a{font-weight:600}
       <a href="#ch4">Lipides <small>· Naamane</small></a>
       <a href="#ch5">Sphingolipides <small>· Naamane</small></a>
     </nav>
+    <div class="side-title">Questions annoncées</div>
+    <nav>
+      <a href="#keller">🌳 Arbre de Keller et Kiliani</a>
+      <a href="#cyclisation">🧬 Cyclisation &amp; anomères</a>
+    </nav>
+
     <div class="side-title">Ailleurs</div>
     <nav>
       <a href="biochimie-structurale.html">📖 Cours expliqué (Khlil)</a>
@@ -636,6 +642,94 @@ footer.foot a{font-weight:600}
           L'arbre ne montre que la <b>série D</b> et seulement les <b>aldoses</b>. Les cétoses (dont le fructose)
           ont leur propre filiation, qui part du <b>dihydroxyacétone</b> — c'est écrit dans le diaporama, diapo 19,
           et c'est exactement ce qui peut faire perdre des points si on l'oublie.
+        </div>
+
+        <h4 id="cyclisation">🧬 Cyclisation du glucose — le carbone anomérique (1 C* → 2 anomères)</h4>
+        <p>Deuxième partie annoncée à l'examen. Le principe tient en une phrase : <b>le glucose n'existe pas
+          à l'état de chaîne ouverte dans l'eau</b> — son aldéhyde réagit avec un de ses propres alcools et se
+          referme en cycle. Ce faisant, il crée un <b>carbone asymétrique supplémentaire</b>, donc deux molécules.</p>
+
+        <figure style="margin:16px 0;padding:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;text-align:center">
+          <img src="img/cyclisation-glucose.png" alt="Cyclisation du D-glucose en D-glucopyranose : l'alcool en C5 attaque le carbone aldéhydique C1, avec élimination d'une molécule d'eau, formant un cycle à 6 atomes et un carbone anomérique C1* donnant deux anomères alpha et bêta."
+               style="max-width:100%;height:auto;border-radius:8px">
+          <figcaption style="margin-top:9px;font-size:.82rem;color:var(--mut)">
+            <b>D-glucose (chaîne ouverte)</b> → l'<b>OH du C5</b> attaque le <b>C1</b> aldéhydique, avec élimination
+            d'<b>H₂O</b> → <b>D-glucopyranose</b>. Le C1 devient le <b>carbone anomérique (C1*)</b> : son OH peut
+            se placer des deux côtés, d'où <b>2 anomères</b> (α et β).
+          </figcaption>
+        </figure>
+
+        <h4>Les 5 étapes à raconter</h4>
+        <ol class="steps">
+          <li><b>Attaque intramoléculaire</b> : l'OH porté par le <b>C5</b> attaque le carbone <b>C1</b> (aldéhydique).</li>
+          <li><b>Fermeture de l'hémiacétal</b> : le carbonyle devient un carbone porteur d'un <b>OH</b> et d'un
+            <b>O</b> engagé dans le cycle → c'est un <b>hémiacétal</b> intramoléculaire.</li>
+          <li><b>Perte d'une molécule d'eau</b> (H₂O), d'où la formule brute conservée mais un cycle formé.</li>
+          <li><b>Cycle à 6 atomes</b> = 5 carbones + 1 oxygène → on parle de <b>pyranose</b>
+            (par analogie avec le pyrane, hétérocycle à 6 atomes).</li>
+          <li><b>Nouveau carbone asymétrique en C1</b> → <b>2 anomères</b> : <b>α</b> et <b>β</b>.</li>
+        </ol>
+
+        <div class="note ok">
+          <span class="lbl">La règle de l'anomérie (série D)</span>
+          Le repère est le <b>CH₂OH du C5</b> :<br>
+          • <b>α</b> = l'OH anomérique est du <b>côté opposé</b> au CH₂OH (<em>trans</em>) ;<br>
+          • <b>β</b> = l'OH anomérique est du <b>même côté</b> que le CH₂OH (<em>cis</em>).<br>
+          C'est la même logique dans tous les oses : <b>1 carbone anomérique → 2 anomères</b>.
+        </div>
+
+        <h4>Ce que devient chaque ose</h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Ose de départ</th><th>OH qui attaque</th><th>Cycle obtenu</th><th>Formes en solution</th></tr></thead>
+          <tbody>
+            <tr><td><b>D-glucose</b> (aldohexose)</td><td>OH du <b>C5</b></td><td><b>Pyranose</b> (6 atomes) → D-glucopyranose</td><td><b>α 36 %</b> · <b>β 63 %</b> · forme ouverte <b>0,1 %</b></td></tr>
+            <tr><td><b>D-fructose</b> (cétohexose)</td><td>OH du <b>C5</b> sur le C2 cétonique</td><td><b>Furanose</b> (5 atomes) → D-fructofuranose</td><td>α et β fructofuranose (mélange)</td></tr>
+            <tr><td><b>D-ribose</b> (aldopentose)</td><td>OH du <b>C4</b></td><td><b>Furanose</b> (5 atomes)</td><td>α et β ribofuranose</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Mutarotation : pourquoi α 36 % et β 63 %</h4>
+        <p>Les deux anomères ne sont pas des molécules figées : en solution, le cycle <b>s'ouvre et se referme</b>
+          en permanence, en passant par la forme ouverte (0,1 %). L'équilibre s'établit donc de lui-même, et c'est
+          pour cela qu'on observe un <b>pouvoir rotatoire qui varie avec le temps</b> jusqu'à une valeur stable :
+          c'est la <b>mutarotation</b>.</p>
+        <ul class="clean">
+          <li>Un glucose α pur dissous → son pouvoir rotatoire <b>diminue</b> jusqu'à l'équilibre.</li>
+          <li>Un glucose β pur dissous → son pouvoir rotatoire <b>augmente</b> jusqu'au même équilibre.</li>
+          <li>Le mélange d'équilibre contient <b>63 % de β</b> : l'anomère β est le plus stable (OH anomérique
+            en position équatoriale).</li>
+        </ul>
+
+        <h4>Question type, corrigée</h4>
+        <div class="note warn">
+          <span class="lbl">Question</span>
+          <b>« Expliquer la cyclisation du D-glucose et définir le carbone anomérique. Pourquoi obtient-on deux
+          composés ? »</b>
+        </div>
+        <p><b>Réponse attendue</b> — En solution, l'OH du C5 du D-glucose attaque le carbone aldéhydique C1 :
+          il se forme un <b>hémiacétal intramoléculaire</b> avec élimination d'une <b>H₂O</b>, donnant un cycle
+          à 6 atomes, le <b>D-glucopyranose</b>. Le C1, qui était achiral dans la forme ouverte (il portait deux H
+          et un =O), devient <b>chiral</b> : c'est le <b>carbone anomérique</b>. Son OH peut se trouver des deux
+          côtés du plan du cycle, ce qui donne <b>deux anomères</b>, <b>α</b> (OH trans par rapport au CH₂OH)
+          et <b>β</b> (OH cis). En solution les deux s'équilibrent par <b>mutarotation</b> : 36 % α, 63 % β,
+          0,1 % de forme ouverte.</p>
+
+        <div class="note">
+          <span class="lbl">Ne pas confondre les 3 mots</span>
+          <b>Épimère</b> : deux oses qui diffèrent par <b>un seul carbone</b> chiral (glucose / galactose en C4).<br>
+          <b>Anomère</b> : cas particulier d'épimère où la différence porte sur le <b>seul carbone anomérique</b>
+          (α-glucose / β-glucose).<br>
+          <b>Énantiomère</b> : image miroir, <b>tous</b> les carbones sont inversés (D-glucose / L-glucose).
+        </div>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          Le <b>C1 n'est pas chiral dans la forme ouverte</b> du glucose : c'est la fermeture du cycle qui crée le
+          carbone asymétrique — d'où la phrase du cours « 1 C* → 2 anomères ».
+          Ne pas dire que le fructose donne un pyranose : il cyclise en <b>furanose</b> (cycle à 5 atomes) parce que
+          son OH réactif est celui du C5 sur un carbonyle en C2.
+          Enfin, la <b>forme ouverte ne disparaît pas</b> : elle représente 0,1 % et c'est elle qui permet la
+          mutarotation (et les réactions de la fonction aldéhyde).
         </div>
 
         <h4>Les 6 liaisons et leur conséquence</h4>

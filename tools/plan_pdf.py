@@ -166,7 +166,7 @@ SESSIONS = [
     ("S6", "Enzymes : définitions, nomenclature, effet de [E] et de [S], Michaelis-Menten", "support p. 29-38"),
     ("S7", "Inhibitions, pH et température, allostérie — redessiner les 4 graphiques", "support p. 39-47"),
     ("S8", "Vitamines et coenzymes : tableau vitamine → coenzyme → réaction", "support p. 48-70"),
-    ("S9", "Glucides : classification, Fischer, arbre de Keller et Kiliani, épimères, cyclisation, Tollens", "diapos 4-32"),
+    ("S9", "Glucides : Fischer, arbre de Keller et Kiliani, épimères, cyclisation, anomères, Tollens", "diapos 4-32"),
     ("S10", "Osides : liaison osidique, di- et polyosides, GAG, protéoglycanes", "diapos 33-62"),
     ("S11", "Lipides : acides gras, glycérides, phospholipides, stérols, bilan lipidique", "diapos 63-89"),
     ("S12", "Sphingolipides (§ VII) + annales chronométrées", "diapos 90-93"),
@@ -192,7 +192,7 @@ FIGURES = [
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
-                         "1 : 2 : 1 : rapport C : H : O",
+                         "1 C* anomérique → 2 anomères (α, β)",
                          "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
                          "épimères du glucose : mannose C2 · allose C3 · galactose C4"]),
     ("Lipides", ORANGE, ["C4 → C24, nombre pair de carbones",
@@ -233,7 +233,7 @@ QUESTIONS = [
     "Effet Bohr : mécanisme et rôle du 2,3-DPG ?",
     "Écrire Michaelis-Menten ; définir K<sub>M</sub> et V<sub>max</sub>.",
     "Inhibition compétitive, puis non compétitive : K<sub>M</sub> ? V<sub>max</sub> ?",
-    "Oses / osides, holosides / hétérosides : 2 exemples chacun.",
+    "Cyclisation : pourquoi 1 C* anomérique → 2 anomères ?",
     "Pourquoi le saccharose est-il non réducteur ?",
     "Bilan lipidique normal, et les 3 maladies de surcharge ?",
 ]
@@ -461,7 +461,7 @@ def page_two(c):
         c.setFont("DJ", 7.0)
         c.drawString(x + 9 + nw + 5, py - 5, "— " + meca)
 
-    y = y - 5 * 13.8 - 11
+    y = y - 5 * 13.8 - 9
 
     # 3 derniers jours
     y = section(c, y, "Les 3 derniers jours", GREEN)
@@ -478,7 +478,7 @@ def page_two(c):
         c.drawString(x + 9, y - 14, tag)
         draw_para(c, x + 9, y - 22, txt, 6.5, 8.4, INK, "DJ", dw - 18)
 
-    y = y - dh - 14
+    y = y - dh - 12
 
     # auto-test
     y = section(c, y, "Auto-test : 10 questions à savoir traiter sans support", PURPLE)
@@ -497,8 +497,7 @@ def page_two(c):
     y = qy - sum(rowh2) - 6
 
     draw_para(c, M, y,
-              "<b>Rappel</b> — carte de travail, pas un document officiel : les consignes de dernière minute "
-              "d'un enseignant priment toujours.",
+              "<b>Rappel</b> — carte de travail, pas un document officiel : les consignes du prof priment.",
               6.6, 8.4, GREY, "DJ", 515)
 
     c.setFillColor(GREY)
