@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan du module — Biochimie structurale (Khlil + Naamane) | FMDC 1A</title>
+<meta name="description" content="Le grand plan du module de Biochimie structurale FMDC 1A : programme officiel des Pr. Khlil et Naamane, chapitre par chapitre, chiffres clés, pathologies, documents du Drive et plan de révision en 12 séances.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#141b24; --card:#161f2b; --line:#263244;
+  --txt:#e6edf3; --mut:#93a4b8; --acc:#5aa9e6; --acc2:#e08b2f; --ok:#3fb950;
+  --warn:#d29922; --bad:#f85149; --quote:#1c2733; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e1e7ef;
+  --txt:#1b2430; --mut:#5a6b7d; --acc:#1f6fb2; --acc2:#b96a12; --ok:#1a7f37;
+  --warn:#9a6700; --bad:#b42318; --quote:#f0f5fb; --shadow:0 6px 24px rgba(20,40,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:16px/1.66 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.28;margin:0 0 .5rem}
+h2{font-size:1.6rem;margin:3.2rem 0 .9rem;padding-bottom:.45rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.18rem;margin:2rem 0 .5rem;color:var(--acc);scroll-margin-top:80px}
+h4{font-size:1.02rem;margin:1.3rem 0 .4rem;scroll-margin-top:80px}
+p{margin:.55rem 0}
+small{font-size:.86rem}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;
+  background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:1px 5px;white-space:nowrap}
+strong{color:var(--txt)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:270px 1fr;gap:34px}
+
+/* ---- top bar ---- */
+header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1280px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.crumb{font-size:.85rem;color:var(--mut)}
+.crumb b{color:var(--txt)}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--txt);border-radius:9px;padding:7px 12px;font-size:.86rem;cursor:pointer;text-align:left;font-family:inherit}
+.btn:hover{border-color:var(--acc);text-decoration:none}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.prog-mini{min-width:132px;font-size:.78rem;color:var(--mut)}
+.prog-mini .track{height:6px;background:var(--bg2);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:4px}
+.prog-mini .fill{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ok));transition:width .25s}
+.bar{height:3px;background:var(--acc);width:0;position:fixed;top:0;left:0;z-index:40}
+
+/* ---- sidebar ---- */
+aside.side{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 90px);overflow-y:auto;padding:22px 0 40px}
+.side-title{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mut);margin:1.3rem 0 .45rem;font-weight:700}
+.side-title:first-child{margin-top:0}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{color:var(--mut);font-size:.9rem;padding:5px 10px;border-left:2px solid transparent;border-radius:0 7px 7px 0}
+.side nav a:hover{background:var(--bg2);color:var(--txt);text-decoration:none}
+.side nav a.on{color:var(--txt);border-left-color:var(--acc);background:var(--bg2);font-weight:600}
+.side nav a .n{display:inline-block;min-width:1.5em;color:var(--acc2);font-weight:700;font-size:.82rem}
+
+/* ---- hero ---- */
+.hero{padding:34px 0 6px}
+.hero .kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc2);font-weight:700}
+.hero h1{font-size:2.15rem;margin:.35rem 0 .5rem;letter-spacing:-.4px}
+.hero p.lead{font-size:1.03rem;color:var(--mut);max-width:74ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:10px;margin:22px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.45rem;line-height:1.15;color:var(--acc)}
+.stat span{font-size:.78rem;color:var(--mut)}
+
+/* ---- cards ---- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 17px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:6px}
+.card h3{margin:0;font-size:1.02rem;color:var(--txt)}
+.card .who{font-size:.76rem;color:var(--acc2);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.card p{font-size:.9rem;color:var(--mut);margin:.15rem 0 0}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:.72rem;background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--mut)}
+.card .go{margin-top:auto;padding-top:10px;font-size:.85rem;font-weight:600}
+
+/* ---- callouts ---- */
+.note{border-left:3px solid var(--acc);background:var(--quote);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0;font-size:.94rem}
+.note.warn{border-left-color:var(--warn)}
+.note.bad{border-left-color:var(--bad)}
+.note.ok{border-left-color:var(--ok)}
+.note .lbl{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--mut);margin-bottom:3px}
+
+/* ---- tables ---- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:520px}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg2);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);
+  position:sticky;top:0;font-weight:700}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:color-mix(in srgb,var(--acc) 6%,transparent)}
+td b{color:var(--acc)}
+td .pg{color:var(--mut);font-size:.8rem;white-space:nowrap}
+
+/* ---- accordions ---- */
+details.chap{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;box-shadow:var(--shadow);overflow:hidden}
+details.chap>summary{cursor:pointer;padding:15px 18px;display:flex;align-items:center;gap:11px;list-style:none;flex-wrap:wrap}
+details.chap>summary::-webkit-details-marker{display:none}
+details.chap>summary:hover{background:var(--bg2)}
+details.chap>summary .num{flex:none;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));
+  color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+details.chap>summary .t{font-weight:700;font-size:1.03rem}
+details.chap>summary .sub{color:var(--mut);font-size:.82rem}
+details.chap>summary .chev{margin-left:auto;color:var(--mut);transition:transform .2s}
+details.chap[open]>summary .chev{transform:rotate(90deg)}
+details.chap .body{padding:2px 18px 18px;border-top:1px solid var(--line)}
+details.chap .body>*:first-child{margin-top:14px}
+.tools{display:flex;gap:8px;margin:12px 0 0;flex-wrap:wrap}
+
+/* ---- lists ---- */
+ul.clean{list-style:none;padding-left:0;margin:.6rem 0}
+ul.clean li{position:relative;padding-left:20px;margin:.3rem 0;font-size:.93rem}
+ul.clean li::before{content:"▸";position:absolute;left:0;color:var(--acc2);font-weight:700}
+ol.steps{padding-left:1.3rem;margin:.6rem 0}
+ol.steps li{margin:.35rem 0;font-size:.93rem}
+
+/* ---- check ---- */
+label.check{display:flex;gap:9px;align-items:flex-start;cursor:pointer;padding:5px 0;font-size:.9rem}
+label.check input{margin-top:4px;accent-color:var(--ok);width:16px;height:16px;flex:none}
+label.check input:checked+span{color:var(--mut);text-decoration:line-through}
+
+/* ---- répartition ---- */
+.split{display:flex;height:30px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:10px 0 6px}
+.split div{display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#0d1117;white-space:nowrap;overflow:hidden}
+.split .s1{background:#5aa9e6}.split .s2{background:#7f8ce0}.split .s3{background:#3fb950}
+.split .s4{background:#d29922}.split .s5{background:#e08b2f}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--mut);margin-bottom:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+
+/* ---- docs ---- */
+.doc-grp{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:12px 0}
+.doc-grp h4{margin:0 0 4px;color:var(--txt);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.doc-grp .prof{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--acc2);font-weight:700}
+ul.docs{list-style:none;padding:0;margin:.5rem 0 0}
+ul.docs li{padding:6px 0;border-top:1px dashed var(--line);font-size:.9rem;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+ul.docs li:first-child{border-top:none}
+ul.docs .sz{margin-left:auto;color:var(--mut);font-size:.76rem;white-space:nowrap}
+.pill{font-size:.68rem;border-radius:5px;padding:1px 6px;border:1px solid var(--line);color:var(--mut);background:var(--bg2);white-space:nowrap}
+.pill.must{color:#0d1117;background:var(--ok);border-color:var(--ok);font-weight:800}
+.pill.heavy{color:var(--warn);border-color:var(--warn)}
+
+/* ---- recherche ---- */
+.searchbar{display:flex;gap:9px;align-items:center;margin:14px 0;flex-wrap:wrap}
+.searchbar input[type=search]{flex:1;min-width:200px;background:var(--card);border:1px solid var(--line);
+  color:var(--txt);border-radius:9px;padding:9px 13px;font-size:.92rem;font-family:inherit}
+.searchbar input[type=search]:focus{outline:none;border-color:var(--acc)}
+.hit{color:var(--mut);font-size:.82rem}
+tr.hide,li.hide{display:none!important}
+
+footer.foot{border-top:1px solid var(--line);margin-top:52px;padding:26px 0 44px;color:var(--mut);font-size:.86rem}
+footer.foot a{font-weight:600}
+
+@media (max-width:980px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside.side{display:none}
+  .hero h1{font-size:1.7rem}
+  .top-in{gap:8px}
+}
+@media print{
+  header.top,aside.side,.tools,.searchbar,.bar{display:none!important}
+  .wrap{grid-template-columns:1fr;max-width:100%}
+  details.chap{break-inside:avoid;box-shadow:none}
+  details.chap>summary .chev{display:none}
+  body{background:#fff;color:#111}
+  a{color:#111;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<header class="top">
+  <div class="top-in">
+    <div class="crumb">🧪 Chimie &amp; Biochimie · <b>Biochimie structurale</b> · Plan du module</div>
+    <div class="spacer"></div>
+    <div class="prog-mini">Révision : <b id="progTxt">0 %</b>
+      <div class="track"><div class="fill" id="progFill"></div></div>
+    </div>
+    <button class="btn" id="expandAll" type="button">Tout déplier</button>
+    <button class="btn" id="themeBtn" type="button" aria-label="Changer de thème">🌗</button>
+    <a class="btn" href="plan-biochimie-structurale.pdf" target="_blank" rel="noopener">📄 Version PDF (2 p.)</a>
+    <button class="btn" id="printBtn" type="button">🖨️ Imprimer</button>
+    <a class="btn primary" href="biochimie-structurale.html">📖 Cours expliqué</a>
+    <a class="btn" href="../index.html">↩ Portail</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="side">
+    <div class="side-title">Le plan</div>
+    <nav id="toc">
+      <a href="#vue"><span class="n">1</span>Vue d'ensemble</a>
+      <a href="#prof"><span class="n">2</span>Qui fait quoi</a>
+      <a href="#programme"><span class="n">3</span>Programme détaillé</a>
+      <a href="#chiffres"><span class="n">4</span>Chiffres &amp; formules</a>
+      <a href="#maladies"><span class="n">5</span>Les pathologies citées</a>
+      <a href="#docs"><span class="n">6</span>Le dossier Drive</a>
+      <a href="#planning"><span class="n">7</span>Plan en 12 séances</a>
+      <a href="#examen"><span class="n">8</span>Stratégie d'examen</a>
+    </nav>
+    <div class="side-title">Chapitres</div>
+    <nav>
+      <a href="#ch0">Intro générale <small>· Khlil</small></a>
+      <a href="#ch1">Acides aminés &amp; protéines <small>· Khlil</small></a>
+      <a href="#ch2">Enzymes &amp; coenzymes <small>· Khlil</small></a>
+      <a href="#ch3">Glucides <small>· Naamane</small></a>
+      <a href="#ch4">Lipides <small>· Naamane</small></a>
+      <a href="#ch5">Sphingolipides <small>· Naamane</small></a>
+    </nav>
+    <div class="side-title">Ailleurs</div>
+    <nav>
+      <a href="biochimie-structurale.html">📖 Cours expliqué (Khlil)</a>
+      <a href="plan-biochimie-structurale.pdf" target="_blank" rel="noopener">📄 Plan en PDF (2 pages)</a>
+      <a href="../index.html">🏠 Portail FMDC 1A</a>
+      <a href="https://drive.google.com/drive/folders/19_IrBHqUUTQJZ8IDolqOldBBRhGSPD5c" target="_blank" rel="noopener">📁 Dossier Drive</a>
+    </nav>
+  </aside>
+
+  <!-- ============ CONTENU ============ -->
+  <main>
+    <!-- ---------- HERO ---------- -->
+    <section class="hero" id="vue">
+      <div class="kicker">FMDC Casablanca · 1ʳᵉ année médecine dentaire · S1</div>
+      <h1>Biochimie structurale — le plan complet du module</h1>
+      <p class="lead">
+        Une seule carte pour tout le module : les <b>5 chapitres numérotés</b> du programme officiel (+ l'introduction), ce qu'il faut savoir
+        dans chacun, les chiffres qui tombent, les pathologies à citer, les 25 fichiers du dossier Drive
+        et un plan de révision en 12 séances. Le module se joue sur deux enseignants :
+        <b>Pr. Naima Khlil</b> (protéines, enzymes) et <b>Pr. A. Naamane</b> (glucides, lipides).
+      </p>
+
+      <div class="stats">
+        <div class="stat"><b>2</b><span>enseignants</span></div>
+        <div class="stat"><b>5</b><span>chapitres numérotés</span></div>
+        <div class="stat"><b>25</b><span>fichiers au dossier</span></div>
+        <div class="stat"><b>1</b><span>format annoncé : QCM</span></div>
+        <div class="stat"><b>93</b><span>diapos du support long</span></div>
+        <div class="stat"><b>12</b><span>séances de révision</span></div>
+      </div>
+
+      <div class="note ok" style="border-left-color:var(--acc2)">
+        <span class="lbl">Mise à jour · partie en cours</span>
+        La promo est arrivée à la <b>partie de Pr. Naamane</b> (glucides puis lipides). La page intègre désormais
+        son <b>diaporama complet de 93 diapositives</b>, plus détaillé que les résumés de 8 pages déjà indexés :
+        quatre notions n'existent que là (filiation de Keller et Kiliani, épimères, arguments de Tollens,
+        les 6 cétoses) et sont ajoutées au <a href="#ch3">chapitre Glucides</a>.
+      </div>
+
+      <div class="note ok">
+        <span class="lbl">Comment lire cette page</span>
+        Chaque chapitre s'ouvre sur ses <b>objectifs officiels</b>, puis déroule les <b>sections du support</b> avec,
+        pour chacune, ce qu'on attend de toi. Les pastilles <span class="pill must">à savoir</span> signifient
+        « question de cours probable », <span class="pill heavy">lourd</span> « à travailler sur plusieurs séances ».
+        Rien n'est un pronostic officiel : c'est une hiérarchie de travail, à confronter aux annales.
+      </div>
+
+      <h3>La carte du module en un coup d'œil</h3>
+      <div class="cards">
+        <div class="card">
+          <span class="who">Pr. Khlil · 3 pages</span>
+          <h3>Introduction générale</h3>
+          <p>Ce qu'est la biochimie, ses 4 branches, les éléments chimiques du vivant.</p>
+          <div class="tags"><span class="tag">gratuit</span><span class="tag">QCM de définitions</span></div>
+          <a class="go" href="#ch0">Voir le détail →</a>
+        </div>
+        <div class="card">
+          <span class="who">Pr. Khlil · p. 4 → 28</span>
+          <h3>Acides aminés &amp; protéines</h3>
+          <p>20 AA, ionisation et pHi, liaison peptidique, 4 niveaux de structure, hémoglobine.</p>
+          <div class="tags"><span class="tag">le plus rentable</span><span class="tag">hémoglobine</span></div>
+          <a class="go" href="#ch1">Voir le détail →</a>
+        </div>
+        <div class="card">
+          <span class="who">Pr. Khlil · p. 29 → 71</span>
+          <h3>Enzymes &amp; coenzymes</h3>
+          <p>Site actif, classification, Michaelis-Menten, inhibitions, allostérie, vitamines.</p>
+          <div class="tags"><span class="tag">calculs</span><span class="tag">graphiques</span></div>
+          <a class="go" href="#ch2">Voir le détail →</a>
+        </div>
+        <div class="card">
+          <span class="who">Pr. Naamane · Chap. 3</span>
+          <h3>Glucides</h3>
+          <p>Oses, cyclisation, mutarotation, osides, amidon/glycogène, GAG, glycoprotéines.</p>
+          <div class="tags"><span class="tag">nomenclature</span><span class="tag">liaisons</span></div>
+          <a class="go" href="#ch3">Voir le détail →</a>
+        </div>
+        <div class="card">
+          <span class="who">Pr. Naamane · Chap. 4 &amp; 5</span>
+          <h3>Lipides &amp; sphingolipides</h3>
+          <p>Acides gras, glycérides, phospholipides, cholestérol, eicosanoïdes, bilan lipidique.</p>
+          <div class="tags"><span class="tag">chiffres cliniques</span><span class="tag">maladies</span></div>
+          <a class="go" href="#ch4">Voir le détail →</a>
+        </div>
+      </div>
+
+      <h3>Répartition de travail conseillée</h3>
+      <div class="split" role="img" aria-label="Répartition conseillée du temps de révision par chapitre">
+        <div class="s1" style="width:28%">Protéines 28 %</div>
+        <div class="s2" style="width:24%">Enzymes 24 %</div>
+        <div class="s3" style="width:20%">Glucides 20 %</div>
+        <div class="s4" style="width:20%">Lipides 20 %</div>
+        <div class="s5" style="width:8%">Intro</div>
+      </div>
+      <div class="legend">
+        <span><i style="background:#5aa9e6"></i>Chap. 1 · Khlil</span>
+        <span><i style="background:#7f8ce0"></i>Chap. 2 · Khlil</span>
+        <span><i style="background:#3fb950"></i>Chap. 3 · Naamane</span>
+        <span><i style="background:#d29922"></i>Chap. 4 · Naamane</span>
+        <span><i style="background:#e08b2f"></i>Intro</span>
+      </div>
+      <small style="color:var(--mut)">Répartition de <em>travail</em>, pas un barème officiel : elle suit le volume et la densité de chaque support.</small>
+    </section>
+
+    <!-- ---------- QUI FAIT QUOI ---------- -->
+    <h2 id="prof">2. Qui fait quoi — et ce qui est tombable chez chacun</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="who">Pr. Naima Khlil</span>
+        <h3>Protéines &amp; enzymes</h3>
+        <p>Introduction générale, chapitre 1 (acides aminés &amp; protéines, hémoglobine) et chapitre 2
+        (enzymes &amp; coenzymes). Support écrit de 71 pages + deux diaporamas de chapitre très lourds.</p>
+        <ul class="clean">
+          <li>Style : support très structuré, objectifs listés en tête de chapitre → les QCM suivent souvent ces objectifs.</li>
+          <li>Points durs : ionisation/pHi, cinétique enzymatique, hémoglobine.</li>
+          <li>Consigne de la prof : les diapositives de la fin (à partir de la diapo 188, jusqu'aux vitamines) ont été retirées.</li>
+        </ul>
+        <a class="go" href="#ch1">Chapitres 1 et 2 →</a>
+      </div>
+      <div class="card">
+        <span class="who">Pr. A. Naamane</span>
+        <h3>Glucides &amp; lipides</h3>
+        <p>Glucides, puis lipides avec, en fin de chapitre, les sphingophospholipides (§ VII).
+        Chef de laboratoire de Chimie-Biochimie. Deux supports circulent : le <b>résumé de 8 pages</b>
+        et le <b>diaporama complet de 93 diapositives</b>.</p>
+        <ul class="clean">
+          <li>Style : plan très « chimique » — définitions, classification, formules, puis exemples biologiques.</li>
+          <li>Points durs : stéréochimie des oses, nomenclature des acides gras, valeurs du bilan lipidique.</li>
+          <li>Aucune partie retirée de son programme.</li>
+          <li><b>Sa numérotation n'est pas celle des fichiers</b> : ses diapositives appellent les glucides « Chapitre I »
+            et les lipides « Chapitre I » de la seconde partie, alors que les PDF du Drive s'appellent CHAP 3 et CHAP 4.</li>
+        </ul>
+        <a class="go" href="#ch3">Glucides, lipides et sphingolipides →</a>
+      </div>
+    </div>
+    <div class="note warn">
+      <span class="lbl">À ne pas confondre</span>
+      Le dossier Drive contient aussi un <b>« Glucides — CADEMEP »</b> : c'est un résumé externe (association CADEMEP),
+      pas un support officiel. Il est très utile pour réviser vite, mais les définitions et les chiffres à citer
+      doivent venir du cours de Pr. Naamane.
+    </div>
+
+    <!-- ---------- PROGRAMME ---------- -->
+    <h2 id="programme">3. Le programme officiel, chapitre par chapitre</h2>
+    <p>Le plan ci-dessous reprend la table des matières du support Khlil 2024-25 et le plan interne des
+      deux chapitres de Pr. Naamane. Ouvre un chapitre pour voir ses sections, ses objectifs et ses pièges.</p>
+
+    <div class="searchbar">
+      <input type="search" id="q" placeholder="Filtrer le programme et les documents (ex. hémoglobine, Gaucher, Michaelis…)" aria-label="Rechercher dans le plan">
+      <span class="hit" id="hit"></span>
+    </div>
+
+    <div class="tools">
+      <button class="btn" id="expandAll2" type="button">Déplier tous les chapitres</button>
+      <button class="btn" id="collapseAll" type="button">Replier</button>
+    </div>
+
+    <!-- CH 0 -->
+    <details class="chap" id="ch0" open>
+      <summary>
+        <span class="num">0</span>
+        <span><span class="t">Introduction générale</span><br><span class="sub">Pr. Khlil · p. 1-3 · le vocabulaire à ne pas perdre</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <h4>Les 4 branches à distinguer</h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Branche</th><th>Objet exact</th></tr></thead>
+          <tbody>
+            <tr><td><b>Biochimie structurale</b></td><td>Établit les structures des molécules, des « briques élémentaires » aux macromolécules : glucides, lipides, protéines, acides nucléiques.</td></tr>
+            <tr><td><b>Biochimie métabolique</b></td><td>Les transformations que subissent ces molécules : catabolisme (dégradation) + anabolisme (biosynthèse) = métabolisme.</td></tr>
+            <tr><td><b>Biologie moléculaire</b></td><td>Relations entre structure et activité des macromolécules, surtout la transmission de l'information de l'ADN vers les protéines.</td></tr>
+            <tr><td><b>Biochimie clinique</b></td><td>Dosage de constituants dans les liquides biologiques, pour le diagnostic et le suivi thérapeutique.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Les éléments du vivant <span class="pill must">à savoir</span></h4>
+        <ul class="clean">
+          <li><b>27</b> éléments au total ; <b>11</b> d'entre eux font <b>99 %</b> de la masse corporelle.</li>
+          <li><b>C, H, O, N ≈ 96 %</b> de la matière vivante (O 65 %, C 18,5 %, H 9,5 %, N 3,5 %).</li>
+          <li>Puis Ca 1,5 %, P 1 %, K 0,4 %, S 0,3 %, Na 0,2 %, Cl 0,2 %, Mg 0,1 %.</li>
+          <li>Le reste : les <b>oligo-éléments</b> (Fe, Cu, Zn, I, Co…) — peu abondants mais indispensables à la vie.</li>
+        </ul>
+
+        <div class="note">
+          <span class="lbl">Les objectifs généraux du module (verbatim)</span>
+          Mettre en évidence les caractéristiques structurales des composés biochimiques ; préparer à la biochimie
+          métabolique et clinique ; « digérer » la structurale pure et dure grâce à des exemples de santé ;
+          montrer l'importance de l'intégrité de la conformation spatiale des protéines ; anticiper les conséquences
+          d'un changement structural ; discuter la biochimie dans son langage conventionnel.
+        </div>
+        <label class="check"><input type="checkbox" data-track="c0"><span>Introduction générale révisée</span></label>
+      </div>
+    </details>
+
+    <!-- CH 1 -->
+    <details class="chap" id="ch1">
+      <summary>
+        <span class="num">1</span>
+        <span><span class="t">Acides aminés &amp; protéines</span><br><span class="sub">Pr. Khlil · p. 4-28 · le chapitre le plus rentable</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="note">
+          <span class="lbl">Objectifs officiels (condensés)</span>
+          Formule générale des acides aminés et des protéines ; propriétés physiques et chimiques des AA
+          (solubilité, absorption UV, propriétés optiques, ionisation) ; propriétés particulières des 20 AA
+          constitutifs ; importance des AA essentiels ; dérivés des AA ; rôles biologiques des protéines ;
+          formation et propriétés de la liaison peptidique ; les 4 structures et leurs interactions stabilisantes ;
+          un peptide biologiquement actif ; la relation structure-fonction ; structure de la globine et de l'hème ;
+          propriétés chimiques de l'Hb (gaz, H⁺, 2,3-BPG) ; oxy-, désoxy-, carboxy-, méthémoglobine et carbamates ;
+          hémoglobines mutantes ; méthodes d'identification.
+        </div>
+
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Section du support</th><th>Ce qu'il faut savoir faire</th><th class="pg">Pages</th></tr></thead>
+          <tbody>
+            <tr><td><b>I.1</b> Importance biomédicale</td><td>Les AA ne sont pas que des briques : neurotransmetteurs, hormones, dérivés (voir la liste du cours).</td><td class="pg">5</td></tr>
+            <tr><td><b>I.2</b> Structure &amp; classification</td><td>Formule générale (Cα + NH₂ + COOH + R + H), les 20 AA, classement par la chaîne latérale, les 8 essentiels, les 2 semi-indispensables.</td><td class="pg">5-8</td></tr>
+            <tr><td><b>I.3</b> Propriétés physiques</td><td>Solubilité, absorption dans l'UV (aromatiques), pouvoir rotatoire, caractère zwitterion.</td><td class="pg">8</td></tr>
+            <tr><td><b>I.4</b> Propriétés chimiques</td><td>Ionisation, pK, <b>pH<sub>i</sub></b>, calcul du pHi d'un mono- et d'un diaminé ; réactions de la fonction amine et du carboxyle.</td><td class="pg">9-12</td></tr>
+            <tr><td><b>II.</b> Liaison peptidique</td><td>Formation par déshydratation, <b>caractère plan et rigide</b>, longueur C–N, angles, angles φ et ψ.</td><td class="pg">12-13</td></tr>
+            <tr><td><b>III.</b> Peptides</td><td>Notion de peptide, seuil, peptides actifs (glutathion, insuline, vasopressine).</td><td class="pg">13</td></tr>
+            <tr><td><b>IV.</b> Protéines</td><td>Classification, structure primaire → quaternaire, liaisons stabilisatrices, dénaturation, relation structure-fonction.</td><td class="pg">14-18</td></tr>
+            <tr><td><b>V.</b> Hémoglobine</td><td>Globine (α/β), hème, liaison hème-globine, fixation des gaz, 2,3-DPG, méthémoglobine, mutations, électrophorèse &amp; solubilité.</td><td class="pg">19-28</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Le squelette du chapitre en 6 idées</h4>
+        <ol class="steps">
+          <li><b>Un AA = un carbone α qui porte 4 substituants</b> → il est chiral, donc D ou L (seuls les L sont dans les protéines).</li>
+          <li><b>L'ionisation</b> explique tout : charge nette nulle au pH<sub>i</sub>, migration en électrophorèse, solubilité minimale au pHi.</li>
+          <li><b>La liaison peptidique est plane et rigide</b> (doublet π) → seuls φ et ψ tournent, ce qui rend l'hélice α et le feuillet β possibles.</li>
+          <li><b>4 niveaux de structure</b>, chacun avec ses liaisons : covalentes (S–S) en tertiaire, non covalentes partout ailleurs, hydrophobicité en chef d'orchestre.</li>
+          <li><b>L'hémoglobine</b> = 4 sous-unités, 4 hèmes, coopérativité → courbe sigmoïde, effet Bohr, 2,3-DPG.</li>
+          <li><b>Structure → fonction</b> : une seule mutation (drépanocytose) suffit à changer la physiologie. C'est le message du chapitre.</li>
+        </ol>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          pH<sub>i</sub> = moyenne des pK <em>uniquement</em> pour un AA neutre ; pour un AA basique ou acide, il faut
+          prendre les deux pK encadrant la forme zwitterion. La dénaturation détruit les structures
+          secondaire → quaternaire mais <b>jamais</b> la séquence primaire. Ne pas confondre
+          <b>hème</b> (groupement prosthétique) et <b>globine</b> (partie protéique).
+        </div>
+        <label class="check"><input type="checkbox" data-track="c1"><span>Chapitre 1 révisé</span></label>
+      </div>
+    </details>
+
+    <!-- CH 2 -->
+    <details class="chap" id="ch2">
+      <summary>
+        <span class="num">2</span>
+        <span><span class="t">Enzymes &amp; coenzymes</span><br><span class="sub">Pr. Khlil · p. 29-71 · chapitre à graphiques et à calculs</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="note">
+          <span class="lbl">Objectifs officiels (condensés)</span>
+          Définitions et réaction enzymatique (site actif, cofacteurs) ; nomenclature et classification ;
+          cinétique : effet de la concentration d'enzyme, effet de la concentration de substrat
+          (Michaelis-Menten), effet des effecteurs ; effet du pH et de la température ; enzymes allostériques ;
+          vitamines et coenzymes : relation vitamines/coenzymes, coenzymes d'oxydoréduction, coenzymes de transport
+          de groupements, vitamines liposolubles coenzymatiques et non coenzymatiques.
+        </div>
+
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Section du support</th><th>Ce qu'il faut savoir faire</th><th class="pg">Pages</th></tr></thead>
+          <tbody>
+            <tr><td><b>I.</b> Introduction</td><td>Définir enzyme, site actif, cofacteur ; décrire le cycle E + S ⇄ ES → E + P.</td><td class="pg">30-31</td></tr>
+            <tr><td><b>II.</b> Nomenclature &amp; classification</td><td>Les 6 classes, la terminaison <code>-ase</code>, nom systématique vs nom usuel.</td><td class="pg">32</td></tr>
+            <tr><td><b>III.1</b> Effet de [E]</td><td>Proportionnalité vitesse / [E] ; activité spécifique.</td><td class="pg">33</td></tr>
+            <tr><td><b>III.2</b> Effet de [S]</td><td>Hyperbole, V<sub>max</sub>, K<sub>M</sub>, linéarisation de Lineweaver-Burk, signification biologique de K<sub>M</sub>.</td><td class="pg">36</td></tr>
+            <tr><td><b>III.3</b> Effecteurs</td><td>Inhibition compétitive / non compétitive : effet sur K<sub>M</sub> et V<sub>max</sub>, lecture des graphiques.</td><td class="pg">39</td></tr>
+            <tr><td><b>IV.</b> pH et température</td><td>Optimum de pH, courbe en cloche, dénaturation thermique.</td><td class="pg">43</td></tr>
+            <tr><td><b>V.</b> Enzymes allostériques</td><td>Courbe sigmoïde, effecteurs positifs/négatifs, coopérativité.</td><td class="pg">45</td></tr>
+            <tr><td><b>VI.</b> Vitamines &amp; coenzymes</td><td>Classer coenzymes d'oxydoréduction et de transport de groupements ; associer chaque vitamine à son coenzyme.</td><td class="pg">48-70</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Les 4 tableaux à savoir redessiner</h4>
+        <ul class="clean">
+          <li>La <b>courbe de Michaelis</b> (hyperbole) et sa <b>linéarisation en double inverse</b>.</li>
+          <li>Les <b>deux inhibitions</b> sur le double inverse : compétitive = droite qui coupe l'axe des ordonnées au même point ; non compétitive = pente qui change, intersection décalée sur l'axe vertical.</li>
+          <li>La courbe <b>sigmoïde</b> de l'allostérie, comparée à l'hyperbole michaelienne.</li>
+          <li>Le tableau <b>vitamine → coenzyme → type de réaction</b>.</li>
+        </ul>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          K<sub>M</sub> est une <b>concentration</b> (en mol/L), pas une vitesse ; un K<sub>M</sub> faible = forte affinité.
+          L'inhibiteur compétitif augmente le K<sub>M</sub> apparent mais <b>ne change pas V<sub>max</sub></b>.
+          Un coenzyme n'est pas une vitamine : c'est la forme active, souvent dérivée d'une vitamine.
+        </div>
+        <label class="check"><input type="checkbox" data-track="c2"><span>Chapitre 2 révisé</span></label>
+      </div>
+    </details>
+
+    <!-- CH 3 -->
+    <details class="chap" id="ch3">
+      <summary>
+        <span class="num">3</span>
+        <span><span class="t">Glucides</span><br><span class="sub">Pr. Naamane · diapos 1-62 · de la stéréochimie aux GAG</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="note">
+          <span class="lbl">Le plan du cours</span>
+          Définition → classification → intérêt → origine et besoins → étude des glucides :
+          <b>A. les oses</b> (nomenclature, structure, propriétés, oses d'intérêt biologique) puis
+          <b>B. les osides</b> (liaison osidique, holosides, hétérosides).
+        </div>
+
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Section</th><th>Contenu exact du cours</th></tr></thead>
+          <tbody>
+            <tr><td><b>I.</b> Définition</td><td>« Hydrates de carbone », rapport C : H : O = 1 : 2 : 1, formule (CH₂O)<sub>n</sub> ; définition actuelle : molécule organique avec fonction aldéhyde ou cétone + chaîne carbonée portant des alcools primaires et secondaires, parfois substituée (NH₂, acide, R, H).</td></tr>
+            <tr><td><b>II.</b> Classification</td><td><b>Oses</b> (simples, non hydrolysables ; aldoses/cétoses) vs <b>osides</b> (composés, hydrolysables) → <b>holosides</b> (uniquement des oses) et <b>hétérosides</b> (oses + aglycone).</td></tr>
+            <tr><td><b>III.</b> Intérêt</td><td>Énergétique : 1 g de glucose = <b>4 kcal</b> ; glycogène = réserve (foie, muscle). Structural : glycoprotéines de membrane.</td></tr>
+            <tr><td><b>IV.</b> Origine &amp; besoins</td><td>Alimentaire / métabolique (néoglucogenèse à partir des AA glucoformateurs, glycérol, lactate, pyruvate, intermédiaires du Krebs). <b>300 g/j au repos</b> : cerveau 150, GR 50, muscle 50, autres organes 50.</td></tr>
+            <tr><td><b>V.A.1</b> Nomenclature</td><td>Carbone chiral/asymétrique, séries D et L, projection de Fischer, <b>filiation de Keller et Kiliani</b>, <b>épimères</b>.</td></tr>
+            <tr><td><b>V.A.2</b> Structure</td><td>Cyclisation d'un aldose → <b>pyranose</b> (α/β) ; d'un cétose → <b>furanose</b> ; <b>arguments de Tollens</b> ; mutarotation du glucose (α 36 %, β 63 %, ouvert 0,1 %).</td></tr>
+            <tr><td><b>V.A.3</b> Propriétés</td><td>Physiques (solubilité, saveur, pouvoir rotatoire). Chimiques : oxydation (acide gluconique, acide glucuronique), réduction (sorbitol), addition d'alcool (hémiacétal), estérification (glucose-6-phosphate), substitution par une amine (glucosamine) ou un étheroxyde.</td></tr>
+            <tr><td><b>V.A.4</b> Oses d'intérêt</td><td>Tableau trioses / pentoses / hexoses : source, rôle, pathologie.</td></tr>
+            <tr><td><b>V.B.</b> Osides</td><td>Liaison O-osidique ; oligosides (maltose, lactose, saccharose) ; polyosides (amidon, glycogène) ; hétéropolyosides = <b>GAG</b> ; protéoglycanes ; glycoprotéines et glycolipides.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Ce que le diaporama de 93 diapos ajoute</h4>
+        <p>Le résumé de 8 pages va à l'essentiel ; le diaporama complet développe quatre points qui peuvent
+          tomber et qui ne sont pas dans le résumé :</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Notion</th><th>Ce que dit le diaporama</th><th class="pg">Diapos</th></tr></thead>
+          <tbody>
+            <tr><td><b>Filiation de Keller et Kiliani</b></td><td>Les aldoses dérivent du glycéraldéhyde, les cétoses du dihydroxyacétone.
+              Chaque carbone asymétrique supplémentaire donne <b>2 composés appelés épimères</b> — deux molécules qui ne diffèrent
+              que par la configuration d'un seul carbone.</td><td class="pg">19-22</td></tr>
+            <tr><td><b>Les 6 cétoses en D</b></td><td>Ribulose, xylulose, <b>psicose, fructose, sorbose, tagatose</b> — la filiation complète des cétoses, souvent réduite au seul fructose dans les résumés.</td><td class="pg">24</td></tr>
+            <tr><td><b>Arguments de Tollens</b></td><td>Preuve de la structure cyclique : le <b>pouvoir rotatoire d'un ose est plus élevé que celui des acides correspondants</b> (glucose vs acide gluconique). C'est l'argument expérimental de la cyclisation.</td><td class="pg">28</td></tr>
+            <tr><td><b>Définition de la mutarotation</b></td><td>Elle correspond à l'apparition d'un <b>carbone asymétrique supplémentaire</b> (le carbone anomérique) : α 36 %, β 63 %, forme ouverte 0,1 %.</td><td class="pg">30</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note">
+          <span class="lbl">Repères dans le diaporama</span>
+          Définition et classification : diapos 4-7 · intérêt, origine, besoins : 8-12 · chiralité et Fischer : 13-18 ·
+          filiation et cétoses : 19-24 · cyclisation et mutarotation : 25-32 · propriétés chimiques : 33-38 ·
+          oses d'intérêt biologique : 39-40 · liaison osidique et oligosides : 41-46 · amidon et glycogène : 47-52 ·
+          GAG, protéoglycanes, glycoprotéines : 53-62.
+        </div>
+
+        <h4>Les 6 liaisons et leur conséquence</h4>
+        <ul class="clean">
+          <li><b>α(1→4)</b> : maltose, amylose, amylopectine, glycogène — chaîne linéaire, digestible par les α-glucosidases.</li>
+          <li><b>α(1→6)</b> : les branchements de l'amylopectine (tous les 20-30 résidus) et du glycogène (tous les 8-12).</li>
+          <li><b>β(1→4)</b> : lactose (galactose + glucose) et la cellulose — non digérée par nos enzymes, d'où le rôle des lactases.</li>
+          <li><b>α(1→2)β</b> : saccharose → les <b>deux</b> carbones anomériques sont engagés ⇒ sucre <b>non réducteur</b>.</li>
+          <li>Maltose et lactose gardent une extrémité réductrice libre ⇒ sucres réducteurs.</li>
+          <li>Dans les GAG : alternance β(1→3)/β(1→4) de disaccharides, toujours avec une N-acétyl-glucosamine ou N-acétyl-galactosamine.</li>
+        </ul>
+
+        <div class="note">
+          <span class="lbl">Les 3 GAG du cours</span>
+          <b>Acide hyaluronique</b> (sans sulfate ; liquide synovial, vitré, cartilage ; détruit par les hyaluronidases)
+          · <b>Chondroïtine sulfate</b> (acide glucuronique + N-acétyl-galactosamine sulfatée)
+          · <b>Kératane sulfate</b> (galactose + N-acétyl-glucosamine sulfatée). Les sulfates donnent la forte viscosité.
+        </div>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          Un <b>holoside</b> ne donne que des oses par hydrolyse ; un <b>hétéroside</b> donne des oses + une partie non glucidique (aglycone).
+          Ne pas confondre <b>amylose</b> (20 % des amidons, non branchée) et <b>amylopectine</b> (80 %, branchée).
+          D/L se définit sur la position du OH du carbone chiral le plus éloigné du carbonyle, pas sur le pouvoir rotatoire.
+        </div>
+        <label class="check"><input type="checkbox" data-track="c3"><span>Chapitre 3 révisé</span></label>
+      </div>
+    </details>
+
+    <!-- CH 4 -->
+    <details class="chap" id="ch4">
+      <summary>
+        <span class="num">4</span>
+        <span><span class="t">Lipides</span><br><span class="sub">Pr. Naamane · diapos 63-89 · de l'acide gras au bilan lipidique</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="note">
+          <span class="lbl">Le plan du cours</span>
+          Définition → intérêt → origine → teneur des aliments → classification → étude des principaux lipides
+          (glycérol, acides gras, glycérides, phospholipides, stérides, eicosanoïdes) → besoins →
+          bilan lipidique sérique → membranes cellulaires.
+        </div>
+
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Section</th><th>Contenu exact du cours</th></tr></thead>
+          <tbody>
+            <tr><td><b>I.</b> Définition</td><td>Insolubles dans l'eau, solubles dans les solvants organiques ; molécules apolaires ou <b>amphiphiles</b> ; esters d'acides gras et de glycérol ; C, H, O + éventuellement P (phospholipides), S et N (lécithines, sphingomyélines), oses (cérébrosides), alcools (sphingosines).</td></tr>
+            <tr><td><b>II.</b> Intérêt</td><td>2 grandes fonctions : <b>structure</b> (membranes, lipoprotéines) et <b>énergie</b> ; + rôles spécifiques : médiateurs, hormones, vitamines, coenzymes, émulsifiants, transporteurs d'électrons, isolants thermique et électrique.</td></tr>
+            <tr><td><b>III.</b> Origine</td><td>Exogène (alimentaire) et endogène (synthèse à partir du glucose).</td></tr>
+            <tr><td><b>IV.</b> Teneurs</td><td>g/100 g : bœuf 13-18, mouton 10-21, poulet 8, veau 10-15, poisson maigre 1-3, gras 6-12, lait 3,7, fromage 28-50.</td></tr>
+            <tr><td><b>V.</b> Classification</td><td><b>Simples</b> : glycérides, graisses, cires. <b>Complexes</b> : phospholipides (glycéro- et sphingophospholipides), glycolipides, aminolipides = lipoprotéines. <b>Dérivés et précurseurs</b> : acides gras, glycérol, cholestérol/stérols, aldéhydes gras, hormones stéroïdes, corps cétoniques, vitamines liposolubles. <em>Lipides neutres = glycérides + esters de cholestérol.</em></td></tr>
+            <tr><td><b>B.2</b> Acides gras</td><td>Ils « proviennent de l'hydrolyse des triglycérides, des diglycérides et des monoglycérides ». C4 → C24, nombre pair ; nomenclature C<sub>n</sub>:A ; saturés (C16 palmitique, C18 stéarique…) ; insaturés (oléique C18:1 ω9, linoléique C18:2 ω6, linolénique C18:3 ω3, arachidonique C20:4 ω6) ; acide cérébronique C24:0 hydroxylé sur le carbone α.</td></tr>
+            <tr><td><b>B.3</b> Glycérides</td><td>MG, DG (types α et β), TG ; estérification du glycérol par les AG.</td></tr>
+            <tr><td><b>B.4</b> Phospholipides</td><td>Acide phosphatidique + alcool azoté : choline → <b>lécithine</b>, éthanolamine → <b>céphaline</b>, sérine → <b>phosphatidylsérine</b>. Composés amphotères des membranes.</td></tr>
+            <tr><td><b>B.5</b> Stérides</td><td>Cholestérol + esters de cholestéryle ; précurseur des acides biliaires, de la vitamine D3 et des hormones stéroïdes.</td></tr>
+            <tr><td><b>B.6</b> Eicosanoïdes</td><td>Dérivés du C20:4 (arachidonique) : prostaglandines (tous les tissus, inhibées par l'aspirine), thromboxanes (plaquettes, TXA2, caillot), leucotriènes (leucocytes, asthme).</td></tr>
+            <tr><td><b>VI-VII.</b> Besoins &amp; bilan</td><td>Lipides 30-35 % de la ration ; 1 g/kg/j ; + 3 g/j d'AG essentiels. Bilan lipidique sérique à jeun 12 h.</td></tr>
+            <tr><td><b>VIII.</b> Membranes</td><td>Mosaïque fluide : phospholipides, sphingolipides, cholestérol ; protéines périphériques et intégrales.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Le bilan lipidique à connaître par cœur <span class="pill must">à savoir</span></h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Paramètre</th><th>Valeur standard</th></tr></thead>
+          <tbody>
+            <tr><td>Lipides totaux sériques</td><td><b>5 à 8 g/L</b></td></tr>
+            <tr><td>Triglycérides</td><td>0,5 à 1,5 g/L</td></tr>
+            <tr><td>Cholestérol total</td><td>Adulte 1,7 à 2,5 g/L · Enfant 1,5 à 2 g/L</td></tr>
+            <tr><td>Cholestérol HDL</td><td>0,4 à 0,8 g/L</td></tr>
+            <tr><td>Cholestérol LDL</td><td>1,1 à 1,9 g/L</td></tr>
+            <tr><td>Phospholipides sériques</td><td>1,5 à 2,5 g/L</td></tr>
+            <tr><td>Acides gras libres</td><td>0,07 à 0,2 g/L</td></tr>
+            <tr><td>Rapport cholestérol estérifié / total</td><td>0,6 à 0,7</td></tr>
+            <tr><td>Lipidogramme</td><td>HDL (α) 24 % · LDL (β) 56 % · VLDL (pré-β) 20 %</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          Un acide gras « essentiel » = non synthétisé par l'homme : linoléique (ω6) et linolénique (ω3).
+          L'acide arachidonique est dit essentiel dans le cours <em>comme précurseur des prostaglandines</em>, mais il
+          dérive du linoléique. ω se compte depuis le CH₃ terminal, Δ depuis le COOH.
+          Ne pas confondre lécithine (choline) et céphaline (éthanolamine).
+        </div>
+        <label class="check"><input type="checkbox" data-track="c4"><span>Chapitre 4 révisé</span></label>
+      </div>
+    </details>
+
+    <!-- CH 5 -->
+    <details class="chap" id="ch5">
+      <summary>
+        <span class="num">5</span>
+        <span><span class="t">Sphingolipides</span><br><span class="sub">Pr. Naamane · § VII des lipides, diapos 90-93 · les maladies de surcharge</span></span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <p>Chapitre court et très « QCM » : il relie une molécule, une enzyme et une maladie.</p>
+        <div class="note warn">
+          <span class="lbl">Attention à la numérotation</span>
+          Dans le diaporama complet (93 diapos), les sphingolipides ne sont pas un chapitre à part : ils forment le
+          <b>§ VII du chapitre des lipides</b>, intitulé <em>Sphingophospholipides</em>, juste après le bilan lipidique.
+          Le résumé de 8 pages, lui, porte un en-tête « Chapitre V — Sphingolipides ». Même contenu, deux numérotations :
+          ne pas croire à un chapitre oublié.
+        </div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Lipide</th><th>Structure</th><th>Enzyme / maladie</th></tr></thead>
+          <tbody>
+            <tr><td><b>Sphingomyéline</b></td><td>Sphingosine + AG (amide) + phosphocholine</td><td>Sphingomyélinase → <b>maladie de Niemann-Pick</b> (grosse rate, troubles neurologiques)</td></tr>
+            <tr><td><b>Cérébroside</b></td><td>Céramide + un ose : galactose (cerveau), glucose (rein)</td><td>β-glucosidase → <b>maladie de Gaucher</b></td></tr>
+            <tr><td><b>Ganglioside</b></td><td>Céramide + oligosides ; récepteurs de sérotonine, virus, toxines (cerveau)</td><td>Hexosaminidase → <b>maladie de Tay-Sachs</b></td></tr>
+            <tr><td><b>Glycolipides neutres</b></td><td>Céramide + glucose (+ ose)</td><td>Déterminants des <b>groupes sanguins</b></td></tr>
+          </tbody>
+        </table></div>
+        <div class="note">
+          <span class="lbl">La chaîne à retenir</span>
+          Aminoalcool (sphingosine) → <b>céramide</b> (sphingosine + AG sur la fonction amine) → puis, selon le
+          substituant de l'alcool primaire : phosphocholine = sphingomyéline · un ose = cérébroside ·
+          plusieurs oses = ganglioside (l'hexosaminidase détache le N-acétyl-galactose, d'où Tay-Sachs).
+        </div>
+        <label class="check"><input type="checkbox" data-track="c5"><span>Chapitre 5 révisé</span></label>
+      </div>
+    </details>
+
+    <!-- ---------- CHIFFRES ---------- -->
+    <h2 id="chiffres">4. Les chiffres, formules et définitions qui tombent</h2>
+    <p>Une page de valeurs à survoler la veille. Elles viennent toutes du support de cours — pas d'approximation.</p>
+
+    <h3>Protéines &amp; acides aminés</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Valeur</th><th>À quoi elle se rapporte</th></tr></thead>
+      <tbody>
+        <tr><td><b>20 / 8 / 2</b></td><td>Acides aminés protéinogènes / essentiels / semi-indispensables</td></tr>
+        <tr><td><b>9</b></td><td>AA à chaîne latérale ionisable</td></tr>
+        <tr><td><b>2 pK, 1 pH<sub>i</sub></b></td><td>K1 (carboxyle) et K2 (ammonium) ; pH<sub>i</sub> = (pK1 + pK2) / 2</td></tr>
+        <tr><td><b>1,32 Å</b></td><td>Longueur de la liaison C–N peptidique</td></tr>
+        <tr><td><b>114° / 125°</b></td><td>Angles du groupe peptidique plan</td></tr>
+        <tr><td><b>φ, ψ</b></td><td>Les 2 angles qui définissent la conformation de la chaîne</td></tr>
+        <tr><td><b>&lt; 4000 Da ≈ 100 AA</b></td><td>Seuil en dessous duquel on parle de peptide</td></tr>
+        <tr><td><b>50 à 80 %</b></td><td>Part des protéines dans le poids sec des cellules</td></tr>
+        <tr><td><b>141 / 146 / 153</b></td><td>AA des chaînes α / β de l'Hb / de la myoglobine</td></tr>
+        <tr><td><b>His 146 β</b></td><td>Site de fixation des H⁺ dans l'effet Bohr</td></tr>
+        <tr><td><b>2 H⁺ / 4 O₂</b></td><td>Stœchiométrie de l'effet Bohr</td></tr>
+        <tr><td><b>× 250</b></td><td>Affinité du CO pour l'hème par rapport à l'O₂</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Enzymes</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Formule / valeur</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><b>v = V<sub>max</sub>[S] / (K<sub>M</sub> + [S])</b></td><td>Équation de Michaelis-Menten</td></tr>
+        <tr><td><b>K<sub>M</sub> = (k<sub>−1</sub> + k₂) / k₁</b></td><td>Constante de Michaelis ; [S] pour laquelle v = V<sub>max</sub>/2</td></tr>
+        <tr><td><b>V<sub>max</sub> = k₂[E<sub>T</sub>]</b></td><td>Vitesse maximale, proportionnelle à l'enzyme totale</td></tr>
+        <tr><td><b>1/v = (K<sub>M</sub>/V<sub>max</sub>)·1/[S] + 1/V<sub>max</sub></b></td><td>Lineweaver-Burk : pente K<sub>M</sub>/V<sub>max</sub>, ordonnée 1/V<sub>max</sub></td></tr>
+        <tr><td><b>30 °C / 40 °C</b></td><td>Dénaturation négligeable en dessous / appréciable au-dessus</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Glucides</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Valeur</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><b>1 : 2 : 1</b></td><td>Rapport C : H : O de la définition « hydrates de carbone »</td></tr>
+        <tr><td><b>4 kcal</b></td><td>Énergie fournie par 1 g de glucose</td></tr>
+        <tr><td><b>300 g/j</b></td><td>Besoin au repos : cerveau 150, GR 50, muscle 50, autres organes 50</td></tr>
+        <tr><td><b>50 / 35 / 15 %</b></td><td>Répartition glucides / lipides / protides d'une ration de 2400 kcal</td></tr>
+        <tr><td><b>36 % / 63 % / 0,1 %</b></td><td>α-D-glucopyranose / β-D-glucopyranose / forme ouverte, en solution (mutarotation)</td></tr>
+        <tr><td><b>20 % / 80 %</b></td><td>Amylose / amylopectine dans l'amidon</td></tr>
+        <tr><td><b>20-30 / 8-12</b></td><td>Espacement des branchements α(1→6) : amylopectine / glycogène</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Lipides</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Valeur</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><b>C4 → C24, pair</b></td><td>Longueur des acides gras naturels (multiple de 2 carbones)</td></tr>
+        <tr><td><b>30-35 % · 1 g/kg/j · 3 g/j</b></td><td>Part lipidique de la ration · apport · acides gras essentiels</td></tr>
+        <tr><td><b>5-8 g/L</b></td><td>Lipides totaux sériques (à jeun 12 h)</td></tr>
+        <tr><td><b>24 / 56 / 20 %</b></td><td>Lipidogramme : HDL (α) / LDL (β) / VLDL (pré-β)</td></tr>
+        <tr><td><b>2400 kcal</b></td><td>Adulte 60-70 kg : 1600 base + 200 digestion + 600 travail musculaire</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- ---------- MALADIES ---------- -->
+    <h2 id="maladies">5. Les pathologies citées dans le module</h2>
+    <p>Les cours de biochimie structurale ne demandent pas de la clinique, mais chaque anomalie moléculaire
+      est citée comme <em>exemple</em> : c'est un réservoir de QCM à très bon rendement.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pathologie</th><th>Mécanisme cité</th><th>Chapitre</th></tr></thead>
+      <tbody>
+        <tr><td><b>Drépanocytose</b></td><td>Mutation de l'hémoglobine (anomalie qualitative) → modification de structure et de fonction</td><td>1</td></tr>
+        <tr><td><b>Méthémoglobinémie</b></td><td>Oxydation de l'Hb : le fer passe à l'état ferrique</td><td>1</td></tr>
+        <tr><td><b>Intoxication oxycarbonée</b></td><td>CO × 250 d'affinité pour l'hème → intérêt de l'oxygénothérapie</td><td>1</td></tr>
+        <tr><td><b>Diabète</b></td><td>Intolérance au glucose ; excès de ration alimentaire</td><td>3</td></tr>
+        <tr><td><b>Intolérance au fructose</b> / fructosémie</td><td>Anomalie du métabolisme du fructose</td><td>3</td></tr>
+        <tr><td><b>Galactosémie</b></td><td>Anomalie du métabolisme du galactose</td><td>3</td></tr>
+        <tr><td><b>Athérosclérose / obésité</b></td><td>Conséquences du dépassement des besoins énergétiques</td><td>3, 4</td></tr>
+        <tr><td><b>Maladie de Niemann-Pick</b></td><td>Déficit en sphingomyélinase (grosse rate + troubles neurologiques)</td><td>5</td></tr>
+        <tr><td><b>Maladie de Gaucher</b></td><td>Déficit en β-glucosidase (cérébrosides)</td><td>5</td></tr>
+        <tr><td><b>Maladie de Tay-Sachs</b></td><td>Déficit en hexosaminidase (gangliosides)</td><td>5</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- ---------- DOCS ---------- -->
+    <h2 id="docs">6. Le dossier Drive, document par document</h2>
+    <p>Les 25 fichiers du dossier <em>BIOCHIMIE STRUCTURALE</em> (dont 6 liens vidéo), avec ce qu'il faut en faire. Les documents
+      marqués <span class="pill must">prioritaire</span> suffisent à couvrir tout le programme.</p>
+
+    <div class="doc-grp">
+      <h4>📘 Cours <span class="prof">Pr. Khlil</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/1JdwcZcwqyjpGLmiwotEtGqvQlXGlThsW/view" target="_blank" rel="noopener">Support de cours — Biochimie structurale (KHLIL 2024-25)</a> <span class="pill must">prioritaire</span><span class="sz">5 Mo · 71 p.</span></li>
+        <li><a href="https://drive.google.com/file/d/1CkcWfHI_Bf8CIhDHc3Gx0C-4dqolHxBq/view" target="_blank" rel="noopener">Biochimie structurale — CHAP I (FMDC 2024-25)</a> <span class="pill heavy">diaporama lourd</span><span class="sz">55 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1gBSLf4lzUoEoDzFyOsVnx1f-u7voZ00n/view" target="_blank" rel="noopener">Biochimie structurale — CHAP II (FMDC 2024-25)</a> <span class="pill heavy">diaporama lourd</span><span class="sz">47 Mo</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>🧪 QCM / TD / annales <span class="prof">Pr. Khlil</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/1T_JyEy1aWbCpddiRh-TqaG7qhaGhe9Jd/view" target="_blank" rel="noopener">Examen blanc Pr Khlil — promo 2018</a> <span class="pill must">prioritaire</span><span class="sz">1,4 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1La7Yx2bayF8d7nqsBWv1Qy4496Bfp1Pn/view" target="_blank" rel="noopener">Séance de révision 2</a><span class="sz">0,5 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1LmpXkLCQoi96uZtqoP1zeqhMFgu71v_J/view" target="_blank" rel="noopener">Mine (séance de mine)</a><span class="sz">0,6 Mo</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>📝 Résumés <span class="prof">Pr. Khlil</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/1RIpraSn6P9e_guwGAvzR7rzxNpCrcsRw/view" target="_blank" rel="noopener">Biochimie khlil</a><span class="sz">5,2 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1lOgdw0lB-5jHNQa4q9podCsEhPprQG2X/view" target="_blank" rel="noopener">Biochimie structurale (acides aminés)</a><span class="sz">3,3 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1nezvoJO_DutdkzDyJjjAotCYUkSUJJtA/view" target="_blank" rel="noopener">Biochimie structurale (AA) (1)</a><span class="sz">5,2 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1CXXL9iLQxPRVpcnj-utE4slynJ-iHZ8w/view" target="_blank" rel="noopener">Biochimie-Structurale-Glucides</a><span class="sz">0,3 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/153wE_W_DL7-CfjQ91Aa7wzn8j1GmCnqq/view" target="_blank" rel="noopener">Glucides — CADEMEP</a><span class="sz">4,6 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1saDY_tTapAOQlbMoWOcsPy9FiTYgMOoO/view" target="_blank" rel="noopener">Fiches manuscrites — IMG…111</a><span class="sz">jpg</span></li>
+        <li><a href="https://drive.google.com/file/d/1TMyVlsEq9gLijzyU-puzdwgzLW4nFivz/view" target="_blank" rel="noopener">Fiches manuscrites — IMG…112</a><span class="sz">jpg</span></li>
+        <li><a href="https://drive.google.com/file/d/1XysKThqmgzT85MtV1Ai_1FwSxXOLiWPp/view" target="_blank" rel="noopener">Fiches manuscrites — IMG…113</a><span class="sz">jpg</span></li>
+        <li><a href="https://drive.google.com/file/d/1TqHHv5NIPWhB1As_9Mos1HQiyxvbzcGh/view" target="_blank" rel="noopener">Fiches manuscrites — IMG…114</a><span class="sz">jpg</span></li>
+        <li><a href="https://drive.google.com/file/d/1UWy7R5WPF52iWm6HFK9QC2U0Ll9HeU9F/view" target="_blank" rel="noopener">Fiches manuscrites — IMG…115</a><span class="sz">jpg</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>🎞️ Diaporama complet <span class="prof">Pr. Naamane</span> <span class="pill" style="color:#0d1117;background:var(--acc);border-color:var(--acc);font-weight:800">partie en cours</span></h4>
+      <ul class="docs">
+        <li><a href="biochimie-structurale-naamane-93-diapos.pdf" target="_blank" rel="noopener">Biochimie structurale — FMDC (diaporama complet)</a>
+          <span class="pill heavy">93 diapositives</span><span class="sz">1 Mo · PDF</span></li>
+      </ul>
+      <p style="margin:.5rem 0 0;font-size:.85rem;color:var(--mut)">
+        Le support long de la partie Naamane, en une seule pièce :
+        <b>glucides diapos 1-62</b> (légende « Première partie — Chapitre I ») puis
+        <b>lipides diapos 63-93</b>, avec les sphingophospholipides au § VII.
+        C'est la version qui contient la filiation de Keller et Kiliani, les arguments de Tollens
+        et les 6 cétoses : à privilégier pour comprendre, le résumé de 8 pages suffit pour réviser la veille.
+      </p>
+    </div>
+
+    <div class="doc-grp">
+      <h4>📗 Cours — version courte <span class="prof">Pr. Naamane</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/1IUgZ8OTKpXcVCee6X3Dips7Gn9lllPT2/view" target="_blank" rel="noopener">CHAP 3 — Glucides</a> <span class="pill must">prioritaire</span><span class="sz">0,4 Mo · 8 p.</span></li>
+        <li><a href="https://drive.google.com/file/d/1aahDRtX4s__SUy2Gr-XcsF1puQpUJ_Ll/view" target="_blank" rel="noopener">CHAP 4 — Lipides (+ chapitre V sphingolipides)</a> <span class="pill must">prioritaire</span><span class="sz">0,25 Mo · 8 p.</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>📝 Résumés <span class="prof">Pr. Naamane</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/1OiuIAeqi-m0I7hEALR2oOWyMT3-M1rC0/view" target="_blank" rel="noopener">Glucides — CADEMEP (version Naamane)</a><span class="sz">4,6 Mo</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>🎓 QCM / Examens du module <span class="prof">tous enseignants</span></h4>
+      <ul class="docs">
+        <li><a href="https://drive.google.com/file/d/17BOnbIBzF332jxn71XkECgB90iG4bW68/view" target="_blank" rel="noopener">Biochimie 2021-2022 (annale)</a> <span class="pill must">prioritaire</span><span class="sz">5 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/17Ve1Z5LUiGMB7t_UT9bHoYPbSl6feB49/view" target="_blank" rel="noopener">Biochimie — corrigé 2023</a> <span class="pill must">prioritaire</span><span class="sz">3,1 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1BiccimeNgxSkb3GxU9rsFyD6uuC07KZj/view" target="_blank" rel="noopener">Chimie-Biochimie QCM</a><span class="sz">1,8 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1NYc4rLbFDhr8shILZhKZZjNs5DPxtCdK/view" target="_blank" rel="noopener">QCM BIO sans réponses</a><span class="sz">0,15 Mo</span></li>
+        <li><a href="https://drive.google.com/file/d/1tS_j_R31XCJXW2i61pxkYr9Z-n_vnQgZ/view" target="_blank" rel="noopener">Révision bio 1ʳᵉ année 23</a><span class="sz">0,4 Mo</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-grp">
+      <h4>▶️ Vidéos <span class="prof">liens partagés (Links.txt)</span></h4>
+      <ul class="docs">
+        <li><a href="https://youtu.be/iXNV8h-7lLo" target="_blank" rel="noopener">Tutorat biochimie — vidéo 1</a></li>
+        <li><a href="https://youtu.be/OwI4AG9Q-No" target="_blank" rel="noopener">Tutorat biochimie — vidéo 2</a></li>
+        <li><a href="https://youtu.be/j7lCg5WQD6M" target="_blank" rel="noopener">Tutorat biochimie — vidéo 3</a></li>
+        <li><a href="https://youtu.be/OVlRP_2GIws" target="_blank" rel="noopener">Tutorat biochimie — vidéo 4</a></li>
+        <li><a href="https://youtu.be/jE_hah2ttuI" target="_blank" rel="noopener">Tutorat biochimie — vidéo 5</a></li>
+        <li><a href="https://youtu.be/toBDUiO-T9c" target="_blank" rel="noopener">Tutorat biochimie — vidéo 6</a></li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <span class="lbl">Comment réviser avec ce dossier</span>
+      <b>1.</b> Le support 71 p. de Khlil est la référence : tout le reste est du confort.
+      <b>2.</b> Les diaporamas CHAP I et II sont les mêmes cours en slides — pratiques pour réviser en images,
+      lourds à télécharger.
+      <b>3.</b> Les résumés CADEMEP servent à la veille de l'examen, pas à l'apprentissage.
+      <b>4.</b> Les annales se font <em>chrono</em>, sans cours ouvert, au moins deux fois.
+    </div>
+
+    <!-- ---------- PLANNING ---------- -->
+    <h2 id="planning">7. Plan de révision en 12 séances</h2>
+    <p>Calibré sur des séances de 1 h 30 à 2 h. Coche au fur et à mesure : ta progression se met à jour
+      en haut de la page et reste enregistrée dans ce navigateur.</p>
+
+    <div class="tbl-wrap"><table>
+      <thead><tr><th style="width:44px">Fait</th><th style="width:88px">Séance</th><th>Objectif</th><th>Support</th></tr></thead>
+      <tbody>
+        <tr><td><input type="checkbox" data-track="s1" aria-label="Séance 1"></td><td><b>S1</b></td><td>Introduction + structure et classification des acides aminés (les 20, les essentiels)</td><td>Support p. 1-8</td></tr>
+        <tr><td><input type="checkbox" data-track="s2" aria-label="Séance 2"></td><td><b>S2</b></td><td>Propriétés physiques et chimiques : ionisation, pK, pH<sub>i</sub> — refaire 10 calculs</td><td>Support p. 8-12</td></tr>
+        <tr><td><input type="checkbox" data-track="s3" aria-label="Séance 3"></td><td><b>S3</b></td><td>Liaison peptidique et peptides (planéité, φ/ψ, peptides actifs)</td><td>Support p. 12-13</td></tr>
+        <tr><td><input type="checkbox" data-track="s4" aria-label="Séance 4"></td><td><b>S4</b></td><td>Les 4 structures des protéines, dénaturation, relation structure-fonction</td><td>Support p. 14-18</td></tr>
+        <tr><td><input type="checkbox" data-track="s5" aria-label="Séance 5"></td><td><b>S5</b></td><td>Hémoglobine : globine, hème, gaz, 2,3-DPG, Bohr, mutants, méthodes</td><td>Support p. 19-28</td></tr>
+        <tr><td><input type="checkbox" data-track="s6" aria-label="Séance 6"></td><td><b>S6</b></td><td>Enzymes : définitions, nomenclature, effet de [E] et de [S], Michaelis-Menten</td><td>Support p. 29-38</td></tr>
+        <tr><td><input type="checkbox" data-track="s7" aria-label="Séance 7"></td><td><b>S7</b></td><td>Inhibitions, effet du pH et de la température, allostérie — refaire les 4 graphiques</td><td>Support p. 39-47</td></tr>
+        <tr><td><input type="checkbox" data-track="s8" aria-label="Séance 8"></td><td><b>S8</b></td><td>Vitamines et coenzymes : tableau vitamine → coenzyme → réaction</td><td>Support p. 48-70</td></tr>
+        <tr><td><input type="checkbox" data-track="s9" aria-label="Séance 9"></td><td><b>S9</b></td><td>Glucides : définitions, classification, oses, Fischer, cyclisation, mutarotation</td><td>diapos 4-32</td></tr>
+        <tr><td><input type="checkbox" data-track="s10" aria-label="Séance 10"></td><td><b>S10</b></td><td>Osides : liaison osidique, di/polyosides, GAG, protéoglycanes, glycoprotéines</td><td>diapos 33-62</td></tr>
+        <tr><td><input type="checkbox" data-track="s11" aria-label="Séance 11"></td><td><b>S11</b></td><td>Lipides : acides gras, glycérides, phospholipides, stérols, eicosanoïdes, bilan lipidique</td><td>diapos 63-89</td></tr>
+        <tr><td><input type="checkbox" data-track="s12" aria-label="Séance 12"></td><td><b>S12</b></td><td>Sphingolipides + annales chronométrées (examen blanc 2018, mine, séance 2)</td><td>diapos 90-93 + annales</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Les 3 derniers jours</h3>
+    <ol class="steps">
+      <li><b>J-3</b> — Relire uniquement les tableaux de chiffres et les 4 graphiques d'enzymologie. Refair
+        l'annale 2021-2022 en entier, puis corriger avec le corrigé 2023.</li>
+      <li><b>J-2</b> — Les 10 pathologies + les 3 GAG + le lipidogramme. Réciter à voix haute les classifications
+        (oses/osides, lipides simples/complexes/dérivés).</li>
+      <li><b>J-1</b> — Rien de nouveau. Relire les diapositives CHAP I et II en survol rapide, et se coucher tôt.</li>
+    </ol>
+
+    <!-- ---------- EXAMEN ---------- -->
+    <h2 id="examen">8. Stratégie d'examen</h2>
+    <div class="cards">
+      <div class="card"><h3>Le module est annoncé en QCM</h3>
+        <p>Donc : on privilégie les <b>listes fermées</b> (les 20 AA, les 8 essentiels, les 6 classes d'enzymes, les 3 GAG,
+        les 4 lipides simples) plutôt que les dissertations. Chaque liste se révise par récitation, pas par relecture.</p></div>
+      <div class="card"><h3>Les pièges de la prof</h3>
+        <p>Chez Pr. Khlil, les QCM suivent les <b>objectifs listés en tête de chapitre</b>. Transforme chaque objectif
+        en question et vérifie que tu peux y répondre en une phrase.</p></div>
+      <div class="card"><h3>Les chiffres, pas les impressions</h3>
+        <p>Chez Pr. Naamane, beaucoup de QCM se jouent sur une valeur ou une nomenclature exacte : C18:2 ω6,
+        α(1→2)β du saccharose, 1 g de glucose = 4 kcal, HDL 0,4-0,8 g/L.</p></div>
+      <div class="card"><h3>Les annales comme thermomètre</h3>
+        <p>Un chapitre est « su » quand tu fais l'examen blanc 2018 et l'annale 2021-2022 à plus de 80 %
+        <b>sans support ouvert</b>. Sinon, la séance de révision correspondante est à refaire.</p></div>
+    </div>
+
+    <div class="note bad">
+      <span class="lbl">Rappel</span>
+      Ce plan est une <em>carte de travail</em> construite à partir des supports et des documents du dossier,
+      pas un document officiel de la faculté. Les consignes de dernière minute d'un enseignant priment toujours :
+      vérifie-les en cours et dans les notes d'examen du portail.
+    </div>
+
+    <footer class="foot">
+      <p><b>Pages liées</b> — <a href="biochimie-structurale.html">📖 Le cours expliqué de Pr. Khlil</a> ·
+        <a href="../index.html">🏠 Portail FMDC 1A</a> ·
+        <a href="../index.html#/notes">💡 Notes d'examen</a> ·
+        <a href="https://drive.google.com/drive/folders/19_IrBHqUUTQJZ8IDolqOldBBRhGSPD5c" target="_blank" rel="noopener">📁 Dossier Drive</a></p>
+      <p>Sources : support de cours Pr. Khlil 2024-25 (71 p.), CHAP 3 Glucides et CHAP 4 Lipides de Pr. Naamane,
+        questionnaire de la promo (examen blanc 2018, annale 2021-2022, corrigé 2023).</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var LS_PLAN = 'fmdc.plan.biochimie.v1';
+  var LS_THM  = 'fmdc.theme.v1';
+
+  /* ---------- thème partagé avec le portail ---------- */
+  var root = document.documentElement;
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem(LS_THM); } catch(e){}
+  if (savedTheme === 'light' || savedTheme === 'dark') root.setAttribute('data-theme', savedTheme);
+  var themeBtn = document.getElementById('themeBtn');
+  if (themeBtn) themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(LS_THM, next); } catch(e){}
+  });
+
+  /* ---------- cases à cocher + progression ---------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-track]'));
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(LS_PLAN) || '{}') || {}; } catch(e){ state = {}; }
+
+  function save(){
+    try { localStorage.setItem(LS_PLAN, JSON.stringify(state)); } catch(e){}
+  }
+  function refresh(){
+    var done = 0;
+    boxes.forEach(function(b){
+      if (b.checked) done++;
+    });
+    var pct = boxes.length ? Math.round(done * 100 / boxes.length) : 0;
+    var fill = document.getElementById('progFill');
+    var txt = document.getElementById('progTxt');
+    if (fill) fill.style.width = pct + '%';
+    if (txt) txt.textContent = pct + ' %';
+    var bar = document.getElementById('bar');
+    if (bar) bar.style.width = pct + '%';
+  }
+  boxes.forEach(function(b){
+    var k = b.getAttribute('data-track');
+    if (state[k]) b.checked = true;
+    b.addEventListener('change', function(){
+      if (b.checked) state[k] = 1; else delete state[k];
+      save(); refresh();
+    });
+  });
+  refresh();
+
+  /* ---------- déplier / replier ---------- */
+  function setAll(open){
+    Array.prototype.forEach.call(document.querySelectorAll('details.chap'), function(d){ d.open = open; });
+  }
+  var e1 = document.getElementById('expandAll');
+  var e2 = document.getElementById('expandAll2');
+  var c1 = document.getElementById('collapseAll');
+  if (e1) e1.addEventListener('click', function(){ setAll(true); });
+  if (e2) e2.addEventListener('click', function(){ setAll(true); });
+  if (c1) c1.addEventListener('click', function(){ setAll(false); });
+
+  /* ---------- impression ---------- */
+  var pb = document.getElementById('printBtn');
+  if (pb) pb.addEventListener('click', function(){ setAll(true); window.print(); });
+
+  /* ---------- recherche / filtre ---------- */
+  var q = document.getElementById('q');
+  var hit = document.getElementById('hit');
+  function norm(s){
+    return (s || '').toString().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  if (q) {
+    q.addEventListener('input', function(){
+      var term = norm(q.value.trim());
+      var rows = document.querySelectorAll('#programme table tbody tr, #docs ul.docs li');
+      if (!term){
+        Array.prototype.forEach.call(rows, function(r){ r.classList.remove('hide'); });
+        Array.prototype.forEach.call(document.querySelectorAll('#programme details.chap'), function(d){
+          if (d.id !== 'ch0') d.open = false;
+        });
+        if (hit) hit.textContent = '';
+        return;
+      }
+      var found = 0;
+      Array.prototype.forEach.call(rows, function(r){
+        var ok = norm(r.textContent).indexOf(term) !== -1;
+        r.classList.toggle('hide', !ok);
+        if (ok) found++;
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('#programme details.chap'), function(d){
+        var body = d.querySelector('.body');
+        var any = body && body.querySelector('tr:not(.hide)');
+        if (body && (norm(body.textContent).indexOf(term) !== -1)) d.open = true;
+        if (any) d.open = true;
+      });
+      if (hit) hit.textContent = found + (found > 1 ? ' résultats' : ' résultat');
+    });
+  }
+
+  /* ---------- sommaire actif ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function setActive(){
+    var y = window.scrollY + 120;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].offsetTop <= y) idx = i;
+    }
+    links.forEach(function(a, i){ a.classList.toggle('on', i === idx); });
+  }
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+
+  /* ---------- un lien d'ancre vers un chapitre fermé l'ouvre ---------- */
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var t = id && document.getElementById(id);
+    if (t && t.tagName === 'DETAILS') t.open = true;
+  });
+  if (location.hash) {
+    var cur = document.getElementById(location.hash.slice(1));
+    if (cur && cur.tagName === 'DETAILS') cur.open = true;
+  }
+})();
+</script>
+</body>
+</html>

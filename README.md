@@ -14,7 +14,7 @@ cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par modu
 | | |
 |---|---|
 | 📚 **8 modules / 281 documents** | Anatomie & Physiologie, Biologie, Biophysique & Sciences des matériaux, Chimie & Biochimie, IMD, Langue, MTU, Links |
-| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) |
+| 📖 **Cours expliqués** | Pages de révision commentées, section par section, à partir du support de cours officiel ([Biochimie structurale — Pr. Khlil](cours/biochimie-structurale.html)) + [plan complet du module](cours/biochimie-structurale-plan.html) |
 | 👩‍🏫 **Vue par professeur** | Chaque module se déplie en rubriques (Pr. X → Cours / TD / Résumés / Vidéos…) |
 | 🔍 **Recherche globale** | Accents ignorés, insensible à la casse — cherche dans les noms de fichiers **et** le chemin (module › professeur). Raccourci : `/` |
 | 💡 **Notes d'examen** | Les conseils donnés par chaque professeur (chapitres insistés, parties retirées, format d'épreuve) transformés en fiches filtrables |
@@ -88,6 +88,9 @@ pas par l'application du portail ; elles y sont simplement liées depuis la barr
 
 | Page | Cours | Source |
 |---|---|---|
+| [`cours/biochimie-structurale-plan.html`](cours/biochimie-structurale-plan.html) | **Biochimie structurale — le plan complet du module** · les 5 chapitres du programme officiel (Pr. Khlil : acides aminés & protéines, enzymes & coenzymes · Pr. Naamane : glucides, lipides, sphingolipides), objectifs et sections chapitre par chapitre, chiffres et formules à retenir, 10 pathologies citées, les 25 fichiers du dossier Drive, plan de révision en 12 séances avec suivi de progression, stratégie d'examen | Support Khlil 71 p. + chap. 3 et 4 de Pr. Naamane |
+| [`cours/biochimie-structurale-naamane-93-diapos.pdf`](cours/biochimie-structurale-naamane-93-diapos.pdf) | **Support de cours de Pr. A. Naamane, diaporama complet (93 diapositives)** · glucides (diapos 1-62) puis lipides et sphingophospholipides (63-93) — la version longue, qui contient la filiation de Keller et Kiliani, les épimères, les arguments de Tollens et les 6 cétoses, absents du résumé de 8 pages | Fichier fourni par la promo |
+| [`cours/plan-biochimie-structurale.pdf`](cours/plan-biochimie-structurale.pdf) | **Le plan du module, version imprimable (2 pages A4)** · page 1 : carte du programme (intro + 5 chapitres), répartition de travail, 6 pièges classiques · page 2 : plan de révision en 12 séances avec cases à cocher, chiffres et formules, 10 pathologies, les 3 derniers jours, auto-test de 10 questions | Support Khlil + chap. 3, 4 et 5 de Pr. Naamane |
 | [`cours/biochimie-structurale.html`](cours/biochimie-structurale.html) | Biochimie structurale — Pr. Naima Khlil · Chap. 1 : acides aminés, ionisation et pHi, liaison peptidique, structures des protéines, hémoglobine (effet Bohr, 2,3-DPG) · Chap. 2 : enzymes, Michaelis-Menten et Lineweaver-Burk, inhibitions, allostérie, vitamines et coenzymes — + tableau des chiffres à retenir et auto-évaluation de 10 QCM corrigés | Support de cours 2024-25, 71 p. |
 
 **Ajouter une page** : copier `cours/biochimie-structurale.html`, remplacer le contenu, puis ajouter une entrée
