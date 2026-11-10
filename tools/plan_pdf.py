@@ -192,7 +192,7 @@ FIGURES = [
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
-                         "1 C* anomérique → 2 anomères (α, β)",
+                         "1 C* anomérique → 2 anomères ; fructose → furanose (C2)",
                          "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
                          "épimères du glucose : mannose C2 · allose C3 · galactose C4"]),
     ("Lipides", ORANGE, ["C4 → C24, nombre pair de carbones",
@@ -233,7 +233,7 @@ QUESTIONS = [
     "Effet Bohr : mécanisme et rôle du 2,3-DPG ?",
     "Écrire Michaelis-Menten ; définir K<sub>M</sub> et V<sub>max</sub>.",
     "Inhibition compétitive, puis non compétitive : K<sub>M</sub> ? V<sub>max</sub> ?",
-    "Cyclisation : pourquoi 1 C* anomérique → 2 anomères ?",
+    "Glucose → pyranose, fructose → furanose : pourquoi ?",
     "Pourquoi le saccharose est-il non réducteur ?",
     "Bilan lipidique normal, et les 3 maladies de surcharge ?",
 ]

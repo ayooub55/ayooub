@@ -218,7 +218,8 @@ footer.foot a{font-weight:600}
     <div class="side-title">Questions annoncées</div>
     <nav>
       <a href="#keller">🌳 Arbre de Keller et Kiliani</a>
-      <a href="#cyclisation">🧬 Cyclisation &amp; anomères</a>
+      <a href="#cyclisation">🧬 Cyclisation du glucose</a>
+      <a href="#fructose">🍬 Cyclisation du fructose</a>
     </nav>
 
     <div class="side-title">Ailleurs</div>
@@ -730,6 +731,78 @@ footer.foot a{font-weight:600}
           son OH réactif est celui du C5 sur un carbonyle en C2.
           Enfin, la <b>forme ouverte ne disparaît pas</b> : elle représente 0,1 % et c'est elle qui permet la
           mutarotation (et les réactions de la fonction aldéhyde).
+        </div>
+
+        <h4 id="fructose">🍬 Cyclisation du fructose — le cas des cétoses (2 anomères aussi)</h4>
+        <p>Troisième partie annoncée. Le mécanisme est <b>le même</b> que pour le glucose, mais deux choses changent :
+          le <b>carbonyle est en C2</b> (cétone, pas aldéhyde) et le cycle obtenu est à <b>5 atomes</b>,
+          donc un <b>furanose</b> et non un pyranose.</p>
+
+        <figure style="margin:16px 0;padding:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;text-align:center">
+          <img src="img/cyclisation-fructose.png" alt="Cyclisation du D-fructose : l'alcool en C5 attaque le carbonyle en C2, formant un cycle à cinq atomes, avec deux anomères alpha-D-fructofuranose et bêta-D-fructofuranose."
+               style="max-width:100%;height:auto;border-radius:8px">
+          <figcaption style="margin-top:9px;font-size:.82rem;color:var(--mut)">
+            <b>D-fructose (chaîne ouverte)</b> : le carbonyle est en <b>C2</b>, et c'est l'<b>OH du C5</b> qui l'attaque
+            → cycle à 5 atomes = <b>fructofuranose</b>. Le <b>C2 devient le carbone anomérique</b> (marqué ✱) :
+            d'où les deux formes, <b>α</b> et <b>β</b>.
+          </figcaption>
+        </figure>
+
+        <h4>Ce qui change par rapport au glucose</h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th></th><th>D-glucose (aldose)</th><th>D-fructose (cétose)</th></tr></thead>
+          <tbody>
+            <tr><td><b>Carbonyle</b></td><td>Aldéhyde en <b>C1</b></td><td>Cétone en <b>C2</b></td></tr>
+            <tr><td><b>OH qui attaque</b></td><td>OH du <b>C5</b></td><td>OH du <b>C5</b></td></tr>
+            <tr><td><b>Carbone anomérique</b></td><td><b>C1</b></td><td><b>C2</b></td></tr>
+            <tr><td><b>Taille du cycle</b></td><td>C1 → C5 = <b>6 atomes</b></td><td>C2 → C5 = <b>5 atomes</b></td></tr>
+            <tr><td><b>Nom du cycle</b></td><td><b>Pyranose</b></td><td><b>Furanose</b></td></tr>
+            <tr><td><b>Les 2 formes</b></td><td>α / β -D-glucopyranose</td><td>α / β -D-fructofuranose</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="note ok">
+          <span class="lbl">La règle α / β (valable pour les deux)</span>
+          On compare toujours l'<b>OH anomérique</b> au <b>CH₂OH du carbone qui définit la série D</b> —
+          <b>C5 pour le glucose</b>, <b>C6 pour le fructose</b> :<br>
+          • <b>α</b> = OH anomérique <b>du côté opposé</b> ;<br>
+          • <b>β</b> = OH anomérique <b>du même côté</b>.<br>
+          C'est exactement ce que montre le schéma : dans le <b>β</b>, l'OH du C2 est du même côté que le CH₂OH du C6
+          (les deux vers le haut) ; dans le <b>α</b>, il est vers le bas.
+        </div>
+
+        <h4>La question d'examen : pourquoi furanose et pas pyranose ?</h4>
+        <div class="note warn">
+          <span class="lbl">Question</span>
+          <b>« Le D-glucose donne un pyranose, le D-fructose un furanose. Expliquer. »</b>
+        </div>
+        <p><b>Réponse attendue</b> — Dans les deux cas, c'est l'<b>OH du C5</b> qui attaque le carbonyle : c'est
+          l'alcool le plus favorable (secondaire, bien placé), le C6 étant un CH₂OH terminal peu réactif.
+          La différence vient de la <b>position du carbonyle</b> :</p>
+        <ul class="clean">
+          <li>chez le <b>glucose</b>, le carbonyle est en <b>C1</b> → le cycle relie <b>C1 à C5</b> = 5 carbones
+            + 1 oxygène = <b>6 atomes → pyranose</b> ;</li>
+          <li>chez le <b>fructose</b>, le carbonyle est en <b>C2</b> → le cycle relie <b>C2 à C5</b> = 4 carbones
+            + 1 oxygène = <b>5 atomes → furanose</b>.</li>
+        </ul>
+        <p>Le carbone anomérique est donc le <b>C1</b> pour un aldose et le <b>C2</b> pour un cétose ; dans les deux
+          cas il devient chiral à la fermeture, ce qui donne <b>2 anomères</b>.</p>
+
+        <div class="note">
+          <span class="lbl">Nuance à connaître (et à ne pas confondre)</span>
+          En réalité, le fructose en solution existe majoritairement sous forme <b>fructofuranose</b> (cycle à 5)
+          avec une petite proportion de <b>fructopyranose</b> (cycle à 6, via l'OH du C6). Le cours retient le
+          <b>furanose</b> : c'est la réponse attendue. De même, le fructose possède <b>2 carbones anomériques
+          possibles</b> selon l'OH qui réagit — c'est ce qui explique cette diversité.
+        </div>
+
+        <div class="note warn">
+          <span class="lbl">Pièges classiques</span>
+          Ne pas dire que le fructose « n'a pas d'anomère » sous prétexte que c'est un cétose : il en a <b>deux</b>,
+          mais ils sont portés par le <b>C2</b>.
+          Ne pas écrire « α-D-fructopyranose » comme réponse par défaut : le cours demande le <b>furanose</b>.
+          Enfin, dans le schéma, le repère α/β est le <b>CH₂OH du C6</b> — et non le CH₂OH du C1, qui est porté
+          par le carbone anomérique lui-même.
         </div>
 
         <h4>Les 6 liaisons et leur conséquence</h4>
