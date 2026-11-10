@@ -189,6 +189,7 @@ FIGURES = [
                          "1/v = (K<sub>M</sub>/V<sub>max</sub>)·1/[S] + 1/V<sub>max</sub>"]),
     ("Glucides", GREEN, ["4 kcal pour 1 g de glucose",
                          "C1 → ac. gluconique ; C6 → ac. glucuronique",
+                         "C6 + H₃PO₄ → G6P : glucose piégé (chargé)",
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
@@ -218,11 +219,10 @@ PATHOS = [
 ]
 
 DAYS = [
-    ("J-3", "Relire les tableaux de chiffres et les 4 graphiques d'enzymologie. Faire l'annale 2021-2022 "
-            "en entier, corriger avec le corrigé 2023."),
-    ("J-2", "Les 10 pathologies, les 3 GAG et le lipidogramme. Réciter les classifications : "
-            "oses/osides, lipides simples/complexes/dérivés."),
-    ("J-1", "Rien de nouveau. Survol du diaporama (diapos 25-32 et 90-93), relire le plan, se coucher tôt."),
+    ("J-3", "Tableaux de chiffres et les 4 graphiques d'enzymologie. Annale 2021-2022 en entier, "
+            "corrigé 2023."),
+    ("J-2", "Les 10 pathologies, les 3 GAG, le lipidogramme. Réciter les classifications."),
+    ("J-1", "Rien de nouveau. Survol des diapos 25-38 et 90-93, relire le plan, se coucher tôt."),
 ]
 
 QUESTIONS = [
@@ -478,7 +478,7 @@ def page_two(c):
         c.drawString(x + 9, y - 14, tag)
         draw_para(c, x + 9, y - 22, txt, 6.5, 8.4, INK, "DJ", dw - 18)
 
-    y = y - dh - 12
+    y = y - dh - 11
 
     # auto-test
     y = section(c, y, "Auto-test : 10 questions à savoir traiter sans support", PURPLE)
@@ -496,14 +496,9 @@ def page_two(c):
 
     y = qy - sum(rowh2) - 6
 
-    draw_para(c, M, y,
-              "<b>Rappel</b> — carte de travail, pas un document officiel : les consignes du prof priment.",
-              6.6, 8.4, GREY, "DJ", 515)
-
     c.setFillColor(GREY)
     c.setFont("DJ", 6.8)
-    c.drawString(M, 15, "Portail de révision FMDC 1A  ·  sources : support Khlil 2024-25, diaporama Naamane "
-                        "(93 diapos), annales de la promo")
+    c.drawString(M, 15, "Portail FMDC 1A  ·  sources : support Khlil 2024-25, diaporama Naamane (93 diapos), annales")
     c.drawRightString(W - M, 15, "page 2 / 2")
     c.showPage()
 
