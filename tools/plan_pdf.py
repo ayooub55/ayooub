@@ -166,7 +166,7 @@ SESSIONS = [
     ("S6", "Enzymes : définitions, nomenclature, effet de [E] et de [S], Michaelis-Menten", "support p. 29-38"),
     ("S7", "Inhibitions, pH et température, allostérie — redessiner les 4 graphiques", "support p. 39-47"),
     ("S8", "Vitamines et coenzymes : tableau vitamine → coenzyme → réaction", "support p. 48-70"),
-    ("S9", "Glucides : classification, Fischer, Keller et Kiliani, cyclisation, Tollens, mutarotation", "diapos 4-32"),
+    ("S9", "Glucides : classification, Fischer, arbre de Keller et Kiliani, épimères, cyclisation, Tollens", "diapos 4-32"),
     ("S10", "Osides : liaison osidique, di- et polyosides, GAG, protéoglycanes", "diapos 33-62"),
     ("S11", "Lipides : acides gras, glycérides, phospholipides, stérols, bilan lipidique", "diapos 63-89"),
     ("S12", "Sphingolipides (§ VII) + annales chronométrées", "diapos 90-93"),
@@ -178,25 +178,30 @@ FIGURES = [
                          "114° / 125° : angles du groupe plan",
                          "141 / 146 / 153 : AA de Hb α / Hb β / myoglobine",
                          "× 250 : affinité du CO pour l'hème",
-                         "His 146 β : fixation des H⁺ (Bohr)"]),
+                         "His 146 β : fixation des H⁺ (Bohr)",
+                         "50 à 80 % : protéines du poids sec"]),
     ("Enzymes", PURPLE, ["K<sub>M</sub> = (k<sub>-1</sub> + k₂) / k₁",
                          "V<sub>max</sub> = k₂ [E<sub>T</sub>]",
                          "Compétitive : K<sub>M</sub> ↑, V<sub>max</sub> =",
                          "Non compétitive : V<sub>max</sub> ↓, K<sub>M</sub> =",
                          "30 °C / 40 °C : dénaturation",
-                         "6 classes d'enzymes"]),
+                         "6 classes d'enzymes",
+                         "1/v = (K<sub>M</sub>/V<sub>max</sub>)·1/[S] + 1/V<sub>max</sub>"]),
     ("Glucides", GREEN, ["4 kcal pour 1 g de glucose",
                          "300 g/j : cerveau 150 · GR 50 · muscle 50",
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
-                         "1 : 2 : 1 : rapport C : H : O"]),
+                         "1 : 2 : 1 : rapport C : H : O",
+                         "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
+                         "épimères du glucose : mannose C2 · allose C3 · galactose C4"]),
     ("Lipides", ORANGE, ["C4 → C24, nombre pair de carbones",
                          "30-35 % · 1 g/kg/j · + 3 g/j d'AGE",
                          "5 à 8 g/L : lipides totaux sériques",
                          "TG 0,5-1,5 · HDL 0,4-0,8 · LDL 1,1-1,9 g/L",
                          "HDL 24 · LDL 56 · VLDL 20 %",
-                         "2400 kcal : 1600 + 200 + 600"]),
+                         "2400 kcal : 1600 + 200 + 600",
+                         "cholestérol total : 1,7 à 2,5 g/L (adulte)"]),
 ]
 
 PATHOS = [
@@ -456,7 +461,7 @@ def page_two(c):
         c.setFont("DJ", 7.0)
         c.drawString(x + 9 + nw + 5, py - 5, "— " + meca)
 
-    y = y - 5 * 13.8 - 15
+    y = y - 5 * 13.8 - 11
 
     # 3 derniers jours
     y = section(c, y, "Les 3 derniers jours", GREEN)
@@ -473,7 +478,7 @@ def page_two(c):
         c.drawString(x + 9, y - 14, tag)
         draw_para(c, x + 9, y - 22, txt, 6.5, 8.4, INK, "DJ", dw - 18)
 
-    y = y - dh - 17
+    y = y - dh - 14
 
     # auto-test
     y = section(c, y, "Auto-test : 10 questions à savoir traiter sans support", PURPLE)
@@ -489,13 +494,12 @@ def page_two(c):
         c.drawString(x, ry2 - 6.4, "%02d" % (i + 1))
         draw_para(c, x + 16, ry2, q, 6.6, 8.4, INK, "DJ", qw - 16)
 
-    y = qy - sum(rowh2) - 11
+    y = qy - sum(rowh2) - 6
 
     draw_para(c, M, y,
-              "<b>Rappel</b> — ce plan est une carte de travail construite à partir des supports et des documents "
-              "du dossier, pas un document officiel de la faculté. Les consignes de dernière minute d'un "
-              "enseignant priment toujours : vérifie-les en cours et dans les notes d'examen du portail.",
-              6.8, 8.8, GREY, "DJ", 515)
+              "<b>Rappel</b> — carte de travail, pas un document officiel : les consignes de dernière minute "
+              "d'un enseignant priment toujours.",
+              6.6, 8.4, GREY, "DJ", 515)
 
     c.setFillColor(GREY)
     c.setFont("DJ", 6.8)

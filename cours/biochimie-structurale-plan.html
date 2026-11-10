@@ -565,6 +565,79 @@ footer.foot a{font-weight:600}
           GAG, protéoglycanes, glycoprotéines : 53-62.
         </div>
 
+        <h4 id="keller">🌳 L'arbre de Keller et Kiliani — la question d'examen</h4>
+        <p>La prof a annoncé une question sur cette partie : c'est le seul endroit du chapitre qui demande de
+          <b>raisonner sur un schéma</b> plutôt que de réciter. Voici l'arbre tel qu'il est tombé, puis la méthode.</p>
+
+        <figure style="margin:16px 0;padding:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;text-align:center">
+          <img src="img/keller-kiliani.png" alt="Arbre de filiation de Keller et Kiliani : du D-glycéraldéhyde (3 C) aux aldoses en D à 4, 5 et 6 carbones, avec D-thréose, D-érythrose, D-arabinose, D-ribose, D-galactose, D-mannose et D-glucose."
+               style="max-width:100%;height:auto;border-radius:8px">
+          <figcaption style="margin-top:9px;font-size:.82rem;color:var(--mut)">
+            Filiation des <b>D-aldoses</b> (de 3 à 6 carbones). Chaque petit trait horizontal figure un
+            <b>H–C–OH</b> : trait à droite = OH à droite dans la projection de Fischer. C'est un schéma
+            de <em>filiation</em>, pas une formule : il montre seulement comment un ose « engendre » le suivant.
+          </figcaption>
+        </figure>
+
+        <h4>Ce que dit exactement le schéma</h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Niveau</th><th>Carbones asymétriques</th><th>Aldoses en D</th><th>Noms</th></tr></thead>
+          <tbody>
+            <tr><td><b>3 C</b></td><td>1 (C2)</td><td><b>1</b></td><td>D-glycéraldéhyde — la <b>racine</b> de toute la famille</td></tr>
+            <tr><td><b>4 C</b></td><td>2 (C2, C3)</td><td><b>2</b></td><td>D-érythrose · D-thréose</td></tr>
+            <tr><td><b>5 C</b></td><td>3 (C2 à C4)</td><td><b>4</b></td><td>D-ribose · D-arabinose · D-xylose · D-lyxose</td></tr>
+            <tr><td><b>6 C</b></td><td>4 (C2 à C5)</td><td><b>8</b></td><td>D-allose · D-altrose · <b>D-glucose</b> · <b>D-mannose</b> · D-gulose · D-idose · <b>D-galactose</b> · D-talose</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="note ok">
+          <span class="lbl">La règle à savoir par cœur</span>
+          Chaque <b>carbone asymétrique supplémentaire double le nombre de composés</b> :
+          1 → 2 → 4 → 8. Pour un aldose à <b>n</b> carbones, il y a <b>n − 2</b> carbones asymétriques,
+          donc <b>2<sup>n−2</sup> aldoses en D</b> et autant en L, soit <b>2<sup>n−2</sup> stéréoisomères au total</b>
+          (à 6 C : 8 en D + 8 en L = 16).
+        </div>
+
+        <h4>Les épimères : la notion que la question utilise</h4>
+        <p>Deux oses sont <b>épimères</b> quand ils ne diffèrent que par la configuration d'<b>un seul</b> carbone.
+          Dans l'arbre, les deux branches qui partent d'un même point sont toujours des épimères.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Question possible</th><th>Réponse</th></tr></thead>
+          <tbody>
+            <tr><td>Épimères du <b>D-glucose</b> ?</td><td><b>D-mannose</b> (C2) · <b>D-allose</b> (C3) · <b>D-galactose</b> (C4)</td></tr>
+            <tr><td>Épimères du <b>D-ribose</b> ?</td><td><b>D-arabinose</b> (C2) · D-xylose (C3) · D-lyxose (C4)</td></tr>
+            <tr><td>Le D-glucose et le D-fructose sont-ils épimères ?</td><td><b>Non</b> — ce sont des isomères de fonction (aldose / cétose), pas des épimères.</td></tr>
+            <tr><td>D-glucose et L-glucose ?</td><td><b>Non</b> — ce sont des <b>énantiomères</b> (images miroir), tous les carbones sont inversés.</td></tr>
+            <tr><td>D-glucose et D-galactose ?</td><td><b>Oui</b> — épimères en C4 (c'est le couple le plus demandé).</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4>Méthode en 3 étapes (à appliquer sur le schéma)</h4>
+        <ol class="steps">
+          <li><b>Compter les carbones</b> → tu sais sur quelle ligne tu es (3 C, 4 C, 5 C, 6 C) et combien de
+            carbones asymétriques il y a (<b>n − 2</b>).</li>
+          <li><b>Compter les traits</b> → chaque trait est un carbone chiral ; <b>trait à droite = OH à droite</b>
+            en Fischer. Deux oses dont un seul trait change sont épimères.</li>
+          <li><b>Vérifier par le calcul</b> → le nombre d'aldoses en D de la ligne doit valoir <b>2<sup>n−2</sup></b>.
+            Si tu trouves autre chose, tu as raté une branche : l'arbre est toujours symétrique (chaque nœud donne 2 enfants).</li>
+        </ol>
+
+        <div class="note warn">
+          <span class="lbl">Question type, corrigée</span>
+          <b>« À partir de l'arbre de Keller et Kiliani, combien existe-t-il d'aldoses à 6 carbones, et quelle est
+          la relation entre le D-glucose et le D-mannose ? »</b><br>
+          Réponse attendue : un aldohexose a 4 carbones asymétriques (C2 à C5), donc 2<sup>4</sup> = <b>16
+          stéréoisomères</b>, soit <b>8 aldoses en D</b> et 8 en L. Le D-glucose (OH en C2 à droite) et le
+          D-mannose (OH en C2 à gauche) ne diffèrent que par le carbone 2 : ce sont des <b>épimères en C2</b>.
+        </div>
+
+        <div class="note">
+          <span class="lbl">Piège du schéma</span>
+          L'arbre ne montre que la <b>série D</b> et seulement les <b>aldoses</b>. Les cétoses (dont le fructose)
+          ont leur propre filiation, qui part du <b>dihydroxyacétone</b> — c'est écrit dans le diaporama, diapo 19,
+          et c'est exactement ce qui peut faire perdre des points si on l'oublie.
+        </div>
+
         <h4>Les 6 liaisons et leur conséquence</h4>
         <ul class="clean">
           <li><b>α(1→4)</b> : maltose, amylose, amylopectine, glycogène — chaîne linéaire, digestible par les α-glucosidases.</li>
