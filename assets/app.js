@@ -255,22 +255,45 @@
       <div class="empty">${totalSeen()} document(s) sur ${totalFiles()} marqués comme révisés. La progression se met à jour automatiquement dans le menu.</div>`;
   }
 
+  /* Correspondance : intitulé officiel de la maquette du S1 → fiche du portail.
+     Les intitulés diffèrent (la maquette dit "Langues étrangères", le Drive du prof
+     dit "Langue et communication"), d'où ce tableau de rapprochement explicite. */
+  const MAP_S1 = [
+    [/biologie/i,                                          'biologie'],
+    [/chimie/i,                                            'chimie'],
+    [/anatomie/i,                                          'anatomie'],
+    [/biophysique/i,                                       'biophysique'],
+    [/médecine dentaire|initiation/i,                      'imd'],
+    [/langue/i,                                            'langue'],
+    [/méthodologie|MTU/i,                                  'mtu']
+  ];
+
   function renderFormation() {
     /* Portail limité au semestre 1 : seules les lignes S1 sont affichées.
        Les autres semestres restent dans data/30-extra.js, simplement non rendus. */
     const F = (D.formation || []).filter(f => f.semestre === 'S1');
+    const byId = id => (D.modules || []).find(m => m.id === id);
+    const ligne = x => {
+      const hit = MAP_S1.find(([re]) => re.test(x));
+      const m = hit ? byId(hit[1]) : null;
+      if (!m) return `<li>${esc(x)} <span class="pill">transversal</span></li>`;
+      return `<li>${esc(x)} → <a href="#/m/${m.id}"><b>${esc(m.nom)}</b></a>`;
+    };
     VIEW.innerHTML = `
       <div class="sec-head"><h2>🎓 Maquette du semestre 1 (S1)</h2>
-        <span class="hint">Les 7 modules de la 1<sup>re</sup> année (+ l'entrée « Liens ») — d'après « Modules de formation » (FMDC Casablanca)</span></div>
+        <span class="hint">Les 7 modules de la 1<sup>re</sup> année + l'entrée « Liens » — d'après « Modules de formation » (FMDC Casablanca)</span></div>
       <div class="card" style="--accent:#3b82f6; margin-bottom:18px">
         <table class="table">
-          <thead><tr><th>Semestre</th><th>Modules disciplinaires (et modules transversaux)</th></tr></thead>
+          <thead><tr><th>Semestre</th><th>Modules officiels → fiche correspondante du portail</th></tr></thead>
           <tbody>
             ${F.map(f => `<tr><td class="sem">${esc(f.semestre)}</td>
-              <td><ul style="margin:0;padding-left:18px">${f.modules.map(x => `<li>${esc(x)}</li>`).join('')}</ul></td></tr>`).join('')}
+              <td><ul style="margin:0;padding-left:18px">${f.modules.map(ligne).join('')}</ul></td></tr>`).join('')}
           </tbody>
         </table>
-        <p class="desc" style="margin:12px 0 0">Ce portail couvre uniquement le <b>S1</b>. Pour la maquette complète
+        <p class="desc" style="margin:12px 0 0">Les <b>7 modules du S1</b> sont donc tous présents dans le portail : les
+        5 modules disciplinaires (Biologie, Chimie &amp; biochimie, Anatomie &amp; physiologie, Biophysique &amp; matériaux,
+        IMD) et les <b>2 modules transversaux</b> — <b>Langues étrangères</b>, appelé « Langue et communication » dans le
+        Drive du professeur, et <b>MTU</b>. Ce portail couvre uniquement le <b>S1</b> ; pour la maquette complète
         (S1 → S12), ouvrir « Modules de formation (S1 → S12).pdf » depuis le Drive de la promo.</p>
       </div>
       <div class="card" style="--accent:#64748b">
