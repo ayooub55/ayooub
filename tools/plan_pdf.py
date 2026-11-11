@@ -192,7 +192,7 @@ FIGURES = [
                          "C6 + H₃PO₄ → G6P : glucose piégé (chargé)",
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
-                         "20 / 80 % : amylose, amylopectine",
+                         "20/80 % : amylose α(1→4), amylopectine + α(1→6)",
                          "lactose β(1→4) : réducteur ; saccharose non",
                          "D/L = structure, d/l = mesure : ne pas confondre",
                          "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
