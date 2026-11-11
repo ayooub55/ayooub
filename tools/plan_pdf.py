@@ -193,6 +193,7 @@ FIGURES = [
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
+                         "holoside / hétéroside : par hydrolyse",
                          "D/L = structure, d/l = mesure : ne pas confondre",
                          "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
                          "épimères du glucose : mannose C2 · allose C3 · galactose C4"]),
@@ -219,8 +220,7 @@ PATHOS = [
 ]
 
 DAYS = [
-    ("J-3", "Tableaux de chiffres et les 4 graphiques d'enzymologie. Annale 2021-2022 en entier, "
-            "corrigé 2023."),
+    ("J-3", "Chiffres et les 4 graphiques d'enzymologie. Annale 2021-2022."),
     ("J-2", "Les 10 pathologies, les 3 GAG, le lipidogramme. Réciter les classifications."),
     ("J-1", "Rien de nouveau. Survol des diapos 25-38 et 90-93, relire le plan, se coucher tôt."),
 ]
@@ -443,7 +443,7 @@ def page_two(c):
             hh = draw_para(c, x + 7, ly, "· " + t, 6.6, 8.5, INK, "DJ", inner_w)
             ly -= hh + 3.0
 
-    y = y - box_h - 16
+    y = y - box_h - 13
 
     # pathologies
     y = section(c, y, "Les 10 pathologies citées dans le module", RED)
@@ -461,7 +461,7 @@ def page_two(c):
         c.setFont("DJ", 7.0)
         c.drawString(x + 9 + nw + 5, py - 5, "— " + meca)
 
-    y = y - 5 * 13.8 - 9
+    y = y - 5 * 13.8 - 6
 
     # 3 derniers jours
     y = section(c, y, "Les 3 derniers jours", GREEN)
@@ -478,13 +478,13 @@ def page_two(c):
         c.drawString(x + 9, y - 14, tag)
         draw_para(c, x + 9, y - 22, txt, 6.5, 8.4, INK, "DJ", dw - 18)
 
-    y = y - dh - 11
+    y = y - dh - 15
 
     # auto-test
     y = section(c, y, "Auto-test : 10 questions à savoir traiter sans support", PURPLE)
     qw = 515 / 2 - 12
     hs = [measure(q, 6.6, 8.4, qw - 16) for q in QUESTIONS]
-    rowh2 = [max(hs[r * 2], hs[r * 2 + 1]) + 3.2 for r in range(5)]
+    rowh2 = [max(hs[r * 2], hs[r * 2 + 1]) + 2.0 for r in range(5)]
     qy = y
     for i, q in enumerate(QUESTIONS):
         x = M + (i % 2) * (qw + 20)
@@ -494,12 +494,12 @@ def page_two(c):
         c.drawString(x, ry2 - 6.4, "%02d" % (i + 1))
         draw_para(c, x + 16, ry2, q, 6.6, 8.4, INK, "DJ", qw - 16)
 
-    y = qy - sum(rowh2) - 6
+    y = qy - sum(rowh2) - 4
 
     c.setFillColor(GREY)
     c.setFont("DJ", 6.8)
-    c.drawString(M, 15, "Portail FMDC 1A  ·  sources : support Khlil 2024-25, diaporama Naamane (93 diapos), annales")
-    c.drawRightString(W - M, 15, "page 2 / 2")
+    c.drawString(M, 12, "Portail FMDC 1A  ·  sources : support Khlil 2024-25, diaporama Naamane (93 diapos), annales")
+    c.drawRightString(W - M, 12, "page 2 / 2")
     c.showPage()
 
 
