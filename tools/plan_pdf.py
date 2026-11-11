@@ -193,7 +193,7 @@ FIGURES = [
                          "50 / 35 / 15 % : glucides, lipides, protides",
                          "36 / 63 / 0,1 % : α, β, forme ouverte",
                          "20 / 80 % : amylose, amylopectine",
-                         "holoside / hétéroside : par hydrolyse",
+                         "lactose : β(1→4) galactose-glucose, réducteur",
                          "D/L = structure, d/l = mesure : ne pas confondre",
                          "aldoses en D : 2<sup>n−2</sup> → 1, 2, 4, 8",
                          "épimères du glucose : mannose C2 · allose C3 · galactose C4"]),
@@ -234,7 +234,7 @@ QUESTIONS = [
     "Écrire Michaelis-Menten ; définir K<sub>M</sub> et V<sub>max</sub>.",
     "Inhibition compétitive, puis non compétitive : K<sub>M</sub> ? V<sub>max</sub> ?",
     "Glucose → pyranose, fructose → furanose : pourquoi ?",
-    "Pourquoi le saccharose est-il non réducteur ?",
+    "Lactose : nom complet, liaison, enzyme, réducteur ?",
     "Bilan lipidique normal, et les 3 maladies de surcharge ?",
 ]
 
