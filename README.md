@@ -20,7 +20,7 @@ cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par modu
 | 💡 **Notes d'examen** | Les conseils donnés par chaque professeur (chapitres insistés, parties retirées, format d'épreuve) transformés en fiches filtrables |
 | ✅ **Suivi de révision** | Cochez « révisé » sur chaque document → barres de progression par module et progression globale |
 | ⭐ **Favoris** | Étoilez les documents essentiels pour les retrouver dans « Mes favoris » |
-| 🎓 **Formation S1 → S12** | Tableau officiel des modules de formation + liste des modules capitalisés |
+| 🎓 **Maquette du S1** | Les 7 modules du semestre 1 + liste des modules capitalisés (le portail ne traite que le S1) |
 | 🔗 **Liens utiles** | Chaîne YouTube `1A_FMDC`, playlists Physiologie / Biochimie, diagrammes, liens conseillés |
 | 🌗 **Thème clair/sombre**, responsive mobile, navigation par URL (`#/m/anatomie`) | |
 

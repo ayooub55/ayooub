@@ -135,7 +135,7 @@
         <div class="chips">
           <a class="chip" href="#/modules">📚 ${D.modules.length} modules</a>
           <a class="chip" href="#/notes">💡 Notes d'examen par prof</a>
-          <a class="chip" href="#/formation">🎓 Formation S1 → S12</a>
+          <a class="chip" href="#/formation">🎓 Maquette du S1</a>
           <a class="chip" href="${D.meta.drive}" target="_blank" rel="noopener">📁 Drive d'origine</a>
         </div>
         <div class="dua">${esc(D.message.dua)}</div>
@@ -256,17 +256,22 @@
   }
 
   function renderFormation() {
+    /* Portail limité au semestre 1 : seules les lignes S1 sont affichées.
+       Les autres semestres restent dans data/30-extra.js, simplement non rendus. */
+    const F = (D.formation || []).filter(f => f.semestre === 'S1');
     VIEW.innerHTML = `
-      <div class="sec-head"><h2>🎓 Modules de formation S1 → S12</h2>
-        <span class="hint">D'après « Modules De Formation.pdf » (FMDC Casablanca)</span></div>
+      <div class="sec-head"><h2>🎓 Maquette du semestre 1 (S1)</h2>
+        <span class="hint">Les 7 modules de la 1<sup>re</sup> année (+ l'entrée « Liens ») — d'après « Modules de formation » (FMDC Casablanca)</span></div>
       <div class="card" style="--accent:#3b82f6; margin-bottom:18px">
         <table class="table">
           <thead><tr><th>Semestre</th><th>Modules disciplinaires (et modules transversaux)</th></tr></thead>
           <tbody>
-            ${D.formation.map(f => `<tr><td class="sem">${esc(f.semestre)}</td>
+            ${F.map(f => `<tr><td class="sem">${esc(f.semestre)}</td>
               <td><ul style="margin:0;padding-left:18px">${f.modules.map(x => `<li>${esc(x)}</li>`).join('')}</ul></td></tr>`).join('')}
           </tbody>
         </table>
+        <p class="desc" style="margin:12px 0 0">Ce portail couvre uniquement le <b>S1</b>. Pour la maquette complète
+        (S1 → S12), ouvrir « Modules de formation (S1 → S12).pdf » depuis le Drive de la promo.</p>
       </div>
       <div class="card" style="--accent:#64748b">
         <h3 style="margin:0 0 6px">Modules capitalisés — 1<sup>re</sup> année 2024-2025</h3>
