@@ -52,6 +52,28 @@ window.DRIVE.modules.push(
           ['QCM BIO SANS RÉPONSES.pdf', '1NYc4rLbFDhr8shILZhKZZjNs5DPxtCdK'],
           ['Révision bio 1ère année 23.pdf', '1tS_j_R31XCJXW2i61pxkYr9Z-n_vnQgZ']
         ]}
+      ]},
+
+      /* Annales balayées dans tout le Drive le 2026-10-28 : seules les pièces
+         dont le contenu a été vérifié (couche texte du PDF) sont listées ici. */
+      { nom: 'Annales & examens', folder: '1VhT-Ca-FL4nEIm7tNgU1ZhKnjarrSD4U', sections: [
+        { nom: 'Épreuves officielles', folder: '1VhT-Ca-FL4nEIm7tNgU1ZhKnjarrSD4U', fichiers: [
+          ['Biochimie S1 2025 — épreuve 2024-2025 (40 QCM).pdf', '1KDOLDjCG1VwXEGlMciWap0HRhP9BDJnw'],
+          ['EXAM session 2025 — Biochimie N2026.pdf (scan)', '1GQrnxU6js1NcRG1Lhgnmu27abX-Z8xML'],
+          ['BIOCHIMIE 2024 (scan).pdf', '1PYaIcl9_2K9qlD6Mhbn6v3ULAUOo9st-'],
+          ['BOICHIMIE 2023 — grille de réponses.pdf', '1jfIOatMa2OYgOHOeCkUg6VSkncr3pFy2']
+        ]},
+        { nom: 'QCM de révision (Pr. Khlil)', folder: '13bt7BITcpR5FvpMNxtTSJLb7M4oSq1T3', fichiers: [
+          ['QCM REVISION 2022 (2021-2022).pdf', '1h3Pk1MYnJW09R7086TXiVXP6dsq8vtab'],
+          ['QCM REVISION 2023 (2022-2023).pdf', '1LOr7oDQoYGg_-cx-RL1iSR6uJGS2Mp4Z'],
+          ['Qcm biochimie-1.pdf', '1wSYy8kJGDf4R1auFJUrDeqSfENpHCBdw'],
+          ['Qcm révision 2022-2023.pdf', '1xIicO-EBlVG6UmrJzCKiJ4uLh7iSN8Dq'],
+          ['QCM glucides (questions extraites).pdf', '1p_bIIJksEBqC7LWDRpQEos2UNOaVfW9X']
+        ]},
+        { nom: 'Compilations d’annales S1 (tous modules)', folder: '1RBEQrykXoZzvft4HVylhxooyaGXO6vcN', fichiers: [
+          ['EXAM — Annales S1 2023 (compilation).pdf', '1zIeOQS3JnsBtGvUJxQNmoGtIwglLAyYs'],
+          ['EXAM — Annales S1 2024 (compilation).pdf', '1IcPaOOFCZV725i1fwdU2hyUDz2obc5dj']
+        ]}
       ]}
     ]},
 
