@@ -49,6 +49,7 @@ signalées par le repère « annoncé ».</p>
 <tr><td><b>Classification des osides</b></td><td>Holoside / hétéroside, oligo / polyoside, homopolyoside / hétéropolyoside, l'aglycone</td><td><a href="#c6">Chapitre 6</a></td></tr>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
 <tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
+<tr><td><b>Sphingolipides</b></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>question tombée en 2024-25</b></td><td><a href="#c10">Chapitre 10</a></td></tr>
 </table></div>
 
 <h3>Le plan des 12 séances</h3>
@@ -65,7 +66,7 @@ signalées par le repère « annoncé ».</p>
 <tr><td><b>S9</b></td><td>Liaison osidique, oligosides, les 3 disaccharides</td><td>diapos 39-46</td></tr>
 <tr><td><b>S10</b></td><td>Amidon, glycogène : liaisons α(1→4) et α(1→6)</td><td>diapos 47-52</td></tr>
 <tr><td><b>S11</b></td><td>GAG, MPS, protéoglycanes · puis lipides : acides gras, glycérides, stérols, eicosanoïdes</td><td>diapos 53-62 · 63-87</td></tr>
-<tr><td><b>S12</b></td><td><b>Bilan lipidique sérique</b> (diapos 88-89) + annales chronométrées</td><td>diapos 88-89 · annales</td></tr>
+<tr><td><b>S12</b></td><td><b>Bilan lipidique sérique</b> (diapos 88-89) puis <b>sphingolipides</b> et sphingophospholipides (diapos 90-93) + annales chronométrées</td><td>diapos 88-93 · annales</td></tr>
 </table></div>
 
 <div class="box tip"><b class="t">Méthode de révision</b>
@@ -576,6 +577,169 @@ et <b>1,5 à 2 g/L chez l'enfant</b> ; <b>cholestérol HDL 0,4 à 0,8 g/L</b> ; 
 </div>
 """
 
+C10 = """
+<div class="box def"><b class="t">La définition : on change d'alcool</b>
+Un <b>sphingolipide</b> est un <b>ester</b> dont l'alcool <b>n'est pas le glycérol</b> mais un
+<b>amino-alcool</b>. L'amino-alcool le plus fréquent — et le seul du cours — est la
+<b>sphingosine</b>. C'est toute la différence avec les glycérophospholipides : même architecture
+(un alcool + un acide gras + une tête polaire), mais l'ossature n'est plus le glycérol.
+</div>
+
+<h3>La sphingosine : trois positions à connaître par cœur</h3>
+<p>Retiens la molécule comme une colonne vertébrale à trois étages. Chaque étage porte une fonction
+précise, et c'est cette fonction qui décide de tout ce qui va être greffé :</p>
+
+<div class="tw"><table>
+<tr><th>Position</th><th>Formule du cours</th><th>Fonction</th><th>Ce qui s'y fixe</th></tr>
+<tr><td><b>C1</b></td><td><b>CH<sub>2</sub>OH</b></td><td>Alcool <b>primaire</b></td><td>La <b>tête polaire</b> : phosphocholine, ose, oligoside</td></tr>
+<tr><td><b>C2</b></td><td><b>CH–NH<sub>2</sub></b></td><td><b>Amine</b></td><td><b>L'acide gras</b> (liaison amide) → le céramide</td></tr>
+<tr><td><b>C3</b></td><td><b>CH–OH</b></td><td>Alcool <b>secondaire</b></td><td>Reste <b>libre</b></td></tr>
+<tr><td><b>R′</b></td><td>Chaîne hydrocarbonée</td><td>—</td><td>La <b>queue apolaire</b></td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Le moyen mnémotechnique</b>
+<b>C1 = la tête</b> (toujours en haut, c'est le OH primaire qui reçoit le sucre ou le phosphate) ·
+<b>C2 = le crochet</b> (l'amine qui accroche l'acide gras) · <b>C3 = le OH libre</b>.
+Sur tous les schémas du cours, la formule est écrite <b>exactement dans cet ordre vertical</b> :
+CH<sub>2</sub> en bas ou en haut selon le dessin, mais toujours le trio OH / NH / OH.
+</div>
+
+<h3>Le céramide : le socle commun</h3>
+<p>La sphingosine <b>+ 1 acide gras</b> sur son amine, avec élimination d'eau, donne le
+<b>céramide</b> (du latin <i>cera</i>, la cire). C'est la brique de base de <b>toute</b> la famille :
+chaque famille de sphingolipides = céramide + quelque chose sur le C1.</p>
+
+<div class="tw"><table>
+<tr><th></th><th>Formule du cours</th></tr>
+<tr><td><b>Sphingosine</b></td><td>R′–CH–OH / CH–NH<sub>2</sub> / CH<sub>2</sub>OH</td></tr>
+<tr><td><b>+ R<sub>1</sub>–COOH</b></td><td>acide gras + H<sub>2</sub>O (l'amine devient amide)</td></tr>
+<tr><td><b>= Céramide</b></td><td>R′–CH–OH / CH–NH–<b>C(=O)</b>–R<sub>1</sub> / CH<sub>2</sub>OH</td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Piège n° 1 : un seul acide gras</b>
+Le céramide ne porte <b>qu'un seul</b> acide gras, sur l'<b>amine</b>. On te proposera souvent
+« contiennent deux acides gras » : c'est <b>faux</b> pour les sphingolipides (deux AG, c'est un
+glycérophospholipide ou un triglycéride). Et il n'y a <b>pas de glycérol</b> du tout.
+</div>
+
+<h3>Les quatre familles, à partir du céramide</h3>
+<div class="tw"><table>
+<tr><th>Famille</th><th>Greffé sur le C1</th><th>Où</th><th>Enzyme qui coupe</th><th>Maladie si déficit</th></tr>
+<tr><td><b>Sphingomyélines</b></td><td><b>Phosphocholine</b> (P + choline)</td><td>Cortex cérébral, gaine</td><td><b>Sphingomyélinase</b></td><td><b>Niemann-Pick</b> : grosse rate + troubles neurologiques</td></tr>
+<tr><td><b>Cérébrosides</b></td><td><b>Un ose</b> : galactose (cerveau) ou glucose (rein)</td><td>Cerveau, rein</td><td><b>β-glucosidase</b></td><td><b>Gaucher</b></td></tr>
+<tr><td><b>Gangliosides</b></td><td><b>Ose + dérivés d'oses</b></td><td>Cerveau</td><td><b>Hexosaminidase</b> (détache le <b>N-acétyl-galactose</b>)</td><td><b>Tay-Sachs</b></td></tr>
+<tr><td><b>Glycolipides neutres</b></td><td><b>Glucose</b> [+ un ose]</td><td>Surface des cellules</td><td>—</td><td>— (ce sont les <b>groupes sanguins</b>)</td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Comment lire ce tableau en 10 secondes</b>
+<b>1.</b> Une seule famille contient du <b>phosphate</b> : les <b>sphingomyélines</b> (c'est pour cela que
+la famille s'appelle <i>sphingo<u>phospho</u>lipides</i> — mais le nom de la famille ne veut pas dire que
+tous en contiennent). <b>2.</b> Dès qu'il y a un <b>ose</b>, on est dans les
+<b>sphingoglycolipides</b> : cérébroside (1 ose), ganglioside (plusieurs oses + dérivés), glycolipide
+neutre (glucose ± un ose). <b>3.</b> Chaque maladie = <b>l'enzyme qui coupe</b> ne fonctionne plus :
+le lipide s'accumule.
+</div>
+
+<h3>a) Les sphingomyélines</h3>
+<p>« La sphingosine est liée à un acide gras par sa fonction <b>amine</b> et à une
+<b>phosphocholine</b> par sa fonction <b>alcool primaire</b>. » Ce sont des <b>constituants des membranes
+cellulaires</b>, surtout dans le <b>cortex cérébral</b> et la <b>gaine</b> des nerfs.</p>
+<div class="box warn"><b class="t">Niemann-Pick</b>
+Déficit en <b>sphingomyélinase</b> → la sphingomyéline s'accumule.
+Signes à retenir : <b>grosse rate</b> (splénomégalie) + <b>troubles neurologiques</b>.
+</div>
+
+<h3>b) Les cérébrosides</h3>
+<p>Céramide <b>+ un ose</b> lié à l'alcool primaire. Le cours donne <b>deux localisations</b> :</p>
+<ul>
+<li><b>Galactose</b> → le <b>cerveau</b> (cérébroside au sens strict) ;</li>
+<li><b>Glucose</b> → le <b>rein</b>, et <b>pas</b> les autres tissus.</li>
+</ul>
+<div class="box warn"><b class="t">Gaucher</b>
+Déficit en <b>β-glucosidase</b> : le glucocérébroside n'est plus dégradé.
+</div>
+
+<h3>c) Les gangliosides</h3>
+<p>Céramide + un ose <b>plus des dérivés d'oses</b> (dont le <b>N-acétyl-galactose</b>). Ils siègent au
+niveau du <b>cerveau</b> et sont les <b>récepteurs</b> de la <b>sérotonine</b>, de certains <b>virus</b>
+et de certaines <b>toxines</b>.</p>
+<div class="box warn"><b class="t">Tay-Sachs</b>
+Déficit en <b>hexosaminidase</b> — l'enzyme qui <b>détache le N-acétyl-galactose</b>.
+</div>
+
+<h3>d) Les glycolipides neutres</h3>
+<p>Céramide + <b>glucose</b>, éventuellement <b>+ un ose</b>. Ce sont les <b>déterminants des groupes
+sanguins</b> à la surface des globules rouges.</p>
+
+<div class="box tip"><b class="t">Les 3 maladies en une phrase</b>
+<b>Niemann-Pick</b> = sphingomyélinase → rate + neuro · <b>Gaucher</b> = β-glucosidase →
+glucocérébroside · <b>Tay-Sachs</b> = hexosaminidase → N-acétyl-galactose.
+Les trois se lisent toujours de la même façon : <b>« déficit en [enzyme] = maladie de [nom] »</b>.
+</div>
+
+<h3>Les pièges de ce chapitre</h3>
+<div class="box warn"><b class="t">Ce qui tombe le plus</b>
+<b>1.</b> <b>« Tous les sphingolipides contiennent un phosphate »</b> → <b>faux</b>. Seules les
+sphingomyélines en contiennent ; les cérébrosides, gangliosides et glycolipides neutres n'en ont pas.
+<br><b>2.</b> <b>« Tous les sphingolipides contiennent deux acides gras »</b> → <b>faux</b> : un seul, lié
+à l'amine du C2. <br>
+<b>3.</b> <b>« Ils contiennent du glycérol »</b> → <b>faux</b> : c'est la <b>sphingosine</b> qui joue le
+rôle du glycérol. <br>
+<b>4.</b> <b>« Ce sont des composés hydrophobes »</b> → <b>faux</b> : ils sont <b>amphiphiles</b>
+(amphotères) : une tête polaire (C1) et une double queue apolaire (la chaîne de la sphingosine + celle
+de l'acide gras). C'est ce qui les rend capables de former la <b>bicouche</b> des membranes. <br>
+<b>5.</b> Ne pas confondre <b>céramide</b> (sphingosine + 1 AG) et <b>sphingomyéline</b>
+(céramide + phosphocholine) : la question « un céramide contient-il du phosphate ? » est fausse, mais
+« une sphingomyéline en contient-elle ? » est vraie.
+</div>
+
+<h3>La question tombée à l'examen (2024-2025)</h3>
+<div class="box bad"><b class="t">Q40 — « Parmi les propositions suivantes, relatives aux sphingolipides, indiquer celle qui est exacte : »</b>
+A. contiennent tous un phosphate · B. sont amphiphiles · C. peuvent être des précurseurs de la
+vitamine D · D. contiennent deux acides gras · E. contiennent du glycérol
+</div>
+
+<div class="box ex"><b class="t">Réponse : B — sont amphiphiles</b>
+Pourquoi chaque proposition est fausse :
+<ul>
+<li><b>A</b> : seules les <b>sphingomyélines</b> ont un phosphate ; un cérébroside ou un ganglioside n'en
+a pas.</li>
+<li><b>C</b> : le précurseur de la <b>vitamine D3</b> est le <b>cholestérol</b> (un stéride), pas un
+sphingolipide. Le piège consiste à faire glisser la propriété d'une autre famille de lipides.</li>
+<li><b>D</b> : <b>un seul</b> acide gras, sur l'amine du C2.</li>
+<li><b>E</b> : l'ossature est la <b>sphingosine</b>, jamais le glycérol.</li>
+</ul>
+Reste <b>B</b> : tête polaire + queues apolaires = <b>amphiphile</b>, donc capable de bâtir la bicouche
+membranaire. C'est la phrase du cours : « constituants des membranes cellulaires ».
+</div>
+
+<div class="box tip"><b class="t">Q39 — la question « phospholipides » qui va avec</b>
+Dans la même épreuve, la question précédente portait sur les <b>phospholipides</b> et proposait
+« ne doivent pas contenir des alcools autres que le glycérol ». C'est <b>faux</b>, et c'est exactement le
+lien avec ce chapitre : les <b>sphingophospholipides</b> ont la <b>sphingosine</b>, qui est un
+<b>amino-alcool</b>. Retiens la phrase du cours : les lipides sont faits de C, H, O, mais peuvent aussi
+contenir du <b>phosphore</b> (phospholipides), du <b>soufre et de l'azote</b> (lécithines,
+sphingomyélines), des <b>oses</b> (cérébrosides) et des <b>alcools</b> (sphingosines).
+</div>
+
+<h3>Question type, corrigée</h3>
+<div class="box bad"><b class="t">« Définir les sphingolipides, décrire les quatre familles et citer les maladies de surcharge correspondantes. »</b>
+Les <b>sphingolipides</b> sont des esters d'acides gras dont l'alcool n'est pas le glycérol mais un
+<b>amino-alcool</b>, la <b>sphingosine</b> (C1 : CH<sub>2</sub>OH ; C2 : CH–NH<sub>2</sub> ;
+C3 : CH–OH). L'acylation de l'amine par un acide gras donne le <b>céramide</b>, socle commun de la
+famille ; tout le reste se greffe sur l'<b>alcool primaire</b> du C1. On distingue :
+<b>(1) les sphingomyélines</b>, céramide + <b>phosphocholine</b>, du cortex cérébral et de la gaine —
+déficit en <b>sphingomyélinase</b> = <b>Niemann-Pick</b> (grosse rate, troubles neurologiques) ;
+<b>(2) les cérébrosides</b>, céramide + un ose (<b>galactose</b> dans le cerveau, <b>glucose</b> dans le
+rein) — déficit en <b>β-glucosidase</b> = <b>Gaucher</b> ;
+<b>(3) les gangliosides</b>, céramide + oses et dérivés d'oses, récepteurs de la sérotonine, des virus et
+des toxines — déficit en <b>hexosaminidase</b> = <b>Tay-Sachs</b> ;
+<b>(4) les glycolipides neutres</b>, céramide + glucose [± un ose], <b>déterminants des groupes
+sanguins</b>. Tous sont <b>amphiphiles</b> et participent à la membrane, et tous ne contiennent
+<b>qu'un seul</b> acide gras.
+</div>
+"""
+
 RES = """
 <h3>Les documents du Drive de la promo</h3>
 <div class="vids real">
@@ -591,6 +755,7 @@ RES = """
 <a href="https://drive.google.com/file/d/1T_JyEy1aWbCpddiRh-TqaG7qhaGhe9Jd/view" target="_blank" rel="noopener">Examen blanc Pr. Khlil 2018</a>
 <a href="https://drive.google.com/file/d/17BOnbIBzF332jxn71XkECgB90iG4bW68/view" target="_blank" rel="noopener">Annale 2021-2022</a>
 <a href="https://drive.google.com/file/d/17Ve1Z5LUiGMB7t_UT9bHoYPbSl6feB49/view" target="_blank" rel="noopener">Corrigé 2023</a>
+<a href="https://drive.google.com/file/d/1KDOLDjCG1VwXEGlMciWap0HRhP9BDJnw/view" target="_blank" rel="noopener">Épreuve 2024-2025 (40 QCM)</a>
 <a href="https://drive.google.com/file/d/1BiccimeNgxSkb3GxU9rsFyD6uuC07KZj/view" target="_blank" rel="noopener">QCM Chimie-Biochimie</a>
 </div>
 
@@ -794,6 +959,48 @@ QUIZ = {
    "o": ["Aux HDL", "Aux LDL", "Aux acides gras libres", "Aux phospholipides"], "a": 1,
    "e": "Apo B avec les LDL, Apo A1 avec les HDL."},
  ],
+ "c10": [
+  {"q": "Un sphingolipide est un ester dont l'alcool est :",
+   "o": ["Le glycérol", "Un amino-alcool, le plus souvent la sphingosine", "Le cholestérol", "Un ose"],
+   "a": 1,
+   "e": "Alcool ≠ glycérol : c'est la définition même du cours. L'amino-alcool le plus fréquent est la sphingosine."},
+  {"q": "Le céramide, c'est :",
+   "o": ["Sphingosine + un acide gras sur l'amine", "Sphingosine + phosphocholine", "Glycérol + deux acides gras", "Sphingosine seule"],
+   "a": 0,
+   "e": "Sphingosine + 1 AG (liaison amide sur le C2) + perte d'eau = céramide. La phosphocholine vient après (sphingomyéline)."},
+  {"q": "Sur quelle fonction de la sphingosine se fixe l'acide gras ?",
+   "o": ["L'alcool primaire du C1", "L'alcool secondaire du C3", "L'amine du C2", "La chaîne R′"],
+   "a": 2,
+   "e": "L'AG se fixe sur l'amine (C2) : c'est ce qui forme le céramide. Le C1 reste libre pour la tête polaire."},
+  {"q": "Ce qui se greffe sur l'alcool primaire du C1 des sphingomyélines :",
+   "o": ["Un ose", "Une phosphocholine", "Un acide gras", "Rien, le C1 reste libre"],
+   "a": 1,
+   "e": "Sphingomyéline = céramide + phosphocholine sur le OH primaire : c'est la seule famille phosphorylée."},
+  {"q": "Le déficit en sphingomyélinase provoque :",
+   "o": ["La maladie de Gaucher", "La maladie de Tay-Sachs", "La maladie de Niemann-Pick", "La drépanocytose"],
+   "a": 2,
+   "e": "Niemann-Pick : grosse rate + troubles neurologiques, par accumulation de sphingomyéline."},
+  {"q": "Le déficit en β-glucosidase provoque :",
+   "o": ["La maladie de Gaucher", "La maladie de Niemann-Pick", "Le scorbut", "Aucune maladie connue"],
+   "a": 0,
+   "e": "Gaucher = déficit en β-glucosidase : le glucocérébroside n'est plus dégradé."},
+  {"q": "La maladie de Tay-Sachs correspond à un déficit en :",
+   "o": ["Sphingomyélinase", "β-glucosidase", "Hexosaminidase", "Invertase"],
+   "a": 2,
+   "e": "L'hexosaminidase détache le N-acétyl-galactose des gangliosides : son déficit = Tay-Sachs."},
+  {"q": "Les cérébrosides contiennent comme ose :",
+   "o": ["Du galactose dans le cerveau et du glucose dans le rein", "Du glucose partout", "Du fructose dans le foie", "Aucun ose"],
+   "a": 0,
+   "e": "Galactose → cerveau ; glucose → rein (et pas les autres tissus)."},
+  {"q": "Parmi ces propositions sur les sphingolipides, laquelle est exacte (question d'examen 2024-2025) ?",
+   "o": ["Ils contiennent tous un phosphate", "Ils sont amphiphiles", "Ils sont les précurseurs de la vitamine D", "Ils contiennent deux acides gras"],
+   "a": 1,
+   "e": "Amphiphiles : tête polaire en C1 + queues apolaires. Le phosphate n'est que dans les sphingomyélines, l'AG est unique, et la vitamine D3 vient du cholestérol."},
+  {"q": "Les gangliosides sont des récepteurs :",
+   "o": ["De la sérotonine, de virus et de toxines", "Des acides biliaires", "De l'insuline uniquement", "Du cholestérol"],
+   "a": 0,
+   "e": "Récepteurs de la sérotonine, de virus et de toxines, au niveau du cerveau."},
+ ],
 }
 
 # --------------------------------------------------------------------------
@@ -838,6 +1045,19 @@ FLASH = [
  {"g": "Bilan lipidique", "q": "Que vaut le rapport cholestérol estérifié / total ?", "a": "<b>0,6 à 0,7</b> (60-70 %) — c'est un <b>rapport</b> sans unité, pas une concentration."},
  {"g": "Bilan lipidique", "q": "Les 3 fractions du lipidogramme et leurs % ?", "a": "<b>HDL (α) 24 %</b> · <b>LDL (β) 56 %</b> · <b>VLDL (pré-β) 20 %</b> — somme = 100 %."},
  {"g": "Bilan lipidique", "q": "Pourquoi « pré-β » pour les VLDL ?", "a": "En électrophorèse, ils migrent <b>juste avant</b> les β-globulines (LDL) ; les α (HDL) vont le plus loin vers l'anode."},
+ {"g": "Sphingolipides", "q": "Définition d'un sphingolipide ?", "a": "Un <b>ester</b> dont l'alcool n'est pas le glycérol mais un <b>amino-alcool</b> : la <b>sphingosine</b>."},
+ {"g": "Sphingolipides", "q": "Les trois fonctions de la sphingosine ?", "a": "<b>C1</b> : CH<sub>2</sub>OH (alcool primaire, reçoit la tête) · <b>C2</b> : CH–NH<sub>2</sub> (amine, reçoit l'AG) · <b>C3</b> : CH–OH (alcool secondaire, libre)."},
+ {"g": "Sphingolipides", "q": "Comment se forme le céramide ?", "a": "<b>Sphingosine + 1 acide gras</b> sur l'amine (liaison amide) + H<sub>2</sub>O → <b>céramide</b>."},
+ {"g": "Sphingolipides", "q": "Combien d'acides gras dans un sphingolipide ?", "a": "<b>Un seul</b>, sur l'amine du C2. « Deux AG » est le piège classique."},
+ {"g": "Sphingolipides", "q": "Quelle famille de sphingolipides contient du phosphate ?", "a": "Les <b>sphingomyélines</b> seulement (phosphocholine sur le C1). Cérébrosides, gangliosides et glycolipides neutres n'en ont pas."},
+ {"g": "Sphingolipides", "q": "Niemann-Pick : enzyme et signes ?", "a": "Déficit en <b>sphingomyélinase</b> → <b>grosse rate + troubles neurologiques</b>."},
+ {"g": "Sphingolipides", "q": "Gaucher : enzyme ?", "a": "Déficit en <b>β-glucosidase</b> (le glucocérébroside s'accumule)."},
+ {"g": "Sphingolipides", "q": "Tay-Sachs : enzyme et substrat ?", "a": "Déficit en <b>hexosaminidase</b>, qui détache le <b>N-acétyl-galactose</b> des gangliosides."},
+ {"g": "Sphingolipides", "q": "Ose des cérébrosides : cerveau et rein ?", "a": "<b>Galactose</b> dans le cerveau · <b>glucose</b> dans le rein (≠ autres tissus)."},
+ {"g": "Sphingolipides", "q": "Rôle des gangliosides ?", "a": "<b>Récepteurs</b> de la <b>sérotonine</b>, de <b>virus</b> et de <b>toxines</b>, au niveau du cerveau."},
+ {"g": "Sphingolipides", "q": "Les glycolipides neutres servent à quoi ?", "a": "Ce sont les <b>déterminants des groupes sanguins</b> (céramide + glucose ± un ose)."},
+ {"g": "Sphingolipides", "q": "Hydrophobes ou amphiphiles ?", "a": "<b>Amphiphiles</b> : tête polaire en C1 + queues apolaires → ils forment la <b>bicouche</b> membranaire."},
+ {"g": "Sphingolipides", "q": "Le précurseur de la vitamine D3 ?", "a": "Le <b>cholestérol</b> (avec les acides biliaires et les hormones stéroïdes) — <b>pas</b> un sphingolipide."},
 ]
 
 # --------------------------------------------------------------------------
@@ -854,6 +1074,7 @@ SECTIONS = [
  ("c7", "Disaccharides", "Les disaccharides et la dénomination", "Lactose, saccharose, maltose · la méthode en 5 étapes", "7", C7, False),
  ("c8", "Polyosides", "Amidon, glycogène et GAG", "Liaisons α(1→4) / α(1→6) et mucopolysaccharides", "8", C8, False),
  ("c9", "Lipides", "Bilan lipidique sérique", "Les valeurs normales, le lipidogramme et les pièges (diapos 88-89)", "9", C9, False),
+ ("c10", "Lipides", "Sphingolipides et sphingophospholipides", "La sphingosine, le céramide, les 4 familles et les 3 maladies (diapos 90-93)", "10", C10, False),
 ]
 
 HERO = """
@@ -873,13 +1094,13 @@ HERO = """
   <p style="font-size:13.5px;opacity:.8">D'après le diaporama du Pr. Naamane (93 diapos) et le support du Pr. Khlil (2024-25)</p>
   <div class="dash">
     <div class="kpi ring"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="ring" cx="27" cy="27" r="22" fill="none" stroke="#7dead9" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)" style="transition:stroke-dashoffset .5s"/></svg><div><b id="pct2">0 %</b><span>Ta progression</span></div></div>
-    <div class="kpi"><b>9</b><span>chapitres</span></div>
+    <div class="kpi"><b>10</b><span>chapitres</span></div>
     <div class="kpi"><b id="nq">0</b><span>QCM d'entraînement</span></div>
     <div class="kpi"><b id="nf">0</b><span>flashcards</span></div>
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">7 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">7 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>
@@ -934,7 +1155,7 @@ sur 20 et le détail de chaque question.</p>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biochimie structurale — FMDC 1A | Cours complet</title>
-<meta name="description" content="Cours complet de biochimie structurale (1ère année Médecine Dentaire, FMDC Casablanca) : oses, cyclisation, propriétés physiques et chimiques, osides, disaccharides, polyosides et GAG, avec QCM corrigés, flashcards et examen blanc.">
+<meta name="description" content="Cours complet de biochimie structurale (1ère année Médecine Dentaire, FMDC Casablanca) : oses, cyclisation, propriétés physiques et chimiques, osides, disaccharides, polyosides et GAG, lipides et sphingolipides, avec QCM corrigés, flashcards et examen blanc.">
 <style>
 {CSS}
 </style>
