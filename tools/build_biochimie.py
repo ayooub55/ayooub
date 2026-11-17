@@ -48,6 +48,7 @@ signalées par le repère « annoncé ».</p>
 <tr><td><b>Propriétés chimiques</b></td><td>Ce que donne C1, C6 et les alcools secondaires (acides, sorbitol, G6P, glucosamine)</td><td><a href="#c5">Chapitre 5</a></td></tr>
 <tr><td><b>Classification des osides</b></td><td>Holoside / hétéroside, oligo / polyoside, homopolyoside / hétéropolyoside, l'aglycone</td><td><a href="#c6">Chapitre 6</a></td></tr>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
+<tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
 </table></div>
 
 <h3>Le plan des 12 séances</h3>
@@ -63,8 +64,8 @@ signalées par le repère « annoncé ».</p>
 <tr><td><b>S8</b></td><td>Estérification : G6P, esters organiques, acide glucuronique</td><td>diapos 37-38</td></tr>
 <tr><td><b>S9</b></td><td>Liaison osidique, oligosides, les 3 disaccharides</td><td>diapos 39-46</td></tr>
 <tr><td><b>S10</b></td><td>Amidon, glycogène : liaisons α(1→4) et α(1→6)</td><td>diapos 47-52</td></tr>
-<tr><td><b>S11</b></td><td>GAG, MPS, protéoglycanes</td><td>diapos 53-62</td></tr>
-<tr><td><b>S12</b></td><td>Annales chronométrées et révision des 7 parties annoncées</td><td>annales</td></tr>
+<tr><td><b>S11</b></td><td>GAG, MPS, protéoglycanes · puis lipides : acides gras, glycérides, stérols, eicosanoïdes</td><td>diapos 53-62 · 63-87</td></tr>
+<tr><td><b>S12</b></td><td><b>Bilan lipidique sérique</b> (diapos 88-89) + annales chronométrées</td><td>diapos 88-89 · annales</td></tr>
 </table></div>
 
 <div class="box tip"><b class="t">Méthode de révision</b>
@@ -470,6 +471,111 @@ En <b>β(1→4)</b> ce serait la <b>cellulose</b>, et nous n'avons pas de cellul
 </div>
 """
 
+C9 = """
+<div class="box def"><b class="t">Le principe : un prélèvement à jeun de 12 h</b>
+Le <b>bilan lipidique sérique</b> dose les lipides du <b>sérum</b>. Il se fait obligatoirement <b>à jeun
+depuis 12 heures</b> : après un repas, les <b>triglycérides</b> (chylomicrons) envahissent le sérum et
+faussent complètement les valeurs. Un bilan non à jeun n'a aucune valeur interprétable.
+</div>
+
+<h3>Le tableau à connaître par cœur</h3>
+<p>La diapositive sépare les valeurs en deux blocs : <b>« Standard »</b> (les grands paramètres) et
+<b>« Détaillé »</b> (les fractions fines). Voici les deux, ensemble.</p>
+
+<div class="tw"><table>
+<tr><th>Paramètre</th><th>Valeur normale</th><th>Bloc de la diapo</th></tr>
+<tr><td><b>Lipides totaux sériques</b></td><td><b>5 à 8 g/L</b></td><td>Standard</td></tr>
+<tr><td><b>Triglycérides</b></td><td><b>0,5 à 1,5 g/L</b></td><td>Standard</td></tr>
+<tr><td><b>Cholestérol total</b> — adulte</td><td><b>1,7 à 2,5 g/L</b></td><td>Standard</td></tr>
+<tr><td><b>Cholestérol total</b> — enfant</td><td><b>1,5 à 2 g/L</b></td><td>Standard</td></tr>
+<tr><td><b>Cholestérol HDL</b></td><td><b>0,4 à 0,8 g/L</b></td><td>Détaillé</td></tr>
+<tr><td><b>Cholestérol LDL</b></td><td><b>1,1 à 1,9 g/L</b></td><td>Détaillé</td></tr>
+<tr><td><b>Cholestérol estérifié</b> / cholestérol total</td><td><b>0,6 à 0,7</b> (soit 60 à 70 %)</td><td>Détaillé</td></tr>
+<tr><td><b>Phospholipides sériques</b></td><td><b>1,5 à 2,5 g/L</b></td><td>Détaillé</td></tr>
+<tr><td><b>Acides gras libres</b> (AGL)</td><td><b>0,07 à 0,2 g/L</b></td><td>Détaillé</td></tr>
+<tr><td><b>Apoprotéines A1</b></td><td><b>0,9 à 1,8 g/L</b></td><td>Détaillé</td></tr>
+<tr><td><b>Apoprotéines B</b></td><td><b>0,9 à 1,6 g/L</b></td><td>Détaillé</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Les 4 valeurs que tout le monde oublie</b>
+<b>1.</b> <b>Acides gras libres : 0,07 à 0,2 g/L</b> — c'est la valeur la plus <b>faible</b> du bilan, et celle
+qu'on oublie le plus.
+<b>2.</b> <b>Phospholipides : 1,5 à 2,5 g/L</b> — chevauche le cholestérol total.
+<b>3.</b> <b>Apoprotéines A1 et B</b> — A1 va avec les <b>HDL</b>, B avec les <b>LDL</b>.
+<b>4.</b> <b>Cholestérol estérifié = 0,6 à 0,7</b> : ce n'est pas une concentration en g/L, c'est un
+<b>rapport</b> au cholestérol total. C'est le piège d'unité le plus fréquent.
+</div>
+
+<h3>Le lipidogramme : 24 / 56 / 20 %</h3>
+<p>Le <b>lipidogramme</b> sépare les lipoprotéines par <b>électrophorèse</b>. Chaque fraction migre à une
+position, d'où son nom grec :</p>
+
+<div class="tw"><table>
+<tr><th>Fraction</th><th>Nom à l'électrophorèse</th><th>Proportion</th><th>Ce qu'elle transporte</th></tr>
+<tr><td><b>HDL</b></td><td><b>α</b> (alpha)</td><td><b>24 %</b></td><td>Le cholestérol « de retour » vers le foie</td></tr>
+<tr><td><b>LDL</b></td><td><b>β</b> (bêta)</td><td><b>56 %</b></td><td>Le cholestérol distribué aux tissus</td></tr>
+<tr><td><b>VLDL</b></td><td><b>pré-β</b> (pré-bêta)</td><td><b>20 %</b></td><td>Les triglycérides endogènes</td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Vérification en 2 secondes</b>
+<b>24 + 56 + 20 = 100 %</b>. Si un QCM propose des pourcentages dont la somme ne fait pas 100, c'est faux
+sans même réfléchir. Et l'ordre à retenir : <b>LDL &gt; HDL &gt; VLDL</b> (56 &gt; 24 &gt; 20).
+</div>
+
+<div class="box tip"><b class="t">Pourquoi α, β, pré-β ?</b>
+En électrophorèse, les protéines migrent du pôle <b>−</b> vers le <b>+</b>. Les <b>α-globulines</b> migrent
+le plus loin (les HDL), les <b>β-globulines</b> restent plus près du dépôt (les LDL), et les <b>VLDL</b>
+migrent juste <b>avant</b> les β : d'où « <b>pré-β</b> ». Retiens l'association, elle tombe souvent.
+</div>
+
+<h3>Cohérence interne du bilan (question de raisonnement)</h3>
+<p>On peut vérifier les valeurs les unes contre les autres :</p>
+<ul>
+<li><b>Cholestérol total ≈ HDL + LDL + la part du VLDL.</b> Avec 0,4-0,8 (HDL) + 1,1-1,9 (LDL), on est déjà
+à 1,5-2,7 g/L, du même ordre que le total 1,7-2,5 g/L : les valeurs sont cohérentes.</li>
+<li><b>Lipides totaux = cholestérol + triglycérides + phospholipides + acides gras libres.</b> C'est pour
+cela que les lipides totaux (5-8 g/L) sont bien plus élevés que chaque fraction prise seule.</li>
+<li><b>Les acides gras libres</b> ne représentent qu'une fraction infime (0,07-0,2 g/L) : l'essentiel des
+lipides circule <b>estérifié</b> dans les lipoprotéines, pas sous forme libre.</li>
+</ul>
+
+<div class="box warn"><b class="t">Les 3 pièges de ce chapitre</b>
+<b>1.</b> <b>L'unité</b> : tout est en <b>g/L</b> (et non en mg/dL, ni en mmol/L). Sauf le rapport du
+cholestérol estérifié, qui est <b>sans unité</b>.<br>
+<b>2.</b> <b>L'âge</b> : le cholestérol total est <b>plus bas chez l'enfant</b> (1,5-2) que chez l'adulte
+(1,7-2,5). Inverser les deux est l'erreur classique.<br>
+<b>3.</b> <b>Le jeûne</b> : 12 heures, et on dose le <b>sérum</b>. Un bilan sans jeûne n'est pas
+interprétable à cause des triglycérides.
+</div>
+
+<h3>Ce que le cours ne dit pas (lecture clinique)</h3>
+<div class="box def"><b class="t">À signaler comme complément, pas comme cours</b>
+La diapositive donne uniquement les <b>valeurs normales</b> ; elle ne commente pas l'interprétation. En
+clinique, on retient que :
+<ul>
+<li>un <b>LDL élevé</b> et un <b>HDL bas</b> sont associés au <b>risque athérogène</b> (athérosclérose,
+maladie coronarienne) ;</li>
+<li>une <b>hypertriglycéridémie</b> oriente vers l'alimentation, l'alcool ou le diabète ;</li>
+<li>les <b>apoprotéines</b> servent de marqueurs plus fins que le simple cholestérol (A1 pour les HDL,
+B pour les LDL).</li>
+</ul>
+Si la question porte sur les valeurs, réponds avec <b>le tableau du cours</b>. N'ajoute l'interprétation
+que si elle est demandée.
+</div>
+
+<h3>Question type, corrigée</h3>
+<div class="box bad"><b class="t">« Donner les valeurs normales du bilan lipidique sérique et le principe du lipidogramme. »</b>
+Le bilan lipidique sérique se réalise sur un prélèvement <b>à jeun de 12 heures</b>, pour éviter
+l'interférence des triglycérides d'origine alimentaire. Les valeurs usuelles sont : <b>lipides totaux
+5 à 8 g/L</b> ; <b>triglycérides 0,5 à 1,5 g/L</b> ; <b>cholestérol total 1,7 à 2,5 g/L chez l'adulte</b>
+et <b>1,5 à 2 g/L chez l'enfant</b> ; <b>cholestérol HDL 0,4 à 0,8 g/L</b> ; <b>cholestérol LDL 1,1 à
+1,9 g/L</b> ; <b>cholestérol estérifié 0,6 à 0,7</b> du cholestérol total ; <b>phospholipides 1,5 à
+2,5 g/L</b> ; <b>acides gras libres 0,07 à 0,2 g/L</b> ; <b>apoprotéines A1 0,9 à 1,8 g/L</b> et
+<b>apoprotéines B 0,9 à 1,6 g/L</b>. Le <b>lipidogramme</b> sépare les lipoprotéines par électrophorèse :
+<b>HDL (α) = 24 %</b>, <b>LDL (β) = 56 %</b> et <b>VLDL (pré-β) = 20 %</b>, la somme faisant bien 100 %.
+</div>
+"""
+
 RES = """
 <h3>Les documents du Drive de la promo</h3>
 <div class="vids real">
@@ -659,6 +765,35 @@ QUIZ = {
    "o": ["Sulfaté", "Non sulfaté, du liquide synovial et du vitré", "Formé de galactose seul", "Qui n'existe pas chez l'homme"], "a": 1,
    "e": "Sans acide sulfurique : c'est le GAG non sulfaté du cours."},
  ],
+ "c9": [
+  {"q": "Le bilan lipidique sérique se réalise :",
+   "o": ["À jeun depuis 12 heures", "Après un petit-déjeuner", "À jeun depuis 2 heures", "Indifféremment, à toute heure"], "a": 0,
+   "e": "12 h de jeûne : sans cela, les triglycérides d'origine alimentaire faussent le dosage."},
+  {"q": "Les lipides totaux sériques normaux sont de :",
+   "o": ["1,5 à 2,5 g/L", "5 à 8 g/L", "0,5 à 1,5 g/L", "0,07 à 0,2 g/L"], "a": 1,
+   "e": "5 à 8 g/L. 1,5-2,5 correspond aux phospholipides, 0,5-1,5 aux triglycérides."},
+  {"q": "Le cholestérol total normal chez l'adulte est de :",
+   "o": ["1,5 à 2 g/L", "1,7 à 2,5 g/L", "0,4 à 0,8 g/L", "1,1 à 1,9 g/L"], "a": 1,
+   "e": "1,7 à 2,5 g/L chez l'adulte ; 1,5 à 2 g/L chez l'enfant."},
+  {"q": "Le cholestérol LDL normal est de :",
+   "o": ["0,4 à 0,8 g/L", "1,1 à 1,9 g/L", "0,07 à 0,2 g/L", "0,9 à 1,8 g/L"], "a": 1,
+   "e": "LDL : 1,1 à 1,9 g/L. 0,4-0,8 = HDL ; 0,9-1,8 = apoprotéines A1."},
+  {"q": "La valeur normale des acides gras libres est de :",
+   "o": ["0,07 à 0,2 g/L", "0,5 à 1,5 g/L", "1,5 à 2,5 g/L", "0,6 à 0,7 g/L"], "a": 0,
+   "e": "0,07 à 0,2 g/L : c'est la valeur la plus faible du bilan."},
+  {"q": "Le rapport cholestérol estérifié / cholestérol total est de :",
+   "o": ["0,07 à 0,2", "0,4 à 0,8", "0,6 à 0,7", "1,1 à 1,9"], "a": 2,
+   "e": "0,6 à 0,7 (60-70 %) : c'est un rapport sans unité, pas une concentration."},
+  {"q": "Dans le lipidogramme, les proportions sont :",
+   "o": ["HDL 56 % · LDL 24 % · VLDL 20 %", "HDL 24 % · LDL 56 % · VLDL 20 %", "HDL 20 % · LDL 56 % · VLDL 24 %", "HDL 33 % · LDL 33 % · VLDL 33 %"], "a": 1,
+   "e": "HDL (α) 24 % · LDL (β) 56 % · VLDL (pré-β) 20 % : la somme fait 100 %."},
+  {"q": "Les VLDL correspondent à quelle fraction électrophorétique ?",
+   "o": ["α", "β", "Pré-β", "γ"], "a": 2,
+   "e": "Les VLDL migrent juste avant les β-dglobulines : d'où « pré-β »."},
+  {"q": "Les apoprotéines B sont associées principalement :",
+   "o": ["Aux HDL", "Aux LDL", "Aux acides gras libres", "Aux phospholipides"], "a": 1,
+   "e": "Apo B avec les LDL, Apo A1 avec les HDL."},
+ ],
 }
 
 # --------------------------------------------------------------------------
@@ -693,6 +828,16 @@ FLASH = [
  {"g": "Polyosides", "q": "Comment repérer un branchement sur un schéma ?", "a": "Le C6 porte <b>CH<sub>2</sub></b> (sans OH) au lieu de <b>CH<sub>2</sub>OH</b> : le C6 est engagé."},
  {"g": "Polyosides", "q": "Amylose, amylopectine, glycogène : proportions et branchements ?", "a": "Amylose <b>20 %</b> linéaire · amylopectine <b>80 %</b>, branches tous les <b>20-30</b> · glycogène tous les <b>8-12</b>."},
  {"g": "Polyosides", "q": "Les 3 GAG du cours ?", "a": "<b>Acide hyaluronique</b> (non sulfaté) · <b>chondroïtine sulfate</b> · <b>kératane sulfate</b>."},
+ {"g": "Bilan lipidique", "q": "Quel jeûne pour un bilan lipidique sérique ?", "a": "<b>12 heures</b>, sur le <b>sérum</b> : sinon les triglycérides d'origine alimentaire faussent le dosage."},
+ {"g": "Bilan lipidique", "q": "Lipides totaux sériques ?", "a": "<b>5 à 8 g/L</b>."},
+ {"g": "Bilan lipidique", "q": "Triglycérides ?", "a": "<b>0,5 à 1,5 g/L</b>."},
+ {"g": "Bilan lipidique", "q": "Cholestérol total : adulte et enfant ?", "a": "Adulte <b>1,7 à 2,5 g/L</b> · enfant <b>1,5 à 2 g/L</b> (plus bas chez l'enfant)."},
+ {"g": "Bilan lipidique", "q": "Cholestérol HDL ? LDL ?", "a": "HDL <b>0,4 à 0,8 g/L</b> · LDL <b>1,1 à 1,9 g/L</b>."},
+ {"g": "Bilan lipidique", "q": "Phospholipides sériques ? Acides gras libres ?", "a": "Phospholipides <b>1,5 à 2,5 g/L</b> · AGL <b>0,07 à 0,2 g/L</b> (la valeur la plus faible)."},
+ {"g": "Bilan lipidique", "q": "Apoprotéines A1 et B ?", "a": "Apo <b>A1 : 0,9 à 1,8 g/L</b> (avec les HDL) · Apo <b>B : 0,9 à 1,6 g/L</b> (avec les LDL)."},
+ {"g": "Bilan lipidique", "q": "Que vaut le rapport cholestérol estérifié / total ?", "a": "<b>0,6 à 0,7</b> (60-70 %) — c'est un <b>rapport</b> sans unité, pas une concentration."},
+ {"g": "Bilan lipidique", "q": "Les 3 fractions du lipidogramme et leurs % ?", "a": "<b>HDL (α) 24 %</b> · <b>LDL (β) 56 %</b> · <b>VLDL (pré-β) 20 %</b> — somme = 100 %."},
+ {"g": "Bilan lipidique", "q": "Pourquoi « pré-β » pour les VLDL ?", "a": "En électrophorèse, ils migrent <b>juste avant</b> les β-globulines (LDL) ; les α (HDL) vont le plus loin vers l'anode."},
 ]
 
 # --------------------------------------------------------------------------
@@ -708,6 +853,7 @@ SECTIONS = [
  ("c6", "Osides", "Les osides et l'aglycone", "Classification, holoside / hétéroside", "6", C6, False),
  ("c7", "Disaccharides", "Les disaccharides et la dénomination", "Lactose, saccharose, maltose · la méthode en 5 étapes", "7", C7, False),
  ("c8", "Polyosides", "Amidon, glycogène et GAG", "Liaisons α(1→4) / α(1→6) et mucopolysaccharides", "8", C8, False),
+ ("c9", "Lipides", "Bilan lipidique sérique", "Les valeurs normales, le lipidogramme et les pièges (diapos 88-89)", "9", C9, False),
 ]
 
 HERO = """
@@ -727,13 +873,13 @@ HERO = """
   <p style="font-size:13.5px;opacity:.8">D'après le diaporama du Pr. Naamane (93 diapos) et le support du Pr. Khlil (2024-25)</p>
   <div class="dash">
     <div class="kpi ring"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="ring" cx="27" cy="27" r="22" fill="none" stroke="#7dead9" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)" style="transition:stroke-dashoffset .5s"/></svg><div><b id="pct2">0 %</b><span>Ta progression</span></div></div>
-    <div class="kpi"><b>8</b><span>chapitres</span></div>
+    <div class="kpi"><b>9</b><span>chapitres</span></div>
     <div class="kpi"><b id="nq">0</b><span>QCM d'entraînement</span></div>
     <div class="kpi"><b id="nf">0</b><span>flashcards</span></div>
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">7 parties annoncées</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">7 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>
