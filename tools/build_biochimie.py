@@ -744,11 +744,55 @@ peuvent-ils contenir un autre alcool ? » la réponse est <b>oui : la sphingosin
 entre Q39 et Q40, et c'est pour ça que les deux questions se suivent.
 </div>
 
+<h3>La question de la session 2025 (fichier « N2026 »)</h3>
+<div class="box bad"><b class="t">Les quatre propositions, telles qu'elles sont dans l'épreuve</b>
+<b>A.</b> glycérophospholipides · <b>B.</b> sphingophospholipides · <b>C.</b> cérébrosides ·
+<b>D.</b> glycolipides
+</div>
+
+<div class="box warn"><b class="t">Ce que je peux affirmer, et ce que je ne peux pas</b>
+<b>Ce qui est vérifié</b> : ces quatre mots figurent bien dans le fichier <i>EXAM session 2025 — Biochimie
+N2026.pdf</i> (l'index du Drive y trouve <b>glycérophospholipides</b>, <b>cérébrosides</b>,
+<b>glycolipides</b>, <b>céramide</b> et <b>sphingomyéline</b>). La question <b>existe donc</b>, et ce n'est pas
+celle de 2024-2025 : c'est une <b>deuxième question</b>, posée en QCM à réponses multiples.
+<b>Ce qui ne l'est pas</b> : l'énoncé exact. Le PDF est un <b>scan sans couche texte</b> — impossible de
+lire la phrase « lesquels de ces lipides… » sans OCR. Je ne vais donc pas inventer l'énoncé. En revanche,
+<b>quelle que soit la formulation, la réponse est dans la matrice ci-dessous</b>.
+</div>
+
+<h3>La matrice : une ligne par énoncé possible</h3>
+<div class="tw"><table>
+<tr><th>Si l'énoncé demande…</th><th>Réponse</th><th>Pourquoi</th></tr>
+<tr><td><b>« lesquels sont des sphingolipides ? »</b></td><td><b>B, C, D</b></td><td>Tous les trois ont la <b>sphingosine</b>. A est le seul à avoir le <b>glycérol</b> → exclu.</td></tr>
+<tr><td><b>« lesquels contiennent de la sphingosine ? »</b></td><td><b>B, C, D</b></td><td>Même raisonnement : c'est la définition de l'ossature.</td></tr>
+<tr><td><b>« lesquels sont des phospholipides ? »</b></td><td><b>A, B</b></td><td>Le cours sépare les phospholipides en <b>glycérophospholipides</b> et <b>sphingophospholipides</b>. C et D n'ont pas de phosphate.</td></tr>
+<tr><td><b>« lesquels contiennent du phosphate ? »</b></td><td><b>A, B</b></td><td>Même frontière : le phosphate est dans les deux familles phosphorylées.</td></tr>
+<tr><td><b>« lesquels sont des lipides complexes (composés) ? »</b></td><td><b>A, B, C, D</b></td><td>Le cours range dans les lipides complexes : les <b>phospholipides</b> (A et B) et les <b>glycolipides</b> (D, dont les cérébrosides C sont un cas particulier).</td></tr>
+<tr><td><b>« lesquels contiennent un ose ? »</b></td><td><b>C, D</b></td><td>Le sucre est la marque des glycolipides : <b>galactose</b> (cerveau) ou <b>glucose</b> (rein) pour les cérébrosides.</td></tr>
+<tr><td><b>« lesquels contiennent du glycérol ? »</b></td><td><b>A seulement</b></td><td>B, C et D partagent la <b>sphingosine</b> à la place du glycérol.</td></tr>
+<tr><td><b>« lequel n'est pas un sphingolipide ? »</b> (réponse unique)</td><td><b>A</b></td><td>L'exception est toujours celle qui porte le glycérol.</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Le seul réflexe à garder : la question du glycérol</b>
+Devant ces quatre mots, tu n'as qu'<b>une</b> chose à vérifier : <b>glycérol ou sphingosine ?</b>
+<b>A</b> = glycérol. <b>B, C, D</b> = sphingosine. Toutes les lignes du tableau se déduisent de cette seule
+ligne de partage, et c'est exactement le même raisonnement que la Q40 de 2024-2025
+(« contiennent du glycérol » → faux) et que la Q39 (« pas d'alcool autre que le glycérol » → faux).
+<b>Trois questions, un seul piège.</b>
+</div>
+
+<div class="box ex"><b class="t">À retenir sur la récurrence</b>
+La même notion est tombée <b>deux années de suite</b> : en 2024-2025 sous forme de deux questions à
+réponse unique (Q39 et Q40), et dans la session 2025 sous forme d'une question à réponses multiples sur
+ces quatre familles. Autrement dit : <b>le chapitre est un incontournable</b>, et la ligne à mémoriser
+n'est pas la liste des maladies mais le couple <b>glycérol / sphingosine</b>.
+</div>
+
 <h3>Ce que disent les annales (vérifié)</h3>
 <div class="tw"><table>
 <tr><th>Épreuve</th><th>Question sur cette partie ?</th><th>Source</th></tr>
 <tr><td><b>2024-2025 · 1<sup>re</sup> session</b></td><td><b>Oui — Q39 et Q40</b> : une question « phospholipides » puis une question « sphingolipides »</td><td>Texte du PDF lu intégralement</td></tr>
-<tr><td>Session 2025 (fichier « N2026 », scan)</td><td><b>Très probablement oui</b> : l'index du Drive y trouve « céramide » et « sphingomyéline »</td><td>Scan sans couche texte : <b>non citable</b></td></tr>
+<tr><td>Session 2025 (fichier « N2026 », scan)</td><td><b>Oui</b> : une question à réponses multiples sur <b>glycérophospholipides / sphingophospholipides / cérébrosides / glycolipides</b> (l'index y trouve aussi « céramide » et « sphingomyéline »)</td><td>Options confirmées par l'index du Drive ; <b>énoncé illisible</b> (scan sans couche texte)</td></tr>
 <tr><td>« Chimie-Biochimie QCM » (scan)</td><td><b>Oui</b> : contient « Tay-Sachs » et « Gaucher »</td><td>Scan : <b>non citable</b></td></tr>
 <tr><td>2023 (grille), compilation S1 2024, « EXAMS S1 2024 »</td><td><b>Non</b> : indexés, ils contiennent amidon / saccharose / cholestérol mais <b>aucun</b> terme des sphingolipides</td><td>Recherche plein texte du Drive</td></tr>
 <tr><td>2021-2022, 2024, « Exam 2025 », « TD 2025 », compilation S1 2023</td><td><b>Indéterminé</b> : scans non indexés, illisibles sans OCR</td><td>—</td></tr>
@@ -1037,6 +1081,14 @@ QUIZ = {
    "o": ["Ils contiennent tous un phosphate", "Ils sont amphiphiles", "Ils sont les précurseurs de la vitamine D", "Ils contiennent deux acides gras"],
    "a": 1,
    "e": "Amphiphiles : tête polaire en C1 + queues apolaires. Le phosphate n'est que dans les sphingomyélines, l'AG est unique, et la vitamine D3 vient du cholestérol."},
+  {"q": "Session 2025 : parmi ces quatre familles, lesquelles sont des sphingolipides ? A. glycérophospholipides · B. sphingophospholipides · C. cérébrosides · D. glycolipides",
+   "o": ["A, B et C seulement", "B, C et D", "A et B seulement", "Les quatre"],
+   "a": 1,
+   "e": "B, C et D portent la sphingosine. A est le seul à avoir le glycérol : c'est ce qui l'exclut d'un coup."},
+  {"q": "Devant « glycérophospholipides / sphingophospholipides / cérébrosides / glycolipides », quelle est la seule ligne de partage à vérifier ?",
+   "o": ["La présence de glucose", "Glycérol ou sphingosine", "Le nombre d'acides gras", "La présence de phosphate"],
+   "a": 1,
+   "e": "Glycérol → glycérophospholipides. Sphingosine → les trois autres. Toutes les autres lignes du tableau se déduisent de celle-là."},
   {"q": "« Les phospholipides ne contiennent pas d'alcool autre que le glycérol » (Q39, 2024-2025) : cette affirmation est",
    "o": ["Exacte", "Fausse : les sphingophospholipides contiennent de la sphingosine", "Fausse : ils contiennent du cholestérol", "Exacte, sauf chez l'enfant"],
    "a": 1,
