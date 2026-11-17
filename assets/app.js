@@ -5,6 +5,28 @@
   'use strict';
 
   const D = window.DRIVE;
+
+  /* ------------------------- PÉRIMÈTRE DU PORTAIL -------------------------
+     Le portail est dédié à la CHIMIE ORGANIQUE : un seul module (Chimie) et,
+     à l'intérieur, une seule rubrique (Pr. Ben Moussa). Rien n'est effacé :
+     les autres modules et rubriques restent intacts dans data/*.js et
+     réapparaissent en modifiant simplement les constantes ci-dessous
+     (mettre branche: null pour garder tout le module). */
+  const PERIMETRE = {
+    module:  'chimie',             // seul module conservé
+    branche: 'Chimie organique',   // seule rubrique conservée (null = toutes)
+    note:    /^chimie$/i           // seule note d'examen conservée
+  };
+
+  (function appliquerPerimetre() {
+    if (PERIMETRE.module) D.modules = (D.modules || []).filter(m => m.id === PERIMETRE.module);
+    if (PERIMETRE.branche) D.modules.forEach(m => {
+      m.profs = (m.profs || []).filter(p => p.nom === PERIMETRE.branche);
+    });
+    D.formation = (D.formation || []).filter(f => f.semestre === 'S1');
+    D.notes = (D.notes || []).filter(n => PERIMETRE.note.test(n.matiere));
+  })();
+
   const VIEW = document.getElementById('view');
   const $  = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
@@ -128,13 +150,12 @@
     const pct = tf ? Math.round(ts * 100 / tf) : 0;
     VIEW.innerHTML = `
       <section class="hero">
-        <h1>Espace de révision — 1<sup>re</sup> année Médecine dentaire</h1>
-        <p>${esc(D.meta.faculte)} · Promotion 2024-2025. Tous les cours, TD, TP, résumés, tutorats et annales du
-        Drive de la promo, rangés module par module et professeur par professeur — avec les conseils d'examen
-        donnés par chaque enseignant.</p>
+        <h1>Chimie organique — 1<sup>re</sup> année Médecine dentaire</h1>
+        <p>${esc(D.meta.faculte)} · Promotion 2024-2025. Espace dédié à la <b>chimie organique</b> : cours,
+        QCM, TD, annales et résumés du <b>Pr. Ben Moussa</b>, tels qu'ils sont rangés dans le Drive de la promo.</p>
         <div class="chips">
-          <a class="chip" href="#/modules">📚 ${D.modules.length} modules</a>
-          <a class="chip" href="#/notes">💡 Notes d'examen par prof</a>
+          <a class="chip" href="#/modules">🧪 Chimie organique</a>
+          <a class="chip" href="#/notes">💡 Notes d'examen</a>
           <a class="chip" href="#/formation">🎓 Maquette du S1</a>
           <a class="chip" href="${D.meta.drive}" target="_blank" rel="noopener">📁 Drive d'origine</a>
         </div>
@@ -143,14 +164,14 @@
 
       <div class="stats">
         <div class="stat"><b>${tf}</b><span>documents référencés</span></div>
-        <div class="stat"><b>${D.modules.length}</b><span>modules du S1</span></div>
+        <div class="stat"><b>${D.modules.length}</b><span>module — chimie organique</span></div>
         <div class="stat"><b>${ts}</b><span>documents révisés</span></div>
         <div class="stat"><b>${pct} %</b><span>de progression globale</span></div>
       </div>
 
       <div class="sec-head">
-        <h2>Modules du semestre 1</h2>
-        <span class="hint">Cliquez sur un module pour ouvrir ses cours par professeur</span>
+        <h2>Chimie organique</h2>
+        <span class="hint">Cours, TD et QCM du Pr. Ben Moussa</span>
       </div>
       <div class="grid">${D.modules.map(card).join('')}</div>
 
@@ -185,8 +206,8 @@
 
   function renderModules() {
     VIEW.innerHTML = `
-      <div class="sec-head"><h2>Tous les modules du S1</h2>
-        <span class="hint">${totalFiles()} documents · ${D.modules.length} modules</span></div>
+      <div class="sec-head"><h2>Chimie organique</h2>
+        <span class="hint">${totalFiles()} documents · ${D.modules.length} module</span></div>
       <div class="grid">${D.modules.map(card).join('')}</div>`;
   }
 
@@ -276,7 +297,7 @@
     const ligne = x => {
       const hit = MAP_S1.find(([re]) => re.test(x));
       const m = hit ? byId(hit[1]) : null;
-      if (!m) return `<li>${esc(x)} <span class="pill">transversal</span></li>`;
+      if (!m) return `<li>${esc(x)} <span class="pill">hors périmètre</span></li>`;
       return `<li>${esc(x)} → <a href="#/m/${m.id}"><b>${esc(m.nom)}</b></a>`;
     };
     VIEW.innerHTML = `
@@ -290,11 +311,12 @@
               <td><ul style="margin:0;padding-left:18px">${f.modules.map(ligne).join('')}</ul></td></tr>`).join('')}
           </tbody>
         </table>
-        <p class="desc" style="margin:12px 0 0">Les <b>7 modules du S1</b> sont donc tous présents dans le portail : les
-        5 modules disciplinaires (Biologie, Chimie &amp; biochimie, Anatomie &amp; physiologie, Biophysique &amp; matériaux,
-        IMD) et les <b>2 modules transversaux</b> — <b>Langues étrangères</b>, appelé « Langue et communication » dans le
-        Drive du professeur, et <b>MTU</b>. Ce portail couvre uniquement le <b>S1</b> ; pour la maquette complète
-        (S1 → S12), ouvrir « Modules de formation (S1 → S12).pdf » depuis le Drive de la promo.</p>
+        <p class="desc" style="margin:12px 0 0">La maquette officielle du <b>S1</b> compte <b>7 modules</b>
+        (5 disciplinaires + 2 transversaux : langues et MTU). Ce portail est <b>dédié à la chimie organique</b> :
+        seul le module <b>Chimie</b> est couvert — et dans ce module, seule la rubrique
+        <b>Chimie organique (Pr. Ben Moussa)</b> est affichée. Les autres lignes sont signalées
+        « hors périmètre ». Pour la maquette complète (S1 → S12), ouvrir
+        « Modules de formation (S1 → S12).pdf » depuis le Drive de la promo.</p>
       </div>
       <div class="card" style="--accent:#64748b">
         <h3 style="margin:0 0 6px">Modules capitalisés — 1<sup>re</sup> année 2024-2025</h3>
