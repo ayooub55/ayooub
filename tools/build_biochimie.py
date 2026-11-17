@@ -37,8 +37,9 @@ schémas du diaporama, les formules à retenir, les pièges classiques et des QC
 </div>
 
 <h3>Les parties annoncées à l'examen</h3>
-<p class="hint">Le professeur a annoncé que certaines parties tomberaient. Elles sont toutes traitées ici, et
-signalées par le repère « annoncé ».</p>
+<p class="hint">Le professeur a annoncé <b>à l'oral, en cours</b>, que certaines parties tomberaient. Ce sont
+elles qui décident de l'ordre de révision — pas les annales, qui ne font que confirmer. Elles sont toutes
+traitées ici et signalées par le repère « annoncé ».</p>
 <div class="tw"><table>
 <tr><th>Partie</th><th>Ce qu'on doit savoir faire</th><th>Où</th></tr>
 <tr><td><b>Filiation de Keller et Kiliani</b></td><td>Construire l'arbre des oses, définir un épimère, placer mannose / allose / galactose</td><td><a href="#c1">Chapitre 1</a></td></tr>
@@ -49,7 +50,7 @@ signalées par le repère « annoncé ».</p>
 <tr><td><b>Classification des osides</b></td><td>Holoside / hétéroside, oligo / polyoside, homopolyoside / hétéropolyoside, l'aglycone</td><td><a href="#c6">Chapitre 6</a></td></tr>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
 <tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
-<tr><td><b>Sphingolipides</b></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>question tombée en 2024-25</b></td><td><a href="#c10">Chapitre 10</a></td></tr>
+<tr><td><b>Sphingolipides</b> <span class="chip" style="cursor:default">annoncé à l'oral</span></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>annoncée en cours par le Pr. Naamane</b>, et déjà tombée en 2024-25 (Q39-Q40) puis en session 2025</td><td><a href="#c10">Chapitre 10</a></td></tr>
 </table></div>
 
 <h3>Le plan des 12 séances</h3>
@@ -578,6 +579,13 @@ et <b>1,5 à 2 g/L chez l'enfant</b> ; <b>cholestérol HDL 0,4 à 0,8 g/L</b> ; 
 """
 
 C10 = """
+<div class="box tip"><b class="t">Partie annoncée à l'oral par le Pr. Naamane</b>
+Ce chapitre n'est pas une déduction faite à partir des annales : le professeur a <b>annoncé en cours</b>,
+de vive voix, que cette partie tomberait à l'examen. C'est donc la <b>priorité n° 1</b> du chapitre
+lipides, avec le bilan lipidique. Les annales ne servent ici qu'à <b>confirmer</b> et à montrer
+<b>sous quelle forme</b> la question est posée — jamais à décider <i>si</i> elle tombe.
+</div>
+
 <div class="box def"><b class="t">La définition : on change d'alcool</b>
 Un <b>sphingolipide</b> est un <b>ester</b> dont l'alcool <b>n'est pas le glycérol</b> mais un
 <b>amino-alcool</b>. L'amino-alcool le plus fréquent — et le seul du cours — est la
@@ -585,7 +593,7 @@ Un <b>sphingolipide</b> est un <b>ester</b> dont l'alcool <b>n'est pas le glycé
 (un alcool + un acide gras + une tête polaire), mais l'ossature n'est plus le glycérol.
 </div>
 
-<h3>La sphingosine : trois positions à connaître par cœur</h3>
+<h3>La sphingosine : trois positions à connaître par cœur <span class="chip" style="cursor:default">annoncé</span></h3>
 <p>Retiens la molécule comme une colonne vertébrale à trois étages. Chaque étage porte une fonction
 précise, et c'est cette fonction qui décide de tout ce qui va être greffé :</p>
 
@@ -788,7 +796,8 @@ ces quatre familles. Autrement dit : <b>le chapitre est un incontournable</b>, e
 n'est pas la liste des maladies mais le couple <b>glycérol / sphingosine</b>.
 </div>
 
-<h3>Ce que disent les annales (vérifié)</h3>
+<h3>Ce que disent les annales — pour confirmer l'annonce</h3>
+<p class="hint">Rappel de l'ordre des priorités : la partie est retenue parce que le professeur l'a <b>annoncée à l'oral</b>. Ce tableau ne sert qu'à montrer <b>sous quelle forme</b> elle a déjà été posée.</p>
 <div class="tw"><table>
 <tr><th>Épreuve</th><th>Question sur cette partie ?</th><th>Source</th></tr>
 <tr><td><b>2024-2025 · 1<sup>re</sup> session</b></td><td><b>Oui — Q39 et Q40</b> : une question « phospholipides » puis une question « sphingolipides »</td><td>Texte du PDF lu intégralement</td></tr>
@@ -854,7 +863,7 @@ RES = """
 </div>
 
 <div class="box tip"><b class="t">Comment utiliser cette page la veille</b>
-Relis le <a href="#g0">guide</a>, les <b>7 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
+Relis le <a href="#g0">guide</a>, les <b>9 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
 Les chapitres sont faits pour être lus dans l'ordre, mais la veille, priorité aux chapitres
 <a href="#c6">6</a> et <a href="#c7">7</a>.
 </div>
@@ -1197,7 +1206,7 @@ HERO = """
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">7 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">9 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>
