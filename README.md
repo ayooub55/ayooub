@@ -1,5 +1,12 @@
 # 🦷 FMDC 1A — Espace de révision
 
+> **Organisation du site** — la page d'accueil (`index.html`) est **dédiée à la biochimie
+> structurale** (Pr. Khlil & Pr. Naamane, 24 documents, accès direct aux sections du plan).
+> Le portail complet des 8 modules du S1 reste accessible sur **`portail.html`**, et l'ancienne
+> URL `biochimie.html` redirige vers l'accueil.
+
+
+
 Portail de révision **statique** (HTML/CSS/JS, sans build ni dépendance) qui rassemble et organise
 tout le contenu du Drive de la **1ʳᵉ année de Médecine dentaire — FMDC Casablanca, promotion 2024-2025** :
 cours, TD, TP, résumés, tutorats, vidéos, annales et QCM — rangés par module puis par professeur.
