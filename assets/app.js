@@ -167,6 +167,7 @@
             + 'professeur par professeur — avec les conseils d\'examen donnés par chaque enseignant.'}</p>
         <div class="chips">
           <a class="chip" href="#/modules">${PERIMETRE.titre ? '📚 ' + esc(PERIMETRE.titre) : '📚 ' + D.modules.length + ' modules'}</a>
+          ${PERIMETRE.titre ? '<a class="chip" href="biochimie.html">📖 Cours complet expliqué (9 chapitres)</a>' : ''}
           <a class="chip" href="#/notes">💡 Notes d'examen par prof</a>
           <a class="chip" href="#/formation">🎓 Maquette du S1</a>
           <a class="chip" href="${D.meta.drive}" target="_blank" rel="noopener">📁 Drive d'origine</a>

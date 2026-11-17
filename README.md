@@ -2,8 +2,10 @@
 
 > **Organisation du site** — la page d'accueil (`index.html`) est **dédiée à la biochimie
 > structurale** (Pr. Khlil & Pr. Naamane, 24 documents, accès direct aux sections du plan).
-> Le portail complet des 8 modules du S1 reste accessible sur **`portail.html`**, et l'ancienne
-> URL `biochimie.html` redirige vers l'accueil.
+> Le portail complet des 8 modules du S1 reste accessible sur **`portail.html`**.
+> **`biochimie.html`** est le **cours complet expliqué** (page autonome de type « manuel ») : 9 chapitres,
+> 41 QCM corrigés, 28 flashcards, examen blanc chronométré, recherche et mode sombre. Il est généré par
+> `tools/build_biochimie.py` à partir de `assets/biochimie.css`.
 
 
 
