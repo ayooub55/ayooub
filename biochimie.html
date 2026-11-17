@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biochimie structurale — FMDC 1A | Promotion 2024-2025</title>
+<meta name="description" content="Page dédiée à la biochimie structurale en 1ère année de Médecine Dentaire (FMDC Casablanca) : cours du Pr. Khlil et des glucides/lipides du Pr. Naamane, annales, QCM et résumés, avec le plan du module et le cours expliqué.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+<link rel="stylesheet" href="assets/style.css?v=5">
+</head>
+<body>
+
+<div class="app">
+  <!-- ---------- Barre latérale ---------- -->
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/">
+      <div class="logo">🧫</div>
+      <div>
+        <b>Biochimie structurale</b>
+        <span>FMDC 1A · Pr. Khlil &amp; Naamane</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#/" data-nav="home"><span class="ic">🏠</span> Accueil</a>
+      <a href="#/modules" data-nav="modules"><span class="ic">📚</span> Documents <span class="badge" id="badge-modules">—</span></a>
+      <a href="#/notes" data-nav="notes"><span class="ic">💡</span> Notes d'examen</a>
+      <a href="#/favoris" data-nav="favoris"><span class="ic">⭐</span> Mes favoris <span class="badge" id="badge-favs">0</span></a>
+      <a href="#/formation" data-nav="formation"><span class="ic">🎓</span> Maquette du S1</a>
+      <a href="#/liens" data-nav="liens"><span class="ic">🔗</span> Liens utiles</a>
+      <a href="index.html"><span class="ic">↩️</span> Portail complet du S1</a>
+    </nav>
+
+    <div class="side-title">Cours expliqués</div>
+    <nav class="side-mods">
+      <a href="cours/biochimie-structurale-plan.html">🗺️ Plan du module (12 séances)</a>
+      <a href="cours/biochimie-structurale-plan.html#keller">🌳 Keller et Kiliani</a>
+      <a href="cours/biochimie-structurale-plan.html#cyclisation">🧬 Cyclisation du glucose</a>
+      <a href="cours/biochimie-structurale-plan.html#fructose">🍬 Cyclisation du fructose</a>
+      <a href="cours/biochimie-structurale-plan.html#chimiques">🧪 Propriétés chimiques</a>
+      <a href="cours/biochimie-structurale-plan.html#osides">🌿 Classification des osides</a>
+      <a href="cours/biochimie-structurale-plan.html#lactose">🥛 Le lactose (q. 11)</a>
+      <a href="cours/biochimie-structurale-plan.html#polyosides">🌾 Amidon et glycogène</a>
+      <a href="cours/biochimie-structurale.html">🧫 Cours expliqué · Pr. Khlil</a>
+      <a href="cours/plan-biochimie-structurale.pdf" target="_blank" rel="noopener">📄 Plan en PDF (2 pages)</a>
+    </nav>
+
+    <div class="side-title">Périmètre de cette page</div>
+    <nav class="side-mods" id="side-mods"></nav>
+
+    <div class="side-foot">
+      <div id="side-progress">Progression : 0 %</div>
+      <a href="#" id="reset-progress">Réinitialiser ma progression</a>
+    </div>
+  </aside>
+
+  <!-- ---------- Contenu ---------- -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+      <div class="search">
+        <span class="ic">🔍</span>
+        <input id="search" type="search" placeholder="Rechercher un cours, un TD, un résumé, un professeur…" autocomplete="off">
+        <kbd>/</kbd>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" id="theme-btn" title="Thème clair / sombre">🌗</button>
+        <a class="icon-btn" id="drive-btn" href="#" target="_blank" rel="noopener" title="Ouvrir le Drive de la promo">📁 <span class="hide-sm">Drive</span></a>
+      </div>
+    </header>
+
+    <main class="content" id="view"></main>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<!-- Périmètre : cette page ne montre que la biochimie structurale.
+     Les autres modules restent intacts dans data/*.js ; il suffit de retirer
+     ce bloc pour retrouver le portail complet. -->
+<script>
+  window.PERIMETRE = {
+    module:  'chimie',                    // module « Chimie et biochimie générales »
+    branche: 'Biochimie structurale',      // rubrique : Pr. Khlil + Pr. Naamane
+    titre:   'Biochimie structurale',
+    notes:   /biochimie/i                  // seule note d'examen conservée
+  };
+</script>
+
+<!-- Données + application -->
+<script src="data/00-base.js?v=5"></script>
+<script src="data/10-modules-a.js?v=5"></script>
+<script src="data/20-modules-b.js?v=5"></script>
+<script src="data/30-extra.js?v=5"></script>
+<script src="assets/app.js?v=5"></script>
+</body>
+</html>
