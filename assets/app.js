@@ -25,6 +25,10 @@
     });
     D.formation = (D.formation || []).filter(f => f.semestre === 'S1');
     D.notes = (D.notes || []).filter(n => PERIMETRE.note.test(n.matiere));
+    /* le module ne contient plus que la chimie organique : on l'affiche sous ce nom */
+    if (PERIMETRE.module && PERIMETRE.branche) {
+      D.modules.forEach(m => { m.officiel = m.nom; m.nom = PERIMETRE.branche; m.court = PERIMETRE.branche; });
+    }
   })();
 
   const VIEW = document.getElementById('view');
