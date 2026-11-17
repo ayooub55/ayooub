@@ -713,13 +713,35 @@ Reste <b>B</b> : tête polaire + queues apolaires = <b>amphiphile</b>, donc capa
 membranaire. C'est la phrase du cours : « constituants des membranes cellulaires ».
 </div>
 
-<div class="box tip"><b class="t">Q39 — la question « phospholipides » qui va avec</b>
-Dans la même épreuve, la question précédente portait sur les <b>phospholipides</b> et proposait
-« ne doivent pas contenir des alcools autres que le glycérol ». C'est <b>faux</b>, et c'est exactement le
-lien avec ce chapitre : les <b>sphingophospholipides</b> ont la <b>sphingosine</b>, qui est un
-<b>amino-alcool</b>. Retiens la phrase du cours : les lipides sont faits de C, H, O, mais peuvent aussi
-contenir du <b>phosphore</b> (phospholipides), du <b>soufre et de l'azote</b> (lécithines,
-sphingomyélines), des <b>oses</b> (cérébrosides) et des <b>alcools</b> (sphingosines).
+<h3>Q39 — la question « phospholipides » qui précède</h3>
+<div class="box bad"><b class="t">Q39 — « Parmi les propositions suivantes, relatives aux phospholipides, indiquer celle qui est exacte : »</b>
+A. contiennent uniquement carbone, hydrogène et oxygène · B. ne doivent pas contenir des alcools
+autres que le glycérol · C. sont des composés hydrophobes · D. ont un rôle énergétique chez les êtres
+vivants · E. n'interviennent pas dans la constitution des membranes cellulaires
+</div>
+
+<div class="box warn"><b class="t">Avertissement de lecture — à lire avant de retenir une lettre</b>
+Cette question est <b>reproduite du PDF</b>, mais l'extraction du texte a mangé les lettres <b>A</b>,
+<b>C</b>, <b>D</b> et une partie du <b>E</b> (« Bninterviennent pas ») : je les ai <b>remises dans l'ordre</b>,
+et l'ordre des cinq propositions, lui, est certain. En revanche <b>je ne te donne pas de clé</b> : le PDF
+ne contient pas le corrigé, et — c'est le point intéressant — <b>lu avec le cours, aucune des cinq
+propositions n'est exacte</b>. Voici le contrôle, à toi de voir comment ton professeur tranche.
+</div>
+
+<div class="tw"><table>
+<tr><th>Proposition</th><th>Verdict d'après le cours</th><th>Pourquoi</th></tr>
+<tr><td><b>A.</b> uniquement C, H, O</td><td><b>Faux</b></td><td>Le cours : « ils sont formés de C, H, O, <i>mais peuvent contenir d'autres éléments</i> : <b>phosphore</b> (phospholipides), <b>soufre et azote</b> (lécithines, sphingomyélines), <b>oses</b> (cérébrosides), <b>alcools</b> (sphingosines). »</td></tr>
+<tr><td><b>B.</b> pas d'alcool autre que le glycérol</td><td><b>Faux… avec une réserve</b></td><td>Le cours classe les phospholipides en <b>glycérophospholipides ET sphingophospholipides</b>, et ces derniers portent la <b>sphingosine</b>, un amino-alcool. Donc faux. <b>Mais</b> si le professeur restreint ici « phospholipides » à la section 4° (lécithine / céphaline / phosphatidyl-sérine, toutes à glycérol), B devient la seule proposition vraie : c'est probablement la clé attendue, et c'est justement l'ambiguïté qui fait le piège.</td></tr>
+<tr><td><b>C.</b> hydrophobes</td><td><b>Faux</b></td><td>La diapositive dit « <b>COMPOSÉS AMPHOTÈRES</b> » : amphiphiles, une tête polaire et deux queues apolaires — c'est ce qui bâtit la bicouche.</td></tr>
+<tr><td><b>D.</b> rôle énergétique</td><td><b>Faux</b></td><td>Rôle <b>structural</b> : « constituants des membranes cellulaires ». Le rôle énergétique est celui des <b>triglycérides</b>.</td></tr>
+<tr><td><b>E.</b> pas dans les membranes</td><td><b>Faux</b></td><td>C'est exactement l'inverse : ils <b>sont</b> la membrane.</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Ce qu'il faut retenir, quelle que soit la lettre</b>
+Le raisonnement de la question, c'est la <b>phrase du cours</b> : un lipide n'est pas forcément C-H-O
+seul, et un phospholipide n'est pas forcément à glycérol. Si on te demande « les phospholipides
+peuvent-ils contenir un autre alcool ? » la réponse est <b>oui : la sphingosine</b>. C'est le pont exact
+entre Q39 et Q40, et c'est pour ça que les deux questions se suivent.
 </div>
 
 <h3>Ce que disent les annales (vérifié)</h3>
@@ -1015,6 +1037,10 @@ QUIZ = {
    "o": ["Ils contiennent tous un phosphate", "Ils sont amphiphiles", "Ils sont les précurseurs de la vitamine D", "Ils contiennent deux acides gras"],
    "a": 1,
    "e": "Amphiphiles : tête polaire en C1 + queues apolaires. Le phosphate n'est que dans les sphingomyélines, l'AG est unique, et la vitamine D3 vient du cholestérol."},
+  {"q": "« Les phospholipides ne contiennent pas d'alcool autre que le glycérol » (Q39, 2024-2025) : cette affirmation est",
+   "o": ["Exacte", "Fausse : les sphingophospholipides contiennent de la sphingosine", "Fausse : ils contiennent du cholestérol", "Exacte, sauf chez l'enfant"],
+   "a": 1,
+   "e": "Faux : à côté des glycérophospholipides (lécithine, céphaline, phosphatidyl-sérine), les sphingophospholipides portent la sphingosine, un amino-alcool."},
   {"q": "Les gangliosides sont des récepteurs :",
    "o": ["De la sérotonine, de virus et de toxines", "Des acides biliaires", "De l'insuline uniquement", "Du cholestérol"],
    "a": 0,
