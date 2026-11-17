@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Génère biochimie.html : page unique (autonome) de révision de la biochimie
+Génère index.html : page unique (autonome) de révision de la biochimie
 structurale, sur le modèle de la page IMD (nav latérale, hero, boxes, QCM,
 flashcards, examen blanc, recherche, mode sombre).
 
@@ -493,6 +493,7 @@ RES = """
 <a href="cours/biochimie-structurale-plan.html">Plan du module (12 séances)</a>
 <a href="cours/biochimie-structurale.html">Cours expliqué — Pr. Khlil</a>
 <a href="cours/plan-biochimie-structurale.pdf" target="_blank" rel="noopener">Plan en PDF — 2 pages</a>
+<a href="documents.html">Documents du module (24 fichiers)</a>
 <a href="portail.html">Portail complet du S1</a>
 </div>
 
@@ -811,6 +812,7 @@ sur 20 et le détail de chaque question.</p>
   <div class="tools" style="display:block">
     <a class="btn" href="cours/biochimie-structurale-plan.html" style="display:block;text-align:center;margin-bottom:6px;text-decoration:none">🗺️ Plan détaillé</a>
     <a class="btn" href="cours/biochimie-structurale.html" style="display:block;text-align:center;margin-bottom:6px;text-decoration:none">🧫 Cours expliqué</a>
+    <a class="btn" href="documents.html" style="display:block;text-align:center;margin-bottom:6px;text-decoration:none">📁 Documents du module</a>
     <a class="btn" href="portail.html" style="display:block;text-align:center;text-decoration:none">↩️ Portail du S1</a>
   </div>
 </nav>
@@ -1065,7 +1067,7 @@ document.getElementById('search').addEventListener('input', function(){{
 </body>
 </html>
 """
-    out = ROOT / "biochimie.html"
+    out = ROOT / "index.html"
     out.write_text(html, encoding="utf-8")
     print(f"écrit : {out} ({len(html)/1024:.1f} Ko) — {len(SECTIONS)} chapitres, "
           f"{sum(len(v) for v in QUIZ.values())} QCM, {len(FLASH)} flashcards")

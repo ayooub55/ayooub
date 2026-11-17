@@ -1,11 +1,13 @@
 # 🦷 FMDC 1A — Espace de révision
 
-> **Organisation du site** — la page d'accueil (`index.html`) est **dédiée à la biochimie
-> structurale** (Pr. Khlil & Pr. Naamane, 24 documents, accès direct aux sections du plan).
-> Le portail complet des 8 modules du S1 reste accessible sur **`portail.html`**.
-> **`biochimie.html`** est le **cours complet expliqué** (page autonome de type « manuel ») : 9 chapitres,
-> 41 QCM corrigés, 28 flashcards, examen blanc chronométré, recherche et mode sombre. Il est généré par
-> `tools/build_biochimie.py` à partir de `assets/biochimie.css`.
+> **Organisation du site**
+> - **`index.html`** — le **cours complet de biochimie structurale** (page autonome de type « manuel ») :
+>   9 chapitres, 41 QCM corrigés, 28 flashcards, examen blanc chronométré, recherche et mode sombre.
+>   Généré par `tools/build_biochimie.py` à partir de `assets/biochimie.css`.
+> - **`documents.html`** — les 24 documents du module (Pr. Khlil & Pr. Naamane), accès direct aux
+>   sections du plan.
+> - **`portail.html`** — le portail complet des 8 modules du S1.
+> - **`biochimie.html`** — redirection vers l'accueil (ancienne URL).
 
 
 
