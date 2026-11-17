@@ -722,6 +722,25 @@ contenir du <b>phosphore</b> (phospholipides), du <b>soufre et de l'azote</b> (l
 sphingomyélines), des <b>oses</b> (cérébrosides) et des <b>alcools</b> (sphingosines).
 </div>
 
+<h3>Ce que disent les annales (vérifié)</h3>
+<div class="tw"><table>
+<tr><th>Épreuve</th><th>Question sur cette partie ?</th><th>Source</th></tr>
+<tr><td><b>2024-2025 · 1<sup>re</sup> session</b></td><td><b>Oui — Q39 et Q40</b> : une question « phospholipides » puis une question « sphingolipides »</td><td>Texte du PDF lu intégralement</td></tr>
+<tr><td>Session 2025 (fichier « N2026 », scan)</td><td><b>Très probablement oui</b> : l'index du Drive y trouve « céramide » et « sphingomyéline »</td><td>Scan sans couche texte : <b>non citable</b></td></tr>
+<tr><td>« Chimie-Biochimie QCM » (scan)</td><td><b>Oui</b> : contient « Tay-Sachs » et « Gaucher »</td><td>Scan : <b>non citable</b></td></tr>
+<tr><td>2023 (grille), compilation S1 2024, « EXAMS S1 2024 »</td><td><b>Non</b> : indexés, ils contiennent amidon / saccharose / cholestérol mais <b>aucun</b> terme des sphingolipides</td><td>Recherche plein texte du Drive</td></tr>
+<tr><td>2021-2022, 2024, « Exam 2025 », « TD 2025 », compilation S1 2023</td><td><b>Indéterminé</b> : scans non indexés, illisibles sans OCR</td><td>—</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">La forme de la question ne change pas</b>
+Dans l'épreuve de 2024-2025, le bloc « lipides » occupe les <b>8 dernières questions</b> (Q33 à Q40) et se termine
+toujours de la même façon : <b>une question sur les phospholipides, puis une sur les sphingolipides</b>,
+formulée « indiquer celle qui est exacte ». Les <b>quatre leurres sont recyclés</b> d'une année sur l'autre :
+« contiennent tous un phosphate » · « contiennent deux acides gras » · « contiennent du glycérol » ·
+« précurseurs de la vitamine D ». Si tu sais pourquoi ces quatre-là sont fausses, la question est gagnée
+d'avance — c'est exactement ce que fait la section « pièges » ci-dessus.
+</div>
+
 <h3>Question type, corrigée</h3>
 <div class="box bad"><b class="t">« Définir les sphingolipides, décrire les quatre familles et citer les maladies de surcharge correspondantes. »</b>
 Les <b>sphingolipides</b> sont des esters d'acides gras dont l'alcool n'est pas le glycérol mais un
