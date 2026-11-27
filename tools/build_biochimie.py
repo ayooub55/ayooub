@@ -50,6 +50,7 @@ traitées ici et signalées par le repère « annoncé ».</p>
 <tr><td><b>Classification des osides</b></td><td>Holoside / hétéroside, oligo / polyoside, homopolyoside / hétéropolyoside, l'aglycone</td><td><a href="#c6">Chapitre 6</a></td></tr>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
 <tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
+<tr><td><b>Protéines &amp; hémoglobine</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Liaison peptidique, 4 niveaux de structure, HbA1/A2/F, Bohr, 2,3-DPG, drépanocytose — <b>Q8 à Q13</b></td><td><a href="#c12">Chapitre 12</a></td></tr>
 <tr><td><b>Les acides aminés</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Structure, classification par R, essentiels, pHi, électrophorèse — <b>7 questions sur 40</b> en 2024-25</td><td><a href="#c11">Chapitre 11</a></td></tr>
 <tr><td><b>Sphingolipides</b> <span class="chip" style="cursor:default">annoncé à l'oral</span></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>annoncée en cours par le Pr. Naamane</b>, et déjà tombée en 2024-25 (Q39-Q40) puis en session 2025</td><td><a href="#c10">Chapitre 10</a></td></tr>
 </table></div>
@@ -1072,6 +1073,196 @@ l'<b>électrophorèse</b> et sur les échangeurs d'ions.
 </div>
 """
 
+C12 = """
+<div class="box def"><b class="t">La source de ce chapitre</b>
+Ces pages viennent d'une <b>fiche manuscrite de la promo</b>, « Biochimie Structurale I » (6 pages) :
+acides aminés, dérivés, liaison peptidique, peptides, structure des protéines, puis l'hémoglobine.
+Elle suit mot pour mot le chapitre 1 du Pr. Khlil — c'est donc un <b>très bon support de révision</b>,
+mais elle reste une <b>prise de notes</b> : en cas de divergence, c'est le support du professeur qui fait foi.
+</div>
+
+<h3>La liaison peptidique : une liaison qui impose tout</h3>
+<p>Elle se forme <b>entre les 20 acides aminés</b>, entre le carboxyle d'un acide aminé et l'amine du
+suivant, avec <b>perte d'eau</b>. La fiche la décrit par quatre mots qu'il faut savoir réciter :</p>
+
+<div class="tw"><table>
+<tr><th>Caractère</th><th>Ce que ça veut dire</th></tr>
+<tr><td><b>Rigide</b></td><td>Pas de rotation libre autour de la liaison <b>C–N</b></td></tr>
+<tr><td><b>Planaire</b></td><td>Les six atomes du groupe peptidique sont dans <b>un même plan</b></td></tr>
+<tr><td><b>Polaire</b></td><td>Le O et le N portent des charges partielles</td></tr>
+<tr><td><b>Hybride de résonance</b></td><td>Sa longueur est <b>intermédiaire</b> entre la liaison simple C–N et la double liaison C=N</td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Le nuage électronique</b>
+La fiche insiste : il se forme un <b>nuage électronique entre les atomes N, C et O</b>. Conséquence :
+<b>absence de rotation</b>, mais <b>présence de résonance</b>. C'est de là que vient la <b>forme trans</b>,
+plus stable que la forme cis. Et la synthèse est <b>enzymatique</b> : elle commence par l'extrémité
+<b>N-terminale</b> et se termine par l'extrémité <b>C-terminale</b>.
+</div>
+
+<h3>Les réactions chimiques des acides aminés</h3>
+<div class="tw"><table>
+<tr><th>Réaction</th><th>Ce qui se passe</th></tr>
+<tr><td><b>Décarboxylation</b></td><td>Acide aminé → <b>amine</b> — <b>sauf le glutamate et l'aspartate</b></td></tr>
+<tr><td><b>Désamination</b></td><td>Acide aminé → <b>acide cétonique</b></td></tr>
+<tr><td><b>Formation d'une fonction amine</b></td><td>Ex. : <b>glutamate → glutamine</b></td></tr>
+<tr><td><b>Formation d'un pont disulfure</b></td><td><b>Deux cystéines</b> forment un pont —S—S—</td></tr>
+<tr><td><b>N-glycosylation</b></td><td>Sur les acides aminés à fonction <b>amide</b> (glutamine, asparagine) : fixation d'<b>oses</b> sur l'azote de la fonction amide</td></tr>
+<tr><td><b>Réaction à la ninhydrine</b></td><td>La ninhydrine est un composé <b>aromatique</b> utilisé comme <b>révélateur</b> des acides aminés</td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Le piège de la décarboxylation</b>
+« Tous les acides aminés qui subissent une décarboxylation deviennent des <b>amines</b>, <b>sauf le glutamate
+et l'aspartate</b>, car ils contiennent un <b>groupe carboxyle dans leur chaîne latérale</b>. » Et l'exemple
+donné est justement <b>GABA</b>, issu du <b>glutamate</b> — c'est exactement la question Q5 de l'examen.
+</div>
+
+<h3>Les peptides : trois exemples à connaître</h3>
+<div class="tw"><table>
+<tr><th>Peptide</th><th>Nature</th><th>Propriété</th></tr>
+<tr><td><b>Glutathion</b></td><td><b>Tripeptide</b></td><td>Propriétés <b>anti-oxydantes</b> : empêche l'oxydation de l'hémoglobine</td></tr>
+<tr><td><b>Pénicilline</b></td><td><b>Tripeptide</b></td><td>Antibiotique protégeant l'organisme des attaques bactériennes</td></tr>
+<tr><td><b>Insuline et glucagon</b></td><td><b>Polypeptides</b></td><td>Hormones</td></tr>
+</table></div>
+
+<h3>Les quatre niveaux de structure des protéines</h3>
+<div class="tw"><table>
+<tr><th>Niveau</th><th>Définition</th><th>Stabilisé par</th></tr>
+<tr><td><b>1. Primaire</b></td><td>Séquence : la <b>liaison peptidique covalente</b> + les <b>ponts disulfures</b> (cystéines) + l'orientation</td><td>Liaisons covalentes</td></tr>
+<tr><td><b>2. Secondaire</b></td><td>Régulière et répétitive : <b>hélices α</b> et <b>feuillets plissés β</b> (parfois des <b>boucles</b>, des <b>coudes</b>)</td><td><b>Liaisons hydrogène</b> entre N et O</td></tr>
+<tr><td><b>3. Tertiaire</b></td><td>Repliement tridimensionnel : les résidus <b>hydrophiles</b> sortent, les <b>hydrophobes</b> rentrent</td><td>Ioniques, hydrogène, hydrophobes, van der Waals, <b>ponts S–S</b></td></tr>
+<tr><td><b>4. Quaternaire</b></td><td>Plusieurs <b>sous-unités</b> identiques ou différentes — ex. <b>hémoglobine</b>, <b>immunoglobulines</b> (anticorps)</td><td>Les mêmes liaisons non covalentes</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Les trois remarques à retenir de la fiche</b>
+<b>1.</b> Toutes les structures <b>secondaires</b> sont stabilisées par des <b>liaisons hydrogène</b>, parce que
+<b>N et O sont électronégatifs</b> et les permettent. <br>
+<b>2.</b> Les hélices α sont <b>droites</b> et les structures des feuillets plissés sont <b>antiparallèles</b>
+dans notre organisme, <b>grâce à leur stabilité</b>. <br>
+<b>3.</b> La <b>proline</b> est <b>absente</b> des hélices α et des feuillets β : elle forme des
+<b>coudes non réguliers</b>. C'est la formulation de la fiche — et c'est la clé de la Q2.
+</div>
+
+<div class="box warn"><b class="t">Dénaturation</b>
+La dénaturation est la <b>perte de la conformation tridimensionnelle</b>, qui conduit à la <b>perte de
+l'activité biologique</b>. La <b>structure primaire reste intacte</b> : seules les liaisons non covalentes
+(et éventuellement les ponts S–S) sont rompues.
+</div>
+
+<h3>L'hémoglobine : la question Q8 à Q13 de l'examen</h3>
+<p>L'<b>hémoglobine</b> est une <b>hémoprotéine (Fe²⁺)</b> qui transporte l'<b>O₂</b> dans l'organisme et
+ramène le <b>CO₂</b> des tissus aux poumons. Elle fixe l'O₂ grâce à l'<b>hème</b>, présent dans la partie
+<b>protéique</b> (= la <b>globine</b>).</p>
+
+<div class="tw"><table>
+<tr><th>Hémoglobine</th><th>Chaînes</th><th>Remarque</th></tr>
+<tr><td><b>Majeure</b> — Hb A₁</td><td>α et β</td><td>L'adulte</td></tr>
+<tr><td><b>Mineure</b> — Hb A₂</td><td>α et δ</td><td>Fraction faible</td></tr>
+<tr><td><b>Fœtale</b> — HbF</td><td>α et γ</td><td>Plus grande affinité pour l'O₂</td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Myoglobine contre hémoglobine : les 4 différences de la fiche</b>
+<b>1.</b> La <b>myoglobine</b> est une <b>protéine simple, tertiaire</b>, des tissus musculaires ; l'hémoglobine
+est une <b>protéine conjuguée, quaternaire</b>. <br>
+<b>2.</b> <b>L'hémoglobine fixe 4 molécules d'O₂</b> ; la <b>myoglobine n'en fixe qu'une seule</b>, à cause du
+<b>nombre d'hèmes</b>. <br>
+<b>3.</b> La saturation de la myoglobine se fait à une <b>P O₂ plus faible</b> que celle de l'hémoglobine :
+la myoglobine a donc une <b>affinité plus élevée</b>. <br>
+<b>4.</b> L'hémoglobine a une <b>allostérie</b> et une <b>coopérativité</b> entre ses sous-unités ; la
+myoglobine <b>n'en a pas</b> puisqu'elle n'a <b>qu'un seul hème</b>.
+</div>
+
+<div class="box def"><b class="t">La coopérativité, chiffrée</b>
+La fixation de O₂ se fait de façon <b>coopérative</b> : chaque sous-unité qui fixe O₂ change de conformation et
+facilite la suivante. Les paliers donnés par la fiche : <b>25 % → 61 % → 74 % → 100 %</b>, d'où une
+<b>courbe de saturation sigmoïde</b>. La myoglobine, sans coopérativité, donne une courbe
+<b>hyperbolique</b>.
+</div>
+
+<h3>Les propriétés chimiques de l'hémoglobine</h3>
+<div class="tw"><table>
+<tr><th>Phénomène</th><th>Ce qu'il faut retenir</th></tr>
+<tr><td><b>Effet Bohr</b></td><td><b>Diminution de l'affinité</b> de l'Hb en présence de <b>H⁺</b> : l'Hb relâche l'O₂ pour évacuer l'acidité du sang</td></tr>
+<tr><td><b>Monoxyde de carbone (CO)</b></td><td>Affinité <b>200 fois plus importante</b> que celle pour l'O₂</td></tr>
+<tr><td><b>Oxydation (méthémoglobine)</b></td><td>L'O₂ se fixe anormalement sur le <b>fer de l'hème</b>, qui passe à l'état <b>Fe³⁺</b></td></tr>
+<tr><td><b>2,3-DPG</b></td><td>Diminue l'affinité de l'Hb ; l'<b>HbF</b> a une affinité <b>supérieure</b> car ses chaînes γ ont <b>moins d'affinité pour le 2,3-DPG</b></td></tr>
+<tr><td><b>Anémie falciforme</b></td><td>La <b>valine</b> remplace l'<b>acide glutamique</b> : changement structural, <b>hémoglobine S</b> (HbS)</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Les deux états de l'hémoglobine</b>
+À l'état <b>relâché (R)</b> on trouve l'<b>oxyhémoglobine</b> ; à l'état <b>tendu (T)</b> on trouve la
+<b>désoxyhémoglobine</b>. Cinq facteurs influencent l'affinité : <b>P O₂ · 2,3-DPG · pH · CO₂ · oxydants</b>.
+Et le détail qui tombe : à l'état R, le <b>fer est dans le plan de l'hème</b> ; à l'état T, il est
+<b>déplacé hors du plan</b>.
+</div>
+
+<h3>Les questions tombées à l'examen (2024-2025) — Q8 à Q13</h3>
+<div class="box bad"><b class="t">Q8 — « Concernant la fixation de l'oxygène sur l'hémoglobine, indiquer les propositions exactes : »</b>
+A. Se fait sur la chaîne latérale d'un résidu d'<b>histidine proximale</b> · B. Se fait avec une plus grande
+affinité sur l'état <b>relâché (R)</b> que sur l'état tendu (T) · C. Induit le <b>déplacement de l'atome de fer</b>
+par rapport au plan de l'hème · D. Est <b>facilitée</b> par la présence de 2,3-diphosphoglycérate ·
+E. Est très fortement diminuée par la présence de monoxyde de carbone
+<div class="hint" style="margin-top:8px">
+<b>B et C sont exactes.</b> L'oxygène se fixe sur le <b>fer de l'hème</b>, pas sur l'histidine (A faux :
+l'histidine est <i>proximale</i>, elle n'est pas le site de liaison). L'état <b>R</b> a une meilleure affinité
+(B vrai). La fixation <b>déplace le fer dans le plan</b> de l'hème (C vrai). Le <b>2,3-DPG diminue</b>
+l'affinité, il ne la facilite pas (D faux — c'est le piège classique). Le CO ne « diminue » pas la fixation :
+il <b>prend la place</b> de l'O₂ avec 200 fois plus d'affinité (E faux dans sa formulation).
+</div>
+
+<div class="box bad"><b class="t">Q10 — « Parmi les propositions relatives à l'hémoglobine, indiquer celle qui est exacte : »</b>
+A. présente une structure quaternaire · B. est formée par quatre chaînes identiques · C. ne peut fixer qu'une
+seule molécule d'oxygène · D. contient un seul atome de fer · E. le fer est sous forme ferrique (Fe³⁺)
+<div class="hint" style="margin-top:8px"><b>Réponse : A.</b> Quatre chaînes <b>différentes</b> (2 α + 2 β) → B
+faux. Elle fixe <b>4 O₂</b> → C faux. Elle contient <b>4 atomes de fer</b> → D faux. Le fer est
+<b>ferreux Fe²⁺</b> ; Fe³⁺ c'est la méthémoglobine → E faux.</div>
+</div>
+
+<div class="box bad"><b class="t">Q11 — « Le facteur qui augmente l'affinité de l'hémoglobine à l'oxygène : »</b>
+A. l'augmentation de la pression partielle en CO₂ · B. l'augmentation de la pression partielle en CO ·
+C. l'augmentation de la pression partielle en O₂ · D. l'augmentation de la concentration de H⁺ ·
+E. l'augmentation de la concentration en DPG
+<div class="hint" style="margin-top:8px"><b>Réponse : C.</b> Plus de O₂ = plus de saturation. CO₂, H⁺ et DPG
+<b>diminuent</b> l'affinité (c'est l'effet Bohr et l'effet du DPG) ; le CO ne l'augmente pas, il
+<b>occupe</b> le site.</div>
+</div>
+
+<div class="box bad"><b class="t">Q12 — « La fixation de l'O₂ induit des modifications. Indiquer la proposition exacte : »</b>
+A. l'atome de fer se déplace par rapport au plan de l'hème · B. la liaison entre le fer et l'histidine
+proximale est rompue · C. l'histidine distale fixe un proton · D. la molécule adopte une conformation
+tendue (T) · E. le site du 2,3-DPG est fortement activé
+<div class="hint" style="margin-top:8px"><b>Réponse : A.</b> La fixation de O₂ <b>ramène le fer dans le plan</b>
+de l'hème. La liaison fer–histidine proximale n'est <b>pas rompue</b> (B faux). L'état devient
+<b>relâché R</b> (D faux). Le site du DPG est <b>désactivé</b> à l'état R (E faux).</div>
+</div>
+
+<div class="box bad"><b class="t">Q13 — « Indiquer la proposition exacte concernant la drépanocytose : »</b>
+A. est à l'origine d'une mutation ponctuelle de la chaîne α · B. est caractérisée par l'absence de
+sous-unités β · C. est caractérisée par la présence d'anomalie structurale de l'hème · D. les hématies
+falciformes contiennent des polymères de désoxyhémoglobine S · E. les patients homozygotes sont résistants
+à la malaria
+<div class="hint" style="margin-top:8px"><b>D et E sont exactes.</b> La mutation porte sur la chaîne <b>β</b>
+(valine au lieu du glutamate), pas α → A faux. Les sous-unités β <b>existent mais sont anormales</b> → B faux.
+L'anomalie est dans la <b>globine</b>, pas dans l'hème → C faux. Les hématies falciformes contiennent bien des
+<b>polymères de désoxy-HbS</b> → D vrai. Les homozygotes sont <b>résistants à la malaria</b> → E vrai
+(avantage sélectif de la mutation).</div>
+</div>
+
+<h3>Question type, corrigée</h3>
+<div class="box bad"><b class="t">« Décrire les quatre niveaux de structure d'une protéine et expliquer pourquoi l'hémoglobine fixe quatre molécules d'oxygène alors que la myoglobine n'en fixe qu'une. »</b>
+Une protéine s'organise en quatre niveaux : <b>primaire</b> (la séquence d'acides aminés, tenue par les
+liaisons peptidiques covalentes et les ponts disulfures), <b>secondaire</b> (hélices α et feuillets β,
+stabilisés par des <b>liaisons hydrogène</b> entre N et O), <b>tertiaire</b> (le repliement tridimensionnel,
+où les résidus hydrophiles sortent et les hydrophobes rentrent, tenu par des liaisons ioniques, hydrogène,
+hydrophobes, van der Waals et des ponts S–S) et <b>quaternaire</b> (l'assemblage de plusieurs sous-unités,
+comme l'hémoglobine ou les immunoglobulines). L'<b>hémoglobine</b> est un tétramère (2 α + 2 β) : elle possède
+donc <b>quatre hèmes</b>, et chaque hème fixe une molécule d'O₂ → <b>quatre O₂</b>. La <b>myoglobine</b> est
+monomérique, avec <b>un seul hème</b> → <b>un seul O₂</b>. De plus, la fixation est <b>coopérative</b> dans
+l'hémoglobine (courbe <b>sigmoïde</b>, paliers 25 → 61 → 74 → 100 %) alors qu'elle est <b>hyperbolique</b>
+dans la myoglobine, qui n'a pas de coopérativité.
+</div>
+"""
+
 RES = """
 <h3>Les documents du Drive de la promo</h3>
 <div class="vids real">
@@ -1101,7 +1292,7 @@ RES = """
 </div>
 
 <div class="box tip"><b class="t">Comment utiliser cette page la veille</b>
-Relis le <a href="#g0">guide</a>, les <b>10 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
+Relis le <a href="#g0">guide</a>, les <b>11 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
 Les chapitres sont faits pour être lus dans l'ordre, mais la veille, priorité aux chapitres
 <a href="#c6">6</a> et <a href="#c7">7</a>.
 </div>
@@ -1395,7 +1586,66 @@ QUIZ = {
    "a": 1,
    "e": "Acides aminés libres, non constitutifs des protéines : cycle de l'urée et biosynthèse de l'arginine."},
  ],
+ "c12": [
+  {"q": "La liaison peptidique est :",
+   "o": ["Rigide, planaire et polaire", "Libre en rotation", "Une liaison ester", "Une liaison ionique"],
+   "a": 0,
+   "e": "Rigide (pas de rotation), planaire, polaire, et hybride de résonance : sa longueur est intermédiaire entre C–N et C=N."},
+  {"q": "La synthèse peptidique commence et se termine par :",
+   "o": ["N-terminale puis C-terminale", "C-terminale puis N-terminale", "Au hasard", "Par les ponts disulfures"],
+   "a": 0,
+   "e": "Elle commence par l'extrémité N-terminale et se termine par l'extrémité C-terminale, par voie enzymatique."},
+  {"q": "Le glutathion est :",
+   "o": ["Un tripeptide anti-oxydant", "Un antibiotique", "Un polypeptide hormonal", "Une protéine de structure"],
+   "a": 0,
+   "e": "Tripeptide aux propriétés anti-oxydantes : il empêche l'oxydation de l'hémoglobine. La pénicilline est aussi un tripeptide, mais antibiotique."},
+  {"q": "Quel niveau de structure est stabilisé par des liaisons hydrogène entre N et O ?",
+   "o": ["La structure primaire", "La structure secondaire", "La structure tertiaire seulement", "Aucune"],
+   "a": 1,
+   "e": "Hélices α et feuillets β : N et O sont électronégatifs, d'où la liaison hydrogène."},
+  {"q": "La proline est absente :",
+   "o": ["Des hélices α et des feuillets β, car elle forme des coudes non réguliers", "De toutes les protéines", "Des ponts disulfures", "De la structure quaternaire"],
+   "a": 0,
+   "e": "Son cycle rigide crée des coudes non réguliers : elle ne s'insère ni dans l'hélice α ni dans le feuillet β."},
+  {"q": "L'hémoglobine A1 majeure est constituée de :",
+   "o": ["2 chaînes α et 2 chaînes β", "2 α et 2 δ", "2 α et 2 γ", "4 chaînes identiques"],
+   "a": 0,
+   "e": "HbA1 (majeure) = α et β · HbA2 (mineure) = α et δ · HbF (fœtale) = α et γ."},
+  {"q": "Le fer de l'hémoglobine est sous forme :",
+   "o": ["Fe²⁺ (ferreux)", "Fe³⁺ (ferrique)", "Fe⁰", "Fe³⁺ seulement dans l'hémoglobine fœtale"],
+   "a": 0,
+   "e": "Fe²⁺ dans l'hémoglobine normale ; Fe³⁺ c'est la méthémoglobine (après oxydation)."},
+  {"q": "L'affinité de l'hémoglobine pour le CO est :",
+   "o": ["200 fois plus importante que pour l'O₂", "Identique à celle pour l'O₂", "200 fois plus faible", "Nulle"],
+   "a": 0,
+   "e": "200 fois plus grande : le CO occupe le site du fer et bloque le transport de l'O₂."},
+  {"q": "L'effet Bohr correspond à :",
+   "o": ["La diminution de l'affinité de l'Hb en présence de H⁺", "L'augmentation de l'affinité en présence de CO₂", "La fixation du CO sur le fer", "La dénaturation de l'hémoglobine"],
+   "a": 0,
+   "e": "En milieu acide (H⁺), l'Hb relâche l'O₂ : c'est le mécanisme qui permet d'évacuer l'acidité au niveau des tissus."},
+  {"q": "Pourquoi l'hémoglobine fœtale (HbF) a-t-elle une affinité supérieure à celle de la mère ?",
+   "o": ["Ses chaînes γ ont moins d'affinité pour le 2,3-DPG", "Elle contient plus de fer", "Elle n'a pas de chaîne α", "Elle fixe le CO à la place de l'O₂"],
+   "a": 0,
+   "e": "Le 2,3-DPG diminue l'affinité ; les chaînes γ le lient moins, donc l'HbF garde une meilleure affinité pour l'O₂."},
+  {"q": "La drépanocytose résulte du remplacement de :",
+   "o": ["L'acide glutamique par la valine sur la chaîne β", "La valine par le glutamate sur la chaîne α", "L'hème par la globine", "La chaîne β par la chaîne γ"],
+   "a": 0,
+   "e": "Mutation ponctuelle de la chaîne β : valine au lieu du glutamate → HbS → polymères de désoxy-HbS."},
+  {"q": "La courbe de saturation de la myoglobine est :",
+   "o": ["Hyperbolique, car elle n'a pas de coopérativité", "Sigmoïde, comme l'hémoglobine", "Linéaire", "En cloche"],
+   "a": 0,
+   "e": "Un seul hème, pas de coopérativité : hyperbole. L'hémoglobine, avec 4 sous-unités, donne une sigmoïde."},
+  {"q": "La dénaturation d'une protéine :",
+   "o": ["Détruit la conformation tridimensionnelle et l'activité biologique, sans toucher la séquence", "Détruit la structure primaire", "Augmente l'activité", "Ne concerne que l'hémoglobine"],
+   "a": 0,
+   "e": "Perte de la conformation 3D → perte de l'activité. La structure primaire reste intacte."},
+  {"q": "La réaction à la ninhydrine sert à :",
+   "o": ["Révéler les acides aminés", "Doser le glucose", "Précipiter les protéines", "Hydrolyser les peptides"],
+   "a": 0,
+   "e": "La ninhydrine est un composé aromatique utilisé comme révélateur des acides aminés."},
+ ],
 }
+
 
 
 # --------------------------------------------------------------------------
@@ -1468,6 +1718,25 @@ FLASH = [
  {"g": "Acides aminés", "q": "Henderson-Hasselbalch et point médian ?", "a": "<b>pH = pK + log([A⁻]/[HA])</b> ; quand [A⁻] = [HA], <b>pH = pK</b>. Glycine : pH 2,35."},
  {"g": "Acides aminés", "q": "Les 9 acides aminés à R ionisable ?", "a": "<b>Tyr, Ser, Thr</b> (OH) · <b>Cys</b> (SH) · <b>Asp, Glu</b> (COOH) · <b>Lys</b> (amine) · <b>His</b> (imidazole) · <b>Arg</b> (guanidine)."},
  {"g": "Acides aminés", "q": "Ornithine et citrulline ?", "a": "Acides aminés <b>libres</b>, <b>pas</b> constitutifs des protéines : cycle de l'<b>urée</b> et biosynthèse de l'arginine."},
+ {"g": "Protéines", "q": "Les quatre caractères de la liaison peptidique ?", "a": "<b>Rigide</b> · <b>planaire</b> · <b>polaire</b> · <b>hybride de résonance</b> (longueur intermédiaire entre C–N et C=N)."},
+ {"g": "Protéines", "q": "Sens de la synthèse peptidique ?", "a": "De l'extrémité <b>N-terminale</b> vers l'extrémité <b>C-terminale</b>, par voie enzymatique."},
+ {"g": "Protéines", "q": "Quelle forme est la plus stable : trans ou cis ?", "a": "La forme <b>trans</b>, plus stable que la cis."},
+ {"g": "Protéines", "q": "Le glutathion ?", "a": "<b>Tripeptide</b> aux propriétés <b>anti-oxydantes</b> : empêche l'oxydation de l'hémoglobine."},
+ {"g": "Protéines", "q": "La pénicilline ?", "a": "<b>Tripeptide</b> antibiotique, protège des attaques bactériennes. Insuline et glucagon = <b>polypeptides</b>."},
+ {"g": "Protéines", "q": "Qu'est-ce qui stabilise la structure secondaire ?", "a": "Les <b>liaisons hydrogène</b> entre N et O (électronégatifs) : hélices α et feuillets β."},
+ {"g": "Protéines", "q": "Structure tertiaire : où vont les résidus ?", "a": "<b>Hydrophiles à l'extérieur</b>, <b>hydrophobes à l'intérieur</b>. Liaisons ioniques, H, hydrophobes, van der Waals, ponts S–S."},
+ {"g": "Protéines", "q": "La structure quaternaire, exemples ?", "a": "Plusieurs sous-unités : <b>hémoglobine</b>, <b>immunoglobulines</b> (anticorps)."},
+ {"g": "Protéines", "q": "Rôle de la proline dans les structures secondaires ?", "a": "<b>Absente</b> des hélices α et des feuillets β : elle forme des <b>coudes non réguliers</b>."},
+ {"g": "Protéines", "q": "Dénaturation : qu'est-ce qui est détruit ?", "a": "La <b>conformation 3D</b> et l'<b>activité biologique</b>. La <b>structure primaire reste intacte</b>."},
+ {"g": "Hémoglobine", "q": "Les trois hémoglobines et leurs chaînes ?", "a": "<b>HbA1</b> (majeure) = α + β · <b>HbA2</b> (mineure) = α + δ · <b>HbF</b> (fœtale) = α + γ."},
+ {"g": "Hémoglobine", "q": "Pourquoi 4 O₂ pour l'Hb et 1 seul pour la myoglobine ?", "a": "À cause du <b>nombre d'hèmes</b> : 4 dans le tétramère, 1 dans la myoglobine."},
+ {"g": "Hémoglobine", "q": "Myoglobine : quelle courbe ?", "a": "<b>Hyperbolique</b> (pas de coopérativité, un seul hème). L'hémoglobine : <b>sigmoïde</b>, coopérative (25 → 61 → 74 → 100 %)."},
+ {"g": "Hémoglobine", "q": "Le CO : quelle affinité ?", "a": "<b>200 fois</b> plus importante que pour l'O₂."},
+ {"g": "Hémoglobine", "q": "État R et état T ?", "a": "<b>R</b> (relâché) = oxyhémoglobine · <b>T</b> (tendu) = désoxyhémoglobine. En R le fer est <b>dans le plan</b>, en T il en est <b>écarté</b>."},
+ {"g": "Hémoglobine", "q": "Pourquoi l'HbF a-t-elle plus d'affinité ?", "a": "Ses chaînes γ ont <b>moins d'affinité pour le 2,3-DPG</b>, qui est un facteur <b>diminuant</b> l'affinité."},
+ {"g": "Hémoglobine", "q": "Drépanocytose : quelle mutation ?", "a": "<b>Valine</b> à la place de l'<b>acide glutamique</b> sur la chaîne <b>β</b> → <b>HbS</b>."},
+ {"g": "Hémoglobine", "q": "Les 5 facteurs qui modifient l'affinité de l'Hb ?", "a": "<b>P O₂ · 2,3-DPG · pH (H⁺) · CO₂ · oxydants</b>."},
+
 
 ]
 
@@ -1487,6 +1756,7 @@ SECTIONS = [
  ("c9", "Lipides", "Bilan lipidique sérique", "Les valeurs normales, le lipidogramme et les pièges (diapos 88-89)", "9", C9, False),
  ("c10", "Lipides", "Sphingolipides et sphingophospholipides", "La sphingosine, le céramide, les 4 familles et les 3 maladies (diapos 90-93)", "10", C10, False),
  ("c11", "Acides aminés", "Les acides aminés (Pr. Khlil)", "Structure, classification par R, pHi et électrophorèse, Q1-Q7 de l'examen 2024-25", "11", C11, False),
+ ("c12", "Acides aminés", "Protéines et hémoglobine (Pr. Khlil)", "Liaison peptidique, peptides, 4 structures et hémoglobine — Q8 à Q13 de l'examen", "12", C12, False),
 ]
 
 HERO = """
@@ -1506,13 +1776,13 @@ HERO = """
   <p style="font-size:13.5px;opacity:.8">D'après le diaporama du Pr. Naamane (93 diapos) et le support du Pr. Khlil (2024-25)</p>
   <div class="dash">
     <div class="kpi ring"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="ring" cx="27" cy="27" r="22" fill="none" stroke="#7dead9" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)" style="transition:stroke-dashoffset .5s"/></svg><div><b id="pct2">0 %</b><span>Ta progression</span></div></div>
-    <div class="kpi"><b>11</b><span>chapitres</span></div>
+    <div class="kpi"><b>12</b><span>chapitres</span></div>
     <div class="kpi"><b id="nq">0</b><span>QCM d'entraînement</span></div>
     <div class="kpi"><b id="nf">0</b><span>flashcards</span></div>
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">10 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Acides aminés</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">11 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Acides aminés</span><span class="chip">Hémoglobine</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>
