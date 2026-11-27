@@ -933,6 +933,57 @@ Il existe environ <b>300 acides aminés supplémentaires</b> dans les cellules, 
 intermédiaires du <b>cycle de l'urée</b> et de la biosynthèse de l'arginine.
 </div>
 
+<h3 id="c11-soufre">Les acides aminés soufrés : cystéine et méthionine</h3>
+<p>Deux acides aminés seulement contiennent du <b>soufre</b>, et ils ne se ressemblent pas du tout :</p>
+<div class="tw"><table>
+<tr><th></th><th>Cystéine (Cys, C)</th><th>Méthionine (Met, M)</th></tr>
+<tr><td><b>Chaîne latérale R</b></td><td><b>—CH₂—SH</b></td><td><b>—CH₂—CH₂—S—CH₃</b></td></tr>
+<tr><td><b>Fonction soufrée</b></td><td><b>Thiol</b> (sulfhydryle, —SH)</td><td><b>Thioéther</b> (sulfure, —S—CH₃)</td></tr>
+<tr><td><b>Polarité à pH ≈ 7</b></td><td>Polaire <b>non chargée</b></td><td>Polaire <b>non chargée</b></td></tr>
+<tr><td><b>Ionisation</b></td><td><b>Oui</b> : le —SH perd un H⁺ (pK<sub>R</sub> ≈ 8,3) → thiolate —S⁻</td><td><b>Non</b> : pas d'hydrogène ionisable</td></tr>
+<tr><td><b>Réaction clé</b></td><td><b>2 Cys → pont disulfure —S—S—</b> (cystine)</td><td>Donneur de <b>méthyle</b> (via la SAM)</td></tr>
+<tr><td><b>Essentiel ?</b></td><td><b>Non</b> (mais indispensable : dérivé de la Met)</td><td><b>Oui</b> — l'un des 8 essentiels</td></tr>
+<tr><td><b>À retenir</b></td><td>Stabilise les protéines (ponts), <b>site actif</b> de nombreuses enzymes, glutathion anti-oxydant</td><td><b>Acide aminé initiateur</b> de la traduction, source de soufre, méthylation</td></tr>
+</table></div>
+
+<div class="box def"><b class="t">Le pont disulfure, en trois lignes</b>
+Deux cystéines <b>oxydées</b> forment une liaison <b>covalente</b> —S—S— entre leurs deux thiols :
+<b>Cys—SH + HS—Cys → Cys—S—S—Cys + 2 H⁺ + 2 e⁻</b>. La réaction est <b>réversible</b> : un agent
+<b>réducteur</b> (β-mercaptoéthanol, DTT) rouvre le pont.
+</div>
+
+<div class="box warn"><b class="t">Les quatre pièges d'examen sur le soufre</b>
+<b>1.</b> « La <b>méthionine</b> forme des ponts disulfures » → <b>FAUX</b> : son soufre est un
+<b>thioéther</b>, sans hydrogène à céder. Seule la <b>cystéine</b> en forme.
+<br><b>2.</b> « Le pont disulfure est une <b>liaison faible</b> » → <b>FAUX</b> : c'est une liaison
+<b>covalente</b>, la seule covalente (avec la liaison peptidique) des structures tertiaire et quaternaire ;
+elle résiste mieux à la dénaturation.
+<br><b>3.</b> « Les acides aminés soufrés sont <b>chargés</b> à pH 7 » → <b>FAUX</b> : ils sont
+<b>polaires non chargés</b> ; c'est la perte du H⁺ du thiol qui charge la cystéine, et seulement à pH élevé.
+<br><b>4.</b> « Cystéine et méthionine sont des acides aminés <b>basiques</b> » → <b>FAUX</b> : les basiques
+sont <b>Lys, Arg, His</b>.
+</div>
+
+<div class="box ex"><b class="t">Où le soufre travaille vraiment</b>
+<ul>
+<li><b>Ponts disulfure</b> : ils fixent la <b>structure tertiaire</b> (insuline : deux chaînes reliées par
+deux ponts inter-chaînes + un pont intra-chaîne) et la <b>structure quaternaire</b> des immunoglobulines.</li>
+<li><b>Site actif</b> : le —SH d'une cystéine est le <b>nucléophile</b> des protéases à cystéine et de la
+thiorédoxine.</li>
+<li><b>Glutathion</b> (γ-Glu-Cys-Gly) : le —SH de sa cystéine <b>capte les radicaux libres</b> et les
+peroxydes — l'anti-oxydant majeur de la cellule.</li>
+<li><b>Méthionine → SAM</b> (S-adénosylméthionine) : le <b>donneur universel de méthyle</b> (ADN,
+phosphatidylcholine, créatine).</li>
+<li><b>Kératine</b> (cheveux, ongles) : la richesse en cystéine, donc en ponts, explique sa solidité —
+c'est ce que casse une permanente.</li>
+</ul>
+</div>
+
+<div class="box tip"><b class="t">La molécule à ne pas confondre : la cystine</b>
+<b>Cystéine</b> = le monomère (un —SH). <b>Cystine</b> = le <b>dimère</b> de deux cystéines reliées par le
+pont disulfure. Un énoncé qui parle de « cystine » décrit donc déjà <b>deux</b> acides aminés.
+</div>
+
 <h3>Propriétés physiques : les quatre à connaître</h3>
 <div class="tw"><table>
 <tr><th>Propriété</th><th>Ce qu'il faut retenir</th></tr>
@@ -2034,6 +2085,12 @@ FLASH = [
  {"g": "Acides aminés", "q": "Quels acides aminés absorbent l'UV ?", "a": "Les <b>aromatiques</b> : Phe, Tyr, Trp → dosage des protéines à 280 nm."},
  {"g": "Acides aminés", "q": "L'acide aminé qui casse l'hélice α ?", "a": "La <b>proline</b> : son cycle rigidifie la chaîne."},
  {"g": "Acides aminés", "q": "Le seul acide aminé à thiol, et à quoi il sert ?", "a": "La <b>cystéine</b> (—SH) : deux cystéines forment un <b>pont disulfure</b> —S—S—."},
+ {"g": "Acides aminés", "q": "Les deux acides aminés soufrés et leur fonction ?", "a": "<b>Cystéine</b> = thiol <b>—SH</b> · <b>Méthionine</b> = thioéther <b>—S—CH₃</b>. Tous deux <b>polaires non chargés</b>."},
+ {"g": "Acides aminés", "q": "Lequel des deux forme des ponts disulfures ?", "a": "Seule la <b>cystéine</b> : 2 —SH → <b>—S—S—</b> + 2 H⁺ + 2 e⁻. La méthionine ne peut pas (son soufre n'a pas d'hydrogène)."},
+ {"g": "Acides aminés", "q": "Cystéine ou cystine ?", "a": "<b>Cystéine</b> = le monomère. <b>Cystine</b> = le <b>dimère</b> de deux cystéines reliées par le pont disulfure."},
+ {"g": "Acides aminés", "q": "Le pont disulfure : liaison faible ou covalente ?", "a": "<b>Covalente</b> et <b>réversible</b> (réduite par le β-mercaptoéthanol ou le DTT). Elle stabilise les structures tertiaire et quaternaire."},
+ {"g": "Acides aminés", "q": "Quel anti-oxydant repose sur un thiol ?", "a": "Le <b>glutathion</b> (γ-Glu-Cys-Gly) : le —SH de sa cystéine capte radicaux libres et peroxydes."},
+ {"g": "Acides aminés", "q": "La méthionine, à quoi sert-elle encore ?", "a": "C'est l'<b>acide aminé initiateur</b> de la traduction et la source de la <b>SAM</b> (S-adénosylméthionine), donneur universel de méthyle."},
  {"g": "Acides aminés", "q": "Décarboxylation : glutamate, histidine, tyrosine, tryptophane ?", "a": "Glutamate → <b>GABA</b> · histidine → <b>histamine</b> · tyrosine → <b>tyramine</b> · tryptophane → <b>sérotonine</b>."},
  {"g": "Acides aminés", "q": "Les 4 dérivés post-traductionnels du cours ?", "a": "<b>4-hydroxyproline</b> (Pro) · <b>5-hydroxylysine</b> (Lys) · <b>γ-carboxyglutamate</b> (Glu, prothrombine, Ca²⁺) · <b>orthophosphosérine</b> (Ser, hormones)."},
  {"g": "Acides aminés", "q": "Scorbut : mécanisme et vitamine ?", "a": "Défaut d'<b>hydroxylation</b> de la <b>proline</b> et de la <b>lysine</b> du collagène, faute de <b>vitamine C</b>."},

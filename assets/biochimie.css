@@ -287,7 +287,8 @@ details.box>summary{cursor:pointer}
 
 /* ---------- adaptations BIOCHIMIE STRUCTURALE ---------- */
 [data-g="Guide"]{--h:32}[data-g="Oses"]{--h:200}[data-g="Réactions"]{--h:12}
-[data-g="Osides"]{--h:158}[data-g="Polyosides"]{--h:96}[data-g="Entraînement"]{--h:266}[data-g="Plus"]{--h:236}
+[data-g="Osides"]{--h:158}[data-g="Polyosides"]{--h:96}
+[data-g="Acides aminés"]{--h:286}[data-g="Lipides"]{--h:24}[data-g="Enzymes"]{--h:190}[data-g="Entraînement"]{--h:266}[data-g="Plus"]{--h:236}
 nav .brand::before{background:linear-gradient(135deg,#22d3ee,#f59e0b)}
 .hero .tooth{width:330px;opacity:.16}
 .hero{background:radial-gradient(1200px 400px at 85% -10%,rgba(245,158,11,.45),transparent 60%),radial-gradient(700px 380px at 0% 110%,rgba(34,211,238,.45),transparent 60%),#101a2c}
