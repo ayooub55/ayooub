@@ -1133,7 +1133,7 @@ Elle suit mot pour mot le chapitre 1 du Pr. Khlil — c'est donc un <b>très bon
 mais elle reste une <b>prise de notes</b> : en cas de divergence, c'est le support du professeur qui fait foi.
 </div>
 
-<h3>La liaison peptidique : une liaison qui impose tout</h3>
+<h3 id="c12-pep">La liaison peptidique : une liaison qui impose tout</h3>
 <p>Elle se forme <b>entre les 20 acides aminés</b>, entre le carboxyle d'un acide aminé et l'amine du
 suivant, avec <b>perte d'eau</b>. La fiche la décrit par quatre mots qu'il faut savoir réciter :</p>
 
