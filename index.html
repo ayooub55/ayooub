@@ -309,6 +309,10 @@ nav .brand::before{background:linear-gradient(135deg,#22d3ee,#f59e0b)}
 .two>.box{margin:0}
 .fnote{font-size:13px;color:var(--mut);margin-top:-6px}
 
+figure.pep{margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--soft);color:var(--ink)}
+figure.pep svg{width:100%;height:auto;display:block}
+figure.pep figcaption{font-size:13px;color:var(--mut);margin-top:8px;line-height:1.6}
+
 </style>
 </head>
 <body>
@@ -1526,6 +1530,50 @@ suivant, avec <b>perte d'eau</b>. La fiche la décrit par quatre mots qu'il faut
 <tr><td><b>Polaire</b></td><td>Le O et le N portent des charges partielles</td></tr>
 <tr><td><b>Hybride de résonance</b></td><td>Sa longueur est <b>intermédiaire</b> entre la liaison simple C–N et la double liaison C=N</td></tr>
 </table></div>
+
+<figure class="pep">
+<svg viewBox="0 0 720 300" role="img" aria-label="Schéma de la liaison peptidique : deux acides aminés reliés par le groupe peptidique C alpha C O N H C alpha, disposé dans un plan, avec la flèche de résonance">
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="currentColor"/></marker></defs>
+  <rect x="150" y="138" width="350" height="124" rx="12" fill="currentColor" opacity=".06"/>
+  <text x="325" y="128" text-anchor="middle" font-size="12" fill="currentColor" opacity=".75">plan du groupe peptidique (6 atomes)</text>
+  <g stroke="currentColor" stroke-width="2.1" fill="none" stroke-linecap="round">
+    <line x1="140" y1="205" x2="160" y2="205"/>
+    <line x1="190" y1="205" x2="255" y2="170"/>
+    <line x1="285" y1="170" x2="350" y2="205"/>
+    <line x1="380" y1="205" x2="445" y2="170"/>
+    <line x1="475" y1="170" x2="492" y2="170"/>
+    <line x1="266" y1="186" x2="264" y2="228"/>
+    <line x1="276" y1="186" x2="278" y2="228"/>
+    <line x1="372" y1="192" x2="386" y2="178"/>
+    <line x1="175" y1="220" x2="175" y2="240"/>
+    <line x1="460" y1="155" x2="460" y2="140"/>
+  </g>
+  <g stroke="currentColor" stroke-width="2" fill="none">
+    <circle cx="175" cy="205" r="15"/><circle cx="460" cy="170" r="15"/><circle cx="365" cy="205" r="15"/>
+  </g>
+  <g font-size="14.5" font-weight="700" fill="currentColor" text-anchor="middle" dominant-baseline="middle">
+    <text x="120" y="209">H₂N</text>
+    <text x="175" y="206">Cα</text>
+    <text x="270" y="172">C</text>
+    <text x="365" y="206">N</text>
+    <text x="460" y="171">Cα</text>
+    <text x="396" y="174">H</text>
+    <text x="271" y="244">O</text>
+    <text x="516" y="174">COOH</text>
+  </g>
+  <g font-size="12" fill="currentColor" opacity=".85" text-anchor="middle">
+    <text x="175" y="256">R₁</text>
+    <text x="460" y="132">R₂</text>
+  </g>
+  <path d="M283,196 Q320,214 348,199" stroke="currentColor" stroke-width="1.7" fill="none" marker-end="url(#ar)"/>
+  <text x="316" y="232" font-size="11" fill="currentColor" opacity=".8" text-anchor="middle">résonance</text>
+  <text x="560" y="252" font-size="11.5" fill="currentColor" opacity=".85" text-anchor="middle">angle ω ≈ 180° : forme trans</text>
+</svg>
+<figcaption>Le groupe peptidique : <b>Cα–C(=O)–N(H)–Cα</b>. Les <b>six atomes</b> sont dans <b>un seul plan</b>
+(le rectangle grisé) : la liaison <b>C–N</b> est donc <b>rigide</b>, sans rotation. La flèche courbe indique la
+<b>résonance</b> entre le carbonyle et l'azote, qui donne à cette liaison son caractère <b>intermédiaire</b>
+entre simple et double. L'angle <b>ω ≈ 180°</b> correspond à la forme <b>trans</b>, la plus stable.</figcaption>
+</figure>
 
 <div class="box ex"><b class="t">Le nuage électronique</b>
 La fiche insiste : il se forme un <b>nuage électronique entre les atomes N, C et O</b>. Conséquence :

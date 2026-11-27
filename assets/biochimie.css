@@ -300,3 +300,7 @@ nav .brand::before{background:linear-gradient(135deg,#22d3ee,#f59e0b)}
 .two{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:14px 0}
 .two>.box{margin:0}
 .fnote{font-size:13px;color:var(--mut);margin-top:-6px}
+
+figure.pep{margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--soft);color:var(--ink)}
+figure.pep svg{width:100%;height:auto;display:block}
+figure.pep figcaption{font-size:13px;color:var(--mut);margin-top:8px;line-height:1.6}
