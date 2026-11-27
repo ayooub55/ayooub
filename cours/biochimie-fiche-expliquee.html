@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La fiche manuscrite expliquée — Biochimie structurale I</title>
+<meta name="description" content="Lecture guidée page par page de la fiche manuscrite de biochimie structurale : transcription de ce qui est écrit, traduction en langage simple, schémas annotés et pièges d'examen.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+<style>
+:root{
+  --bg:#f6f4ef;--card:#fff;--ink:#152033;--mut:#5d6878;--line:#e6e2d9;--soft:#faf8f4;
+  --acc:#0f766e;--acc2:#115e59;--accbg:#e6f4f1;
+  --def:#eef3ff;--defb:#3b63d6;--ex:#fff6dd;--exb:#c98a00;--tip:#e9f7ec;--tipb:#23894a;
+  --warn:#ffeceb;--warnb:#cf4038;--trans:#f3edff;--transb:#7446d4;
+  --sh:0 1px 2px rgba(21,32,51,.05),0 8px 24px -12px rgba(21,32,51,.14);
+}
+body.dark{--bg:#0c121d;--card:#141c2b;--ink:#e8edf5;--mut:#97a3b6;--line:#243045;--soft:#101827;
+  --acc:#5eead4;--acc2:#99f6e4;--accbg:#122b2b;--def:#16223d;--ex:#30270f;--tip:#122b1b;
+  --warn:#381a19;--trans:#241b3d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.68;font-size:16px}
+a{color:var(--acc2)}
+header.hero{background:radial-gradient(900px 380px at 88% -20%,rgba(20,184,166,.5),transparent 62%),radial-gradient(700px 360px at 0% 120%,rgba(99,102,241,.42),transparent 60%),#0f1c2b;color:#fff;padding:44px 22px 36px}
+.wrap{max-width:1000px;margin:0 auto}
+.hero .kick{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#7dead9;font-weight:700}
+.hero h1{margin:8px 0 10px;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em}
+.hero h1 em{color:#fcd34d;font-style:normal}
+.hero p{margin:0;max-width:70ch;color:#cfd8e6;font-size:15.5px}
+.hero .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:99px;font-size:13px}
+main{padding:26px 18px 70px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--sh);margin:18px 0}
+h2{font-size:clamp(20px,2.6vw,27px);margin:6px 0 4px;letter-spacing:-.01em}
+h3{font-size:17px;margin:22px 0 8px}
+.pnum{display:inline-flex;align-items:center;gap:9px;background:var(--accbg);color:var(--acc2);border:1px solid rgba(15,118,110,.25);padding:5px 12px;border-radius:99px;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.som{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0}
+.som a{text-decoration:none;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:6px 11px;color:var(--ink)}
+.som a:hover{border-color:var(--acc)}
+figure{margin:16px 0;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px}
+figure img{width:100%;height:auto;display:block;border-radius:9px;cursor:zoom-in;background:#fff}
+figcaption{font-size:13px;color:var(--mut);padding:8px 4px 2px;text-align:center}
+.box{border-radius:12px;padding:13px 16px;margin:14px 0;border-left:4px solid;font-size:15.3px}
+.box .t{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-weight:800}
+.def{background:var(--def);border-color:var(--defb)}.def .t{color:var(--defb)}
+.ex{background:var(--ex);border-color:var(--exb)}.ex .t{color:#8a5f00}
+.tip{background:var(--tip);border-color:var(--tipb)}.tip .t{color:var(--tipb)}
+.warn{background:var(--warn);border-color:var(--warnb)}.warn .t{color:var(--warnb)}
+.trans{background:var(--trans);border-color:var(--transb)}.trans .t{color:var(--transb)}
+.trans p{margin:5px 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.65}
+.trans .fr{font-family:inherit;font-size:15px;color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.6px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:700}
+code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 5px;font-size:.92em}
+ul,ol{margin:8px 0 8px 20px;padding:0}li{margin:4px 0}
+.tools{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;z-index:20}
+.tools button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:11px;padding:9px 13px;font-size:14px;box-shadow:var(--sh);cursor:pointer}
+#lb{position:fixed;inset:0;background:rgba(8,12,20,.92);display:none;align-items:center;justify-content:center;z-index:60;padding:14px}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:10px}
+@media print{.tools,#lb{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}figure{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="kick">FMDC Casablanca · 1<sup>re</sup> année · S1</div>
+  <h1>La fiche manuscrite, <em>expliquée ligne par ligne</em></h1>
+  <p>Les 6 pages de la fiche de biochimie structurale I, telles qu'elles sont écrites : d'abord la
+  <b>transcription</b> du manuscrit, puis la <b>traduction en français simple</b>, ce qu'il faut
+  <b>vraiment retenir</b>, et les <b>pièges</b>. Clique sur un scan pour l'agrandir.</p>
+  <div class="row"><span class="pill">6 pages</span><span class="pill">Chapitre I : acides aminés &amp; protéines</span><span class="pill">Chapitre II : hémoglobine</span><span class="pill">Scans zoomables</span></div>
+</div></header>
+
+<main class="wrap">
+<div class="card">
+  <b>Comment lire cette page.</b> Chaque bloc de la fiche est repris trois fois :
+  <span class="pill" style="background:var(--trans);border:1px solid var(--transb);color:var(--transb);padding:2px 8px;border-radius:99px;font-size:12.5px">ce qui est écrit</span>
+  (le manuscrit déchiffré), <b>ce que ça veut dire</b> (la même idée en une phrase), et
+  <b>ce qu'on te demandera</b> (la question type). Les renvois « → chapitre 11 / 12 » mènent au cours
+  détaillé de la <a href="../index.html">page principale</a>.
+</div>
+
+<div class="card">
+  <div class="pnum">Sommaire</div>
+  <div class="som">
+    <a href="#p1">Page 1 — acides aminés : structure et classification</a>
+    <a href="#p2">Page 2 — dérivés et acides aminés essentiels</a>
+    <a href="#p3">Page 3 — propriétés physiques et ionisation</a>
+    <a href="#p4">Page 4 — électrophorèse, réactions, liaison peptidique</a>
+    <a href="#p5">Page 5 — structures des protéines et dénaturation</a>
+    <a href="#p6">Page 6 — hémoglobine</a>
+    <a href="#method">La méthode des 20 minutes</a>
+  </div>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="card" id="p1">
+  <div class="pnum">Page 1 / 6</div>
+  <h2>Acides aminés : la structure et la classification</h2>
+
+  <figure><img src="img/fiche/page1.jpg" alt="Page 1 de la fiche manuscrite : Biochimie structurale I, chapitre I, acides aminés, structure et classification">
+  <figcaption>Page 1 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« Biochimie structurale I — Chapitre I : Acides aminés et protéines : I – des acides aminés »</p>
+    <p>« Les acides aminés sont les éléments de base d'une protéine, provenant principalement de l'alimentation, il existe 20 acides aminés intervenant dans la synthèse protéique. »</p>
+    <p>« Rq : des acides aminés sont ionisés avec leur groupement COOH / NH₂ ionisés, comme ils sont à pH ≈ 7,0 »</p>
+    <p>« COOH (fonction acide carboxylique) — Cα — NH₂ (fonction amine primaire) — R (chaîne latérale variable) »</p>
+    <p>« 1/ Exemples : AA apolaires à chaîne aliphatique (hydropathie) : Glycine (Gly, G), Alanine, Valine, Leucine, Isoleucine, Proline (coudée) — AA apolaires à chaîne aromatique : Phénylalanine (Phe, F), Tryptophane (Trp, W) avec U.V. »</p>
+    <p>« AA polaires neutres à fonction : Alcool — Sérine (Ser, S), Thréonine (Thr, T), Tyrosine (Tyr, Y) ; Soufrés — Cystéine (Cys, C), Méthionine (Met, M) ; Amide — Asparagine (Asn, N), Glutamine (Gln, Q) »</p>
+    <p>« AA polaires chargés négativement : Carboxyle — Aspartate (Asp, D) acide aspartique, Glutamate (Glu, E) acide glutamique »</p>
+    <p>« AA polaires chargés positivement : Amine — Histidine (His, H), Lysine (Lys, K), Arginine (Arg, R) »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p>Une protéine, c'est une chaîne de 20 briques différentes, et chaque brique a <b>la même tête</b> :
+  un <b>—COOH</b> (acide) et un <b>—NH₂</b> (amine) portés par le <b>même carbone</b>, appelé
+  <b>carbone α</b>. Tout ce qui change d'un acide aminé à l'autre, c'est le <b>R</b> : la chaîne latérale.
+  Toute la biochimie des protéines découle de cette seule phrase.</p>
+  <p>La fiche classe ensuite les 20 acides aminés <b>par la nature de leur R</b>, en trois familles :
+  <b>apolaires</b> (qui fuient l'eau), <b>polaires neutres</b> (qui aiment l'eau sans être chargées) et
+  <b>polaires chargées</b> (négatives ou positives).</p>
+
+  <table>
+    <tr><th>Famille</th><th>Qui ?</th><th>Le détail qui fait la question</th></tr>
+    <tr><td><b>Apolaires aliphatiques</b></td><td>Gly, Ala, Val, Leu, Ile, <b>Pro</b></td><td>La <b>proline</b> est notée « coudée » : son cycle rigide casse les hélices</td></tr>
+    <tr><td><b>Apolaires aromatiques</b></td><td><b>Phe, Trp</b></td><td>Le <b>tryptophane</b> porte la mention <b>U.V.</b> : les aromatiques absorbent à 280 nm</td></tr>
+    <tr><td rowspan="3"><b>Polaires neutres</b></td><td>Sérine, Thréonine, <b>Tyrosine</b></td><td>Fonction <b>alcool —OH</b> (la Tyr est aromatique <i>et</i> polaire)</td></tr>
+    <tr><td><b>Cystéine, Méthionine</b></td><td>Fonction <b>soufrée</b> : —SH pour la Cys, —S—CH₃ pour la Met</td></tr>
+    <tr><td>Asparagine, Glutamine</td><td>Fonction <b>amide</b></td></tr>
+    <tr><td><b>Chargés (−)</b></td><td><b>Aspartate, Glutamate</b></td><td>Un <b>deuxième carboxyle</b> dans le R → charge négative</td></tr>
+    <tr><td><b>Chargés (+)</b></td><td><b>Histidine, Lysine, Arginine</b></td><td><b>Amine</b> (Lys), <b>guanidine</b> (Arg), <b>imidazole</b> (His)</td></tr>
+  </table>
+
+  <div class="box def"><b class="t">Le « Rq » du haut de page</b>
+  « Des acides aminés sont ionisés… comme ils sont à pH ≈ 7,0 » : dans la cellule (pH ≈ 7), un acide
+  aminé <b>n'est jamais</b> sous la forme —COOH / —NH₂ du papier : il est <b>ionisé</b>, c'est-à-dire
+  —COO⁻ / —NH₃⁺. C'est pour cela que la fiche dessine ensuite les formes chargées dans les cases.
+  </div>
+
+  <div class="box tip"><b class="t">Ce qu'on te demandera</b>
+  « <b>Quel acide aminé n'a pas de carbone asymétrique ?</b> » → la <b>glycine</b> (son R est un H). <br>
+  « <b>Lesquels sont aromatiques ?</b> » → Phe, Trp et Tyr. <br>
+  « <b>Lesquels sont basiques ?</b> » → Lys, Arg, His (les trois « + » de la fiche).
+  </div>
+
+  <div class="box warn"><b class="t">Le piège de lecture</b>
+  Sur la fiche, la <b>tyrosine</b> apparaît <b>deux fois</b> : dans « polaires neutres à fonction alcool »
+  et, par son cycle, parmi les aromatiques. Ce n'est pas une erreur : la Tyr est <b>aromatique ET
+  polaire</b>. Elle est donc à la fois « apolaire aromatique » (par son cycle) et « polaire neutre » (par
+  son —OH).
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="card" id="p2">
+  <div class="pnum">Page 2 / 6</div>
+  <h2>Les dérivés des acides aminés et les 8 essentiels</h2>
+
+  <figure><img src="img/fiche/page2.jpg" alt="Page 2 de la fiche : dérivés des acides aminés, hydroxyproline, hydroxylysine, gamma-carboxyglutamate, phosphorylation">
+  <figcaption>Page 2 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« Dérivés des acides aminés : les acides aminés peuvent subir des modifications post-traductionnelles dans la protéine. Ces modifications influent sur le repliement de la protéine (processus guidé par la séquence d'AA et les interactions physiques telles que les forces hydrophobes et les liaisons hydrogène), la phosphorylation ou la glycosylation, l'ajout de groupes fonctionnels (-OH). »</p>
+    <p>« Exemples : la proline et la lysine qui subissent un ajout d'un groupement hydroxyle pour devenir la 4-hydroxyproline et la 5-hydroxylysine présentes dans les protéines fibreuses (les protéines fibreuses sont des protéines de soutien : ex. cheveux (kératine), actine, myosine, cytosquelette) du tissu conjonctif et du collagène. »</p>
+    <p>« La non-hydroxylation de ces acides aminés dans cette protéine entraîne le Scorbut, une maladie due à une carence en Vitamine C entraînant un déchaussement des dents et la paralysie des gencives, car l'intervention de la vitamine C joue un rôle de co-facteur dans la modification de ces acides aminés. »</p>
+    <p>« b) Dans la prothrombine, protéine de la coagulation, on retrouve le γ-carboxyglutamate présentant deux groupes carboxyles (COO⁻) qui permettent la fixation des ions Ca²⁺. Le γ-carboxyglutamate est le dérivé de Glutamate qui a subit une γ-carboxylation ajoutant un deuxième groupe carboxyle qui nécessite la vitamine K comme co-facteur. »</p>
+    <p>« c) Les acides aminés polaires neutres à fonction alcool peuvent accueillir un groupement phosphate (PO₄³⁻) sur le (-OH) par kinase, on peut citer comme exemple la sérine, thréonine, tyrosine. Cette phosphorylation va permettre l'activation des protéines et la transmission du signal biologique. »</p>
+    <p>« Tous les AA qui subissent une décarboxylation deviennent des amines sauf le glutamate et aspartate car ils contiennent un groupe carboxyle dans leur chaîne latérale. ↓ GABA »</p>
+    <p>« 8 AA essentiels : Val, Leu, Ile, Thr, Met, Lys, Trypt, Phénylalanine. 2 AA semi-indispensables chez un nourrisson : His, Arg (croissance). »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p>Une protéine est fabriquée avec les 20 acides aminés standards, puis <b>certains sont retouchés</b> :
+  on ajoute un —OH, un phosphate, un carboxyle… C'est ce qu'on appelle une modification
+  <b>post-traductionnelle</b>. La fiche en garde <b>quatre exemples</b>, et chacun a un cofacteur
+  vitaminique :</p>
+
+  <table>
+    <tr><th>Dérivé</th><th>Fabriqué à partir de</th><th>Cofacteur</th><th>Où / pourquoi</th></tr>
+    <tr><td><b>4-hydroxyproline</b> et <b>5-hydroxylysine</b></td><td>Proline, Lysine</td><td><b>Vitamine C</b></td><td>Collagène : sans elles, le collagène n'est pas solide → <b>scorbut</b> (dents qui se déchaussent, gencives qui saignent)</td></tr>
+    <tr><td><b>γ-carboxyglutamate</b></td><td>Glutamate</td><td><b>Vitamine K</b></td><td>Prothrombine : les <b>deux COO⁻</b> fixent le <b>Ca²⁺</b>, indispensable à la coagulation</td></tr>
+    <tr><td><b>Phosphosérine / phosphothréonine / phosphotyrosine</b></td><td>Ser, Thr, Tyr</td><td>Kinases (ATP)</td><td>Ajout d'un <b>PO₄³⁻</b> sur le —OH : activation des protéines et <b>transmission du signal</b></td></tr>
+    <tr><td><b>Amines</b> (GABA…)</td><td>Décarboxylation des AA</td><td>PLP (vitamine B6)</td><td>Tous les AA donnent une amine <b>sauf Glu et Asp</b></td></tr>
+  </table>
+
+  <div class="box warn"><b class="t">Le piège que la fiche signale en rouge</b>
+  « Tous les AA qui subissent une décarboxylation deviennent des amines <b>sauf le glutamate et
+  l'aspartate</b>, car ils contiennent un groupe carboxyle dans leur chaîne latérale. » La décarboxylation
+  enlève le COOH du carbone α ; s'il en reste un dans le R (Glu, Asp), la molécule reste un <b>acide</b>.
+  Résultat : Glu → <b>GABA</b>, qui est un acide aminé et non une simple amine.
+  </div>
+
+  <div class="box def"><b class="t">Les essentiels : 8 + 2</b>
+  <b>Val, Leu, Ile, Thr, Met, Lys, Trp, Phe</b> (les 8 essentiels — mnémotechnique « PVT TIM HALL »).
+  <b>His et Arg</b> sont <b>semi-indispensables</b> chez le <b>nourrisson</b> : il ne les synthétise pas
+  assez vite pour sa <b>croissance</b>. Question typique : « combien sont essentiels chez l'adulte ? » →
+  <b>8</b>, pas 10.
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="card" id="p3">
+  <div class="pnum">Page 3 / 6</div>
+  <h2>Propriétés physiques : optique, UV, ionisation</h2>
+
+  <figure><img src="img/fiche/page3.jpg" alt="Page 3 de la fiche : propriétés optiques, stéréoisomères L et D, absorption UV à 280 nm, ionisation, zwitterion, Henderson-Hasselbalch">
+  <figcaption>Page 3 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« Propriétés physiques : + Propriétés optiques : tous les carbones α sont asymétriques sauf la glycine → stéréoisomères (L : protéines / D : bactéries antibio-tiques) »</p>
+    <p>« + Absorption de l'U.V : concerne les AA à cycle aromatique grâce aux électrons π capables d'absorber les U.V. Cycles → Tryptophane &gt; Tyrosine &gt; Phénylalanine avec λ = 280 nm. L'absorbance de ces AA permet de doser les protéines, proportionnelle à la concentration. »</p>
+    <p>« Propriétés acido-basiques : + Ionisation : en solution aqueuse (tous systèmes biologiques) les AA sont ionisés. Cette forme ionisée à pH = 7 est appelée zwitterion, signifie qu'une molécule globalement neutre, comportant une charge ⊕ d'un côté et une charge ⊖ de l'autre côté. Ex : Alanine COOH—CαH(NH₂)—CH₃ → COO⁻—CαH(NH₃⁺)—CH₃ »</p>
+    <p>« + Équilibre acide-base : Ka = Ke/Kb = Ka = [H⁺][A⁻]/[HA] = Kd. Signifie l'équilibre entre la forme acide et sa base conjuguée. Équation de Henderson-Hasselbalch : pH = pKa + log([A⁻]/[HA]) »</p>
+    <p>« Formes des acides aminés à pH : Acide (chargé positivement) — Isoélectrique (zwitterion, neutre) — Basique (chargé négativement) »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p><b>1. L'optique.</b> Un carbone qui porte quatre groupes différents est <b>asymétrique</b> : il existe
+  alors deux formes en miroir, dites <b>L</b> et <b>D</b>. Comme le carbone α porte toujours —H, —NH₂,
+  —COOH et —R, il est asymétrique… <b>sauf dans la glycine</b>, où R = H (deux H identiques). Les
+  protéines humaines sont <b>toutes de la série L</b> ; les <b>D</b>-acides aminés se rencontrent chez les
+  <b>bactéries</b> (et dans la paroi bactérienne — d'où le lien avec les antibiotiques écrit sur la fiche).</p>
+
+  <p><b>2. L'UV.</b> Seuls les <b>cycles aromatiques</b> absorbent à <b>280 nm</b>, grâce à leurs
+  <b>électrons π</b>. Ordre d'absorption : <b>Trp &gt; Tyr &gt; Phe</b>. On s'en sert pour <b>doser</b> une
+  protéine : l'absorbance est <b>proportionnelle à la concentration</b> (loi de Beer-Lambert).</p>
+
+  <p><b>3. L'ionisation.</b> À pH 7, l'acide aminé est un <b>zwitterion</b> : globalement neutre, mais avec
+  un <b>+</b> d'un côté (—NH₃⁺) et un <b>−</b> de l'autre (—COO⁻). La fiche montre exactement la
+  transformation : —COOH devient —COO⁻, et —NH₂ devient —NH₃⁺.</p>
+
+  <p><b>4. Les trois formes.</b> C'est le tableau à garder en tête pour l'électrophorèse (page 4) :</p>
+  <table>
+    <tr><th>pH</th><th>Forme</th><th>Charge nette</th><th>Sur la fiche</th></tr>
+    <tr><td>pH <b>&lt;</b> pHi (milieu acide)</td><td>—COOH + —NH₃⁺</td><td><b>+</b> (cation)</td><td>« Acide, chargé positivement »</td></tr>
+    <tr><td>pH <b>=</b> pHi</td><td>—COO⁻ + —NH₃⁺</td><td><b>0</b> (zwitterion)</td><td>« Isoélectrique, neutre »</td></tr>
+    <tr><td>pH <b>&gt;</b> pHi (milieu basique)</td><td>—COO⁻ + —NH₂</td><td><b>−</b> (anion)</td><td>« Basique, chargé négativement »</td></tr>
+  </table>
+
+  <div class="box ex"><b class="t">Henderson-Hasselbalch, sans douleur</b>
+  <b>pH = pKa + log([A⁻]/[HA])</b>. Elle répond à une seule question : <i>à ce pH, quelle proportion est
+  sous forme acide et quelle proportion sous forme basique ?</i> Le cas à connaître : quand
+  <b>[A⁻] = [HA]</b>, le logarithme vaut 0, donc <b>pH = pKa</b> — le pH est au <b>point médian</b> entre
+  les deux formes. C'est pour cela qu'un QCM peut demander « le pH au point médian de la glycine » et que
+  la réponse est son <b>pKa</b>.
+  </div>
+
+  <div class="box warn"><b class="t">Deux confusions à ne pas faire</b>
+  <b>1.</b> <b>D/L</b> (majuscules) = la <b>configuration</b> de Fischer, pas le sens de rotation de la
+  lumière. Un acide aminé <b>D</b> peut être lévogyre.<br>
+  <b>2.</b> « Acide » sur la fiche ne veut pas dire « pH acide » : c'est la <b>forme</b> de la molécule
+  (—COOH présent) ; et « basique » désigne la forme anionique. C'est la source d'erreur n° 1 des QCM.
+  </div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="card" id="p4">
+  <div class="pnum">Page 4 / 6</div>
+  <h2>Électrophorèse, réactions chimiques et liaison peptidique</h2>
+
+  <figure><img src="img/fiche/page4.jpg" alt="Page 4 de la fiche : électrophorèse et pHi, réactions chimiques des acides aminés, liaison peptidique, peptides">
+  <figcaption>Page 4 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« Application : Électrophorèse : A.A ⊖ migrent vers ⊕ — pHi — A.A ⊕ migrent vers ⊖ ; pas de migration »</p>
+    <p>« Réactions chimiques des acides aminés : a – Décarboxylation : Acide aminé → amine (sauf le Glutamate et l'aspartate). b – Désamination : Acide aminé → Acides cétoniques. c – Formation d'une fonction amine : Ex : Glutamate → Glutamine. d – Formation d'un pont disulfure : Deux cystéines forment un pont disulfure. e – Réaction de N-glycosylation : concerne les acides aminés à fonction amide dans la chaîne latérale (Glutamine, asparagine) par fixation d'oses sur l'atome d'azote de la fonction amide. f – Réaction de caractérisation à la ninhydrine : la ninhydrine est un composé aromatique utilisé comme révélateur. »</p>
+    <p>« II – Liaison peptidique (entre les 20 acides aminés) COVALENTE : la liaison peptidique est une liaison rigide, plane, polaire. Il s'agit d'une liaison hybride de résonance (intermédiaire entre la liaison simple et double), formant un nuage électronique entre les différents atomes (N, C, O). Absence de rotation mais présence de résonance. Plus précisément la forme "trans" qui est plus stable par rapport à la "cis". Sa synthèse se fait par réaction enzymatique. Son orientation commence par l'acide aminé N-terminal et se termine par l'acide aminé C-terminal. »</p>
+    <p>« III – Peptides : exemples — ① Glutathion : propriété antioxydante empêchant l'oxydation de l'hémoglobine (tripeptide). ② Pénicilline : antibiotique protégeant l'organisme des attaques bactériennes (tripeptide) + Insuline et glucagon (polypeptides) »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p><b>1. L'électrophorèse, en une ligne.</b> Le pHi est la <b>frontière</b> : au pHi l'acide aminé
+  <b>ne bouge pas</b> ; en dessous (pH &lt; pHi) il est <b>+</b> et part vers la <b>cathode ⊖</b> ; au-dessus
+  il est <b>−</b> et part vers l'<b>anode ⊕</b>. La fiche l'écrit dans l'autre sens (elle désigne la charge),
+  mais le résultat est le même : <b>le signe de (pH − pHi) décide du sens de migration</b>.</p>
+
+  <p><b>2. Les six réactions.</b> Elles tombent presque chaque année, sous forme de « quel est le produit ? » :</p>
+  <table>
+    <tr><th>Réaction</th><th>Ce qui se passe</th><th>À retenir</th></tr>
+    <tr><td><b>Décarboxylation</b></td><td>Perte de CO₂ → amine</td><td><b>Sauf Glu et Asp</b> (il leur reste un COOH dans le R)</td></tr>
+    <tr><td><b>Désamination</b></td><td>Perte de NH₂</td><td>Donne un <b>acide cétonique</b></td></tr>
+    <tr><td><b>Amidation</b></td><td>—COOH → —CONH₂</td><td><b>Glu → Gln</b> (et Asp → Asn)</td></tr>
+    <tr><td><b>Pont disulfure</b></td><td>2 Cys → —S—S—</td><td><b>Covalent</b>, réversible, stabilise la structure</td></tr>
+    <tr><td><b>N-glycosylation</b></td><td>Ose fixé sur l'<b>azote</b> de l'amide</td><td>Sur <b>Gln et Asn</b> uniquement</td></tr>
+    <tr><td><b>Ninhydrine</b></td><td>Révélation</td><td>Composé <b>aromatique</b>, révélateur des acides aminés</td></tr>
+  </table>
+
+  <p><b>3. La liaison peptidique.</b> Quatre adjectifs, à réciter dans cet ordre :
+  <b>rigide</b> (pas de rotation), <b>plane</b>, <b>polaire</b>, <b>hybride de résonance</b> (entre la
+  liaison simple et la double, avec un <b>nuage électronique N–C–O</b>). Elle est <b>covalente</b>, sa
+  synthèse est <b>enzymatique</b>, et la forme <b>trans</b> est plus stable que la <b>cis</b>. La chaîne se
+  lit toujours de l'<b>N-terminal</b> vers le <b>C-terminal</b>.</p>
+
+  <div class="box tip"><b class="t">La liste des peptides de la fiche</b>
+  <b>Glutathion</b> = tripeptide <b>anti-oxydant</b> (il empêche l'oxydation de l'hémoglobine) ·
+  <b>pénicilline</b> = tripeptide <b>antibiotique</b> · <b>insuline</b> et <b>glucagon</b> = <b>polypeptides</b>
+  hormonaux. Un QCM demande souvent « lequel est un tripeptide ? » → glutathion et pénicilline, pas l'insuline.
+  </div>
+
+  <div class="box warn"><b class="t">Le piège de l'électrophorèse</b>
+  Écris toujours les <b>pHi</b> avant de commencer : glutamate 3,2 · leucine 6,0 · lysine 9,7. À pH 6 :
+  Glu est <b>−</b> (anode), Leu est <b>immobile</b>, Lys est <b>+</b> (cathode). Trois lignes, et la
+  question est finie.
+  </div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="card" id="p5">
+  <div class="pnum">Page 5 / 6</div>
+  <h2>Les quatre structures des protéines et la dénaturation</h2>
+
+  <figure><img src="img/fiche/page5.jpg" alt="Page 5 de la fiche : structures primaire, secondaire, tertiaire, quaternaire, dénaturation, début du chapitre hémoglobine">
+  <figcaption>Page 5 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« IV – Protéines : structure. ① Primaire : liaison peptidique covalente + ponts disulfures (cystéines) + orientation. ② Secondaire (régulière et répétitive) : présence d'hélices α et feuillets plissés β (droites). Remarque : on peut trouver dans les structures secondaires des boucles et des coudes. Toutes les structures secondaires sont stabilisées par des liaisons hydrogène, puisque les deux atomes "N" et "O" sont électronégatifs, ils permettent la formation de cette liaison. On ne trouve des hélices α droites et les structures antiparallèles dans les feuillets plissés dans notre organisme grâce à leur stabilité. La proline est absente dans les hélices α et les feuillets β car elle forme des coudes non réguliers. »</p>
+    <p>« ③ Tertiaire (souvent la structure primaire) : exposition des résidus hydrophiles à l'extérieur et les résidus hydrophobes à l'intérieur. Il existe 4 types de liaisons non covalentes : ioniques, hydrogène, hydrophobes, van der Waals (des demi-liaisons covalentes : S–S). »</p>
+    <p>« ④ Quaternaire : présence de sous-unités identiques ou différentes. Ex : hémoglobines, immunoglobuline (anticorps). »</p>
+    <p>« V- Dénaturation des protéines : perte de sa conformation tridimensionnelle conduisant à la perte de l'activité biologique. »</p>
+    <p>« Chapitre II : Hémoglobine : transport de dioxygène dans l'organisme : Hétéroprotéine (Fe²⁺). Myoglobine : protéine simple, elle a une structure tertiaire, contenue les tissus musculaires. Hémoglobine : protéine complexe, elle a une structure quaternaire, contenue le transport d'O₂ des poumons et… »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p>Une protéine se décrit sur <b>quatre niveaux</b>, du fil à la machine :</p>
+  <table>
+    <tr><th>Niveau</th><th>Définition simple</th><th>Ce qui la tient</th></tr>
+    <tr><td><b>1. Primaire</b></td><td>L'<b>ordre</b> des acides aminés, comme les lettres d'un mot</td><td>Liaison peptidique <b>covalente</b> + ponts disulfure</td></tr>
+    <tr><td><b>2. Secondaire</b></td><td>Des motifs <b>réguliers et répétitifs</b> : <b>hélice α</b> et <b>feuillet β</b></td><td><b>Liaisons hydrogène</b> (N et O électronégatifs)</td></tr>
+    <tr><td><b>3. Tertiaire</b></td><td>Le <b>repliement 3D</b> : hydrophiles dehors, hydrophobes dedans</td><td>Ioniques, H, hydrophobes, van der Waals + <b>S–S</b></td></tr>
+    <tr><td><b>4. Quaternaire</b></td><td>Plusieurs <b>sous-unités</b> assemblées (Hb, anticorps)</td><td>Liaisons faibles (+ S–S parfois)</td></tr>
+  </table>
+
+  <div class="box tip"><b class="t">Les trois remarques de la fiche, à savoir par cœur</b>
+  <b>1.</b> Les structures secondaires sont <b>toutes stabilisées par des liaisons hydrogène</b> —
+  N et O sont électronégatifs, c'est ce qui le permet.<br>
+  <b>2.</b> Dans l'organisme on trouve les <b>hélices α droites</b> et les feuillets <b>antiparallèles</b>,
+  parce qu'ils sont <b>plus stables</b>.<br>
+  <b>3.</b> La <b>proline est absente</b> des hélices α et des feuillets β : son cycle rigide crée des
+  <b>coudes non réguliers</b>.
+  </div>
+
+  <div class="box def"><b class="t">Dénaturation : la définition exacte (et le piège)</b>
+  « Perte de la <b>conformation tridimensionnelle</b> conduisant à la perte de l'<b>activité biologique</b>. »
+  Ce qui est détruit : les structures <b>2, 3 et 4</b>. Ce qui <b>reste intact</b> : la <b>structure
+  primaire</b> — la séquence ne change pas. Un QCM qui dit « la dénaturation détruit la structure
+  primaire » est <b>faux</b>.
+  </div>
+</section>
+
+<!-- ================= PAGE 6 ================= -->
+<section class="card" id="p6">
+  <div class="pnum">Page 6 / 6</div>
+  <h2>L'hémoglobine : 4 hèmes, une courbe sigmoïde</h2>
+
+  <figure><img src="img/fiche/page6.jpg" alt="Page 6 de la fiche : hémoglobine, HbA1 HbA2 HbF, myoglobine, allostérie, effet Bohr, CO, 2,3-DPG, drépanocytose">
+  <figcaption>Page 6 entière — clique pour agrandir</figcaption></figure>
+
+  <div class="trans"><b class="t">Ce qui est écrit (manuscrit)</b>
+    <p>« …de CO₂ destinés et de l'organisme. Elle fixe l'O₂ grâce à l'hème présent dans la sous-unité (protéine globulaire / polaire). Il existe 3 types d'Hb : Majoritaire HbA1 (2α et 2β), Minoritaire HbA2 (2α et 2δ), Fœtale HbF (2α et 2γ). »</p>
+    <p>« Il existe une similitude entre la myoglobine et la chaîne β de l'hémoglobine. Hb fait fixer 4 molécules d'O₂ alors que la Mb fixe qu'une molécule d'O₂ à la différence du nombre d'hème. »</p>
+    <p>« La saturation de la myoglobine se fait même à faible pression d'O₂, contrairement à l'Hb, avec laquelle le sang plus affin que l'Hb. Une valeur de pO₂ plus faible indique une affinité plus élevée. »</p>
+    <p>« L'Allostérie de l'Hb s'accompagne par une coopérativité de ses 4 unités, la fixation d'O₂ se fait d'une manière coopérative, c.-à-d. les sous-unités α₁, β₂ vont changer de conformation, surtout à la fixation d'O₂ par α₁, et de manière progressive (25 % → 61 % → 74 % → 100 %), optiquement donnant naissance d'une courbe de saturation sigmoïde. D'autre part, la myoglobine manque de coopérativité vu qu'elle possède qu'un seul hème, elle présente donc une courbe hyperbolique. »</p>
+    <p>« Effet Bohr : se traduit par la diminution de l'affinité de Hb en présence de protons H⁺, en parallèle on retrouve l'effet tampon qui consiste à la fixation de ses protéines afin d'éviter l'acidité du sang. »</p>
+    <p>« L'affinité de Hb au monoxyde de carbone (CO) est 200× plus importante à celle de l'O₂. »</p>
+    <p>« Le relargage (libération) d'O₂ par l'Hb se fait progressivement, fixé sur le 6ᵉ (?) liaison de coordination du Fe²⁺. »</p>
+    <p>« L'affinité de HbF est supérieure à celle de la mère où la présence des chaînes γ a faible affinité pour le 2,3-DPG. »</p>
+    <p>« Dans l'anémie falciforme, la valine remplace l'acide glutamique qui résulte d'un changement structural de la molécule. »</p>
+    <p>« À l'état relâché R on trouve l'oxyhémoglobine, tandis qu'à l'état T tendu on trouve la désoxyhémoglobine. »</p>
+    <p>« Paramètres influençant l'affinité de Hb à l'O₂ : Pression partielle d'O₂ – 2,3 DPG – pH – CO₂ – Oxydants »</p>
+  </div>
+
+  <h3>Ce que ça veut dire</h3>
+  <p>L'hémoglobine est un <b>tétramère</b> : quatre sous-unités, donc <b>quatre hèmes</b>, donc
+  <b>quatre O₂</b>. La myoglobine, elle, n'a <b>qu'un seul hème</b> : <b>un seul O₂</b>. C'est toute la
+  différence entre les deux courbes.</p>
+
+  <table>
+    <tr><th></th><th>Myoglobine</th><th>Hémoglobine</th></tr>
+    <tr><td><b>Hèmes</b></td><td>1</td><td><b>4</b></td></tr>
+    <tr><td><b>O₂ fixés</b></td><td>1</td><td><b>4</b></td></tr>
+    <tr><td><b>Structure</b></td><td>Tertiaire (protéine simple)</td><td><b>Quaternaire</b> (hétéroprotéine, Fe²⁺)</td></tr>
+    <tr><td><b>Courbe</b></td><td><b>Hyperbolique</b></td><td><b>Sigmoïde</b> (25 → 61 → 74 → 100 %)</td></tr>
+    <tr><td><b>Coopérativité</b></td><td>Absente</td><td><b>Présente</b> (allostérie)</td></tr>
+    <tr><td><b>Où</b></td><td>Tissus musculaires</td><td>Sang (poumons → tissus)</td></tr>
+  </table>
+
+  <table>
+    <tr><th>Type d'Hb</th><th>Chaînes</th><th>Quand</th></tr>
+    <tr><td><b>HbA1</b></td><td>2α + 2β</td><td><b>Majoritaire</b> (adulte)</td></tr>
+    <tr><td><b>HbA2</b></td><td>2α + 2δ</td><td><b>Minoritaire</b></td></tr>
+    <tr><td><b>HbF</b></td><td>2α + 2γ</td><td><b>Fœtale</b> — plus d'affinité que l'Hb maternelle, car les chaînes <b>γ fixent moins bien le 2,3-DPG</b></td></tr>
+  </table>
+
+  <div class="box def"><b class="t">Les 5 paramètres (fin de page, à recopier tel quel)</b>
+  <b>P O₂</b> · <b>2,3-DPG</b> · <b>pH</b> · <b>CO₂</b> · <b>oxydants</b>. Ce sont eux qui déplacent la
+  courbe : à droite = moins d'affinité (il lâche l'O₂ au muscle), à gauche = plus d'affinité.
+  </div>
+
+  <div class="box tip"><b class="t">Effet Bohr, en une phrase</b>
+  Dans le muscle qui travaille, il y a beaucoup de <b>H⁺</b> et de <b>CO₂</b> : l'affinité de l'Hb
+  <b>diminue</b>, donc elle <b>libère</b> son O₂ <b>là où on en a besoin</b>. En parallèle, l'hémoglobine
+  joue un rôle <b>tampon</b> en fixant les protons, ce qui évite l'acidification du sang.
+  </div>
+
+  <div class="box warn"><b class="t">Les trois chiffres et le nom à ne pas rater</b>
+  <b>CO</b> : affinité <b>200 fois</b> celle de l'O₂ (une intoxication au monoxyde de carbone bloque
+  l'hémoglobine). <b>Drépanocytose</b> (anémie <b>falciforme</b>) : une <b>valine</b> remplace l'<b>acide
+  glutamique</b> sur la chaîne <b>β</b> → HbS. États : <b>R</b> relâché = oxyhémoglobine ; <b>T</b> tendu =
+  désoxyhémoglobine.
+  </div>
+
+  <div class="box ex"><b class="t">Un mot mal écrit sur la fiche</b>
+  La phrase « fixé sur le 6ᵉ liaison de coordination du Fe²⁺ » est peu lisible sur le manuscrit. Ce qu'il
+  faut retenir, et qui est sûr : l'O₂ se fixe sur le <b>fer de l'hème</b>, en <b>6ᵉ position de
+  coordination</b> du Fe²⁺ (les 4 premières étant les azotes du noyau porphyrinique, la 5ᵉ l'histidine
+  proximale de la globine). Si ton cours dit autre chose, c'est le cours qui fait foi.
+  </div>
+</section>
+
+<!-- ================= METHODE ================= -->
+<section class="card" id="method">
+  <div class="pnum">Méthode</div>
+  <h2>Réviser cette fiche en 20 minutes</h2>
+  <ol>
+    <li><b>3 min — la carte.</b> Récite les trois familles d'acides aminés et donne un exemple de chaque.
+    Si tu bloques, reviens à la page 1.</li>
+    <li><b>3 min — les exceptions.</b> Glycine sans carbone asymétrique · Pro absente des hélices ·
+    Glu et Asp non décarboxylables · dénaturation qui épargne la structure primaire.</li>
+    <li><b>4 min — les cofacteurs.</b> Vitamine C → hydroxyproline (scorbut) · Vitamine K →
+    γ-carboxyglutamate (Ca²⁺) · kinases → phosphosérine.</li>
+    <li><b>4 min — les courbes.</b> Redessine l'hyperbole (Mb) et la sigmoïde (Hb), place les
+    25 / 61 / 74 / 100 %.</li>
+    <li><b>3 min — les 5 paramètres.</b> P O₂, 2,3-DPG, pH, CO₂, oxydants. Dis pour chacun s'il augmente
+    ou diminue l'affinité.</li>
+    <li><b>3 min — l'auto-test.</b> Passe à l'<a href="../index.html#ex">examen blanc</a> et aux
+    QCM des <a href="../index.html#c11">chapitres 11</a> et <a href="../index.html#c12">12</a>.</li>
+  </ol>
+  <div class="box tip"><b class="t">Où aller ensuite</b>
+  Le cours détaillé, les QCM corrigés et les flashcards sont sur la
+  <a href="../index.html">page principale de biochimie structurale</a>. Le plan du module et les
+  annales sont sur <a href="../documents.html">la page des documents</a>.
+  </div>
+</section>
+</main>
+
+<div class="tools">
+  <button id="dark" type="button">🌙 Sombre</button>
+  <button onclick="window.print()" type="button">🖨 Imprimer</button>
+</div>
+<div id="lb"><img alt="Agrandissement du scan"></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), im=lb.querySelector('img');
+  document.querySelectorAll('figure img').forEach(function(i){
+    i.addEventListener('click',function(){ im.src=i.src; im.alt=i.alt; lb.classList.add('on'); });
+  });
+  lb.addEventListener('click',function(){ lb.classList.remove('on'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('on'); });
+  var d=document.getElementById('dark');
+  var saved=localStorage.getItem('bio-fiche-dark');
+  if(saved==='1'){ document.body.classList.add('dark'); d.textContent='☀️ Clair'; }
+  d.addEventListener('click',function(){
+    var on=document.body.classList.toggle('dark');
+    d.textContent = on ? '☀️ Clair' : '🌙 Sombre';
+    localStorage.setItem('bio-fiche-dark', on ? '1':'0');
+  });
+})();
+</script>
+</body>
+</html>
