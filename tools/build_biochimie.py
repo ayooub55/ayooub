@@ -50,6 +50,7 @@ traitées ici et signalées par le repère « annoncé ».</p>
 <tr><td><b>Classification des osides</b></td><td>Holoside / hétéroside, oligo / polyoside, homopolyoside / hétéropolyoside, l'aglycone</td><td><a href="#c6">Chapitre 6</a></td></tr>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
 <tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
+<tr><td><b>Les acides aminés</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Structure, classification par R, essentiels, pHi, électrophorèse — <b>7 questions sur 40</b> en 2024-25</td><td><a href="#c11">Chapitre 11</a></td></tr>
 <tr><td><b>Sphingolipides</b> <span class="chip" style="cursor:default">annoncé à l'oral</span></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>annoncée en cours par le Pr. Naamane</b>, et déjà tombée en 2024-25 (Q39-Q40) puis en session 2025</td><td><a href="#c10">Chapitre 10</a></td></tr>
 </table></div>
 
@@ -834,6 +835,243 @@ sanguins</b>. Tous sont <b>amphiphiles</b> et participent à la membrane, et tou
 </div>
 """
 
+C11 = """
+<div class="box tip"><b class="t">Pourquoi cette partie est prioritaire</b>
+C'est la <b>première partie du programme</b> (chapitre 1 du Pr. Khlil), et c'est la plus rentable :
+dans l'épreuve de 2024-2025, <b>7 des 40 questions</b> portaient directement sur les acides aminés
+(Q1 à Q7), plus une sur l'électrophorèse (Q26). Tout ce qui est demandé se déduit d'une seule idée :
+<b>le squelette est identique, tout se joue sur le groupement R</b>.
+</div>
+
+<div class="box def"><b class="t">L'importance biomédicale : les acides aminés ne font pas que des protéines</b>
+Le cours insiste sur deux autres rôles :
+<ul>
+<li><b>Neurotransmetteurs</b> : la <b>glycine</b> et l'<b>acide glutamique</b> sont eux-mêmes des messagers
+du système nerveux.</li>
+<li><b>Précurseurs de molécules actives</b> : la <b>décarboxylation</b> d'un acide aminé donne l'amine
+correspondante — l'<b>histamine</b> (à partir de l'histidine) et le <b>GABA</b> (acide
+γ-aminobutyrique, à partir du <b>glutamate</b>).</li>
+</ul>
+</div>
+
+<h3>La structure : un squelette commun, vingt chaînes latérales <span class="chip" style="cursor:default">annoncé</span></h3>
+<p>« Les vingt acides aminés trouvés dans les protéines possèdent tous un groupement <b>carboxyle</b> et un
+groupement <b>aminé</b> portés par le <b>même atome de carbone</b> (le carbone <b>α</b>). Ils diffèrent les
+uns des autres par leur <b>chaîne latérale ou groupement R</b>, dont la structure, la taille et la charge
+électrique varient et influencent la <b>solubilité</b> des acides aminés dans l'eau. » <i>Support, p. 5</i></p>
+
+<div class="box ex"><b class="t">Le raisonnement à avoir</b>
+Le squelette —COOH + —NH<sub>2</sub> sur le Cα est <b>identique pour les 20</b> : inutile de l'apprendre
+vingt fois. <b>Toute la différence est dans R</b> — et c'est R qui commande la solubilité, la charge au pH
+physiologique, les liaisons possibles, le repliement et donc la fonction. <b>Apprends la classification par
+R : le reste en découle.</b>
+</div>
+
+<h3>La classification par la chaîne latérale (à pH ≈ 7)</h3>
+<div class="tw"><table>
+<tr><th>Famille de R</th><th>Acides aminés</th><th>Charge à pH 7</th></tr>
+<tr><td><b>Aliphatique, apolaire</b></td><td>Glycine, Alanine, Valine, Leucine, Isoleucine, Proline</td><td>neutre</td></tr>
+<tr><td><b>Aromatique</b></td><td>Phénylalanine, Tryptophane (apolaires) · <b>Tyrosine</b> (polaire)</td><td>neutre</td></tr>
+<tr><td><b>Polaire non chargé</b> — fonction alcool</td><td>Sérine, Thréonine, Tyrosine</td><td>neutre</td></tr>
+<tr><td><b>Polaire non chargé</b> — acides soufrés</td><td>Méthionine, Cystéine</td><td>neutre</td></tr>
+<tr><td><b>Polaire non chargé</b> — fonction amide</td><td>Asparagine, Glutamine</td><td>neutre</td></tr>
+<tr><td><b>Chargé négativement</b> — carboxyle</td><td><b>Aspartate, Glutamate</b></td><td><b>−</b></td></tr>
+<tr><td><b>Chargé positivement</b></td><td><b>Lysine</b> (amine) · <b>Arginine</b> (guanidine) · <b>Histidine</b> (imidazole)</td><td><b>+</b></td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Les 4 pièges de la classification</b>
+<b>1.</b> La <b>tyrosine</b> est <b>aromatique ET polaire</b> : son —OH la rend polaire, donc le cours la cite
+<b>deux fois</b> volontairement. <br>
+<b>2.</b> <b>Cystéine et méthionine</b> sont <b>polaires non chargées</b> : le soufre ne donne pas de charge à
+pH 7 (mais la cystéine peut perdre un H⁺ sur son thiol). <br>
+<b>3.</b> La <b>proline</b> est rangée avec les apolaires, mais sa particularité est son <b>cycle</b> qui
+rigidifie la chaîne : elle <b>interrompt l'hélice α</b>. <br>
+<b>4.</b> Chaque basique a sa fonction : <b>Lys = amine · Arg = guanidine · His = imidazole</b>. C'est
+l'imidazole de l'histidine qui capte les H⁺ dans l'<b>effet Bohr</b>.
+</div>
+
+<h3>Les essentiels : 8 + 2</h3>
+<p>« Parmi ces 20 acides aminés, on distingue <b>8 essentiels</b> ou indispensables : ils doivent être apportés
+par l'alimentation, l'organisme ne peut pas les synthétiser. Plus <b>2 semi-indispensables</b>, l'<b>arginine</b>
+et l'<b>histidine</b>, synthétisés dans les tissus mais à un taux insuffisant pour soutenir la croissance chez
+l'enfant. » <i>Support, p. 6</i></p>
+
+<div class="tw"><table>
+<tr><th>Les 8 essentiels</th><th>Les 2 semi-indispensables</th></tr>
+<tr><td><b>Lysine · Tryptophane · Méthionine · Phénylalanine · Thréonine · Valine · Leucine · Isoleucine</b><br>
+<span class="hint">Mnémotechnique : « PVT TIM HALL » — Phe, Val, Thr, Trp, Ile, Met, (His), (Arg), Leu, Lys</span></td>
+<td><b>Arginine · Histidine</b><br>
+<span class="hint">Synthétisés dans les tissus, mais en quantité insuffisante pour la croissance de l'enfant.</span></td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Le lien nutritionnel</b>
+Les <b>protéines animales</b> contiennent ces 10 acides aminés, indispensables à la croissance et au maintien
+de l'<b>équilibre azoté</b>. Les <b>protéines végétales sont incomplètes</b> de ce point de vue.
+</div>
+
+<h3>Les dérivés : des acides aminés modifiés après incorporation</h3>
+<div class="tw"><table>
+<tr><th>Dérivé</th><th>Dérive de</th><th>Où / pourquoi c'est important</th></tr>
+<tr><td><b>4-hydroxyproline</b></td><td>Proline</td><td>Protéines fibreuses du <b>tissu conjonctif</b> et du <b>collagène</b></td></tr>
+<tr><td><b>5-hydroxylysine</b></td><td>Lysine</td><td>Idem — leur non-hydroxylation entraîne le <b>scorbut</b></td></tr>
+<tr><td><b>γ-carboxyglutamate</b></td><td>Glutamate</td><td><b>Prothrombine</b> (coagulation) et protéines qui <b>fixent le Ca²⁺</b></td></tr>
+<tr><td><b>Orthophosphosérine</b></td><td>Sérine</td><td>Certaines <b>hormones</b>, dont la fonction dépend d'une phosphorylation / déphosphorylation</td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Scorbut = défaut d'hydroxylation de la proline et de la lysine</b>
+Sans ces résidus hydroxylés, le <b>collagène</b> ne se stabilise pas → fragilité des tissus conjonctifs,
+saignements gingivaux. C'est l'exemple parfait de l'objectif « anticiper les conséquences d'un changement
+structural ». <b>L'hydroxylation dépend de la vitamine C</b> (acide ascorbique) — deux questions d'examen
+reposent là-dessus.
+</div>
+
+<div class="box def"><b class="t">Et les acides aminés libres ?</b>
+Il existe environ <b>300 acides aminés supplémentaires</b> dans les cellules, aux fonctions très diverses, qui
+<b>ne sont pas</b> constituants des protéines. Exemple du cours : l'<b>ornithine</b> et la <b>citrulline</b>,
+intermédiaires du <b>cycle de l'urée</b> et de la biosynthèse de l'arginine.
+</div>
+
+<h3>Propriétés physiques : les quatre à connaître</h3>
+<div class="tw"><table>
+<tr><th>Propriété</th><th>Ce qu'il faut retenir</th></tr>
+<tr><td><b>Activité optique</b></td><td>Le Cα est <b>asymétrique</b> (4 substituants différents) pour <b>tous sauf la glycine</b> (son R = H). D'où les isomères <b>D et L</b> ; ceux des protéines sont de la série <b>L</b>.</td></tr>
+<tr><td><b>Absorption UV</b></td><td>Propriété des acides aminés <b>aromatiques</b> (Phe, Tyr, Trp) : permet de <b>doser les protéines</b> par spectrophotométrie, sans réactif.</td></tr>
+<tr><td><b>Solubilité</b></td><td>Dictée par R : un R apolaire fuit l'eau, un R polaire ou chargé s'y dissout → les R apolaires se regroupent <b>à l'intérieur</b> de la protéine repliée.</td></tr>
+<tr><td><b>Ionisation</b></td><td>Acide (—COOH) + base (—NH<sub>2</sub>) : l'acide aminé est <b>amphotère</b>. Son état de charge dépend du pH → base de l'<b>électrophorèse</b>.</td></tr>
+</table></div>
+
+<h3>Acido-basicité : deux pK, un pHi, une migration</h3>
+<p>« Tout acide aminé présente au moins <b>deux constantes de dissociation</b> : celle du carboxyle (K1) et
+celle de l'ammonium (K2), donc <b>deux pK</b>. Entre les deux valeurs de pK se trouve le <b>point
+isoélectrique (pHi)</b>, pH auquel les deux dissociations sont équivalentes : les charges s'annulent et la
+molécule <b>ne peut pas se déplacer</b> dans un champ électrique. À un pH <b>inférieur</b> au pHi l'acide aminé
+est <b>chargé positivement</b>, à un pH <b>supérieur</b> il est <b>négatif</b> — d'où la séparation par
+<b>électrophorèse</b>. » <i>Support, p. 9</i></p>
+
+<div class="tw"><table>
+<tr><th>Milieu</th><th>Forme dominante</th><th>Charge</th></tr>
+<tr><td><b>pH acide</b> (pH &lt; pHi)</td><td>Forme <b>cationique</b> — COOH et NH<sub>3</sub><sup>+</sup></td><td><b>+</b></td></tr>
+<tr><td><b>pH = pHi</b></td><td><b>Zwitterion</b> (ion dipolaire) — COO<sup>−</sup> et NH<sub>3</sub><sup>+</sup></td><td><b>0</b></td></tr>
+<tr><td><b>pH basique</b> (pH &gt; pHi)</td><td>Forme <b>anionique</b> — COO<sup>−</sup> et NH<sub>2</sub></td><td><b>−</b></td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Henderson-Hasselbalch et le point médian</b>
+<b>pH = pK + log ([A⁻] / [HA])</b>. Au point médian de la courbe de titration, [A⁻] = [HA], donc
+<b>pH = pK</b>. Exemple du cours : pour la <b>glycine</b>, à <b>pH 2,35</b>, les concentrations de la forme
+cationique <sup>+</sup>H<sub>3</sub>N–CH<sub>2</sub>–COOH et de l'ion dipolaire
+<sup>+</sup>H<sub>3</sub>N–CH<sub>2</sub>–COO<sup>−</sup> sont <b>égales</b>.
+</div>
+
+<h3>Les 9 acides aminés à chaîne latérale ionisable</h3>
+<div class="tw"><table>
+<tr><th>Acide aminé</th><th>Fonction du R</th><th>Comportement</th></tr>
+<tr><td>Tyrosine, Sérine, Thréonine</td><td>hydroxyle (—OH)</td><td>peuvent <b>libérer un H⁺</b></td></tr>
+<tr><td><b>Cystéine</b></td><td>thiol (—SH)</td><td>peut <b>libérer un H⁺</b></td></tr>
+<tr><td><b>Aspartate, Glutamate</b></td><td>carboxyle supplémentaire</td><td><b>acide</b></td></tr>
+<tr><td><b>Lysine</b></td><td>amine aliphatique</td><td><b>basique</b></td></tr>
+<tr><td><b>Histidine</b></td><td>imidazole</td><td>peut libérer un proton</td></tr>
+<tr><td><b>Arginine</b></td><td>guanidine</td><td>peut libérer un proton</td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Pourquoi ça compte en clinique</b>
+Parce que <b>la charge décide de la séparation</b> : l'<b>électrophorèse des hémoglobines</b> ne fonctionne que
+parce que les protéines sont chargées, et leur charge dépend des acides aminés ionisables au pH du tampon.
+<b>Un seul acide aminé remplacé peut déplacer une bande</b> — c'est exactement la drépanocytose.
+</div>
+
+<h3>Les questions tombées à l'examen (2024-2025)</h3>
+<div class="box bad"><b class="t">Q1 — « Indiquer, parmi les acides aminés suivants, celui qui ne présente pas de carbone asymétrique : »</b>
+A. la glutamine · B. la tyrosine · <b>C. la glycine</b> · D. l'alanine · E. la cystéine
+<div class="hint" style="margin-top:8px"><b>Réponse : C</b> — la glycine, dont le R est un simple <b>H</b> :
+elle a deux substituants identiques, donc <b>pas de carbone asymétrique</b> et pas d'activité optique.</div>
+</div>
+
+<div class="box bad"><b class="t">Q2 — « Indiquer l'acide aminé qui interrompt l'hélice α : »</b>
+A. la valine · <b>B. la proline</b> · C. la lysine · D. l'aspartate · E. la sérine
+<div class="hint" style="margin-top:8px"><b>Réponse : B</b> — la proline, dont le <b>cycle</b> bloque la rotation
+autour de la liaison peptidique : elle « casse » l'hélice.</div>
+</div>
+
+<div class="box bad"><b class="t">Q3 — « Indiquer l'acide aminé pouvant contracter des ponts disulfures : »</b>
+A. la méthionine · B. la leucine · C. la proline · <b>D. la cystéine</b> · E. l'asparagine
+<div class="hint" style="margin-top:8px"><b>Réponse : D</b> — seule la <b>cystéine</b> a un <b>thiol (—SH)</b> ;
+deux cystéines forment un pont <b>—S—S—</b>. La méthionine a du soufre, mais sous forme de <b>thioéther</b> :
+elle ne fait pas de pont.</div>
+</div>
+
+<div class="box bad"><b class="t">Q4 — « Le dosage spectrophotométrique des protéines est possible grâce à des acides aminés qui absorbent dans l'ultraviolet. Ces acides aminés présentent une chaîne latérale : »</b>
+A. aliphatique · B. soufrée · C. acide · <b>D. aromatique</b> · E. amide
+<div class="hint" style="margin-top:8px"><b>Réponse : D</b> — les <b>noyaux aromatiques</b> de Phe, Tyr et Trp
+absorbent à 280 nm.</div>
+</div>
+
+<div class="box bad"><b class="t">Q5 — « Parmi les composés suivants, lequel est issu de la décarboxylation du glutamate ? »</b>
+A. l'histamine · B. la tyramine · C. la cystéamine · D. la sérotonine · <b>E. le GABA</b>
+<div class="hint" style="margin-top:8px"><b>Réponse : E</b> — le <b>GABA</b>. L'histamine vient de
+l'<b>histidine</b>, la tyramine de la <b>tyrosine</b>, la sérotonine du <b>tryptophane</b>.
+<b>Un acide aminé → son amine, par décarboxylation.</b></div>
+</div>
+
+<div class="box bad"><b class="t">Q6 et Q7 — le scorbut</b>
+<b>Q6.</b> « La non-hydroxylation post-traductionnelle de deux acides aminés du collagène donne le scorbut.
+Ces acides aminés sont : » → <b>la proline et la lysine</b>.<br>
+<b>Q7.</b> « Cette hydroxylation est conséquente à l'action de : » → <b>l'acide ascorbique (vitamine C)</b>.
+<div class="hint" style="margin-top:8px">Les leurres proposés étaient les autres vitamines (B1, B2, B3, B5,
+B12) : le réflexe est <b>vitamine C = collagène = scorbut</b>.</div>
+</div>
+
+<div class="box bad"><b class="t">Q26 — l'électrophorèse à pH 6</b>
+« À pH = 6, on soumet à une électrophorèse un mélange de <b>glutamate</b>, <b>leucine</b> et <b>lysine</b> dont
+les points isoélectriques sont respectivement <b>3,2</b>, <b>6,0</b> et <b>9,7</b>. Après migration, indiquer
+les deux réponses exactes ? »
+<ol style="margin:8px 0 0">
+<li>Le glutamate est chargé positivement à pH = 6</li>
+<li>La leucine est chargée positivement à pH = 6</li>
+<li>La lysine n'est pas chargée à pH = 6</li>
+<li>Le glutamate migre vers la cathode</li>
+<li><b>La leucine ne migre pas</b></li>
+</ol>
+</div>
+
+<div class="box ex"><b class="t">Le raisonnement, ligne par ligne</b>
+À pH 6, on compare chaque pHi à 6 : <b>pH &lt; pHi → chargé +</b> ; <b>pH &gt; pHi → chargé −</b> ;
+<b>pH = pHi → neutre</b>.
+<ul>
+<li><b>Glutamate</b> (pHi 3,2) : 6 &gt; 3,2 → <b>négatif</b> → il migre vers l'<b>anode</b>. Donc la
+proposition 1 est fausse et la 4 aussi.</li>
+<li><b>Leucine</b> (pHi 6,0) : 6 = 6 → <b>neutre</b> → elle <b>ne migre pas</b>. Proposition 5 <b>vraie</b>,
+proposition 2 fausse.</li>
+<li><b>Lysine</b> (pHi 9,7) : 6 &lt; 9,7 → <b>positif</b> → elle migre vers la <b>cathode</b>. Proposition 3
+fausse.</li>
+</ul>
+<b>Conclusion : seule la proposition 5 est exacte.</b> Le sujet annonce « deux réponses exactes » alors qu'une
+seule l'est — c'est une <b>erreur d'énoncé</b>, à signaler au professeur. Ne t'entête pas à trouver une seconde
+clé : le raisonnement ci-dessus est celui du cours, et c'est lui qui se défend.
+</div>
+
+<div class="box tip"><b class="t">Le tableau de décision à emporter</b>
+Devant n'importe quel QCM d'électrophorèse : <b>1.</b> note les pHi ; <b>2.</b> compare au pH du tampon ;
+<b>3.</b> pH &lt; pHi → <b>+</b> → cathode (−) · pH &gt; pHi → <b>−</b> → anode (+) · pH = pHi →
+<b>immobile</b>. Trois lignes, et la question est finie.
+</div>
+
+<h3>Question type, corrigée</h3>
+<div class="box bad"><b class="t">« Décrire la structure générale d'un acide aminé, sa classification et expliquer l'origine de son caractère amphotère. »</b>
+Un acide aminé est un composé qui porte, sur le <b>même carbone α</b>, un groupement <b>carboxyle</b>
+(—COOH) et un groupement <b>aminé</b> (—NH<sub>2</sub>). Les vingt acides aminés des protéines ne diffèrent
+que par leur <b>chaîne latérale R</b>, dont la nature commande la solubilité, la charge et les liaisons
+possibles. On les classe donc <b>par R</b> : aliphatiques apolaires (Gly, Ala, Val, Leu, Ile, Pro) ;
+aromatiques (Phe, Trp apolaires, <b>Tyr polaire</b>) ; polaires non chargés à fonction alcool (Ser, Thr, Tyr),
+soufrés (Met, Cys) ou amide (Asn, Gln) ; chargés négativement par un carboxyle supplémentaire (Asp, Glu) ;
+chargés positivement (Lys par son amine, Arg par sa guanidine, His par son imidazole). Huit sont
+<b>essentiels</b> et deux <b>semi-essentiels</b> (Arg, His). Le caractère <b>amphotère</b> vient de la présence
+simultanée d'un <b>acide faible</b> et d'une <b>base faible</b> : selon le pH, l'acide aminé est
+<b>cationique</b> (pH &lt; pHi), <b>neutre sous forme de zwitterion</b> (pH = pHi) ou <b>anionique</b>
+(pH &gt; pHi). Le <b>pHi</b> est le pH où la charge nette est nulle : c'est lui qui gouverne le comportement à
+l'<b>électrophorèse</b> et sur les échangeurs d'ions.
+</div>
+"""
+
 RES = """
 <h3>Les documents du Drive de la promo</h3>
 <div class="vids real">
@@ -863,7 +1101,7 @@ RES = """
 </div>
 
 <div class="box tip"><b class="t">Comment utiliser cette page la veille</b>
-Relis le <a href="#g0">guide</a>, les <b>9 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
+Relis le <a href="#g0">guide</a>, les <b>10 parties annoncées</b>, puis fais l'examen blanc et les flashcards.
 Les chapitres sont faits pour être lus dans l'ordre, mais la veille, priorité aux chapitres
 <a href="#c6">6</a> et <a href="#c7">7</a>.
 </div>
@@ -1107,7 +1345,58 @@ QUIZ = {
    "a": 0,
    "e": "Récepteurs de la sérotonine, de virus et de toxines, au niveau du cerveau."},
  ],
+ "c11": [
+  {"q": "Quel acide aminé ne possède pas de carbone asymétrique (Q1, 2024-2025) ?",
+   "o": ["La glutamine", "La tyrosine", "La glycine", "L'alanine"],
+   "a": 2,
+   "e": "La glycine : son R est un simple H, donc deux substituants identiques → pas de carbone asymétrique, pas d'activité optique."},
+  {"q": "Quel acide aminé interrompt l'hélice α (Q2) ?",
+   "o": ["La valine", "La proline", "La lysine", "La sérine"],
+   "a": 1,
+   "e": "La proline : son cycle bloque la rotation autour de la liaison peptidique."},
+  {"q": "Quel acide aminé peut former des ponts disulfures (Q3) ?",
+   "o": ["La méthionine", "La cystéine", "La proline", "L'asparagine"],
+   "a": 1,
+   "e": "Seule la cystéine a un thiol (—SH). La méthionine a du soufre mais sous forme de thioéther : pas de pont."},
+  {"q": "Le dosage UV des protéines repose sur des acides aminés à chaîne latérale (Q4) :",
+   "o": ["aliphatique", "soufrée", "acide", "aromatique"],
+   "a": 3,
+   "e": "Phe, Tyr et Trp : leurs noyaux aromatiques absorbent à 280 nm."},
+  {"q": "Quel composé est issu de la décarboxylation du glutamate (Q5) ?",
+   "o": ["L'histamine", "La tyramine", "Le GABA", "La sérotonine"],
+   "a": 2,
+   "e": "GABA. Histamine ← histidine, tyramine ← tyrosine, sérotonine ← tryptophane."},
+  {"q": "Quels acides aminés du collagène, non hydroxylés, donnent le scorbut (Q6) ?",
+   "o": ["Proline et lysine", "Valine et leucine", "Glycine et alanine", "Sérine et thréonine"],
+   "a": 0,
+   "e": "La 4-hydroxyproline et la 5-hydroxylysine manquent : le collagène ne se stabilise plus."},
+  {"q": "Cette hydroxylation dépend de (Q7) :",
+   "o": ["La vitamine B1", "La vitamine B2", "La vitamine C", "La vitamine B12"],
+   "a": 2,
+   "e": "Acide ascorbique = vitamine C. Réflexe : vitamine C → collagène → scorbut."},
+  {"q": "Combien d'acides aminés essentiels, et combien de semi-essentiels ?",
+   "o": ["8 essentiels et 2 semi-essentiels (Arg, His)", "10 essentiels et 0 semi-essentiel", "6 essentiels et 4 semi-essentiels", "9 essentiels et 1 semi-essentiel"],
+   "a": 0,
+   "e": "8 essentiels + Arg et His semi-essentiels, insuffisants pour la croissance de l'enfant."},
+  {"q": "À pH 6, une leucine de pHi 6,0 :",
+   "o": ["Migre vers la cathode", "Migre vers l'anode", "Ne migre pas", "Précipite"],
+   "a": 2,
+   "e": "pH = pHi → charge nette nulle → elle reste sur place. C'est la proposition exacte de la Q26."},
+  {"q": "À pH 6, le glutamate (pHi 3,2) est :",
+   "o": ["Chargé positivement", "Chargé négativement et migre vers l'anode", "Neutre", "Chargé négativement et migre vers la cathode"],
+   "a": 1,
+   "e": "pH > pHi → forme anionique. Les anions vont vers l'anode (+)."},
+  {"q": "La tyrosine est :",
+   "o": ["Aromatique et apolaire", "Aromatique et polaire", "Aliphatique", "Chargée négativement"],
+   "a": 1,
+   "e": "Aromatique ET polaire à cause de son —OH : le cours la cite dans les deux familles exprès."},
+  {"q": "L'ornithine et la citrulline sont :",
+   "o": ["Des acides aminés des protéines", "Des acides aminés libres, intermédiaires du cycle de l'urée", "Des vitamines", "Des dérivés du cholestérol"],
+   "a": 1,
+   "e": "Acides aminés libres, non constitutifs des protéines : cycle de l'urée et biosynthèse de l'arginine."},
+ ],
 }
+
 
 # --------------------------------------------------------------------------
 # Flashcards
@@ -1164,6 +1453,22 @@ FLASH = [
  {"g": "Sphingolipides", "q": "Les glycolipides neutres servent à quoi ?", "a": "Ce sont les <b>déterminants des groupes sanguins</b> (céramide + glucose ± un ose)."},
  {"g": "Sphingolipides", "q": "Hydrophobes ou amphiphiles ?", "a": "<b>Amphiphiles</b> : tête polaire en C1 + queues apolaires → ils forment la <b>bicouche</b> membranaire."},
  {"g": "Sphingolipides", "q": "Le précurseur de la vitamine D3 ?", "a": "Le <b>cholestérol</b> (avec les acides biliaires et les hormones stéroïdes) — <b>pas</b> un sphingolipide."},
+ {"g": "Acides aminés", "q": "Structure commune des 20 acides aminés ?", "a": "<b>—COOH</b> et <b>—NH<sub>2</sub></b> sur le <b>même carbone α</b>. Tout le reste est dans <b>R</b>."},
+ {"g": "Acides aminés", "q": "Quel acide aminé n'a pas de carbone asymétrique ?", "a": "La <b>glycine</b> : son R est un <b>H</b>, donc deux substituants identiques → pas d'activité optique."},
+ {"g": "Acides aminés", "q": "Les 8 essentiels ?", "a": "<b>Lys, Trp, Met, Phe, Thr, Val, Leu, Ile</b> (+ 2 semi-essentiels : <b>Arg, His</b>). Mnémotechnique « PVT TIM HALL »."},
+ {"g": "Acides aminés", "q": "Les 3 basiques et leur fonction ?", "a": "<b>Lys</b> = amine · <b>Arg</b> = guanidine · <b>His</b> = imidazole (c'est elle qui capte H⁺ dans l'effet Bohr)."},
+ {"g": "Acides aminés", "q": "Quels acides aminés absorbent l'UV ?", "a": "Les <b>aromatiques</b> : Phe, Tyr, Trp → dosage des protéines à 280 nm."},
+ {"g": "Acides aminés", "q": "L'acide aminé qui casse l'hélice α ?", "a": "La <b>proline</b> : son cycle rigidifie la chaîne."},
+ {"g": "Acides aminés", "q": "Le seul acide aminé à thiol, et à quoi il sert ?", "a": "La <b>cystéine</b> (—SH) : deux cystéines forment un <b>pont disulfure</b> —S—S—."},
+ {"g": "Acides aminés", "q": "Décarboxylation : glutamate, histidine, tyrosine, tryptophane ?", "a": "Glutamate → <b>GABA</b> · histidine → <b>histamine</b> · tyrosine → <b>tyramine</b> · tryptophane → <b>sérotonine</b>."},
+ {"g": "Acides aminés", "q": "Les 4 dérivés post-traductionnels du cours ?", "a": "<b>4-hydroxyproline</b> (Pro) · <b>5-hydroxylysine</b> (Lys) · <b>γ-carboxyglutamate</b> (Glu, prothrombine, Ca²⁺) · <b>orthophosphosérine</b> (Ser, hormones)."},
+ {"g": "Acides aminés", "q": "Scorbut : mécanisme et vitamine ?", "a": "Défaut d'<b>hydroxylation</b> de la <b>proline</b> et de la <b>lysine</b> du collagène, faute de <b>vitamine C</b>."},
+ {"g": "Acides aminés", "q": "Charge selon le pH ?", "a": "pH &lt; pHi → <b>+</b> (cation) · pH = pHi → <b>neutre</b> (zwitterion) · pH &gt; pHi → <b>−</b> (anion)."},
+ {"g": "Acides aminés", "q": "Migration à l'électrophorèse ?", "a": "Les <b>cations</b> vers la <b>cathode (−)</b>, les <b>anions</b> vers l'<b>anode (+)</b>. Au pHi : <b>immobile</b>."},
+ {"g": "Acides aminés", "q": "Henderson-Hasselbalch et point médian ?", "a": "<b>pH = pK + log([A⁻]/[HA])</b> ; quand [A⁻] = [HA], <b>pH = pK</b>. Glycine : pH 2,35."},
+ {"g": "Acides aminés", "q": "Les 9 acides aminés à R ionisable ?", "a": "<b>Tyr, Ser, Thr</b> (OH) · <b>Cys</b> (SH) · <b>Asp, Glu</b> (COOH) · <b>Lys</b> (amine) · <b>His</b> (imidazole) · <b>Arg</b> (guanidine)."},
+ {"g": "Acides aminés", "q": "Ornithine et citrulline ?", "a": "Acides aminés <b>libres</b>, <b>pas</b> constitutifs des protéines : cycle de l'<b>urée</b> et biosynthèse de l'arginine."},
+
 ]
 
 # --------------------------------------------------------------------------
@@ -1181,6 +1486,7 @@ SECTIONS = [
  ("c8", "Polyosides", "Amidon, glycogène et GAG", "Liaisons α(1→4) / α(1→6) et mucopolysaccharides", "8", C8, False),
  ("c9", "Lipides", "Bilan lipidique sérique", "Les valeurs normales, le lipidogramme et les pièges (diapos 88-89)", "9", C9, False),
  ("c10", "Lipides", "Sphingolipides et sphingophospholipides", "La sphingosine, le céramide, les 4 familles et les 3 maladies (diapos 90-93)", "10", C10, False),
+ ("c11", "Acides aminés", "Les acides aminés (Pr. Khlil)", "Structure, classification par R, pHi et électrophorèse, Q1-Q7 de l'examen 2024-25", "11", C11, False),
 ]
 
 HERO = """
@@ -1200,13 +1506,13 @@ HERO = """
   <p style="font-size:13.5px;opacity:.8">D'après le diaporama du Pr. Naamane (93 diapos) et le support du Pr. Khlil (2024-25)</p>
   <div class="dash">
     <div class="kpi ring"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="ring" cx="27" cy="27" r="22" fill="none" stroke="#7dead9" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)" style="transition:stroke-dashoffset .5s"/></svg><div><b id="pct2">0 %</b><span>Ta progression</span></div></div>
-    <div class="kpi"><b>10</b><span>chapitres</span></div>
+    <div class="kpi"><b>11</b><span>chapitres</span></div>
     <div class="kpi"><b id="nq">0</b><span>QCM d'entraînement</span></div>
     <div class="kpi"><b id="nf">0</b><span>flashcards</span></div>
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">9 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">10 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Acides aminés</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>
