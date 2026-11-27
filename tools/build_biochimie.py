@@ -25,7 +25,7 @@ IMG = "cours/img/"
 
 GUIDE = """
 <div class="grid">
-<div class="stat"><b>12 séances</b><span>Plan de travail du module</span></div>
+<div class="stat"><b>13 chapitres</b><span>Plan de travail du module</span></div>
 <div class="stat"><b>2 enseignants</b><span>Pr. Khlil · Pr. Naamane</span></div>
 <div class="stat"><b>100 % QCM</b><span>Format de l'épreuve</span></div>
 </div>
@@ -51,6 +51,7 @@ traitées ici et signalées par le repère « annoncé ».</p>
 <tr><td><b>Le lactose</b></td><td>Nom complet, liaison, enzyme, réductibilité — la question 11</td><td><a href="#c7">Chapitre 7</a></td></tr>
 <tr><td><b>Bilan lipidique sérique</b></td><td>Les 11 valeurs normales, le lipidogramme 24/56/20 %, les 3 pièges</td><td><a href="#c9">Chapitre 9</a></td></tr>
 <tr><td><b>Protéines &amp; hémoglobine</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Liaison peptidique, 4 niveaux de structure, HbA1/A2/F, Bohr, 2,3-DPG, drépanocytose — <b>Q8 à Q13</b></td><td><a href="#c12">Chapitre 12</a></td></tr>
+<tr><td><b>Enzymes &amp; coenzymes</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Les 6 classes, Michaelis-Menten, les inhibitions, l'allostérie et le tableau des coenzymes — <b>12 questions sur 40</b> en 2024-25 (Q14 à Q25)</td><td><a href="#c13">Chapitre 13</a></td></tr>
 <tr><td><b>Les acides aminés</b> <span class="chip" style="cursor:default">annoncé</span></td><td>Structure, classification par R, essentiels, pHi, électrophorèse — <b>7 questions sur 40</b> en 2024-25</td><td><a href="#c11">Chapitre 11</a></td></tr>
 <tr><td><b>Sphingolipides</b> <span class="chip" style="cursor:default">annoncé à l'oral</span></td><td>La sphingosine, le céramide, les 4 familles, les 3 maladies — <b>annoncée en cours par le Pr. Naamane</b>, et déjà tombée en 2024-25 (Q39-Q40) puis en session 2025</td><td><a href="#c10">Chapitre 10</a></td></tr>
 </table></div>
@@ -1263,6 +1264,250 @@ dans la myoglobine, qui n'a pas de coopérativité.
 </div>
 """
 
+C13 = """
+<div class="box tip"><b class="t">Pourquoi ce chapitre est le plus rentable du module</b>
+Dans l'épreuve de 2024-2025, <b>12 questions sur 40</b> portent sur ce chapitre seul (Q14 à Q25) :
+cinétique, inhibitions, allostérie, coenzymes et vitamines. Bonne nouvelle : tout se ramène à
+<b>quatre tableaux</b> — celui-ci les contient tous.
+</div>
+
+<h3>Les propriétés d'un enzyme (à réciter tel quel)</h3>
+<div class="tw"><table>
+<tr><th>Propriété</th><th>Formulation du cours</th></tr>
+<tr><td><b>Nature</b></td><td>Ce sont des <b>protéines</b> (sauf exception des ribozymes)</td></tr>
+<tr><td><b>Concentration</b></td><td>Agissent à <b>très faible concentration</b></td></tr>
+<tr><td><b>Intégrité</b></td><td>Sont <b>inchangés à la fin</b> de la réaction</td></tr>
+<tr><td><b>Spécificité</b></td><td><b>Grande spécificité</b> : catalysent une réaction donnée d'un substrat défini</td></tr>
+<tr><td><b>Équilibre</b></td><td><b>N'affectent pas l'équilibre</b> d'une réaction réversible : ils <b>augmentent la vitesse</b> (jusqu'à <b>10⁶ fois</b>)</td></tr>
+<tr><td><b>Régulation</b></td><td>Leur activité est <b>régulable</b></td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Le piège n° 1 des QCM d'enzymologie</b>
+« Un enzyme <b>modifie l'équilibre</b> de la réaction » → <b>FAUX</b>.
+« Un enzyme est <b>détruit</b> au cours de la réaction » → <b>FAUX</b>.
+« Un enzyme agit à <b>forte</b> concentration » → <b>FAUX</b>.
+Ce sont les trois leurres de la Q14 de l'examen. Le seul énoncé vrai : il <b>augmente la vitesse</b>.
+</div>
+
+<h3>Site actif et cofacteurs</h3>
+<p>Le <b>site actif</b> est « la partie de la protéine capable de reconnaître et de transformer le ou les
+substrats ». Il a un <b>double rôle</b> : un <b>site de fixation</b> et un <b>site catalytique</b>.</p>
+<p>Les <b>cofacteurs</b> sont des corps chimiques intervenant <b>obligatoirement</b> : pour transporter ou
+compléter un substrat, pour accepter un produit, ou comme participant à la structure de l'enzyme.</p>
+
+<div class="tw"><table>
+<tr><th>Enzyme</th><th>Classe</th><th>Cofacteur</th></tr>
+<tr><td>Glucose isomérase</td><td>Isomérase</td><td>Co²⁺, Mg²⁺ (<b>ion</b>)</td></tr>
+<tr><td>Subtilisine (protéase)</td><td>Hydrolase</td><td><b>Aucun</b></td></tr>
+<tr><td>β-galactosidase</td><td>Hydrolase</td><td>Na⁺, K⁺</td></tr>
+</table></div>
+
+<div class="box def"><b class="t">Coenzyme : la définition exacte</b>
+« Molécule <b>biologique</b> intervenant comme <b>cofacteur organique indispensable</b> dans la catalyse
+enzymatique. » Origine : <b>synthétisé par l'organisme</b>, sinon <b>apporté par l'alimentation</b>
+(→ c'est alors une <b>vitamine</b>).
+</div>
+
+<h3>Les 6 classes d'enzymes (tableau à connaître par cœur)</h3>
+<div class="tw"><table>
+<tr><th>N°</th><th>Classe</th><th>Action</th></tr>
+<tr><td><b>1</b></td><td><b>Oxydoréductases</b></td><td>Transfert d'<b>électrons</b>, d'hydrogène ou d'oxygène</td></tr>
+<tr><td><b>2</b></td><td><b>Transférases</b></td><td>Transfert de <b>groupes chimiques</b></td></tr>
+<tr><td><b>3</b></td><td><b>Hydrolases</b></td><td><b>Hydrolyse</b> : transfert de groupes fonctionnels à l'<b>eau</b></td></tr>
+<tr><td><b>4</b></td><td><b>Lyases</b></td><td><b>Addition</b> de groupes sur une double liaison, ou <b>formation</b> d'une double liaison</td></tr>
+<tr><td><b>5</b></td><td><b>Isomérases</b></td><td>Transfert de groupes <b>à l'intérieur</b> de la molécule → isomère</td></tr>
+<tr><td><b>6</b></td><td><b>Ligases</b></td><td>Formation de liaison <b>C–C, C–S, C–O, C–N</b>, avec <b>ATP</b></td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">Le numéro EC : quatre chiffres, quatre informations</b>
+<b>Classe</b> – sous-classe – <b>réaction chimique</b> – caractéristique de l'enzyme.
+Exemple du cours : la <b>chymotrypsine = EC 3.4.4.5</b> → <b>3</b> = hydrolase · <b>4</b> = hydrolyse d'une
+liaison peptidique · <b>4</b> = protéase à sérine · <b>5</b> = la chymotrypsine elle-même.
+Nom : <b>substrat + ase</b> (saccharase ← saccharose ; lactate déshydrogénase).
+</div>
+
+<h3>Cinétique : ce que fait chaque paramètre</h3>
+<div class="tw"><table>
+<tr><th>Question</th><th>Réponse du cours</th></tr>
+<tr><td>La vitesse dépend-elle de <b>[E]</b> ?</td><td><b>Oui</b> : V est <b>proportionnelle</b> à [E] quand [S] &gt; [E]. <b>Non</b> quand [S] &lt; [E] : c'est <b>S qui est limitant</b></td></tr>
+<tr><td>La vitesse dépend-elle de <b>[S]</b> ?</td><td>Oui : hyperbole saturable, <b>V<sub>i</sub> = V<sub>max</sub>[S] / (K<sub>M</sub> + [S])</b></td></tr>
+<tr><td><b>K<sub>M</sub></b>, c'est quoi ?</td><td>K<sub>M</sub> = (k<sub>−1</sub> + k<sub>2</sub>) / k<sub>1</sub>, la <b>constante de dissociation du complexe ES</b>. <b>K<sub>M</sub> petit → forte affinité</b> ; K<sub>M</sub> grand → faible affinité</td></tr>
+<tr><td><b>V<sub>max</sub></b>, c'est quoi ?</td><td>La vitesse quand <b>tous les sites actifs sont saturés</b>. <b>k<sub>2</sub> = turn over</b></td></tr>
+<tr><td>Le <b>Lineweaver-Burk</b> ?</td><td><b>1/v en fonction de 1/[S]</b> : droite d'ordonnée 1/V<sub>max</sub>, d'abscisse <b>−1/K<sub>M</sub></b>, de pente <b>K<sub>M</sub>/V<sub>max</sub></b></td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Les 3 affirmations fausses à repérer d'un coup d'œil</b>
+« La V<sub>max</sub> dépend de la concentration en <b>substrat</b> » → <b>Faux</b> (elle dépend de [E], c'est pour
+cela qu'on l'appelle « maximale »). <br>
+« Le K<sub>M</sub> <b>augmente</b> dans l'inhibition <b>non compétitive</b> » → <b>Faux</b> (c'est V<sub>max</sub>
+qui baisse). <br>
+« Le K<sub>M</sub> est <b>proportionnel</b> à l'affinité » → <b>Faux</b> : il est <b>inversement</b> proportionnel.
+</div>
+
+<h3>Les unités d'activité</h3>
+<div class="tw"><table>
+<tr><th>Unité</th><th>Définition</th></tr>
+<tr><td><b>1 UI</b> (unité internationale, ancienne)</td><td>Quantité d'enzyme catalysant <b>1 micromole</b> de substrat par <b>minute</b></td></tr>
+<tr><td><b>1 katal</b> (SI)</td><td>Quantité d'enzyme catalysant <b>1 millimole</b> de substrat par <b>seconde</b></td></tr>
+<tr><td><b>Équivalence</b></td><td><b>1 UI = 15 nanokatal</b></td></tr>
+</table></div>
+
+<h3>Les inhibitions : le tableau qui décide tout</h3>
+<div class="tw"><table>
+<tr><th></th><th>Compétitif</th><th>Non compétitif</th><th>Iréversible</th></tr>
+<tr><td><b>Où se fixe l'inhibiteur</b></td><td>Sur le <b>site actif</b> (analogue structural du substrat)</td><td>Sur un site <b>différent</b> du substrat</td><td>Liaison <b>covalente</b> sur un groupement indispensable</td></tr>
+<tr><td><b>Affinité (K<sub>M</sub>)</b></td><td><b>Diminue</b> → K<sub>M</sub> <b>augmente</b></td><td><b>Inchangée</b></td><td>—</td></tr>
+<tr><td><b>V<sub>max</sub></b></td><td><b>Inchangée</b></td><td><b>Diminue</b></td><td>Diminue</td></tr>
+<tr><td><b>Effet du substrat</b></td><td><b>L'inhibition est levée</b> par excès de substrat</td><td>Pas levée</td><td>Pas levée</td></tr>
+<tr><td><b>Exemple</b></td><td><b>Éthanol</b> sur l'alcool déshydrogénase (intoxication par l'éthylène-glycol)</td><td><b>CN⁻</b> sur Fe²⁺/Cu²⁺, <b>F⁻</b> sur Mg²⁺</td><td><b>Aspirine</b> (acétylation de la sérine de la COX)</td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">L'intoxication par l'antigel — question Q19</b>
+L'<b>éthylène-glycol</b> n'est pas toxique en lui-même : c'est son produit d'oxydation, l'<b>acide oxalique</b>,
+qui l'est. On traite par de <b>fortes doses d'éthanol</b>, qui est un <b>inhibiteur compétitif</b> de
+l'<b>alcool déshydrogénase</b> : il occupe l'enzyme pour que le glycol ne soit pas oxydé.
+</div>
+
+<div class="box tip"><b class="t">L'aspirine (Q20)</b>
+L'aspirine est un <b>AINS</b>, <b>inhibiteur irréversible</b> des <b>cyclooxygénases (COX)</b> par
+<b>acétylation du résidu sérine</b> du site actif ; elle bloque donc la synthèse des <b>prostaglandines</b>.
+Seule affirmation <b>fausse</b> dans la liste : « inhibiteur enzymatique <b>compétitif</b> ».
+</div>
+
+<h3>pH et température</h3>
+<div class="tw"><table>
+<tr><th>Facteur</th><th>Ce qu'il faut retenir</th></tr>
+<tr><td><b>pH</b></td><td>Chaque enzyme a un <b>pH optimal</b> qui lui est propre (pepsine acide, chymotrypsine, acétylcholinestérase). Le pH change la <b>structure tridimensionnelle</b> et l'<b>état d'ionisation</b> des groupements du site actif et du substrat</td></tr>
+<tr><td><b>Température</b></td><td>Deux forces opposées : la vitesse <b>augmente</b> (apport d'énergie) puis l'enzyme est <b>dénaturé</b>. Il existe une <b>température optimale</b>. La dénaturation devient appréciable <b>au-delà de 40 °C</b></td></tr>
+<tr><td><b>Énergie d'activation</b></td><td>Les enzymes <b>abaissent l'énergie d'activation</b> (Ea) : ils font passer le substrat par l'<b>état de transition</b> plus facilement</td></tr>
+</table></div>
+
+<div class="box warn"><b class="t">Q21 — l'action de 60 °C</b>
+À <b>60 °C</b>, on est bien au-delà de 40 °C : la bonne réponse est « elle <b>dénature l'enzyme</b> ».
+Les leurres (« elle active », « elle augmente la vitesse ») décrivent ce qui se passe <b>avant</b> l'optimum.
+</div>
+
+<h3>Les enzymes allostériques</h3>
+<p>« Allostérique » vient du grec <i>allos</i> (autre) et <i>stereos</i> (forme) : l'enzyme prend
+<b>une autre conformation</b> après liaison du <b>modulateur</b>. Ce sont des protéines à <b>plusieurs
+sous-unités</b>, avec :</p>
+<ul>
+<li>au moins un <b>site actif</b> (catalytique) pour le substrat ;</li>
+<li>au moins un <b>site régulateur</b> (spécifique) pour le <b>modulateur</b> — parfois sur une
+<b>autre sous-unité</b> ;</li>
+<li>deux états : <b>T « inactive »</b> et <b>R « active »</b> ; <b>+A</b> (activateur) ou <b>+I</b>
+(inhibiteur) déplacent l'équilibre.</li>
+</ul>
+
+<div class="tw"><table>
+<tr><th>Point</th><th>Réponse</th></tr>
+<tr><td>Courbe V = f([S])</td><td><b>Sigmoïde</b> (et non hyperbolique)</td></tr>
+<tr><td>Une enzyme <b>monomérique</b> peut-elle être allostérique ?</td><td><b>Non</b> : il faut plusieurs sous-unités</td></tr>
+<tr><td>État <b>R</b> ou <b>T</b> : lequel a le plus d'affinité ?</td><td><b>R</b> (relâché, actif). <b>T</b> = tendu, inactive</td></tr>
+<tr><td>Effet d'un <b>inhibiteur</b></td><td>Favorise l'état <b>T</b> (et non R)</td></tr>
+<tr><td>Régulation</td><td><b>Rétrocontrôle</b> (feed-back) : le produit final <b>G</b> inhibe l'enzyme clé <b>E1</b></td></tr>
+</table></div>
+
+<div class="box ex"><b class="t">L'enzyme clé et le rétrocontrôle</b>
+Dans une voie A → B → C → … → G, l'<b>enzyme clé E1</b> est <b>allostérique, régulatrice et
+irréversible</b>. Le <b>produit final G</b> est un <b>modulateur négatif</b> : il l'inhibe par
+<b>rétrocontrôle</b>. Le <b>substrat A</b>, lui, est souvent un <b>modulateur positif</b>.
+</div>
+
+<h3>Les isoenzymes : l'exemple des LDH</h3>
+<div class="tw"><table>
+<tr><th>Isoenzyme</th><th>Composition</th><th>Localisation</th></tr>
+<tr><td>LDH1</td><td><b>H₄</b></td><td>Cœur (<i>heart</i>)</td></tr>
+<tr><td>LDH2</td><td>H₃M</td><td>—</td></tr>
+<tr><td>LDH3</td><td>H₂M₂</td><td>—</td></tr>
+<tr><td>LDH4</td><td>HM₃</td><td>—</td></tr>
+<tr><td>LDH5</td><td><b>M₄</b></td><td>Muscle et foie</td></tr>
+</table></div>
+
+<h3>Vitamines et coenzymes : le grand tableau</h3>
+<p>« Vitamine » signifie « <b>amine de vie</b> ». Deux groupes : <b>hydrosolubles</b> et <b>liposolubles</b>.
+Un <b>surdosage</b> entraîne une <b>hypervitaminose</b>.</p>
+
+<div class="tw"><table>
+<tr><th>Coenzyme</th><th>Vitamine précurseur</th><th>Rôle</th><th>Déficit</th></tr>
+<tr><td><b>TPP</b> (thiamine pyrophosphate)</td><td><b>B1</b> — thiamine</td><td>Décarboxylation oxydative des acides α-cétoniques</td><td><b>Béribéri</b>, syndrome de Wernicke</td></tr>
+<tr><td><b>FAD / FMN</b></td><td><b>B2</b> — riboflavine</td><td>Oxydoréduction (flavoprotéines, <b>coenzyme lié</b>)</td><td>Dermatoses, inflammation de la cornée, crevasses</td></tr>
+<tr><td><b>NAD⁺ / NADP⁺</b></td><td><b>B3</b> — niacine (vit PP)</td><td>Oxydoréduction (<b>coenzyme libre</b>)</td><td><b>Pellagre</b> (les 3 D : dermatose, diarrhée, démence)</td></tr>
+<tr><td><b>Coenzyme A</b></td><td><b>B5</b> — acide pantothénique</td><td>Transport du groupement <b>acyle et acétyle</b> (thiol —SH)</td><td>—</td></tr>
+<tr><td><b>Phosphate de pyridoxal</b> (PLP)</td><td><b>B6</b> — pyridoxine</td><td><b>Aminotransférases</b> — le coenzyme clé du métabolisme des acides aminés</td><td>Déficience induite par l'<b>isoniazide</b></td></tr>
+<tr><td><b>Biotine</b></td><td><b>B8</b> (ou H)</td><td>Transport de <b>CO₂</b> (carboxylases)</td><td>Pas de déficit connu (bactéries intestinales)</td></tr>
+<tr><td><b>THF</b> (tétrahydrofolate)</td><td><b>B9</b> — acide folique</td><td>Radicaux <b>monocarbonés</b></td><td><b>Anémie macrocytaire</b></td></tr>
+<tr><td><b>Coenzyme B12</b></td><td><b>B12</b> — cobalamine</td><td>Radicaux monocarbonés</td><td><b>Anémie pernicieuse</b> + atteinte du SNC</td></tr>
+<tr><td><b>Acide ascorbique</b></td><td><b>C</b></td><td>Hydroxylation de la <b>proline</b> du collagène ; anti-oxydant</td><td><b>Scorbut</b></td></tr>
+</table></div>
+
+<div class="box tip"><b class="t">Ce qui distingue NAD⁺ de FAD — deux questions d'examen</b>
+<b>NAD⁺</b> = coenzyme <b>libre</b>, liaison <b>réversible</b>, ne traverse <b>pas</b> la membrane
+mitochondriale (d'où <b>deux pools</b> : cytosolique et mitochondrial) ; <b>NADH absorbe l'UV à 340 nm</b>
+(propriété analytique). <b>FAD/FMN</b> = coenzymes <b>liés</b> par liaison <b>covalente</b>, <b>groupements
+prosthétiques</b> des flavoprotéines de la membrane interne de la mitochondrie.
+</div>
+
+<div class="box def"><b class="t">Coenzymes sans caractère vitaminique</b>
+Le <b>coenzyme Q</b> (ubiquinone, UQ) — transporteur <b>mobile</b> d'électrons et de protons, présent dans la
+membrane interne de la mitochondrie ; les <b>coenzymes héminiques</b> (cytochromes, hème = protoporphyrine IX
++ fer) ; le <b>coenzyme lipoïque</b> (lipoate, décarboxylation oxydative des acides α-cétoniques).
+</div>
+
+<div class="box warn"><b class="t">Coenzyme libre ou groupement prosthétique ?</b>
+Quand le coenzyme est <b>libre</b>, il s'associe au moment de la catalyse : on parle de <b>coenzyme vrai</b> ou
+<b>cosubstrat</b>. Quand il est <b>lié par liaison covalente</b> à l'apoenzyme, il devient le
+<b>groupement prosthétique</b> de l'enzyme. Tous deux doivent être <b>régénérés</b> à la fin de la réaction.
+</div>
+
+<h3>Les questions tombées à l'examen (2024-2025)</h3>
+<div class="box bad"><b class="t">Q14 — « Concernant toute protéine enzymatique, indiquer la proposition exacte : »</b>
+A. agit à forte concentration · <b>B. augmente la vitesse d'une réaction qu'elle catalyse</b> · C. est détruite
+au cours de la réaction · D. modifie l'équilibre d'une réaction réversible · E. utilise toujours un cofacteur
+<div class="hint" style="margin-top:8px"><b>Réponse : B.</b> Elle agit à <b>faible</b> concentration, elle est
+<b>inchangée</b> à la fin, elle ne modifie <b>pas</b> l'équilibre (elle accélère seulement) et elle n'a
+<b>pas toujours</b> un cofacteur (la subtilisine n'en a aucun).</div>
+</div>
+
+<div class="box bad"><b class="t">Q15 — « Pour une enzyme dont le numéro d'immatriculation est EC 7.2.1.1, indiquer la proposition exacte : »</b>
+A. ligase · B. transférase · C. hydrolase · D. lyase · E. aucune réponse
+<div class="hint" style="margin-top:8px"><b>Réponse : E (aucune réponse).</b> Le premier chiffre donne la
+<b>classe</b>, et les classes du cours vont de <b>1 à 6</b>. <b>7</b> ne correspond à aucune classe du
+programme : le piège consiste à se précipiter sur « ligase » parce que 6 = ligase. Ici, c'est
+<b>7</b> : hors programme.</div>
+</div>
+
+<div class="box bad"><b class="t">Q16 à Q18, Q21 à Q23 — cinétique, inhibitions, allostérie</b>
+<b>Q16.</b> V<sub>max</sub> et K<sub>M</sub> → <b>la V<sub>max</sub> dépend de la concentration de l'enzyme</b>.<br>
+<b>Q17.</b> Lineweaver-Burk → <b>1/V en fonction de 1/S</b>.<br>
+<b>Q18.</b> Inhibition non compétitive → <b>V<sub>max</sub> inchangée</b> est <b>faux</b> ; la bonne réponse est
+<b>« il se forme des complexes EI, ES et ESI »</b> (l'inhibiteur se fixe hors du site actif, sur E et sur ES).<br>
+<b>Q21.</b> 60 °C → <b>elle dénature l'enzyme</b>.<br>
+<b>Q22.</b> Enzyme allostérique → <b>sa courbe V = f([S]) est sigmoïde</b>.<br>
+<b>Q23.</b> NAD → coenzyme d'<b>oxydoréductases</b>.
+</div>
+
+<div class="box bad"><b class="t">Q24 et Q25 — les coenzymes de transfert</b>
+<b>Q24.</b> Le coenzyme A transporte un groupement → <b>acétyl</b> (et acyle).<br>
+<b>Q25.</b> Le phosphate de pyridoxal a pour précurseur → <b>la pyridoxine (vitamine B6)</b>.
+</div>
+
+<h3>Question type, corrigée</h3>
+<div class="box bad"><b class="t">« Comparer l'inhibition compétitive et l'inhibition non compétitive sur les paramètres cinétiques, avec un exemple clinique. »</b>
+L'<b>inhibiteur compétitif</b> est un <b>analogue structural du substrat</b> : il se fixe sur le <b>site
+actif</b>, d'où une compétition. L'<b>affinité apparente diminue</b> donc le <b>K<sub>M</sub> augmente</b>
+(K′<sub>M</sub> &gt; K<sub>M</sub>), tandis que la <b>V<sub>max</sub> reste inchangée</b> ; sur le
+Lineweaver-Burk, les droites se coupent <b>sur l'axe des ordonnées</b>. Un excès de substrat <b>lève</b>
+l'inhibition. Exemple : l'<b>éthanol</b> dans l'intoxication par l'<b>éthylène-glycol</b> — il occupe
+l'alcool déshydrogénase et empêche la formation d'<b>acide oxalique</b>.
+L'<b>inhibiteur non compétitif</b> se fixe sur un site <b>différent</b> de celui du substrat, aussi bien sur
+l'enzyme libre que sur le complexe ES (d'où les complexes <b>EI, ES et ESI</b>). L'<b>affinité est
+inchangée</b> (K<sub>M</sub> constant) mais la <b>V<sub>max</sub> diminue</b> ; les droites se coupent
+<b>sur l'axe des abscisses</b>. L'excès de substrat ne lève pas l'inhibition. Exemple : les ions
+<b>cyanure</b> qui bloquent le fer et le cuivre, ou les <b>fluorures</b> qui bloquent le magnésium.
+</div>
+"""
+
 RES = """
 <h3>Les documents du Drive de la promo</h3>
 <div class="vids real">
@@ -1279,6 +1524,7 @@ RES = """
 <a href="https://drive.google.com/file/d/17BOnbIBzF332jxn71XkECgB90iG4bW68/view" target="_blank" rel="noopener">Annale 2021-2022</a>
 <a href="https://drive.google.com/file/d/17Ve1Z5LUiGMB7t_UT9bHoYPbSl6feB49/view" target="_blank" rel="noopener">Corrigé 2023</a>
 <a href="https://drive.google.com/file/d/1KDOLDjCG1VwXEGlMciWap0HRhP9BDJnw/view" target="_blank" rel="noopener">Épreuve 2024-2025 (40 QCM)</a>
+<a href="https://drive.google.com/file/d/1gBSLf4lzUoEoDzFyOsVnx1f-u7voZ00n/view" target="_blank" rel="noopener">Support Khlil — chapitre 2, Enzymologie (93 diapos)</a>
 <a href="https://drive.google.com/file/d/1BiccimeNgxSkb3GxU9rsFyD6uuC07KZj/view" target="_blank" rel="noopener">QCM Chimie-Biochimie</a>
 </div>
 
@@ -1644,6 +1890,84 @@ QUIZ = {
    "a": 0,
    "e": "La ninhydrine est un composé aromatique utilisé comme révélateur des acides aminés."},
  ],
+ "c13": [
+  {"q": "Concernant toute protéine enzymatique, indiquer la proposition exacte :",
+   "o": ["Elle agit à forte concentration", "Elle augmente la vitesse d'une réaction qu'elle catalyse", "Elle est détruite au cours de la réaction", "Elle modifie l'équilibre d'une réaction réversible", "Elle utilise toujours un cofacteur"],
+   "a": 1,
+   "e": "Les enzymes agissent à <b>faible</b> concentration, sont <b>inchangées</b> à la fin, ne modifient <b>pas</b> l'équilibre (elles accélèrent) et n'ont pas toujours de cofacteur (la subtilisine n'en a aucun)."},
+  {"q": "Pour une enzyme dont le numéro d'immatriculation est EC 7.2.1.1, indiquer la proposition exacte :",
+   "o": ["Ligase", "Transférase", "Hydrolase", "Lyase", "Aucune réponse"],
+   "a": 4,
+   "e": "Le premier chiffre = la <b>classe</b>, et le cours n'en décrit que <b>1 à 6</b>. Le 7 ne correspond à aucune classe du programme."},
+  {"q": "La V<sub>max</sub> d'une réaction enzymatique :",
+   "o": ["Dépend de la concentration de l'enzyme", "Dépend de la concentration du substrat", "Est égale au K<sub>M</sub>", "Est atteinte quand [S] = K<sub>M</sub>", "Est la vitesse initiale"],
+   "a": 0,
+   "e": "V<sub>max</sub> = k<sub>2</sub>[E]<sub>total</sub> : elle dépend de <b>[E]</b>. Le substrat ne fait que la <b>révéler</b> (saturation des sites)."},
+  {"q": "La représentation de Lineweaver et Burk porte :",
+   "o": ["1/v en fonction de 1/[S]", "v en fonction de [S]", "v en fonction de 1/[S]", "1/v en fonction de [S]", "log v en fonction du pH"],
+   "a": 0,
+   "e": "C'est la <b>double inverse</b> : une droite d'ordonnée 1/V<sub>max</sub>, d'abscisse −1/K<sub>M</sub> et de pente K<sub>M</sub>/V<sub>max</sub>."},
+  {"q": "Dans l'inhibition non compétitive, il se forme :",
+   "o": ["Uniquement le complexe EI", "Uniquement le complexe ES", "Les complexes EI, ES et ESI", "Un complexe covalent irréversible", "Aucun complexe"],
+   "a": 2,
+   "e": "L'inhibiteur se fixe <b>hors du site actif</b> : il peut donc se lier à <b>E</b> libre comme au complexe <b>ES</b> → EI, ES et ESI."},
+  {"q": "L'inhibition compétitive :",
+   "o": ["Augmente le K<sub>M</sub> et laisse la V<sub>max</sub> inchangée", "Diminue la V<sub>max</sub> et laisse le K<sub>M</sub> inchangé", "Diminue les deux", "Augmente les deux", "N'a aucun effet cinétique"],
+   "a": 0,
+   "e": "L'inhibiteur, analogue structural du substrat, occupe le site actif : l'<b>affinité apparente diminue</b> (K<sub>M</sub> ↑) mais la <b>V<sub>max</sub></b> reste la même. Un excès de substrat lève l'inhibition."},
+  {"q": "L'intoxication par l'éthylène-glycol se traite par l'éthanol parce que :",
+   "o": ["L'éthanol dénature l'alcool déshydrogénase", "L'éthanol est un inhibiteur compétitif de l'alcool déshydrogénase", "L'éthanol est un inhibiteur non compétitif", "L'éthanol est le substrat de la réaction", "L'éthanol précipite l'acide oxalique"],
+   "a": 1,
+   "e": "L'éthylène-glycol n'est pas toxique : c'est son oxydation en <b>acide oxalique</b> qui l'est. L'éthanol occupe l'enzyme par <b>compétition</b> et empêche cette oxydation."},
+  {"q": "L'aspirine inhibe les cyclooxygénases :",
+   "o": ["De façon réversible et compétitive", "De façon irréversible par acétylation d'une sérine du site actif", "En dénaturant l'enzyme", "En modifiant le pH gastrique", "En bloquant le calcium"],
+   "a": 1,
+   "e": "AINS : <b>acétylation covalente</b> du résidu <b>sérine</b> du site actif de la COX → inhibition <b>irréversible</b>, donc non compétitive."},
+  {"q": "Que fait une température de 60 °C à une enzyme ?",
+   "o": ["Elle l'active", "Elle augmente la vitesse sans limite", "Elle dénature l'enzyme", "Elle n'a aucun effet", "Elle change sa spécificité"],
+   "a": 2,
+   "e": "Au-delà de la <b>température optimale</b> (dénaturation appréciable dès <b>40 °C</b>), la protéine se dénature : l'activité chute."},
+  {"q": "Une enzyme allostérique :",
+   "o": ["Donne une courbe V = f([S]) sigmoïde", "Est toujours monomérique", "N'est jamais régulée", "Donne une hyperbole", "N'a pas de site actif"],
+   "a": 0,
+   "e": "Plurimérique, elle possède un <b>site actif</b> et un <b>site régulateur</b> ; la coopérativité donne une courbe <b>sigmoïde</b> (comme l'hémoglobine)."},
+  {"q": "Le NAD⁺ est le coenzyme des :",
+   "o": ["Transférases", "Hydrolases", "Oxydoréductases", "Ligases", "Isomérases"],
+   "a": 2,
+   "e": "NAD⁺/NADH et NADP⁺/NADPH sont les coenzymes <b>libres</b> des déshydrogénases (classe 1, oxydoréductases)."},
+  {"q": "Le coenzyme A transporte un groupement :",
+   "o": ["Amine", "Acétyle (et acyle)", "CO₂", "Méthyle", "Phosphate"],
+   "a": 1,
+   "e": "Grâce à son groupe <b>thiol —SH</b>, le CoA transporte des groupements <b>acyle et acétyle</b> (pyruvate déshydrogénase, citrate synthase)."},
+  {"q": "Le phosphate de pyridoxal a pour précurseur :",
+   "o": ["La thiamine (B1)", "La riboflavine (B2)", "La pyridoxine (B6)", "La biotine (B8)", "La cobalamine (B12)"],
+   "a": 2,
+   "e": "PLP dérive de la <b>pyridoxine (vitamine B6)</b> ; c'est le coenzyme clé du métabolisme des acides aminés (aminotransférases)."},
+  {"q": "Une carence en vitamine B1 provoque :",
+   "o": ["Le scorbut", "La pellagre", "Le béribéri", "L'anémie pernicieuse", "Le rachitisme"],
+   "a": 2,
+   "e": "B1 = thiamine → TPP. Carence : <b>béribéri</b> (et syndrome de Wernicke). Scorbut = C, pellagre = B3, anémie pernicieuse = B12."},
+  {"q": "Le NADH absorbe la lumière UV à :",
+   "o": ["260 nm", "280 nm", "340 nm", "400 nm", "600 nm"],
+   "a": 2,
+   "e": "<b>340 nm</b> : c'est la propriété analytique qui permet de suivre une réaction de déshydrogénation au spectrophotomètre."},
+  {"q": "Le coenzyme qui n'a pas de caractère vitaminique est :",
+   "o": ["Le TPP", "Le FAD", "Le coenzyme Q (ubiquinone)", "Le THF", "Le phosphate de pyridoxal"],
+   "a": 2,
+   "e": "Le <b>coenzyme Q</b> (ubiquinone), comme les <b>coenzymes héminiques</b> et le <b>lipoate</b>, ne dérive d'aucune vitamine."},
+  {"q": "La loi de Michaelis s'écrit :",
+   "o": ["V<sub>i</sub> = V<sub>max</sub>[S] / (K<sub>M</sub> + [S])", "V<sub>i</sub> = K<sub>M</sub>[S] / (V<sub>max</sub> + [S])", "V<sub>i</sub> = V<sub>max</sub> + K<sub>M</sub>[S]", "V<sub>i</sub> = V<sub>max</sub>/(K<sub>M</sub>[S])", "V<sub>i</sub> = k<sub>1</sub>[E][S]"],
+   "a": 0,
+   "e": "Quand [S] = K<sub>M</sub>, V<sub>i</sub> = V<sub>max</sub>/2 : c'est la définition graphique du K<sub>M</sub>."},
+  {"q": "1 UI correspond à :",
+   "o": ["1 µmole de substrat par minute", "1 mmole par seconde", "1 µmole par seconde", "15 katals", "1 mole par minute"],
+   "a": 0,
+   "e": "1 UI = <b>1 µmole/min</b> ; 1 katal = 1 mmole/s ; d'où <b>1 UI = 15 nkat</b>."},
+  {"q": "Une enzyme allostérique peut être inhibée par le produit final de sa voie : c'est :",
+   "o": ["Une activation par le substrat", "Un rétrocontrôle (feed-back)", "Une inhibition compétitive", "Une dénaturation", "Une maturation protéolytique"],
+   "a": 1,
+   "e": "Le produit final G est un <b>modulateur négatif</b> de l'enzyme clé E1 (allostérique, régulatrice, irréversible) : régulation par <b>rétrocontrôle</b>."},
+ ],
 }
 
 
@@ -1740,6 +2064,28 @@ FLASH = [
 
 ]
 
+# --- Chapitre 13 : enzymes & coenzymes ---
+FLASH += [
+ {"g": "Enzymes", "q": "Les 4 propriétés d'un enzyme à citer ?", "a": "Protéine · agit à <b>très faible concentration</b> · <b>inchangé</b> à la fin · <b>grande spécificité</b>. Et surtout : il ne change <b>pas l'équilibre</b>, il accélère (jusqu'à 10⁶ fois)."},
+ {"g": "Enzymes", "q": "Le site actif a deux rôles, lesquels ?", "a": "Un <b>site de fixation</b> du substrat et un <b>site catalytique</b> (la transformation)."},
+ {"g": "Enzymes", "q": "Les 6 classes d'enzymes ?", "a": "<b>1</b> Oxydoréductases · <b>2</b> Transférases · <b>3</b> Hydrolases · <b>4</b> Lyases · <b>5</b> Isomérases · <b>6</b> Ligases (avec ATP)."},
+ {"g": "Enzymes", "q": "Que signifie EC 3.4.4.5 ?", "a": "Chymotrypsine : <b>3</b> hydrolase · <b>4</b> hydrolyse peptidique · <b>4</b> protéase à sérine · <b>5</b> la chymotrypsine."},
+ {"g": "Enzymes", "q": "La loi de Michaelis ?", "a": "<b>V<sub>i</sub> = V<sub>max</sub>[S]/(K<sub>M</sub>+[S])</b>. Si [S] = K<sub>M</sub>, alors V<sub>i</sub> = V<sub>max</sub>/2."},
+ {"g": "Enzymes", "q": "K<sub>M</sub> : grand ou petit, quelle affinité ?", "a": "K<sub>M</sub> = (k<sub>−1</sub>+k<sub>2</sub>)/k<sub>1</sub>. <b>Petit K<sub>M</sub> = forte affinité</b> ; grand K<sub>M</sub> = faible affinité."},
+ {"g": "Enzymes", "q": "Lineweaver-Burk : les 3 grandeurs ?", "a": "Ordonnée à l'origine <b>1/V<sub>max</sub></b> · abscisse à l'origine <b>−1/K<sub>M</sub></b> · pente <b>K<sub>M</sub>/V<sub>max</sub></b>."},
+ {"g": "Enzymes", "q": "Compétitif vs non compétitif, en une ligne ?", "a": "<b>Compétitif</b> : K<sub>M</sub> ↑, V<sub>max</sub> inchangée (levée par excès de substrat). <b>Non compétitif</b> : K<sub>M</sub> inchangé, V<sub>max</sub> ↓."},
+ {"g": "Enzymes", "q": "L'aspirine : quel type d'inhibition ?", "a": "<b>Irréversible</b> : acétylation covalente d'une <b>sérine</b> du site actif de la <b>COX</b>."},
+ {"g": "Enzymes", "q": "1 UI, 1 katal ?", "a": "1 UI = <b>1 µmole/min</b> · 1 katal = <b>1 mmole/s</b> · <b>1 UI = 15 nkat</b>."},
+ {"g": "Enzymes", "q": "Enzyme allostérique : les deux états ?", "a": "<b>T</b> = tendu, <b>inactif</b> · <b>R</b> = relâché, <b>actif</b>. Un activateur pousse vers R, un inhibiteur vers T."},
+ {"g": "Enzymes", "q": "Coenzyme vrai (cosubstrat) ou groupement prosthétique ?", "a": "<b>Libre</b> et associé seulement au moment de la catalyse = cosubstrat (NAD⁺). <b>Lié par covalence</b> à l'apoenzyme = groupement prosthétique (FAD)."},
+ {"g": "Coenzymes", "q": "Associe : B1, B2, B3, B5 ?", "a": "<b>B1</b> → TPP (béribéri) · <b>B2</b> → FAD/FMN (dermatoses) · <b>B3</b> → NAD⁺/NADP⁺ (pellagre) · <b>B5</b> → coenzyme A (acyle)."},
+ {"g": "Coenzymes", "q": "Associe : B6, B8, B9, B12 ?", "a": "<b>B6</b> → phosphate de pyridoxal (aminotransférases) · <b>B8</b> → biotine (CO₂) · <b>B9</b> → THF (monocarbonés) · <b>B12</b> → anémie pernicieuse."},
+ {"g": "Coenzymes", "q": "Les 4 coenzymes d'oxydoréduction du cours ?", "a": "<b>NAD⁺/NADP⁺</b> (nicotinique) · <b>FAD/FMN</b> (flavinique) · <b>coenzyme Q</b> (ubiquinone) · <b>coenzymes héminiques</b> (cytochromes). Plus la <b>vitamine C</b>."},
+ {"g": "Coenzymes", "q": "NAD⁺ : libre ou lié ? Et sa particularité analytique ?", "a": "<b>Libre</b> (liaison réversible), ne traverse pas la membrane mitochondriale (2 pools) ; <b>NADH absorbe à 340 nm</b>."},
+ {"g": "Coenzymes", "q": "Quels coenzymes ne dérivent pas d'une vitamine ?", "a": "<b>Coenzyme Q</b> (ubiquinone), <b>coenzymes héminiques</b> (cytochromes) et <b>acide lipoïque</b> (lipoate)."},
+ {"g": "Coenzymes", "q": "Carence en vitamine C ?", "a": "<b>Scorbut</b> : défaut d'hydroxylation de la <b>proline</b> du collagène (→ 4-hydroxyproline), chute des dents, fragilité osseuse, hémorragies."},
+]
+
 # --------------------------------------------------------------------------
 # Sections
 # --------------------------------------------------------------------------
@@ -1757,6 +2103,7 @@ SECTIONS = [
  ("c10", "Lipides", "Sphingolipides et sphingophospholipides", "La sphingosine, le céramide, les 4 familles et les 3 maladies (diapos 90-93)", "10", C10, False),
  ("c11", "Acides aminés", "Les acides aminés (Pr. Khlil)", "Structure, classification par R, pHi et électrophorèse, Q1-Q7 de l'examen 2024-25", "11", C11, False),
  ("c12", "Acides aminés", "Protéines et hémoglobine (Pr. Khlil)", "Liaison peptidique, peptides, 4 structures et hémoglobine — Q8 à Q13 de l'examen", "12", C12, False),
+ ("c13", "Enzymes", "Enzymes et coenzymes (Pr. Khlil)", "Classification, cinétique de Michaelis, inhibitions, allostérie, vitamines et coenzymes — Q14 à Q25 de l'examen", "13", C13, False),
 ]
 
 HERO = """
@@ -1776,13 +2123,13 @@ HERO = """
   <p style="font-size:13.5px;opacity:.8">D'après le diaporama du Pr. Naamane (93 diapos) et le support du Pr. Khlil (2024-25)</p>
   <div class="dash">
     <div class="kpi ring"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle id="ring" cx="27" cy="27" r="22" fill="none" stroke="#7dead9" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)" style="transition:stroke-dashoffset .5s"/></svg><div><b id="pct2">0 %</b><span>Ta progression</span></div></div>
-    <div class="kpi"><b>12</b><span>chapitres</span></div>
+    <div class="kpi"><b>13</b><span>chapitres</span></div>
     <div class="kpi"><b id="nq">0</b><span>QCM d'entraînement</span></div>
     <div class="kpi"><b id="nf">0</b><span>flashcards</span></div>
     <div class="kpi"><b>1</b><span>examen blanc</span></div>
   </div>
   <div class="chips">
-    <span class="chip">11 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Acides aminés</span><span class="chip">Hémoglobine</span><span class="chip">Schémas du diaporama</span>
+    <span class="chip">12 parties annoncées</span><span class="chip">Bilan lipidique</span><span class="chip">Sphingolipides (annoncé)</span><span class="chip">Acides aminés</span><span class="chip">Hémoglobine</span><span class="chip">Enzymes &amp; coenzymes</span><span class="chip">Schémas du diaporama</span>
     <span class="chip">Pièges d'examen</span><span class="chip">QCM corrigés</span>
     <span class="chip">Flashcards</span><span class="chip">Examen chronométré</span>
   </div>

@@ -2,7 +2,7 @@
 
 > **Organisation du site**
 > - **`index.html`** — le **cours complet de biochimie structurale** (page autonome de type « manuel ») :
->   13 chapitres, 89 QCM corrigés, 84 flashcards, examen blanc chronométré, recherche et mode sombre.
+>   13 chapitres, 108 QCM corrigés, 102 flashcards, examen blanc chronométré, recherche et mode sombre.
 >   Généré par `tools/build_biochimie.py` à partir de `assets/biochimie.css`.
 > - **`documents.html`** — les 24 documents du module (Pr. Khlil & Pr. Naamane), accès direct aux
 >   sections du plan.
